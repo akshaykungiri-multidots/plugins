@@ -62,6 +62,11 @@ function md_imp_csv_command_callback($args, $assoc_args)
 					if ($post_id == 'post_id') {
 						continue;
 					}
+					$postObj = get_post($post_id);
+					if (!$postObj) {
+						WP_CLI::Error('Post ID ' . $post_id . ' is not updated because not found or invalid.', 0);
+						continue;
+					}
 
 					// Assign categories.
 					if (!empty($category_name)) {
@@ -84,11 +89,12 @@ function md_imp_csv_command_callback($args, $assoc_args)
 							WP_CLI::runcommand("media import $featured_image --post_id=$post_id --featured_image");
 						}
 					}
+
+					WP_CLI::success('Post ID ' . $post_id . ' is updated successfully.');
 				}
 
 				fclose($handle);
 			}
-			WP_CLI::success('Done.');
 		} else {
 			WP_CLI::error('Invalid file format. Only csv file is supported.');
 		}
