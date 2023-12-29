@@ -208,7 +208,8 @@ class Admin {
 	 * Function is used to create admin page
 	 */
 	public function md_prime_create_admin_page() {
-		$this->md_prime_options = get_option( 'md_prime_option_name' ); ?>
+		$this->md_prime_options = get_option( 'md_prime_option_name' );
+		?>
 
 		<div class="wrap">
 			<h2>MD Prime</h2>
@@ -244,9 +245,25 @@ class Admin {
 		);
 
 		add_settings_field(
-			'sample_0', // id
-			'Sample', // title
-			array( $this, 'sample_0_callback' ), // callback
+			'md_mailchimp_api_key', // id
+			'Mailchimp API Key', // title
+			array( $this, 'md_mailchimp_api_key_callback' ), // callback
+			'md-prime-admin', // page
+			'md_prime_setting_section' // section
+		);
+
+		add_settings_field(
+			'md_mailchimp_prefix', // id
+			'Mailchimp Server Prefix', // title
+			array( $this, 'md_mailchimp_prefix_callback' ), // callback
+			'md-prime-admin', // page
+			'md_prime_setting_section' // section
+		);
+
+		add_settings_field(
+			'md_mailchimp_email_field', // id
+			'Contact Form Email Field', // title
+			array( $this, 'md_mailchimp_email_field_callback' ), // callback
 			'md-prime-admin', // page
 			'md_prime_setting_section' // section
 		);
@@ -257,8 +274,14 @@ class Admin {
 	 */
 	public function md_prime_sanitize( $input ) {
 		$sanitary_values = array();
-		if ( isset( $input['sample_0'] ) ) {
-			$sanitary_values['sample_0'] = sanitize_text_field( $input['sample_0'] );
+		if ( isset( $input['md_mailchimp_api_key'] ) ) {
+			$sanitary_values['md_mailchimp_api_key'] = sanitize_text_field( $input['md_mailchimp_api_key'] );
+		}
+		if ( isset( $input['md_mailchimp_prefix'] ) ) {
+			$sanitary_values['md_mailchimp_prefix'] = sanitize_text_field( $input['md_mailchimp_prefix'] );
+		}
+		if ( isset( $input['md_mailchimp_email_field'] ) ) {
+			$sanitary_values['md_mailchimp_email_field'] = sanitize_text_field( $input['md_mailchimp_email_field'] );
 		}
 
 		return $sanitary_values;
@@ -274,10 +297,31 @@ class Admin {
 	/**
 	 * Settings field callback function.
 	 */
-	public function sample_0_callback() {
+	public function md_mailchimp_api_key_callback() {
 		printf(
-			'<input class="regular-text" type="text" name="md_prime_option_name[sample_0]" id="sample_0" value="%s">',
-			isset( $this->md_prime_options['sample_0'] ) ? esc_attr( $this->md_prime_options['sample_0'] ) : ''
+			'<input class="regular-text" type="password" name="md_prime_option_name[md_mailchimp_api_key]" id="md_mailchimp_api_key" value="%s">',
+			isset( $this->md_prime_options['md_mailchimp_api_key'] ) ? esc_attr( $this->md_prime_options['md_mailchimp_api_key'] ) : ''
 		);
+	}
+
+	/**
+	 * Settings field callback function.
+	 */
+	public function md_mailchimp_prefix_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="md_prime_option_name[md_mailchimp_prefix]" id="md_mailchimp_prefix" value="%s">',
+			isset( $this->md_prime_options['md_mailchimp_prefix'] ) ? esc_attr( $this->md_prime_options['md_mailchimp_prefix'] ) : ''
+		);
+	}
+
+	/**
+	 * Settings field callback function.
+	 */
+	public function md_mailchimp_email_field_callback() {
+		printf(
+			'<input class="regular-text" type="text" name="md_prime_option_name[md_mailchimp_email_field]" id="md_mailchimp_email_field" value="%s">',
+			isset( $this->md_prime_options['md_mailchimp_email_field'] ) ? esc_attr( $this->md_prime_options['md_mailchimp_email_field'] ) : ''
+		);
+		echo '<p class="description" id="tagline-description">'. esc_html("Enter contact form email field which is mapped to mailchimp email field.") .'</p>';
 	}
 }
