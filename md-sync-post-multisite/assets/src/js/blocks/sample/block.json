@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "md-sync-post-multisite/sample",
+  "version": "1.1.0",
+  "title": "Sample Block",
+  "category": "md-sync-post-multisite",
+  "icon": "lock",
+  "description": "Sample block.",
+  "keywords": ["sample", "Block"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-sync-post-multisite",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js"
+}
