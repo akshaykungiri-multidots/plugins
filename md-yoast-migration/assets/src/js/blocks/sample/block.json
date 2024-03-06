@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "md-yoast-migration/sample",
+  "version": "1.1.0",
+  "title": "Sample Block",
+  "category": "md-yoast-migration",
+  "icon": "lock",
+  "description": "Sample block.",
+  "keywords": ["sample", "Block"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-yoast-migration",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js"
+}
