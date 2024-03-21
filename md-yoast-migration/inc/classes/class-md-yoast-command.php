@@ -40,6 +40,13 @@ class Md_Yoast_Command
         // Skip the first row (header)
         array_shift( $csv );
 
+        $batch_size = 20; // Number of posts to process per batch
+        $counter = 0; // Initialize counter
+        $total_posts = count( $csv ); // Total number of posts
+
+        // Create progress bar
+        $progress = WP_CLI\Utils\make_progress_bar( 'Processing Posts', $total_posts );
+
         foreach ($csv as $row) {
             $title = $row[0];
             $slug = $row[2];
@@ -77,7 +84,33 @@ class Md_Yoast_Command
             update_post_meta( $page_id, '_yoast_wpseo_metadesc', $meta_desc );
             update_post_meta( $page_id, '_yoast_wpseo_focuskw', $focus_keyword );
 
-            WP_CLI::success( "Page '$title' created and Yoast SEO data migrated." );
+            $counter++;
+            // Advance progress bar
+            $progress->tick();
+
+            // Clear memory every batch
+            if ( $counter % $batch_size === 0 ) {
+                WP_CLI::log( "Clearing memory..." );
+                $this->clear_memory();
+            }
         }
+
+        // Finish progress bar
+        $progress->finish();
+
+        WP_CLI::success( "All Posts are created and Yoast SEO data migrated." );
+    }
+
+    /**
+     * Clear memory by unsetting variables and running garbage collection.
+     */
+    private function clear_memory() {
+        // Unset variables
+        foreach ( array_keys( get_defined_vars() ) as $var ) {
+            unset( $GLOBALS[ $var ] );
+        }
+
+        // Run garbage collection
+        gc_collect_cycles();
     }
 }
