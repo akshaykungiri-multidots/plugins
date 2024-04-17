@@ -167,7 +167,7 @@ class Front
 			$flag = 1;
 		}
 		if ($flag) {
-			$coupon_code = 'FIRSTORDER'; // Replace with your desired code
+			$coupon_code = 'FIRSTORDER' . uniqid(); // Generate unique coupon code
 			$coupon = new WC_Coupon($coupon_code);
 
 			// Create coupon if it doesn't exist
@@ -176,6 +176,8 @@ class Front
 				$coupon->set_code($coupon_code);
 				$coupon->set_discount_type('percent');
 				$coupon->set_amount(5); // Set 5% discount
+				$coupon->set_usage_limit( 1 ); // Limit to one-time use
+				$coupon->set_individual_use( true ); // Individual use only
 				$coupon->set_date_created(gmdate('Y-m-d')); // Set creation date
 				$coupon->save();
 			}
@@ -189,7 +191,7 @@ class Front
 	{
 		if (is_user_logged_in()) {
 			$user_id = get_current_user_id();
-			$coupon_code = 'FIRSTORDER'; // Replace with your desired code
+			$coupon_code = 'FIRSTORDER' . uniqid(); // Generate unique coupon code
 
 			$args = array(
 				'customer_id' => $user_id,
@@ -205,9 +207,12 @@ class Front
 				}
 			} else {
 				// Remove discount and display message for logged-in users who aren't eligible
-				if (WC()->cart->has_discount($coupon_code)) {
-					WC()->cart->remove_coupon($coupon_code);
-					wc_add_notice('(FIRSTORDER) discount is only applicable for first-time orders.', 'notice');
+				$applied_coupons = WC()->cart->get_applied_coupons();
+				foreach ($applied_coupons as $c_value) {
+					if (strpos(strtoupper($c_value), 'FIRSTORDER') !== false) {
+						WC()->cart->remove_coupon($c_value);
+						wc_add_notice('(FIRSTORDER) discount is only applicable for first-time orders.', 'notice');
+					}
 				}
 			}
 		}
