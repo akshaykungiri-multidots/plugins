@@ -75,6 +75,10 @@ class Front
 		add_action('woocommerce_account_wallet-success_endpoint', array($this, 'md_display_wallet_success'));
 		add_action('init', array($this, 'md_custom_rewrite_rule'));
 		add_action('rest_api_init', array($this, 'md_register_routes'));
+
+		// Filter order query to hide wallet transactions orders
+		add_filter('woocommerce_shop_order_query', array($this, 'md_hide_specific_orders'), 99, 1);
+		add_filter('woocommerce_my_account_my_orders_query', array($this, 'md_hide_specific_orders'), 99, 1);
 	}
 
 	/**
@@ -164,7 +168,7 @@ class Front
 	 */
 	public function md_add_wallet_menu_item($items)
 	{
-		$items['wallet'] = __('Wallet', 'your-text-domain');
+		$items['wallet'] = __('Wallet', 'md-wallet');
 		return $items;
 	}
 
@@ -177,16 +181,17 @@ class Front
 
 		// Display wallet balance.
 		$wallet_balance = get_user_meta($customer->get_id(), 'wallet_balance', true);
+
 		if (empty($wallet_balance)) {
 			$wallet_balance = 0;
 		}
 		// Get currency symbol.
 		$currency_symbol = get_woocommerce_currency_symbol();
-		?>
-		<h3>Your Wallet Balance: <?php echo esc_html($currency_symbol . $wallet_balance); ?></h3>
+?>
+		<h3><?php echo esc_html__("Your Wallet Balance: ", 'md-wallet') . esc_html($currency_symbol . $wallet_balance); ?></h3>
 		<form id="payment-form" action="" method="post">
 			<p class="form-row form-row-wide">
-				<label for="md_wallet_amount">Amount*</label>
+				<label for="md_wallet_amount"><?php echo esc_html__('Enter Amount', 'md-wallet'); ?></label>
 				<input required="" class="input-text" type="text" id="md_wallet_amount" name="amount" placeholder="Enter Amount">
 			</p>
 			<input type="hidden" id="md_wallet_customer_id" name="customer_id" value="<?php echo esc_attr($customer->get_id()); ?>">
@@ -201,37 +206,37 @@ class Front
 			<button type="submit" class="button wp-element-button" id="submit">Submit Payment</button>
 		</form>
 		<div class="md_display_wallet_orders">
-			<?php 
+			<?php
 			// Get the wallet orders
-			$wallet_orders = get_posts(array(
-				'post_type' => get_post_types(),
-				'post_status' => 'any',
+			$wallet_orders = wc_get_orders(array(
+				'customer' => $customer->get_id(),
 				'meta_query' => array(
 					array(
-						'key' => '_order_type',
-						'value' => 'wallet_transaction',
-						'compare' => 'LIKE'
+						'key' => 'order_transaction_type',
+						'value' => array('Top up', 'Withdraw'),
+						'compare' => 'IN'
 					),
 				),
 			));
 			if (!empty($wallet_orders)) {
-				?>
+			?>
 				<h3>Wallet Transactions</h3>
 				<table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
 					<thead>
 						<tr>
-							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr">Order</span></th>
-							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr">Date</span></th>
-							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-transaction_type"><span class="nobr">Transaction Type</span></th>
-							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr">Status</span></th>
-							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr">Total</span></th>
+							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-number"><span class="nobr"><?php echo esc_html__('Order', 'md-wallet'); ?></span></th>
+							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-date"><span class="nobr"><?php echo esc_html__('Date', 'md-wallet'); ?></span></th>
+							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-transaction_type"><span class="nobr"><?php echo esc_html__('Type', 'md-wallet'); ?></span></th>
+							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-status"><span class="nobr"><?php echo esc_html__('Status', 'md-wallet'); ?></span></th>
+							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-total"><span class="nobr"><?php echo esc_html__('Total', 'md-wallet'); ?></span></th>
+							<th class="woocommerce-orders-table__header woocommerce-orders-table__header-order-actions">&nbsp;</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
 						foreach ($wallet_orders as $wallet_order) {
 							$order = wc_get_order($wallet_order->ID);
-							?>
+						?>
 							<tr class="woocommerce-orders-table__row woocommerce-orders-table__row--status-<?php echo esc_attr($order->get_status()); ?> order">
 								<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-number" data-title="Order">
 									<a href="<?php echo esc_url($order->get_view_order_url()); ?>">
@@ -242,13 +247,27 @@ class Front
 									<time datetime="<?php echo esc_attr($order->get_date_created()->date('c')); ?>"><?php echo esc_html(wc_format_datetime($order->get_date_created())); ?></time>
 								</td>
 								<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-transaction_type" data-title="Transaction Type">
-									<?php echo esc_html(get_post_meta($order->get_id(), '_order_transaction_type', true)); ?>
+									<?php echo esc_html($order->get_meta('order_transaction_type')); ?>
 								</td>
 								<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" data-title="Status">
 									<?php echo esc_html(wc_get_order_status_name($order->get_status())); ?>
 								</td>
 								<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-total" data-title="Total">
 									<?php echo wp_kses_post($order->get_formatted_order_total()); ?>
+								</td>
+								<td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions" data-title="Actions">
+									<?php
+									$actions = wc_get_account_orders_actions($order);
+									if (!empty($actions)) {
+										foreach ($actions as $key => $action) {
+											$url = $action['url'];
+											if ($key === 'pay') {
+												$url = "javascript:void(0);";
+											}
+											echo '<a href="' . esc_url($url) . '" ' . ($key === 'pay' ? "data-order_id='" . esc_attr($order->get_id()) . 	"' data-amount='" . esc_attr($order->get_total()) . "'" : "") . ' class="woocommerce-button md-wallet_action wp-element-button button ' . sanitize_html_class($key) . '">' . esc_html($action['name']) . '</a>';
+										}
+									}
+									?>
 								</td>
 							</tr>
 						<?php
@@ -311,9 +330,9 @@ class Front
 			}
 		}
 	?>
-		<h3>You have made successfully payment. We have added fund in your wallet.</h3>
-		<a class="woocommerce-Button button wp-element-button" href="<?php echo esc_url(home_url('my-account/wallet')); ?>">Back to Wallet</a>
-	<?php
+		<h3><?php echo esc_html__('You have made successfully payment. We have added fund in your wallet.', 'md-wallet'); ?></h3>
+		<a class="woocommerce-Button button wp-element-button" href="<?php echo esc_url(home_url('my-account/wallet')); ?>"><?php echo esc_html__('Back to Wallet', 'md-wallet'); ?></a>
+<?php
 	}
 
 	/**
@@ -366,6 +385,7 @@ class Front
 		$data = $request->get_json_params();
 		$customer_id = $data['customer_id'];
 		$wallet_amount = $data['amount'];
+		$order_id = $data['order_id'];
 		$customer_email = $data['customer_email'];
 		$customer_name = $data['customer_name'];
 		$customer_address = $data['customer_billing_address'];
@@ -375,28 +395,32 @@ class Front
 		$customer_postcode = $data['customer_postal_code'];
 		$customer_country = $data['customer_country'];
 
-		// Create a new product
-		$product_id = $this->get_wallet_recharge_product();
-		$product = wc_get_product($product_id);
+		if (empty($order_id)) {
+			// Create a new product
+			$product_id = $this->get_wallet_recharge_product();
+			$product = wc_get_product($product_id);
 
-		// Create a new order
-		$order = wc_create_order();
-		// Set the customer
-		$order->set_customer_id($customer_id);
+			// Create a new order
+			$order = wc_create_order();
+			// Set the customer
+			$order->set_customer_id($customer_id);
 
-		// Add product to order
-		$item = new \WC_Order_Item_Product();
-		$item->set_props(array(
-			'product' => $product,
-			'quantity' => 1,
-			'subtotal' => $wallet_amount,
-			'total' => $wallet_amount,
-		));
-		$order->add_item($item);
-		// Calculate totals
-		$order->calculate_totals();
+			// Add product to order
+			$item = new \WC_Order_Item_Product();
+			$item->set_props(array(
+				'product' => $product,
+				'quantity' => 1,
+				'subtotal' => $wallet_amount,
+				'total' => $wallet_amount,
+			));
+			$order->add_item($item);
+			// Calculate totals
+			$order->calculate_totals();
 
-		$order->update_status('pending', 'Order created and now in progress:', true);
+			$order->update_status('pending', 'Order created and now in progress:', true);
+		} else {
+			$order = wc_get_order($order_id);
+		}
 
 		// Get an instance of MD_Wallet_Payment_Gateway
 		$md_wallet_payment_gateway = new MD_Wallet_Payment_Gateway();
@@ -440,9 +464,23 @@ class Front
 		// Save the session_id as order meta data
 		update_post_meta($order->get_id(), 'session_id', $checkout_session->id);
 		// Set the order type to 'wallet_transaction'
-		update_post_meta($order->get_id(), '_order_type', 'wallet_transaction');
-		update_post_meta($order->get_id(), '_order_transaction_type', 'Top up');
+		$order->update_meta_data('order_type', 'wallet_transaction', $order->get_id());
+		$order->update_meta_data('order_transaction_type', 'Top up',  $order->get_id());
+
+		$order->save();
 
 		return new \WP_REST_Response(['id' => $checkout_session->id], 200);
+	}
+
+	public function md_hide_specific_orders($query)
+	{
+		// hide orders with order_type = wallet_transaction
+		$query['meta_query'] = array(
+			array(
+				'key' => 'order_type',
+				'compare' => 'NOT EXISTS'
+			),
+		);
+		return $query;
 	}
 }

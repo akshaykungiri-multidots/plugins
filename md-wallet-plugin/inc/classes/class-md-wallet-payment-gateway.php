@@ -51,9 +51,9 @@ class MD_Wallet_Payment_Gateway extends WC_Payment_Gateway
 	{
 		$this->id                 = 'md_wallet_payment_gateway'; // Unique identifier for your gateway
 		$this->icon 			  = '';
-		$this->title			  = 'Woo Wallet'; // Title of the payment method shown on the admin page
-		$this->method_title       = 'MD Wallet Payment Gateway'; // Title shown in admin
-		$this->method_description = 'Wallet Payment Gateway for WooCommerce'; // Description shown in admin
+		$this->title			  = __('Woo Wallet', 'md-wallet'); // Title of the payment method shown on the admin page
+		$this->method_title       = __('MD Wallet Payment Gateway', 'md-wallet'); // Title of the payment method shown on the admin page
+		$this->method_description = __('Wallet Payment Gateway for WooCommerce', 'md-wallet'); // Description of the payment method shown on the admin page
 		$this->has_fields         = true;
 		$this->supports           = array('products'); // List of features supported by your gateway
 
@@ -78,17 +78,17 @@ class MD_Wallet_Payment_Gateway extends WC_Payment_Gateway
 		$this->form_fields = array(
 			'enabled' => array(
 				'title'       => 'Enable/Disable',
-				'label'       => 'Enable Wallet Payment Gateway',
+				'label'       => __('Enable Wallet Payment Gateway', 'md-wallet'),
 				'type'        => 'checkbox',
 				'description' => '',
 				'default'     => 'no'
 			),
 			'publishable_key' => array(
-				'title'       => 'Publishable Key',
+				'title'       => __('Publishable Key', 'md-wallet'),
 				'type'        => 'text'
 			),
 			'secret_key' => array(
-				'title'       => 'Secret Key',
+				'title'       => __('Secret Key', 'md-wallet'),
 				'type'        => 'password'
 			)  
 		);
@@ -111,8 +111,7 @@ class MD_Wallet_Payment_Gateway extends WC_Payment_Gateway
 
 			// Update wallet balance
 			update_user_meta($order->get_user_id(), 'wallet_balance', $wallet_balance);
-			update_post_meta($order->get_id(), '_order_type', 'wallet_transaction');
-			update_post_meta($order->get_id(), '_order_transaction_type', 'Withdraw');
+			$order->update_meta_data( 'order_transaction_type', 'Withdraw' );
 
 			// Mark order as complete
 			$order->payment_complete();
@@ -137,8 +136,18 @@ class MD_Wallet_Payment_Gateway extends WC_Payment_Gateway
 
 	public function payment_fields()
 	{
+		// Display wallet balance
+		$customer = WC()->customer;
+		$wallet_balance = get_user_meta($customer->get_id(), 'wallet_balance', true);
+
+		if (empty($wallet_balance)) {
+			$wallet_balance = 0;
+		}
+		// Get currency symbol.
+		$currency_symbol = get_woocommerce_currency_symbol();
+
 		echo '<div id="custom_input">
-			<p>This is the wallet payment gateway. Your current balance is $100.</p>
+			<p>This is the wallet payment gateway. Your current balance is '. esc_html($currency_symbol . $wallet_balance) .'.</p>
 		</div>';
 	}
 
