@@ -235,7 +235,6 @@ class Front {
 
 		// retrive applied coupon code.
 		$applied_coupon_code = $cart->get_applied_coupons();
-
 		// Get items in cart.
 		$product_items = $cart->get_cart();
 
@@ -260,7 +259,7 @@ class Front {
 					$amount_off = get_post_meta( $product_id, 'amount_off', true );
 					$promotion_value = get_post_meta( $product_id, 'promotion_value', true );
 					
-					if ( in_array( $coupon_code, $applied_coupon_code ) && $start_date <= $current_date && $end_date >= $current_date) {
+					if ( in_array( strtolower($coupon_code), $applied_coupon_code, true ) && $start_date <= $current_date && $end_date >= $current_date) {
 						$is_apply_discount = 1;
 					}
 				}
@@ -273,7 +272,7 @@ class Front {
 			} else {
 				$cart_discount = $cart_total * $amount_off / 100;
 			}
+			$cart->add_fee( __('Spacial Coupon Discount', 'woocommerce'), -$cart_discount );
 		}
-    	$cart->add_fee( __('Spacial Coupon Discount', 'woocommerce'), -$cart_discount );
 	}
 }

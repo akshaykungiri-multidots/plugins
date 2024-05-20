@@ -28,6 +28,13 @@
       $('#promotion_value, #amount_off').closest('.form-field').show();
     }
   }).change();
+  $(document).on('change', '#promotion_enable', function () {
+    if ($(this).is(':checked')) {
+      $(this).parent().parent().nextAll('.form-field').show();
+    } else {
+      $(this).parent().parent().nextAll('.form-field').hide();
+    }
+  }).change();
 })(jQuery);
 
 /***/ }),
