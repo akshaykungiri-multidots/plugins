@@ -223,23 +223,26 @@ class Front {
 						woocommerce_form_field(
 							'md_shipping_address[' . $product_id . '][' . $i . '][country]',
 							array(
-								'type'        => 'country',
+								'type'        => 'select',
 								'label'       => esc_html__( 'Country', 'md-shipping-address' ),
 								'class'       => array( 'form-row-wide', 'md-country-dropdown' ),
 								'required'    => true,
 								'placeholder' => esc_html__( 'Country', 'md-shipping-address' ),
-							)
+								'options'     => WC()->countries->get_countries(),
+							),
+							WC()->checkout()->get_value( 'md_shipping_address[' . $product_id . '][' . $i . '][country]')
 						);
 						woocommerce_form_field(
 							'md_shipping_address[' . $product_id . '][' . $i . '][state]',
 							array(
-								'type'        => 'state',
+								'type'        => 'select',
 								'label'       => esc_html__( 'State', 'md-shipping-address' ),
 								'class'       => array( 'form-row-wide', 'md-state-dropdown' ),
 								'required'    => true,
 								'placeholder' => esc_html__( 'State', 'md-shipping-address' ),
+								'options'     => array( '' => 'Select State' ),
 							),
-							'' // Leave the value empty
+							WC()->checkout()->get_value( 'md_shipping_address[' . $product_id . '][' . $i . '][state]')
 						);
 						woocommerce_form_field(
 							'md_shipping_address[' . $product_id . '][' . $i . '][city]',
