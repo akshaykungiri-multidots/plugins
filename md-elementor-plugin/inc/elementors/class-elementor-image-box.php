@@ -160,7 +160,7 @@ class Elementor_Image_Box extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Image', 'elementor-list-widget' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => '',
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
             ]
         );
@@ -192,6 +192,18 @@ class Elementor_Image_Box extends \Elementor\Widget_Base {
                 'type' => Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
+                    [
+                        'heading' => esc_html__( 'Heading', 'elementor-list-widget' ),
+                        'content' => esc_html__( 'Content', 'elementor-list-widget' ),
+                    ],
+                    [
+                        'heading' => esc_html__( 'Heading', 'elementor-list-widget' ),
+                        'content' => esc_html__( 'Content', 'elementor-list-widget' ),
+                    ],
+                    [
+                        'heading' => esc_html__( 'Heading', 'elementor-list-widget' ),
+                        'content' => esc_html__( 'Content', 'elementor-list-widget' ),
+                    ],
                     [
                         'heading' => esc_html__( 'Heading', 'elementor-list-widget' ),
                         'content' => esc_html__( 'Content', 'elementor-list-widget' ),

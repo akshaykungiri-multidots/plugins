@@ -160,7 +160,7 @@ class Elementor_Toggle_Image_Box extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Image', 'elementor-list-widget' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => '',
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
             ]
         );
@@ -199,6 +199,10 @@ class Elementor_Toggle_Image_Box extends \Elementor\Widget_Base {
                     [
                         'title' => esc_html__( 'Title #2', 'elementor-list-widget' ),
                         'content' => esc_html__( 'Content #2', 'elementor-list-widget' ),
+                    ],
+                    [
+                        'title' => esc_html__( 'Title #3', 'elementor-list-widget' ),
+                        'content' => esc_html__( 'Content #3', 'elementor-list-widget' ),
                     ],
                 ],
                 'title_field' => '{{{ title }}}',
@@ -297,9 +301,18 @@ class Elementor_Toggle_Image_Box extends \Elementor\Widget_Base {
             Group_Control_Background::get_type(),
             [
                 'name' => 'content_background',
-                'label' => esc_html__( 'Content Background', 'elementor-list-widget' ),
+                'label' => esc_html__( 'Box Background', 'elementor-list-widget' ),
                 'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .image-toggle-boxes__item .image-box__toggle-content',
+                'fields_options' => [
+                    'background' => [
+                        'default' => 'classic',
+                    ],
+                    'color' => [
+                        'default' => '#F75227',
+                    ],
+                ],
+
             ]
         );
 
@@ -352,16 +365,6 @@ class Elementor_Toggle_Image_Box extends \Elementor\Widget_Base {
             [
                 'name' => 'image_border',
                 'label' => esc_html__( 'Border', 'elementor-list-widget' ),
-                'selector' => '{{WRAPPER}} .image-toggle-boxes__item img',
-            ]
-        );
-
-        $this->add_group_control(
-            Group_Control_Background::get_type(),
-            [
-                'name' => 'image_background',
-                'label' => esc_html__( 'Background', 'elementor-list-widget' ),
-                'types' => [ 'classic', 'gradient' ],
                 'selector' => '{{WRAPPER}} .image-toggle-boxes__item img',
             ]
         );
@@ -464,18 +467,17 @@ class Elementor_Toggle_Image_Box extends \Elementor\Widget_Base {
                 <h2 class="heading-title">{{{ settings.heading_title }}}</h2>
                 <p class="heading-subtitle">{{{ settings.heading_subtitle }}}</p>
             </div>
-
-            <div class="image-boxes">
+            <div class="image-toggle-boxes__items">
                 <# _.each( settings.image_boxes, function( item ) { #>
-                    <div class="image-box">
+                    <div class="image-toggle-boxes__item">
                         <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                        <div class="content">
+                        <div class="image-box__toggle-content">
                             <h3 class="title">
                                 <i class="fas fa-angle-right"></i>
-                                {{ item.title }}
+                                {{{ item.title }}}
                             </h3>
+                            <div class="content" style="display: none;" >{{{ item.content }}}</div>
                         </div>
-                        <div class="content" style="display: none;" >{{ item.content }}</div>
                     </div>
                 <# }); #>
             </div>

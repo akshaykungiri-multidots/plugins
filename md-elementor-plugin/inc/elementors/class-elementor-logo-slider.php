@@ -212,6 +212,42 @@ class Elementor_Logo_Slider extends \Elementor\Widget_Base {
                         ],
                         'logo_title' => esc_html__( 'Logo Title', 'elementor-list-widget' ),
                     ],
+                    [
+                        'logo_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'logo_title' => esc_html__( 'Logo Title', 'elementor-list-widget' ),
+                    ],
+                    [
+                        'logo_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'logo_title' => esc_html__( 'Logo Title', 'elementor-list-widget' ),
+                    ],
+                    [
+                        'logo_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'logo_title' => esc_html__( 'Logo Title', 'elementor-list-widget' ),
+                    ],
+                    [
+                        'logo_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'logo_title' => esc_html__( 'Logo Title', 'elementor-list-widget' ),
+                    ],
+                    [
+                        'logo_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'logo_title' => esc_html__( 'Logo Title', 'elementor-list-widget' ),
+                    ],
+                    [
+                        'logo_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'logo_title' => esc_html__( 'Logo Title', 'elementor-list-widget' ),
+                    ],
                 ],
                 'title_field' => '{{{ logo_title }}}',
             ]
@@ -224,7 +260,7 @@ class Elementor_Logo_Slider extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__( 'Slides to Show', 'elementor-list-widget' ),
                 'type' => Controls_Manager::NUMBER,
-                'default' => 4,
+                'default' => 6,
             ]
         );
 
@@ -468,6 +504,13 @@ class Elementor_Logo_Slider extends \Elementor\Widget_Base {
                 'size_units' => [ 'px', 'em', '%' ],
                 'selectors' => [
                     '{{WRAPPER}} .logo-slider .logo-item img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+                ],
+                'default' => [
+                    'top' => '5',
+                    'right' => '5',
+                    'bottom' => '5',
+                    'left' => '5',
+                    'unit' => 'px',
                 ],
             ]
         );

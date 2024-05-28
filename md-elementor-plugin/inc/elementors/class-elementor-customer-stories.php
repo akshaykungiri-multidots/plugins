@@ -202,6 +202,9 @@ class Elementor_Customer_Stories extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Author Image', 'md-elementor' ),
                 'type' => Controls_Manager::MEDIA,
                 'label_block' => true,
+                'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
             ]
         );
 
@@ -226,7 +229,7 @@ class Elementor_Customer_Stories extends \Elementor\Widget_Base {
                         'content' => esc_html__( 'Content goes here', 'md-elementor' ),
                         'author_name' => esc_html__( 'Author Name', 'md-elementor' ),
                         'author_image' => [
-                            'url' => '',
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
                         ],
                         'author_position' => esc_html__( 'Author Position', 'md-elementor' ),
                     ],
@@ -234,7 +237,7 @@ class Elementor_Customer_Stories extends \Elementor\Widget_Base {
                         'content' => esc_html__( 'Content goes here', 'md-elementor' ),
                         'author_name' => esc_html__( 'Author Name', 'md-elementor' ),
                         'author_image' => [
-                            'url' => '',
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
                         ],
                         'author_position' => esc_html__( 'Author Position', 'md-elementor' ),
                     ],
@@ -242,7 +245,7 @@ class Elementor_Customer_Stories extends \Elementor\Widget_Base {
                         'content' => esc_html__( 'Content goes here', 'md-elementor' ),
                         'author_name' => esc_html__( 'Author Name', 'md-elementor' ),
                         'author_image' => [
-                            'url' => '',
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
                         ],
                         'author_position' => esc_html__( 'Author Position', 'md-elementor' ),
                     ],
@@ -268,7 +271,7 @@ class Elementor_Customer_Stories extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__( 'Slides to Show', 'elementor-list-widget' ),
                 'type' => Controls_Manager::NUMBER,
-                'default' => 4,
+                'default' => 1,
             ]
         );
 

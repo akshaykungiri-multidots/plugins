@@ -160,7 +160,7 @@ class Elementor_Resource_Block extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Image', 'elementor-list-widget' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => ''
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
             ]
         );
@@ -205,7 +205,37 @@ class Elementor_Resource_Block extends \Elementor\Widget_Base {
                 'default' => [
                     [
                         'resource_image' => [
-                            'url' => '',
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'resource_content' => esc_html__( 'Content', 'elementor-list-widget' ),
+                        'resource_button_text' => esc_html__( 'Button', 'elementor-list-widget' ),
+                        'resource_button_link' => [
+                            'url' => '#',
+                        ],
+                    ],
+                    [
+                        'resource_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'resource_content' => esc_html__( 'Content', 'elementor-list-widget' ),
+                        'resource_button_text' => esc_html__( 'Button', 'elementor-list-widget' ),
+                        'resource_button_link' => [
+                            'url' => '#',
+                        ],
+                    ],
+                    [
+                        'resource_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
+                        ],
+                        'resource_content' => esc_html__( 'Content', 'elementor-list-widget' ),
+                        'resource_button_text' => esc_html__( 'Button', 'elementor-list-widget' ),
+                        'resource_button_link' => [
+                            'url' => '#',
+                        ],
+                    ],
+                    [
+                        'resource_image' => [
+                            'url' => \Elementor\Utils::get_placeholder_image_src(),
                         ],
                         'resource_content' => esc_html__( 'Content', 'elementor-list-widget' ),
                         'resource_button_text' => esc_html__( 'Button', 'elementor-list-widget' ),
@@ -234,7 +264,7 @@ class Elementor_Resource_Block extends \Elementor\Widget_Base {
             [
                 'label' => esc_html__( 'Slides to Show', 'elementor-list-widget' ),
                 'type' => Controls_Manager::NUMBER,
-                'default' => 4,
+                'default' => 3,
             ]
         );
 

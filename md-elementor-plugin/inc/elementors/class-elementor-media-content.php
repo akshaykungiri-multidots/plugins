@@ -164,7 +164,7 @@ class Elementor_Media_Content extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Image', 'md-elementor' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => '',
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
             ]
         );

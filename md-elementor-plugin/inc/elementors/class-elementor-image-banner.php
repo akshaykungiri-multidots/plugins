@@ -177,7 +177,7 @@ class Elementor_Image_Banner extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Choose Image', 'elementor-list-widget' ),
                 'type' => Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => '',
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
                 ],
             ]
         );
