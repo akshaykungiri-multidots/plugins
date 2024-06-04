@@ -57,7 +57,7 @@ class Fiery_Hero_Slider extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-banner';
+		return 'eicon-post-slider';
 	}
 
 	/**

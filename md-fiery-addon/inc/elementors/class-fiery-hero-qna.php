@@ -9,8 +9,6 @@
 
 namespace MD_Fiery_Addon\Inc\Elementors;
 
-use Elementor\Controls_Manager;
-
 
 /**
  * Elementor Hero QNA Widget.
@@ -57,7 +55,7 @@ class Fiery_Hero_QNA extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-banner';
+		return 'eicon-headphones';
 	}
 
 	/**

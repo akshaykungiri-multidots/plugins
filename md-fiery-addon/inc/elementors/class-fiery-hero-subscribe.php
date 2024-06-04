@@ -9,8 +9,6 @@
 
 namespace MD_Fiery_Addon\Inc\Elementors;
 
-use Elementor\Controls_Manager;
-
 
 /**
  * Elementor Hero Subscribe Widget.
@@ -57,7 +55,7 @@ class Fiery_Hero_Subscribe extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-banner';
+		return 'eicon-email-field';
 	}
 
 	/**

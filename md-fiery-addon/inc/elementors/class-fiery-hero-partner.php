@@ -55,7 +55,7 @@ class Fiery_Hero_Partner extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-banner';
+		return 'eicon-posts-group';
 	}
 
 	/**
@@ -201,6 +201,9 @@ class Fiery_Hero_Partner extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Logo', 'md-fiery-addon' ),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'label_block' => true,
+				'default' => [
+                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                ],
             ]
         );
 

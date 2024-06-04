@@ -57,7 +57,7 @@ class Fiery_Case_Studies extends \Elementor\Widget_Base {
 	 * @return string Widget icon.
 	 */
 	public function get_icon() {
-		return 'eicon-banner';
+		return 'eicon-posts-carousel';
 	}
 
 	/**
