@@ -616,7 +616,7 @@ class MD_More_Real_Facts extends \Elementor\Widget_Base {
 
 		// Button Border Color.
 		$this->add_control(
-			'button_border_color',
+			'button_real_facts_border_color',
 			[
 				'label'     => esc_html__( 'Border Color', 'md-real-facts' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,

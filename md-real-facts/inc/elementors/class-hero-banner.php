@@ -286,14 +286,14 @@ class Hero_Banner extends \Elementor\Widget_Base {
 		$this->add_group_control(
 			\Elementor\Group_Control_Border::get_type(),
 			[
-				'name'     => 'button_border',
+				'name'     => 'button_hero_banner_border',
 				'label'    => esc_html__( 'Border', 'md-real-facts' ),
 				'selector' => '{{WRAPPER}} .hero-banner .hero-banner-content .hero-banner-btn',
 			]
 		);
 
 		$this->add_control(
-			'button_border_radius',
+			'button_hero_banner_border_radius',
 			[
 				'label'      => esc_html__( 'Border Radius', 'md-real-facts' ),
 				'type'       => \Elementor\Controls_Manager::DIMENSIONS,
@@ -337,7 +337,7 @@ class Hero_Banner extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'button_border_color',
+			'button_hero_border_color',
 			[
 				'label'     => esc_html__( 'Border Color', 'md-real-facts' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
