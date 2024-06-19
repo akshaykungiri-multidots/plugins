@@ -349,7 +349,7 @@ class Hero_Banner_Plus extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'button_border_color',
+			'button_circle_plus_hero_border_color',
 			[
 				'label'     => esc_html__( 'Border Color', 'md-circle-plus' ),
 				'type'      => \Elementor\Controls_Manager::COLOR,
