@@ -1,0 +1,214 @@
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/sass/main.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: "Roboto";
+  src: url(/wp-content/plugins/md-threatdown/assets/build/fonts/Roboto-Black.cf56c1b1.ttf);
+  font-weight: normal;
+}
+body, * {
+  font-family: "Roboto", sans-serif;
+}
+
+.threatdown-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner-container {
+  position: relative;
+  overflow: hidden;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner-container .threatdown-hero-banner-absolute {
+  position: absolute;
+  right: 0;
+  top: 5rem;
+  height: 100%;
+  width: 50%;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner-container .threatdown-hero-banner-absolute .threatdown-hero-banner-absolute___background {
+  position: absolute;
+  --td-chevron-size: 770px;
+  height: var(--td-chevron-size);
+  opacity: 0.8;
+  position: absolute;
+  top: calc(var(--td-chevron-size) / -2);
+  transform: rotate(-45deg);
+  width: var(--td-chevron-size);
+  right: 0;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner-container .threatdown-hero-banner-absolute .threatdown-hero-banner-absolute___background::before {
+  background-image: linear-gradient(0deg, #bcfaff 15.59%, #ccdffd 61.02%, rgba(229, 238, 253, 0) 84.4%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 30%;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner-container .threatdown-hero-banner-absolute .threatdown-hero-banner-absolute___background::after {
+  background-image: linear-gradient(90deg, #bcfaff 15.59%, #8faede 50.93%, rgba(143, 174, 222, 0) 87.95%);
+  bottom: 0;
+  content: "";
+  height: 30%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-content {
+  width: 50%;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-content .threatdown-hero-banner-btn-group {
+  margin-top: 30px;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-content .threatdown-hero-banner-content__heading h1, .elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-content .threatdown-hero-banner-content__heading h2, .elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-content .threatdown-hero-banner-content__heading h3, .elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-content .threatdown-hero-banner-content__heading h4, .elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-content .threatdown-hero-banner-content__heading h5, .elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-content .threatdown-hero-banner-content__heading h6 {
+  font-family: inherit !important;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-image {
+  width: 50%;
+  flex: 1 1 100%;
+}
+.elementor-widget-threatdown-hero-banner .threatdown-hero-banner .threatdown-hero-banner-image img {
+  animation: slideinstatic 1.5s ease;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  transform: perspective(600px) rotateY(-10deg) rotate(7deg) translateZ(60px) translateX(0);
+  transform-origin: center bottom;
+}
+@keyframes slideinstatic {
+  0% {
+    opacity: 0;
+    transform: perspective(630px) rotateY(0deg) rotate(0deg) translateZ(-10px) translateX(150%);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(600px) rotateY(-10deg) rotate(7deg) translateZ(60px) translateX(0);
+  }
+}
+
+.elementor-widget-threatdown-media-box .threatdown-media-box {
+  display: flex;
+  gap: 20px;
+}
+.elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-content {
+  width: 50%;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
+}
+.elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-content .threatdown-media-box-btn-group {
+  margin-top: 16px;
+}
+.elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-content .threatdown-media-box-btn-group a {
+  text-underline-offset: 4px;
+}
+.elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-content .threatdown-media-box-content__heading {
+  margin: 20px 0;
+}
+.elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-content .threatdown-media-box-content__description {
+  margin: 12px 0 5px;
+}
+.elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-content__list-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 16px 0;
+}
+.elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-content__list-item .threatdown-media-box-content__list-icon i, .elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-content__list-item .threatdown-media-box-content__list-icon img {
+  border-radius: 50%;
+  padding: 5px;
+}
+.elementor-widget-threatdown-media-box .threatdown-media-box .threatdown-media-box-image {
+  width: 50%;
+}
+
+.elementor-widget-threatdown-price-box {
+  padding: 16px;
+  position: relative;
+}
+.elementor-widget-threatdown-price-box .price-box-price-section {
+  text-align: center;
+  padding: 20px 0;
+}
+.elementor-widget-threatdown-price-box .price-box-price-section .price-box-button {
+  display: block;
+  margin: 10px 0;
+}
+.elementor-widget-threatdown-price-box .price-box-price-section .price-box-contact-link {
+  text-decoration: underline;
+}
+.elementor-widget-threatdown-price-box .price-box-features-section {
+  border-top: 1px solid #eaeaea;
+  padding: 10px 0 50px 0;
+}
+.elementor-widget-threatdown-price-box .price-box-features-section .price-box-features-title {
+  margin: 10px 0 20px 0;
+}
+.elementor-widget-threatdown-price-box .price-box-features-section .price-box-features {
+  list-style-type: none;
+  padding-left: 0;
+}
+.elementor-widget-threatdown-price-box .price-box-features-section .price-box-features li {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+  align-items: center;
+}
+.elementor-widget-threatdown-price-box .price-box-features-section .price-box-features li i {
+  color: green;
+}
+.elementor-widget-threatdown-price-box .price-box-addons-section {
+  padding: 10px 0;
+  border-top: 1px solid #eaeaea;
+}
+.elementor-widget-threatdown-price-box .price-box-addons-section .price-box-addons-title {
+  margin: 10px 0 20px 0;
+}
+.elementor-widget-threatdown-price-box .price-box-addons-section .price-box-addons {
+  list-style-type: none;
+  padding-left: 0;
+}
+.elementor-widget-threatdown-price-box .price-box-addons-section .price-box-addons li {
+  display: flex;
+  gap: 20px;
+  margin: 10px 0;
+  align-items: center;
+}
+.elementor-widget-threatdown-price-box .price-box-best-value {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  padding: 1px 4px;
+  border: 1px solid #bbf7d0;
+}
+
+.elementor-widget-threatdown-get-quote .threatdown-get-quote {
+  display: flex;
+}
+.elementor-widget-threatdown-get-quote .threatdown-get-quote-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.elementor-widget-threatdown-cross-bg::before {
+  bottom: 0;
+  content: "";
+  height: 50%;
+  left: 0;
+  max-height: 600px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+/*# sourceMappingURL=main.css.map*/
