@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "md-bakery-antian/sample",
+  "version": "1.1.0",
+  "title": "Sample Block",
+  "category": "md-bakery-antian",
+  "icon": "lock",
+  "description": "Sample block.",
+  "keywords": [
+    "sample",
+    "Block"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-bakery-antian",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js"
+}
