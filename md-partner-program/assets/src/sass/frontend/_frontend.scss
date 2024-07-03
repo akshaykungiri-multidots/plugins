@@ -1,0 +1,723 @@
+body, * {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    box-sizing: border-box;
+    --webkit-font-smoothing: antialiased;
+}
+
+.md_bakery_partner_pre_text {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    .md_bakery_partner_pre_text__image {
+        width: 18px;
+        height: 18px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        padding-bottom: 0;
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+.partner-hero-banner {
+    padding: 75px 30px;
+    .hero-banner-content__inner {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        align-items: center;
+        .hero-banner-logo {
+            max-width: 40%;
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .hero-banner-buttons {
+            display: flex;
+            gap: 30px;
+            margin: 18px 0 0;
+            a {
+                border-radius: 50px;
+                padding: 10px 60px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.bakery_partner__icon-box {
+    margin-bottom: 50px;
+    .bakery_partner__icon-box__heading {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
+        h6 {
+            color: #0c71c3;
+            margin: 0;
+            font-size: 18px;
+        }
+        h2 {
+            font-size: 40px;
+            padding-bottom: 10px;
+            color: #000;
+            margin: 20px auto;
+            line-height: 1.4;
+            width: 1046px;
+        }
+        p {
+            font-size: 16px;
+            margin: 0 auto;
+            max-width: 80%;
+        }
+    }
+    .bakery_antian__box {
+        max-width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        .bakery_antian__box-item {
+            width: calc(33% - 30px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            .bakery_antian__box-icon {
+                width: 25%;
+                margin: 0 0 20px;
+                i {
+                    font-size: 40px;
+                    color: #f75227;
+                }
+            }
+            h4 {
+                color: #000;
+                font-size: 18px;
+                font-weight: 600;
+                margin: 0 0 10px;
+                padding-bottom: 10px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 1.6em;
+                margin: 0;
+                color: #666;
+            }
+        }
+    }
+}
+
+.bakery_partner__anitian_approach {
+    .bakery_partner__anitian_approach__inner {
+        padding: 60px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .bakery_partner__anitian_approach__heading {
+            width: 50%;
+            padding: 5% 5% 5% 15%;
+            h6 {
+                color: #0c71c3;
+                margin: 0;
+                font-size: 18px;
+                padding-bottom: 10px;
+            }
+            .md_bakery_partner_pre_text {
+                margin-bottom: 30px;
+                h2 {
+                    font-size: 30px;
+                    color: #000;
+                    margin: 0;
+                    font-weight: 600;
+                }
+                .md_bakery_partner_pre_text__image {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            p {
+                font-size: 16px;
+                line-height: 1.6em;
+                margin: 0;
+                font-weight: 500;
+            }
+            .bakery_anitian_approaches_button {
+                margin: 40px 0 0;
+                a {
+                    border-radius: 50px;
+                    padding-left: 25px;
+                    padding-right: 25px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: 500;
+                    background: #f75227;
+                    cursor: pointer;
+                    display: block;
+                    position: relative;
+                    border: 2px solid #f75227;
+                    transition: all .4s cubic-bezier(.42,0,.58,1);
+                    text-decoration: none;
+                    width: max-content;
+                }
+            }
+        }
+        .bakery_anitian_approaches_items {
+            width: 50%;
+            background-color: #0b3354;
+            border-radius: 100px 0 0 100px;
+            padding: 5% 13% 5% 8%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 0;
+
+            .anitian_approaches_item {
+                display: flex;
+                gap: 10px;
+                width: calc(100% - 20px);
+                align-items: center;
+            }
+            .anitian-approach__icon {
+                text-align: center;
+                background-color: #7cda24;
+                color: #0b3354;
+                border-radius: 100%;
+                width: 25px;
+                height: 25px;
+                line-height: 25px;
+                font-size: 12px;
+            }
+            p {
+                font-size: 16px;
+                font-weight: 500;
+                color: #fff;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.bakery_antian__customer_stories {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .bakery_antiann__customer_stories__inner {
+        padding-top: 100px;
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        overflow: hidden;
+        align-items: center;
+        .bakery_antian__heading {
+            width: 40%;
+            position: relative;
+            z-index: 1;
+            h2 {
+                font: 500 50px / 1 "Poppins", sans-serif;
+                color: #000;
+                line-height: 60px;
+                margin-bottom: 30px;
+            }
+            p {
+                font: 500 20px / 1 "Poppins", sans-serif;
+                line-height: 30px;
+                margin-bottom: 30px;
+            }
+        }
+        .bakery_antian__customer_stories_slider {
+            width: 55%;
+            padding: 40px;
+            .bakery_antian__slider-item {
+                background-color: #fff;
+                box-shadow: rgba(0, 0, 0, .1) 0 20px 30px 0px;
+                padding: 40px 60px;
+                .bakery_antian__customer_stories_review__content p {
+                    font: 500 22px / 1 "Poppins", sans-serif;
+                    line-height: 34px;
+                    color: #1870b8;
+                    margin: 0 0 40px;
+                }
+                .bakery_antiann__customer_stories_review__author {
+                    display: flex;
+                    gap: 25px;
+                    align-items: center;
+                    .bakery_antiann__customer_stories_review__author__image {
+                        width: 100px;
+                        height: 100px;
+                    }
+                    .bakery_antiann__customer_stories_review__author__name {
+                        h4 {
+                            font: 600 25px / 1 "Poppins", sans-serif;
+                            line-height: 32px;
+                            color: #000;
+                            margin: 0 0 10px;
+                        }
+                        p {
+                            font: 500 13px / 1 "Poppins", sans-serif;
+                            line-height: 28px;
+                            color: #1870b8;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    .slick-arrows {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        .slick-prev {
+            margin-right: 10px;
+            background: url(../images/arrow-left.svg) no-repeat;
+            background-size: 100%;
+            width: 100px;
+            height: 18px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: all .3s linear;
+            border: none;
+        }
+        .slick-next {
+            margin-left: 10px;
+            background: url(../images/arrow-right.svg) no-repeat;
+            background-size: 100%;
+            width: 100px;
+            height: 18px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            border: none;
+            transition: all .3s linear;
+        }
+    }
+    .bakery_antiann__customer_stories__bottom {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0 50px;
+        .bakery_antiann__customer_stories__view_more {
+            line-height: 50px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            border-bottom: 1px solid #000;
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+    margin: 50px 0;
+}
+
+
+/* Slick Slider Arrows */
+ul.slick-dots {
+    flex-wrap: wrap;
+}
+
+.slick-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 0 !important;
+    background: rgba(0,0,0,0) !important;
+    cursor: pointer !important;
+    top: 40%;
+    transform: translateY(-50%);
+    border: none !important;
+    position: absolute;
+    display: block;
+}
+
+.slick-arrow:before {
+    width: 16px;
+    height: 16px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 11px;
+}
+
+.slick-prev {
+    left: -40px;
+    z-index: 1;
+}
+
+.slick-prev:before {
+    border-top: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transform: rotate(-45deg);
+}
+
+.slick-prev[aria-disabled=true] {
+    opacity: .4;
+    pointer-events: none;
+}
+
+.slick-next {
+    right: -30px;
+}
+
+.slick-next:before {
+    border-top: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transform: rotate(135deg);
+}
+
+.slick-next[aria-disabled=true] {
+    opacity: .4;
+    pointer-events: none;
+}
+
+/* Slick Slider Dots */
+.slick-dots {
+    text-align: center; /* Center align dots */
+    margin-top: 20px; /* Space above dots */
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px; /* Space between dots */
+}
+
+.slick-dots li button {
+    font-size: 0; /* Hide default button text */
+    background-color: #dce1fc; /* Dot color */
+    width: 12px; /* Dot width */
+    height: 12px; /* Dot height */
+    border-radius: 50%; /* Rounded dots */
+    border-color: #506cf0; /* Remove dot border */
+    padding: 5px;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #506cf0; /* Active dot color */
+}
+
+.slick-dots li button:hover {
+    background-color: #506cf0; /* Dot color on hover */
+}
+
+.bakery_partner__partner_types {
+    .bakery_partner__partner_types__heading {
+        margin-bottom: 40px;
+        .md_bakery_partner_pre_text__image {
+            width: 28px;
+            height: 28px;
+        }
+        h2 {
+            font-size: 30px;
+            color: #333;
+            font-weight: 500;
+        }
+    }
+    .bakery_antian__box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        .bakery_antian__box-item {
+            width: calc(33.3333333333% - 40px);
+            .bakery_antian__box-content {
+                padding: 45px 20px 15px 20px;
+                margin-bottom: 80px;
+                box-shadow: 0px 12px 18px -10px rgba(0, 0, 0, .3);
+                border: 0 solid #333;
+                border-width: 0 1px 1px 1px;
+                border-color: #d3d3d3;
+                border-radius: 0 0 5px 5px;
+                position: relative;
+            }
+            .md_bakery_partner_pre_text {
+                margin-bottom: 15px;
+                h4 {
+                    line-height: 150%;
+                    letter-spacing: .01em;
+                    width: 100%;
+                    font-size: 22px;
+                }
+            }
+            .bakery_antian__box-link {
+                margin: 0;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-size: 13px;
+                color: #000;
+                border-bottom: 1px solid;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.bakery_partner_levels {
+    margin: 50px 0;
+    .bakery_partner_levels__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+        align-items: center;
+        .bakery_partner_levels__left { 
+            width: 50%; 
+            .bakery_partner_levels__heading {
+                .md_bakery_partner_pre_text {
+                    img {
+                        height: 28px;
+                        width: 28px;
+                    }
+                    h2 {
+                        font-size: 40px;
+                        font-weight: 600;
+                    }
+                    margin-bottom: 20px;
+                }
+                p {
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+            .bakery_antian__box {
+                margin-top: 50px;
+                .bakery_antian__box-item {
+                    margin: 0 0 30px;
+                    .md_bakery_partner_pre_text {
+                        gap: 10px;
+                        margin-bottom: 10px;
+                        h4 {
+                            font-size: 18px;
+                            font-weight: 600;
+                        }
+                    }
+                    p {
+                        font-size: 14px;
+                        color: #666;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .bakery_partner_levels__right { width: 40%; }
+    }
+}
+
+.bakery_antian__logo_slider {
+    margin: 50px 0;
+    .bakery_antian__logo_slider__inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5%;
+        align-items: center;
+        justify-content: space-between;
+        .bakery_antian__logo_slider-left {
+            width: 47.5%;
+            .bakery_antiab__partner-images {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5%;
+                img { width: 47%; }
+            }
+        }
+        .bakery_antian__logo_slider-right {
+            width: 47.5%;
+            .bakery_antian__logo_slider--heading {
+                text-align: center;
+                h2 {
+                    color: #000;
+                    margin: 0 0 20px;
+                    font-size: 30px;
+                    line-height: 1.5em;
+                    font-weight: 500;
+                }
+                p {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.partner__media_and_text {
+    background-blend-mode: normal !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    position: relative;
+    max-height: 750px;
+    margin-bottom: 100px;
+    padding: 60px 0;
+    &.style1 {
+        .media-and-text-section-two__top-wave {
+            height: 250px;
+            background-repeat: no-repeat;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 15px;
+        .partner__media_and_text__inner {
+            display: flex;
+            gap: 7%;
+            position: relative;
+            z-index: 1;
+            align-items: center;
+            &.partner__media_and_text__inner--left {
+                flex-direction: row-reverse;
+            }
+            .partner__media_and_text-content {
+                flex-basis: 50%;
+                padding: 60px 40px;
+                background-color: #fff;
+                border-radius: 5px;
+                margin-left: 5%;
+                .md_bakery_partner_pre_text {
+                    img {
+                        width: 28px;
+                        height: 28px;
+                    }
+                    h1 {
+                        font-weight: 600;
+                        color: #000;
+                        position: relative;
+                        font-size: 30px;
+                        line-height: 1.3em;
+                        margin: 0;
+                    }
+                    margin-bottom: 30px;
+                }
+                .description {
+                    color: #000;
+                    line-height: 1.8em;
+                    font-weight: 500;
+                    font-size: 16px;
+                    margin-bottom: 1em;
+                }
+                .partner__media_and_text-buttons {
+                    a {
+                        min-width: 100px;
+                        text-align: center;
+                        display: inline-block;
+                        cursor: pointer;
+                        word-break: break-word;
+                        text-decoration: none;
+                        position: relative;
+                        padding: 8px 20px;
+                        margin: 0;
+                        line-height: 1.4;
+                        text-decoration: none;
+                        background-color: rgba(0, 0, 0, 0);
+                        font-size: 13px;
+                        letter-spacing: 2px;
+                        font-weight: 500;
+                        color: #000;
+                        border: none;
+                        border-bottom: 1px solid #000;
+                        border-radius: 0;
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+            .partner__media_and_text-media {
+                flex-basis: 43%;
+            }
+        }
+    }
+    &.style2 {
+        .media-and-text-section-two__top-wave {
+            background-size: calc(100% + 2px) calc(100% + 2px) !important;
+            background-repeat: no-repeat !important;
+            background-position: 50% !important;
+            overflow: hidden;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: scale(-1, 1);
+        }
+        .partner__media_and_text__inner {
+            gap: 4%;
+            .partner__media_and_text-content {
+                margin-left: 0;
+                .partner__media_and_text-buttons {
+                    margin: 40px 0 0;
+                    a {
+                        border-radius: 50px;
+                        padding-left: 25px;
+                        padding-right: 25px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        cursor: pointer;
+                        display: block;
+                        position: relative;
+                        border: 2px solid #f75227;
+                        transition: all .4s cubic-bezier(.42,0,.58,1);
+                        display: inline-block;
+                    }
+                }
+            }
+            .partner__media_and_text-media {
+                width: 50%;
+                flex-basis: unset;
+                img {
+                    max-width: 65%;
+                    display: block;
+                    margin: 0 auto;
+                    border-radius: 10px 0 10px 10px;
+                    box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, .3);
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+.partner_lets_work {
+    .hero-banner-content__inner {
+        gap: 20px;
+        h1 {
+            font-weight: 600;
+            line-height: 1.1em;
+            color: #fff;
+            margin: 0 0 20px;
+            font-size: 60px
+        }
+        .description {
+            font-size: 18px;
+            line-height: 1.4em;
+            color: #fff;
+        }
+    }
+}
