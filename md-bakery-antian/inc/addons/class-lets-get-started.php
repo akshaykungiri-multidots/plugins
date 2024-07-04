@@ -75,6 +75,7 @@ class Lets_Get_Started {
                 )
             ),
             'category' => __('Antian', 'md-bakery-antian'),
+            'icon' => 'icon-wpb-toggle-small-expand',
         ));
     }
 

@@ -150,6 +150,8 @@ class Slider_Image_Box {
                     'group' => 'Slider Options'
                 ),
             ),
+            // slider icon
+            'icon' => 'icon-wpb-ui-pageable',
         ));
     }
 

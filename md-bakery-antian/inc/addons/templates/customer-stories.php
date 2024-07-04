@@ -1,6 +1,9 @@
 <?php
 // Template for image banner.
-$customer_stories_slides = vc_param_group_parse_atts($atts['customer_stories_slides']);
+$customer_stories_slides = [];
+if (isset($atts['customer_stories_slides']) && !empty($atts['customer_stories_slides'])){
+    $customer_stories_slides = vc_param_group_parse_atts($atts['customer_stories_slides']);
+}
 $background_image = wp_get_attachment_image_url($atts['background_image'], 'full');
 $background_color = $atts['background_color'];
 $view_more_link = vc_build_link($atts['view_more_link']);
@@ -14,9 +17,11 @@ $view_more_link = vc_build_link($atts['view_more_link']);
                         <h2><?php echo esc_html($atts['heading']); ?></h2>
                         <p><?php echo esc_html($atts['description']); ?></p>
                     </div>
+                    <?php if ( !empty( $customer_stories_slides ) ) : ?>
                     <div class="bakery_antian__customer_stories_slider md-slick-slider" data-slides-to-show="<?php echo esc_attr($atts['slides_to_show']); ?>" data-slides-to-scroll="<?php echo esc_attr($atts['slides_to_scroll']); ?>" data-autoplay="<?php echo esc_attr($atts['autoplay']); ?>" data-autoplay-speed="<?php echo esc_attr($atts['autoplay_speed']); ?>" data-infinite-scroll="<?php echo esc_attr($atts['infinite_scroll']); ?>" data-dots="<?php echo esc_attr($atts['dots']); ?>" data-arrows="<?php echo esc_attr($atts['arrows']); ?>">
                         <?php 
                         foreach ($customer_stories_slides as $slide) : 
+                            if (!empty($slide)) {
                             $author_image = wp_get_attachment_image_url($slide['author_image'], 'full');
                         ?>
                             <div class="bakery_antian__slider-item">
@@ -35,8 +40,12 @@ $view_more_link = vc_build_link($atts['view_more_link']);
                                     </div>
                                 </div>
                             </div>
-                        <?php endforeach; ?>
+                        <?php 
+                            }
+                        endforeach; 
+                        ?>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -47,10 +56,12 @@ $view_more_link = vc_build_link($atts['view_more_link']);
                         <a href="<?php echo esc_url($view_more_link['url']); ?>" class="bakery_antian__button"><?php echo esc_html($view_more_link['title']); ?></a>
                     <?php endif; ?>
                 </div>
-                <div class="slick-arrows">
-                    <button type="button" class="slick-prev"></button>
-                    <button type="button" class="slick-next"></button>
-                </div>
+                <?php if ( !empty( $customer_stories_slides ) ) : ?>
+                    <div class="slick-arrows">
+                        <button type="button" class="slick-prev"></button>
+                        <button type="button" class="slick-next"></button>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

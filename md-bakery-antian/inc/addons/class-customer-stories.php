@@ -182,6 +182,7 @@ class Customer_Stories {
                     'group' => 'Slider Options'
                 ),
             ),
+            'icon' => 'icon-wpb-images-carousel',
         ));
     }
 

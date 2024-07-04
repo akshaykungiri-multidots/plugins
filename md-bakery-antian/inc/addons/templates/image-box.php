@@ -1,6 +1,9 @@
 <?php
 // Template for image banner.
-$image_boxes = vc_param_group_parse_atts($atts['image_boxes']);
+$image_boxes = [];
+if (isset($atts['image_boxes']) && !empty($atts['image_boxes'])){
+    $image_boxes = vc_param_group_parse_atts($atts['image_boxes']);
+}
 ?>
 <div class="bakery_antian__box-image-box">
     <div class="container">
@@ -17,6 +20,7 @@ $image_boxes = vc_param_group_parse_atts($atts['image_boxes']);
                 <div class="bakery_antian__box" >
                     <?php 
                     foreach ($image_boxes as $slide) : 
+                        if (!empty($slide)) {
                         $box_image = wp_get_attachment_image_url($slide['box_image'], 'full');
                     ?>
                         <div class="bakery_antian__box-item">
@@ -28,7 +32,10 @@ $image_boxes = vc_param_group_parse_atts($atts['image_boxes']);
                                 <p><?php echo esc_html($slide['box_content']); ?></p>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php 
+                        }
+                    endforeach; 
+                    ?>
                 </div>
             </div>
         </div>

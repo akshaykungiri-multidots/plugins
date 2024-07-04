@@ -75,6 +75,7 @@ class Hero_Banner {
                 )
             ),
             'category' => __('Antian', 'md-bakery-antian'),
+            'icon' => 'icon-wpb-call-to-action',
         ));
     }
 

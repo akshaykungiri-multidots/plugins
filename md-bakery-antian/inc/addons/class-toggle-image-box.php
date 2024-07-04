@@ -82,6 +82,7 @@ class Toggle_Image_Box {
                     ),
                 ),
             ),
+            'icon' => 'icon-wpb-images-carousel',
         ));
     }
 

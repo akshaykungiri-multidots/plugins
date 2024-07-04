@@ -89,6 +89,7 @@ class Media_Content {
                     ),
                 ),
             ),
+            'icon' => 'md-icons fa fa-columns',
         ));
     }
 

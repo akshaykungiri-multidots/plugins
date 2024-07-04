@@ -38,7 +38,7 @@ class Logo_Slider {
             'name' => __('Logo Slider', 'md-bakery-antian'),
             'base' => 'logo_slider',
             'category' => __('Antian', 'md-bakery-antian'),
-            // Repeatable field
+            'icon' => 'icon-wpb-application-icon-large',
             // Repeatable field
             'params' => array(
                 // Heading

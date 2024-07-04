@@ -1,5 +1,8 @@
 <?php
-$toggle_image_box_items = vc_param_group_parse_atts($atts['image_box_items']);
+$toggle_image_box_items = [];
+if (isset($atts['image_box_items']) && !empty($atts['image_box_items'])){
+    $toggle_image_box_items = vc_param_group_parse_atts($atts['image_box_items']);
+}
 ?>
 <div class="bakery_antian__toggle-image-box">
     <div class="container">
@@ -15,6 +18,7 @@ $toggle_image_box_items = vc_param_group_parse_atts($atts['image_box_items']);
                 <div class="bakery_antian__toggle-box-image">
                     <?php 
                     foreach ($toggle_image_box_items as $toggle_image_box_item) : 
+                        if (!empty($toggle_image_box_item)) {
                         $toggle_image_box_image = wp_get_attachment_image_url($toggle_image_box_item['toggle_image_box_image'], 'full');
                     ?>
                         <div class="bakery_antian__toggle-box-image-item">
@@ -31,7 +35,9 @@ $toggle_image_box_items = vc_param_group_parse_atts($atts['image_box_items']);
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php } 
+                    endforeach; 
+                    ?>
                 </div>
             </div>
         </div>

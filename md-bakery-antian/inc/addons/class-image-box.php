@@ -89,6 +89,7 @@ class Image_Box {
                     ),
                 ),
             ),
+            'icon' => 'md-icons fa fa-image',
         ));
     }
 

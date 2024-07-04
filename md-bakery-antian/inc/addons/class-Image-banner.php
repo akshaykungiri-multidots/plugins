@@ -91,6 +91,7 @@ class Image_Banner {
                 ),
             ),
             'category' => __('Antian', 'md-bakery-antian'),
+            'icon' => 'vc_icon-vc-hoverbox',
         ));
     }
 

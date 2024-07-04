@@ -16,9 +16,11 @@ $image_size = $atts['image_size'];
                 <h2 class="image-banner__title"><?php echo wp_kses_post($atts['title']); ?></h2>
                 <div class="image-banner__desc"><?php echo wp_kses_post($atts['description']); ?></div>
             </div>
+            <?php if (!empty($banner_image)) : ?>
             <div class="image-banner-image <?php echo esc_attr($image_size); ?>">
                 <img src="<?php echo esc_url($banner_image); ?>" alt="Banner Image">
             </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>
