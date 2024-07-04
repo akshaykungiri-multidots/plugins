@@ -168,6 +168,7 @@ class Logo_Slider {
                     'group' => 'Slider Options'
                 ),
             ),
+            'icon' => 'icon-wpb-flickr',
         ));
     }
 
@@ -195,7 +196,10 @@ class Logo_Slider {
         );
         ob_start();
         // Template for image banner.
-        $slides = vc_param_group_parse_atts($atts['slides']);
+        $slides = [];
+        if (isset($atts['slides']) && !empty($atts['slides'])){
+            $slides = vc_param_group_parse_atts($atts['slides']);
+        }
         $image_border_enable = $atts['image_border_enable'] == 'yes' ? 'image-border-enable' : '';
         ?>
         <div class="bakery_antian__logo_slider">
@@ -205,8 +209,12 @@ class Logo_Slider {
                         <div class="bakery_antian__logo_slider__inner">
                             <div class="bakery_antian__logo_slider-left">
                                 <div class="bakery_antiab__partner-images">
-                                    <img src="<?php echo esc_url(wp_get_attachment_image_url($atts['partner_image_1'], 'full')); ?>" alt="Partner Image 1">
-                                    <img src="<?php echo esc_url(wp_get_attachment_image_url($atts['partner_image_2'], 'full')); ?>" alt="Partner Image 2">
+                                    <?php if (!empty($atts['partner_image_1'])) : ?>
+                                        <img src="<?php echo esc_url(wp_get_attachment_image_url($atts['partner_image_1'], 'full')); ?>" alt="Partner Image 1">
+                                    <?php endif; ?>
+                                    <?php if (!empty($atts['partner_image_2'])) : ?>
+                                        <img src="<?php echo esc_url(wp_get_attachment_image_url($atts['partner_image_2'], 'full')); ?>" alt="Partner Image 2">
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="bakery_antian__logo_slider-right">
@@ -217,6 +225,9 @@ class Logo_Slider {
                                 <div class="bakery_antian__slider md-slick-slider <?php echo esc_attr($image_border_enable); ?>" data-slides-to-show="<?php echo esc_attr($atts['slides_to_show']); ?>" data-slides-to-scroll="<?php echo esc_attr($atts['slides_to_scroll']); ?>" data-autoplay="<?php echo esc_attr($atts['autoplay']); ?>" data-autoplay-speed="<?php echo esc_attr($atts['autoplay_speed']); ?>" data-infinite-scroll="<?php echo esc_attr($atts['infinite_scroll']); ?>" data-dots="<?php echo esc_attr($atts['dots']); ?>" data-arrows="<?php echo esc_attr($atts['arrows']); ?>">
                                     <?php 
                                     foreach ($slides as $slide) : 
+                                        if (empty($slide)) {
+                                            continue;
+                                        }
                                         $slider_logo = wp_get_attachment_image_url($slide['slider_logo'], 'full');
                                     ?>
                                         <div class="bakery_antian__slider-item">

@@ -98,6 +98,7 @@ class Partner_Levels {
                     'group' => __('Design Options', 'md-bakery-antian'),
                 ),
             ),
+            'icon' => 'icon-wpb-layout_sidebar',
         ));
     }
 
@@ -114,7 +115,10 @@ class Partner_Levels {
             ),
             $atts
         );
-        $image_boxes = vc_param_group_parse_atts($atts['partner_levels']);
+        $image_boxes = [];
+        if (isset($atts['partner_levels']) && !empty($atts['partner_levels'])){
+            $image_boxes = vc_param_group_parse_atts($atts['partner_levels']);
+        }
         ob_start();
         ?>
         <div class="bakery_partner_levels">
@@ -133,6 +137,7 @@ class Partner_Levels {
                                 <div class="bakery_antian__box" >
                                     <?php 
                                     foreach ($image_boxes as $slide) : 
+                                        if (!empty($slide)) {
                                     ?>
                                         <div class="bakery_antian__box-item">
                                             <div class="md_bakery_partner_pre_text">
@@ -141,7 +146,9 @@ class Partner_Levels {
                                             </div>
                                             <p><?php echo esc_html($slide['box_content']); ?></p>
                                         </div>
-                                    <?php endforeach; ?>
+                                    <?php 
+                                        }
+                                    endforeach; ?>
                                 </div>
                             </div>
                             <div class="bakery_partner_levels__right">

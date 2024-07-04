@@ -6,5 +6,9 @@
   src: url(/wp-content/plugins/md-partner-program/assets/build/fonts/Roboto-Black.cf56c1b1.ttf);
   font-weight: normal;
 }
+.md-icons.fa {
+  font-size: 30px;
+  background-image: none;
+}
 
 /*# sourceMappingURL=admin.css.map*/

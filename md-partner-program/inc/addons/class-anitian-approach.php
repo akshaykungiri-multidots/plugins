@@ -82,6 +82,8 @@ class Anitian_Approach {
                     ),
                 ),
             ),
+
+            'icon' => 'icon-wpb-call-to-action',
         ));
     }
 
@@ -98,7 +100,10 @@ class Anitian_Approach {
             ),
             $atts
         );
-        $anitian_approaches_items = vc_param_group_parse_atts($atts['anitian_approaches_items']);
+        $anitian_approaches_items = [];
+        if (isset($atts['anitian_approaches_items']) && !empty($atts['anitian_approaches_items'])){
+            $anitian_approaches_items = vc_param_group_parse_atts($atts['anitian_approaches_items']);
+        }
         $approach_button = vc_build_link($atts['button']);
         ob_start();
         ?>
@@ -120,12 +125,16 @@ class Anitian_Approach {
                                 <?php endif; ?>
                             </div>
                             <div class="bakery_anitian_approaches_items" >
-                                <?php foreach ($anitian_approaches_items as $slide) : ?>
+                                <?php foreach ($anitian_approaches_items as $slide) : 
+                                    if (!empty($slide)) :
+                                    ?>
                                     <div class="anitian_approaches_item">
                                         <i class="anitian-approach__icon fa fa-check is-small"></i>
                                         <p><?php echo esc_html($slide['approach_content']); ?></p>
                                     </div>
-                                <?php endforeach; ?>
+                                <?php 
+                                    endif;
+                                endforeach; ?>
                             </div>
                         </div>
                     </div>

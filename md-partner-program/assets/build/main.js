@@ -19,13 +19,11 @@
     // Create slick slider js for md-slick-slider.
     setTimeout(function () {
       var $slider = $('.md-slick-slider');
-
       if ($slider.length > 0) {
         $slider.each(function () {
           if ($(this).hasClass('slick-initialized')) {
             $(this).slick('unslick');
           }
-
           console.log($(this).data('dots'));
           $(this).slick({
             slidesToShow: $(this).data('slides-to-show'),
@@ -41,7 +39,6 @@
       }
     }, 10);
   }
-
   md_create_slick_slider();
   $(document).on("click", ".bakery_antiann__customer_stories__bottom .slick-prev", function () {
     $(this).parent().parent().parent().parent().find(".md-slick-slider").slick("slickPrev");
@@ -146,8 +143,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _frontend_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./frontend/index */ "./src/js/frontend/index.js");
 /* harmony import */ var _frontend_index__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_frontend_index__WEBPACK_IMPORTED_MODULE_1__);
 // Styles
- // Javascript
 
+
+// Javascript
 
 })();
 

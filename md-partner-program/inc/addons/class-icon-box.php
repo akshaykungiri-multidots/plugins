@@ -101,6 +101,7 @@ class Icon_Box {
                     ),
                 ),
             ),
+            'icon' => 'icon-wpb-vc_icon',
         ));
     }
 
@@ -117,7 +118,10 @@ class Icon_Box {
             ),
             $atts
         );
-        $image_boxes = vc_param_group_parse_atts($atts['icon_boxes']);
+        $image_boxes = [];
+        if (isset($atts['icon_boxes']) && !empty($atts['icon_boxes'])){
+            $image_boxes = vc_param_group_parse_atts($atts['icon_boxes']);
+        }
         ob_start();
         ?>
         <div class="bakery_partner__icon-box">
@@ -139,6 +143,7 @@ class Icon_Box {
                         <div class="bakery_antian__box" >
                             <?php 
                             foreach ($image_boxes as $slide) : 
+                                if (!empty($slide)) {
                             ?>
                                 <div class="bakery_antian__box-item">
                                     <div class="bakery_antian__box-icon">
@@ -149,7 +154,9 @@ class Icon_Box {
                                         <p><?php echo esc_html($slide['box_content']); ?></p>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
+                            <?php 
+                                }
+                            endforeach; ?>
                         </div>
                     </div>
                 </div>

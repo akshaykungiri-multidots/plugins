@@ -135,6 +135,7 @@ class Lets_Work {
                 ),
             ),
             'category' => __('Antian', 'md-bakery-antian'),
+            'icon' => 'icon-wpb-toggle-small-expand',
         ));
     }
 

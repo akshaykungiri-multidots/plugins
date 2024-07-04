@@ -97,6 +97,7 @@ class Partner_Types {
                     ),
                 ),
             ),
+            'icon' => 'icon-wpb-slideshow',
         ));
     }
 
@@ -111,7 +112,10 @@ class Partner_Types {
             ),
             $atts
         );
-        $image_boxes = vc_param_group_parse_atts($atts['partner_types']);
+        $image_boxes = [];
+        if (isset($atts['partner_types']) && !empty($atts['partner_types'])){
+            $image_boxes = vc_param_group_parse_atts($atts['partner_types']);
+        }
         ob_start();
         ?>
         <div class="bakery_partner__partner_types">
@@ -131,6 +135,7 @@ class Partner_Types {
                         <div class="bakery_antian__box" >
                             <?php 
                             foreach ($image_boxes as $slide) : 
+                                if (!empty($slide)) {
                                 $learn_more_link = vc_build_link($slide['link']);
                             ?>
                                 <div class="bakery_antian__box-item" style="border-top: 5px solid <?php echo esc_attr($slide['card_color']); ?>">
@@ -148,7 +153,9 @@ class Partner_Types {
                                         <img src="<?php echo esc_url(wp_get_attachment_image_url($slide['partner_logo'], 'full')); ?>" alt="partner-logo" />
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
+                            <?php 
+                                }
+                            endforeach; ?>
                         </div>
                     </div>
                 </div>

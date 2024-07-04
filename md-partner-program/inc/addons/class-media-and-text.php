@@ -169,6 +169,7 @@ class Media_And_Text {
                 ),
             ),
             'category' => __('Antian', 'md-bakery-antian'),
+            'icon' => 'vc_icon-vc-hoverbox',
         ));
     }
 
@@ -211,7 +212,9 @@ class Media_And_Text {
         ob_start();
         ?>
         <div class="partner__media_and_text <?php echo esc_attr($atts['media_style']); ?>" style="background: url(<?php echo esc_url($background_image); ?>); background-color: <?php echo esc_attr($background_overlay); ?>;">
-            <div class="media-and-text-section-two__top-wave" style="background: url(<?php echo esc_url($media_image_top_wave); ?>);"></div>
+            <?php if ( !empty( $media_image_top_wave ) ) : ?>
+                <div class="media-and-text-section-two__top-wave" style="background: url(<?php echo esc_url($media_image_top_wave); ?>);"></div>
+            <?php endif; ?>
             <div class="container">
                 <div class="partner__media_and_text__wrapper">
                     <div class="partner__media_and_text__inner <?php echo esc_attr($media_alignment_class); ?>">
@@ -227,9 +230,11 @@ class Media_And_Text {
                                 <?php endif; ?>
                             </div>
                         </div>
-                        <div class="partner__media_and_text-media">
-                            <img src="<?php echo esc_url($media_image); ?>" alt="media image">
-                        </div>
+                        <?php if ( !empty( $media_image ) ) : ?>
+                            <div class="partner__media_and_text-media">
+                                <img src="<?php echo esc_url($media_image); ?>" alt="media image">
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
