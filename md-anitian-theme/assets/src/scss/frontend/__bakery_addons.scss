@@ -1,0 +1,1283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body * {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2em;
+}
+h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.4em;
+}
+h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+h5 {
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.6em;
+}
+h6 {
+    font-size: .8em;
+    font-weight: 700;
+    line-height: 1.7em;
+}
+p {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+.btn-anitian {
+    font-size: 16px;
+    min-width: 100px;
+    text-align: center;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    border: 2px solid rgba(0, 0, 0, 0);
+    background-color: #f75227;
+    cursor: pointer;
+    letter-spacing: .16px;
+    word-break: break-word;
+    text-decoration: none;
+    position: relative;
+    padding: 8px 20px;
+    margin: 0;
+    line-height: 1.4;
+    border-radius: 50px;
+    transition: 150ms ease-out;
+}
+
+.bg-orange {
+    background-color: #f75227;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.color-white {
+    color: #fff;
+}
+
+.color-blue {
+    color: #0c71c3;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.md_anitian_three_column_header {
+    .md_anitian_three_column_header__bg_image {
+        background-size: contain;
+        background-position: right 0px top;
+        background-repeat: no-repeat;
+        padding: 75px 0 110px;
+        .md_anitian_three_column_header__heading {
+            h2 {
+                width: 50%;
+                font-weight: 600;
+                line-height: 1.3em;
+                text-align: left;
+                font-size: 35px;
+            }
+        }
+    }
+    .md_anitian_three_column_header__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        .md_anitian_three_column_header__item {
+            display: flex;
+            max-width: calc(33.3333% - 20px);
+            flex-basis: calc(33.3333% - 20px);
+            .md_anitian_three_column_header__item__image {
+                width: 50px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .md_anitian_three_column_header__item__content {
+                width: calc(100% - 50px);
+                padding-left: 15px;
+                h5 {
+                    font-weight: 600;
+                    color: #000;
+                    line-height: 1.6em;
+                    margin: 0 0 10px;
+                }
+                p {
+                    font-weight: 300;
+                    font-size: 16px;
+                    margin: 0;
+                    padding-bottom: 10px;
+                }
+                a {
+                    margin: 0;
+                    position: relative;
+                    font-weight: 300;
+                    font-size: 16px;
+                    width: -moz-max-content;
+                    width: max-content;
+                    color: #2ea3f2;
+                    display: inline-block;
+                }
+            }
+            &:not(:first-child) {
+                padding-left: 24px;
+                border-left: 2px dotted rgba(0, 0, 0, .18);
+            }
+        }
+    }
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.md_anitian_card_block {
+    background-color: #f2f2f2;
+    position: relative;
+    padding: 60px 0;
+    padding-top: 80px;
+    .md_anitian_card_block__heading {
+        text-align: center;
+        margin-bottom: 50px;
+        h3 {
+            font-size: 16px;
+            color: #0c71c3;
+            font-weight: 600;
+            line-height: 1.9em;
+            text-align: center;
+            margin: 0;
+            padding-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-weight: 600;
+            color: #000;
+            line-height: 1.5em;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            font-size: 40px;
+            strong {
+                font-size: inherit;
+                font-weight: 700;
+            }
+        }
+        p {
+            text-align: center;
+            max-width: 991px;
+            width: 100%;
+            margin: auto;
+            font-weight: 300;
+        }
+    }
+    .md_anitian_card_block__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        .md_anitian_card_block__item {
+            width: calc(33.3333333333% - 34px);
+            background-color: #fff;
+            box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, .3);
+            padding: 25px;
+            border-radius: 0;
+
+            display: flex;
+            flex-flow: wrap;
+            align-content: baseline;
+            flex: 1 0 auto;
+            position: relative;
+            .md_anitian_card_block__item__image {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 30px;
+                width: 100%;
+                img {
+                    max-width: 170px;
+                    width: 65%;
+                    height: auto;
+                    border-radius: 0;
+                    margin: auto;
+                    display: block;
+                }
+            }
+            .md_anitian_card_block__item__content {
+                padding: 0;
+                text-align: center;
+                width: 100%;
+                h3 {
+                    line-height: 150%;
+                    margin: 0 0 15px;
+                    letter-spacing: .01em;
+                    width: 100%;
+                    font-size: 22px;
+                    font-weight: 600;
+                    height: 33px;
+                }
+                p {
+                    font-weight: 300;
+                    line-height: 1.5em;
+                    font-size: 16px;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &.style2 {
+        .md_anitian_card_block__item {
+            width: 47.5%;
+            flex-direction: row;
+            gap: 20px;
+            .md_anitian_card_block__item__image {
+                width: 67px;
+                margin-bottom: 0;
+                img {
+                    position: initial;
+                    object-fit: cover;
+                    max-width: 100%;
+                    height: auto;
+                    width: auto;
+                }
+            }
+            .md_anitian_card_block__item__content {
+                width: calc(100% - 87px);
+                max-width: 100%;
+                padding: 0;
+                text-align: left;
+                h3 {
+                    font-size: 16px;
+                    line-height: 1.5em;
+                    margin: 0 0 10px;
+                }
+                .md_anitian_card_block__item__content__link {
+                    p {
+                        display: inline;
+                        font-size: 15px;
+                        font-weight: 300;
+                        display: inline;
+                        margin-right: 5px;
+                    }
+                    a {
+                        display: inline;
+                        font-size: 15px;
+                        font-weight: 300;
+                        display: inline;
+                        margin-right: 5px;
+                        text-decoration: none;
+                        color: #2ea3f2;
+                    }
+                }
+            }
+        }
+    }
+
+    &.style3 {
+        padding: 180px 0 60px 0;
+        margin: -100px 0 0;    
+        .md_anitian_card_block__content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            .md_anitian_card_block__item {
+                width: 23%;
+                box-shadow: 0px 12px 18px -18px rgba(0, 0, 0, .3);
+                border-radius: 15px;
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                background-color: #fff;
+                padding: 30px 15px;
+                text-align: center;
+
+                .md_anitian_card_block__item__image {
+                    width: 50%;
+                    margin: 0 auto 20px;
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .md_anitian_card_block__item__content {
+                    h3 {
+                        font-weight: 400;
+                        margin: 0 0 20px;
+                        color: #000;
+                        font-size: 18px;
+                        height: auto;
+                    }
+                    .md_anitian_card_block__item__content__link {
+                        p {
+                            margin: 0 0 15px;
+                            font-size: 16px;
+                            line-height: 1.4em;
+                            font-weight: 300;
+                        }
+                        a {
+                            cursor: pointer;
+                            display: inline-block;
+                            padding: 0 .5em;
+                            color: #666;
+                            font-size: 13.5px;
+                            line-height: 2;
+                            border: 1px solid #ddd;
+                            border-radius: .25em;
+                            font-weight: 300;
+                            background-color: rgba(0, 0, 0, 0);
+                            i {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.md_anitian_cover_cta_wrap {
+    position: relative;
+    .md_anitian_cover_cta_arc {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIzMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0wIDE0MGgxMjgwQzU3My4wOCAxNDAgMCAwIDAgMHoiLz48L2c+PC9zdmc+);
+        background-size: 100% 300px;
+        bottom: 0;
+        height: 300px;
+        z-index: 1;
+        transform: scale(-1, 1);
+        position: absolute;
+        width: 100%;
+    }
+    .md_anitian_cover_cta {
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: normal;
+        padding: 60px 0;
+        .md_anitian_cover_cta__inner {
+            z-index: 9;
+            position: relative;
+            display: flex;
+            gap: 7%;
+            align-items: center;
+            .md_anitian_cover_cta__heading {
+                max-width: 51%;
+                width: 100%;
+                h2 {
+                    line-height: 1.3em;
+                    color: #fff;
+                    margin: 0 0 20px;
+                    font-weight: 500;
+                    font-size: 40px;
+                }
+                p {
+                    color: #fff;
+                    margin-bottom: 1em;
+                }
+                .md_anitian_cover_cta__btn a {
+                    background-color: #fff;
+                    color: #1870b8;
+                    padding: 10px 25px;
+                    font-size: 14px;
+                    margin-top: 20px;
+                
+                }
+            }
+            .md_anitian_cover_cta__image {
+                max-width: 42%;
+                width: 100%;
+                .cover_cta__image {
+                    max-width: 70%;
+                    width: 100%;
+                    margin: auto;
+                }
+            }
+        }
+        .background_overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+            z-index: 1;
+            top: 0;
+            &::before {
+                content: '';
+            }
+        }
+    }
+
+    // Style 2
+    &.style2 {
+        .md_anitian_cover_cta__heading {
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex-basis: 40%;
+            align-items: flex-start;
+            text-align: left;
+            h2, p {
+                margin-bottom: 0 !important;
+            }
+            a {
+                background-color: #66c33e !important;
+                color: #fff !important;
+                font-size: 14px;
+                letter-spacing: .7px;
+                text-transform: uppercase;
+            }
+        }
+        .md_anitian_cover_cta__image {
+            flex-basis: 51.3%;
+            position: relative;
+            z-index: 4;
+            height: 100%;
+            max-width: 51.3% !important;
+            .cover_cta__image {
+                max-width: 100% !important;
+            }
+        }
+    }
+}
+
+.md_anitian_media_with_content {
+    padding: 60px 0;
+    .md_anitian_media_with_content__inner {
+        box-shadow: 0px 10px 20px -2px #ccc;
+        padding: 40px;
+        display: flex;
+        gap: 5.5%;
+        align-items: center;
+        flex-direction: row-reverse;
+        .md_anitian_media_with_content__heading {
+            width: 72%;
+            h2 {
+                margin: 0 0 30px;
+                color: #000;
+                font-weight: 600;
+                font-size: 35px;
+                line-height: 1.2em;
+            }
+            p {
+                margin-bottom: 30px;
+                font-size: 18px;
+                font-weight: 400;
+            }
+            .md_anitian_media_with_content__buttons {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+                a {
+                    box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, .3);
+                }
+            }
+        }
+        .md_anitian_media_with_content__image {
+            width: 28%;
+        }
+        &.small {
+            .md_anitian_media_with_content__heading { width: 72%; }
+            .md_anitian_media_with_content__image { width: 28%; }
+        }
+        &.medium {
+            .md_anitian_media_with_content__heading { width: 60%; }
+            .md_anitian_media_with_content__image { width: 40%; }
+        }
+        &.large {
+            .md_anitian_media_with_content__heading { width: 50%; }
+            .md_anitian_media_with_content__image { width: 50%; }
+        }
+    }
+}
+
+.md_anitian_company_certification {
+    .md_anitian_company_certification__inner {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1920px;
+        margin: 0 auto;
+        .md_anitian_company_certification__left {
+            width: 70%;
+            padding: 50px 30px;
+            background-color: #f2f2f2;
+            .md_anitian_company_certification__heading {
+                h2 {
+                    font-weight: 700;
+                    color: #000;
+                    margin: 0;
+                    padding-bottom: 10px;
+                    line-height: 1.4em;
+                    font-size: 40px;
+                }
+            }
+            .md_anitian_company_certification__certificates {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin-top: 40px;
+                .md_anitian_company_certification__certificate {
+                    max-width: calc(25% - 23px);
+                    width: 100%;
+                    h3 {
+                        font-weight: 700;
+                        font-size: 14px;
+                        line-height: 1.4em;
+                        padding-bottom: 10px;
+                    }
+                    p {
+                        padding: 0;
+                        font-size: 12px;
+                        line-height: 1.8em;
+                        color: #666;
+                    }
+                }
+            }
+        }
+        .md_anitian_company_certification__right {
+            width: 30%;
+            padding: 50px 40px;
+            background-color: #0b3354;
+            color: #fff;
+            .md_anitian_company_certification__partner_items {
+                .md_anitian_company_certification__partner_item {
+                    .md_anitian_company_certification__partner_content {
+                        h3 {
+                            color: #fff;
+                            font-weight: 700;
+                            line-height: 1.2em;
+                            padding-bottom: 10px;
+                            margin: 0;
+                            margin-bottom: 20px;
+                            font-size: 35px;
+                        }
+                        ul {
+                            list-style-type: none;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+
+                            li {
+                                display: flex;
+                                font-weight: 500;
+                                align-items: center;
+                                gap: 15px;
+                                p {
+                                    margin: 0;
+                                    font-size: 14px;
+                                    letter-spacing: 2px;
+                                }
+                            }
+                        }
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 40px;
+                        padding-bottom: 40px;
+                        border-bottom: 1px solid #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.md_anitian_header_page_title {
+    position: relative;
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    .md_anitian_header_page_title__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.85;
+    }
+    .md_anitian_header_page_title__inner {
+        padding: 70px 0px;
+        z-index: 10;
+        position: relative;
+        text-align: center;
+        h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.3em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .md_anitian_header_page_title__buttons {
+            margin: 30px 0 0;
+        }
+    }
+}
+
+.md_anitian_leadership {
+    padding: 60px 0;
+    .md_anitian_leadership__heading {
+        margin-bottom: 60px;
+        text-align: center;
+        img {
+            max-width: 80px;
+            width: 100%;
+            margin: auto;
+            margin-bottom: 30px;
+        }
+        h2 {
+            margin: 0 0 10px;
+            font-weight: 600;
+            color: #0b3354;
+            font-size: 40px;
+        }
+    }
+    .md_anitian_leadership__tabs {
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            overflow: auto;
+            li {
+                background-color: #f0f0f0;
+                min-width: fit-content;
+                color: #757575;
+                position: relative;
+                flex: 1 1;
+                a {
+                    color: #757575;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 18px;
+                    padding: 20px;
+                    font-weight: 700;
+                    white-space: nowrap;
+                }
+                &.active {
+                    background-color: #fff;
+                    box-shadow: inset 0 3px #1870b8;
+                    outline: none;
+                }
+            }
+        }
+        .tab-content {
+            .tab-pane { display: none; }
+            .tab-pane.active { display: block; }
+            .md_anitian_leadership__leaders {
+                padding-top: 40px;
+                .md_anitian_leadership__leader {
+                    padding: 50px 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 4%;
+                    border-bottom: 1px solid #9e9e9e;
+                    .md_anitian_leadership__leader__image {
+                        width: 28%;
+                        text-align: center;
+                        img {
+                            border-radius: 50%;
+                            max-width: 200px;
+                            width: 100%;
+                            filter: grayscale(1);
+                            height: auto;
+                        }
+                    }
+                    .md_anitian_leadership__leader__content {
+                        width: 68%;
+                        animation: fadeInScale .7s ease-in-out;
+        
+                        h3 {
+                            font-weight: 600;
+                            font-size: 30px;
+                            color: #333;
+                            line-height: 1.5em;
+                            margin: 0 0 10px;
+                        }
+                        .leadership__member-designation {
+                            margin: 0 0 1em;
+                            color: #000;
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                        .leadership__member-description {
+                            p, span {
+                                margin: 0 0 1em;
+                                color: #000;
+                                font-size: 16px;
+                                font-weight: 500;
+                                line-height: normal;
+                            }
+                            a {
+                                color: #1870b8;
+                                text-decoration: none;
+                                font-weight: bold;
+                                padding: 0 5px;
+                                line-height: normal;
+                            }
+                            .hidden-description, .read-less {
+                                display: none;
+                            }
+                        }
+                        .leadership__member-linkedin {
+                            width: 25px;
+                            height: 25px;
+                            line-height: 25px;
+                            display: block;
+                            background-color: #0177b4;
+                            border-radius: 5px;
+                            text-align: center;
+                            color: #fff;
+                            font-size: 16px;
+                        }
+                    }
+                    &:last-child {
+                        padding-bottom: 40px;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        transform: scale(0.9);
+        opacity: 0
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+.bakery_antian__lets-get-started__wrapper {
+    padding: 60px 0;
+    .bakery_antian__lets-get-started {
+        .lets-get-started-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            .lets-get-started-content__left {
+                width: 60%;
+                h2 {
+                    color: #0c71c3;
+                    line-height: 1.5em;
+                    margin: 0 0 10px;
+                    font-size: 40px;
+                    font-weight: 500;
+                }
+                p {
+                    color: #0c71c3;
+                    line-height: 1.5em;
+                    margin: 0;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+            }
+            .lets-get-started-content__right {
+                width: calc(40% - 20px);
+                .lets-get-started-buttons {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px 10px;
+                    margin-top: 10px;
+                    a {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        &.style2 {
+            background-position: 50%;
+            background-size: cover;
+            border-radius: 30px 0 30px 30px;
+            padding: 4% 15px;
+            text-align: center;
+            .lets-get-started-content {
+                display: block;
+                padding: 20px 0 0;
+                max-width: 80%;
+                margin: 0 auto;
+                h2 {
+                    color: #fff;
+                    line-height: 1.3em;
+                    margin: 0 0 25px;
+                    font-size: 35px;
+                }
+                .lets-get-started-content__left, .lets-get-started-content__right {
+                    width: 100%;
+                }
+                .lets-get-started-buttons {
+                    display: flex;
+                    justify-content: center;
+                    gap: 3%;
+                }
+            }
+        }
+    }
+    .extra-small { font-size: 16px !important; }
+    .small { font-size: 18px !important; }
+    .medium { font-size: 24px !important; }
+    .large { font-size: 35px !important; }
+    .extra-large { font-size: 40px !important; }
+}
+
+.bakery_antian__media_content {
+    margin: 50px 0;
+    padding: 0 15px;
+    .bakery_antian__heading {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+        h6 {
+            color: #0c71c3;
+            margin: 0;
+            font-size: 18px;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+        h2 {
+            color: #000;
+            margin: 0;
+            font-size: 29px;
+            padding-bottom: 10px;
+            line-height: 1.5em;
+            width: 1046px;
+        }
+    }
+    .bakery_antian__box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        .bakery_antian__box-item {
+            width: calc(50% - 16px);
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            .bakery_antian__box-image {
+                width: 40%;
+                img {
+                    max-width: 100%;
+                    width: 84%;
+                }
+            }
+            .bakery_antiab__box-content {
+                width: 60%;
+                padding-left: 20px;
+                border-left: 1px #000 solid;
+                h4 {
+                    font-size: 18px;
+                    color: #333;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                    line-height: 27px;
+                }
+                a {
+                    margin: 0;
+                    font-size: 15px;
+                    position: relative;
+                    color: #2ea3f2;
+                }
+            }
+        }
+    }
+}
+
+.bakery_antian__box-image-box {
+    margin-bottom: 50px;
+    .bakery_antian__heading {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
+        h6 {
+            color: #0c71c3;
+            margin: 0;
+            font-size: 18px;
+            padding-bottom: 10px;
+        }
+        h2 {
+            margin: 0;
+            font-size: 24px;
+            padding-bottom: 10px;
+            color: #000;
+            line-height: 1.3em;
+            font-weight: 500;
+        }
+    }
+    .bakery_antian__box {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        .bakery_antian__box-item {
+            width: calc(25% - 30px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            .bakery_antian__box-image {
+                width: 25%;
+                margin: 0 0 20px;
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+            h4 {
+                color: #000;
+                font-size: 18px;
+                font-weight: 500;
+                margin: 0;
+                padding-bottom: 10px;
+            }
+            p {
+                color: #000;
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0;
+            }
+        }
+    }
+}
+
+.bakery_antian__slider-image-box {
+    .bakery_antian__heading {
+        h6 {
+            font-weight: 600;
+            color: #0c71c3;
+            margin: 0;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        h2 {
+            font-weight: 600;
+            color: #000;
+            margin: 0;
+            padding-bottom: 10px;
+            line-height: 1.5em;
+            font-size: 35px;
+        }
+    }
+    .bakery_antian__slider-item {
+        margin: 0 10px;
+        box-shadow: 0px 12px 18px -6px rgba(0,0,0,.3);
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        .bakery_antiab__slider-content {
+            padding: 20px;
+            text-align: center;
+            p {
+                color: #000;
+                font-weight: 500;
+                margin: 0;
+                font-size: 18px;
+            }
+            .bakery_antian__slider-button {
+                background-color: #0c71c3;
+                color: #fff;
+                font-weight: 700;
+                padding: 10px 15px;
+                margin-top: 20px;
+                display: inline-block;
+                a { 
+                    color: inherit; 
+                    font-size: inherit;
+                    font-weight: inherit;
+                }
+            }
+        }
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .text-video-slider__video-and-text {
+        padding: 70px 0 250px;
+        background-color: rgba(12, 113, 195, .14);
+        position: relative;
+    }
+    .text-video-slider__slider {
+        margin-top: -175px;
+    }
+}
+
+.bakery_antian__image-banner {
+    padding: 60px 0;
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0 15px;
+    }
+    .image-banner__inner {
+        display: flex;
+        align-items: center;
+        gap: 5.5%;
+        .image-banner-content {
+            width: 55%;
+            .image-banner__subtitle {
+                font-size: 18px;
+                text-transform: uppercase;
+                color: #0c71c3;
+                line-height: 1.9em;
+                margin: 0 0 10px;
+                font-weight: 700;
+            }
+            .image-banner__title {
+                margin: 0 0 30px;
+                color: #000;
+                font-weight: 700;
+                font-size: 35px;
+                line-height: 1.2em;
+            }
+            .image-banner__desc {
+                font-size: 18px;
+                font-weight: 400;
+                p { margin: 10px 0; }
+            }
+        }
+        .image-banner-image {
+            width: 45%;
+            img { 
+                display: block;
+                margin: 0 auto;
+                width: 50%;
+            }
+            &.medium {
+                img {
+                    width: 75%;
+                }
+            }
+            &.large {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.left {
+        .image-banner__inner {
+            flex-direction: row-reverse;
+        }
+    }
+    &.center {
+        .image-banner__inner {
+            flex-direction: column;
+            .image-banner-content {
+                width: 100%;
+                text-align: center;
+            }
+            .image-banner-image {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.md_anitian_text_video_wrap {
+    position: relative;
+    .md_anitian_text_video {
+        background-position: center !important;
+        background-size: cover !important;
+        background-blend-mode: normal;
+        padding: 60px 0;
+        .md_anitian_text_video__inner {
+            display: flex;
+            gap: 7%;
+            align-items: center;
+            .md_anitian_text_video__heading {
+                max-width: 51%;
+                width: 100%;
+                h4 {
+                    color: #0c71c3;
+                    line-height: 1.4em;
+                    letter-spacing: .55px;
+                    margin: 0 0 10px;
+                    font-weight: 700;
+                }
+                h2 {
+                    font-weight: 600;
+                    line-height: 1.4em;
+                    margin: 0 0 20px;
+                    color: #000;
+                    font-size: 40px;
+                }
+                p {
+                    color: #000;
+                    margin-bottom: 1em;
+                }
+                .md_anitian_text_video__btn a {
+                }
+            }
+            .md_anitian_text_video__youtube {
+                max-width: 42%;
+                width: 100%;
+                .video_section_wrapper {
+                    width: 100%;
+                    margin: auto;
+                    box-shadow: 6px 6px 18px 0px rgba(0, 0, 0, .3);
+                    border-radius: 30px 0 30px 30px;
+                    overflow: hidden;
+                    background: #fff;
+                    iframe {
+                        width: 100%;
+                        min-height: 300px;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bakery_antian__career_parallex {
+    
+    margin-top: 50px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .container {
+        position: relative;
+        z-index: 9;
+        border-radius: 25px 0 25px 25px;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: top;
+        background-repeat: no-repeat;
+
+        .bakery_antian__heading {
+
+            background-size: cover;
+            padding: 100px 30px;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+
+            h2 {
+                text-align: center;
+                font-weight: 600;
+                line-height: 1.4em;
+                color: #fff;
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+            .bakery_antian__content {
+                text-align: center;
+                font-size: 20px;
+                font-weight: 300;
+                line-height: 1.3em;
+                color: #fff;
+                z-index: 2;
+                width: 78%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.md_anitian_menu_comparision {
+    padding: 60px 0;
+    .md_anitian_menu_comparision__heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin: 0 0 60px;
+        h2 {
+            margin: 0;
+            color: #000;
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 1.2em;
+        }
+    }
+    .md_anitian_menu_comparision__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 0px;
+        .md_anitian_menu_comparision__table {
+            flex-basis: 31%;
+            .md_anitian_menu_comparision__table_head {
+                margin: 0;
+                h3 {
+                    font-weight: 600;
+                    font-size: 25px;
+                    line-height: 1.2em;
+                    text-align: center;
+                    color: #fff;
+                }
+                padding: 10px;
+                border-top-right-radius: 10px;
+            }
+            ul {
+                background: #ededed;
+                border-bottom: 1px solid #d1d1d1;
+                padding: 10px;
+                list-style: none;
+                li {
+                    display: flex;
+                    i {
+                        width: 31px;
+                        height: 31px;
+                        display: inline-block;
+                        font-size: 15px;
+                        line-height: 31px;
+                        text-align: center;
+                        color: #73ad5b;
+                        &.fa-times {
+                            color: #f9142a;
+                        }
+                    }
+                    p {
+                        width: calc(100% - 31px);
+                        padding-left: 15px;
+                        font-weight: 300;
+                        font-size: 16px;
+                        color: #000;
+                        text-align: left;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
