@@ -126,20 +126,25 @@ class Image_Box {
                         <div class="bakery_antian__box" >
                             <?php 
                             foreach ($image_boxes as $slide) : 
-                                if (!empty($slide)) {
-                                $box_image = wp_get_attachment_image_url($slide['box_image'], 'full');
+                                
+                                $box_image = ( isset($slide['box_image']) && !empty($slide['box_image']) ) ? wp_get_attachment_image_url($slide['box_image'], 'full') : '';
                             ?>
                                 <div class="bakery_antian__box-item">
-                                    <div class="bakery_antian__box-image">
-                                        <img src="<?php echo esc_url($box_image); ?>" alt="box Image">
-                                    </div>
+                                    <?php if (!empty($box_image)) : ?>
+                                        <div class="bakery_antian__box-image">
+                                            <img src="<?php echo esc_url($box_image); ?>" alt="box Image">
+                                        </div>
+                                    <?php endif; ?>
                                     <div class="bakery_antiab__box-content">
-                                        <h4><?php echo esc_html($slide['box_title']); ?></h4>
-                                        <p><?php echo esc_html($slide['box_content']); ?></p>
+                                        <?php if (!empty($slide['box_title'])) : ?>
+                                            <h4><?php echo esc_html($slide['box_title']); ?></h4>
+                                        <?php endif; ?>
+                                        <?php if (!empty($slide['box_content'])) : ?>
+                                            <p><?php echo esc_html($slide['box_content']); ?></p>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             <?php 
-                                }
                             endforeach; 
                             ?>
                         </div>

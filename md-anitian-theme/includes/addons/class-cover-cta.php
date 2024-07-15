@@ -151,7 +151,7 @@ class Cover_CTA {
                             <p><?php echo esc_html($atts['heading_content']); ?></p>
                             <?php if (!empty($button_link['url'])) { ?>
                                 <div class="md_anitian_cover_cta__btn">
-                                    <a href="<?php echo esc_url($button_link['url']); ?>" class="btn-anitian md_anitian_cover_cta__btn"><?php echo esc_html($button_link['title']); ?></a>
+                                    <a href="<?php echo esc_url($button_link['url']); ?>" class="btn-anitian md_anitian_cover_cta__btn" target="<?php echo esc_attr($button_link['target']); ?>"><?php echo esc_html($button_link['title']); ?></a>
                                 </div>
                             <?php } ?>
                         </div>

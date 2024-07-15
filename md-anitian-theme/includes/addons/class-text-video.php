@@ -146,8 +146,8 @@ class Text_Video {
                             <h2><?php echo esc_html($atts['title']); ?></h2>
                             <p><?php echo esc_html($atts['heading_content']); ?></p>
                             <div class="md_anitian_text_video__btn">
-                                <?php if (!empty($button_link['url'])) { ?>
-                                <a href="<?php echo esc_url($button_link['url']); ?>" class="btn-anitian md_anitian_text_video__btn"><?php echo esc_html($button_link['title']); ?></a>
+                                <?php if ( isset($button_link['url']) && !empty($button_link['url']) ) { ?>
+                                    <a href="<?php echo esc_url($button_link['url']); ?>" class="btn-anitian md_anitian_text_video__btn" target="<?php echo esc_attr($button_link['target']); ?>"><?php echo esc_html($button_link['title']); ?></a>
                                 <?php } ?>
                             </div>
                         </div>

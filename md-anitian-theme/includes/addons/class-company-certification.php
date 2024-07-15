@@ -170,13 +170,14 @@ class Company_Certification {
                             <?php
                             if (!empty($company_certification__certificates)) {
                                 foreach ($company_certification__certificates as $certificate) {
-                                    if (empty($certificate['certificate_title'])) {
-                                        continue;
-                                    }
                                     ?>
                                     <div class="md_anitian_company_certification__certificate">
-                                        <h3><?php echo esc_html($certificate['certificate_title']); ?></h3>
-                                        <p><?php echo esc_html($certificate['certificate_description']); ?></p>
+                                        <?php if ( isset($certificate['certificate_title']) && !empty($certificate['certificate_title']) ) { ?>
+                                            <h3><?php echo esc_html($certificate['certificate_title']); ?></h3>
+                                        <?php } ?>
+                                        <?php if ( isset($certificate['certificate_description']) && !empty($certificate['certificate_description']) ) { ?>
+                                            <p><?php echo esc_html($certificate['certificate_description']); ?></p>
+                                        <?php } ?>
                                     </div>
                                     <?php
                                 }
@@ -189,9 +190,6 @@ class Company_Certification {
                             <?php
                             if (!empty($company_certification__partners)) {
                                 foreach ($company_certification__partners as $partner) {
-                                    if (empty($partner['partner_title'])) {
-                                        continue;
-                                    }
                                     $partner_certificates = [];
                                     if (isset($partner['partner_certificates']) && !empty($partner['partner_certificates'])){
                                         $partner_certificates = vc_param_group_parse_atts($partner['partner_certificates']);
@@ -200,23 +198,27 @@ class Company_Certification {
                                     <div class="md_anitian_company_certification__partner_item">
                                         <div class="md_anitian_company_certification__partner_image">
                                             <?php
-                                            if (!empty($partner['partner_image'])) {
+                                            if (isset($partner['partner_image']) && !empty($partner['partner_image'])) {
                                                 echo wp_get_attachment_image($partner['partner_image'], 'full');
                                             }
                                             ?>
                                         </div>
                                         <div class="md_anitian_company_certification__partner_content">
-                                            <h3><?php echo esc_html($partner['partner_title']); ?></h3>
+                                            <?php if ( isset($partner['partner_title']) && !empty($partner['partner_title']) ) { ?>
+                                                <h3><?php echo esc_html($partner['partner_title']); ?></h3>
+                                            <?php } ?>
                                             <ul>
                                                 <?php
                                                 if (!empty($partner_certificates)) {
                                                     foreach ($partner_certificates as $certificate) {
-                                                        ?>
-                                                        <li>
-                                                            <i class="fa fa-check-square-o"></i>
-                                                            <p><?php echo esc_html($certificate['certificate_title']); ?></p>
-                                                        </li>
-                                                        <?php
+                                                        if ( isset($certificate['certificate_title']) && !empty($certificate['certificate_title']) ) {
+                                                            ?>
+                                                            <li>
+                                                                <i class="fa fa-check-square-o"></i>
+                                                                <p><?php echo esc_html($certificate['certificate_title']); ?></p>
+                                                            </li>
+                                                            <?php
+                                                        }
                                                     }
                                                 }
                                                 ?>

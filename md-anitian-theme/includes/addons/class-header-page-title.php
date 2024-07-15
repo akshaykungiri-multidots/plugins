@@ -171,7 +171,7 @@ class Header_Page_Title {
                         <div class="md_anitian_header_page_title__buttons">
                             <?php if (!empty($button_link['url'])) { ?>
                                 <div class="md_anitian_header_page_title__btn">
-                                    <a href="<?php echo esc_url($button_link['url']); ?>" class="btn-anitian md_anitian_header_page_title__btn" style="background-color: <?php echo esc_attr($atts['button_background_color']); ?>; color: <?php echo esc_attr($atts['button_text_color']); ?>"><?php echo esc_html($button_link['title']); ?></a>
+                                    <a href="<?php echo esc_url($button_link['url']); ?>" class="btn-anitian md_anitian_header_page_title__btn" style="background-color: <?php echo esc_attr($atts['button_background_color']); ?>; color: <?php echo esc_attr($atts['button_text_color']); ?>" target="<?php echo esc_attr($button_link['target']); ?>"><?php echo esc_html($button_link['title']); ?></a>
                                 </div>
                             <?php } ?>
                         </div>

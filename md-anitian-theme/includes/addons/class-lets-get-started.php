@@ -198,12 +198,12 @@ class Lets_Get_Started {
                             <div class="lets-get-started-buttons">
                                 <?php if (!empty($button1['url']) && !empty($button1['title'])) : ?>
                                     <div class="lets-get-started__button button_orange">
-                                        <a href="<?php echo esc_url($button1['url']); ?>" class="btn btn-anitian" style="background-color: <?php echo esc_attr($atts['button1_background_color']); ?>; color: <?php echo esc_attr($atts['button1_text_color']); ?>"><?php echo esc_html($button1['title']); ?></a>
+                                        <a href="<?php echo esc_url($button1['url']); ?>" class="btn btn-anitian" style="background-color: <?php echo esc_attr($atts['button1_background_color']); ?>; color: <?php echo esc_attr($atts['button1_text_color']); ?>" target="<?php echo esc_attr($button1['target']); ?>"><?php echo esc_html($button1['title']); ?></a>
                                     </div>
                                 <?php endif; ?>
                                 <?php if (!empty($button2['url']) && !empty($button2['title'])) : ?>
                                     <div class="lets-get-started__button button_white">
-                                        <a href="<?php echo esc_url($button2['url']); ?>" class="btn btn-anitian" style="background-color: <?php echo esc_attr($atts['button2_background_color']); ?>; color: <?php echo esc_attr($atts['button2_text_color']); ?>"><?php echo esc_html($button2['title']); ?></a>
+                                        <a href="<?php echo esc_url($button2['url']); ?>" class="btn btn-anitian" style="background-color: <?php echo esc_attr($atts['button2_background_color']); ?>; color: <?php echo esc_attr($atts['button2_text_color']); ?>" target="<?php echo esc_attr($button2['target']); ?>"><?php echo esc_html($button2['title']); ?></a>
                                     </div>
                                 <?php endif; ?>
                             </div>

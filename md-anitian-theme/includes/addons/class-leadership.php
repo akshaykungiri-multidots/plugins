@@ -195,15 +195,6 @@ class Leadership {
                                         if (!empty($leadership_tab['leaders'])) {
                                             $leaders = vc_param_group_parse_atts($leadership_tab['leaders']);
                                             foreach ($leaders as $leader) {
-                                                if (empty($leader['name'])) {
-                                                    continue;
-                                                }
-                                                // Create Read More Button for leadership__member-description
-                                                $visible_length = 300;
-                                                $description = $leader['description'];
-                                                $description_length = strlen($description);
-                                                $visible_description = substr($description, 0, $visible_length);
-                                                $hidden_description = substr($description, $visible_length, $description_length);
                                                 $linkedin_link = [];
                                                 if (isset($leader['linkedin_link'])) {
                                                     $linkedin_link = vc_build_link($leader['linkedin_link']);
@@ -219,20 +210,32 @@ class Leadership {
                                                         <?php } ?>
                                                     </div>
                                                     <div class="md_anitian_leadership__leader__content">
-                                                        <h3><?php echo esc_html($leader['name']); ?></h3>
-                                                        <p class="leadership__member-designation"><?php echo esc_html($leader['designation']); ?></p>
-                                                        <div class="leadership__member-description">
-                                                            <p>
-                                                                <?php echo esc_html($visible_description); ?>
-                                                                <span class="ellipsis">... </span>
-                                                                <a href="javascript:void(0)" class="read-more">Read More</a>
-                                                                <span class="hidden-description">
-                                                                    <?php echo esc_html($hidden_description); ?></span>
-                                                                    <a href="javascript:void(0)" class="read-less">Read Less</a>
-                                                                </p>
-                                                        </div>
+                                                        <?php if (isset($leader['name']) && !empty($leader['name'])) { ?>
+                                                            <h3><?php echo esc_html($leader['name']); ?></h3>
+                                                        <?php } ?>
+                                                        <?php if (isset($leader['designation']) && !empty($leader['designation'])) { ?>
+                                                            <p class="leadership__member-designation"><?php echo esc_html($leader['designation']); ?></p>
+                                                        <?php } ?>
+                                                        <?php if (isset($leader['description']) && !empty($leader['description'])) { 
+                                                            $visible_length = 300;
+                                                            $description = $leader['description'];
+                                                            $description_length = strlen($description);
+                                                            $visible_description = substr($description, 0, $visible_length);
+                                                            $hidden_description = substr($description, $visible_length, $description_length);
+                                                            ?>
+                                                            <div class="leadership__member-description">
+                                                                <p>
+                                                                    <?php echo esc_html($visible_description); ?>
+                                                                    <span class="ellipsis">... </span>
+                                                                    <a href="javascript:void(0)" class="read-more">Read More</a>
+                                                                    <span class="hidden-description">
+                                                                        <?php echo esc_html($hidden_description); ?></span>
+                                                                        <a href="javascript:void(0)" class="read-less">Read Less</a>
+                                                                    </p>
+                                                            </div>
+                                                        <?php } ?>
                                                         <?php if (isset($linkedin_link['url']) && !empty($linkedin_link['url'])) { ?>
-                                                            <a href="<?php echo esc_url($linkedin_link['url']); ?>" target="<?php echo esc_attr($linkedin_link['target']); ?>" class="leadership__member-linkedin">
+                                                            <a href="<?php echo esc_url($linkedin_link['url']); ?>" target="<?php echo esc_attr($linkedin_link['target']); ?>" title="<?php echo esc_attr($linkedin_link['title']); ?>" class="leadership__member-linkedin">
                                                                 <i class="fa fa-linkedin"></i>
                                                             </a>
                                                         <?php } ?>

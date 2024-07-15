@@ -140,7 +140,7 @@ class Image_Banner {
                         <div class="image-banner__desc"><?php echo wp_kses_post($atts['description']); ?></div>
                         <?php if (!empty($learn_more_link['url'])) : ?>
                             <div class="image-banner__link">
-                                <a href="<?php echo esc_url($learn_more_link['url']); ?>" class="banner-link"><?php echo esc_html($learn_more_link['title']); ?></a>
+                                <a href="<?php echo esc_url($learn_more_link['url']); ?>" class="banner-link" target="<?php echo esc_attr($learn_more_link['target']); ?>"><?php echo esc_html($learn_more_link['title']); ?></a>
                             </div>
                         <?php endif; ?>
                     </div>

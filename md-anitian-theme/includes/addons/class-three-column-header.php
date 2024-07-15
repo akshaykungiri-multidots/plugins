@@ -155,9 +155,9 @@ class Three_Column_Header {
                                     <h5><?php echo esc_html($column_title); ?></h5>
                                     <p><?php echo esc_html($column_description); ?></p>
                                     <?php
-                                    if (!empty($column_link['url']) && !empty($column_link['title'])) {
+                                    if ( isset($column_link['url']) && !empty($column_link['url']) ) { 
                                         ?>
-                                        <a href="<?php echo esc_url($column_link['url']); ?>" class="md_anitian_three_column_header__item__link">
+                                        <a href="<?php echo esc_url($column_link['url']); ?>" class="md_anitian_three_column_header__item__link" target="<?php echo esc_attr($column_link['target']); ?>">
                                             <?php echo esc_html($column_link['title']); ?>
                                             <i class="fa fa-long-arrow-right"></i>
                                         </a>

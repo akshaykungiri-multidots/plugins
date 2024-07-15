@@ -127,12 +127,12 @@ class Media_With_Content {
                         <div class="md_anitian_media_with_content__buttons">
                             <?php if (!empty($button_link['url'])) { ?>
                                 <div class="md_anitian_media_with_content__btn">
-                                    <a href="<?php echo esc_url($button_link['url']); ?>" class="btn-anitian md_anitian_media_with_content__btn bg-orage color-white"><?php echo esc_html($button_link['title']); ?></a>
+                                    <a href="<?php echo esc_url($button_link['url']); ?>" class="btn-anitian md_anitian_media_with_content__btn bg-orage color-white" target="<?php echo esc_attr($button_link['target']); ?>"><?php echo esc_html($button_link['title']); ?></a>
                                 </div>
                             <?php } ?>
                             <?php if (!empty($button2_link['url'])) { ?>
                                 <div class="md_anitian_media_with_content__btn">
-                                    <a href="<?php echo esc_url($button2_link['url']); ?>" class="btn-anitian md_anitian_media_with_content__btn bg-white color-blue"><?php echo esc_html($button2_link['title']); ?></a>
+                                    <a href="<?php echo esc_url($button2_link['url']); ?>" class="btn-anitian md_anitian_media_with_content__btn bg-white color-blue" target="<?php echo esc_attr($button2_link['target']); ?>"><?php echo esc_html($button2_link['title']); ?></a>
                                 </div>
                             <?php } ?>
                         </div>
