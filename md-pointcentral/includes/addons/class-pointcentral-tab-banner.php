@@ -115,7 +115,7 @@ class Pointcentral_Tab_Banner {
                     'group' => __('Design Option', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-layout_sidebar',
         ));
     }
@@ -148,10 +148,11 @@ class Pointcentral_Tab_Banner {
                             $activeClass = "active";
                             foreach ($tab_banner_tabs as $key => $tab_banner_tab) {
                                 $icon = ( isset($tab_banner_tab['tab_icon']) && !empty($tab_banner_tab['tab_icon']) ) ? $tab_banner_tab['tab_icon'] : 'fa fa-home';
+                                $tab_title = ( isset($tab_banner_tab['tab_title']) && !empty($tab_banner_tab['tab_title']) ) ? $tab_banner_tab['tab_title'] : '';
                                 ?>
                                 <div class="tab-list-item <?php echo esc_attr($activeClass); ?>" data-tab="<?php echo esc_attr($key); ?>"> 
                                     <i class="<?php echo esc_attr($icon); ?>"></i>
-                                    <span><?php echo wp_kses_post($tab_banner_tab['tab_title']); ?></span>
+                                    <span><?php echo wp_kses_post($tab_title); ?></span>
                                 </div>
                                 <?php
                                 $activeClass = "";

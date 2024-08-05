@@ -148,7 +148,7 @@ class Pointcentral_Press_Listing {
                     'group' => 'Design Options',
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-toggle-small-expand',
         ));
     }

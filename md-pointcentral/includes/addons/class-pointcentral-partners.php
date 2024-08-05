@@ -123,7 +123,7 @@ class Pointcentral_Partners {
                     'description' => __('Add storyful partner section 2 logos.', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-images-stack',
         ));
     }

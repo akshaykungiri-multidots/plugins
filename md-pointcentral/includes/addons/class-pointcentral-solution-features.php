@@ -89,7 +89,7 @@ class Pointcentral_Solution_Features {
                     'description' => __('Add solution features list.', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-graph',
         ));
     }

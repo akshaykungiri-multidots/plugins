@@ -158,7 +158,7 @@ class Pointcentral_Logo_Slider {
                     'group' => 'Slider Settings',
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-flickr',
         ));
     }

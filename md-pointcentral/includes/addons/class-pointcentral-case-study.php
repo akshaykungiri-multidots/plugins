@@ -63,7 +63,7 @@ class Pointcentral_Case_Study {
                     'description' => __('Enter case study link.', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-vc_icon',
         ));
     }

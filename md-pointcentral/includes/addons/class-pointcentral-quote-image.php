@@ -82,7 +82,7 @@ class Pointcentral_Quote_Image {
                     'description' => __('Select quote image position.', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-layer-shape-text',
         ));
     }

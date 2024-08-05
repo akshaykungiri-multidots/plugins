@@ -130,7 +130,7 @@ class Pointcentral_Testimonials {
                     'group' => 'Design Option',
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-ui-pageable',
         ));
     }

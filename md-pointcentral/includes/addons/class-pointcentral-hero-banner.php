@@ -140,7 +140,7 @@ class Pointcentral_Hero_Banner {
                     'group' => 'Design Options',
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-call-to-action',
         ));
     }

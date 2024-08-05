@@ -72,7 +72,7 @@ class Pointcentral_Image_Banner {
                     'group' => __('Design Option', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-single-image',
         ));
     }

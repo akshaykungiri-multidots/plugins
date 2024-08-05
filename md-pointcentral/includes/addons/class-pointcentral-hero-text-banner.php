@@ -81,7 +81,7 @@ class Pointcentral_Hero_Text_Banner {
                     'group' => __('Design Option', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-layer-shape-text',
         ));
     }

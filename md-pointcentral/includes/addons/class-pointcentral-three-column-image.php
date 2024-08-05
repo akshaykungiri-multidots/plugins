@@ -65,7 +65,7 @@ class Pointcentral_Three_Column_Image {
                     'description' => __('Add three column images.', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-images-stack',
         ));
     }

@@ -80,7 +80,7 @@ class Pointcentral_Lets_Chat {
                     'group' => __('Design Option', 'md-bakery-antian'),
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-information-white',
         ));
     }

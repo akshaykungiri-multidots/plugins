@@ -98,7 +98,7 @@ class Pointcentral_Image_Banner_List {
                     'group' => 'Design Options',
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-application-icon-large',
         ));
     }

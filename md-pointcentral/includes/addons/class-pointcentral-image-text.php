@@ -108,7 +108,7 @@ class Pointcentral_Image_Text {
                     'group' => 'Design Options',
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'vc_icon-vc-hoverbox',
         ));
     }

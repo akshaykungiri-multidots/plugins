@@ -89,7 +89,7 @@ class Pointcentral_Video_Banner {
                     'group' => 'Background Video',
                 ),
             ),
-            'category' => __('Storyful', 'md-bakery-antian'),
+            'category' => __('Pointcentral', 'md-bakery-antian'),
             'icon' => 'icon-wpb-layout_sidebar',
         ));
     }
