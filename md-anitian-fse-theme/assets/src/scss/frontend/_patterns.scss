@@ -1,0 +1,108 @@
+/* Slick Slider Arrows */
+ul.slick-dots {
+    flex-wrap: wrap
+}
+
+.slick-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 0 !important;
+    background: rgba(0,0,0,0) !important;
+    cursor: pointer !important;
+    top: 40%;
+    transform: translateY(-50%);
+    border: none !important;
+    position: absolute;
+    display: block
+}
+
+.slick-arrow:before {
+    width: 16px;
+    height: 16px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 11px
+}
+
+.slick-prev {
+    // left: -50px;
+    z-index: 1
+}
+
+.slick-prev:before {
+    border-top: 3px solid #666;
+    border-left: 3px solid #666;
+    transform: rotate(-45deg)
+}
+
+.slick-prev[aria-disabled=true] {
+    opacity: .4;
+    pointer-events: none
+}
+
+.slick-next {
+    right: 20px;
+}
+
+.slick-next:before {
+    border-top: 3px solid #506cf0;
+    border-left: 3px solid #506cf0;
+    transform: rotate(135deg)
+}
+
+.slick-next[aria-disabled=true] {
+    opacity: .4;
+    pointer-events: none
+}
+
+/* Slick Slider Dots */
+.slick-dots {
+    text-align: center; /* Center align dots */
+    margin-top: 20px; /* Space above dots */
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px; /* Space between dots */
+}
+
+.slick-dots li button {
+    font-size: 0; /* Hide default button text */
+    background-color: #dce1fc; /* Dot color */
+    width: 12px; /* Dot width */
+    height: 12px; /* Dot height */
+    border-radius: 50%; /* Rounded dots */
+    border-color: #506cf0; /* Remove dot border */
+    padding: 5px;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #506cf0; /* Active dot color */
+}
+
+.slick-dots li button:hover {
+    background-color: #506cf0; /* Dot color on hover */
+}
+
+.featured-resources-slider {
+    position: relative;
+    ul {
+        position: relative;
+        width: 790px;
+        .slick-track {
+            li { margin-right: 20px; }
+        }
+        .slick-arrow {
+            top: -50px;
+        }
+        .slick-prev {
+            right: 50px;
+            left: auto;
+        }
+        .slick-next {
+            right: 0;
+            margin-top: 0;
+        }
+    }
+}
