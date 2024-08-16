@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/OpenSansRegular.eot');
+    src: url('../fonts/OpenSansRegular.eot') format('embedded-opentype'),
+         url('../fonts/OpenSansRegular.woff2') format('woff2'),
+         url('../fonts/OpenSansRegular.woff') format('woff'),
+         url('../fonts/OpenSansRegular.ttf') format('truetype'),
+         url('../fonts/OpenSansRegular.svg#OpenSansRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'Exo2Regular';
+    src: url('../fonts/Exo2-Regular.ttf') format('truetype');
+    src: url('../fonts/Exo2-Black.ttf') format('truetype'),
+         url('../fonts/Exo2-BlackItalic.ttf') format('truetype'),
+         url('../fonts/Exo2-Bold.ttf') format('truetype'),
+        url('../fonts/Exo2-BoldItalic.ttf') format('truetype'),
+        url('../fonts/Exo2-ExtraBold.ttf') format('truetype'),
+        url('../fonts/Exo2-ExtraBoldItalic.ttf') format('truetype'),
+        url('../fonts/Exo2-Italic.ttf') format('truetype'),
+        url('../fonts/Exo2-Medium.ttf') format('truetype'),
+        url('../fonts/Exo2-MediumItalic.ttf') format('truetype'),
+        url('../fonts/Exo2-SemiBold.ttf') format('truetype'),
+        url('../fonts/Exo2-SemiBoldItalic.ttf') format('truetype');
+}

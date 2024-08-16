@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-fiery/md-brands",
+  "version": "0.1.0",
+  "title": "Md Brands",
+  "apiVersion": 3,
+  "category": "md-fiery",
+  "icon": "lock",
+  "description": "Md Brands block.",
+  "keywords": ["brands", "Dynamic"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-fiery",
+  "attributes": {
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

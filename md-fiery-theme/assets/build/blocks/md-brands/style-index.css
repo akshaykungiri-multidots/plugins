@@ -1,0 +1,36 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-brands/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-fiery-md-brands {
+  color: #000000;
+}
+.wp-block-md-fiery-md-brands .brands {
+  padding: 40px 0 80px;
+  margin: 30px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wp-block-md-fiery-md-brands .brands .brand {
+  width: calc(25% - 25px);
+  position: relative;
+  border-color: rgba(112, 112, 112, 0.2);
+  border-width: 0 1px 1px 0;
+  border-style: solid;
+}
+.wp-block-md-fiery-md-brands .brands .brand .brand-inner {
+  padding: 20px;
+  min-height: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.wp-block-md-fiery-md-brands .brands .brand img {
+  max-width: 100%;
+  height: auto;
+}
+.wp-block-md-fiery-md-brands .brands .brand:nth-child(4n) {
+  border-right-width: 0;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
