@@ -31,4 +31,29 @@
 			$('.md-storyful-fse-header').removeClass('fixed-header');
 		}
 	});
+
+	$(document).on('click', '.md_search_icon', function () {
+		$('.md_search_input').show();
+		$('.md_search_input input').focus();
+	});
+	$(document).on('click', '.close-search', function () {
+		$('.md_search_input').hide();
+	});
+	
+	$('.md-subheading-menu1').hover(function () {
+		$('.md-subheading-menu2__list').hide();
+		$('.md-subheading-menu1__list').show();
+	});
+	$('.md-subheading-menu2').hover(function () {
+		$('.md-subheading-menu1__list').hide();
+		$('.md-subheading-menu2__list').show();
+	});
+	$(document).on('mouseover', function (event) {
+		if (!$(event.target).closest('.md-subheading-menu1').length && !$(event.target).closest('.md-subheading-menu1__list').length) {
+			$('.md-subheading-menu1__list').hide();
+		}
+		if (!$(event.target).closest('.md-subheading-menu2').length && !$(event.target).closest('.md-subheading-menu2__list').length) {
+			$('.md-subheading-menu2__list').hide();
+		}
+	});
 })(jQuery);

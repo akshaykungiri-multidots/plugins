@@ -1691,6 +1691,21 @@
   line-height: 1;
   margin: 0 0 5px;
 }
+
+.md-storyful-footer-img {
+  position: absolute;
+  left: -20px;
+  top: 100px;
+}
+
+.md-storyful-fse-footer * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.md-storyful-fse-header * {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @media (min-width: 768px) {
   .u-flex-basis-md-30 {
     flex-basis: 30%;
@@ -1705,6 +1720,7 @@
     flex-basis: 70%;
   }
 }
+
 @media (min-width: 992px) {
   .u-flex-basis-lg-30 {
     flex-basis: 30%;
@@ -1719,6 +1735,7 @@
     flex-basis: 70%;
   }
 }
+
 @media (max-width: 767px) {
   .u-flex-columns\@max-767 {
     flex-grow: 0;

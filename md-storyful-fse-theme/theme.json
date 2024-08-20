@@ -286,7 +286,7 @@
 					"name": "8"
 				},
 				{
-					"size": "clamp(2.5rem, 7vw, 4rem)",
+					"size": "clamp(12rem, 7vw, 13rem)",
 					"slug": "container",
 					"name": "Container"
 				}

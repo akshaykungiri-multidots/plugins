@@ -230,3 +230,43 @@
         }
     }  
 }
+.md-storyful-fse-header {
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .md-storyful-subheader {
+        border-top: 1px solid #11152c;
+        .md-subheading-menu1 {
+            border-bottom: 8px solid #11152c;
+            border-right: 1px solid #11152c;
+            
+        }
+        .md-subheading-menu2 {
+            border-bottom: 8px solid #ff4c15;
+        }
+    }
+    .md-subheading-menu1__list {
+        display: none;
+        background-color: #11152c;
+    }
+    .md-subheading-menu2__list {
+        display: none;
+        background-color: #ff4c15;
+    }
+}
+.md-header-navigation {
+    ul {
+        gap: 0px;
+        li {
+            a {
+                border-right: 1px solid #11152c;
+                padding: 0 15px;
+                text-decoration: underline;
+                line-height: 1;
+            }
+            &:last-child a {
+                border-right: none;
+            }
+        }
+    }
+}

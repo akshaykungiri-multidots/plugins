@@ -115,6 +115,9 @@ class Assets {
 
 		$this->hook_critical_css();
 
+		// Font Awesome 4.7.
+		wp_register_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), '4.7.0', 'all' );
+
 		// Register styles.
 		wp_register_style( 'main-css', MD_STORYFUL_FSE_BUILD_URI . '/main.css', array(), filemtime( MD_STORYFUL_FSE_BUILD_PATH . '/main.css' ), 'all' );
 

@@ -1,0 +1,36 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-search/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.md_search_block .md_search_icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.md_search_block .md_search_input {
+  display: none;
+  position: absolute;
+  top: 15px;
+  width: 80%;
+  left: 0;
+  margin-left: 10%;
+}
+.md_search_block .md_search_input form .search-field {
+  width: 100%;
+  z-index: 999;
+  position: relative;
+  padding: 12px 25px;
+  border-radius: 25px;
+}
+.md_search_block .md_search_input form .search-submit {
+  display: none;
+}
+.md_search_block .md_search_input .close-search {
+  position: absolute;
+  right: 20px;
+  z-index: 999;
+  top: 0px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
