@@ -1,0 +1,248 @@
+@use '../abstracts';
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+	border: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+html {
+	-webkit-font-smoothing: none;
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+a:active {
+	outline: 0;
+}
+
+figure {
+	margin: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+input {
+	&[type="search"],
+	&[type="text"],
+	&[type="password"] {
+		padding: 8px;
+		flex-grow: 1;
+		min-width: 3em;
+		border: 1px solid #949494;
+		font-size: inherit;
+		font-family: inherit;
+		line-height: inherit;
+	}
+}
+
+input,
+button {
+	&[type="submit"] {
+		background: #f7f7f7;
+		border: 1px solid #ccc;
+		padding: 8px 0.625em;
+		color: #32373c;
+		margin-left: 0.625em;
+		word-break: normal;
+		font-size: inherit;
+		font-family: inherit;
+		line-height: inherit;
+		cursor: pointer;
+	}
+}
+
+.btn-main {
+	font-size: 15px;
+	min-width: 105px;
+	text-align: center;
+	color: #ffffff;
+	display: inline-block;
+	font-weight: 400;
+	font-family: "SometypeMonoRegular", "sans-serif", arial;
+	border: 1px solid #3333ff;
+	background: #3333ff;
+	cursor: pointer;
+	letter-spacing: 0.16px;
+	border-radius: 6px;
+	word-break: break-word;
+	text-decoration: none;
+	position: relative;
+	-webkit-transition: all 0.25s ease-in-out;
+	transition: all 0.25s ease-in-out;
+	padding: 9px 22px;
+	line-height: 1.4;
+  }
+  .btn-main .dashicons {
+	-webkit-transition: none 0s ease 0s;
+	transition: none 0s ease 0s;
+	-webkit-transition: initial;
+	transition: initial;
+  }
+  .btn-main:hover, .btn-main:active, .btn-main.active {
+	background-color: #2932C9;
+	border-color: #2932C9;
+  }
+  .btn-main a {
+	color: inherit;
+	display: inline-block;
+	text-decoration: none;
+  }
+  .btn-main.btn-primary-black {
+	border: 1px solid #171417;
+	background: #171417;
+	color: #ffffff;
+  }
+  .btn-main.btn-primary-black:hover, .btn-main.btn-primary-black:active, .btn-main.btn-primary-black.active {
+	opacity: 0.8;
+	color: #ffffff;
+	background: #171417;
+  }
+  .btn-main.btn-border {
+	border: 1px solid #171417;
+	background: transparent;
+	color: #171417;
+  }
+  .btn-main.btn-border:hover, .btn-main.btn-border:active, .btn-main.btn-border.active {
+	opacity: 0.8;
+	color: #ffffff;
+	background: #171417;
+  }
+  .btn-main.btn-secondary {
+	background-color: transparent;
+	color: #3333ff;
+  }
+  .btn-main.btn-secondary:hover, .btn-main.btn-secondary:active, .btn-main.btn-secondary.active {
+	background-color: #f2eefb;
+  }
+  .btn-main.btn-secondary-white {
+	background-color: transparent;
+	color: #ffffff;
+	border-color: #ffffff;
+  }
+  .btn-main.btn-secondary-white:hover, .btn-main.btn-secondary-white:active, .btn-main.btn-secondary-white.active {
+	opacity: 1;
+	background-color: #ffffff;
+	color: #171417;
+  }
+  .btn-main.btn-tertiary {
+	background-color: transparent;
+	color: #3333ff;
+	border-color: transparent;
+  }
+  .btn-main.btn-tertiary:hover, .btn-main.btn-tertiary:active, .btn-main.btn-tertiary.active {
+	background-color: #f2eefb;
+  }
+  .btn-main.btn-link-right-arrow {
+	background-color: transparent;
+	color: #3333ff;
+	border-color: transparent;
+	padding: 2px 25px 2px 0;
+  }
+  .btn-main.btn-link-right-arrow::after {
+	content: "";
+	display: inline-block;
+	border-style: solid;
+	border-width: 0 1.5px 1.5px 0;
+	display: inline-block;
+	padding: 3.5px;
+	-webkit-transform: rotate(-45deg) translateY(-60%);
+			transform: rotate(-45deg) translateY(-60%);
+	position: absolute;
+	top: 50%;
+	right: 9px;
+	-webkit-transition: right 0.2s ease-out;
+	transition: right 0.2s ease-out;
+  }
+  .btn-main.btn-link-right-arrow:hover::after {
+	right: 6px;
+  }

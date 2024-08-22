@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-foursquare/md-posts",
+  "version": "0.1.0",
+  "title": "MD Posts",
+  "apiVersion": 3,
+  "category": "md-foursquare",
+  "icon": "lock",
+  "description": "This is a sample block with dynamic content.",
+  "keywords": ["md-posts", "md-foursquare"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-foursquare",
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "postsToShow": {
+      "type": "string",
+      "default": "5"
+    },
+    "postInRow": {
+      "type": "string",
+      "default": "2"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
