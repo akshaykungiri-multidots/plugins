@@ -1,0 +1,40 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-subscribe/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-sutherlandglobal-md-subscribe {
+  width: 100%;
+}
+.wp-block-md-sutherlandglobal-md-subscribe .form-group-subscribe {
+  width: 50%;
+}
+.wp-block-md-sutherlandglobal-md-subscribe .form-group-subscribe .form-group {
+  display: flex;
+}
+.wp-block-md-sutherlandglobal-md-subscribe .form-group-subscribe .form-group input[type=email] {
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: "proxima-nova";
+  outline: none;
+  padding: 11px 20px !important;
+  line-height: 24px !important;
+  height: auto !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  width: 60%;
+}
+.wp-block-md-sutherlandglobal-md-subscribe .form-group-subscribe .form-group input[type=submit] {
+  background-color: #de1b54;
+  border: 2px solid #de1b54 !important;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "proxima-nova";
+  outline: none;
+  padding: 11px 20px !important;
+  line-height: 24px !important;
+  height: auto !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  min-width: 183px;
+}

@@ -1,0 +1,39 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-sutherlandglobal-md-subscribe {
+    width: 100%;
+    .form-group-subscribe {
+        width: 50%;
+        .form-group {
+            display: flex;
+            input[type="email"] {
+                border-radius: 6px;
+                font-size: 16px;
+                font-family: "proxima-nova";
+                outline: none;
+                padding: 11px 20px !important;
+                line-height: 24px !important;
+                height: auto !important;
+                box-shadow: none !important;
+                box-sizing: border-box;
+                width: 60%;
+            }
+            input[type="submit"] {
+                background-color: #de1b54;
+                border: 2px solid #de1b54 !important;
+                border-radius: 6px;
+                color: #fff;
+                cursor: pointer;
+                font-size: 16px;
+                font-family: "proxima-nova";
+                outline: none;
+                padding: 11px 20px !important;
+                line-height: 24px !important;
+                height: auto !important;
+                box-shadow: none !important;
+                box-sizing: border-box;
+                min-width: 183px;
+            }
+        }
+    }
+}
