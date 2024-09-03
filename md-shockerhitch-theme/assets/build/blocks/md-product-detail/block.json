@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-shockerhitch/md-product-detail",
+  "version": "0.1.0",
+  "title": "MD Product Detail",
+  "apiVersion": 3,
+  "category": "md-shockerhitch",
+  "icon": "lock",
+  "description": "MD Product detail block.",
+  "keywords": [
+    "product",
+    "detail",
+    "md"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-shockerhitch",
+  "attributes": {
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAdditionalInfo": {
+      "type": "boolean",
+      "default": true
+    },
+    "showReviews": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

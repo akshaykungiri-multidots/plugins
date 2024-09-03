@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-shockerhitch/md-subscribe",
+  "version": "0.1.0",
+  "title": "MD Subscribe",
+  "apiVersion": 3,
+  "category": "md-shockerhitch",
+  "icon": "lock",
+  "description": "A Subscribe block for Storyful FSE",
+  "keywords": ["subscribe", "md-shockerhitch"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-shockerhitch",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

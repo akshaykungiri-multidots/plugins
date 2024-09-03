@@ -1,0 +1,44 @@
+@use '../../scss/abstracts';
+
+.md-product-detail-accordion {
+    margin: 20px 0;
+    .wc-accordion-item {
+        padding: 10px 25px;
+        box-shadow: 0 0 30px 0 rgb(0 0 0 / 9%);
+        background-color: #fff;
+        margin-bottom: 10px;
+    }
+    
+    .wc-accordion-header {
+        outline: 0;
+        cursor: pointer;
+        align-items: center;
+        display: inline-flex;
+        justify-content: space-between;
+        color: #333;
+        font-weight: 600;
+        font-size: 18px;
+        width: 100%;
+        &::after {
+            // arrow down
+            content: "\f140";
+            font-family: dashicons;
+            font-size: 20px;
+            color: #333;
+        }
+        &.open::after {
+            // arrow up
+            content: "\f139";
+        }
+    }
+    
+    .wc-accordion-content {
+        display: none;
+        padding: 10px;
+        background: #fff;
+    }
+    
+    .wc-accordion-item.open .wc-accordion-content {
+        display: block;
+    }
+}

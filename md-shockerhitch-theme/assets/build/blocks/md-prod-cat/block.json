@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-shockerhitch/md-prod-cat",
+  "version": "0.1.0",
+  "title": "MD Product categories",
+  "apiVersion": 3,
+  "category": "md-shockerhitch",
+  "icon": "lock",
+  "description": "This is a sample block with dynamic content.",
+  "keywords": [
+    "md-shockerhitch",
+    "md-prod-cat"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-shockerhitch",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

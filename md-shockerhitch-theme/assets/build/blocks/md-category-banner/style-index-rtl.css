@@ -1,0 +1,41 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-category-banner/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.is-layout-constrained > .wp-block-md-shockerhitch-md-category-banner {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  max-width: 100%;
+}
+.is-layout-constrained > .wp-block-md-shockerhitch-md-category-banner .md-category-banner {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.is-layout-constrained > .wp-block-md-shockerhitch-md-category-banner .md-category-banner .md-category-banner__content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 300px;
+}
+.is-layout-constrained > .wp-block-md-shockerhitch-md-category-banner .md-category-banner .md-category-banner__content .md-category-banner__title {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  word-break: break-word;
+  position: static;
+  padding-right: 0;
+  margin: 0;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: -3px 2px 5px rgba(0, 0, 0, 0.6), 3px 2px 5px rgba(0, 0, 0, 0.6), 0 4px 5px rgba(0, 0, 0, 0.6);
+}
+.is-layout-constrained > .wp-block-md-shockerhitch-md-category-banner .md-category-banner .md-category-banner__content .md-category-banner__title::before {
+  content: "";
+  position: absolute;
+  right: -65px;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background-color: #d33;
+  margin-top: -1px;
+}
