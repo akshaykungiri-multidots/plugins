@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-efi/md-posts",
+  "version": "0.1.0",
+  "title": "MD Posts",
+  "apiVersion": 3,
+  "category": "md-efi",
+  "icon": "lock",
+  "description": "This is a sample block with dynamic content.",
+  "keywords": [
+    "md-posts",
+    "md-efi"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-efi",
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "postsToShow": {
+      "type": "string",
+      "default": "5"
+    },
+    "postInRow": {
+      "type": "string",
+      "default": "2"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

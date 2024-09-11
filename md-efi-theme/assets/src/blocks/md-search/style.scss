@@ -1,0 +1,40 @@
+@use '../../scss/abstracts';
+
+.md_search_block {
+    position: relative;
+    min-width: 300px;
+    .md_search_input {
+        form {
+            .search-field {
+                width: 100%;
+                z-index: 999;
+                position: relative;
+                padding: 8px 10px 8px 57px;
+                border-radius: 25px;
+                font-size: 16px;
+                line-height: 30px;
+            }
+            .search-submit { 
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                border: 0;
+                font-size: 0;
+                width: 16px;
+                height: 16px;
+                transform: translateY(-50%);
+                background: url(https://www.efi.com/wp-content/themes/efi/assets/build/images/search-icon.svg) no-repeat center;
+                background-size: contain;
+                z-index: 999;
+            }
+        }
+        .close-search {
+            position: absolute;
+            right: 20px;
+            z-index: 999;
+            top: 0px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+    }
+}
