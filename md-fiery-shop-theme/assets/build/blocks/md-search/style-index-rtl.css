@@ -1,0 +1,49 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-search/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.md_search_block {
+  position: relative;
+}
+.md_search_block .md_search_input form {
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 100%;
+  gap: 0;
+  border-width: 0px;
+  border-style: none;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.md_search_block .md_search_input form .search-field {
+  width: 100%;
+  z-index: 999;
+  position: relative;
+  padding: 8px 20px 8px 10px;
+  border-radius: 0 5px 5px 0;
+  font-size: 16px;
+  line-height: 30px;
+}
+.md_search_block .md_search_input form .search-submit {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border: none;
+  background-color: black;
+  color: #fff;
+  margin-right: 0;
+}
+.md_search_block .md_search_input form .search-submit svg {
+  fill: currentColor;
+  min-height: 24px;
+  min-width: 24px;
+  vertical-align: text-bottom;
+}
+.md_search_block .md_search_input .close-search {
+  position: absolute;
+  left: 20px;
+  z-index: 999;
+  top: 0px;
+  font-size: 28px;
+  cursor: pointer;
+}

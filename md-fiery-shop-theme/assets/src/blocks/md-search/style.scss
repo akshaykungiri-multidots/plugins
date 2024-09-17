@@ -1,0 +1,50 @@
+@use '../../scss/abstracts';
+
+.md_search_block {
+    position: relative;
+    .md_search_input {
+        form {
+            display: flex;
+            flex-wrap: nowrap;
+            max-width: 100%;
+            gap: 0;
+            border-width: 0px;
+            border-style: none;
+            border-top-right-radius: calc(8px + 4px);
+            border-bottom-right-radius: calc(8px + 4px);
+            .search-field {
+                width: 100%;
+                z-index: 999;
+                position: relative;
+                padding: 8px 10px 8px 20px;
+                border-radius: 5px 0 0 5px;
+                font-size: 16px;
+                line-height: 30px;
+            }
+            .search-submit { 
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border: none;
+                background-color: black;
+                color: #fff;
+                margin-left: 0;
+                svg {
+                    fill: currentColor;
+                    min-height: 24px;
+                    min-width: 24px;
+                    vertical-align: text-bottom;
+                }
+            }
+        }
+        .close-search {
+            position: absolute;
+            right: 20px;
+            z-index: 999;
+            top: 0px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+    }
+}
