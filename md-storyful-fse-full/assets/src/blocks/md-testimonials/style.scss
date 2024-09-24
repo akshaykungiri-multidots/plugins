@@ -1,0 +1,156 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-storyful-fse-full-sample-dynamic {
+    color: abstracts.$primary-theme-color;
+}
+
+.storyful-client-testimonials {
+    text-align: center;
+    padding: 95px 0;
+    h2 {
+        font-size: 26px;
+        line-height: 30px;
+        color: #ff4c15;
+        font-family: arial,helvetica,sans-serif;
+        margin-bottom: 30px;
+        text-transform: uppercase
+    }
+    .client-testimonials {
+        .client-testimonial {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            .client-testimonial-text {
+                font-size: 34px;
+                line-height: 44px;
+                font-family: PlayfairDisplay-SemiBold;
+                margin: 0;
+                margin-bottom: 30px;
+            }
+            .client-logo {
+                img {
+                    display: inline-block;
+                    height: 55px;
+                    width: auto;
+                }
+            }
+        }
+        .slick-arrow {
+            width: 22px;
+            height: 22px;
+            // background-image: url(../../images/testimonials-arrow-black.svg);
+            background-repeat: no-repeat;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            padding: 0;
+            border: none;
+            z-index: 1;
+            display: block
+        }
+
+        .slick-arrow:before {
+            display: none
+        }
+
+        .slick-arrow.slick-prev {
+            -webkit-transform: rotate(0);
+            transform: rotate(0)
+        }
+
+        .slick-arrow.slick-next {
+            left: 60px;
+            -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg)
+        }
+
+        .slick-arrow {
+            bottom: -40px;
+            top: inherit
+        }
+        
+        .slick-arrow.slick-prev {
+            left: 50%;
+            -webkit-transform: translateX(calc(-50% - 40px));
+            transform: translateX(calc(-50% - 40px))
+        }
+        
+        .slick-arrow.slick-next {
+            left: 50%;
+            -webkit-transform: translateX(calc(-50% + 40px)) rotate(-180deg);
+            transform: translateX(calc(-50% + 40px)) rotate(-180deg)
+        }
+    }
+
+    &.style2 {
+        .container {
+            display: flex;
+            align-items: flex-start;
+            .theme-title {
+                flex: 1 0 50%;
+                background-image: url(../../images/quote-image.webp);
+                background-repeat: no-repeat;
+                background-position: bottom;
+                padding-bottom: 120px;
+                padding-right: 140px;
+                background-size: 180px;
+                text-align: left;
+                .section-title {
+                    font-size: 50px;
+                    line-height: 55px;
+                    font-family: arial,helvetica,sans-serif;
+                    color: #ff4c15;
+                    margin: 0;
+                    font-weight: 700;
+                    text-transform: none;
+                    strong {
+                        -webkit-text-stroke: 1px #ff4c15;
+                        color: #fffdfa;
+                    }
+                }
+            }
+            .client-testimonials {
+                flex: 1 0 50%;
+                max-width: 50%;
+                padding-bottom: 30px;
+                text-align: left;
+                .client-testimonial-text {
+                    letter-spacing: .01em !important;
+                    font-size: 16px !important;
+                    line-height: 24px !important;
+                    font-family: Arial, Helvetica, sans-serif !important;
+                }
+                .client-testimonial-title {
+                    font-size: 20px;
+                    line-height: 28px;
+                    font-weight: 700;
+                    margin-top: 36px
+                }
+            }
+            .slick-arrow {
+                left: 10%;
+                right: 10%;
+            }
+        }
+    }
+}
+
+
+.slick-prev,.slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0,-50%);
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: 0 0
+}

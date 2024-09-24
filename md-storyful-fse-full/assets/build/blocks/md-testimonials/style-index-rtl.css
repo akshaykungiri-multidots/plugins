@@ -1,0 +1,136 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-testimonials/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-storyful-fse-full-sample-dynamic {
+  color: #000000;
+}
+
+.storyful-client-testimonials {
+  text-align: center;
+  padding: 95px 0;
+}
+.storyful-client-testimonials h2 {
+  font-size: 26px;
+  line-height: 30px;
+  color: #ff4c15;
+  font-family: arial, helvetica, sans-serif;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.storyful-client-testimonials .client-testimonials .client-testimonial {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+.storyful-client-testimonials .client-testimonials .client-testimonial .client-testimonial-text {
+  font-size: 34px;
+  line-height: 44px;
+  font-family: PlayfairDisplay-SemiBold;
+  margin: 0;
+  margin-bottom: 30px;
+}
+.storyful-client-testimonials .client-testimonials .client-testimonial .client-logo img {
+  display: inline-block;
+  height: 55px;
+  width: auto;
+}
+.storyful-client-testimonials .client-testimonials .slick-arrow {
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: 100px;
+  padding: 0;
+  border: none;
+  z-index: 1;
+  display: block;
+}
+.storyful-client-testimonials .client-testimonials .slick-arrow:before {
+  display: none;
+}
+.storyful-client-testimonials .client-testimonials .slick-arrow.slick-prev {
+  transform: rotate(0);
+}
+.storyful-client-testimonials .client-testimonials .slick-arrow.slick-next {
+  right: 60px;
+  transform: rotate(180deg);
+}
+.storyful-client-testimonials .client-testimonials .slick-arrow {
+  bottom: -40px;
+  top: inherit;
+}
+.storyful-client-testimonials .client-testimonials .slick-arrow.slick-prev {
+  right: 50%;
+  transform: translateX(calc(-1*(-50% - 40px)));
+}
+.storyful-client-testimonials .client-testimonials .slick-arrow.slick-next {
+  right: 50%;
+  transform: translateX(calc(-1*(-50% + 40px))) rotate(180deg);
+}
+.storyful-client-testimonials.style2 .container {
+  display: flex;
+  align-items: flex-start;
+}
+.storyful-client-testimonials.style2 .container .theme-title {
+  flex: 1 0 50%;
+  background-image: url(../..//wp-content/themes/md-storyful-fse-full/assets/build/images/quote-image.c388f8e8.webp);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  padding-bottom: 120px;
+  padding-left: 140px;
+  background-size: 180px;
+  text-align: right;
+}
+.storyful-client-testimonials.style2 .container .theme-title .section-title {
+  font-size: 50px;
+  line-height: 55px;
+  font-family: arial, helvetica, sans-serif;
+  color: #ff4c15;
+  margin: 0;
+  font-weight: 700;
+  text-transform: none;
+}
+.storyful-client-testimonials.style2 .container .theme-title .section-title strong {
+  -webkit-text-stroke: 1px #ff4c15;
+  color: #fffdfa;
+}
+.storyful-client-testimonials.style2 .container .client-testimonials {
+  flex: 1 0 50%;
+  max-width: 50%;
+  padding-bottom: 30px;
+  text-align: right;
+}
+.storyful-client-testimonials.style2 .container .client-testimonials .client-testimonial-text {
+  letter-spacing: 0.01em !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+.storyful-client-testimonials.style2 .container .client-testimonials .client-testimonial-title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  margin-top: 36px;
+}
+.storyful-client-testimonials.style2 .container .slick-arrow {
+  right: 10%;
+  left: 10%;
+}
+
+.slick-prev, .slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: 100% 0;
+}

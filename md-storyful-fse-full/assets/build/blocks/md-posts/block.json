@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-posts",
+  "version": "0.1.0",
+  "title": "MD Posts",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "MD Posts block.",
+  "keywords": [
+    "md-storyful-fse-full",
+    "md-posts"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "enableSearch": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableFilter": {
+      "type": "boolean",
+      "default": true
+    },
+    "numberOfPostsPerRow": {
+      "type": "string",
+      "default": "3"
+    },
+    "numberOfRows": {
+      "type": "string",
+      "default": 3
+    },
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "enableNewsLetter": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayNewsLetterAfterRow": {
+      "type": "string",
+      "default": 2
+    },
+    "enableMostPopular": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayMostPopularAboveOrBelow": {
+      "type": "string",
+      "default": "above"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

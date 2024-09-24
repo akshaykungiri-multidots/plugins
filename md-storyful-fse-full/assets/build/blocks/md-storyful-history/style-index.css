@@ -1,0 +1,101 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-storyful-history/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-storyful-fse-full-sample-dynamic {
+  color: #000000;
+}
+
+.storyful-timeline {
+  padding-top: 93px;
+  padding-bottom: 144px;
+}
+.storyful-timeline .storyful-timeline-items .storyful-timeline-item {
+  display: none;
+  gap: 30px;
+  max-width: 650px;
+  margin: 0 auto;
+  align-items: center;
+}
+.storyful-timeline .storyful-timeline-items .storyful-timeline-item.active {
+  display: flex;
+}
+.storyful-timeline .storyful-timeline-items .storyful-timeline-item .storyful-timeline-item-image img {
+  width: 214px;
+  height: 214px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 100%;
+}
+.storyful-timeline .storyful-timeline-items .storyful-timeline-item .storyful-timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 0;
+}
+.storyful-timeline .storyful-timeline-items .storyful-timeline-item .storyful-timeline-content .storyful-timeline-title {
+  font-size: 20px;
+  line-height: 26px;
+  font-family: arial, helvetica, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+.storyful-timeline .storyful-timeline-items .storyful-timeline-item .storyful-timeline-content .storyful-timeline-item-title {
+  font-size: 28px;
+  line-height: 36px;
+  font-family: PlayfairDisplay-Bold;
+  margin: 0;
+}
+.storyful-timeline .storyful-timeline-items .storyful-timeline-item .storyful-timeline-content p {
+  line-height: 24px;
+}
+.storyful-timeline .storyful-timeline-items .wrapper__box-inner {
+  padding-top: 147px;
+  padding-bottom: 80px;
+}
+.storyful-timeline .storyful-timeline-years {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.storyful-timeline .storyful-timeline-years .storyful-timeline-year h4 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  font-size: 30px;
+  line-height: 39px;
+  font-family: arial, helvetica, sans-serif;
+  font-weight: 400;
+  color: #11152c;
+  cursor: pointer;
+  margin: 0;
+}
+.storyful-timeline .storyful-timeline-years .storyful-timeline-year h4::before {
+  content: "";
+  width: 19px;
+  height: 19px;
+  display: block;
+  background-color: #11152c;
+  border-radius: 100%;
+  margin: 0 auto;
+  z-index: 9;
+}
+.storyful-timeline .storyful-timeline-years .storyful-timeline-year.active h4 {
+  color: #ff4c15;
+}
+.storyful-timeline .storyful-timeline-years .storyful-timeline-year.active h4::before {
+  background-color: #ff4c15;
+}
+.storyful-timeline .storyful-timeline-years::before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #11152c;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

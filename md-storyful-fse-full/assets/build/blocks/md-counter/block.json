@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-counter",
+  "version": "0.1.0",
+  "title": "MD Counter Block",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "md-counter block.",
+  "keywords": [
+    "md-counter",
+    "Block"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "columnList": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "title": "",
+          "description": ""
+        }
+      ]
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

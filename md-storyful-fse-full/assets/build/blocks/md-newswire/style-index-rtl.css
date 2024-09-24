@@ -1,0 +1,214 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-newswire/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.newswire-by-storyful {
+  padding: 100px 0;
+}
+.newswire-by-storyful .newswire-by-storyful-top {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  margin-bottom: 60px;
+  justify-content: space-between;
+}
+.newswire-by-storyful .newswire-by-storyful-top__left {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  flex-basis: 50%;
+  flex-shrink: 0;
+}
+.newswire-by-storyful .newswire-by-storyful-top__left .section-title {
+  color: #11152c;
+}
+.newswire-by-storyful .newswire-by-storyful-top__left h2 {
+  color: #11152c;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 48px;
+}
+.newswire-by-storyful mark {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ff4c15;
+  font-size: 36px;
+  line-height: 48px;
+}
+.newswire-by-storyful .newswire-by-storyful-top__left h2 strong {
+  font-family: PlayfairDisplay-Bold;
+}
+.newswire-by-storyful .newswire-by-storyful-top__left .section-buttons {
+  display: flex;
+  gap: 30px;
+}
+.newswire-by-storyful .newswire-by-storyful-top__right {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.newswire-by-storyful .newswire-by-storyful-top__right .side-graphics img {
+  max-width: inherit;
+  height: 520px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 60px;
+  gap: 60px;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom.btn-hidden {
+  grid-template-columns: 2fr;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 60px;
+  gap: 60px;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items.single-col {
+  grid-template-columns: repeat(1, 1fr);
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items__item {
+  border-top: 1px solid rgba(17, 21, 44, 0.5);
+  padding-top: 17px;
+  position: relative;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items__item:hover:before {
+  width: 30px;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items__item:before {
+  content: "";
+  width: 20px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: -11px;
+  right: 0;
+  background-color: #ff4c15;
+  transition: all 0.3s ease-in-out;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items__item h3 {
+  margin: 0 0 25px;
+  position: relative;
+  color: #11152c;
+  transition: all 0.3s ease-in-out;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items__item h3:hover:before {
+  left: 10px;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items__item h3 a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding-left: 30px;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items__item.arrow-on h3:before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 12px;
+  background-image: url(/wp-content/themes/md-storyful-fse-full/assets/build/images/btn-arrow.a8e38223.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  top: 11px;
+  transition: all 0.3s ease-in-out;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__grid .newswire-by-storyful-items__item p {
+  margin-top: 0;
+  font-family: arial, helvetica, sans-serif;
+  line-height: 24px;
+  font-size: 16px;
+  color: #11152c;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: arial, helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__contact .circle-button {
+  background-color: #ff4c15 !important;
+  border-radius: 100% !important;
+  width: 194px;
+  height: 194px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 35px;
+  position: relative;
+  top: -10px;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__contact .circle-button, .newswire-by-storyful .newswire-by-storyful-buttom__contact .circle-button a {
+  color: #fffdfa;
+  font-family: arial, helvetica, sans-serif;
+  font-weight: 700;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 30px;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__contact .circle-button:after {
+  content: "";
+  background-image: url(/wp-content/themes/md-storyful-fse-full/assets/build/images/arrow-white-2x.293db76d.svg);
+  width: 22px;
+  height: 34px;
+  position: absolute;
+  bottom: 30px;
+  transition: all 0.3s ease;
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__contact .circle-button:hover:after {
+  transform: rotate(-90deg);
+}
+.newswire-by-storyful .newswire-by-storyful-buttom__contact .circle-button .circle-link, .newswire-by-storyful .newswire-by-storyful .newswire-by-storyful-buttom__contact .circle-button .circle-link a {
+  font-size: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  cursor: pointer;
+  z-index: 1;
+}
+.newswire-by-storyful.style2 .newswire-by-storyful-top {
+  flex-direction: row-reverse;
+}
+.newswire-by-storyful.style2 .newswire-by-storyful-top__left .section-title {
+  color: #fffdfa;
+}
+.newswire-by-storyful.style2 .newswire-by-storyful-top__left .section-title strong {
+  color: transparent;
+  -webkit-text-stroke: 1px #fffdfa;
+}
+.newswire-by-storyful.style2 .newswire-by-storyful-top__left h2 {
+  font-size: 23px;
+  line-height: 32px;
+  color: #fffdfa;
+  font-family: arial, helvetica, sans-serif;
+  margin: 0;
+  font-weight: 400;
+}
+.newswire-by-storyful.style2 .newswire-by-storyful-top__left h3 {
+  font-size: 28px;
+  line-height: 30px;
+  color: #fffdfa;
+  font-family: arial, helvetica, sans-serif;
+  font-weight: 700;
+}
+.newswire-by-storyful.style2 .newswire-by-storyful-top__left h3 mark {
+  font-size: inherit;
+  line-height: inherit;
+  background-color: rgba(0, 0, 0, 0);
+  color: #4ec5df;
+}

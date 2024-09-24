@@ -1,0 +1,420 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-posts/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.storyful-resources .resources-listing-main {
+  display: flex;
+  flex-direction: column;
+}
+.storyful-resources .browse-tab-filters {
+  padding-top: 70px;
+}
+.storyful-resources .browse-tab-filters ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 50px;
+  border-bottom: 1px solid #11152c;
+  margin: 0 0 48px;
+}
+.storyful-resources .browse-tab-filters ul li {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+  cursor: pointer;
+  padding-bottom: 19px;
+  position: relative;
+  color: rgba(17, 21, 44, 0.5);
+}
+.storyful-resources .browse-tab-filters ul li::before {
+  content: "";
+  width: 0;
+  height: 9px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  background-color: #ff4c15;
+  transition: width 0.3s linear 0s;
+}
+.storyful-resources .browse-tab-filters ul li.active {
+  color: #11152c;
+}
+.storyful-resources .browse-tab-filters ul li.active::before {
+  width: 100%;
+  left: 0;
+  right: auto;
+}
+.storyful-resources .most-popular-heading.above h2 {
+  font-family: arial, helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 42px;
+}
+.storyful-resources .browse-filters.with-custom-select {
+  display: flex;
+  gap: 26px;
+}
+.storyful-resources .browse-filters.with-custom-select .search-box {
+  flex: 1 1 40%;
+  position: relative;
+}
+.storyful-resources .browse-filters.with-custom-select .custom-select-filter-wrapper {
+  flex-basis: 25%;
+  position: relative;
+  background-color: #fffdfa;
+}
+.storyful-resources .browse-filters.with-custom-select .custom-select-filter-wrapper .custom-select-filter-label {
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid #11152c;
+  padding: 18px 50px 18px 26px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 100px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+.storyful-resources .browse-filters.with-custom-select .custom-select-filter-wrapper .custom-select-filter-label::before {
+  content: "";
+  background-image: url(/wp-content/themes/md-storyful-fse-full/assets/build/images/mobile-select-black-arrow.77019c6d.svg);
+  transition: all 0.3s ease-in-out;
+  background-repeat: no-repeat;
+  width: 14px;
+  height: 10px;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.storyful-resources .browse-filters.with-custom-select .custom-select-filter-wrapper .custom-select-filter {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  left: 0;
+  top: 100%;
+  z-index: 99;
+  opacity: 1;
+  border-radius: 0 0 10px 10px;
+  margin: 0;
+  max-height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border: 1px solid #11152c;
+  display: none;
+  background-color: #fffdfa;
+  border-top: 0;
+}
+.storyful-resources .browse-filters.with-custom-select .custom-select-filter-wrapper .custom-select-filter li {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 18px 50px 18px 26px;
+  border-bottom: 1px solid #11152c;
+  cursor: pointer;
+}
+.storyful-resources .browse-filters.with-custom-select .custom-select-filter-wrapper.active-select .custom-select-filter-label {
+  border-radius: 10px 10px 0 0;
+}
+.storyful-resources .browse-filters.with-custom-select .custom-select-filter-wrapper.active-select .custom-select-filter {
+  display: block;
+}
+.storyful-resources .resources-listing-main__most-popular-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 76px;
+  border-bottom: 1px solid #a7a9ac;
+  padding-bottom: 73px;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  border-top: 1px solid #a7a9ac;
+  padding-top: 76px;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__image-wrapper {
+  flex: 1 1 0;
+  overflow: hidden;
+  position: relative;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__image-wrapper a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 338px;
+  width: 100%;
+  display: block;
+  transition: all 0.3s ease;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__image-wrapper img:hover {
+  transform: scale(1.2);
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__details {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__details .cat-name a {
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #11152c;
+  padding: 4px 12px;
+  border-radius: 30px;
+  display: inline-block;
+  color: inherit;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__details h3 a {
+  font-family: PlayfairDisplay-SemiBold;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 49px;
+  color: #11152c;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__details p {
+  font-size: 18px;
+  line-height: 26px;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__details a.readmore-link {
+  color: #ff4c15;
+  font-weight: 700;
+  font-size: 16px;
+  position: relative;
+  align-self: flex-start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item:first-child {
+  border-top: 0;
+}
+.storyful-resources .resources-listing-main__layout {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 76px;
+  -moz-column-gap: 55px;
+  column-gap: 55px;
+  padding: 76px 0 100px;
+}
+.storyful-resources .resources-listing-main__layout .item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1 0 calc(33.33% - 55px);
+  max-width: 50%;
+}
+.storyful-resources .resources-listing-main__layout .item .item__image-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.storyful-resources .resources-listing-main__layout .item .item__image-wrapper img {
+  width: 100%;
+  display: block;
+  height: 256px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.storyful-resources .resources-listing-main__layout .item .item__image-wrapper img:hover {
+  transform: scale(1.2);
+}
+.storyful-resources .resources-listing-main__layout .item .item__title-and-date-wrapper .categories-wrap {
+  margin: 0 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.storyful-resources .resources-listing-main__layout .item .item__title-and-date-wrapper .categories-wrap a {
+  font-size: 16px;
+  line-height: 24px;
+  border: 1px solid #11152c;
+  padding: 4px 12px;
+  border-radius: 30px;
+  display: inline-block;
+  color: inherit;
+}
+.storyful-resources .resources-listing-main__layout .item .item__title-and-date-wrapper .item-date {
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: arial, helvetica, sans-serif;
+  font-weight: 400;
+}
+.storyful-resources .resources-listing-main__layout .item .item__title-and-date-wrapper h3 {
+  font-family: PlayfairDisplay-SemiBold;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 31px;
+  color: #11152c;
+}
+.storyful-resources .resources-listing-main__layout .item a.readmore-link {
+  color: #ff4c15;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+  align-self: flex-start;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form {
+  flex-basis: 100%;
+  border: 1px solid #11152c;
+  display: flex;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form form {
+  flex: 1 1 60%;
+  padding: 55px;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form form label {
+  font-size: 45px;
+  line-height: 49px;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  margin-bottom: 28px;
+  display: block;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form form .form-type-options {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 26px;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form form .input-and-button .form-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form form .input-and-button .form-field input[type=email] {
+  padding: 14px 18px;
+  border: 1px solid #919191;
+  width: 100%;
+  flex-grow: 1;
+  font-size: 12px;
+  max-width: 380px;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form form .input-and-button .form-field button {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: 1px solid #ff4c15;
+  cursor: pointer;
+  border-radius: 50px;
+  color: #fffdfa;
+  font-size: 13px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding: 14px 20px 14px 52px;
+  line-height: 13px;
+  background-color: #ff4c15;
+  margin: 0;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form form .input-and-button .form-field button::before {
+  content: "";
+  background-image: url(/wp-content/themes/md-storyful-fse-full/assets/build/images/btn-arrow-hover.e4f0a4aa.svg);
+  display: block;
+  width: 15px;
+  height: 12px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 20px;
+  top: calc(50% - 6px);
+  transition: all 0.3s ease-in-out;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form .image-section {
+  flex: 1 0 40%;
+  overflow: hidden;
+  position: relative;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form .image-section img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.storyful-resources .resources-listing-main__layout .blog-listing-newsletter-form .image-section:hover img {
+  transform: scale(1.2);
+}
+.storyful-resources .resources-listing-main__pagination-section {
+  border-bottom: 1px solid #a7a9ac;
+  padding: 0 0 65px;
+  display: flex;
+  justify-content: center;
+}
+.storyful-resources .resources-listing-main__pagination-section .pagination {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.storyful-resources .resources-listing-main__pagination-section .pagination span, .storyful-resources .resources-listing-main__pagination-section .pagination a {
+  font-size: 18px;
+  color: #11152c;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: arial, helvetica, sans-serif;
+}
+.storyful-resources .resources-listing-main__pagination-section .pagination span.current {
+  color: #ff4c15;
+  font-weight: 700;
+}
+.storyful-resources .resources-listing-main__pagination-section .pagination a.next, .storyful-resources .resources-listing-main__pagination-section .pagination a.prev {
+  width: 44px;
+  height: 44px;
+  background-color: #ff4c15;
+  color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.storyful-resources .resources-listing-main__pagination-section .pagination a.next i, .storyful-resources .resources-listing-main__pagination-section .pagination a.prev i {
+  font-weight: 700;
+  color: #fff;
+}
+
+.storyful-posts .browse-filters.with-custom-select {
+  padding-top: 68px;
+}
+.storyful-posts .most-popular-heading {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: -20px;
+}
+.storyful-posts .search-box #browse-search {
+  background-image: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid #11152c;
+  padding: 18px 50px 18px 26px;
+  border-radius: 100px;
+  font-size: 16px;
+  line-height: 24px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: 94% 50%;
+  width: 100%;
+}
+.storyful-posts .search-box .search-icon {
+  background-image: url(/wp-content/themes/md-storyful-fse-full/assets/build/images/search-icon.a2670da3.svg);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-repeat: no-repeat;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

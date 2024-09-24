@@ -1,0 +1,162 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-two-column-banner/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-storyful-fse-full-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.cta-section {
+  overflow: hidden;
+}
+
+.cta-section .container-fluid {
+  display: flex;
+  padding: 0;
+  align-self: flex-start;
+}
+
+.cta-section__left {
+  background-color: #fffdfa;
+  padding-left: 80px;
+  border-top: 1px solid #11152c;
+  border-bottom: 1px solid #11152c;
+}
+
+.cta-section__left, .cta-section__right {
+  flex: 1 0 50%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cta-section__right {
+  background: linear-gradient(90.9deg, #11152c 0.77%, #145980 130.71%);
+  overflow: hidden;
+  padding-right: 30px;
+}
+
+.cta-section .cta-news-section {
+  max-width: 560px;
+  margin-left: 0;
+  margin-right: auto;
+  display: flex;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.cta-section .cta-news-section__details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 90px;
+  flex: 1 0 56%;
+  padding-top: 90px;
+}
+
+.cta-section .cta-news-section__details .section-title {
+  font-size: 57px;
+  line-height: 62px;
+  margin: 0;
+}
+
+.cta-section .cta-news-section__details .cta-section-desc {
+  font-size: 19px;
+  line-height: 28px;
+}
+
+.cta-section .cta-news-section__details .sbtn {
+  align-self: flex-start;
+}
+
+.cta-section .cta-news-section__media {
+  display: inline-block;
+  text-align: center;
+  align-self: flex-end;
+  flex-shrink: 0;
+}
+
+.cta-section .cta-news-section__media .media-image-wrapper {
+  margin-bottom: 40px;
+}
+
+.cta-section .cta-news-section__media figure {
+  position: relative;
+}
+
+.cta-section .cta-news-section__media figure:before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: #ff4c15;
+  border-radius: 100%;
+  right: 0;
+  top: -60px;
+}
+
+.cta-section .cta-news-section__media figure img {
+  width: 240px;
+  height: 240px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-section .intelligence-section {
+  max-width: 560px;
+  margin-right: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  width: 100%;
+}
+
+.cta-section .intelligence-section__details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 90px;
+  flex: 1 0 65%;
+  padding-bottom: 90px;
+  padding-right: 20px;
+}
+
+.cta-section .intelligence-section__details .section-title {
+  font-size: 57px;
+  line-height: 62px;
+  margin: 0;
+}
+
+.cta-section .intelligence-section__details .cta-section-desc {
+  font-size: 19px;
+  line-height: 28px;
+  color: #fffdfa;
+}
+
+.cta-section .intelligence-section__details .sbtn {
+  align-self: flex-start;
+}
+
+.cta-section .intelligence-section__media {
+  display: inline-block;
+  flex: 1 0 100%;
+  text-align: center;
+  max-width: 400px;
+}
+
+.cta-section .intelligence-section__media figure img {
+  width: 400px;
+  height: 400px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

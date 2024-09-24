@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-video-licensing",
+  "version": "0.1.0",
+  "title": "Video Licensing",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "A block to display video licensing options.",
+  "keywords": ["video", "licensing", "storyful"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "buyButtonText": {
+      "type": "string",
+      "default": "Buy"
+    },
+    "sellButtonText": {
+      "type": "string",
+      "default": "Sell"
+    },
+    "licenseText": {
+      "type": "string",
+      "default": ""
+    },
+    "learnMoreText": {
+      "type": "string",
+      "default": "Learn More"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

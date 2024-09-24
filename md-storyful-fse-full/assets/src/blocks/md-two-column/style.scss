@@ -1,0 +1,67 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-storyful-fse-full-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+
+.storyful-two-column {
+    padding-top: 127px;
+    background-color: #fffdfa;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    .container {
+        display: flex;
+        .two-columns__title {
+            flex: 1 1 0;
+            padding-right: 80px;
+            position: relative;
+            padding-bottom: 127px;
+            h2 {
+                font-size: 60px;
+                line-height: 78px;
+                margin: 0;
+                mark {
+                    background-color: rgba(0, 0, 0, 0);
+                    color: #ff4c15;
+                    font-size: 60px;
+                    line-height: 78px;
+                    font-family: PlayfairDisplay-SemiBold;
+                    font-weight: 600;
+                }
+            }
+            &::before {
+                width: 1px;
+                height: 100%;
+                background-color: #e5e6ef;
+                right: 0;
+                content: "";
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0;
+            }
+            &::after {
+                content: "";
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 0;
+                width: 43px;
+                height: 42px;
+                background-color: #fffdfa;
+                background-image: url(../../images/devider-bub.svg);
+                right: -21.5px;
+            }
+        }
+        .two-columns__description {
+            flex: 1 1 0;
+            padding-left: 80px;
+            padding-bottom: 80px;
+            p {
+                font-size: 23px;
+                line-height: 32px;
+                font-family: arial, helvetica, sans-serif;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-subscribe/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-storyful-fse-full-md-subscribe {
+  width: 100%;
+}
+.wp-block-md-storyful-fse-full-md-subscribe .form-group-radio {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 26px;
+}
+.wp-block-md-storyful-fse-full-md-subscribe .form-group-radio input {
+  margin-left: 5px;
+}
+.wp-block-md-storyful-fse-full-md-subscribe .form-group-subscribe .form-group {
+  display: flex;
+}
+.wp-block-md-storyful-fse-full-md-subscribe .form-group-subscribe .form-group input[type=email] {
+  padding: 10px 18px;
+  border-radius: 0 8px 8px 0;
+  border: 1px solid #919191;
+  width: 100%;
+  flex-grow: 1;
+  font-size: 12px;
+}
+.wp-block-md-storyful-fse-full-md-subscribe .form-group-subscribe .form-group input[type=submit] {
+  margin-right: 0px;
+  background: #ff4c15;
+  font-family: arial, helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fffdfa;
+  padding: 10px 18px;
+  border: none;
+  flex-shrink: 0;
+  margin: 0;
+  border-radius: 8px 0 0 8px;
+}

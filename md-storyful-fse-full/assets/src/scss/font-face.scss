@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/OpenSansRegular.eot');
+    src: url('../fonts/OpenSansRegular.eot') format('embedded-opentype'),
+         url('../fonts/OpenSansRegular.woff2') format('woff2'),
+         url('../fonts/OpenSansRegular.woff') format('woff'),
+         url('../fonts/OpenSansRegular.ttf') format('truetype'),
+         url('../fonts/OpenSansRegular.svg#OpenSansRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'PlayfairDisplay';
+    src: url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+    src: url('../fonts/PlayfairDisplay-Black.ttf') format('truetype'),
+         url('../fonts/PlayfairDisplay-BlackItalic.ttf') format('truetype'),
+         url('../fonts/PlayfairDisplay-Bold.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-BoldItalic.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-ExtraBold.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-ExtraBoldItalic.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-Medium.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-MediumItalic.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-SemiBold.ttf') format('truetype'),
+        url('../fonts/PlayfairDisplay-SemiBoldItalic.ttf') format('truetype');
+}

@@ -1,0 +1,70 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-two-column/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-storyful-fse-full-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.storyful-two-column {
+  padding-top: 127px;
+  background-color: #fffdfa;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.storyful-two-column .container {
+  display: flex;
+}
+.storyful-two-column .container .two-columns__title {
+  flex: 1 1 0;
+  padding-right: 80px;
+  position: relative;
+  padding-bottom: 127px;
+}
+.storyful-two-column .container .two-columns__title h2 {
+  font-size: 60px;
+  line-height: 78px;
+  margin: 0;
+}
+.storyful-two-column .container .two-columns__title h2 mark {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ff4c15;
+  font-size: 60px;
+  line-height: 78px;
+  font-family: PlayfairDisplay-SemiBold;
+  font-weight: 600;
+}
+.storyful-two-column .container .two-columns__title::before {
+  width: 1px;
+  height: 100%;
+  background-color: #e5e6ef;
+  right: 0;
+  content: "";
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+}
+.storyful-two-column .container .two-columns__title::after {
+  content: "";
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  width: 43px;
+  height: 42px;
+  background-color: #fffdfa;
+  background-image: url(/wp-content/themes/md-storyful-fse-full/assets/build/images/devider-bub.be7418d3.svg);
+  right: -21.5px;
+}
+.storyful-two-column .container .two-columns__description {
+  flex: 1 1 0;
+  padding-left: 80px;
+  padding-bottom: 80px;
+}
+.storyful-two-column .container .two-columns__description p {
+  font-size: 23px;
+  line-height: 32px;
+  font-family: arial, helvetica, sans-serif;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-our-story",
+  "version": "0.1.0",
+  "title": "MD Our Story",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "This is a sample block for MD Storyful FSE Full",
+  "keywords": ["md-storyful-fse-full", "md-our-story"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "our_story_title": {
+      "type": "string",
+      "default": ""
+    },
+    "our_story_video_image": {
+      "type": "string",
+      "default": ""
+    },
+    "our_story_video_link": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

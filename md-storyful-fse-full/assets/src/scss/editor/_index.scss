@@ -1,0 +1,20 @@
+@use './blocks';
+@use './elements';
+@use './sidebar';
+
+
+.md-storyful-footer-img {
+    position: absolute;
+    left: -20px;
+    top: 100px;
+}
+.md-storyful-fse-full-footer {
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+.md-storyful-fse-full-header {
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}

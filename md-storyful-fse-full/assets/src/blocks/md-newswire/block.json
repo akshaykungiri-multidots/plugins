@@ -1,0 +1,56 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-newswire",
+  "version": "0.1.0",
+  "title": "MD Newswire",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "Sample block.",
+  "keywords": ["md-storyful-fse-full", "md-newswire"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "newswire_title": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_description": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_button_link": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_left_title": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_left_description": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_sub_title": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_right_image": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_theme_style": {
+      "type": "string",
+      "default": "style1"
+    },
+    "background_color": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

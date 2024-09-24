@@ -1,0 +1,93 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-video-licensing/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-storyful-fse-full-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.storyful-video-licensing {
+  background-color: #fffdfa;
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+.storyful-video-licensing .container {
+  border-bottom: 1px solid #11152c;
+}
+.storyful-video-licensing .video-licensing-wrap {
+  display: flex;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__left {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+  border-left: 1px solid #11152c;
+  padding-left: 84px;
+  padding-bottom: 66px;
+  position: relative;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__left .bye-sell-button {
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__left .bye-sell-button .link {
+  color: #11152c;
+  font-size: 27px;
+  line-height: 30px;
+  font-family: arial, helvetica, sans-serif;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__left .bye-sell-button .link a {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: inherit;
+  position: relative;
+  padding-right: 60px;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__left .bye-sell-button .link a::before {
+  content: "";
+  display: block;
+  width: 29px;
+  height: 17px;
+  background-image: url(/wp-content/themes/md-storyful-fse-full/assets/build/images/arrow-xxl-black.52843675.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+  top: calc(50% - 8.5px);
+  transition: all 0.3s ease-in-out;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__left::before {
+  content: "";
+  width: 34px;
+  height: 34px;
+  background-color: #ff4c15;
+  border-radius: 100%;
+  position: absolute;
+  left: -17px;
+  top: 0;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__right {
+  flex-basis: 50%;
+  padding-right: 84px;
+  padding-left: 66px;
+  padding-bottom: 66px;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__right .licensing-description {
+  font-size: 52px;
+  line-height: 68px;
+  font-weight: 400;
+  font-family: PlayfairDisplay-Medium;
+  margin-bottom: 66px;
+}
+.storyful-video-licensing .video-licensing-wrap .video-licensing-wrap__right .licensing-description mark {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ff4c15;
+  font-size: 52px;
+  line-height: 68px;
+  font-weight: 400;
+  font-family: PlayfairDisplay-Medium;
+  margin-bottom: 66px;
+  display: inline;
+}

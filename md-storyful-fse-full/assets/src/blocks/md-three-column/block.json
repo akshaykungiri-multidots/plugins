@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-three-column",
+  "version": "0.1.0",
+  "title": "MD Three column Block",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "md-three-column block.",
+  "keywords": ["md-three-column", "Block"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "columnList": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "title": "",
+          "description": "",
+          "image": ""
+        }
+      ]
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

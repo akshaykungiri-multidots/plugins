@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-two-column-banner",
+  "version": "0.1.0",
+  "title": "MD Two Column Banner",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "A sample block for testing",
+  "keywords": [
+    "md-storyful-fse-full",
+    "md-two-column-banner"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "section_left_strong_title": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_title": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_description": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_button_link": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_image": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_title": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_description": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_button_link": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_image": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-subscribe",
+  "version": "0.1.0",
+  "title": "MD Subscribe",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "A Subscribe block for Storyful FSE",
+  "keywords": ["subscribe", "md-storyful-fse-full"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

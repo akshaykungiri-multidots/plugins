@@ -1,0 +1,67 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-three-column/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-storyful-fse-full-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.storyful-three-col-list {
+  padding-top: 89px;
+  padding-bottom: 100px;
+  background-size: cover;
+}
+.storyful-three-col-list .storyful-three-col-list__title h2 {
+  font-size: 55px;
+  line-height: 71px;
+  color: #fffdfa;
+  text-align: center;
+  margin: 0 0 71px;
+}
+.storyful-three-col-list .threecol-wrap {
+  background-color: #fffdfa;
+  padding: 54px 0;
+  border-bottom: 15px solid #ff4c15;
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+  align-items: center;
+}
+.storyful-three-col-list .threecol-wrap .threecol-list-items {
+  display: flex;
+}
+.storyful-three-col-list .threecol-wrap .threecol-list-items .threecol-list-items__item {
+  flex: 1 1 0;
+  border-left: 1px solid #11152c;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 21px;
+  position: relative;
+}
+.storyful-three-col-list .threecol-wrap .threecol-list-items .threecol-list-items__item .column-item-img {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  max-height: 80px;
+  max-width: 90px;
+}
+.storyful-three-col-list .threecol-wrap .threecol-list-items .threecol-list-items__item .column-item-img img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+.storyful-three-col-list .threecol-wrap .threecol-list-items .threecol-list-items__item h3 {
+  font-size: 24px;
+  line-height: 28px;
+  margin: 0;
+}
+.storyful-three-col-list .threecol-wrap .threecol-list-items .threecol-list-items__item p {
+  line-height: 24px;
+}
+.storyful-three-col-list .threecol-wrap .threecol-list-items .threecol-list-items__item:last-child {
+  border: none;
+}

@@ -1,0 +1,86 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-counter/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-storyful-fse-full-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.storyful-stat-number {
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  padding-bottom: 70px;
+  position: relative;
+  background-size: cover;
+}
+.storyful-stat-number .container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  position: relative;
+  z-index: 1;
+}
+.storyful-stat-number .container .stats-block-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  justify-content: space-between;
+}
+.storyful-stat-number .container .stats-block-top .stats-block-top__left {
+  flex-basis: 55%;
+}
+.storyful-stat-number .container .stats-block-top .stats-block-top__left .state-block__heading {
+  color: #fffdfa;
+  font-family: PlayfairDisplay-Medium;
+  font-size: 52px;
+  line-height: 68px;
+}
+.storyful-stat-number .container .stats-block-top .stats-block-top__right {
+  flex-basis: 45%;
+}
+.storyful-stat-number .container .stats-block-top .stats-block-top__right p {
+  color: #fffdfa;
+  font-family: arial, helvetica, sans-serif;
+  line-height: 28px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+.storyful-stat-number .container .stats-block-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  gap: 40px;
+  border: 1px solid #fffdfa;
+  padding: 58px 0;
+}
+.storyful-stat-number .container .stats-block-bottom .stats-block-bottom__item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.storyful-stat-number .container .stats-block-bottom .stats-block-bottom__item h3 {
+  font-size: 71px;
+  line-height: 75px;
+  font-weight: 700;
+  font-family: arial, helvetica, sans-serif;
+  margin: 0;
+  color: #4EC5DF;
+}
+.storyful-stat-number .container .stats-block-bottom .stats-block-bottom__item p {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  font-family: arial, helvetica, sans-serif;
+  color: #ffffff;
+}
+.storyful-stat-number .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

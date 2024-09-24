@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-storyful-fse-full/md-case-studies",
+  "version": "0.1.0",
+  "title": "MD Case Studies",
+  "apiVersion": 3,
+  "category": "md-storyful-fse-full",
+  "icon": "lock",
+  "description": "This is a sample block for MD Case Studies",
+  "keywords": ["md-case-studies", "md-storyful-fse-full"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-storyful-fse-full",
+  "attributes": {
+    "section_title": {
+      "type": "string",
+      "default": "This is Default Heading"
+    },
+    "number_of_case_studies": {
+      "type": "string",
+      "default": "3"
+    },
+    "case_studies_ids": {
+      "type": "string",
+      "default": ""
+    },
+    "background_color": {
+      "type": "string",
+      "default": ""
+    },
+    "case_studies_style": {
+      "type": "string",
+      "default": "style_1"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

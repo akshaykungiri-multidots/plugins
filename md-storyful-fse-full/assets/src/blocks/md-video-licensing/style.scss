@@ -1,0 +1,92 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-storyful-fse-full-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+
+.storyful-video-licensing {
+    background-color: #fffdfa;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    .container {
+        border-bottom: 1px solid #11152c;
+    }
+    .video-licensing-wrap {
+        display: flex;
+        .video-licensing-wrap__left {
+            flex-basis: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 47px;
+            border-right: 1px solid #11152c;
+            padding-right: 84px;
+            padding-bottom: 66px;
+            position: relative;
+
+            .bye-sell-button {
+                display: flex;
+                flex-direction: column;
+                gap: 47px;
+                .link {
+                    color: #11152c;
+                    font-size: 27px;
+                    line-height: 30px;
+                    font-family: arial, helvetica, sans-serif;
+                    a {
+                        text-decoration: underline;
+                        color: inherit;
+                        position: relative;
+                        padding-left: 60px;
+                    }
+                    a::before {
+                        content: "";
+                        display: block;
+                        width: 29px;
+                        height: 17px;
+                        background-image: url(../../images/arrow-xxl-black.svg);
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        left: 0;
+                        top: calc(50% - 8.5px);
+                        transition: all .3s ease-in-out;
+                    }
+                }
+            }
+            &::before {
+                content: "";
+                width: 34px;
+                height: 34px;
+                background-color: #ff4c15;
+                border-radius: 100%;
+                position: absolute;
+                right: -17px;
+                top: 0;
+            }
+        }
+        .video-licensing-wrap__right {
+            flex-basis: 50%;
+            padding-left: 84px;
+            padding-right: 66px;
+            padding-bottom: 66px;
+            .licensing-description {
+                font-size: 52px;
+                line-height: 68px;
+                font-weight: 400;
+                font-family: PlayfairDisplay-Medium;
+                margin-bottom: 66px;
+                mark {
+                    background-color: rgba(0, 0, 0, 0);
+                    color: #ff4c15;
+                    font-size: 52px;
+                    line-height: 68px;
+                    font-weight: 400;
+                    font-family: PlayfairDisplay-Medium;
+                    margin-bottom: 66px;
+                    display: inline;
+                }
+            }
+        }
+    }
+}

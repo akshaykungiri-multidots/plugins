@@ -1,0 +1,35 @@
+@use '../../scss/abstracts';
+
+.md_search_block {
+    .md_search_icon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .md_search_input {
+        display: none;
+        position: absolute;
+        top: 15px;
+        width: 80%;
+        left: 0;
+        margin-left: 10%;
+        form {
+            .search-field {
+                width: 100%;
+                z-index: 999;
+                position: relative;
+                padding: 12px 25px;
+                border-radius: 25px;
+            }
+            .search-submit { display: none; }
+        }
+        .close-search {
+            position: absolute;
+            right: 20px;
+            z-index: 999;
+            top: 0px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+    }
+}
