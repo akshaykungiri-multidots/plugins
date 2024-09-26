@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-foursquare/md-breadcrumb",
+  "version": "0.1.0",
+  "title": "MD Breadcrumb",
+  "apiVersion": 3,
+  "category": "md-foursquare",
+  "icon": "lock",
+  "description": "This is a sample block with dynamic content.",
+  "keywords": [
+    "breadcrumb",
+    "md-foursquare"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-foursquare",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
