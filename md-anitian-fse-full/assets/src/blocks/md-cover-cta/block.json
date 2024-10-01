@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-full/md-cover-cta",
+  "version": "0.1.0",
+  "title": "MD Cover CTA",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-full",
+  "icon": "lock",
+  "description": "Cover CTA block",
+  "keywords": ["md-anitian-fse-full", "md-cover-cta"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-anitian-fse-full",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_content": {
+      "type": "string",
+      "default": ""
+    },
+    "button_link": {
+      "type": "string",
+      "default": ""
+    },
+    "cover_image": {
+      "type": "string",
+      "default": ""
+    },
+    "background_image": {
+      "type": "string",
+      "default": ""
+    },
+    "background_color": {
+      "type": "string",
+      "default": ""
+    },
+    "cover_cta_style": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

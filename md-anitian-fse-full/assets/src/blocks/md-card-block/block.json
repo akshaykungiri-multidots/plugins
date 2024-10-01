@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-full/md-card-block",
+  "version": "0.1.0",
+  "title": "MD Card Block",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-full",
+  "icon": "lock",
+  "description": "A custom block for MD Anitian FSE Full",
+  "keywords": ["md-anitian-fse-full", "md-card-block"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-anitian-fse-full",
+  "attributes": {
+    "sub_title": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_content": {
+      "type": "string",
+      "default": ""
+    },
+    "card_block_style": {
+      "type": "string",
+      "default": "style1"
+    },
+    "card_block_list": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

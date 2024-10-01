@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-full/md-leaderships",
+  "version": "0.1.0",
+  "title": "MD Leadership",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-full",
+  "icon": "lock",
+  "description": "MD Leadership block",
+  "keywords": [
+    "md-anitian-fse-full",
+    "md-leaderships"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-anitian-fse-full",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

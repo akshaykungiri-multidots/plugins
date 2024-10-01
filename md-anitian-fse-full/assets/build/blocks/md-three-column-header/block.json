@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-full/md-three-column-header",
+  "version": "0.1.0",
+  "title": "MD Three Column Header",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-full",
+  "icon": "lock",
+  "description": "Three column header block",
+  "keywords": [
+    "md-anitian-fse-full",
+    "md-three-column-header"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-anitian-fse-full",
+  "attributes": {
+    "bannerTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundMediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "columnList": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}
