@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-efi-fse-full/md-slider-v3",
+  "version": "0.1.0",
+  "title": "MD Slider V3",
+  "apiVersion": 3,
+  "category": "md-efi-fse-full",
+  "icon": "lock",
+  "description": "Example static block scaffolded with Create Block tool.",
+  "keywords": [
+    "md-efi-fse-full",
+    "md-slider-v3"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-efi-fse-full",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "MD Slider V3"
+    },
+    "slideItems": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "companyName": "",
+          "testimonial": "",
+          "authorName": "",
+          "designation": "",
+          "videoLink": "",
+          "readMoreLink": ""
+        }
+      ]
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideInfinite": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slideSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

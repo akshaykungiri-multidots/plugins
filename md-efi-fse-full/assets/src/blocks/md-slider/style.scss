@@ -1,0 +1,76 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-efi-fse-full-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+
+.md_hero_banner_slider {
+    .md_slider__item {
+        position: relative;
+        min-height: 680px;
+        align-items: center;
+        display: flex !important;
+        .md_slider__item__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            -o-object-position: center;
+            object-position: center;
+        }
+        .md_slider__item__content {
+            padding: 54.5px;
+            background-repeat: no-repeat;
+            background-origin: padding-box;
+            opacity: .8;
+            margin: 40px 0 60px;
+            width: 50%;
+            z-index: 2;
+            position: relative;
+            border-radius: 0 30px 30px 0;
+            .md_slider__item__content__inner {
+                max-width: 600px;
+                margin-left: auto;
+                text-align: left;
+                .md_slider__item__content__title {
+                    margin: 0 0 30px;
+                    color: #fff;
+                    font-size: 50px;
+                    line-height: 60px;
+                    font-weight: bold;
+                    font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+                }
+                .md_slider__item__content__description {
+                    font-size: 18px;
+                    line-height: 30px;
+                    margin: 0;
+                    color: #fff;
+                }
+                .md_slider__item__content__btn.md_btn_arrow {
+                    padding: 0;
+                    border-radius: 32px;
+                    display: inline-block;
+                    cursor: pointer;
+                    p {
+                        margin: 40px 0 0;
+                        color: #fff;
+                        font-size: 18px;
+                        padding: 0;
+                        min-width: auto;
+                        border: 0;
+                        a {
+                            color: inherit;
+                            display: inline-block;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

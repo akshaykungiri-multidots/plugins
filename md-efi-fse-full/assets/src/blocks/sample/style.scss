@@ -1,0 +1,7 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-efi-fse-full-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}

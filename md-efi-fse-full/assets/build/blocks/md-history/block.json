@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-efi-fse-full/md-history",
+  "version": "0.1.0",
+  "title": "MD History",
+  "apiVersion": 3,
+  "category": "md-efi-fse-full",
+  "icon": "lock",
+  "description": "Example static block scaffolded with Create Block tool.",
+  "keywords": [
+    "md-efi-fse-full",
+    "md-history"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-efi-fse-full",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "historyTimeline": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

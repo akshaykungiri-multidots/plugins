@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-efi-fse-full/md-search",
+  "version": "0.1.0",
+  "title": "MD Search",
+  "apiVersion": 3,
+  "category": "md-efi-fse-full",
+  "icon": "lock",
+  "description": "MD Search block.",
+  "keywords": ["search", "block"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-efi-fse-full",
+  "attributes": {
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

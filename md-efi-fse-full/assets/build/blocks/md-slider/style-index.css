@@ -1,0 +1,78 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-slider/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-efi-fse-full-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_hero_banner_slider .md_slider__item {
+  position: relative;
+  min-height: 680px;
+  align-items: center;
+  display: flex !important;
+}
+.md_hero_banner_slider .md_slider__item .md_slider__item__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+.md_hero_banner_slider .md_slider__item .md_slider__item__content {
+  padding: 54.5px;
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  opacity: 0.8;
+  margin: 40px 0 60px;
+  width: 50%;
+  z-index: 2;
+  position: relative;
+  border-radius: 0 30px 30px 0;
+}
+.md_hero_banner_slider .md_slider__item .md_slider__item__content .md_slider__item__content__inner {
+  max-width: 600px;
+  margin-left: auto;
+  text-align: left;
+}
+.md_hero_banner_slider .md_slider__item .md_slider__item__content .md_slider__item__content__inner .md_slider__item__content__title {
+  margin: 0 0 30px;
+  color: #fff;
+  font-size: 50px;
+  line-height: 60px;
+  font-weight: bold;
+  font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+}
+.md_hero_banner_slider .md_slider__item .md_slider__item__content .md_slider__item__content__inner .md_slider__item__content__description {
+  font-size: 18px;
+  line-height: 30px;
+  margin: 0;
+  color: #fff;
+}
+.md_hero_banner_slider .md_slider__item .md_slider__item__content .md_slider__item__content__inner .md_slider__item__content__btn.md_btn_arrow {
+  padding: 0;
+  border-radius: 32px;
+  display: inline-block;
+  cursor: pointer;
+}
+.md_hero_banner_slider .md_slider__item .md_slider__item__content .md_slider__item__content__inner .md_slider__item__content__btn.md_btn_arrow p {
+  margin: 40px 0 0;
+  color: #fff;
+  font-size: 18px;
+  padding: 0;
+  min-width: auto;
+  border: 0;
+}
+.md_hero_banner_slider .md_slider__item .md_slider__item__content .md_slider__item__content__inner .md_slider__item__content__btn.md_btn_arrow p a {
+  color: inherit;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

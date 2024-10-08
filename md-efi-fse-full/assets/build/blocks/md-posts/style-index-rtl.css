@@ -1,0 +1,124 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-posts/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.btn-main {
+  font-size: 18px;
+  min-width: 119px;
+  text-align: center;
+  color: #000;
+  font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  letter-spacing: 0.32px;
+  border-radius: 30px;
+  word-break: break-word;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+  padding: 14px 30px;
+  margin: 0;
+}
+
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid {
+  display: grid;
+  grid-gap: 20px;
+  gap: 20px;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner {
+  display: flex;
+  gap: 20px;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-thumbnail img {
+  max-width: 80px;
+  box-shadow: 0px 2px 10px rgba(111, 137, 163, 0.3019607843);
+  height: auto;
+  width: auto;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content {
+  width: 70%;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-heading {
+  display: flex;
+  gap: 20px;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-heading .md-posts__grid-item-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 600;
+  margin: 0;
+  font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-heading .md-posts__grid-item-resource_type span {
+  background-color: rgba(200, 0, 45, 0.1);
+  border-radius: 4px;
+  color: #c8002d;
+  padding: 8px 10px;
+  display: block;
+  font-size: 12px;
+  line-height: 1;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p {
+  margin: 16px 0;
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  font-family: "Be Vietnam Pro", BlinkMacSystemFont, sans-serif;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p a {
+  padding-left: 0;
+  border-left: none;
+  padding-right: 0;
+  color: #2670ca;
+  padding: 0 10px;
+  font-family: "Be Vietnam Pro", BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  border-left: 2px solid #2670ca;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p a:first-child {
+  padding-right: 0;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p a:last-child {
+  padding-left: 0;
+  border-left: none;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__loadmore {
+  text-align: center;
+  margin-top: 50px;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__filter {
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 33px;
+  margin-bottom: 50px;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__filter-select {
+  width: 100%;
+  padding: 17px 20px;
+  color: #777d83;
+  font-size: 18px;
+  line-height: 1;
+  border: 2px solid rgba(112, 112, 112, 0.3019607843);
+  border-radius: 10px;
+  background-image: url(https://www.efi.com/wp-content/themes/efi/assets/build/images/dropdown-icon.svg);
+  background-position: left 20px center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+.wp-block-md-efi-fse-full-md-posts .md-posts__loadmore-button {
+  border-radius: 27px;
+  border: 2px solid #0069c1;
+  color: #000;
+  font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}

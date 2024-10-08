@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-efi-fse-full/md-posts",
+  "version": "0.1.0",
+  "title": "MD Posts",
+  "apiVersion": 3,
+  "category": "md-efi-fse-full",
+  "icon": "lock",
+  "description": "This is a sample block with dynamic content.",
+  "keywords": [
+    "md-posts",
+    "md-efi-fse-full"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-efi-fse-full",
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "postsToShow": {
+      "type": "string",
+      "default": "5"
+    },
+    "postInRow": {
+      "type": "string",
+      "default": "2"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

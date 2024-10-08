@@ -1,0 +1,201 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-history/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-efi-fse-full-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.history-list {
+  padding: 140px 0;
+}
+
+.history-list .history-list__head {
+  margin: 0 0 60px;
+  text-align: center;
+}
+
+.history-list .history-list__head h2 {
+  font-size: 50px;
+  margin: 0 0 30px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+.history-list .history-list__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px 60px;
+}
+
+.history-list .history-list__years-wrap {
+  width: 100px;
+}
+
+.history-list .history-list__years-wrap .history-list__year-item {
+  font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.history-list .history-list__years-wrap .history-list__year-item.active {
+  color: #2670ca;
+}
+
+.history-list .history-list__year-detail {
+  width: calc(100% - 180px);
+}
+
+.history-list .history-list__year-detail-item {
+  flex-wrap: wrap;
+  gap: 40px 60px;
+}
+
+.history-list .history-list__year-detail-item.active {
+  display: flex;
+}
+
+.history-list .history-list__year-detail-item h3 {
+  margin: 0 0 30px;
+}
+
+.history-list .history-list__year-detail-item figcaption {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .history-list .history-list__years-wrap {
+    position: relative;
+    padding-left: 20px;
+  }
+  .history-list .history-list__years-wrap .history-list__years-bar {
+    position: absolute;
+    top: 8px;
+    bottom: 10px;
+    left: 5px;
+    width: 2px;
+    background-color: #e0e0e0;
+  }
+  .history-list .history-list__years-wrap .history-list__years-barinnner {
+    position: absolute;
+    top: 0;
+    bottom: 8px;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #2670ca;
+    min-height: 10px;
+  }
+  .history-list .history-list__years-wrap .history-list__years-barinnner:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: -4px;
+    background-color: #2670ca;
+  }
+  .history-list .history-list__years-wrap .history-list__years-barinnner:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    border: 3px solid #2670ca;
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  .history-list .history-list__years-wrap .history-list__year-item {
+    text-align: center;
+  }
+  .history-list .history-list__years-wrap .history-list__year-item:not(:last-child) {
+    margin-bottom: 1.5px;
+  }
+}
+
+@media (min-width: 992px) {
+  .history-list .history-list__year-detail-item .history-list__cnt {
+    width: calc(40% - 30px);
+  }
+  .history-list .history-list__year-detail-item .history-list__img {
+    width: calc(60% - 30px);
+    align-self: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .history-list {
+    padding: 60px 0;
+  }
+  .history-list .history-list__head h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  .history-list .history-list__year-detail-item {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 767px) {
+  .history-list .history-list__head h2 {
+    font-size: 30px;
+  }
+  .history-list .history-list__years-wrap {
+    width: 100%;
+    position: relative;
+  }
+  .history-list .history-list__years-wrap .history-list__years-list:not(.slick-initialized) {
+    display: flex;
+    visibility: hidden;
+    gap: 10px;
+  }
+  .history-list .history-list__years-wrap .history-list__years-bar {
+    display: none;
+  }
+  .history-list .history-list__years-wrap .slick-list {
+    padding-top: 20px !important;
+  }
+  .history-list .history-list__years-wrap .slick-list:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    right: 5px;
+    height: 2px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+  }
+  .history-list .history-list__years-wrap .history-list__year-item {
+    position: relative;
+    text-align: center;
+  }
+  .history-list .history-list__years-wrap .history-list__year-item:before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 10px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2670ca;
+    border: 3px solid #2670ca;
+    pointer-events: none;
+  }
+  .history-list .history-list__years-wrap .history-list__year-item.active:before {
+    background-color: #fff;
+  }
+  .history-list .history-list__year-detail {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/
