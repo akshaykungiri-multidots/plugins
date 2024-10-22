@@ -36,6 +36,8 @@ class Register_Post_Types {
 		 * Actions.
 		 */
 		add_action( 'init', array( $this, 'register_resource_cpt' ), 0 );
+
+		add_shortcode( 'md_read_more_link', array( $this, 'md_read_more_link' ) );
 	}
 
 	/**
@@ -109,5 +111,18 @@ class Register_Post_Types {
 		);
 
 		register_post_type( 'resources', $args );
+	}
+
+	/**
+	 * Read more link shortcode.
+	 *
+	 * @param array $atts Attributes.
+	 * @return string
+	 * @since 1.0.0
+	 */
+	public function md_read_more_link( $atts ) {
+		global $post;
+
+		return '<a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="read-more-link">' . esc_html__( get_permalink( $post->ID ) ) . '</a>';
 	}
 }

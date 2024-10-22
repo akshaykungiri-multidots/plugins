@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-efi/md-search-results-counter",
+  "version": "0.1.0",
+  "title": "MD Search Results Counter",
+  "apiVersion": 3,
+  "category": "md-efi",
+  "icon": "lock",
+  "description": "This is a sample block with a dynamic counter.",
+  "keywords": ["counter", "number"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-efi",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

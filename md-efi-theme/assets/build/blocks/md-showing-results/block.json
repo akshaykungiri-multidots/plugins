@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-efi/md-showing-results",
+  "version": "0.1.0",
+  "title": "MD Showing Results",
+  "apiVersion": 3,
+  "category": "md-efi",
+  "icon": "lock",
+  "description": "Showing Results block.",
+  "keywords": [
+    "showing",
+    "results",
+    "block"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-efi",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

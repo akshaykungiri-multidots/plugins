@@ -1,0 +1,46 @@
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-search-results-counter/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-efi-sample-dynamic {
+  color: #000000;
+}
+
+.md-search-results-counter {
+  padding: 40px;
+  box-shadow: 0px 10px 40px rgba(111, 137, 163, 0.2);
+  background: #fff;
+  position: relative;
+}
+.md-search-results-counter h3 {
+  padding-bottom: 20px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+  -o-border-image: linear-gradient(90deg, #ea002a 0%, #e50695 19.21%, #61cac9 43.35%, #c1d500 55.66%, #cdd208 60.59%, #edca1d 69.46%, #ffc529 73.89%, #ff9e24 82.27%, #ff671c 91.63%, #bb4700 100%) 30;
+     border-image: linear-gradient(90deg, #ea002a 0%, #e50695 19.21%, #61cac9 43.35%, #c1d500 55.66%, #cdd208 60.59%, #edca1d 69.46%, #ffc529 73.89%, #ff9e24 82.27%, #ff671c 91.63%, #bb4700 100%) 30;
+  font-size: 24px;
+  line-height: 40px;
+  font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+  color: #000;
+}
+.md-search-results-counter ul {
+  list-style-type: none;
+}
+.md-search-results-counter ul li {
+  border-bottom: 1px solid rgba(112, 112, 112, 0.2);
+  padding: 14px 0 13px;
+}
+.md-search-results-counter ul li a {
+  color: #262e36;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-family: "Be Vietnam Pro", BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.md-search-results-counter ul li.active a {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
