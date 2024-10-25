@@ -32,7 +32,19 @@ export default function save({attributes}) {
 		newswire_sub_title,
 		newswire_button_link,
 		newswire_theme_style,
-		background_color
+		background_color,
+		newswire_title_font_size,
+		newswire_title_font_color,
+		newswire_description_font_size,
+		newswire_description_font_color,
+		newswire_button_font_size,
+		newswire_button_font_color,
+		newswire_left_title_font_size,
+		newswire_left_title_font_color,
+		newswire_left_description_font_size,
+		newswire_left_description_font_color,
+		newswire_sub_title_font_size,
+		newswire_sub_title_font_color,
 	} = attributes;
 	return (
 		<div { ...useBlockProps.save() }>
@@ -44,15 +56,27 @@ export default function save({attributes}) {
 									tagName="div"
 									value={newswire_left_title}
 									className="section-title h1"
+									style={{
+										fontSize: newswire_left_title_font_size + "px",
+										color: newswire_left_title_font_color,
+									}}
 								/>
 								<RichText.Content
 									tagName="h2"
 									value={newswire_left_description}
+									style={{
+										fontSize: newswire_left_description_font_size + "px",
+										color: newswire_left_description_font_color,
+									}}
 								/>
 								<RichText.Content
 									tagName="h3"
 									value={newswire_sub_title}
 									className="newswire-sub-title"
+									style={{
+										fontSize: newswire_sub_title_font_size + "px",
+										color: newswire_sub_title_font_color,
+									}}
 								/>
 							</div>
 							{ newswire_right_image && (
@@ -72,11 +96,19 @@ export default function save({attributes}) {
 											tagName="h3"
 											value={newswire_title}
 											className="newswire-sub-title"
+											style={{
+												fontSize: newswire_title_font_size + "px",
+												color: newswire_title_font_color,
+											}}
 										/>
 										<RichText.Content
 											tagName="p"
 											value={newswire_description}
 											className="newswire-description"
+											style={{
+												fontSize: newswire_description_font_size + "px",
+												color: newswire_description_font_color,
+											}}
 										/>
 									</div>
 								</div>
@@ -88,6 +120,10 @@ export default function save({attributes}) {
 											tagName="a"
 											value={newswire_button_link}
 											className="btn btn-primary"
+											style={{
+												fontSize: newswire_button_font_size + "px",
+												color: newswire_button_font_color,
+											}}
 										/>
 									</div>
 								</div>

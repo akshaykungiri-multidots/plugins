@@ -104,7 +104,7 @@
                 h3 {
                     a {
                         font-family: PlayfairDisplay-Bold;
-                        font-size: 38px;
+                        font-size: inherit;
                         line-height: 50px;
                         text-decoration: underline;
                         font-weight: 700;
@@ -116,7 +116,7 @@
                     align-items: center;
                     gap: 10px;
                     p {
-                        font-size: 20px;
+                        font-size: inherit;
                         font-weight: 700;
                         color: #145980;
                         font-family: arial, helvetica, sans-serif;
@@ -126,7 +126,7 @@
                 }
                 .item__excerpt p {
                     margin: 0;
-                    font-size: 16px;
+                    font-size: inherit;
                     line-height: 24px;
                     color: inherit;
                 }

@@ -5,8 +5,8 @@
   "title": "MD Our Story",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "This is a sample block for MD Storyful FSE Full",
+  "icon": "book-alt",
+  "description": "A Our Story block with visual and text",
   "keywords": ["md-storyful-fse-full", "md-our-story"],
   "supports": {
     "html": false,
@@ -16,13 +16,21 @@
   "attributes": {
     "our_story_title": {
       "type": "string",
-      "default": ""
+      "default": "Our Story"
     },
     "our_story_video_image": {
       "type": "string",
-      "default": ""
+      "default": "https://storyful.com/wp-content/uploads/2023/01/Screenshot-2023-01-16-at-15.29.23-1-min.png"
     },
     "our_story_video_link": {
+      "type": "string",
+      "default": "https://storyful.com/wp-content/uploads/2023/01/Brand-Reel-2023-NEWS.mp4"
+    },
+    "our_story_title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "our_story_title_font_color": {
       "type": "string",
       "default": ""
     }

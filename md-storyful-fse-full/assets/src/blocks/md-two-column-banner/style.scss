@@ -6,7 +6,17 @@
     padding: 5px 10px;
 }
 .cta-section {
-    overflow: hidden
+    overflow: hidden;
+    .media-image-wrapper {
+        button {
+            display: block;
+            position: relative;
+            z-index: 99999;
+        }
+    }
+    .image-preview .image-controls.icon-center-fixed {
+        left: 0;
+    }
 }
 
 .cta-section .container-fluid {

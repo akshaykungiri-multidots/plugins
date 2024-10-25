@@ -23,7 +23,15 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
-	const { title, description, background_image } = attributes;
+	const {
+		title,
+		description,
+		background_image,
+		titleFontSize,
+		titleFontColor,
+		descriptionFontSize,
+		descriptionFontColor,
+	  } = attributes;
 	return (
 		<div {...useBlockProps.save({className: "md_two_column"})}>
 			<div className="storyful-two-column" style={{backgroundImage: `url(${background_image})`}}>
@@ -32,12 +40,20 @@ export default function save({ attributes }) {
 						<RichText.Content
 							tagName="h2"
 							value={title}
+							style={{
+								fontSize: titleFontSize,
+								color: titleFontColor,
+							}}
 						/>
 					</div>
 					<div class="two-columns__description wow fadeInRight">
 						<RichText.Content
 							tagName="p"
 							value={description}
+							style={{
+								fontSize: descriptionFontSize,
+								color: descriptionFontColor,
+							}}
 						/>
 					</div>
 				</div>

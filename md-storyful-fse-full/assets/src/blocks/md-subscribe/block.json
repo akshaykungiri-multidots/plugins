@@ -5,7 +5,7 @@
   "title": "MD Subscribe",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
+  "icon": "email",
   "description": "A Subscribe block for Storyful FSE",
   "keywords": ["subscribe", "md-storyful-fse-full"],
   "supports": {

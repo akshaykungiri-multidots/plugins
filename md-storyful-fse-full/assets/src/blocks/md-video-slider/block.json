@@ -5,8 +5,8 @@
   "title": "MD Video Slider",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "This is a sample block for Full Site Editing.",
+  "icon": "slides",
+  "description": "A Video Slider block for Storyful FSE",
   "keywords": ["md-storyful-fse-full", "md-video-slider"],
   "supports": {
     "html": false

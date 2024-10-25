@@ -12,15 +12,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Edit)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * Retrieves the translation of text.
  *
@@ -45,6 +44,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
+
 function Edit({
   attributes,
   setAttributes
@@ -57,147 +57,306 @@ function Edit({
     section_right_title,
     section_right_description,
     section_right_button_link,
-    section_right_image
+    section_right_image,
+    section_left_title_font_size,
+    section_left_title_font_color,
+    section_left_description_font_size,
+    section_left_description_font_color,
+    section_left_button_font_size,
+    section_right_title_font_size,
+    section_right_title_font_color,
+    section_right_description_font_size,
+    section_right_description_font_color,
+    section_right_button_font_size
   } = attributes;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
+  const fontSizes = [{
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("S"),
+    slug: "small",
+    size: "12px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("M"),
+    slug: "medium",
+    size: "18px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("L"),
+    slug: "large",
+    size: "26px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("XL"),
+    slug: "xtra-large",
+    size: "48px"
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
       className: "md_two_column_banner"
-    })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-section"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container-fluid"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-section__right"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "intelligence-section"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "intelligence-section__details wow fadeInLeft"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "h2",
-    className: "section-title h1 with-darkbg",
-    value: section_left_title,
-    onChange: value => setAttributes({
-      section_left_title: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter title...', 'md-blocks')
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
-    className: "cta-section-desc",
-    value: section_left_description,
-    onChange: value => setAttributes({
-      section_left_description: value
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter description...', 'md-blocks')
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "sbtn sbtn-arrow-primary-v2"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "btn-text"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "a",
-    value: section_left_button_link,
-    onChange: value => setAttributes({
-      section_left_button_link: value
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter button text...', 'md-blocks')
-  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "intelligence-section__media wow bounceIn"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "media-image-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    id: "img-two"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Feature Image"),
-    onSelect: media => setAttributes({
-      section_left_image: media.url
-    }),
-    multiple: false,
-    render: ({
-      open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, section_left_image == "" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      onClick: open,
-      variant: "primary"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "md-prime-image image-preview image-controle-visible-hover"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "item-action-wrap image-controls small-icons icon-center-fixed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      onClick: open,
-      className: "dashicons dashicons-edit edit-image"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      onClick: () => setAttributes({
-        section_left_image: ""
-      }),
-      className: "dashicons dashicons-no-alt remove-image"
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: section_left_image
-    })))
-  })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-section__left"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-news-section"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-news-section__details wow fadeInLeft"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "h2",
-    className: "section-title h1",
-    value: section_right_title,
-    onChange: value => setAttributes({
-      section_right_title: value
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter title...', 'md-blocks')
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
-    className: "cta-section-desc",
-    value: section_right_description,
-    onChange: value => setAttributes({
-      section_right_description: value
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter description...', 'md-blocks')
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "sbtn sbtn-arrow-primary-v2"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "btn-text"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "a",
-    value: section_right_button_link,
-    onChange: value => setAttributes({
-      section_right_button_link: value
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter button text...', 'md-blocks')
-  })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "cta-news-section__media wow bounceIn"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "media-image-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    id: "img-one"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Feature Image"),
-    onSelect: media => setAttributes({
-      section_right_image: media.url
-    }),
-    multiple: false,
-    render: ({
-      open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, section_right_image == "" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      onClick: open,
-      variant: "primary"
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "md-prime-image image-preview image-controle-visible-hover"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "item-action-wrap image-controls small-icons icon-center-fixed"
-    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      onClick: open,
-      className: "dashicons dashicons-edit edit-image"
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      onClick: () => setAttributes({
-        section_right_image: ""
-      }),
-      className: "dashicons dashicons-no-alt remove-image"
-    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: section_right_image
-    })))
-  })))))))));
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography", "md-storyful-fse-full"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Title Font Size")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          fontSizes: fontSizes,
+          value: section_left_title_font_size,
+          onChange: value => setAttributes({
+            section_left_title_font_size: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Description Font Size")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          fontSizes: fontSizes,
+          value: section_left_description_font_size,
+          onChange: value => setAttributes({
+            section_left_description_font_size: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Button Font Size")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          fontSizes: fontSizes,
+          value: section_left_button_font_size,
+          onChange: value => setAttributes({
+            section_left_button_font_size: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Title Font Size")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          fontSizes: fontSizes,
+          value: section_right_title_font_size,
+          onChange: value => setAttributes({
+            section_right_title_font_size: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Description Font Size")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          fontSizes: fontSizes,
+          value: section_right_description_font_size,
+          onChange: value => setAttributes({
+            section_right_description_font_size: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Button Font Size")
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          fontSizes: fontSizes,
+          value: section_right_button_font_size,
+          onChange: value => setAttributes({
+            section_right_button_font_size: value
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+        initialOpen: false,
+        colorSettings: [{
+          value: section_left_title_font_color,
+          onChange: value => setAttributes({
+            section_left_title_font_color: value
+          }),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Title Font Color")
+        }, {
+          value: section_left_description_font_color,
+          onChange: value => setAttributes({
+            section_left_description_font_color: value
+          }),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Description Font Color")
+        }, {
+          value: section_right_title_font_color,
+          onChange: value => setAttributes({
+            section_right_title_font_color: value
+          }),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Title Font Color")
+        }, {
+          value: section_right_description_font_color,
+          onChange: value => setAttributes({
+            section_right_description_font_color: value
+          }),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Description Font Color")
+        }]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "cta-section",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "container-fluid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "cta-section__right",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "intelligence-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "intelligence-section__details wow fadeInLeft",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+                tagName: "h2",
+                className: "section-title h1 with-darkbg",
+                value: section_left_title,
+                onChange: value => setAttributes({
+                  section_left_title: value
+                }),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title...", "md-blocks"),
+                style: {
+                  fontSize: section_left_title_font_size,
+                  color: section_left_title_font_color
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+                tagName: "p",
+                className: "cta-section-desc",
+                value: section_left_description,
+                onChange: value => setAttributes({
+                  section_left_description: value
+                }),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description...", "md-blocks"),
+                style: {
+                  fontSize: section_left_description_font_size,
+                  color: section_left_description_font_color
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "sbtn sbtn-arrow-primary-v2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "btn-text",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+                    tagName: "a",
+                    value: section_left_button_link,
+                    onChange: value => setAttributes({
+                      section_left_button_link: value
+                    }),
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text...", "md-blocks"),
+                    style: {
+                      fontSize: section_left_button_font_size
+                    }
+                  })
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              class: "intelligence-section__media wow bounceIn",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                class: "media-image-wrapper",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("figure", {
+                  id: "img-two",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
+                    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Feature Image"),
+                    onSelect: media => setAttributes({
+                      section_left_image: media.url
+                    }),
+                    multiple: false,
+                    render: ({
+                      open
+                    }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+                      children: section_left_image == "" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                        onClick: open,
+                        variant: "primary",
+                        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Upload")
+                      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        className: "md-prime-image image-preview image-controle-visible-hover",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                          className: "item-action-wrap image-controls small-icons icon-center-fixed",
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+                            onClick: open,
+                            className: "dashicons dashicons-edit edit-image"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+                            onClick: () => setAttributes({
+                              section_left_image: ""
+                            }),
+                            className: "dashicons dashicons-no-alt remove-image"
+                          })]
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                          src: section_left_image
+                        })]
+                      })
+                    })
+                  })
+                })
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "cta-section__left",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "cta-news-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "cta-news-section__details wow fadeInLeft",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+                tagName: "h2",
+                className: "section-title h1",
+                value: section_right_title,
+                onChange: value => setAttributes({
+                  section_right_title: value
+                }),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title...", "md-blocks"),
+                style: {
+                  fontSize: section_right_title_font_size,
+                  color: section_right_title_font_color
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+                tagName: "p",
+                className: "cta-section-desc",
+                value: section_right_description,
+                onChange: value => setAttributes({
+                  section_right_description: value
+                }),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description...", "md-blocks"),
+                style: {
+                  fontSize: section_right_description_font_size,
+                  color: section_right_description_font_color
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "sbtn sbtn-arrow-primary-v2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  className: "btn-text",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+                    tagName: "a",
+                    value: section_right_button_link,
+                    onChange: value => setAttributes({
+                      section_right_button_link: value
+                    }),
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text...", "md-blocks"),
+                    style: {
+                      fontSize: section_right_button_font_size
+                    }
+                  })
+                })
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              class: "cta-news-section__media wow bounceIn",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                class: "media-image-wrapper",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("figure", {
+                  id: "img-one",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
+                    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Feature Image"),
+                    onSelect: media => setAttributes({
+                      section_right_image: media.url
+                    }),
+                    multiple: false,
+                    render: ({
+                      open
+                    }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+                      children: section_right_image == "" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                        onClick: open,
+                        variant: "primary",
+                        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Upload")
+                      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                        className: "md-prime-image image-preview image-controle-visible-hover",
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                          className: "item-action-wrap image-controls small-icons icon-center-fixed",
+                          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+                            onClick: open,
+                            className: "dashicons dashicons-edit edit-image"
+                          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+                            onClick: () => setAttributes({
+                              section_right_image: ""
+                            }),
+                            className: "dashicons dashicons-no-alt remove-image"
+                          })]
+                        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                          src: section_right_image
+                        })]
+                      })
+                    })
+                  })
+                })
+              })
+            })]
+          })
+        })]
+      })
+    })]
+  });
 }
 
 /***/ }),
@@ -267,13 +426,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ save)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 /**
  * Retrieves the translation of text.
  *
@@ -298,6 +456,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
+
 function save({
   attributes
 }) {
@@ -309,75 +468,126 @@ function save({
     section_right_title,
     section_right_description,
     section_right_button_link,
-    section_right_image
+    section_right_image,
+    section_left_title_font_size,
+    section_left_title_font_color,
+    section_left_description_font_size,
+    section_left_description_font_color,
+    section_left_button_font_size,
+    section_right_title_font_size,
+    section_right_title_font_color,
+    section_right_description_font_size,
+    section_right_description_font_color,
+    section_right_button_font_size
   } = attributes;
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
       className: "md_two_column_banner"
+    }),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "cta-section",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "container-fluid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "cta-section__right",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "intelligence-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "intelligence-section__details wow fadeInLeft",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                tagName: "h2",
+                className: "section-title h1 with-darkbg",
+                value: section_left_title,
+                style: {
+                  fontSize: section_left_title_font_size,
+                  color: section_left_title_font_color
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                tagName: "p",
+                className: "cta-section-desc",
+                value: section_left_description,
+                style: {
+                  fontSize: section_left_description_font_size,
+                  color: section_left_description_font_color
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                className: "sbtn sbtn-arrow-primary-v2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "btn-text",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                    tagName: "a",
+                    value: section_left_button_link,
+                    style: {
+                      fontSize: section_left_button_font_size
+                    }
+                  })
+                })
+              })]
+            }), section_left_image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              class: "intelligence-section__media wow bounceIn",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                class: "media-image-wrapper",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("figure", {
+                  id: "img-two",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                    src: section_left_image
+                  })
+                })
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "cta-section__left",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "cta-news-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "cta-news-section__details wow fadeInLeft",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                tagName: "h2",
+                className: "section-title h1",
+                value: section_right_title,
+                style: {
+                  fontSize: section_right_title_font_size,
+                  color: section_right_title_font_color
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                tagName: "p",
+                className: "cta-section-desc",
+                value: section_right_description,
+                style: {
+                  fontSize: section_right_description_font_size,
+                  color: section_right_description_font_color
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                className: "sbtn sbtn-arrow-primary-v2",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "btn-text",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                    tagName: "a",
+                    value: section_right_button_link,
+                    style: {
+                      fontSize: section_right_button_font_size
+                    }
+                  })
+                })
+              })]
+            }), section_right_image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              class: "cta-news-section__media wow bounceIn",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                class: "media-image-wrapper",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("figure", {
+                  id: "img-one",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+                    src: section_right_image
+                  })
+                })
+              })
+            })]
+          })
+        })]
+      })
     })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-section"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "container-fluid"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-section__right"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "intelligence-section"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "intelligence-section__details wow fadeInLeft"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "h2",
-    className: "section-title h1 with-darkbg",
-    value: section_left_title
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "p",
-    className: "cta-section-desc",
-    value: section_left_description
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "sbtn sbtn-arrow-primary-v2"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "btn-text"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "a",
-    value: section_left_button_link
-  })))), section_left_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "intelligence-section__media wow bounceIn"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "media-image-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    id: "img-two"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: section_left_image
-  })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-section__left"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-news-section"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "cta-news-section__details wow fadeInLeft"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "h2",
-    className: "section-title h1",
-    value: section_right_title
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "p",
-    className: "cta-section-desc",
-    value: section_right_description
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "sbtn sbtn-arrow-primary-v2"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "btn-text"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "a",
-    value: section_right_button_link
-  })))), section_right_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "cta-news-section__media wow bounceIn"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "media-image-wrapper"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    id: "img-one"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: section_right_image
-  })))))))));
+  });
 }
 
 /***/ }),
@@ -394,13 +604,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "react":
-/*!************************!*\
-  !*** external "React" ***!
-  \************************/
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
 /***/ ((module) => {
 
-module.exports = window["React"];
+module.exports = window["ReactJSXRuntime"];
 
 /***/ }),
 
@@ -450,7 +660,7 @@ module.exports = window["wp"]["i18n"];
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-two-column-banner","version":"0.1.0","title":"MD Two Column Banner","apiVersion":3,"category":"md-storyful-fse-full","icon":"lock","description":"A sample block for testing","keywords":["md-storyful-fse-full","md-two-column-banner"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"section_left_strong_title":{"type":"string","default":""},"section_left_title":{"type":"string","default":""},"section_left_description":{"type":"string","default":""},"section_left_button_link":{"type":"string","default":""},"section_left_image":{"type":"string","default":""},"section_right_title":{"type":"string","default":""},"section_right_description":{"type":"string","default":""},"section_right_button_link":{"type":"string","default":""},"section_right_image":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-two-column-banner","version":"0.1.0","title":"MD Two Column Banner","apiVersion":3,"category":"md-storyful-fse-full","icon":"layout","description":"A Two Column Banner block for Storyful FSE","keywords":["md-storyful-fse-full","md-two-column-banner"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"section_left_strong_title":{"type":"string","default":""},"section_left_title":{"type":"string","default":""},"section_left_description":{"type":"string","default":""},"section_left_button_link":{"type":"string","default":""},"section_left_image":{"type":"string","default":""},"section_right_title":{"type":"string","default":""},"section_right_description":{"type":"string","default":""},"section_right_button_link":{"type":"string","default":""},"section_right_image":{"type":"string","default":""},"section_left_strong_title_font_size":{"type":"string","default":""},"section_left_strong_title_font_color":{"type":"string","default":""},"section_left_title_font_size":{"type":"string","default":""},"section_left_title_font_color":{"type":"string","default":""},"section_left_description_font_size":{"type":"string","default":""},"section_left_description_font_color":{"type":"string","default":""},"section_left_button_font_size":{"type":"string","default":""},"section_right_title_font_size":{"type":"string","default":""},"section_right_title_font_color":{"type":"string","default":""},"section_right_description_font_size":{"type":"string","default":""},"section_right_description_font_color":{"type":"string","default":""},"section_right_button_font_size":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

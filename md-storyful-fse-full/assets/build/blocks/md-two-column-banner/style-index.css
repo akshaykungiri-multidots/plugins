@@ -10,6 +10,14 @@
 .cta-section {
   overflow: hidden;
 }
+.cta-section .media-image-wrapper button {
+  display: block;
+  position: relative;
+  z-index: 99999;
+}
+.cta-section .image-preview .image-controls.icon-center-fixed {
+  left: 0;
+}
 
 .cta-section .container-fluid {
   display: flex;

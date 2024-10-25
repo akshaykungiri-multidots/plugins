@@ -24,7 +24,11 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  */
 export default function save({attributes}) {
 	const {
-		columnList
+		columnList,
+		columnTitleFontSize,
+		columnDescriptionFontSize,
+		columnTitleFontColor,
+		columnDescriptionFontColor,
 	} = attributes;
 	return (
 		<div {...useBlockProps.save({className: "md-counter_block"})}>
@@ -37,11 +41,19 @@ export default function save({attributes}) {
 								<RichText.Content
 									tagName="h3"
 									value={postObj.title}
+									style={{
+										fontSize: columnTitleFontSize + "px",
+										color: columnTitleFontColor,
+									}}
 								/>
 								<RichText.Content
 									tagName="p"
 									className='column-item-desc'
 									value={postObj.description}
+									style={{
+										fontSize: columnDescriptionFontSize + "px",
+										color: columnDescriptionFontColor,
+									}}
 								/>
 							</div>
 						))}

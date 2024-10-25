@@ -167,12 +167,20 @@
   display: inline-block;
   color: inherit;
 }
-.storyful-resources .resources-listing-main__most-popular-posts .item .item__details h3 a {
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__details h3 {
+  color: #11152c;
   font-family: PlayfairDisplay-SemiBold;
   font-weight: 600;
   font-size: 38px;
   line-height: 49px;
-  color: #11152c;
+}
+.storyful-resources .resources-listing-main__most-popular-posts .item .item__details h3 a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
 }
 .storyful-resources .resources-listing-main__most-popular-posts .item .item__details p {
   font-size: 18px;

@@ -5,8 +5,8 @@
   "title": "MD Posts",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "MD Posts block.",
+  "icon": "admin-post",
+  "description": "A Posts block for Storyful FSE",
   "keywords": [
     "md-storyful-fse-full",
     "md-posts"
@@ -51,6 +51,38 @@
     "displayMostPopularAboveOrBelow": {
       "type": "string",
       "default": "above"
+    },
+    "postTitleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "postTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "postDateFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "postDateColor": {
+      "type": "string",
+      "default": ""
+    },
+    "mostPopularTitleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "mostPopularTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "mostPopularDescriptionFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "mostPopularDescriptionColor": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",

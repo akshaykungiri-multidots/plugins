@@ -5,8 +5,8 @@
   "title": "MD Two Column Banner",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "A sample block for testing",
+  "icon": "layout",
+  "description": "A Two Column Banner block for Storyful FSE",
   "keywords": [
     "md-storyful-fse-full",
     "md-two-column-banner"
@@ -53,6 +53,54 @@
       "default": ""
     },
     "section_right_image": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_strong_title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_strong_title_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_title_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_description_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_description_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "section_left_button_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_title_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_description_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_description_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "section_right_button_font_size": {
       "type": "string",
       "default": ""
     }

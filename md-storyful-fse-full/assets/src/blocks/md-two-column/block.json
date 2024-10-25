@@ -5,8 +5,8 @@
   "title": "MD Two Column",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "Two column block",
+  "icon": "columns",
+  "description": "A Two Column block for Storyful FSE",
   "keywords": ["two column", "md-storyful-fse-full"],
   "supports": {
     "html": false,
@@ -23,6 +23,22 @@
       "default": ""
     },
     "background_image": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionFontColor": {
       "type": "string",
       "default": ""
     }

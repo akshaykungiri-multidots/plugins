@@ -23,6 +23,7 @@ import ServerSideRender from '@wordpress/server-side-render';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/components/
  */
+import { useBlockProps } from '@wordpress/block-editor';
 
 import metadata from './block.json';
 import './editor.scss';
@@ -40,13 +41,13 @@ import './editor.scss';
  */
 export default function Edit({ attributes, setAttributes, className }) {
 	return (
-		<>
+		<div {...useBlockProps()}>
 			<ServerSideRender
 				block={metadata.name}
 				className={className}
 				attributes={{
 				}}
 			/>
-		</>
+		</div>
 	);
 }

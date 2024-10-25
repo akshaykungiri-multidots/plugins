@@ -5,8 +5,8 @@
   "title": "MD Counter Block",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "md-counter block.",
+  "icon": "dashboard",
+  "description": "A  block designed to display numerical values or statistics, often used to highlight achievements or key metrics.",
   "keywords": [
     "md-counter",
     "Block"
@@ -29,6 +29,22 @@
           "description": ""
         }
       ]
+    },
+    "columnTitleFontSize": {
+      "type": "string",
+      "default": "16"
+    },
+    "columnDescriptionFontSize": {
+      "type": "number",
+      "default": "16"
+    },
+    "columnTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "columnDescriptionFontColor": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",

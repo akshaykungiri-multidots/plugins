@@ -5,8 +5,8 @@
   "title": "MD Case Studies",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "This is a sample block for MD Case Studies",
+  "icon": "welcome-write-blog",
+  "description": "A Case Studies block for Storyful FSE",
   "keywords": ["md-case-studies", "md-storyful-fse-full"],
   "supports": {
     "html": false,
@@ -18,13 +18,65 @@
       "type": "string",
       "default": "This is Default Heading"
     },
-    "number_of_case_studies": {
+    "section_title_font_size": {
       "type": "string",
-      "default": "3"
+      "default": "24"
     },
-    "case_studies_ids": {
+    "section_title_font_color": {
       "type": "string",
       "default": ""
+    },
+    "case_studies_title_font_size": {
+      "type": "string",
+      "default": "24"
+    },
+    "case_studies_title_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "case_studies_description_font_size": {
+      "type": "string",
+      "default": "16"
+    },
+    "case_studies_description_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "main_case_study_title_font_size": {
+      "type": "string",
+      "default": "24"
+    },
+    "main_case_study_title_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "main_case_study_description_font_size": {
+      "type": "string",
+      "default": "16"
+    },
+    "main_case_study_description_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "main_case_study_button_font_size": {
+      "type": "string",
+      "default": "16"
+    },
+    "main_case_study_author_date_font_size": {
+      "type": "string",
+      "default": "16"
+    },
+    "main_case_study_author_date_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "number_of_case_studies": {
+      "type": "number",
+      "default": 3
+    },
+    "case_studies_ids": {
+      "type": "array",
+      "default": []
     },
     "background_color": {
       "type": "string",

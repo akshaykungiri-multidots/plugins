@@ -214,6 +214,9 @@ class Assets {
 				wp_enqueue_style( $block->style );
 			}
 		}
+
+		// Enqueue dashicons for the editor.
+		wp_enqueue_style( 'dashicons' );
 	}
 
 	/**

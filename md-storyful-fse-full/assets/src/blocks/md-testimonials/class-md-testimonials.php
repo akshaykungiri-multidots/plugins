@@ -76,6 +76,12 @@ class MD_Testimonials extends Block_Base {
 		// attributes.
 		$heading = isset( $attributes['heading'] ) ? $attributes['heading'] : '';
 		$themeStyle = isset( $attributes['themeStyle'] ) ? $attributes['themeStyle'] : 'style1';
+		$headingFontSize = isset( $attributes['headingFontSize'] ) ? $attributes['headingFontSize'] : '';
+		$headingFontColor = isset( $attributes['headingFontColor'] ) ? $attributes['headingFontColor'] : '';
+		$testimonialTitleFontSize = isset( $attributes['testimonialTitleFontSize'] ) ? $attributes['testimonialTitleFontSize'] : '';
+		$testimonialTitleFontColor = isset( $attributes['testimonialTitleFontColor'] ) ? $attributes['testimonialTitleFontColor'] : '';
+		$testimonialDescriptionFontSize = isset( $attributes['testimonialDescriptionFontSize'] ) ? $attributes['testimonialDescriptionFontSize'] : '';
+		$testimonialDescriptionFontColor = isset( $attributes['testimonialDescriptionFontColor'] ) ? $attributes['testimonialDescriptionFontColor'] : '';
 
 		$args = array(
             'post_type' => 'md_testimonials',
@@ -93,7 +99,7 @@ class MD_Testimonials extends Block_Base {
 				<div class="container">
 					<?php if (!empty($heading)) { ?>
 						<div class="theme-title">
-							<h2 class="section-title"><?php echo wp_kses_post($heading); ?></h2>
+							<h2 class="section-title" style="font-size: <?php echo esc_attr($headingFontSize); ?>; color: <?php echo esc_attr($headingFontColor); ?>"><?php echo esc_html($heading); ?></h2>
 						</div>
 					<?php } ?>
 					<div class="client-testimonials">
@@ -106,12 +112,12 @@ class MD_Testimonials extends Block_Base {
 								?>
 								<div class="client-testimonial">
 									<?php if (!empty($client_testimonial_text)) { ?>
-										<div class="client-testimonial-text">
+										<div class="client-testimonial-text" style="font-size: <?php echo esc_attr($testimonialDescriptionFontSize); ?>; color: <?php echo esc_attr($testimonialDescriptionFontColor); ?>">
 											<?php echo wp_kses_post($client_testimonial_text); ?>
 										</div>
 									<?php } ?>
 									<?php if (!empty($client_testimonial_title) && $themeStyle === 'style2') { ?>
-										<div class="client-testimonial-title">
+										<div class="client-testimonial-title" style="font-size: <?php echo esc_attr($testimonialTitleFontSize); ?>; color: <?php echo esc_attr($testimonialTitleFontColor); ?>">
 											<?php echo wp_kses_post($client_testimonial_title); ?>
 										</div>
 									<?php } ?>

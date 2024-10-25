@@ -5,8 +5,8 @@
   "title": "MD Search",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "MD Search block.",
+  "icon": "search",
+  "description": "A Search block for Storyful FSE",
   "keywords": [
     "search",
     "block"

@@ -5,8 +5,8 @@
   "title": "MD Three column Block",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "md-three-column block.",
+  "icon": "columns",
+  "description": "A Three column block with image, title, description and button",
   "keywords": [
     "md-three-column",
     "Block"
@@ -40,6 +40,34 @@
       ]
     },
     "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "headingFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "headingFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "columnTitleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "columnTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "columnDescriptionFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "columnDescriptionFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonFontSize": {
       "type": "string",
       "default": ""
     }

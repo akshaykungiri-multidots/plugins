@@ -5,8 +5,8 @@
   "title": "MD Testimonials",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "This is a sample block for MD Testimonials",
+  "icon": "format-quote",
+  "description": "A Testimonials block for Storyful FSE",
   "keywords": [
     "md-testimonials",
     "md-storyful-fse-full"
@@ -23,6 +23,30 @@
     "themeStyle": {
       "type": "string",
       "default": "style1"
+    },
+    "headingFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "headingFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialTitleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialDescriptionFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialDescriptionFontColor": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",

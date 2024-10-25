@@ -5,8 +5,8 @@
   "title": "MD Storyful History",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "Sample Dynamic block.",
+  "icon": "backup",
+  "description": "A History block for Storyful FSE",
   "keywords": [
     "md-storyful-fse-full",
     "md-storyful-history"
@@ -19,6 +19,30 @@
     "heading": {
       "type": "string",
       "default": "This is Default Heading"
+    },
+    "heading_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionFontSize": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",

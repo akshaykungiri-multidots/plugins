@@ -54,7 +54,11 @@ function Edit({
   setAttributes
 }) {
   const {
-    columnList
+    columnList,
+    columnTitleFontSize,
+    columnDescriptionFontSize,
+    columnTitleFontColor,
+    columnDescriptionFontColor
   } = attributes;
   const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(0);
   const addStaticPostObj = () => {
@@ -82,11 +86,69 @@ function Edit({
     });
     setCurrentSlide(-1);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  const fontSizes = [{
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("S"),
+    slug: "small",
+    size: "12px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("M"),
+    slug: "medium",
+    size: "18px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("L"),
+    slug: "large",
+    size: "26px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("XL"),
+    slug: "xtra-large",
+    size: "48px"
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
       className: "md-counter_block"
     }),
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography", "md-storyful-fse-full"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
+          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Column Title Font Size"), " "]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          __nextHasNoMarginBottom: true,
+          fontSizes: fontSizes,
+          value: columnTitleFontSize,
+          fallbackFontSize: columnTitleFontSize,
+          onChange: newFontSize => setAttributes({
+            columnTitleFontSize: newFontSize
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
+          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Column Description Font Size"), " "]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
+          __nextHasNoMarginBottom: true,
+          fontSizes: fontSizes,
+          value: columnDescriptionFontSize,
+          fallbackFontSize: columnDescriptionFontSize,
+          onChange: newFontSize => setAttributes({
+            columnDescriptionFontSize: newFontSize
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+        initialOpen: false,
+        colorSettings: [{
+          value: columnTitleFontColor,
+          onChange: newColor => setAttributes({
+            columnTitleFontColor: newColor
+          }),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Column Title Font Color")
+        }, {
+          value: columnDescriptionFontColor,
+          onChange: newColor => setAttributes({
+            columnDescriptionFontColor: newColor
+          }),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Column Description Font Color")
+        }]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       class: "storyful-stat-number",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         class: "container",
@@ -109,10 +171,18 @@ function Edit({
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
               tagName: "h3",
               value: postObj.title,
+              style: {
+                fontSize: columnTitleFontSize,
+                color: columnTitleFontColor
+              },
               onChange: value => updateStaticPostObj(index, "title", value),
               placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Title")
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
               tagName: "p",
+              style: {
+                fontSize: columnDescriptionFontSize,
+                color: columnDescriptionFontColor
+              },
               className: "column-item-desc",
               value: postObj.description,
               onChange: value => updateStaticPostObj(index, "description", value),
@@ -128,7 +198,7 @@ function Edit({
           })]
         })
       })
-    })
+    })]
   });
 }
 
@@ -234,7 +304,11 @@ function save({
   attributes
 }) {
   const {
-    columnList
+    columnList,
+    columnTitleFontSize,
+    columnDescriptionFontSize,
+    columnTitleFontColor,
+    columnDescriptionFontColor
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
@@ -250,11 +324,19 @@ function save({
             class: "stats-block-bottom__item fadeInUp",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
               tagName: "h3",
-              value: postObj.title
+              value: postObj.title,
+              style: {
+                fontSize: columnTitleFontSize + "px",
+                color: columnTitleFontColor
+              }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
               tagName: "p",
               className: "column-item-desc",
-              value: postObj.description
+              value: postObj.description,
+              style: {
+                fontSize: columnDescriptionFontSize + "px",
+                color: columnDescriptionFontColor
+              }
             })]
           }, index))
         })
@@ -343,7 +425,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-counter","version":"0.1.0","title":"MD Counter Block","apiVersion":3,"category":"md-storyful-fse-full","icon":"lock","description":"md-counter block.","keywords":["md-counter","Block"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"columnList":{"type":"array","default":[{"id":1,"title":"","description":""}]}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-counter","version":"0.1.0","title":"MD Counter Block","apiVersion":3,"category":"md-storyful-fse-full","icon":"dashboard","description":"A  block designed to display numerical values or statistics, often used to highlight achievements or key metrics.","keywords":["md-counter","Block"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"columnList":{"type":"array","default":[{"id":1,"title":"","description":""}]},"columnTitleFontSize":{"type":"string","default":"16"},"columnDescriptionFontSize":{"type":"number","default":"16"},"columnTitleFontColor":{"type":"string","default":""},"columnDescriptionFontColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

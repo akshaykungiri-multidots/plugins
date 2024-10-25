@@ -28,7 +28,16 @@ export default function save({ attributes }) {
 		buyButtonText,
 		sellButtonText,
 		licenseText,
-		learnMoreText
+		learnMoreText,
+		headingFontSize,
+		headingFontColor,
+		buyButtonFontSize,
+		buyButtonFontColor,
+		sellButtonFontSize,
+		sellButtonFontColor,
+		licenseFontSize,
+		licenseFontColor,
+		learnMoreFontSize,
 	} = attributes;
 	return (
 		<div {...useBlockProps.save({className: "storyful-video-licensing"})}>
@@ -40,18 +49,30 @@ export default function save({ attributes }) {
 								tagName="h1"
 								className="section-title h1 wow fadeInLeft"
 								value={heading}
+								style={{
+									fontSize: headingFontSize,
+									color: headingFontColor,
+								}}
 							/>
 							<div class="bye-sell-button wow fadeInLeft">
 								<span class='link'>
 									<RichText.Content
 										tagName="a"
 										value={buyButtonText}
+										style={{
+											fontSize: buyButtonFontSize,
+											color: buyButtonFontColor,
+										}}
 									/>
 								</span>
 								<span class='link'>
 									<RichText.Content
 										tagName="a"
 										value={sellButtonText}
+										style={{
+											fontSize: sellButtonFontSize,
+											color: sellButtonFontColor,
+										}}
 									/>
 								</span>
 							</div>
@@ -62,12 +83,19 @@ export default function save({ attributes }) {
 									tagName="h2"
 									className="licensing-description"
 									value={licenseText}
+									style={{
+										fontSize: licenseFontSize,
+										color: licenseFontColor,
+									}}
 								/>
 								<div class="sbtn sbtn-arrow-primary">
 									<span class="btn-text">
 										<RichText.Content
 											tagName="a"
 											value={learnMoreText}
+											style={{
+												fontSize: learnMoreFontSize,
+											}}
 										/>
 									</span>
 								</div>

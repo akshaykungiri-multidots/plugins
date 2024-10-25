@@ -79,7 +79,7 @@ export default function Edit({ attributes, setAttributes, className }) {
   };
 
   return (
-    <>
+    <div {...useBlockProps()}>
       <InspectorControls>
         <PanelBody
           title={__("General Settings", "md-prime")}
@@ -166,9 +166,9 @@ export default function Edit({ attributes, setAttributes, className }) {
           slideInfinite,
           slideSlidesToShow,
           slideSlidesToScroll,
-		  slideItems
+		      slideItems
         }}
       />
-    </>
+    </div>
   );
 }

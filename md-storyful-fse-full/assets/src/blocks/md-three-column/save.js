@@ -27,7 +27,14 @@ export default function save({attributes}) {
 		heading,
 		backgroundImage,
 		columnList,
-		buttonText
+		buttonText,
+		headingFontSize,
+		headingFontColor,
+		columnTitleFontSize,
+		columnTitleFontColor,
+		columnDescriptionFontSize,
+		columnDescriptionFontColor,
+		buttonFontSize,
 	} = attributes;
 	return (
 		<div {...useBlockProps.save({className: "md_three_column_block",})}>
@@ -37,6 +44,10 @@ export default function save({attributes}) {
 						<RichText.Content
 							tagName="h2"
 							value={heading}
+							style={{
+								fontSize: headingFontSize,
+								color: headingFontColor,
+							}}
 						/>
 					</div>
 					<div class="threecol-wrap">
@@ -51,11 +62,19 @@ export default function save({attributes}) {
 										tagName="h3"
 										className='column-item-title'
 										value={postObj.title}
+										style={{
+											fontSize: columnTitleFontSize,
+											color: columnTitleFontColor,
+										}}
 									/>
 									<RichText.Content
 										tagName="p"
 										className='column-item-desc'
 										value={postObj.description}
+										style={{
+											fontSize: columnDescriptionFontSize,
+											color: columnDescriptionFontColor,
+										}}
 									/>
 								</div>
 							))}
@@ -66,6 +85,9 @@ export default function save({attributes}) {
 									tagName="a"
 									value={buttonText}
 									className="btn btn-primary"
+									style={{
+										fontSize: buttonFontSize,
+									}}
 								/>
 							</div>
 						</div>

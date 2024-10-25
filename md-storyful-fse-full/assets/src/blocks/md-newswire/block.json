@@ -5,8 +5,8 @@
   "title": "MD Newswire",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "Sample block.",
+  "icon": "align-left",
+  "description": "A Newswire block with a left and right column.",
   "keywords": ["md-storyful-fse-full", "md-newswire"],
   "supports": {
     "html": false,
@@ -47,6 +47,54 @@
       "default": "style1"
     },
     "background_color": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_title_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_description_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_description_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_button_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_button_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_left_title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_left_title_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_left_description_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_left_description_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_sub_title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "newswire_sub_title_font_color": {
       "type": "string",
       "default": ""
     }

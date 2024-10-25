@@ -77,6 +77,8 @@ class MD_Our_Story extends Block_Base {
 		$our_story_title = isset( $attributes['our_story_title'] ) ? $attributes['our_story_title'] : '';
 		$our_story_video_image = isset( $attributes['our_story_video_image'] ) ? $attributes['our_story_video_image'] : '';
 		$our_story_video_link = isset( $attributes['our_story_video_link'] ) ? $attributes['our_story_video_link'] : '';
+		$our_story_title_font_size = isset( $attributes['our_story_title_font_size'] ) ? $attributes['our_story_title_font_size'] : '';
+		$our_story_title_font_color = isset( $attributes['our_story_title_font_color'] ) ? $attributes['our_story_title_font_color'] : '';
 		ob_start();
 		?>
 		<div <?php echo wp_kses_post( $wrapper_attributes ); ?>>
@@ -84,7 +86,7 @@ class MD_Our_Story extends Block_Base {
 				<div class="our-story-section__right">
 					<div class="media-section">
 						<div class="our-story-text-wrapper wow bounceIn">
-							<h3>
+							<h3 class="our-story-title" style="font-size: <?php echo esc_attr($our_story_title_font_size); ?>; color: <?php echo esc_attr($our_story_title_font_color); ?>">
 								<?php echo wp_kses_post($our_story_title); ?>
 							</h3>
 						</div>

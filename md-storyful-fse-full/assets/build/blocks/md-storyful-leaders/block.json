@@ -5,8 +5,8 @@
   "title": "MD Storyful Leaders",
   "apiVersion": 3,
   "category": "md-storyful-fse-full",
-  "icon": "lock",
-  "description": "Sample Dynamic block.",
+  "icon": "businessperson",
+  "description": "A Team Leaders block for Storyful FSE",
   "keywords": [
     "md-storyful-fse-full",
     "md-storyful-leaders"
@@ -15,7 +15,28 @@
     "html": false
   },
   "textdomain": "md-storyful-fse-full",
-  "attributes": {},
+  "attributes": {
+    "titleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "socialIconBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
   "editorScript": "file:./index.js",
   "viewScript": [
     "file:./view.js"

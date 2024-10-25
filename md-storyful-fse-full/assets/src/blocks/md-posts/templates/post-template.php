@@ -5,6 +5,15 @@ $post_per_page = $number_of_rows * $number_of_columns;
 $enableNewsLetter = isset($attributes['enableNewsLetter']) ? $attributes['enableNewsLetter'] : false;
 $displayNewsLetterAfterRow = (isset($attributes['displayNewsLetterAfterRow']) && !empty($attributes['displayNewsLetterAfterRow'])) ? (int) $attributes['displayNewsLetterAfterRow'] : 0;
 
+$postTitleFontSize = isset($attributes['postTitleFontSize']) ? $attributes['postTitleFontSize'] : '';
+$postTitleColor = isset($attributes['postTitleColor']) ? $attributes['postTitleColor'] : '';
+$postDateFontSize = isset($attributes['postDateFontSize']) ? $attributes['postDateFontSize'] : '';
+$postDateColor = isset($attributes['postDateColor']) ? $attributes['postDateColor'] : '';
+$mostPopularTitleFontSize = isset($attributes['mostPopularTitleFontSize']) ? $attributes['mostPopularTitleFontSize'] : '';
+$mostPopularTitleColor = isset($attributes['mostPopularTitleColor']) ? $attributes['mostPopularTitleColor'] : '';
+$mostPopularDescriptionFontSize = isset($attributes['mostPopularDescriptionFontSize']) ? $attributes['mostPopularDescriptionFontSize'] : '';
+$mostPopularDescriptionColor = isset($attributes['mostPopularDescriptionColor']) ? $attributes['mostPopularDescriptionColor'] : '';
+
 $post_category_slug = "category";
 if ($postType === "resource") {
     $post_category_slug = "resource_category";
@@ -210,8 +219,8 @@ $popular_posts_query = new \WP_Query($popular_post_args);
                                         </span>
                                     <?php endif; ?>
                                 <?php endif; ?>
-                                <h3><a href="<?php echo esc_url(get_permalink($resPost->ID)); ?>"><?php echo esc_html(get_the_title($resPost->ID)); ?></a></h3>
-                                <p><a href="<?php echo esc_url(get_permalink($resPost->ID)); ?>"><?php echo esc_html(get_the_excerpt($resPost->ID)); ?></a></p>
+                                <h3 style="<?php echo esc_attr('font-size: ' . $mostPopularTitleFontSize . '; color: ' . $mostPopularTitleColor); ?>"><a href="<?php echo esc_url(get_permalink($resPost->ID)); ?>"><?php echo esc_html(get_the_title($resPost->ID)); ?></a></h3>
+                                <p style="<?php echo esc_attr('font-size: ' . $mostPopularDescriptionFontSize . '; color: ' . $mostPopularDescriptionColor); ?>"><a href="<?php echo esc_url(get_permalink($resPost->ID)); ?>"><?php echo esc_html(get_the_excerpt($resPost->ID)); ?></a></p>
                                 <a class="readmore-link" href="<?php echo esc_url(get_permalink($resPost->ID)); ?>" class="read-more"><?php esc_html_e('Read the full resource', 'md-bakery-antian'); ?></a>
                             </div>
                         </div>
@@ -283,8 +292,8 @@ $popular_posts_query = new \WP_Query($popular_post_args);
                             <?php endif; ?>
                         </div>
                         <?php endif; ?>
-                        <p class="item-date"><?php echo esc_html(get_the_date('F j, Y')); ?></p>
-                        <h3><a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>
+                        <p class="item-date" style="<?php echo esc_attr('font-size: ' . $postDateFontSize . '; color: ' . $postDateColor); ?>"><?php echo esc_html(get_the_date('F j, Y')); ?></p>
+                        <h3 style="<?php echo esc_attr('font-size: ' . $postTitleFontSize . '; color: ' . $postTitleColor); ?>"><a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></h3>
                     </div>
                     <a class="readmore-link" href="<?php echo esc_url(get_permalink()); ?>" class="read-more"><?php esc_html_e('Read the full resource', 'md-bakery-antian'); ?></a>
                 </div>
@@ -348,8 +357,8 @@ $popular_posts_query = new \WP_Query($popular_post_args);
                                         </span>
                                     <?php endif; ?>
                                 <?php endif; ?>
-                                <h3><a href="<?php echo esc_url(get_permalink($resPost->ID)); ?>"><?php echo esc_html(get_the_title($resPost->ID)); ?></a></h3>
-                                <p><a href="<?php echo esc_url(get_permalink($resPost->ID)); ?>"><?php echo esc_html(get_the_excerpt($resPost->ID)); ?></a></p>
+                                <h3 style="<?php echo esc_attr('font-size: ' . $mostPopularTitleFontSize . '; color: ' . $mostPopularTitleColor); ?>"><a href="<?php echo esc_url(get_permalink($resPost->ID)); ?>"><?php echo esc_html(get_the_title($resPost->ID)); ?></a></h3>
+                                <p style="<?php echo esc_attr('font-size: ' . $mostPopularDescriptionFontSize . '; color: ' . $mostPopularDescriptionColor); ?>"><a href="<?php echo esc_url(get_permalink($resPost->ID)); ?>"><?php echo esc_html(get_the_excerpt($resPost->ID)); ?></a></p>
                                 <a class="readmore-link" href="<?php echo esc_url(get_permalink($resPost->ID)); ?>" class="read-more"><?php esc_html_e('Read the full resource', 'md-bakery-antian'); ?></a>
                             </div>
                         </div>
