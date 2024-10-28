@@ -99,11 +99,15 @@
   font-size: 16px;
   font-weight: 500;
 }
-.md_anitian_leadership .md_anitian_leadership__tabs .tab-content .md_anitian_leadership__leaders .md_anitian_leadership__leader .md_anitian_leadership__leader__content .leadership__member-description p, .md_anitian_leadership .md_anitian_leadership__tabs .tab-content .md_anitian_leadership__leaders .md_anitian_leadership__leader .md_anitian_leadership__leader__content .leadership__member-description span {
-  margin: 0 0 1em;
+.md_anitian_leadership .md_anitian_leadership__tabs .tab-content .md_anitian_leadership__leaders .md_anitian_leadership__leader .md_anitian_leadership__leader__content .leadership__member-description {
   color: #000;
   font-size: 16px;
+}
+.md_anitian_leadership .md_anitian_leadership__tabs .tab-content .md_anitian_leadership__leaders .md_anitian_leadership__leader .md_anitian_leadership__leader__content .leadership__member-description p, .md_anitian_leadership .md_anitian_leadership__tabs .tab-content .md_anitian_leadership__leaders .md_anitian_leadership__leader .md_anitian_leadership__leader__content .leadership__member-description span {
+  margin: 0 0 1em;
   font-weight: 500;
+  font-size: inherit;
+  color: inherit;
   line-height: normal;
 }
 .md_anitian_leadership .md_anitian_leadership__tabs .tab-content .md_anitian_leadership__leaders .md_anitian_leadership__leader .md_anitian_leadership__leader__content .leadership__member-description a {

@@ -93,11 +93,13 @@
                             font-weight: 500;
                         }
                         .leadership__member-description {
+                            color: #000;
+                            font-size: 16px;
                             p, span {
                                 margin: 0 0 1em;
-                                color: #000;
-                                font-size: 16px;
                                 font-weight: 500;
+                                font-size: inherit;
+                                color: inherit;
                                 line-height: normal;
                             }
                             a {

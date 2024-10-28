@@ -23,7 +23,19 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
-  const { bannerTitle, backgroundMediaImage, columnList } = attributes;
+  const {
+    bannerTitle,
+    backgroundMediaImage,
+    columnList,
+    bannerTitleFontSize,
+    bannerTitleColor,
+    columnTitleFontSize,
+    columnTitleColor,
+    columnContentFontSize,
+    columnContentColor,
+    columnLinkFontSize,
+    columnLinkColor,
+  } = attributes;
   return (
     <div
       {...useBlockProps.save({
@@ -37,7 +49,14 @@ export default function save({ attributes }) {
         >
           <div className="container">
             <div className="md_anitian_three_column_header__heading">
-              <RichText.Content tagName="h2" value={bannerTitle} />
+              <RichText.Content
+                tagName="h2"
+                value={bannerTitle}
+                style={{
+                  fontSize: bannerTitleFontSize,
+                  color: bannerTitleColor,
+                }}
+              />
             </div>
           </div>
         </div>
@@ -55,15 +74,27 @@ export default function save({ attributes }) {
                     <RichText.Content
                       tagName="h5"
                       value={postObj.column_title}
+                      style={{
+                        fontSize: columnTitleFontSize,
+                        color: columnTitleColor,
+                      }}
                     />
                     <RichText.Content
                       tagName="p"
                       value={postObj.column_description}
+                      style={{
+                        fontSize: columnContentFontSize,
+                        color: columnContentColor,
+                      }}
                     />
                     <RichText.Content
                       tagName="a"
                       className="md_anitian_three_column_header__item__link"
                       value={postObj.column_link}
+                      style={{
+                        fontSize: columnLinkFontSize,
+                        color: columnLinkColor,
+                      }}
                     />
                   </div>
                 </div>

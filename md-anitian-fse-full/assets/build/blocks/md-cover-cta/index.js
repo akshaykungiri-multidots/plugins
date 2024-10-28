@@ -59,8 +59,30 @@ function Edit({
     cover_image,
     background_image,
     background_color,
-    cover_cta_style
+    cover_cta_style,
+    title_font_size,
+    title_font_color,
+    heading_content_font_size,
+    heading_content_font_color,
+    button_font_size
   } = attributes;
+  const fontSizes = [{
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
+    slug: "small",
+    size: "12px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
+    slug: "medium",
+    size: "18px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
+    slug: "large",
+    size: "26px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
+    slug: "xtra-large",
+    size: "48px"
+  }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_anitian_cover_cta_section"
@@ -90,13 +112,6 @@ function Edit({
       src: background_image,
       alt: "background"
     })))
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
-    color: background_color,
-    onChange: color => setAttributes({
-      background_color: color
-    }),
-    enableAlpha: true,
-    defaultValue: "#000"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Cover CTA Style", "md-anitian-fse-full"),
     value: cover_cta_style,
@@ -113,7 +128,49 @@ function Edit({
     onChange: value => setAttributes({
       cover_cta_style: value
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: title_font_size,
+    onChange: value => setAttributes({
+      title_font_size: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Content Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: heading_content_font_size,
+    onChange: value => setAttributes({
+      heading_content_font_size: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: button_font_size,
+    onChange: value => setAttributes({
+      button_font_size: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+    initialOpen: false,
+    colorSettings: [{
+      value: title_font_color,
+      onChange: value => setAttributes({
+        title_font_color: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Color", "md-storyful-fse-full")
+    }, {
+      value: heading_content_font_color,
+      onChange: value => setAttributes({
+        heading_content_font_color: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Content Color", "md-storyful-fse-full")
+    }, {
+      value: background_color,
+      onChange: value => setAttributes({
+        background_color: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color", "md-storyful-fse-full")
+    }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `md_anitian_cover_cta_wrap ${cover_cta_style}`,
     style: {
       backgroundColor: background_color
@@ -142,14 +199,22 @@ function Edit({
     onChange: value => setAttributes({
       title: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-anitian-fse-full")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-anitian-fse-full"),
+    style: {
+      fontSize: title_font_size,
+      color: title_font_color
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: heading_content,
     onChange: value => setAttributes({
       heading_content: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Content", "md-anitian-fse-full")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Content", "md-anitian-fse-full"),
+    style: {
+      fontSize: heading_content_font_size,
+      color: heading_content_font_color
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
@@ -159,7 +224,10 @@ function Edit({
     onChange: value => setAttributes({
       button_link: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Button Link", "md-anitian-fse-full")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Button Link", "md-anitian-fse-full"),
+    style: {
+      fontSize: button_font_size
+    }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__image"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -297,7 +365,12 @@ function save({
     cover_image,
     background_image,
     background_color,
-    cover_cta_style
+    cover_cta_style,
+    title_font_size,
+    title_font_color,
+    heading_content_font_size,
+    heading_content_font_color,
+    button_font_size
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -328,16 +401,27 @@ function save({
     className: "md_anitian_cover_cta__heading"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
-    value: title
+    value: title,
+    style: {
+      fontSize: title_font_size,
+      color: title_font_color
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
-    value: heading_content
+    value: heading_content,
+    style: {
+      fontSize: heading_content_font_size,
+      color: heading_content_font_color
+    }
   }), button_link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     className: "btn-anitian md_anitian_cover_cta__btn",
-    value: button_link
+    value: button_link,
+    style: {
+      fontSize: button_font_size
+    }
   }))), cover_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__image"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -428,7 +512,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-cover-cta","version":"0.1.0","title":"MD Cover CTA","apiVersion":3,"category":"md-anitian-fse-full","icon":"lock","description":"Cover CTA block","keywords":["md-anitian-fse-full","md-cover-cta"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"title":{"type":"string","default":""},"heading_content":{"type":"string","default":""},"button_link":{"type":"string","default":""},"cover_image":{"type":"string","default":""},"background_image":{"type":"string","default":""},"background_color":{"type":"string","default":""},"cover_cta_style":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-cover-cta","version":"0.1.0","title":"MD Cover CTA","apiVersion":3,"category":"md-anitian-fse-full","icon":"megaphone","description":"A block that displays a cover image with a call-to-action.","keywords":["md-anitian-fse-full","md-cover-cta"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"title":{"type":"string","default":""},"heading_content":{"type":"string","default":""},"button_link":{"type":"string","default":""},"cover_image":{"type":"string","default":""},"background_image":{"type":"string","default":""},"background_color":{"type":"string","default":""},"cover_cta_style":{"type":"string","default":""},"title_font_size":{"type":"string","default":""},"title_font_color":{"type":"string","default":""},"heading_content_font_size":{"type":"string","default":""},"heading_content_font_color":{"type":"string","default":""},"button_font_size":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

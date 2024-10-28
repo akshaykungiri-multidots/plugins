@@ -67,26 +67,116 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 function Edit({
-  attributes: {
-    heading
-  },
+  attributes,
   setAttributes,
   className
 }) {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Block Settings', 'md-anitian-fse-full')
+  const {
+    heading,
+    headingFontSize,
+    headingColor,
+    leaderTitleFontSize,
+    leaderTitleFontColor,
+    leaderDesignationFontSize,
+    leaderDesignationFontColor,
+    leaderDescriptionFontSize,
+    leaderDescriptionFontColor
+  } = attributes;
+  const fontSizes = [{
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
+    slug: "small",
+    size: "12px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
+    slug: "medium",
+    size: "18px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
+    slug: "large",
+    size: "26px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
+    slug: "xtra-large",
+    size: "48px"
+  }];
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)()
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block Settings", "md-anitian-fse-full")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Heading', 'md-anitian-fse-full'),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Enter Heading', 'md-anitian-fse-full'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading", "md-anitian-fse-full"),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Heading", "md-anitian-fse-full"),
     value: heading,
     onChange: value => setAttributes({
       heading: value
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default()), {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-anitian-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Font Size", "md-anitian-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: headingFontSize,
+    onChange: value => setAttributes({
+      headingFontSize: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Leader Title Font Size", "md-anitian-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: leaderTitleFontSize,
+    onChange: value => setAttributes({
+      leaderTitleFontSize: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Leader Designation Font Size", "md-anitian-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: leaderDesignationFontSize,
+    onChange: value => setAttributes({
+      leaderDesignationFontSize: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Leader Description Font Size", "md-anitian-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: leaderDescriptionFontSize,
+    onChange: value => setAttributes({
+      leaderDescriptionFontSize: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-anitian-fse-full"),
+    initialOpen: false,
+    colorSettings: [{
+      value: headingColor,
+      onChange: value => setAttributes({
+        headingColor: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Font Color", "md-anitian-fse-full")
+    }, {
+      value: leaderTitleFontColor,
+      onChange: value => setAttributes({
+        leaderTitleFontColor: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Leader Title Font Color", "md-anitian-fse-full")
+    }, {
+      value: leaderDesignationFontColor,
+      onChange: value => setAttributes({
+        leaderDesignationFontColor: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Leader Designation Font Color", "md-anitian-fse-full")
+    }, {
+      value: leaderDescriptionFontColor,
+      onChange: value => setAttributes({
+        leaderDescriptionFontColor: value
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Leader Description Font Color", "md-anitian-fse-full")
+    }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default()), {
     block: _block_json__WEBPACK_IMPORTED_MODULE_5__.name,
     className: className,
     attributes: {
-      heading
+      heading,
+      headingFontSize,
+      headingColor,
+      leaderTitleFontSize,
+      leaderTitleFontColor,
+      leaderDesignationFontSize,
+      leaderDesignationFontColor,
+      leaderDescriptionFontSize,
+      leaderDescriptionFontColor
     }
   }));
 }
@@ -263,7 +353,7 @@ module.exports = window["wp"]["serverSideRender"];
   \**********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-leaderships","version":"0.1.0","title":"MD Leadership","apiVersion":3,"category":"md-anitian-fse-full","icon":"lock","description":"MD Leadership block","keywords":["md-anitian-fse-full","md-leaderships"],"supports":{"html":false},"textdomain":"md-anitian-fse-full","attributes":{"heading":{"type":"string","default":"This is Default Heading"}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-leaderships","version":"0.1.0","title":"MD Leadership","apiVersion":3,"category":"md-anitian-fse-full","icon":"groups","description":"A block that displays a list of leadership profiles.","keywords":["md-anitian-fse-full","md-leaderships"],"supports":{"html":false},"textdomain":"md-anitian-fse-full","attributes":{"heading":{"type":"string","default":"This is Default Heading"},"headingFontSize":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"leaderTitleFontSize":{"type":"string","default":""},"leaderTitleFontColor":{"type":"string","default":""},"leaderDesignationFontSize":{"type":"string","default":""},"leaderDesignationFontColor":{"type":"string","default":""},"leaderDescriptionFontSize":{"type":"string","default":""},"leaderDescriptionFontColor":{"type":"string","default":""}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

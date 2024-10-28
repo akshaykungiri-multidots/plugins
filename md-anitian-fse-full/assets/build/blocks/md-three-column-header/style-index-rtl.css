@@ -14,12 +14,10 @@
   justify-content: center;
   align-items: center;
 }
-
 .md_bg_image_upload img {
   height: 110px;
   width: 100%;
 }
-
 .md_bg_image_upload i {
   width: 100%;
   height: 100%;
@@ -52,6 +50,7 @@
   display: flex;
   max-width: calc(33.1% - 35px);
   flex-basis: calc(33.1% - 35px);
+  flex-wrap: wrap;
 }
 .md_anitian_three_column_header .md_anitian_three_column_header__content .md_anitian_three_column_header__item .md_anitian_three_column_header__item__image {
   width: 50px;
@@ -90,4 +89,7 @@
 .md_anitian_three_column_header .md_anitian_three_column_header__content .md_anitian_three_column_header__item:not(:first-child) {
   padding-right: 24px;
   border-right: 2px dotted rgba(0, 0, 0, 0.18);
+}
+.md_anitian_three_column_header .item-action-wrap {
+  width: 100%;
 }

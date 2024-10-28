@@ -16,10 +16,10 @@ import {
   RichText,
   InspectorControls,
   MediaUpload,
-  
+  PanelColorSettings
 } from "@wordpress/block-editor";
 
-import { PanelBody, Button, ToggleControl } from "@wordpress/components";
+import { PanelBody, Button, ToggleControl, FontSizePicker } from "@wordpress/components";
 
 import { useState } from "@wordpress/element";
 
@@ -32,7 +32,43 @@ import { useState } from "@wordpress/element";
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-  const { sub_heading, heading, image_boxes, enable_slider } = attributes;
+  const {
+    sub_heading,
+    heading,
+    image_boxes,
+    enable_slider,
+    sub_heading_font_size,
+    heading_font_size,
+    sub_heading_color,
+    heading_color,
+    image_box_content_font_size,
+    image_box_content_color,
+    image_box_button_font_size,
+    image_box_button_color,
+  } = attributes;
+
+  const fontSizes = [
+    {
+      name: __("S"),
+      slug: "small",
+      size: "12px",
+    },
+    {
+      name: __("M"),
+      slug: "medium",
+      size: "18px",
+    },
+    {
+      name: __("L"),
+      slug: "large",
+      size: "26px",
+    },
+    {
+      name: __("XL"),
+      slug: "xtra-large",
+      size: "48px",
+    },
+  ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -70,6 +106,66 @@ export default function Edit({ attributes, setAttributes }) {
             onChange={(value) => setAttributes({ enable_slider: value })}
           />
         </PanelBody>
+        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
+          <label> {__("Sub Heading Font Size", "md-anitian-fse-full")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={sub_heading_font_size}
+            fallbackFontSize={sub_heading_font_size}
+            onChange={(value) => setAttributes({ sub_heading_font_size: value })}
+          />
+          <label> {__("Heading Font Size", "md-anitian-fse-full")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={heading_font_size}
+            fallbackFontSize={heading_font_size}
+            onChange={(value) => setAttributes({ heading_font_size: value })}
+          />
+          <label> {__("Image Box Content Font Size", "md-anitian-fse-full")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={image_box_content_font_size}
+            fallbackFontSize={image_box_content_font_size}
+            onChange={(value) => setAttributes({ image_box_content_font_size: value })}
+          />
+          <label> {__("Image Box Button Font Size", "md-anitian-fse-full")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={image_box_button_font_size}
+            fallbackFontSize={image_box_button_font_size}
+            onChange={(value) => setAttributes({ image_box_button_font_size: value })}
+          />
+        </PanelBody>
+        <PanelColorSettings
+          title={__("Typography Colors", "md-storyful-fse-full")}
+          initialOpen={false}
+          colorSettings={[
+            {
+              value: sub_heading_color,
+              onChange: (value) => setAttributes({ sub_heading_color: value }),
+              label: __("Sub Heading Color", "md-storyful-fse-full"),
+            },
+            {
+              value: heading_color,
+              onChange: (value) => setAttributes({ heading_color: value }),
+              label: __("Heading Color", "md-storyful-fse-full"),
+            },
+            {
+              value: image_box_content_color,
+              onChange: (value) => setAttributes({ image_box_content_color: value }),
+              label: __("Image Box Content Color", "md-storyful-fse-full"),
+            },
+            {
+              value: image_box_button_color,
+              onChange: (value) => setAttributes({ image_box_button_color: value }),
+              label: __("Image Box Button Color", "md-storyful-fse-full"),
+            },
+          ]}
+        />
       </InspectorControls>
       <div className="bakery_antian__slider-image-box">
         <div className="bakery_antian__slider-image-box__inner">
@@ -81,12 +177,14 @@ export default function Edit({ attributes, setAttributes }) {
                   value={sub_heading}
                   onChange={(value) => setAttributes({ sub_heading: value })}
                   placeholder={__("Enter Sub Heading", "md-anitian-fse-full")}
+                  style={{ fontSize: sub_heading_font_size, color: sub_heading_color }}
                 />
                 <RichText
                   tagName="h2"
                   value={heading}
                   onChange={(value) => setAttributes({ heading: value })}
                   placeholder={__("Enter Heading", "md-anitian-fse-full")}
+                  style={{ fontSize: heading_font_size, color: heading_color }}
                 />
               </div>
             </div>
@@ -113,7 +211,11 @@ export default function Edit({ attributes, setAttributes }) {
                         <MediaUpload
                           title={__("Image")}
                           onSelect={(media) =>
-                            updateStaticPostObj(index, "slider_image", media.url)
+                            updateStaticPostObj(
+                              index,
+                              "slider_image",
+                              media.url
+                            )
                           }
                           multiple={false}
                           render={({ open }) => (
@@ -123,7 +225,10 @@ export default function Edit({ attributes, setAttributes }) {
                                   {__("Upload")}
                                 </Button>
                               ) : (
-                                <img onClick={open} src={postObj.slider_image} />
+                                <img
+                                  onClick={open}
+                                  src={postObj.slider_image}
+                                />
                               )}
                             </>
                           )}
@@ -137,17 +242,19 @@ export default function Edit({ attributes, setAttributes }) {
                             updateStaticPostObj(index, "slider_content", value)
                           }
                           placeholder={__("Enter Content")}
+                          style={{ fontSize: image_box_content_font_size, color: image_box_content_color }}
                         />
                         <div class="bakery_antian__slider-button btn-anitian">
-                        <RichText
-                          tagName="a"
-                          className="btn"
-                          value={postObj.slider_button}
-                          onChange={(value) =>
-                            updateStaticPostObj(index, "slider_button", value)
-                          }
-                          placeholder={__("Enter Button Text")}
-                        />
+                          <RichText
+                            tagName="a"
+                            className="btn"
+                            value={postObj.slider_button}
+                            onChange={(value) =>
+                              updateStaticPostObj(index, "slider_button", value)
+                            }
+                            placeholder={__("Enter Button Text")}
+                            style={{ fontSize: image_box_button_font_size, color: image_box_button_color }}
+                          />
                         </div>
                       </div>
                     </div>

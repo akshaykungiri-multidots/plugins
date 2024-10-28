@@ -5,8 +5,8 @@
   "title": "MD Image Box",
   "apiVersion": 3,
   "category": "md-anitian-fse-full",
-  "icon": "lock",
-  "description": "Image box block",
+  "icon": "format-image",
+  "description": "A block that displays an image with a title and description.",
   "keywords": ["md-anitian-fse-full", "md-image-box"],
   "supports": {
     "html": false,
@@ -30,6 +30,38 @@
     "enable_slider": {
       "type": "boolean",
       "default": false
+    },
+    "sub_heading_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "sub_heading_color": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_color": {
+      "type": "string",
+      "default": ""
+    },
+    "image_box_content_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "image_box_content_color": {
+      "type": "string",
+      "default": ""
+    },
+    "image_box_button_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "image_box_button_color": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",

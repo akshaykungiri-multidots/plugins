@@ -23,14 +23,22 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
-  const { 
+  const {
     sub_title,
     title,
     heading_content,
     button_link,
     cover_video,
     background_image,
-    background_color
+    background_color,
+    sub_title_font_size,
+    title_font_size,
+    heading_content_font_size,
+    button_font_size,
+    sub_title_color,
+    title_color,
+    heading_content_color,
+    button_color,
   } = attributes;
   
   return (
@@ -47,20 +55,24 @@ export default function save({ attributes }) {
                           <RichText.Content
                             tagName="h4"
                             value={sub_title}
+                            style={{fontSize: sub_title_font_size, color: sub_title_color}}
                           />
                           <RichText.Content
                             tagName="h2"
                             value={title}
+                            style={{fontSize: title_font_size, color: title_color}}
                           />
                           <RichText.Content
                             tagName="p"
                             value={heading_content}
+                            style={{fontSize: heading_content_font_size, color: heading_content_color}}
                           />
                           <div className="md_anitian_text_video__btn">
                             <RichText.Content
                               className="btn-anitian md_anitian_text_video__btn"
                               tagName="p"
                               value={button_link}
+                              style={{fontSize: button_font_size, color: button_color}}
                             />
                           </div>
                       </div>

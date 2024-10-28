@@ -30,7 +30,12 @@ export default function save({ attributes }) {
     cover_image,
     background_image,
     background_color,
-    cover_cta_style
+    cover_cta_style,
+    title_font_size,
+    title_font_color,
+    heading_content_font_size,
+    heading_content_font_color,
+    button_font_size
   } = attributes;
   
   return (
@@ -54,10 +59,12 @@ export default function save({ attributes }) {
                         <RichText.Content
                           tagName="h2"
                           value={title}
+                          style={{fontSize: title_font_size, color: title_font_color}}
                         />
                         <RichText.Content
                           tagName="p"
                           value={heading_content}
+                          style={{fontSize: heading_content_font_size, color: heading_content_font_color}}
                         />
                         {button_link && (
                           <div className="md_anitian_cover_cta__btn">
@@ -65,6 +72,7 @@ export default function save({ attributes }) {
                                 tagName="p"
                                 className="btn-anitian md_anitian_cover_cta__btn"
                                 value={button_link}
+                                style={{fontSize: button_font_size}}
                               />
                           </div>
                         )}

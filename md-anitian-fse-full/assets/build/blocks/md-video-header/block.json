@@ -5,8 +5,8 @@
   "title": "MD Video Header",
   "apiVersion": 3,
   "category": "md-anitian-fse-full",
-  "icon": "lock",
-  "description": "MD Video Header",
+  "icon": "video-alt2",
+  "description": "A block that displays a video header with a heading and subheading.",
   "keywords": [
     "md-anitian-fse-full",
     "md-video-header"
@@ -45,6 +45,38 @@
       "default": ""
     },
     "background_color": {
+      "type": "string",
+      "default": ""
+    },
+    "sub_title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_content_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "button_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "sub_title_color": {
+      "type": "string",
+      "default": ""
+    },
+    "title_color": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_content_color": {
+      "type": "string",
+      "default": ""
+    },
+    "button_color": {
       "type": "string",
       "default": ""
     }

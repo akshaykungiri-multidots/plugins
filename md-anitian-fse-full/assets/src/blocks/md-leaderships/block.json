@@ -5,8 +5,8 @@
   "title": "MD Leadership",
   "apiVersion": 3,
   "category": "md-anitian-fse-full",
-  "icon": "lock",
-  "description": "MD Leadership block",
+  "icon": "groups",
+  "description": "A block that displays a list of leadership profiles.",
   "keywords": ["md-anitian-fse-full", "md-leaderships"],
   "supports": {
     "html": false
@@ -16,6 +16,38 @@
     "heading": {
       "type": "string",
       "default": "This is Default Heading"
+    },
+    "headingFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "leaderTitleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "leaderTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "leaderDesignationFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "leaderDesignationFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "leaderDescriptionFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "leaderDescriptionFontColor": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",

@@ -23,7 +23,20 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
-  const { sub_heading, heading, image_boxes, enable_slider } = attributes;
+  const {
+    sub_heading,
+    heading,
+    image_boxes,
+    enable_slider,
+    sub_heading_font_size,
+    heading_font_size,
+    sub_heading_color,
+    heading_color,
+    image_box_content_font_size,
+    image_box_content_color,
+    image_box_button_font_size,
+    image_box_button_color,
+  } = attributes;
   return (
     <div
       {...useBlockProps.save({
@@ -38,10 +51,18 @@ export default function save({ attributes }) {
                 <RichText.Content
                   tagName="h6"
                   value={sub_heading}
+                  style={{
+                    fontSize: sub_heading_font_size,
+                    color: sub_heading_color,
+                  }}
                 />
                 <RichText.Content
                   tagName="h2"
                   value={heading}
+                  style={{
+                    fontSize: heading_font_size,
+                    color: heading_color,
+                  }}
                 />
               </div>
             </div>
@@ -61,12 +82,20 @@ export default function save({ attributes }) {
                         <RichText.Content
                           tagName="p"
                           value={postObj.slider_content}
+                          style={{
+                            fontSize: image_box_content_font_size,
+                            color: image_box_content_color,
+                          }}
                         />
                         <div class="bakery_antian__slider-button btn-anitian">
                         <RichText.Content
                           tagName="a"
                           className="btn"
                           value={postObj.slider_button}
+                          style={{
+                            fontSize: image_box_button_font_size,
+                            color: image_box_button_color,
+                          }}
                         />
                         </div>
                       </div>

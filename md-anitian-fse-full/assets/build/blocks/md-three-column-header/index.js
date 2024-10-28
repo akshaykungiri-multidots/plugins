@@ -55,8 +55,33 @@ function Edit({
   const {
     bannerTitle,
     backgroundMediaImage,
-    columnList
+    columnList,
+    bannerTitleFontSize,
+    bannerTitleColor,
+    columnTitleFontSize,
+    columnTitleColor,
+    columnContentFontSize,
+    columnContentColor,
+    columnLinkFontSize,
+    columnLinkColor
   } = attributes;
+  const fontSizes = [{
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
+    slug: "small",
+    size: "12px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
+    slug: "medium",
+    size: "18px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
+    slug: "large",
+    size: "26px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
+    slug: "xtra-large",
+    size: "48px"
+  }];
   const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(0);
   const addStaticPostObj = () => {
     const staticPostObj = [...columnList, {
@@ -85,6 +110,14 @@ function Edit({
     });
     setCurrentSlide(-1);
   };
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...columnList];
+    arrayCopy[oldIndex] = columnList[newIndex];
+    arrayCopy[newIndex] = columnList[oldIndex];
+    setAttributes({
+      columnList: arrayCopy
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_anitian_three_column_header_section"
@@ -108,7 +141,61 @@ function Edit({
       src: backgroundMediaImage,
       alt: "background"
     })))
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Banner Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: bannerTitleFontSize,
+    onChange: value => setAttributes({
+      bannerTitleFontSize: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: columnTitleFontSize,
+    onChange: value => setAttributes({
+      columnTitleFontSize: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Content Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: columnContentFontSize,
+    onChange: value => setAttributes({
+      columnContentFontSize: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Link Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    fontSizes: fontSizes,
+    value: columnLinkFontSize,
+    onChange: value => setAttributes({
+      columnLinkFontSize: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+    initialOpen: false,
+    colorSettings: [{
+      value: bannerTitleColor,
+      onChange: newColor => setAttributes({
+        bannerTitleColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Banner Title Color")
+    }, {
+      value: columnTitleColor,
+      onChange: newColor => setAttributes({
+        columnTitleColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Title Color")
+    }, {
+      value: columnContentColor,
+      onChange: newColor => setAttributes({
+        columnContentColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Content Color")
+    }, {
+      value: columnLinkColor,
+      onChange: newColor => setAttributes({
+        columnLinkColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Link Color")
+    }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__bg_image",
@@ -125,7 +212,11 @@ function Edit({
     onChange: value => setAttributes({
       bannerTitle: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title"),
+    style: {
+      fontSize: bannerTitleFontSize,
+      color: bannerTitleColor
+    }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -136,13 +227,64 @@ function Edit({
     className: "item-action-wrap show-items-hover small-icons"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "move-item"
+  }, 0 < index && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Left", "md-prime")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    onClick: () => setCurrentSlide(index),
-    className: "move-down dashicons dashicons-admin-generic"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-    onClick: () => removeStaticPostObj(index),
-    className: "remove-item dashicons dashicons-no-alt"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "dashicons dashicons-arrow-left-alt move-left",
+    onClick: () => moveItem(index, index - 1),
+    onKeyDown: event => {
+      if (event.key === "Enter" || event.key === " ") {
+        moveItem(index, index - 1);
+      }
+    },
+    role: "button",
+    tabIndex: 0,
+    "aria-label": "Move item left"
+  })), index + 1 < columnList.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Right", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-right-alt move-right",
+    role: "button",
+    tabIndex: "0",
+    onClick: () => moveItem(index, index + 1),
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        moveItem(index, index + 1);
+      }
+    },
+    "aria-label": "Move item right"
+  }))), 1 < columnList.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "remove-item dashicons dashicons-no-alt",
+    role: "button",
+    tabIndex: "0",
+    onClick: () => {
+      const toDelete =
+      // eslint-disable-next-line no-alert
+      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+      if (toDelete) {
+        const updatedArray = columnList.filter((item, itemIndex) => itemIndex !== index);
+        setAttributes({
+          columnList: updatedArray
+        });
+      }
+    },
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        const toDelete =
+        // eslint-disable-next-line no-alert
+        confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+        if (toDelete) {
+          const updatedArray = columnList.filter((item, itemIndex) => itemIndex !== index);
+          setAttributes({
+            columnList: updatedArray
+          });
+        }
+      }
+    },
+    "aria-label": "Delete item"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__item__image"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image"),
@@ -153,28 +295,68 @@ function Edit({
     }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, postObj.image == "" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
       variant: "primary",
       onClick: open
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: "dashicons dashicons-format-image"
+    }, " ")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       onClick: open,
       src: postObj.image
-    }))
+    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime")
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: "dashicons dashicons-no-alt remove-image",
+      role: "button",
+      tabIndex: "0",
+      onClick: () => {
+        const toDelete =
+        // eslint-disable-next-line no-alert
+        confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to remove this image?", "md-prime"));
+        if (toDelete) {
+          updateStaticPostObj(index, "image", "");
+        }
+      },
+      onKeyDown: e => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault(); // Prevent default action for space key
+          const toDelete =
+          // eslint-disable-next-line no-alert
+          confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to remove this image?", "md-prime"));
+          if (toDelete) {
+            updateStaticPostObj(index, "image", "");
+          }
+        }
+      },
+      "aria-label": "Remove image"
+    }))))
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__item__content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h5",
     value: postObj.column_title,
     onChange: value => updateStaticPostObj(index, "column_title", value),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title"),
+    style: {
+      fontSize: columnTitleFontSize,
+      color: columnTitleColor
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: postObj.column_description,
     onChange: value => updateStaticPostObj(index, "column_description", value),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description"),
+    style: {
+      fontSize: columnContentFontSize,
+      color: columnContentColor
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "a",
     className: "md_anitian_three_column_header__item__link",
     value: postObj.column_link,
     onChange: value => updateStaticPostObj(index, "column_link", value),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add link"),
+    style: {
+      fontSize: columnLinkFontSize,
+      color: columnLinkColor
+    }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "add-item-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
@@ -287,7 +469,15 @@ function save({
   const {
     bannerTitle,
     backgroundMediaImage,
-    columnList
+    columnList,
+    bannerTitleFontSize,
+    bannerTitleColor,
+    columnTitleFontSize,
+    columnTitleColor,
+    columnContentFontSize,
+    columnContentColor,
+    columnLinkFontSize,
+    columnLinkColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -306,7 +496,11 @@ function save({
     className: "md_anitian_three_column_header__heading"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
-    value: bannerTitle
+    value: bannerTitle,
+    style: {
+      fontSize: bannerTitleFontSize,
+      color: bannerTitleColor
+    }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -322,14 +516,26 @@ function save({
     className: "md_anitian_three_column_header__item__content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h5",
-    value: postObj.column_title
+    value: postObj.column_title,
+    style: {
+      fontSize: columnTitleFontSize,
+      color: columnTitleColor
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
-    value: postObj.column_description
+    value: postObj.column_description,
+    style: {
+      fontSize: columnContentFontSize,
+      color: columnContentColor
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "a",
     className: "md_anitian_three_column_header__item__link",
-    value: postObj.column_link
+    value: postObj.column_link,
+    style: {
+      fontSize: columnLinkFontSize,
+      color: columnLinkColor
+    }
   }))))))));
 }
 
@@ -413,7 +619,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-three-column-header","version":"0.1.0","title":"MD Three Column Header","apiVersion":3,"category":"md-anitian-fse-full","icon":"lock","description":"Three column header block","keywords":["md-anitian-fse-full","md-three-column-header"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"bannerTitle":{"type":"string","default":""},"backgroundMediaImage":{"type":"string","default":""},"columnList":{"type":"array","default":[]}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-three-column-header","version":"0.1.0","title":"MD Three Column Header","apiVersion":3,"category":"md-anitian-fse-full","icon":"screenoptions","description":"A block that displays a three column header with image boxes.","keywords":["md-anitian-fse-full","md-three-column-header"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"bannerTitle":{"type":"string","default":""},"backgroundMediaImage":{"type":"string","default":""},"columnList":{"type":"array","default":[]},"bannerTitleFontSize":{"type":"string","default":""},"bannerTitleColor":{"type":"string","default":""},"columnTitleFontSize":{"type":"string","default":""},"columnTitleColor":{"type":"string","default":""},"columnContentFontSize":{"type":"string","default":""},"columnContentColor":{"type":"string","default":""},"columnLinkFontSize":{"type":"string","default":""},"columnLinkColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

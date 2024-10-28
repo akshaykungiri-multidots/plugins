@@ -5,8 +5,8 @@
   "title": "MD Cover CTA",
   "apiVersion": 3,
   "category": "md-anitian-fse-full",
-  "icon": "lock",
-  "description": "Cover CTA block",
+  "icon": "megaphone",
+  "description": "A block that displays a cover image with a call-to-action.",
   "keywords": ["md-anitian-fse-full", "md-cover-cta"],
   "supports": {
     "html": false,
@@ -39,6 +39,26 @@
       "default": ""
     },
     "cover_cta_style": {
+      "type": "string",
+      "default": ""
+    },
+    "title_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "title_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_content_font_size": {
+      "type": "string",
+      "default": ""
+    },
+    "heading_content_font_color": {
+      "type": "string",
+      "default": ""
+    },
+    "button_font_size": {
       "type": "string",
       "default": ""
     }
