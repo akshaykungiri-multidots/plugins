@@ -91,13 +91,13 @@ function Edit({
       card_block_list: updatedStaticPostObj
     });
   };
-  const removeStaticPostObj = index => {
-    const updatedStaticPostObj = [...card_block_list];
-    updatedStaticPostObj.splice(index, 1);
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...card_block_list];
+    arrayCopy[oldIndex] = card_block_list[newIndex];
+    arrayCopy[newIndex] = card_block_list[oldIndex];
     setAttributes({
-      card_block_list: updatedStaticPostObj
+      card_block_list: arrayCopy
     });
-    setCurrentSlide(-1);
   };
   const fontSizes = [{
     name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
@@ -279,13 +279,64 @@ function Edit({
     className: "item-action-wrap show-items-hover small-icons"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "move-item"
+  }, 0 < index && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Left", "md-prime")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    onClick: () => setCurrentSlide(index),
-    className: "move-down dashicons dashicons-admin-generic"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-    onClick: () => removeStaticPostObj(index),
-    className: "remove-item dashicons dashicons-no-alt"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "dashicons dashicons-arrow-left-alt move-left",
+    onClick: () => moveItem(index, index - 1),
+    onKeyDown: event => {
+      if (event.key === "Enter" || event.key === " ") {
+        moveItem(index, index - 1);
+      }
+    },
+    role: "button",
+    tabIndex: 0,
+    "aria-label": "Move item left"
+  })), index + 1 < card_block_list.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Right", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-right-alt move-right",
+    role: "button",
+    tabIndex: "0",
+    onClick: () => moveItem(index, index + 1),
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        moveItem(index, index + 1);
+      }
+    },
+    "aria-label": "Move item right"
+  }))), 1 < card_block_list.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "remove-item dashicons dashicons-no-alt",
+    role: "button",
+    tabIndex: "0",
+    onClick: () => {
+      const toDelete =
+      // eslint-disable-next-line no-alert
+      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+      if (toDelete) {
+        const updatedArray = card_block_list.filter((item, itemIndex) => itemIndex !== index);
+        setAttributes({
+          card_block_list: updatedArray
+        });
+      }
+    },
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        const toDelete =
+        // eslint-disable-next-line no-alert
+        confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+        if (toDelete) {
+          const updatedArray = card_block_list.filter((item, itemIndex) => itemIndex !== index);
+          setAttributes({
+            card_block_list: updatedArray
+          });
+        }
+      }
+    },
+    "aria-label": "Delete item"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__item__image"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image"),

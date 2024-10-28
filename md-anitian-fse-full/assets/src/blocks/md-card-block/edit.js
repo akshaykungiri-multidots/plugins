@@ -19,7 +19,7 @@ import {
   PanelColorSettings
 } from "@wordpress/block-editor";
 
-import { Button, SelectControl, PanelBody, FontSizePicker } from "@wordpress/components";
+import { Button, SelectControl, PanelBody, FontSizePicker, Tooltip } from "@wordpress/components";
 
 import { useState } from "@wordpress/element";
 
@@ -72,11 +72,14 @@ export default function Edit({ attributes, setAttributes }) {
     updatedStaticPostObj[index][key] = value;
     setAttributes({ card_block_list: updatedStaticPostObj });
   };
-  const removeStaticPostObj = (index) => {
-    const updatedStaticPostObj = [...card_block_list];
-    updatedStaticPostObj.splice(index, 1);
-    setAttributes({ card_block_list: updatedStaticPostObj });
-    setCurrentSlide(-1);
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...card_block_list];
+    arrayCopy[oldIndex] = card_block_list[newIndex];
+    arrayCopy[newIndex] = card_block_list[oldIndex];
+
+    setAttributes({
+      card_block_list: arrayCopy,
+    });
   };
 
   const fontSizes = [
@@ -266,15 +269,87 @@ export default function Edit({ attributes, setAttributes }) {
                 <div className="md_anitian_card_block__item show-items-hover-wrap">
                   <div className="item-action-wrap show-items-hover small-icons">
                     <div className="move-item">
-                      <span
-                        onClick={() => setCurrentSlide(index)}
-                        className="move-down dashicons dashicons-admin-generic"
-                      ></span>
+                      {0 < index && (
+                        <Tooltip text={__("Move Left", "md-prime")}>
+                          <span
+                            className="dashicons dashicons-arrow-left-alt move-left"
+                            onClick={() => moveItem(index, index - 1)}
+                            onKeyDown={(event) => {
+                              if (event.key === "Enter" || event.key === " ") {
+                                moveItem(index, index - 1);
+                              }
+                            }}
+                            role="button"
+                            tabIndex={0}
+                            aria-label="Move item left"
+                          ></span>
+                        </Tooltip>
+                      )}
+                      {index + 1 < card_block_list.length && (
+                        <Tooltip text={__("Move Right", "md-prime")}>
+                          <span
+                            className="dashicons dashicons-arrow-right-alt move-right"
+                            role="button"
+                            tabIndex="0"
+                            onClick={() => moveItem(index, index + 1)}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                moveItem(index, index + 1);
+                              }
+                            }}
+                            aria-label="Move item right"
+                          ></span>
+                        </Tooltip>
+                      )}
                     </div>
-                    <i
-                      onClick={() => removeStaticPostObj(index)}
-                      className="remove-item dashicons dashicons-no-alt"
-                    ></i>
+                    {1 < card_block_list.length && (
+                      <Tooltip text={__("Remove Item", "md-prime")}>
+                        <i
+                          className="remove-item dashicons dashicons-no-alt"
+                          role="button"
+                          tabIndex="0"
+                          onClick={() => {
+                            const toDelete =
+                              // eslint-disable-next-line no-alert
+                              confirm(
+                                __(
+                                  "Are you sure you want to delete this item?",
+                                  "md-prime"
+                                )
+                              );
+                            if (toDelete) {
+                              const updatedArray = card_block_list.filter(
+                                (item, itemIndex) => itemIndex !== index
+                              );
+                              setAttributes({
+                                card_block_list: updatedArray,
+                              });
+                            }
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              const toDelete =
+                                // eslint-disable-next-line no-alert
+                                confirm(
+                                  __(
+                                    "Are you sure you want to delete this item?",
+                                    "md-prime"
+                                  )
+                                );
+                              if (toDelete) {
+                                const updatedArray = card_block_list.filter(
+                                  (item, itemIndex) => itemIndex !== index
+                                );
+                                setAttributes({
+                                  card_block_list: updatedArray,
+                                });
+                              }
+                            }
+                          }}
+                          aria-label="Delete item"
+                        ></i>
+                      </Tooltip>
+                    )}
                   </div>
                   <div className="md_anitian_card_block__item__image">
                     <MediaUpload

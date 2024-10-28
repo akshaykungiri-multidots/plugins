@@ -102,13 +102,13 @@ function Edit({
       image_boxes: updatedStaticPostObj
     });
   };
-  const removeStaticPostObj = index => {
-    const updatedStaticPostObj = [...image_boxes];
-    updatedStaticPostObj.splice(index, 1);
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...image_boxes];
+    arrayCopy[oldIndex] = image_boxes[newIndex];
+    arrayCopy[newIndex] = image_boxes[oldIndex];
     setAttributes({
-      image_boxes: updatedStaticPostObj
+      image_boxes: arrayCopy
     });
-    setCurrentSlide(-1);
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
@@ -228,13 +228,64 @@ function Edit({
     className: "item-action-wrap show-items-hover small-icons"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "move-item"
+  }, 0 < index && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Left", "md-prime")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    onClick: () => setCurrentSlide(index),
-    className: "move-down dashicons dashicons-admin-generic"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-    onClick: () => removeStaticPostObj(index),
-    className: "remove-item dashicons dashicons-no-alt"
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "dashicons dashicons-arrow-left-alt move-left",
+    onClick: () => moveItem(index, index - 1),
+    onKeyDown: event => {
+      if (event.key === "Enter" || event.key === " ") {
+        moveItem(index, index - 1);
+      }
+    },
+    role: "button",
+    tabIndex: 0,
+    "aria-label": "Move item left"
+  })), index + 1 < image_boxes.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Right", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-right-alt move-right",
+    role: "button",
+    tabIndex: "0",
+    onClick: () => moveItem(index, index + 1),
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        moveItem(index, index + 1);
+      }
+    },
+    "aria-label": "Move item right"
+  }))), 1 < image_boxes.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "remove-item dashicons dashicons-no-alt",
+    role: "button",
+    tabIndex: "0",
+    onClick: () => {
+      const toDelete =
+      // eslint-disable-next-line no-alert
+      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+      if (toDelete) {
+        const updatedArray = image_boxes.filter((item, itemIndex) => itemIndex !== index);
+        setAttributes({
+          image_boxes: updatedArray
+        });
+      }
+    },
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        const toDelete =
+        // eslint-disable-next-line no-alert
+        confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+        if (toDelete) {
+          const updatedArray = image_boxes.filter((item, itemIndex) => itemIndex !== index);
+          setAttributes({
+            image_boxes: updatedArray
+          });
+        }
+      }
+    },
+    "aria-label": "Delete item"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antian__slider-image"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image"),

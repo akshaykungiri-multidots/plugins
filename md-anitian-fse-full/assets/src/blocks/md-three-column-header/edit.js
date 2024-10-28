@@ -94,12 +94,6 @@ export default function Edit({ attributes, setAttributes }) {
     updatedStaticPostObj[index][key] = value;
     setAttributes({ columnList: updatedStaticPostObj });
   };
-  const removeStaticPostObj = (index) => {
-    const updatedStaticPostObj = [...columnList];
-    updatedStaticPostObj.splice(index, 1);
-    setAttributes({ columnList: updatedStaticPostObj });
-    setCurrentSlide(-1);
-  };
 
   const moveItem = (oldIndex, newIndex) => {
     const arrayCopy = [...columnList];

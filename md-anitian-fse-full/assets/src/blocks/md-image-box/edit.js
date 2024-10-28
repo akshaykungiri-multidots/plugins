@@ -16,10 +16,16 @@ import {
   RichText,
   InspectorControls,
   MediaUpload,
-  PanelColorSettings
+  PanelColorSettings,
 } from "@wordpress/block-editor";
 
-import { PanelBody, Button, ToggleControl, FontSizePicker } from "@wordpress/components";
+import {
+  PanelBody,
+  Button,
+  ToggleControl,
+  FontSizePicker,
+  Tooltip,
+} from "@wordpress/components";
 
 import { useState } from "@wordpress/element";
 
@@ -89,11 +95,14 @@ export default function Edit({ attributes, setAttributes }) {
     updatedStaticPostObj[index][key] = value;
     setAttributes({ image_boxes: updatedStaticPostObj });
   };
-  const removeStaticPostObj = (index) => {
-    const updatedStaticPostObj = [...image_boxes];
-    updatedStaticPostObj.splice(index, 1);
-    setAttributes({ image_boxes: updatedStaticPostObj });
-    setCurrentSlide(-1);
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...image_boxes];
+    arrayCopy[oldIndex] = image_boxes[newIndex];
+    arrayCopy[newIndex] = image_boxes[oldIndex];
+
+    setAttributes({
+      image_boxes: arrayCopy,
+    });
   };
 
   return (
@@ -113,7 +122,9 @@ export default function Edit({ attributes, setAttributes }) {
             fontSizes={fontSizes}
             value={sub_heading_font_size}
             fallbackFontSize={sub_heading_font_size}
-            onChange={(value) => setAttributes({ sub_heading_font_size: value })}
+            onChange={(value) =>
+              setAttributes({ sub_heading_font_size: value })
+            }
           />
           <label> {__("Heading Font Size", "md-anitian-fse-full")}</label>
           <FontSizePicker
@@ -123,21 +134,31 @@ export default function Edit({ attributes, setAttributes }) {
             fallbackFontSize={heading_font_size}
             onChange={(value) => setAttributes({ heading_font_size: value })}
           />
-          <label> {__("Image Box Content Font Size", "md-anitian-fse-full")}</label>
+          <label>
+            {" "}
+            {__("Image Box Content Font Size", "md-anitian-fse-full")}
+          </label>
           <FontSizePicker
             __nextHasNoMarginBottom
             fontSizes={fontSizes}
             value={image_box_content_font_size}
             fallbackFontSize={image_box_content_font_size}
-            onChange={(value) => setAttributes({ image_box_content_font_size: value })}
+            onChange={(value) =>
+              setAttributes({ image_box_content_font_size: value })
+            }
           />
-          <label> {__("Image Box Button Font Size", "md-anitian-fse-full")}</label>
+          <label>
+            {" "}
+            {__("Image Box Button Font Size", "md-anitian-fse-full")}
+          </label>
           <FontSizePicker
             __nextHasNoMarginBottom
             fontSizes={fontSizes}
             value={image_box_button_font_size}
             fallbackFontSize={image_box_button_font_size}
-            onChange={(value) => setAttributes({ image_box_button_font_size: value })}
+            onChange={(value) =>
+              setAttributes({ image_box_button_font_size: value })
+            }
           />
         </PanelBody>
         <PanelColorSettings
@@ -156,12 +177,14 @@ export default function Edit({ attributes, setAttributes }) {
             },
             {
               value: image_box_content_color,
-              onChange: (value) => setAttributes({ image_box_content_color: value }),
+              onChange: (value) =>
+                setAttributes({ image_box_content_color: value }),
               label: __("Image Box Content Color", "md-storyful-fse-full"),
             },
             {
               value: image_box_button_color,
-              onChange: (value) => setAttributes({ image_box_button_color: value }),
+              onChange: (value) =>
+                setAttributes({ image_box_button_color: value }),
               label: __("Image Box Button Color", "md-storyful-fse-full"),
             },
           ]}
@@ -177,7 +200,10 @@ export default function Edit({ attributes, setAttributes }) {
                   value={sub_heading}
                   onChange={(value) => setAttributes({ sub_heading: value })}
                   placeholder={__("Enter Sub Heading", "md-anitian-fse-full")}
-                  style={{ fontSize: sub_heading_font_size, color: sub_heading_color }}
+                  style={{
+                    fontSize: sub_heading_font_size,
+                    color: sub_heading_color,
+                  }}
                 />
                 <RichText
                   tagName="h2"
@@ -197,15 +223,90 @@ export default function Edit({ attributes, setAttributes }) {
                     <div className="bakery_antian__slider-item show-items-hover-wrap">
                       <div className="item-action-wrap show-items-hover small-icons">
                         <div className="move-item">
-                          <span
-                            onClick={() => setCurrentSlide(index)}
-                            className="move-down dashicons dashicons-admin-generic"
-                          ></span>
+                          {0 < index && (
+                            <Tooltip text={__("Move Left", "md-prime")}>
+                              <span
+                                className="dashicons dashicons-arrow-left-alt move-left"
+                                onClick={() => moveItem(index, index - 1)}
+                                onKeyDown={(event) => {
+                                  if (
+                                    event.key === "Enter" ||
+                                    event.key === " "
+                                  ) {
+                                    moveItem(index, index - 1);
+                                  }
+                                }}
+                                role="button"
+                                tabIndex={0}
+                                aria-label="Move item left"
+                              ></span>
+                            </Tooltip>
+                          )}
+                          {index + 1 < image_boxes.length && (
+                            <Tooltip text={__("Move Right", "md-prime")}>
+                              <span
+                                className="dashicons dashicons-arrow-right-alt move-right"
+                                role="button"
+                                tabIndex="0"
+                                onClick={() => moveItem(index, index + 1)}
+                                onKeyDown={(e) => {
+                                  if (e.key === "Enter" || e.key === " ") {
+                                    moveItem(index, index + 1);
+                                  }
+                                }}
+                                aria-label="Move item right"
+                              ></span>
+                            </Tooltip>
+                          )}
                         </div>
-                        <i
-                          onClick={() => removeStaticPostObj(index)}
-                          className="remove-item dashicons dashicons-no-alt"
-                        ></i>
+                        {1 < image_boxes.length && (
+                          <Tooltip text={__("Remove Item", "md-prime")}>
+                            <i
+                              className="remove-item dashicons dashicons-no-alt"
+                              role="button"
+                              tabIndex="0"
+                              onClick={() => {
+                                const toDelete =
+                                  // eslint-disable-next-line no-alert
+                                  confirm(
+                                    __(
+                                      "Are you sure you want to delete this item?",
+                                      "md-prime"
+                                    )
+                                  );
+                                if (toDelete) {
+                                  const updatedArray = image_boxes.filter(
+                                    (item, itemIndex) => itemIndex !== index
+                                  );
+                                  setAttributes({
+                                    image_boxes: updatedArray,
+                                  });
+                                }
+                              }}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter" || e.key === " ") {
+                                  const toDelete =
+                                    // eslint-disable-next-line no-alert
+                                    confirm(
+                                      __(
+                                        "Are you sure you want to delete this item?",
+                                        "md-prime"
+                                      )
+                                    );
+                                  if (toDelete) {
+                                    const updatedArray = image_boxes.filter(
+                                      (item, itemIndex) => itemIndex !== index
+                                    );
+                                    setAttributes({
+                                      image_boxes: updatedArray,
+                                    });
+                                  }
+                                }
+                              }}
+                              aria-label="Delete item"
+                            ></i>
+                          </Tooltip>
+                        )}
                       </div>
                       <div className="bakery_antian__slider-image">
                         <MediaUpload
@@ -242,7 +343,10 @@ export default function Edit({ attributes, setAttributes }) {
                             updateStaticPostObj(index, "slider_content", value)
                           }
                           placeholder={__("Enter Content")}
-                          style={{ fontSize: image_box_content_font_size, color: image_box_content_color }}
+                          style={{
+                            fontSize: image_box_content_font_size,
+                            color: image_box_content_color,
+                          }}
                         />
                         <div class="bakery_antian__slider-button btn-anitian">
                           <RichText
@@ -253,7 +357,10 @@ export default function Edit({ attributes, setAttributes }) {
                               updateStaticPostObj(index, "slider_button", value)
                             }
                             placeholder={__("Enter Button Text")}
-                            style={{ fontSize: image_box_button_font_size, color: image_box_button_color }}
+                            style={{
+                              fontSize: image_box_button_font_size,
+                              color: image_box_button_color,
+                            }}
                           />
                         </div>
                       </div>
