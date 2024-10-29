@@ -5,8 +5,8 @@
   "title": "MD Search",
   "apiVersion": 3,
   "category": "md-efi-fse-full",
-  "icon": "lock",
-  "description": "MD Search block.",
+  "icon": "search",
+  "description": "A block to display search input",
   "keywords": [
     "search",
     "block"

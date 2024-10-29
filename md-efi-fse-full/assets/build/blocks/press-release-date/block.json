@@ -5,8 +5,8 @@
   "title": "Press Release Date",
   "apiVersion": 3,
   "category": "md-efi-fse-full",
-  "icon": "lock",
-  "description": "Example dynamic block scaffolded with Create Block tool.",
+  "icon": "calendar-alt",
+  "description": "A block to display press release date",
   "keywords": [
     "md-efi-fse-full",
     "press-release-date"

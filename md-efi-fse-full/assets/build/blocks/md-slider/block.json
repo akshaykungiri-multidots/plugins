@@ -5,8 +5,8 @@
   "title": "MD Slider",
   "apiVersion": 3,
   "category": "md-efi-fse-full",
-  "icon": "lock",
-  "description": "Example static block scaffolded with Create Block tool.",
+  "icon": "slides",
+  "description": "A block to display slider",
   "keywords": [
     "md-efi-fse-full",
     "md-slider"
@@ -32,6 +32,30 @@
           "boxColor": null
         }
       ]
+    },
+    "sliderTitleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "sliderTitleFontColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "sliderDescriptionFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "sliderDescriptionFontColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "sliderLinkFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "sliderLinkFontColor": {
+      "type": "string",
+      "default": "#000000"
     },
     "autoplay": {
       "type": "boolean",

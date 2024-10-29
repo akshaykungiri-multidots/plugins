@@ -31,6 +31,12 @@ export default function save({ attributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
+    sliderTitleFontSize,
+    sliderTitleFontColor,
+    sliderDescriptionFontSize,
+    sliderDescriptionFontColor,
+    sliderLinkFontSize,
+    sliderLinkFontColor,
   } = attributes;
   return (
     <div {...useBlockProps.save({ className: "md_slider_section" })}>
@@ -62,17 +68,29 @@ export default function save({ attributes }) {
                     <RichText.Content
                       tagName="h2"
                       className="md_slider__item__content__title"
-					  value={slideItems[currentSlide].title}
+                      value={slideItems[currentSlide].title}
+                      style={{
+                        fontSize: sliderTitleFontSize,
+                        color: sliderTitleFontColor,
+                      }}
                     />
                     <RichText.Content
                       tagName="p"
                       className="md_slider__item__content__description"
-					  value={slideItems[currentSlide].description}
+                      value={slideItems[currentSlide].description}
+                      style={{
+                        fontSize: sliderDescriptionFontSize,
+                        color: sliderDescriptionFontColor,
+                      }}
                     />
                     <div className="md_slider__item__content__btn md_btn_arrow">
                       <RichText.Content
                         tagName="p"
-						value={slideItems[currentSlide].link}
+                        value={slideItems[currentSlide].link}
+                        style={{
+                          fontSize: sliderLinkFontSize,
+                          color: sliderLinkFontColor,
+                        }}
                       />
                     </div>
                   </div>

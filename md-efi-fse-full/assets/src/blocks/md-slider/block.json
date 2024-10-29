@@ -1,33 +1,63 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "name": "md-efi-fse-full/md-slider",
-  "version": "0.1.0",
-  "title": "MD Slider",
-  "apiVersion": 3,
-  "category": "md-efi-fse-full",
-  "icon": "lock",
-  "description": "Example static block scaffolded with Create Block tool.",
-  "keywords": ["md-efi-fse-full", "md-slider"],
-  "supports": {
-    "html": false,
-	"align": ["wide", "full"]
-  },
-  "textdomain": "md-efi-fse-full",
-  "attributes": {
-    "slideItems": {
-      "type": "array",
-      "default": [
-		{
-			"id": 1,
-			"title": "",
-			"description": "",
-			"link": "",
-			"backgroundImage": "",
-			"boxColor": null
-		}
-	  ]
-    },
-    "autoplay": {
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "md-efi-fse-full/md-slider",
+	"version": "0.1.0",
+	"title": "MD Slider",
+	"apiVersion": 3,
+	"category": "md-efi-fse-full",
+	"icon": "slides",
+	"description": "A block to display slider",
+	"keywords": [
+		"md-efi-fse-full",
+		"md-slider"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"textdomain": "md-efi-fse-full",
+	"attributes": {
+		"slideItems": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"title": "",
+					"description": "",
+					"link": "",
+					"backgroundImage": "",
+					"boxColor": null
+				}
+			]
+		},
+		"sliderTitleFontSize": {
+			"type": "string",
+			"default": ""
+		},
+		"sliderTitleFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"sliderDescriptionFontSize": {
+			"type": "string",
+			"default": ""
+		},
+		"sliderDescriptionFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"sliderLinkFontSize": {
+			"type": "string",
+			"default": ""
+		},
+		"sliderLinkFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"autoplay": {
 			"type": "boolean",
 			"default": false
 		},
@@ -51,7 +81,7 @@
 			"type": "number",
 			"default": 1
 		}
-  },
-  "editorScript": "file:./index.js",
-  "style": "file:./style-index.css"
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
 }

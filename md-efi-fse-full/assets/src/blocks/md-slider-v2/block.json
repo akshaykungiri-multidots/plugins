@@ -5,8 +5,8 @@
   "title": "MD Slider V2",
   "apiVersion": 3,
   "category": "md-efi-fse-full",
-  "icon": "lock",
-  "description": "Example static block scaffolded with Create Block tool.",
+  "icon": "images-alt2",
+  "description": "A block to display slider but with more options",
   "keywords": ["md-efi-fse-full", "md-slider-v2"],
   "supports": {
     "html": false,
@@ -25,6 +25,23 @@
 		}
 	  ]
     },
+
+	"sliderTitleFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"sliderTitleFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
+	"sliderDescriptionFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"sliderDescriptionFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
     "autoplay": {
 			"type": "boolean",
 			"default": false

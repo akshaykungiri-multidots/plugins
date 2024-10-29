@@ -12,6 +12,8 @@ import { __ } from '@wordpress/i18n';
  */
 import ServerSideRender from '@wordpress/server-side-render';
 
+import { useBlockProps } from '@wordpress/block-editor';
+
 /**
  * React hook that is used to mark the block wrapper element.
  *
@@ -41,13 +43,13 @@ import './editor.scss';
  */
 export default function Edit({ attributes, setAttributes, className }) {
 	return (
-		<>
+		<div { ...useBlockProps() }>
 			<ServerSideRender
 				block={metadata.name}
 				className={className}
 				attributes={{
 				}}
 			/>
-		</>
+		</div>
 	);
 }

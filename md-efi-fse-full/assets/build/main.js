@@ -38,9 +38,7 @@
     }
   });
   function md_load_posts() {
-    let post_type = $(".md-posts").find('input[name="md-posts__loadmore-post_type"]').val();
-    let posts_per_page = $(".md-posts").find('input[name="md-posts__loadmore-posts_per_page"]').val();
-    let post_in_row = $(".md-posts").find('input[name="md-posts__loadmore-post_in_row"]').val();
+    let post_attributes = $(".md-posts").find('input[name="md-posts__loadmore-post_attributes"]').val();
     let taxonomies = [];
     $(".md-posts__filter .md-posts__filter-select").each(function () {
       let taxonomy = $(this).attr("name");
@@ -57,9 +55,7 @@
     let current_page = $(".md-posts").find('input[name="md-posts__loadmore-current_page"]').val();
     var data = {
       action: "md_efi_fse_full_load_more",
-      post_type: post_type,
-      posts_per_page: posts_per_page,
-      post_in_row: post_in_row,
+      post_attributes: post_attributes,
       current_page: current_page,
       taxonomies: taxonomies,
       ajax_nonce: siteConfig.ajax_nonce

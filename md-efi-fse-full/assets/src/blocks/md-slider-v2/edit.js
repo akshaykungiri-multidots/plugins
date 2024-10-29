@@ -16,6 +16,7 @@ import {
   InspectorControls,
   RichText,
   MediaUpload,
+  PanelColorSettings
 } from "@wordpress/block-editor";
 
 import { useState } from "@wordpress/element";
@@ -25,7 +26,7 @@ import {
   RangeControl,
   ToggleControl,
   Button,
-  GradientPicker,
+  FontSizePicker,
 } from "@wordpress/components";
 
 /**
@@ -45,6 +46,10 @@ export default function Edit({ attributes, setAttributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
+    sliderTitleFontSize,
+		sliderTitleFontColor,
+		sliderDescriptionFontSize,
+		sliderDescriptionFontColor
   } = attributes;
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -71,6 +76,28 @@ export default function Edit({ attributes, setAttributes }) {
     setAttributes({ slideItems: updatedStaticPostObj });
     setCurrentSlide(-1);
   };
+  const fontSizes = [
+    {
+      name: __("S"),
+      slug: "small",
+      size: "12px",
+    },
+    {
+      name: __("M"),
+      slug: "medium",
+      size: "18px",
+    },
+    {
+      name: __("L"),
+      slug: "large",
+      size: "26px",
+    },
+    {
+      name: __("XL"),
+      slug: "xtra-large",
+      size: "48px",
+    },
+  ];
   return (
     <div
       {...useBlockProps({
@@ -136,6 +163,46 @@ export default function Edit({ attributes, setAttributes }) {
             }
           />
         </PanelBody>
+        <PanelBody title={__("Typography", "md-storyful-fse-full")} initialOpen={false}>
+          <label>{__("Slider Title Font Size")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={sliderTitleFontSize}
+            fallbackFontSize={sliderTitleFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ sliderTitleFontSize: newFontSize })
+            }
+          />
+          <label>{__("Slider Description Font Size")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={sliderDescriptionFontSize}
+            fallbackFontSize={sliderDescriptionFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ sliderDescriptionFontSize: newFontSize })
+            }
+          />
+        </PanelBody>
+        <PanelColorSettings
+          title={__("Typography Colors", "md-storyful-fse-full")}
+          initialOpen={false}
+          colorSettings={[
+            {
+              value: sliderTitleFontColor,
+              onChange: (newColor) =>
+                setAttributes({ sliderTitleFontColor: newColor }),
+              label: __("Slider Title Font Color"),
+            },
+            {
+              value: sliderDescriptionFontColor,
+              onChange: (newColor) =>
+                setAttributes({ sliderDescriptionFontColor: newColor }),
+              label: __("Slider Description Font Color"),
+            }
+          ]}
+        />
       </InspectorControls>
       <div className="md_hero_banner_slider_v2">
         <div
@@ -199,6 +266,10 @@ export default function Edit({ attributes, setAttributes }) {
                       updateStaticPostObj(currentSlide, "title", value)
                     }
                     placeholder={__("Enter Title", "md-prime")}
+                    style={{
+                      fontSize: sliderTitleFontSize,
+                      color: sliderTitleFontColor,
+                    }}
                   />
                   <RichText
                     tagName="p"
@@ -208,6 +279,10 @@ export default function Edit({ attributes, setAttributes }) {
                       updateStaticPostObj(currentSlide, "description", value)
                     }
                     placeholder={__("Enter Description", "md-prime")}
+                    style={{
+                      fontSize: sliderDescriptionFontSize,
+                      color: sliderDescriptionFontColor,
+                    }}
                   />
                 </div>
               </div>

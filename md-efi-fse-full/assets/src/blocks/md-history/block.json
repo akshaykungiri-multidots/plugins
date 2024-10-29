@@ -5,8 +5,8 @@
   "title": "MD History",
   "apiVersion": 3,
   "category": "md-efi-fse-full",
-  "icon": "lock",
-  "description": "Example static block scaffolded with Create Block tool.",
+  "icon": "clock",
+  "description": "A block to display history timeline",
   "keywords": ["md-efi-fse-full", "md-history"],
   "supports": {
     "html": false
@@ -19,7 +19,45 @@
     },
     "historyTimeline": {
       "type": "array",
-      "default": []
+      "default": [
+        {
+          "id": 0,
+          "year": "xxxx",
+          "description": "Loream ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, eleifend nunc. Nulla ut turpis ut nisi ultricies sollicitudin. Sed nec odio sit amet erat luctus suscipit. Proin ut semper odio. Sed nec odio sit amet erat luctus suscipit. Proin ut semper odio."
+        }
+      ]
+    },
+    "headingFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "headingFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "yearFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "yearFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionFontColor": {
+      "type": "string",
+      "default": ""
     }
   },
   "editorScript": "file:./index.js",

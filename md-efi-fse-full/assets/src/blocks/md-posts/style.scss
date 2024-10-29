@@ -62,7 +62,8 @@
                     }
                     .md-posts__grid-item-excerpt p {
                         margin: 16px 0;
-                        font-size: 18px;
+                        font-size: inherit;
+                        color: inherit;
                         line-height: 30px;
                         margin-bottom: 20px;
                         font-family: "Be Vietnam Pro", BlinkMacSystemFont, sans-serif;

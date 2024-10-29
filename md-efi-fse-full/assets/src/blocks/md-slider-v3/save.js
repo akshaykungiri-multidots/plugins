@@ -32,6 +32,20 @@ export default function save({ attributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
+    headingFontSize,
+    headingFontColor,
+    sliderCompanyNameFontSize,
+    sliderCompanyNameFontColor,
+    sliderTestimonialFontSize,
+    sliderTestimonialFontColor,
+    sliderAuthorNameFontSize,
+    sliderAuthorNameFontColor,
+    sliderDesignationFontSize,
+    sliderDesignationFontColor,
+    sliderVideoLinkFontSize,
+    sliderVideoLinkFontColor,
+    sliderReadMoreLinkFontSize,
+    sliderReadMoreLinkFontColor,
   } = attributes;
   return (
     <div {...useBlockProps.save({ className: "md_slider_section" })}>
@@ -50,12 +64,18 @@ export default function save({ attributes }) {
             <div className="md_slider__item">
               <div className="md_slider__item__gradient_theme"></div>
               <div className="md_slider__item--inner">
-                <h3>{heading}</h3>
+                <h3 style={{ fontSize: headingFontSize, color: headingFontColor }}>
+                  {heading}
+                </h3>
                 <div className="md_slider__item__company_info">
                   <RichText.Content
                     tagName="h2"
                     className="md_slider__item__company_name h4"
                     value={slideItems[currentSlide].companyName}
+                    style={{
+                      fontSize: sliderCompanyNameFontSize,
+                      color: sliderCompanyNameFontColor,
+                    }}
                   />
                 </div>
                 <div className="md_slider__item__testimonial">
@@ -63,7 +83,10 @@ export default function save({ attributes }) {
                     tagName="blockquote"
                     className="md_slider__item__testimonial__content"
                     value={slideItems[currentSlide].testimonial}
-                    
+                    style={{
+                      fontSize: sliderTestimonialFontSize,
+                      color: sliderTestimonialFontColor,
+                    }}
                   />
                   <div className="md_slider__item__testimonial__info">
                     <div className="md_slider__item__testimonial__author">
@@ -71,12 +94,19 @@ export default function save({ attributes }) {
                         tagName="h4"
                         className="md_slider__item__testimonial__author__name"
                         value={slideItems[currentSlide].authorName}
-                        
+                        style={{
+                          fontSize: sliderAuthorNameFontSize,
+                          color: sliderAuthorNameFontColor,
+                        }}
                       />
                       <RichText.Content
                         tagName="p"
                         className="md_slider__item__testimonial__author__designation"
                         value={slideItems[currentSlide].designation}
+                        style={{
+                          fontSize: sliderDesignationFontSize,
+                          color: sliderDesignationFontColor,
+                        }}
                       />
                     </div>
                     {slideItems[currentSlide].videoLink && (
@@ -84,7 +114,10 @@ export default function save({ attributes }) {
                         tagName="div"
                         className="md_slider__item__testimonial__video"
                         value={slideItems[currentSlide].videoLink}
-                        
+                        style={{
+                          fontSize: sliderVideoLinkFontSize,
+                          color: sliderVideoLinkFontColor,
+                        }}
                       />
                     )}
                     {slideItems[currentSlide].readMoreLink && (
@@ -93,6 +126,10 @@ export default function save({ attributes }) {
                           tagName="p"
                           className="btn-main"
                           value={slideItems[currentSlide].readMoreLink}
+                          style={{
+                            fontSize: sliderReadMoreLinkFontSize,
+                            color: sliderReadMoreLinkFontColor,
+                          }}
                         />
                       </div>
                     )}

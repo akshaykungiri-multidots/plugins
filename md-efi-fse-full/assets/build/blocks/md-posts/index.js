@@ -22,10 +22,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/blocks/md-posts/block.json");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/md-posts/editor.scss");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/md-posts/block.json");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/md-posts/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -77,11 +75,33 @@ function Edit({
   const {
     postType,
     postsToShow,
-    postInRow
+    postInRow,
+    postTitleFontSize,
+    postTitleColor,
+    postContentFontSize,
+    postContentColor
   } = attributes;
-  const builtInPostType = ["page", "attachment", "nav_menu_item", "wp_block", "wp_template", "wp_template_part", "wp_navigation", "wp_font_family", "wp_font_face"];
-  const [postTypes, setPostTypes] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)([]);
-  const fetchPostTypes = () => {
+  const fontSizes = [{
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
+    slug: "small",
+    size: "12px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
+    slug: "medium",
+    size: "18px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
+    slug: "large",
+    size: "26px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
+    slug: "xtra-large",
+    size: "48px"
+  }];
+  const builtInPostType = ["page", "attachment", "nav_menu_item", "wp_block", "wp_template", "wp_template_part", "wp_navigation", "wp_font_family", "wp_font_face", "wp_global_styles"];
+  const [postTypes, setPostTypes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    // Fetch the posttypes not post list and set it as options
     wp.apiFetch({
       path: "/wp/v2/types"
     }).then(response => {
@@ -96,10 +116,11 @@ function Edit({
       }));
       setPostTypes(fetchedPostTypes);
     });
-  };
-  fetchPostTypes();
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Block Settings', 'md-efi-fse-full')
+  }, []);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)()
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block Settings", "md-efi-fse-full")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
     label: "Post Type",
     value: postType,
@@ -111,19 +132,19 @@ function Edit({
     label: "Posts to Show",
     value: postsToShow,
     options: [{
-      label: '2',
+      label: "2",
       value: "2"
     }, {
-      label: '4',
+      label: "4",
       value: "4"
     }, {
-      label: '6',
+      label: "6",
       value: "6"
     }, {
-      label: '8',
+      label: "8",
       value: "8"
     }, {
-      label: '10',
+      label: "10",
       value: "10"
     }],
     onChange: value => setAttributes({
@@ -133,31 +154,69 @@ function Edit({
     label: "Posts in Row",
     value: postInRow,
     options: [{
-      label: '1',
+      label: "1",
       value: "1"
     }, {
-      label: '2',
+      label: "2",
       value: "2"
     }, {
-      label: '3',
+      label: "3",
       value: "3"
     }, {
-      label: '4',
+      label: "4",
       value: "4"
     }, {
-      label: '5',
+      label: "5",
       value: "5"
     }],
     onChange: value => setAttributes({
       postInRow: value
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default()), {
-    block: _block_json__WEBPACK_IMPORTED_MODULE_6__.name,
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Title Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
+    __nextHasNoMarginBottom: true,
+    fontSizes: fontSizes,
+    value: postTitleFontSize,
+    fallbackFontSize: postTitleFontSize,
+    onChange: newFontSize => setAttributes({
+      postTitleFontSize: newFontSize
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Description Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
+    __nextHasNoMarginBottom: true,
+    fontSizes: fontSizes,
+    value: postContentFontSize,
+    fallbackFontSize: postContentFontSize,
+    onChange: newFontSize => setAttributes({
+      postContentFontSize: newFontSize
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+    initialOpen: false,
+    colorSettings: [{
+      value: postTitleColor,
+      onChange: newColor => setAttributes({
+        postTitleColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Title Font Color")
+    }, {
+      value: postContentColor,
+      onChange: newColor => setAttributes({
+        postContentColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Description Font Color")
+    }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default()), {
+    block: _block_json__WEBPACK_IMPORTED_MODULE_5__.name,
     className: className,
     attributes: {
       postType,
       postsToShow,
-      postInRow
+      postInRow,
+      postTitleFontSize,
+      postTitleColor,
+      postContentFontSize,
+      postContentColor
     }
   }));
 }
@@ -308,16 +367,6 @@ module.exports = window["wp"]["components"];
 
 /***/ }),
 
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["element"];
-
-/***/ }),
-
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -344,7 +393,7 @@ module.exports = window["wp"]["serverSideRender"];
   \****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-posts","version":"0.1.0","title":"MD Posts","apiVersion":3,"category":"md-efi-fse-full","icon":"lock","description":"This is a sample block with dynamic content.","keywords":["md-posts","md-efi-fse-full"],"supports":{"html":false},"textdomain":"md-efi-fse-full","attributes":{"postType":{"type":"string","default":"post"},"postsToShow":{"type":"string","default":"5"},"postInRow":{"type":"string","default":"2"}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-posts","version":"0.1.0","title":"MD Posts","apiVersion":3,"category":"md-efi-fse-full","icon":"list-view","description":"A block to display posts","keywords":["md-posts","md-efi-fse-full"],"supports":{"html":false},"textdomain":"md-efi-fse-full","attributes":{"postType":{"type":"string","default":"post"},"postsToShow":{"type":"string","default":"5"},"postInRow":{"type":"string","default":"2"},"postTitleFontSize":{"type":"string","default":""},"postTitleColor":{"type":"string","default":"#000000"},"postContentFontSize":{"type":"string","default":""},"postContentColor":{"type":"string","default":"#000000"}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

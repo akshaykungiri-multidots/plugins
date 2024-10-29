@@ -16,6 +16,7 @@ import {
   InspectorControls,
   RichText,
   MediaUpload,
+  PanelColorSettings
 } from "@wordpress/block-editor";
 
 import { useState } from "@wordpress/element";
@@ -26,6 +27,7 @@ import {
   ToggleControl,
   Button,
   GradientPicker,
+  FontSizePicker
 } from "@wordpress/components";
 
 /**
@@ -45,6 +47,12 @@ export default function Edit({ attributes, setAttributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
+    sliderTitleFontSize,
+		sliderTitleFontColor,
+		sliderDescriptionFontSize,
+		sliderDescriptionFontColor,
+		sliderLinkFontSize,
+		sliderLinkFontColor,
   } = attributes;
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -73,6 +81,29 @@ export default function Edit({ attributes, setAttributes }) {
     setAttributes({ slideItems: updatedStaticPostObj });
     setCurrentSlide(-1);
   };
+  const fontSizes = [
+    {
+      name: __("S"),
+      slug: "small",
+      size: "12px",
+    },
+    {
+      name: __("M"),
+      slug: "medium",
+      size: "18px",
+    },
+    {
+      name: __("L"),
+      slug: "large",
+      size: "26px",
+    },
+    {
+      name: __("XL"),
+      slug: "xtra-large",
+      size: "48px",
+    },
+  ];
+
   return (
     <div
       {...useBlockProps({
@@ -199,6 +230,62 @@ export default function Edit({ attributes, setAttributes }) {
             </Button>
           </PanelBody>
         )}
+        <PanelBody title={__("Typography", "md-storyful-fse-full")} initialOpen={false}>
+          <label>{__("Slider Title Font Size")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={sliderTitleFontSize}
+            fallbackFontSize={sliderTitleFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ sliderTitleFontSize: newFontSize })
+            }
+          />
+          <label>{__("Slider Description Font Size")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={sliderDescriptionFontSize}
+            fallbackFontSize={sliderDescriptionFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ sliderDescriptionFontSize: newFontSize })
+            }
+          />
+          <label>{__("Slider Link Font Size")}</label>
+          <FontSizePicker
+            __nextHasNoMarginBottom
+            fontSizes={fontSizes}
+            value={sliderLinkFontSize}
+            fallbackFontSize={sliderLinkFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ sliderLinkFontSize: newFontSize })
+            }
+          />
+        </PanelBody>
+        <PanelColorSettings
+          title={__("Typography Colors", "md-storyful-fse-full")}
+          initialOpen={false}
+          colorSettings={[
+            {
+              value: sliderTitleFontColor,
+              onChange: (newColor) =>
+                setAttributes({ sliderTitleFontColor: newColor }),
+              label: __("Slider Title Font Color"),
+            },
+            {
+              value: sliderDescriptionFontColor,
+              onChange: (newColor) =>
+                setAttributes({ sliderDescriptionFontColor: newColor }),
+              label: __("Slider Description Font Color"),
+            },
+            {
+              value: sliderLinkFontColor,
+              onChange: (newColor) =>
+                setAttributes({ sliderLinkFontColor: newColor }),
+              label: __("Slider Link Font Color"),
+            },
+          ]}
+        />
       </InspectorControls>
       <div className="md_hero_banner_slider">
         <div
@@ -229,6 +316,10 @@ export default function Edit({ attributes, setAttributes }) {
                       updateStaticPostObj(currentSlide, "title", value)
                     }
                     placeholder={__("Enter Title", "md-prime")}
+                    style={{
+                      fontSize: sliderTitleFontSize,
+                      color: sliderTitleFontColor,
+                    }}
                   />
                   <RichText
                     tagName="p"
@@ -238,6 +329,10 @@ export default function Edit({ attributes, setAttributes }) {
                       updateStaticPostObj(currentSlide, "description", value)
                     }
                     placeholder={__("Enter Description", "md-prime")}
+                    style={{
+                      fontSize: sliderDescriptionFontSize,
+                      color: sliderDescriptionFontColor,
+                    }}
                   />
                   <div className="md_slider__item__content__btn md_btn_arrow">
                     <RichText
@@ -247,6 +342,10 @@ export default function Edit({ attributes, setAttributes }) {
                         updateStaticPostObj(currentSlide, "link", value)
                       }
                       placeholder={__("Enter Button Text", "md-prime")}
+                      style={{
+                        fontSize: sliderLinkFontSize,
+                        color: sliderLinkFontColor,
+                      }}
                     />
                   </div>
                 </div>

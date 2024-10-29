@@ -5,8 +5,8 @@
   "title": "MD Slider V3",
   "apiVersion": 3,
   "category": "md-efi-fse-full",
-  "icon": "lock",
-  "description": "Example static block scaffolded with Create Block tool.",
+  "icon": "format-gallery",
+  "description": "A block to display slider but with more options",
   "keywords": ["md-efi-fse-full", "md-slider-v3"],
   "supports": {
     "html": false,
@@ -32,6 +32,62 @@
 		}
 	  ]
     },
+	"headingFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"headingFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
+	"sliderCompanyNameFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"sliderCompanyNameFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
+	"sliderTestimonialFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"sliderTestimonialFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
+	"sliderAuthorNameFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"sliderAuthorNameFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
+	"sliderDesignationFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"sliderDesignationFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
+	"sliderVideoLinkFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"sliderVideoLinkFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
+	"sliderReadMoreLinkFontSize": {
+		"type": "string",
+		"default": ""
+	},
+	"sliderReadMoreLinkFontColor": {
+		"type": "string",
+		"default": "#000000"
+	},
     "autoplay": {
 			"type": "boolean",
 			"default": false

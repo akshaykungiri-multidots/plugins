@@ -11,9 +11,9 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps, RichText } from "@wordpress/block-editor";
+import { useBlockProps, RichText, InspectorControls, PanelColorSettings } from "@wordpress/block-editor";
 
-import { Button } from "@wordpress/components";
+import { Button, PanelBody, FontSizePicker } from "@wordpress/components";
 
 import { useState } from "@wordpress/element";
 
@@ -26,15 +26,50 @@ import { useState } from "@wordpress/element";
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-  const { heading, historyTimeline } = attributes;
+  const {
+    heading,
+    historyTimeline,
+    headingFontSize,
+    headingFontColor,
+    yearFontSize,
+    yearFontColor,
+    titleFontSize,
+    titleFontColor,
+    descriptionFontSize,
+    descriptionFontColor,
+  } = attributes;
+
+  const fontSizes = [
+    {
+      name: __("S"),
+      slug: "small",
+      size: "12px",
+    },
+    {
+      name: __("M"),
+      slug: "medium",
+      size: "18px",
+    },
+    {
+      name: __("L"),
+      slug: "large",
+      size: "26px",
+    },
+    {
+      name: __("XL"),
+      slug: "xtra-large",
+      size: "48px",
+    },
+  ];
+  
   const [currentSlide, setCurrentSlide] = useState(0);
   const addStaticPostObj = () => {
     const staticPostObj = [
       ...historyTimeline,
       {
         id: historyTimeline.length + 1,
-        year: "",
-        description: "",
+        year: "xxxx",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       },
     ];
     setAttributes({ historyTimeline: staticPostObj });
@@ -52,6 +87,72 @@ export default function Edit({ attributes, setAttributes }) {
   };
   return (
     <div {...useBlockProps({ className: "md_history_timeline history-list" })}>
+      <InspectorControls>
+        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
+          <label> {__("Heading Font Size", "md-storyful-fse-full")}</label>
+          <FontSizePicker
+            value={headingFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ headingFontSize: newFontSize })
+            }
+            fontSizes={fontSizes}
+          />
+          <label> {__("Year Font Size", "md-storyful-fse-full")}</label>
+          <FontSizePicker
+            value={yearFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ yearFontSize: newFontSize })
+            }
+            fontSizes={fontSizes}
+          />
+          <label> {__("Title Font Size", "md-storyful-fse-full")}</label>
+          <FontSizePicker
+            value={titleFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ titleFontSize: newFontSize })
+            }
+            fontSizes={fontSizes}
+          />
+          <label> {__("Description Font Size", "md-storyful-fse-full")}</label>
+          <FontSizePicker
+            value={descriptionFontSize}
+            onChange={(newFontSize) =>
+              setAttributes({ descriptionFontSize: newFontSize })
+            }
+            fontSizes={fontSizes}
+          />
+        </PanelBody>
+        <PanelColorSettings
+          title={__("Typography Colors", "md-storyful-fse-full")}
+          initialOpen={false}
+          colorSettings={[
+            {
+              value: headingFontColor,
+              onChange: (newColor) =>
+                setAttributes({ headingFontColor: newColor }),
+              label: __("Heading Color", "md-storyful-fse-full"),
+            },
+            {
+              value: yearFontColor,
+              onChange: (newColor) =>
+                setAttributes({ yearFontColor: newColor }),
+              label: __("Year Color", "md-storyful-fse-full"),
+            },
+            {
+              value: titleFontColor,
+              onChange: (newColor) =>
+                setAttributes({ titleFontColor: newColor }),
+              label: __("Title Color", "md-storyful-fse-full"),
+            },
+            {
+              value: descriptionFontColor,
+              onChange: (newColor) =>
+                setAttributes({ descriptionFontColor: newColor }),
+              label: __("Description Color", "md-storyful-fse-full"),
+            },
+          ]}
+        />
+      </InspectorControls>
       <div className="history-list__inner">
         <div className="history-list__head">
           <RichText
@@ -60,6 +161,10 @@ export default function Edit({ attributes, setAttributes }) {
             value={heading}
             onChange={(value) => setAttributes({ heading: value })}
             placeholder={__("Add Heading", "md-blocks")}
+            style={{
+              fontSize: headingFontSize,
+              color: headingFontColor,
+            }}
           />
         </div>
         <div className="history-list__row">
@@ -80,6 +185,10 @@ export default function Edit({ attributes, setAttributes }) {
                       }
                       onClick={() => setCurrentSlide(index)}
                       placeholder={__("Add Year", "md-blocks")}
+                      style={{
+                        fontSize: yearFontSize,
+                        color: yearFontColor,
+                      }}
                     />
                   </div>
                 ))}
@@ -94,7 +203,9 @@ export default function Edit({ attributes, setAttributes }) {
             {currentSlide > -1 && (
               <div className="history-list__year-detail-item">
                 <div className="history-list__cnt">
-                  <h3 className="history-list__year-title">{historyTimeline[currentSlide].year}</h3>
+                  <h3 className="history-list__year-title" style={{ fontSize: titleFontSize, color: titleFontColor }}>
+                    {historyTimeline[currentSlide].year}
+                  </h3>
                   <RichText
                     tagName="p"
                     className="history-list__year-description"
@@ -103,6 +214,10 @@ export default function Edit({ attributes, setAttributes }) {
                       updateStaticPostObj(currentSlide, "description", value)
                     }
                     placeholder={__("Add Description", "md-blocks")}
+                    style={{
+                      fontSize: descriptionFontSize,
+                      color: descriptionFontColor,
+                    }}
                   />
                 </div>
               </div>

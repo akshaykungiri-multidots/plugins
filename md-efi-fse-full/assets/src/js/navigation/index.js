@@ -33,14 +33,8 @@
   });
 
   function md_load_posts() {
-    let post_type = $(".md-posts")
-      .find('input[name="md-posts__loadmore-post_type"]')
-      .val();
-    let posts_per_page = $(".md-posts")
-      .find('input[name="md-posts__loadmore-posts_per_page"]')
-      .val();
-    let post_in_row = $(".md-posts")
-      .find('input[name="md-posts__loadmore-post_in_row"]')
+    let post_attributes = $(".md-posts")
+      .find('input[name="md-posts__loadmore-post_attributes"]')
       .val();
     let taxonomies = [];
     $(".md-posts__filter .md-posts__filter-select").each(function () {
@@ -58,9 +52,7 @@
 
     var data = {
       action: "md_efi_fse_full_load_more",
-      post_type: post_type,
-      posts_per_page: posts_per_page,
-      post_in_row: post_in_row,
+      post_attributes: post_attributes,
       current_page: current_page,
       taxonomies: taxonomies,
       ajax_nonce: siteConfig.ajax_nonce,
@@ -103,76 +95,98 @@
   );
 
   function md_create_slick_slider() {
-    $(".md_hero_banner_slider").find(".md_slider").each(function () {
-      let autoplay = ( $(this).data("autoplay"));
-      let arrows = ( $(this).data("arrows"));
-      let dots = ( $(this).data("dots"));
-      let infinite = ( $(this).data("infinite"));
-      let slidesToShow = $(this).data("slidestoshow");
-      let slidesToScroll = $(this).data("slidestoscroll");
-      $(this).slick({
-        autoplay: autoplay,
-        arrows: arrows,
-        dots: dots,
-        infinite: infinite,
-        slidesToShow: slidesToShow,
-        slidesToScroll: slidesToScroll
+    $(".md_hero_banner_slider")
+      .find(".md_slider")
+      .each(function () {
+        let autoplay = $(this).data("autoplay");
+        let arrows = $(this).data("arrows");
+        let dots = $(this).data("dots");
+        let infinite = $(this).data("infinite");
+        let slidesToShow = $(this).data("slidestoshow");
+        let slidesToScroll = $(this).data("slidestoscroll");
+        $(this).slick({
+          autoplay: autoplay,
+          arrows: arrows,
+          dots: dots,
+          infinite: infinite,
+          slidesToShow: slidesToShow,
+          slidesToScroll: slidesToScroll,
+        });
       });
-    });
-	$(".md_hero_banner_slider_v2").find(".md_slider").each(function () {
-		let autoplay = ( $(this).data("autoplay"));
-		let arrows = ( $(this).data("arrows"));
-		let dots = ( $(this).data("dots"));
-		let infinite = ( $(this).data("infinite"));
-		let slidesToShow = $(this).data("slidestoshow");
-		let slidesToScroll = $(this).data("slidestoscroll");
-		$(this).slick({
-		  autoplay: autoplay,
-		  arrows: arrows,
-		  dots: dots,
-		  infinite: infinite,
-		  slidesToShow: slidesToShow,
-		  slidesToScroll: slidesToScroll,
-		  centerMode: true
-		});
-	});
-	$(".md_hero_banner_slider_v3").find(".md_slider").each(function () {
-		let autoplay = ( $(this).data("autoplay"));
-		let arrows = ( $(this).data("arrows"));
-		let dots = ( $(this).data("dots"));
-		let infinite = ( $(this).data("infinite"));
-		let slidesToShow = $(this).data("slidestoshow");
-		let slidesToScroll = $(this).data("slidestoscroll");
-		$(this).slick({
-		  autoplay: autoplay,
-		  arrows: arrows,
-		  dots: dots,
-		  infinite: infinite,
-		  slidesToShow: slidesToShow,
-		  slidesToScroll: slidesToScroll,
-		});
-	});
+    $(".md_hero_banner_slider_v2")
+      .find(".md_slider")
+      .each(function () {
+        let autoplay = $(this).data("autoplay");
+        let arrows = $(this).data("arrows");
+        let dots = $(this).data("dots");
+        let infinite = $(this).data("infinite");
+        let slidesToShow = $(this).data("slidestoshow");
+        let slidesToScroll = $(this).data("slidestoscroll");
+        $(this).slick({
+          autoplay: autoplay,
+          arrows: arrows,
+          dots: dots,
+          infinite: infinite,
+          slidesToShow: slidesToShow,
+          slidesToScroll: slidesToScroll,
+          centerMode: true,
+        });
+      });
+    $(".md_hero_banner_slider_v3")
+      .find(".md_slider")
+      .each(function () {
+        let autoplay = $(this).data("autoplay");
+        let arrows = $(this).data("arrows");
+        let dots = $(this).data("dots");
+        let infinite = $(this).data("infinite");
+        let slidesToShow = $(this).data("slidestoshow");
+        let slidesToScroll = $(this).data("slidestoscroll");
+        $(this).slick({
+          autoplay: autoplay,
+          arrows: arrows,
+          dots: dots,
+          infinite: infinite,
+          slidesToShow: slidesToShow,
+          slidesToScroll: slidesToScroll,
+        });
+      });
   }
 
   $(document).on("click", ".md_hero_banner_slider_v2 .slick-prev", function () {
-	$(".md_hero_banner_slider_v2 .md_slider").slick("slickPrev");
+    $(".md_hero_banner_slider_v2 .md_slider").slick("slickPrev");
   });
   $(document).on("click", ".md_hero_banner_slider_v2 .slick-next", function () {
-	$(".md_hero_banner_slider_v2 .md_slider").slick("slickNext");
+    $(".md_hero_banner_slider_v2 .md_slider").slick("slickNext");
   });
   md_create_slick_slider();
 
   $(document).ready(function () {
-	if ($(".history-list").length) {
-	  $(".history-list .history-list__years-list .history-list__year-item").first().addClass("active");
-	  $(".history-list__year-detail .history-list__year-detail-item").first().addClass("active");
-	}
+    if ($(".history-list").length) {
+      $(".history-list .history-list__years-list .history-list__year-item")
+        .first()
+        .addClass("active");
+      $(".history-list__year-detail .history-list__year-detail-item")
+        .first()
+        .addClass("active");
+    }
   });
-  $(document).on("click", ".history-list .history-list__years-list .history-list__year-item", function () {
-	let year = $(this).data("getyear");
-	$(".history-list .history-list__years-list .history-list__year-item").removeClass("active");
-	$(this).addClass("active");
-	$(".history-list__year-detail .history-list__year-detail-item").removeClass("active");
-	$(".history-list__year-detail .history-list__year-detail-item[data-year=" + year + "]").addClass("active");
-  });
+  $(document).on(
+    "click",
+    ".history-list .history-list__years-list .history-list__year-item",
+    function () {
+      let year = $(this).data("getyear");
+      $(
+        ".history-list .history-list__years-list .history-list__year-item"
+      ).removeClass("active");
+      $(this).addClass("active");
+      $(
+        ".history-list__year-detail .history-list__year-detail-item"
+      ).removeClass("active");
+      $(
+        ".history-list__year-detail .history-list__year-detail-item[data-year=" +
+          year +
+          "]"
+      ).addClass("active");
+    }
+  );
 })(jQuery);

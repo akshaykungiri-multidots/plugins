@@ -59,7 +59,11 @@ function Edit({
     slideInfinite,
     slideSlidesToShow,
     slideSlidesToScroll,
-    slideItems
+    slideItems,
+    sliderTitleFontSize,
+    sliderTitleFontColor,
+    sliderDescriptionFontSize,
+    sliderDescriptionFontColor
   } = attributes;
   const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(0);
   const addStaticPostObj = () => {
@@ -88,6 +92,23 @@ function Edit({
     });
     setCurrentSlide(-1);
   };
+  const fontSizes = [{
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
+    slug: "small",
+    size: "12px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
+    slug: "medium",
+    size: "18px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
+    slug: "large",
+    size: "26px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
+    slug: "xtra-large",
+    size: "48px"
+  }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_slider_section"
@@ -147,7 +168,42 @@ function Edit({
     onChange: slideSlidesToScroll => setAttributes({
       slideSlidesToScroll
     })
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
+    __nextHasNoMarginBottom: true,
+    fontSizes: fontSizes,
+    value: sliderTitleFontSize,
+    fallbackFontSize: sliderTitleFontSize,
+    onChange: newFontSize => setAttributes({
+      sliderTitleFontSize: newFontSize
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Description Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
+    __nextHasNoMarginBottom: true,
+    fontSizes: fontSizes,
+    value: sliderDescriptionFontSize,
+    fallbackFontSize: sliderDescriptionFontSize,
+    onChange: newFontSize => setAttributes({
+      sliderDescriptionFontSize: newFontSize
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+    initialOpen: false,
+    colorSettings: [{
+      value: sliderTitleFontColor,
+      onChange: newColor => setAttributes({
+        sliderTitleFontColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Title Font Color")
+    }, {
+      value: sliderDescriptionFontColor,
+      onChange: newColor => setAttributes({
+        sliderDescriptionFontColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Description Font Color")
+    }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_hero_banner_slider_v2"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider",
@@ -202,13 +258,21 @@ function Edit({
     className: "md_slider__item__content__title",
     value: slideItems[currentSlide].title,
     onChange: value => updateStaticPostObj(currentSlide, "title", value),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-prime")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-prime"),
+    style: {
+      fontSize: sliderTitleFontSize,
+      color: sliderTitleFontColor
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     className: "md_slider__item__content__description",
     value: slideItems[currentSlide].description,
     onChange: value => updateStaticPostObj(currentSlide, "description", value),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description", "md-prime")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description", "md-prime"),
+    style: {
+      fontSize: sliderDescriptionFontSize,
+      color: sliderDescriptionFontColor
+    }
   })))))));
 }
 
@@ -320,7 +384,11 @@ function save({
     slideInfinite,
     slideSlidesToShow,
     slideSlidesToScroll,
-    slideItems
+    slideItems,
+    sliderTitleFontSize,
+    sliderTitleFontColor,
+    sliderDescriptionFontSize,
+    sliderDescriptionFontColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -360,11 +428,19 @@ function save({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     className: "md_slider__item__content__title",
-    value: slideItems[currentSlide].title
+    value: slideItems[currentSlide].title,
+    style: {
+      fontSize: sliderTitleFontSize + "px",
+      color: sliderTitleFontColor
+    }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     className: "md_slider__item__content__description",
-    value: slideItems[currentSlide].description
+    value: slideItems[currentSlide].description,
+    style: {
+      fontSize: sliderDescriptionFontSize + "px",
+      color: sliderDescriptionFontColor
+    }
   }))))))));
 }
 
@@ -448,7 +524,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-slider-v2","version":"0.1.0","title":"MD Slider V2","apiVersion":3,"category":"md-efi-fse-full","icon":"lock","description":"Example static block scaffolded with Create Block tool.","keywords":["md-efi-fse-full","md-slider-v2"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-efi-fse-full","attributes":{"slideItems":{"type":"array","default":[{"id":1,"title":"","description":"","sliderImage":""}]},"autoplay":{"type":"boolean","default":false},"arrows":{"type":"boolean","default":true},"dots":{"type":"boolean","default":false},"slideInfinite":{"type":"boolean","default":false},"slideSlidesToShow":{"type":"number","default":1},"slideSlidesToScroll":{"type":"number","default":1}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-slider-v2","version":"0.1.0","title":"MD Slider V2","apiVersion":3,"category":"md-efi-fse-full","icon":"images-alt2","description":"A block to display slider but with more options","keywords":["md-efi-fse-full","md-slider-v2"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-efi-fse-full","attributes":{"slideItems":{"type":"array","default":[{"id":1,"title":"","description":"","sliderImage":""}]},"sliderTitleFontSize":{"type":"string","default":""},"sliderTitleFontColor":{"type":"string","default":"#000000"},"sliderDescriptionFontSize":{"type":"string","default":""},"sliderDescriptionFontColor":{"type":"string","default":"#000000"},"autoplay":{"type":"boolean","default":false},"arrows":{"type":"boolean","default":true},"dots":{"type":"boolean","default":false},"slideInfinite":{"type":"boolean","default":false},"slideSlidesToShow":{"type":"number","default":1},"slideSlidesToScroll":{"type":"number","default":1}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

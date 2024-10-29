@@ -15,7 +15,7 @@ import {
   useBlockProps,
   InspectorControls,
   RichText,
-  MediaUpload,
+  PanelColorSettings,
 } from "@wordpress/block-editor";
 
 import { useState } from "@wordpress/element";
@@ -26,7 +26,7 @@ import {
   ToggleControl,
   TextControl,
   Button,
-  GradientPicker,
+  FontSizePicker,
 } from "@wordpress/components";
 
 /**
@@ -47,6 +47,20 @@ export default function Edit({ attributes, setAttributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
+    headingFontSize,
+    headingFontColor,
+    sliderCompanyNameFontSize,
+    sliderCompanyNameFontColor,
+    sliderTestimonialFontSize,
+    sliderTestimonialFontColor,
+    sliderAuthorNameFontSize,
+    sliderAuthorNameFontColor,
+    sliderDesignationFontSize,
+    sliderDesignationFontColor,
+    sliderVideoLinkFontSize,
+    sliderVideoLinkFontColor,
+    sliderReadMoreLinkFontSize,
+    sliderReadMoreLinkFontColor,
   } = attributes;
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -76,6 +90,28 @@ export default function Edit({ attributes, setAttributes }) {
     setAttributes({ slideItems: updatedStaticPostObj });
     setCurrentSlide(-1);
   };
+  const fontSizes = [
+    {
+      name: __("S"),
+      slug: "small",
+      size: "12px",
+    },
+    {
+      name: __("M"),
+      slug: "medium",
+      size: "18px",
+    },
+    {
+      name: __("L"),
+      slug: "large",
+      size: "26px",
+    },
+    {
+      name: __("XL"),
+      slug: "xtra-large",
+      size: "48px",
+    },
+  ];
   return (
     <div
       {...useBlockProps({
@@ -147,6 +183,110 @@ export default function Edit({ attributes, setAttributes }) {
             }
           />
         </PanelBody>
+        <PanelBody title={__("Typography", "md-storyful-fse-full")} initialOpen={false}>
+          <label>{__("Heading Font Size")}</label>
+          <FontSizePicker
+            fontSizes={fontSizes}
+            value={headingFontSize}
+            onChange={(headingFontSize) => setAttributes({ headingFontSize })}
+          />
+          <label>{__("Slider Company Name Font Size")}</label>
+          <FontSizePicker
+            fontSizes={fontSizes}
+            value={sliderCompanyNameFontSize}
+            onChange={(sliderCompanyNameFontSize) =>
+              setAttributes({ sliderCompanyNameFontSize })
+            }
+          />
+          <label>{__("Slider Testimonial Font Size")}</label>
+          <FontSizePicker
+            fontSizes={fontSizes}
+            value={sliderTestimonialFontSize}
+            onChange={(sliderTestimonialFontSize) =>
+              setAttributes({ sliderTestimonialFontSize })
+            }
+          />
+          <label>{__("Slider Author Name Font Size")}</label>
+          <FontSizePicker
+            fontSizes={fontSizes}
+            value={sliderAuthorNameFontSize}
+            onChange={(sliderAuthorNameFontSize) =>
+              setAttributes({ sliderAuthorNameFontSize })
+            }
+          />
+          <label>{__("Slider Designation Font Size")}</label>
+          <FontSizePicker
+            fontSizes={fontSizes}
+            value={sliderDesignationFontSize}
+            onChange={(sliderDesignationFontSize) =>
+              setAttributes({ sliderDesignationFontSize })
+            }
+          />
+          <label>{__("Slider Video Link Font Size")}</label>
+          <FontSizePicker
+            fontSizes={fontSizes}
+            value={sliderVideoLinkFontSize}
+            onChange={(sliderVideoLinkFontSize) =>
+              setAttributes({ sliderVideoLinkFontSize })
+            }
+          />
+          <label>{__("Slider Read More Link Font Size")}</label>
+          <FontSizePicker
+            fontSizes={fontSizes}
+            value={sliderReadMoreLinkFontSize}
+            onChange={(sliderReadMoreLinkFontSize) =>
+              setAttributes({ sliderReadMoreLinkFontSize })
+            }
+          />
+        </PanelBody>
+        <PanelColorSettings
+          title={__("Typography Colors", "md-storyful-fse-full")}
+          initialOpen={false}
+          colorSettings={[
+            {
+              value: headingFontColor,
+              onChange: (headingFontColor) =>
+                setAttributes({ headingFontColor }),
+              label: __("Heading Font Color"),
+            },
+            {
+              value: sliderCompanyNameFontColor,
+              onChange: (sliderCompanyNameFontColor) =>
+                setAttributes({ sliderCompanyNameFontColor }),
+              label: __("Slider Company Name Font Color"),
+            },
+            {
+              value: sliderTestimonialFontColor,
+              onChange: (sliderTestimonialFontColor) =>
+                setAttributes({ sliderTestimonialFontColor }),
+              label: __("Slider Testimonial Font Color"),
+            },
+            {
+              value: sliderAuthorNameFontColor,
+              onChange: (sliderAuthorNameFontColor) =>
+                setAttributes({ sliderAuthorNameFontColor }),
+              label: __("Slider Author Name Font Color"),
+            },
+            {
+              value: sliderDesignationFontColor,
+              onChange: (sliderDesignationFontColor) =>
+                setAttributes({ sliderDesignationFontColor }),
+              label: __("Slider Designation Font Color"),
+            },
+            {
+              value: sliderVideoLinkFontColor,
+              onChange: (sliderVideoLinkFontColor) =>
+                setAttributes({ sliderVideoLinkFontColor }),
+              label: __("Slider Video Link Font Color"),
+            },
+            {
+              value: sliderReadMoreLinkFontColor,
+              onChange: (sliderReadMoreLinkFontColor) =>
+                setAttributes({ sliderReadMoreLinkFontColor }),
+              label: __("Slider Read More Link Font Color"),
+            },
+          ]}
+        />
       </InspectorControls>
       <div className="md_hero_banner_slider_v3">
         <div
@@ -163,7 +303,9 @@ export default function Edit({ attributes, setAttributes }) {
             <div className="md_slider__item">
               <div className="md_slider__item__gradient_theme"></div>
               <div className="md_slider__item--inner">
-                <h3>{heading}</h3>
+                <h3 style={{ fontSize: headingFontSize, color: headingFontColor }}>
+                  {heading}
+                </h3>
                 <div className="md_slider__item__company_info">
                   <RichText
                     tagName="h2"
@@ -173,6 +315,10 @@ export default function Edit({ attributes, setAttributes }) {
                       updateStaticPostObj(currentSlide, "companyName", value)
                     }
                     placeholder={__("Enter Company Name", "md-prime")}
+                    style={{
+                      fontSize: sliderCompanyNameFontSize,
+                      color: sliderCompanyNameFontColor,
+                    }}
                   />
                 </div>
                 <div className="md_slider__item__testimonial">
@@ -184,6 +330,10 @@ export default function Edit({ attributes, setAttributes }) {
                       updateStaticPostObj(currentSlide, "testimonial", value)
                     }
                     placeholder={__("Enter Testimonial", "md-prime")}
+                    style={{
+                      fontSize: sliderTestimonialFontSize,
+                      color: sliderTestimonialFontColor,
+                    }}
                   />
                   <div className="md_slider__item__testimonial__info">
                     <div className="md_slider__item__testimonial__author">
@@ -195,6 +345,10 @@ export default function Edit({ attributes, setAttributes }) {
                           updateStaticPostObj(currentSlide, "authorName", value)
                         }
                         placeholder={__("Enter Author Name", "md-prime")}
+                        style={{
+                          fontSize: sliderAuthorNameFontSize,
+                          color: sliderAuthorNameFontColor,
+                        }}
                       />
                       <RichText
                         tagName="p"
@@ -208,6 +362,10 @@ export default function Edit({ attributes, setAttributes }) {
                           )
                         }
                         placeholder={__("Enter Designation", "md-prime")}
+                        style={{
+                          fontSize: sliderDesignationFontSize,
+                          color: sliderDesignationFontColor,
+                        }}
                       />
                     </div>
                     <RichText
@@ -218,6 +376,10 @@ export default function Edit({ attributes, setAttributes }) {
                         updateStaticPostObj(currentSlide, "videoLink", value)
                       }
                       placeholder={__("Enter Video Link", "md-prime")}
+                      style={{
+                        fontSize: sliderVideoLinkFontSize,
+                        color: sliderVideoLinkFontColor,
+                      }}
                     />
                     <div className="md_slider__item__testimonial__read_more btn-has-right-arrow btn-main-border">
                       <RichText
@@ -232,6 +394,10 @@ export default function Edit({ attributes, setAttributes }) {
                           )
                         }
                         placeholder={__("Enter Read More Link", "md-prime")}
+                        style={{
+                          fontSize: sliderReadMoreLinkFontSize,
+                          color: sliderReadMoreLinkFontColor,
+                        }}
                       />
                     </div>
                   </div>

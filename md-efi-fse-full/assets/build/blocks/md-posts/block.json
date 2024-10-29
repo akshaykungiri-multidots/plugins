@@ -5,8 +5,8 @@
   "title": "MD Posts",
   "apiVersion": 3,
   "category": "md-efi-fse-full",
-  "icon": "lock",
-  "description": "This is a sample block with dynamic content.",
+  "icon": "list-view",
+  "description": "A block to display posts",
   "keywords": [
     "md-posts",
     "md-efi-fse-full"
@@ -27,6 +27,22 @@
     "postInRow": {
       "type": "string",
       "default": "2"
+    },
+    "postTitleFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "postTitleColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "postContentFontSize": {
+      "type": "string",
+      "default": ""
+    },
+    "postContentColor": {
+      "type": "string",
+      "default": "#000000"
     }
   },
   "editorScript": "file:./index.js",

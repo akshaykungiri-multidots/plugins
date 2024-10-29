@@ -81,7 +81,7 @@ class MD_Posts extends Block_Base {
 		$postType = isset( $attributes['postType'] ) ? $attributes['postType'] : 'post';
 		$postsToShow = isset( $attributes['postsToShow'] ) ? $attributes['postsToShow'] : '';
 		$postInRow = isset( $attributes['postInRow'] ) ? $attributes['postInRow'] : '';
-
+		
 		// Get all texonomies of the post type.
 		$taxonomies = get_object_taxonomies( $postType, 'names' );
 
@@ -136,9 +136,7 @@ class MD_Posts extends Block_Base {
 						<?php include get_stylesheet_directory() . '/assets/src/blocks/md-posts/templates/post-template.php'; ?>
 					</div>
 					<?php // Display Load More button. ?>
-					<input type="hidden" name="md-posts__loadmore-post_type" value="<?php echo esc_attr( $postType ); ?>">
-					<input type="hidden" name="md-posts__loadmore-posts_per_page" value="<?php echo esc_attr( $postsToShow ); ?>">
-					<input type="hidden" name="md-posts__loadmore-post_in_row" value="<?php echo esc_attr( $postInRow ); ?>">
+					<input type="hidden" name="md-posts__loadmore-post_attributes" value="<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>">
 					<input type="hidden" name="md-posts__loadmore-current_page" value="1">
 					<?php if ( $query->max_num_pages > 1 ) : ?>
 						<div class="md-posts__loadmore">
@@ -168,8 +166,11 @@ class MD_Posts extends Block_Base {
 			wp_send_json_error( 'Invalid Nonce' );
 		}
 
-		$post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : '';
-		$posts_per_page = isset( $_POST['posts_per_page'] ) ? sanitize_text_field( wp_unslash( $_POST['posts_per_page'] ) ) : '';
+		$post_attributes = isset( $_POST['post_attributes'] ) ? sanitize_text_field( wp_unslash( $_POST['post_attributes'] ) ) : '';
+		$attributes = json_decode( $post_attributes, true );
+		$post_type = isset( $attributes['postType'] ) ? $attributes['postType'] : 'post';
+		$posts_per_page = isset( $attributes['postsToShow'] ) ? $attributes['postsToShow'] : '';
+		
 		$current_page = isset( $_POST['current_page'] ) ? sanitize_text_field( wp_unslash( $_POST['current_page'] ) ) : 0;
 		$taxonomies = isset( $_POST['taxonomies'] ) ? wp_unslash( $_POST['taxonomies'] ) : array();
 		$current_page++;
@@ -203,7 +204,6 @@ class MD_Posts extends Block_Base {
 		
 		include get_stylesheet_directory() . '/assets/src/blocks/md-posts/templates/post-template.php';
 		
-		// wp_reset_postdata();
 		$data = ob_get_clean();
 		
 

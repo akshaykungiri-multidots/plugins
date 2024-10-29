@@ -62,7 +62,8 @@
 }
 .wp-block-md-efi-fse-full-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p {
   margin: 16px 0;
-  font-size: 18px;
+  font-size: inherit;
+  color: inherit;
   line-height: 30px;
   margin-bottom: 20px;
   font-family: "Be Vietnam Pro", BlinkMacSystemFont, sans-serif;

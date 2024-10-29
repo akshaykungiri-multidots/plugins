@@ -54,14 +54,39 @@ function Edit({
 }) {
   const {
     heading,
-    historyTimeline
+    historyTimeline,
+    headingFontSize,
+    headingFontColor,
+    yearFontSize,
+    yearFontColor,
+    titleFontSize,
+    titleFontColor,
+    descriptionFontSize,
+    descriptionFontColor
   } = attributes;
+  const fontSizes = [{
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
+    slug: "small",
+    size: "12px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
+    slug: "medium",
+    size: "18px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
+    slug: "large",
+    size: "26px"
+  }, {
+    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
+    slug: "xtra-large",
+    size: "48px"
+  }];
   const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(0);
   const addStaticPostObj = () => {
     const staticPostObj = [...historyTimeline, {
       id: historyTimeline.length + 1,
-      year: "",
-      description: ""
+      year: "xxxx",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     }];
     setAttributes({
       historyTimeline: staticPostObj
@@ -86,7 +111,61 @@ function Edit({
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_history_timeline history-list"
     })
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Font Size", "md-storyful-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    value: headingFontSize,
+    onChange: newFontSize => setAttributes({
+      headingFontSize: newFontSize
+    }),
+    fontSizes: fontSizes
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Year Font Size", "md-storyful-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    value: yearFontSize,
+    onChange: newFontSize => setAttributes({
+      yearFontSize: newFontSize
+    }),
+    fontSizes: fontSizes
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Font Size", "md-storyful-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    value: titleFontSize,
+    onChange: newFontSize => setAttributes({
+      titleFontSize: newFontSize
+    }),
+    fontSizes: fontSizes
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Description Font Size", "md-storyful-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
+    value: descriptionFontSize,
+    onChange: newFontSize => setAttributes({
+      descriptionFontSize: newFontSize
+    }),
+    fontSizes: fontSizes
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+    initialOpen: false,
+    colorSettings: [{
+      value: headingFontColor,
+      onChange: newColor => setAttributes({
+        headingFontColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Color", "md-storyful-fse-full")
+    }, {
+      value: yearFontColor,
+      onChange: newColor => setAttributes({
+        yearFontColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Year Color", "md-storyful-fse-full")
+    }, {
+      value: titleFontColor,
+      onChange: newColor => setAttributes({
+        titleFontColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Color", "md-storyful-fse-full")
+    }, {
+      value: descriptionFontColor,
+      onChange: newColor => setAttributes({
+        descriptionFontColor: newColor
+      }),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Description Color", "md-storyful-fse-full")
+    }]
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__head"
@@ -97,7 +176,11 @@ function Edit({
     onChange: value => setAttributes({
       heading: value
     }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Heading", "md-blocks")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Heading", "md-blocks"),
+    style: {
+      fontSize: headingFontSize,
+      color: headingFontColor
+    }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -116,7 +199,11 @@ function Edit({
     value: postObj.year,
     onChange: value => updateStaticPostObj(index, "year", value),
     onClick: () => setCurrentSlide(index),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Year", "md-blocks")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Year", "md-blocks"),
+    style: {
+      fontSize: yearFontSize,
+      color: yearFontColor
+    }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "add-item-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
@@ -129,13 +216,21 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__cnt"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "history-list__year-title"
+    className: "history-list__year-title",
+    style: {
+      fontSize: titleFontSize,
+      color: titleFontColor
+    }
   }, historyTimeline[currentSlide].year), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     className: "history-list__year-description",
     value: historyTimeline[currentSlide].description,
     onChange: value => updateStaticPostObj(currentSlide, "description", value),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Description", "md-blocks")
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Description", "md-blocks"),
+    style: {
+      fontSize: descriptionFontSize,
+      color: descriptionFontColor
+    }
   })))))));
 }
 
@@ -242,7 +337,15 @@ function save({
 }) {
   const {
     heading,
-    historyTimeline
+    historyTimeline,
+    headingFontSize,
+    headingFontColor,
+    yearFontSize,
+    yearFontColor,
+    titleFontSize,
+    titleFontColor,
+    descriptionFontSize,
+    descriptionFontColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -255,7 +358,11 @@ function save({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     className: "history-list__title",
-    value: heading
+    value: heading,
+    style: {
+      fontSize: headingFontSize,
+      color: headingFontColor
+    }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -274,7 +381,11 @@ function save({
     tagName: "p",
     className: "history-list__year history-list__year-title",
     value: postObj.year,
-    onClick: () => setCurrentSlide(index)
+    onClick: () => setCurrentSlide(index),
+    style: {
+      fontSize: yearFontSize,
+      color: yearFontColor
+    }
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__year-detail"
   }, historyTimeline && historyTimeline.map((postObj, currentSlide) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -283,11 +394,19 @@ function save({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__cnt"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
-    className: "history-list__year-title"
+    className: "history-list__year-title",
+    style: {
+      fontSize: titleFontSize,
+      color: titleFontColor
+    }
   }, historyTimeline[currentSlide].year), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     className: "history-list__year-description",
-    value: historyTimeline[currentSlide].description
+    value: historyTimeline[currentSlide].description,
+    style: {
+      fontSize: descriptionFontSize,
+      color: descriptionFontColor
+    }
   }))))))));
 }
 
@@ -371,7 +490,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-history","version":"0.1.0","title":"MD History","apiVersion":3,"category":"md-efi-fse-full","icon":"lock","description":"Example static block scaffolded with Create Block tool.","keywords":["md-efi-fse-full","md-history"],"supports":{"html":false},"textdomain":"md-efi-fse-full","attributes":{"heading":{"type":"string","default":""},"historyTimeline":{"type":"array","default":[]}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-history","version":"0.1.0","title":"MD History","apiVersion":3,"category":"md-efi-fse-full","icon":"clock","description":"A block to display history timeline","keywords":["md-efi-fse-full","md-history"],"supports":{"html":false},"textdomain":"md-efi-fse-full","attributes":{"heading":{"type":"string","default":""},"historyTimeline":{"type":"array","default":[{"id":0,"year":"xxxx","description":"Loream ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, eleifend nunc. Nulla ut turpis ut nisi ultricies sollicitudin. Sed nec odio sit amet erat luctus suscipit. Proin ut semper odio. Sed nec odio sit amet erat luctus suscipit. Proin ut semper odio."}]},"headingFontSize":{"type":"string","default":""},"headingFontColor":{"type":"string","default":""},"yearFontSize":{"type":"string","default":""},"yearFontColor":{"type":"string","default":""},"titleFontSize":{"type":"string","default":""},"titleFontColor":{"type":"string","default":""},"descriptionFontSize":{"type":"string","default":""},"descriptionFontColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 
