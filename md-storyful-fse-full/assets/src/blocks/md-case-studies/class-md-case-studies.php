@@ -76,33 +76,31 @@ class MD_Case_Studies extends Block_Base {
 		// get string of attributes of the features that the block supports.
 		$wrapper_attributes = get_block_wrapper_attributes();
 
-		
-
 		// attributes.
+		$show_section_title = isset( $attributes['show_section_title'] ) ? $attributes['show_section_title'] : false;
 		$section_title = isset( $attributes['section_title'] ) ? $attributes['section_title'] : '';
 		$background_color = isset( $attributes['background_color'] ) ? $attributes['background_color'] : '';
 		$number_of_case_studies = isset( $attributes['number_of_case_studies'] ) ? $attributes['number_of_case_studies'] : 3;
-		$case_studies_ids = isset( $attributes['case_studies_ids'] ) ? $attributes['case_studies_ids'] : '';
 		$case_studies_style = isset( $attributes['case_studies_style'] ) ? $attributes['case_studies_style'] : 'style_1';
-		$section_title_font_size = isset( $attributes['section_title_font_size'] ) ? $attributes['section_title_font_size'] : 36;
 		$section_title_font_color = isset( $attributes['section_title_font_color'] ) ? $attributes['section_title_font_color'] : 36;
-		$case_studies_title_font_size = isset( $attributes['case_studies_title_font_size'] ) ? $attributes['case_studies_title_font_size'] : 36;
 		$case_studies_title_font_color = isset( $attributes['case_studies_title_font_color'] ) ? $attributes['case_studies_title_font_color'] : 36;
-		$case_studies_description_font_size = isset( $attributes['case_studies_description_font_size'] ) ? $attributes['case_studies_description_font_size'] : 36;
 		$case_studies_description_font_color = isset( $attributes['case_studies_description_font_color'] ) ? $attributes['case_studies_description_font_color'] : 36;
-		$main_case_study_title_font_size = isset( $attributes['main_case_study_title_font_size'] ) ? $attributes['main_case_study_title_font_size'] : 36;
 		$main_case_study_title_font_color = isset( $attributes['main_case_study_title_font_color'] ) ? $attributes['main_case_study_title_font_color'] : 36;
-		$main_case_study_description_font_size = isset( $attributes['main_case_study_description_font_size'] ) ? $attributes['main_case_study_description_font_size'] : 36;
 		$main_case_study_description_font_color = isset( $attributes['main_case_study_description_font_color'] ) ? $attributes['main_case_study_description_font_color'] : 36;
-		$main_case_study_button_font_size = isset( $attributes['main_case_study_button_font_size'] ) ? $attributes['main_case_study_button_font_size'] : 36;
-		$main_case_study_author_date_font_size = isset( $attributes['main_case_study_author_date_font_size'] ) ? $attributes['main_case_study_author_date_font_size'] : 36;
 		$main_case_study_author_date_font_color = isset( $attributes['main_case_study_author_date_font_color'] ) ? $attributes['main_case_study_author_date_font_color'] : 36;
+		$show_button = isset( $attributes['show_button'] ) ? $attributes['show_button'] : false;
+		$button_style = isset( $attributes['button_style'] ) ? $attributes['button_style'] : 'primary';
+		$orderBy = isset( $attributes['orderBy'] ) ? $attributes['orderBy'] : 'date'; // date, title, rand
+		$order = isset( $attributes['order'] ) ? $attributes['order'] : 'DESC'; // ASC, DESC
+		$show_excerpt = isset( $attributes['show_excerpt'] ) ? $attributes['show_excerpt'] : true;
+		$show_featured_image = isset( $attributes['show_featured_image'] ) ? $attributes['show_featured_image'] : true;
+		$show_author_date = isset( $attributes['show_author_date'] ) ? $attributes['show_author_date'] : true;
 
 		$args = array(
             'post_type' => 'resources',
             'posts_per_page' => $number_of_case_studies,
-            'orderby' => 'date',
-            'order' => 'DESC',
+            'orderby' => $orderBy,
+            'order' => $order,
             'tax_query' => array(
                 array(
                     'taxonomy' => 'resource-type',
@@ -110,7 +108,6 @@ class MD_Case_Studies extends Block_Base {
                     'terms' => 'case-studies',
                 ),
             ),
-            'post__in' => $case_studies_ids,
             'paged' => 1,
         );
 
@@ -123,9 +120,11 @@ class MD_Case_Studies extends Block_Base {
 			<div class="storyful-case-studies <?php echo esc_attr($attributes['case_studies_style']); ?>" >
 				<div class="overlay" style="background: <?php echo esc_attr($background_color); ?>"></div>
 				<div class="container">
-					<div class="section-title">
-						<h1 style="font-size: <?php echo esc_attr($section_title_font_size); ?>; color: <?php echo esc_attr($section_title_font_color); ?>"><?php echo esc_html($section_title); ?></h1>
-					</div>
+					<?php if ( $show_section_title ) : ?>
+						<div class="section-title">
+							<h1 style="color: <?php echo esc_attr($section_title_font_color); ?>"><?php echo wp_kses_post($section_title); ?></h1>
+						</div>
+					<?php endif; ?>
 					<div class="case-studies">
 						<div class="case-studies__list">
 							<?php
@@ -134,9 +133,9 @@ class MD_Case_Studies extends Block_Base {
 								while ($case_studies->have_posts()) : $case_studies->the_post();
 									?>
 									<div class="case-studies__item <?php echo esc_attr($active); ?>" data-post-id="<?php echo esc_attr(get_the_ID()); ?>" >
-										<h3 class="case-studies__title" style="font-size: <?php echo esc_attr($case_studies_title_font_size); ?>; color: <?php echo esc_attr($case_studies_title_font_color); ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+										<h3 class="case-studies__title" style="color: <?php echo esc_attr($case_studies_title_font_color); ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 										<?php if ( $case_studies_style === 'style_1' ) : ?>
-											<div class="case-studies__excerpt" style="font-size: <?php echo esc_attr($case_studies_description_font_size); ?>; color: <?php echo esc_attr($case_studies_description_font_color); ?>"><?php the_excerpt(); ?></div>
+											<div class="case-studies__excerpt" style="color: <?php echo esc_attr($case_studies_description_font_color); ?>"><?php the_excerpt(); ?></div>
 										<?php endif; ?>
 									</div>
 								<?php
@@ -154,29 +153,37 @@ class MD_Case_Studies extends Block_Base {
 									?>
 									<div class="item <?php echo esc_attr($active); ?>" data-post-id="<?php echo esc_attr(get_the_ID()); ?>">
 										<?php if ( $case_studies_style === 'style_2' ) : ?>
-											<h3 class="item__title" style="font-size: <?php echo esc_attr($main_case_study_title_font_size); ?>; color: <?php echo esc_attr($main_case_study_title_font_color); ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+											<h3 class="item__title" style="color: <?php echo esc_attr($main_case_study_title_font_color); ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 										<?php endif; ?>
-										<?php if ( $case_studies_style === 'style_1' ) : ?>
+										<?php if ( $case_studies_style === 'style_1' && $show_featured_image ) : ?>
 											<div class="item__image-wrapper">
 												<?php the_post_thumbnail(); ?>
 											</div>
 										<?php endif; ?>
 										<div class="item__details">
 											<?php if ( $case_studies_style === 'style_1' ) : ?>
-												<h3 class="item__title" style="font-size: <?php echo esc_attr($main_case_study_title_font_size); ?>; color: <?php echo esc_attr($main_case_study_title_font_color); ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-												<div class="item__publish-details" style="font-size: <?php echo esc_attr($main_case_study_author_date_font_size); ?>; color: <?php echo esc_attr($main_case_study_author_date_font_color); ?>">
+												<h3 class="item__title" style="color: <?php echo esc_attr($main_case_study_title_font_color); ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+											<?php endif; ?>
+											<?php if ( $show_author_date ) : ?>
+												<div class="item__publish-details" style="color: <?php echo esc_attr($main_case_study_author_date_font_color); ?>">
 													<p><?php echo get_the_author(); ?></p>
 													<span>-</span>
 													<p><?php echo get_the_date(); ?></p>
 												</div>
-												<div class="item__excerpt" style="font-size: <?php echo esc_attr($main_case_study_description_font_size); ?>; color: <?php echo esc_attr($main_case_study_description_font_color); ?>"><?php the_excerpt(); ?></div>
 											<?php endif; ?>
-											<?php if ( $case_studies_style === 'style_2' ) : ?>
+											<?php if ( $show_excerpt ) : ?>
+												<div class="item__excerpt" style="color: <?php echo esc_attr($main_case_study_description_font_color); ?>"><?php the_excerpt(); ?></div>
+											<?php endif; ?>
+											<?php if ( $case_studies_style === 'style_2' && $show_featured_image ) : ?>
 												<?php the_post_thumbnail(); ?>
 											<?php endif; ?>
-											<div class="btn btn-arrow" style="font-size: <?php echo esc_attr($main_case_study_button_font_size); ?>;">
-												<a class="sbtn sbtn-arrow-secondary" href="<?php the_permalink(); ?>"><?php esc_html_e('Full Case Study', 'md-bakery-antian'); ?></a>
-											</div>
+											<?php if ( $show_button ) : ?>
+												<div class="sbtn sbtn-arrow-<?php echo esc_attr($button_style); ?>">
+													<span class="btn-text">
+														<a href="<?php the_permalink(); ?>"><?php esc_html_e('Full Case Study', 'md-bakery-antian'); ?></a>
+													</span>
+												</div>
+											<?php endif; ?>
 										</div>
 									</div>
 								<?php

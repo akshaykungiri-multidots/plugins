@@ -1,0 +1,74 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "md-storyful-fse-full/team-v2",
+	"version": "0.1.0",
+	"apiVersion": 3,
+	"title": "37 Team V2",
+	"category": "md-storyful-fse-full",
+	"icon": "dashicons dashicons-admin-users",
+	"description": "Team Block with popup",
+	"keywords": ["Team", "Leader"],
+	"attributes": {
+		"products": {
+			"type": "array",
+			"default": []
+		},
+		"heading": {
+			"type": "string",
+			"default": "Leadership"
+		},
+		"bgcolor": {
+			"type": "string"
+		},
+		"authornamecolor": {
+			"type": "string"
+		},
+		"authortitlecolor": {
+			"type": "string"
+		},
+		"headingcolor": {
+			"type": "string"
+		},
+		"teamheading": {
+			"type": "string",
+			"default": "Want to work with us"
+		},
+		"teamheadinginner": {
+			"type": "string",
+			"default": "Join our growing team!"
+		},
+		"button": {
+			"type": "string",
+			"default": "Request a Demo"
+		},
+		"callToAction": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAuthorname": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAuthortitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayTeamHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayLinkedin": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+	  "html": false,
+	  "align": ["wide", "full"]
+	},
+	"textdomain": "md-storyful-fse-full",
+	"editorScript": "file:./index.js",
+	"viewScript": [ "file:./view.js" ],
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

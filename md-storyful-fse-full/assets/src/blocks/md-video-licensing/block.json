@@ -33,15 +33,7 @@
       "type": "string",
       "default": "Learn More"
     },
-    "headingFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "headingFontColor": {
-      "type": "string",
-      "default": ""
-    },
-    "buyButtonFontSize": {
       "type": "string",
       "default": ""
     },
@@ -49,15 +41,7 @@
       "type": "string",
       "default": ""
     },
-    "sellButtonFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "sellButtonFontColor": {
-      "type": "string",
-      "default": ""
-    },
-    "licenseFontSize": {
       "type": "string",
       "default": ""
     },
@@ -65,9 +49,21 @@
       "type": "string",
       "default": ""
     },
-    "learnMoreFontSize": {
-      "type": "string",
-      "default": ""
+    "showBuyButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSellButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLicenseText": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLearnMore": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

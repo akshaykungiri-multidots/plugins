@@ -171,20 +171,13 @@ class Assets {
 	 * @since 1.0.0
 	 */
 	public function register_admin_styles() {
-		wp_register_style( 'slick-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css' );
-		wp_register_style( 'slick-theme-css', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css' );
 
-		wp_enqueue_style( 'slick-css' );
-		wp_enqueue_style( 'slick-theme-css' );
-
-		// Register scripts.
-		wp_register_script( 'slick-min-js', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js', array( 'jquery-core' ), '1.6.0', true );
+		wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
 		
-		wp_enqueue_script( 'slick-min-js' );
+		wp_register_script( 'slick-min-js', MD_STORYFUL_FSE_FULL_BUILD_URI . '/slick.js', array( 'jquery-core' ), filemtime( MD_STORYFUL_FSE_FULL_BUILD_PATH . '/slick.js' ), true );
 
-		// Register scripts.
-		wp_register_script( 'admin-js', MD_STORYFUL_FSE_FULL_BUILD_URI . '/md_admin.js', array( 'jquery-core' ), filemtime( MD_STORYFUL_FSE_FULL_BUILD_PATH . '/md_admin.js' ), true );
-		wp_enqueue_script( 'admin-js' );
+		// Enqueue Scripts.
+		wp_enqueue_script( 'slick-min-js' );
 	}
 
 	/**

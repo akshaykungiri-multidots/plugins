@@ -32,17 +32,17 @@ export default function save({attributes}) {
 		section_right_description,
 		section_right_button_link,
 		section_right_image,
-		section_left_title_font_size,
 		section_left_title_font_color,
-		section_left_description_font_size,
 		section_left_description_font_color,
-		section_left_button_font_size,
-		section_right_title_font_size,
 		section_right_title_font_color,
-		section_right_description_font_size,
 		section_right_description_font_color,
-		section_right_button_font_size,
-	  } = attributes;
+		show_section_left_title,
+		show_section_left_description,
+		show_section_left_button,
+		show_section_right_title,
+		show_section_right_description,
+		show_section_right_button,
+	} = attributes;
 
 	return (
 		<div
@@ -60,7 +60,6 @@ export default function save({attributes}) {
 									className="section-title h1 with-darkbg"
 									value={section_left_title}
 									style={{
-										fontSize: section_left_title_font_size,
 										color: section_left_title_font_color,
 									}}
 								/>
@@ -69,7 +68,6 @@ export default function save({attributes}) {
 									className="cta-section-desc"
 									value={section_left_description}
 									style={{
-										fontSize: section_left_description_font_size,
 										color: section_left_description_font_color,
 									}}
 								/>
@@ -78,9 +76,6 @@ export default function save({attributes}) {
 										<RichText.Content
 											tagName="a"
 											value={section_left_button_link}
-											style={{
-												fontSize: section_left_button_font_size,
-											}}
 										/>
 									</span>
 								</div>
@@ -104,7 +99,6 @@ export default function save({attributes}) {
 									className="section-title h1"
 									value={section_right_title}
 									style={{
-										fontSize: section_right_title_font_size,
 										color: section_right_title_font_color,
 									}}
 								/>
@@ -113,7 +107,6 @@ export default function save({attributes}) {
 									className="cta-section-desc"
 									value={section_right_description}
 									style={{
-										fontSize: section_right_description_font_size,
 										color: section_right_description_font_color,
 									}}
 								/>
@@ -122,9 +115,6 @@ export default function save({attributes}) {
 										<RichText.Content
 											tagName="a"
 											value={section_right_button_link}
-											style={{
-												fontSize: section_right_button_font_size,
-											}}
 										/>
 									</span>
 								</div>

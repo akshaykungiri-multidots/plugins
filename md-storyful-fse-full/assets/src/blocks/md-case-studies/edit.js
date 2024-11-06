@@ -30,14 +30,12 @@ import {
  */
 import {
   PanelBody,
-  TextControl,
   SelectControl,
   GradientPicker,
-  FontSizePicker,
   RangeControl,
+  ToggleControl,
+  TextControl
 } from "@wordpress/components";
-
-import { useState, useEffect } from "@wordpress/element";
 
 import metadata from "./block.json";
 import "./editor.scss";
@@ -55,63 +53,36 @@ import "./editor.scss";
  */
 export default function Edit({ attributes, setAttributes, className }) {
   const {
+    show_section_title,
     section_title,
+    orderBy,
+		order,
     number_of_case_studies,
     case_studies_ids,
     background_color,
     case_studies_style,
-    section_title_font_size,
     section_title_font_color,
-    case_studies_title_font_size,
     case_studies_title_font_color,
-    case_studies_description_font_size,
     case_studies_description_font_color,
-    main_case_study_title_font_size,
     main_case_study_title_font_color,
-    main_case_study_description_font_size,
     main_case_study_description_font_color,
-    main_case_study_button_font_size,
-    main_case_study_author_date_font_size,
     main_case_study_author_date_font_color,
+    show_button,
+    button_style,
+    show_excerpt,
+    show_featured_image,
+    show_author_date
   } = attributes;
 
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
-
-  const [caseStudiesIds, setCaseStudiesIds] = useState([]);
-
-  const fetchCaseStudies = async () => {
-    // fetch resources post where resource-type is case-studies
-	const response = await fetch(
-	  "/wp-json/md-storyful-fse-full/v1/case-studies"
-	);
-	const data = await response.json();
-	setCaseStudiesIds(data);
-  };
-
-  useEffect(() => {
-    fetchCaseStudies();
-  }, []);
+  const orderByList = [
+		{ label: 'Date', value: 'date' },
+		{ label: 'Title', value: 'title' },
+		{ label: 'Random', value: 'rand' },
+	];
+	const orderList = [
+		{ label: 'Descending', value: 'desc' },
+		{ label: 'Ascending', value: 'asc' },
+	];
 
   return (
     <div
@@ -120,33 +91,82 @@ export default function Edit({ attributes, setAttributes, className }) {
     >
       <InspectorControls>
         <PanelBody title={__("Block Settings", "md-storyful-fse-full")}>
-          <TextControl
-            label={__("Heading", "md-storyful-fse-full")}
-            placeholder={__("Enter Heading", "md-storyful-fse-full")}
-            value={section_title}
-            onChange={(value) => setAttributes({ section_title: value })}
-          />
           <RangeControl
-            label={__("Number of Case Studies", "md-storyful-fse-full")}
-            value={number_of_case_studies}
-            onChange={(value) =>
-              setAttributes({ number_of_case_studies: value })
+            label={ __( 'Show Number of Blog', 'md-prime' ) }
+            value={ number_of_case_studies }
+            onChange={ ( value ) =>
+              setAttributes( {
+                number_of_case_studies: parseInt( value ),
+              } )
             }
-            min={1}
-            max={10}
+            min={ 2 }
+            max={ 99 }
+            step={ 1 }
           />
           <SelectControl
-            label={__("Case Studies", "md-storyful-fse-full")}
-            value={case_studies_ids}
-            multiple
-            onChange={(value) => setAttributes({ case_studies_ids: value })}
-            options={caseStudiesIds.map((caseStudy) => ({
-              label: caseStudy.title,
-              value: caseStudy.id,
-            }))}
+            label={ __( 'Order By', 'md-prime' ) }
+            value={ orderBy }
+            options={ orderByList }
+            onChange={ ( value ) =>
+              setAttributes( { orderBy: value } )
+            }
+          />
+          <SelectControl
+            label={ __( 'Order', 'md-prime' ) }
+            value={ order }
+            options={ orderList }
+            onChange={ ( value ) =>
+              setAttributes( { order: value } )
+            }
+          />
+          <SelectControl
+            label={__("Case Studies Style", "md-storyful-fse-full")}
+            value={case_studies_style}
+            options={[
+              {
+                label: __("Style 1", "md-storyful-fse-full"),
+                value: "style_1",
+              },
+              {
+                label: __("Style 2", "md-storyful-fse-full"),
+                value: "style_2",
+              },
+            ]}
+            onChange={(value) => setAttributes({ case_studies_style: value })}
             __nextHasNoMarginBottom
           />
-          <label>{__("Background Color", "md-storyful-fse-full")}</label>
+        </PanelBody>
+        <PanelBody title={__("Toggle Settings", "md-storyful-fse-full")} initialOpen={false} >
+          <ToggleControl
+            label={__("Show Section Title", "md-storyful-fse-full")}
+            checked={show_section_title}
+            onChange={(value) => setAttributes({ show_section_title: value })}
+          />
+          {show_section_title && (
+            <TextControl
+              label={__("Section Title", "md-storyful-fse-full")}
+              value={section_title}
+              onChange={(value) => setAttributes({ section_title: value })}
+            />
+          )}
+          <ToggleControl
+            label={__("Show Excerpt", "md-storyful-fse-full")}
+            checked={show_excerpt}
+            onChange={(value) => setAttributes({ show_excerpt: value })}
+          />
+          <ToggleControl
+            label={__("Show Featured Image", "md-storyful-fse-full")}
+            checked={show_featured_image}
+            onChange={(value) => setAttributes({ show_featured_image: value })}
+          />
+          <ToggleControl
+            label={__("Show Author Date", "md-storyful-fse-full")}
+            checked={show_author_date}
+            onChange={(value) => setAttributes({ show_author_date: value })}
+          />
+        </PanelBody>
+        <PanelBody title={__("Background Settings", "md-storyful-fse-full")} initialOpen={false} >
+        <label>{__("Background Color", "md-storyful-fse-full")}</label>
           <GradientPicker
             value={null}
             onChange={(value) => setAttributes({ background_color: value })}
@@ -171,179 +191,119 @@ export default function Edit({ attributes, setAttributes, className }) {
               },
             ]}
           />
-          <SelectControl
-            label={__("Case Studies Style", "md-storyful-fse-full")}
-            value={case_studies_style}
-            options={[
+        </PanelBody>
+        <PanelBody title={__("Button Settings", "md-storyful-fse-full")} initialOpen={false} >
+          <ToggleControl
+            label={__("Show Button", "md-storyful-fse-full")}
+            checked={show_button}
+            onChange={(value) => setAttributes({ show_button: value })}
+          />
+          {show_button && (
+            <SelectControl
+              label={__("Button Style", "md-storyful-fse-full")}
+              value={button_style}
+              options={[
+                {
+                  label: __("Primary", "md-storyful-fse-full"),
+                  value: "primary",
+                },
+                {
+                  label: __("Secondary", "md-storyful-fse-full"),
+                  value: "secondary",
+                },
+                {
+                  label: __("Tertiary", "md-storyful-fse-full"),
+                  value: "primary-v2",
+                }
+              ]}
+              onChange={(value) => setAttributes({ button_style: value })}
+              __nextHasNoMarginBottom
+            />
+          )}
+        </PanelBody>
+        <PanelBody title={__("Color Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <PanelColorSettings
+            title={__("Colors Settings", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
               {
-                label: __("Style 1", "md-storyful-fse-full"),
-                value: "style_1",
+                value: section_title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ section_title_font_color: newColor }),
+                label: __("Section Title Color", "md-storyful-fse-full"),
               },
               {
-                label: __("Style 2", "md-storyful-fse-full"),
-                value: "style_2",
+                value: case_studies_title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ case_studies_title_font_color: newColor }),
+                label: __("Case Studies Title Color", "md-storyful-fse-full"),
               },
+              {
+                value: case_studies_description_font_color,
+                onChange: (newColor) =>
+                  setAttributes({
+                    case_studies_description_font_color: newColor,
+                  }),
+                label: __(
+                  "Case Studies Description Color",
+                  "md-storyful-fse-full"
+                ),
+              },
+              {
+                value: main_case_study_title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ main_case_study_title_font_color: newColor }),
+                label: __("Main Case Study Title Color", "md-storyful-fse-full"),
+              },
+              {
+                value: main_case_study_description_font_color,
+                onChange: (newColor) =>
+                  setAttributes({
+                    main_case_study_description_font_color: newColor,
+                  }),
+                label: __(
+                  "Main Case Study Description Color",
+                  "md-storyful-fse-full"
+                ),
+              },
+              {
+                value: main_case_study_author_date_font_color,
+                onChange: (newColor) =>
+                  setAttributes({
+                    main_case_study_author_date_font_color: newColor,
+                  }),
+                label: __(
+                  "Main Case Study Author Date Color",
+                  "md-storyful-fse-full"
+                ),
+              }
             ]}
-            onChange={(value) => setAttributes({ case_studies_style: value })}
-            __nextHasNoMarginBottom
           />
         </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Section Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={section_title_font_size}
-            fallbackFontSize={section_title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ section_title_font_size: newFontSize })
-            }
-          />
-          <label> {__("Case Studies Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={case_studies_title_font_size}
-            fallbackFontSize={case_studies_title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ case_studies_title_font_size: newFontSize })
-            }
-          />
-          <label> {__("Case Studies Description Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={case_studies_description_font_size}
-            fallbackFontSize={case_studies_description_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ case_studies_description_font_size: newFontSize })
-            }
-          />
-          <label> {__("Main Case Study Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={main_case_study_title_font_size}
-            fallbackFontSize={main_case_study_title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ main_case_study_title_font_size: newFontSize })
-            }
-          />
-          <label> {__("Main Case Study Description Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={main_case_study_description_font_size}
-            fallbackFontSize={main_case_study_description_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({
-                main_case_study_description_font_size: newFontSize,
-              })
-            }
-          />
-          <label> {__("Main Case Study Button Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={main_case_study_button_font_size}
-            fallbackFontSize={main_case_study_button_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ main_case_study_button_font_size: newFontSize })
-            }
-          />
-          <label> {__("Main Case Study Author Date Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={main_case_study_author_date_font_size}
-            fallbackFontSize={main_case_study_author_date_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({
-                main_case_study_author_date_font_size: newFontSize,
-              })
-            }
-          />
-        </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
-          initialOpen={false}
-          colorSettings={[
-            {
-              value: section_title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ section_title_font_color: newColor }),
-              label: __("Section Title Color", "md-storyful-fse-full"),
-            },
-            {
-              value: case_studies_title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ case_studies_title_font_color: newColor }),
-              label: __("Case Studies Title Color", "md-storyful-fse-full"),
-            },
-            {
-              value: case_studies_description_font_color,
-              onChange: (newColor) =>
-                setAttributes({
-                  case_studies_description_font_color: newColor,
-                }),
-              label: __(
-                "Case Studies Description Color",
-                "md-storyful-fse-full"
-              ),
-            },
-            {
-              value: main_case_study_title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ main_case_study_title_font_color: newColor }),
-              label: __("Main Case Study Title Color", "md-storyful-fse-full"),
-            },
-            {
-              value: main_case_study_description_font_color,
-              onChange: (newColor) =>
-                setAttributes({
-                  main_case_study_description_font_color: newColor,
-                }),
-              label: __(
-                "Main Case Study Description Color",
-                "md-storyful-fse-full"
-              ),
-            },
-            {
-              value: main_case_study_author_date_font_color,
-              onChange: (newColor) =>
-                setAttributes({
-                  main_case_study_author_date_font_color: newColor,
-                }),
-              label: __(
-                "Main Case Study Author Date Color",
-                "md-storyful-fse-full"
-              ),
-            },
-          ]}
-        />
       </InspectorControls>
       <ServerSideRender
         block={metadata.name}
         className={className}
         attributes={{
+          show_section_title,
           section_title,
           number_of_case_studies,
           case_studies_ids,
           background_color,
           case_studies_style,
-          section_title_font_size,
           section_title_font_color,
-          case_studies_title_font_size,
           case_studies_title_font_color,
-          case_studies_description_font_size,
           case_studies_description_font_color,
-          main_case_study_title_font_size,
           main_case_study_title_font_color,
-          main_case_study_description_font_size,
           main_case_study_description_font_color,
-          main_case_study_button_font_size,
-          main_case_study_author_date_font_size,
           main_case_study_author_date_font_color,
+          show_button,
+          button_style,
+          orderBy,
+          order,
+          show_excerpt,
+          show_featured_image,
+          show_author_date
         }}
       />
     </div>

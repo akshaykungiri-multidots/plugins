@@ -50,15 +50,7 @@
       "type": "string",
       "default": ""
     },
-    "section_left_strong_title_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "section_left_strong_title_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "section_left_title_font_size": {
       "type": "string",
       "default": ""
     },
@@ -66,19 +58,7 @@
       "type": "string",
       "default": ""
     },
-    "section_left_description_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "section_left_description_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "section_left_button_font_size": {
-      "type": "string",
-      "default": ""
-    },
-    "section_right_title_font_size": {
       "type": "string",
       "default": ""
     },
@@ -86,17 +66,33 @@
       "type": "string",
       "default": ""
     },
-    "section_right_description_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "section_right_description_font_color": {
       "type": "string",
       "default": ""
     },
-    "section_right_button_font_size": {
-      "type": "string",
-      "default": ""
+    "show_section_left_title": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_section_left_description": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_section_left_button": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_section_right_title": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_section_right_description": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_section_right_button": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

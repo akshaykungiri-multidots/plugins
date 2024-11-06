@@ -84,32 +84,11 @@ function Edit({
     displayNewsLetterAfterRow,
     enableMostPopular,
     displayMostPopularAboveOrBelow,
-    postTitleFontSize,
     postTitleColor,
-    postDateFontSize,
     postDateColor,
-    mostPopularTitleFontSize,
     mostPopularTitleColor,
-    mostPopularDescriptionFontSize,
     mostPopularDescriptionColor
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   const builtInPostType = ["page", "attachment", "nav_menu_item", "wp_block", "wp_template", "wp_template_part", "wp_navigation", "wp_font_family", "wp_font_face", "wp_global_styles"];
   const [postTypes, setPostTypes] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]);
   (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
@@ -141,45 +120,27 @@ function Edit({
           onChange: postType => setAttributes({
             postType
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Number of Posts Per Row", "md-storyful-fse-full"),
           value: numberOfPostsPerRow,
-          options: [{
-            label: "1",
-            value: 1
-          }, {
-            label: "2",
-            value: 2
-          }, {
-            label: "3",
-            value: 3
-          }, {
-            label: "4",
-            value: 4
-          }],
           onChange: numberOfPostsPerRow => setAttributes({
             numberOfPostsPerRow
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+          }),
+          min: 1,
+          max: 4
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Number of Rows", "md-storyful-fse-full"),
           value: numberOfRows,
-          options: [{
-            label: "1",
-            value: 1
-          }, {
-            label: "2",
-            value: 2
-          }, {
-            label: "3",
-            value: 3
-          }, {
-            label: "4",
-            value: 4
-          }],
           onChange: numberOfRows => setAttributes({
             numberOfRows
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          }),
+          min: 1,
+          max: 4
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enable Search", "md-storyful-fse-full"),
           checked: enableSearch,
           onChange: enableSearch => setAttributes({
@@ -197,108 +158,61 @@ function Edit({
           onChange: enableNewsLetter => setAttributes({
             enableNewsLetter
           })
-        }), enableNewsLetter && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+        }), enableNewsLetter && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Display News Letter After Row", "md-storyful-fse-full"),
           value: displayNewsLetterAfterRow,
-          options: [{
-            label: "1",
-            value: 1
-          }, {
-            label: "2",
-            value: 2
-          }, {
-            label: "3",
-            value: 3
-          }, {
-            label: "4",
-            value: 4
-          }],
           onChange: displayNewsLetterAfterRow => setAttributes({
             displayNewsLetterAfterRow
-          })
+          }),
+          min: 1,
+          max: 4
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enable Most Popular", "md-storyful-fse-full"),
           checked: enableMostPopular,
           onChange: enableMostPopular => setAttributes({
             enableMostPopular
           })
-        }), enableMostPopular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+        }), enableMostPopular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Display Most Popular Above Or Below", "md-storyful-fse-full"),
           value: displayMostPopularAboveOrBelow,
-          options: [{
-            label: "Above",
-            value: "above"
-          }, {
-            label: "Below",
-            value: "below"
-          }],
           onChange: displayMostPopularAboveOrBelow => setAttributes({
             displayMostPopularAboveOrBelow
-          })
+          }),
+          min: 1,
+          max: 4
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography", "md-storyful-fse-full"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Title Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: postTitleFontSize,
-          onChange: value => setAttributes({
-            postTitleFontSize: value
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Date Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: postDateFontSize,
-          onChange: value => setAttributes({
-            postDateFontSize: value
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Most Popular Title Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: mostPopularTitleFontSize,
-          onChange: value => setAttributes({
-            mostPopularTitleFontSize: value
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Most Popular Description Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: mostPopularDescriptionFontSize,
-          onChange: value => setAttributes({
-            mostPopularDescriptionFontSize: value
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
         initialOpen: false,
-        colorSettings: [{
-          value: postTitleColor,
-          onChange: value => setAttributes({
-            postTitleColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Title Color")
-        }, {
-          value: postDateColor,
-          onChange: value => setAttributes({
-            postDateColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Date Color")
-        }, {
-          value: mostPopularTitleColor,
-          onChange: value => setAttributes({
-            mostPopularTitleColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Most Popular Title Color")
-        }, {
-          value: mostPopularDescriptionColor,
-          onChange: value => setAttributes({
-            mostPopularDescriptionColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Most Popular Description Color")
-        }]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+          initialOpen: false,
+          colorSettings: [{
+            value: postTitleColor,
+            onChange: value => setAttributes({
+              postTitleColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Title Color")
+          }, {
+            value: postDateColor,
+            onChange: value => setAttributes({
+              postDateColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Date Color")
+          }, {
+            value: mostPopularTitleColor,
+            onChange: value => setAttributes({
+              mostPopularTitleColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Most Popular Title Color")
+          }, {
+            value: mostPopularDescriptionColor,
+            onChange: value => setAttributes({
+              mostPopularDescriptionColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Most Popular Description Color")
+          }]
+        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_1___default()), {
       block: _block_json__WEBPACK_IMPORTED_MODULE_5__.name,
@@ -313,13 +227,9 @@ function Edit({
         displayNewsLetterAfterRow,
         enableMostPopular,
         displayMostPopularAboveOrBelow,
-        postTitleFontSize,
         postTitleColor,
-        postDateFontSize,
         postDateColor,
-        mostPopularTitleFontSize,
         mostPopularTitleColor,
-        mostPopularDescriptionFontSize,
         mostPopularDescriptionColor
       }
     })]
@@ -508,7 +418,7 @@ module.exports = window["wp"]["serverSideRender"];
   \****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-posts","version":"0.1.0","title":"MD Posts","apiVersion":3,"category":"md-storyful-fse-full","icon":"admin-post","description":"A Posts block for Storyful FSE","keywords":["md-storyful-fse-full","md-posts"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"enableSearch":{"type":"boolean","default":true},"enableFilter":{"type":"boolean","default":true},"numberOfPostsPerRow":{"type":"string","default":"3"},"numberOfRows":{"type":"string","default":3},"postType":{"type":"string","default":"post"},"enableNewsLetter":{"type":"boolean","default":true},"displayNewsLetterAfterRow":{"type":"string","default":2},"enableMostPopular":{"type":"boolean","default":true},"displayMostPopularAboveOrBelow":{"type":"string","default":"above"},"postTitleFontSize":{"type":"string","default":""},"postTitleColor":{"type":"string","default":""},"postDateFontSize":{"type":"string","default":""},"postDateColor":{"type":"string","default":""},"mostPopularTitleFontSize":{"type":"string","default":""},"mostPopularTitleColor":{"type":"string","default":""},"mostPopularDescriptionFontSize":{"type":"string","default":""},"mostPopularDescriptionColor":{"type":"string","default":""}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-posts","version":"0.1.0","title":"MD Posts","apiVersion":3,"category":"md-storyful-fse-full","icon":"admin-post","description":"A Posts block for Storyful FSE","keywords":["md-storyful-fse-full","md-posts"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"enableSearch":{"type":"boolean","default":true},"enableFilter":{"type":"boolean","default":true},"numberOfPostsPerRow":{"type":"number","default":3},"numberOfRows":{"type":"number","default":3},"postType":{"type":"string","default":"post"},"enableNewsLetter":{"type":"boolean","default":true},"displayNewsLetterAfterRow":{"type":"string","default":2},"enableMostPopular":{"type":"boolean","default":true},"displayMostPopularAboveOrBelow":{"type":"string","default":"above"},"postTitleColor":{"type":"string","default":""},"postDateColor":{"type":"string","default":""},"mostPopularTitleColor":{"type":"string","default":""},"mostPopularDescriptionColor":{"type":"string","default":""}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

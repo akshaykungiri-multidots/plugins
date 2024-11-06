@@ -17,6 +17,14 @@ if ( ! defined( 'MD_STORYFUL_FSE_FULL_THEME_URL' ) ) {
 	define( 'MD_STORYFUL_FSE_FULL_THEME_URL', get_template_directory_uri() );
 }
 
+if ( ! defined( 'MD_STORYFUL_FSE_FULL_BUILD_LIBRARY_URI' ) ) {
+	define( 'MD_STORYFUL_FSE_FULL_BUILD_LIBRARY_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/library' );
+}
+
+if ( ! defined( 'MD_STORYFUL_FSE_FULL_BUILD_LIBRARY_DIR_PATH' ) ) {
+	define( 'MD_STORYFUL_FSE_FULL_BUILD_LIBRARY_DIR_PATH', untrailingslashit( get_template_directory() ) . '/assets/library' );
+}
+
 if ( ! defined( 'MD_STORYFUL_FSE_FULL_BUILD_URI' ) ) {
 	define( 'MD_STORYFUL_FSE_FULL_BUILD_URI', untrailingslashit( get_template_directory_uri() ) . '/assets/build' );
 }

@@ -25,16 +25,18 @@
       "default": "Our Story"
     },
     "our_story_video_image": {
-      "type": "string",
-      "default": "https://storyful.com/wp-content/uploads/2023/01/Screenshot-2023-01-16-at-15.29.23-1-min.png"
+      "type": "string"
     },
-    "our_story_video_link": {
+    "vidType": {
       "type": "string",
-      "default": "https://storyful.com/wp-content/uploads/2023/01/Brand-Reel-2023-NEWS.mp4"
+      "default": "media-upload"
     },
-    "our_story_title_font_size": {
+    "youtubeLink": {
       "type": "string",
       "default": ""
+    },
+    "video": {
+      "type": "string"
     },
     "our_story_title_font_color": {
       "type": "string",

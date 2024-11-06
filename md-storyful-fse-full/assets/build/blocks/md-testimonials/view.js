@@ -4,7 +4,7 @@
   \********************************************/
 /**
  * File Sample-dynamic.js
- * 
+ *
  */
 (function ($) {
   "use strict";
@@ -12,7 +12,7 @@
   $(document).ready(function () {
     // Slick slider for client-testimonials
     setTimeout(function () {
-      $('.client-testimonials').slick({
+      $(".client-testimonials").slick({
         dots: false,
         arrows: true,
         infinite: true,

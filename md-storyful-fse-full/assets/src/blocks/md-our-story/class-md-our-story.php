@@ -76,8 +76,9 @@ class MD_Our_Story extends Block_Base {
 		// attributes.
 		$our_story_title = isset( $attributes['our_story_title'] ) ? $attributes['our_story_title'] : '';
 		$our_story_video_image = isset( $attributes['our_story_video_image'] ) ? $attributes['our_story_video_image'] : '';
-		$our_story_video_link = isset( $attributes['our_story_video_link'] ) ? $attributes['our_story_video_link'] : '';
-		$our_story_title_font_size = isset( $attributes['our_story_title_font_size'] ) ? $attributes['our_story_title_font_size'] : '';
+		$vid_type = isset( $attributes['vidType'] ) ? $attributes['vidType'] : '';
+		$youtube_link = isset( $attributes['youtubeLink'] ) ? $attributes['youtubeLink'] : '';
+		$video = isset( $attributes['video'] ) ? $attributes['video'] : '';
 		$our_story_title_font_color = isset( $attributes['our_story_title_font_color'] ) ? $attributes['our_story_title_font_color'] : '';
 		ob_start();
 		?>
@@ -86,7 +87,7 @@ class MD_Our_Story extends Block_Base {
 				<div class="our-story-section__right">
 					<div class="media-section">
 						<div class="our-story-text-wrapper wow bounceIn">
-							<h3 class="our-story-title" style="font-size: <?php echo esc_attr($our_story_title_font_size); ?>; color: <?php echo esc_attr($our_story_title_font_color); ?>">
+							<h3 class="our-story-title" style="color: <?php echo esc_attr($our_story_title_font_color); ?>">
 								<?php echo wp_kses_post($our_story_title); ?>
 							</h3>
 						</div>
@@ -101,16 +102,23 @@ class MD_Our_Story extends Block_Base {
 					</div>
 				</div>
 				<div class="video-popups-wrap">
-					<div class="video-popup">
-						<div class="close-popup-section">
-							<div class="close-btn">
-								<?php esc_html_e('Close', 'md-bakery-antian'); ?>
+					<?php if ('media-upload' === $vid_type && '' !== $video) : ?>
+						<div class="video-popup">
+							<div class="close-popup-section">
+								<div class="close-btn">Close</div>
 							</div>
-							<video controls="" autoplay="" muted="" loop="" class="video-one hidden video-div">
-								<source src="<?php echo esc_url($our_story_video_link); ?>" type="video/mp4">
+							<video controls autoplay muted loop class="video-one hidden video-div">
+								<source src="<?php echo esc_url($video); ?>" type="video/mp4" />
 							</video>
 						</div>
-					</div>
+					<?php elseif ('youtube' === $vid_type && '' !== $youtube_link) : ?>
+						<div class="video-one-popup video-popup">
+							<div class="close-popup-section">
+								<div class="close-btn">Close</div>
+							</div>
+							<iframe src="<?php echo esc_url(str_replace('watch?v=', 'embed/', $youtube_link) . '?controls=0'); ?>" data-src="<?php echo esc_url($youtube_link . '?enablejsapi=1&controls=0&rel=0'); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

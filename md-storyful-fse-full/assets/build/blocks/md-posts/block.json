@@ -25,11 +25,11 @@
       "default": true
     },
     "numberOfPostsPerRow": {
-      "type": "string",
-      "default": "3"
+      "type": "number",
+      "default": 3
     },
     "numberOfRows": {
-      "type": "string",
+      "type": "number",
       "default": 3
     },
     "postType": {
@@ -52,15 +52,7 @@
       "type": "string",
       "default": "above"
     },
-    "postTitleFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "postTitleColor": {
-      "type": "string",
-      "default": ""
-    },
-    "postDateFontSize": {
       "type": "string",
       "default": ""
     },
@@ -68,15 +60,7 @@
       "type": "string",
       "default": ""
     },
-    "mostPopularTitleFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "mostPopularTitleColor": {
-      "type": "string",
-      "default": ""
-    },
-    "mostPopularDescriptionFontSize": {
       "type": "string",
       "default": ""
     },

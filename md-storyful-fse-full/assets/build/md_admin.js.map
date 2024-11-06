@@ -1,1 +1,0 @@
-{"version":3,"file":"md_admin.js","mappings":";;;;AAAA,CAAC,UAAUA,CAAC,EAAE;EACV,YAAY;AAEhB,CAAC,EAAGC,MAAO,CAAC,C","sources":["webpack://md-storyful-fse-full/./src/js/admin.js"],"sourcesContent":["(function ($) {\n    \"use strict\";\n\n})( jQuery );"],"names":["$","jQuery"],"sourceRoot":""}

@@ -25,7 +25,7 @@ import {
   Button,
   SelectControl,
   GradientPicker,
-  FontSizePicker,
+  ToggleControl
 } from "@wordpress/components";
 
 /**
@@ -47,49 +47,23 @@ export default function Edit({ attributes, setAttributes }) {
     newswire_button_link,
     newswire_theme_style,
     background_color,
-    newswire_title_font_size,
     newswire_title_font_color,
-    newswire_description_font_size,
     newswire_description_font_color,
-    newswire_button_font_size,
     newswire_button_font_color,
-    newswire_left_title_font_size,
     newswire_left_title_font_color,
-    newswire_left_description_font_size,
     newswire_left_description_font_color,
-    newswire_sub_title_font_size,
     newswire_sub_title_font_color,
+    showNewswireButton,
+    showNewswireBottom,
+    showNewswireLeftDescription,
   } = attributes;
-
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
 
   return (
     <div {...useBlockProps()}>
       <InspectorControls>
         <PanelBody title={__("Block Settings", "md-storyful-fse-full")}>
           <SelectControl
-            label={__("Theme Style", "md-storyful-fse-full")}
+            label={__("Block Style", "md-storyful-fse-full")}
             value={newswire_theme_style}
             options={[
               { label: __("Style 1", "md-storyful-fse-full"), value: "style1" },
@@ -98,6 +72,30 @@ export default function Edit({ attributes, setAttributes }) {
             onChange={(value) => setAttributes({ newswire_theme_style: value })}
             __nextHasNoMarginBottom
           />
+        </PanelBody>
+        <PanelBody title={__("Toggle Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <ToggleControl
+            label={__("Show Newswire Bottom", "md-storyful-fse-full")}
+            checked={showNewswireBottom}
+            onChange={(value) => setAttributes({ showNewswireBottom: value })}
+          />
+          {showNewswireBottom && (
+            <div className="md-newswire-bottom">
+              <ToggleControl
+                label={__("Show Newswire Button", "md-storyful-fse-full")}
+                checked={showNewswireButton}
+                onChange={(value) => setAttributes({ showNewswireButton: value })}
+              />
+              <ToggleControl
+                label={__("Show Newswire Left Description", "md-storyful-fse-full")}
+                checked={showNewswireLeftDescription}
+                onChange={(value) => setAttributes({ showNewswireLeftDescription: value })}
+              />
+            </div>
+          )}
+        </PanelBody>
+        <PanelBody title={__("Background Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <label>{__("Background Color", "md-storyful-fse-full")}</label>
           <GradientPicker
             value={null}
             onChange={(value) => setAttributes({ background_color: value })}
@@ -123,110 +121,50 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
           />
         </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Newswire Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={newswire_title_font_size}
-            fallbackFontSize={newswire_title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ newswire_title_font_size: newFontSize })
-            }
-          />
-          <label> {__("Newswire Description Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={newswire_description_font_size}
-            fallbackFontSize={newswire_description_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ newswire_description_font_size: newFontSize })
-            }
-          />
-          <label> {__("Newswire Button Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={newswire_button_font_size}
-            fallbackFontSize={newswire_button_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ newswire_button_font_size: newFontSize })
-            }
-          />
-          <label> {__("Newswire Left Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={newswire_left_title_font_size}
-            fallbackFontSize={newswire_left_title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ newswire_left_title_font_size: newFontSize })
-            }
-          />
-          <label> {__("Newswire Left Description Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={newswire_left_description_font_size}
-            fallbackFontSize={newswire_left_description_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ newswire_left_description_font_size: newFontSize })
-            }
-          />
-          <label> {__("Newswire Sub Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={newswire_sub_title_font_size}
-            fallbackFontSize={newswire_sub_title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ newswire_sub_title_font_size: newFontSize })
-            }
+        <PanelBody title={__("Color Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <PanelColorSettings
+            title={__("Color Settings", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: newswire_title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ newswire_title_font_color: newColor }),
+                label: __("Newswire Title Font Color"),
+              },
+              {
+                value: newswire_description_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ newswire_description_font_color: newColor }),
+                label: __("Newswire Description Font Color"),
+              },
+              {
+                value: newswire_button_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ newswire_button_font_color: newColor }),
+                label: __("Newswire Button Font Color"),
+              },
+              {
+                value: newswire_left_title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ newswire_left_title_font_color: newColor }),
+                label: __("Newswire Left Title Font Color"),
+              },
+              {
+                value: newswire_left_description_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ newswire_left_description_font_color: newColor }),
+                label: __("Newswire Left Description Font Color"),
+              },
+              {
+                value: newswire_sub_title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ newswire_sub_title_font_color: newColor }),
+                label: __("Newswire Sub Title Font Color"),
+              },
+            ]}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
-          initialOpen={false}
-          colorSettings={[
-            {
-              value: newswire_title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ newswire_title_font_color: newColor }),
-              label: __("Newswire Title Font Color"),
-            },
-            {
-              value: newswire_description_font_color,
-              onChange: (newColor) =>
-                setAttributes({ newswire_description_font_color: newColor }),
-              label: __("Newswire Description Font Color"),
-            },
-            {
-              value: newswire_button_font_color,
-              onChange: (newColor) =>
-                setAttributes({ newswire_button_font_color: newColor }),
-              label: __("Newswire Button Font Color"),
-            },
-            {
-              value: newswire_left_title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ newswire_left_title_font_color: newColor }),
-              label: __("Newswire Left Title Font Color"),
-            },
-            {
-              value: newswire_left_description_font_color,
-              onChange: (newColor) =>
-                setAttributes({ newswire_left_description_font_color: newColor }),
-              label: __("Newswire Left Description Font Color"),
-            },
-            {
-              value: newswire_sub_title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ newswire_sub_title_font_color: newColor }),
-              label: __("Newswire Sub Title Font Color"),
-            },
-          ]}
-        />
       </InspectorControls>
       <div {...useBlockProps({ className: "md_newswire" })}>
         <div
@@ -241,7 +179,6 @@ export default function Edit({ attributes, setAttributes }) {
                   value={newswire_left_title}
                   className="section-title h1"
                   style={{
-                    fontSize: newswire_left_title_font_size,
                     color: newswire_left_title_font_color,
                   }}
                   onChange={(value) =>
@@ -253,7 +190,6 @@ export default function Edit({ attributes, setAttributes }) {
                   tagName="h2"
                   value={newswire_left_description}
                   style={{
-                    fontSize: newswire_left_description_font_size,
                     color: newswire_left_description_font_color,
                   }}
                   onChange={(value) =>
@@ -270,7 +206,6 @@ export default function Edit({ attributes, setAttributes }) {
                   }
                   placeholder={__("Enter Sub Title", "md-storyful-fse-full")}
                   style={{
-                    fontSize: newswire_sub_title_font_size,
                     color: newswire_sub_title_font_color,
                   }}
                 />
@@ -312,7 +247,7 @@ export default function Edit({ attributes, setAttributes }) {
                 </div>
               </div>
             </div>
-            {newswire_theme_style == "style1" && (
+            {showNewswireBottom && (
               <div class="newswire-by-storyful-buttom">
                 <div class="newswire-by-storyful-buttom__grid">
                   <div class="newswire-by-storyful-items single-col">
@@ -324,53 +259,54 @@ export default function Edit({ attributes, setAttributes }) {
                         onChange={(value) =>
                           setAttributes({ newswire_title: value })
                         }
-                        placeholder={__("Enter Title", "md-storyful-fse-full")}
+                        placeholder={__("Enter Left Title", "md-storyful-fse-full")}
                         style={{
-                          fontSize: newswire_title_font_size,
                           color: newswire_title_font_color,
                         }}
                       />
-                      <RichText
-                        tagName="p"
-                        value={newswire_description}
-                        className="newswire-description"
-                        onChange={(value) =>
-                          setAttributes({ newswire_description: value })
-                        }
-                        placeholder={__(
-                          "Enter Description",
-                          "md-storyful-fse-full"
-                        )}
-                        style={{
-                          fontSize: newswire_description_font_size,
-                          color: newswire_description_font_color,
-                        }}
-                      />
+                      {showNewswireLeftDescription && (
+                        <RichText
+                          tagName="p"
+                          value={newswire_description}
+                          className="newswire-description"
+                          onChange={(value) =>
+                            setAttributes({ newswire_description: value })
+                          }
+                          placeholder={__(
+                            "Enter Left Description",
+                            "md-storyful-fse-full"
+                          )}
+                          style={{
+                            color: newswire_description_font_color,
+                          }}
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
-                <div class="newswire-by-storyful-buttom__contact wow bounceIn">
-                  <div class="circle-button">
-                    <div class="circle-text">
-                      <RichText
-                        tagName="a"
-                        value={newswire_button_link}
-                        className="btn btn-primary"
-                        onChange={(value) =>
-                          setAttributes({ newswire_button_link: value })
-                        }
-                        placeholder={__(
-                          "Enter Button Text",
-                          "md-storyful-fse-full"
-                        )}
-                        style={{
-                          fontSize: newswire_button_font_size,
-                          color: newswire_button_font_color,
-                        }}
-                      />
+                {showNewswireButton && (
+                  <div class="newswire-by-storyful-buttom__contact wow bounceIn">
+                    <div class="circle-button">
+                      <div class="circle-text">
+                        <RichText
+                          tagName="a"
+                          value={newswire_button_link}
+                          className="btn btn-primary"
+                          onChange={(value) =>
+                            setAttributes({ newswire_button_link: value })
+                          }
+                          placeholder={__(
+                            "Enter Button Text",
+                            "md-storyful-fse-full"
+                          )}
+                          style={{
+                            color: newswire_button_font_color,
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
+                )}
               </div>
             )}
           </div>

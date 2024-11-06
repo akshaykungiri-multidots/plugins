@@ -42,7 +42,12 @@
       "default": [
         {
           "id": 1,
-          "videoURL": ""
+          "mediaurl": "",
+          "youtubeurl": "",
+          "videotype": "media-upload",
+          "media": "",
+          "mediaId": "",
+          "mediaAlt": ""
         }
       ]
     }

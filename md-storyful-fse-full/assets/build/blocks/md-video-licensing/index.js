@@ -55,109 +55,79 @@ function Edit({
     sellButtonText,
     licenseText,
     learnMoreText,
-    headingFontSize,
     headingFontColor,
-    buyButtonFontSize,
     buyButtonFontColor,
-    sellButtonFontSize,
     sellButtonFontColor,
-    licenseFontSize,
     licenseFontColor,
-    learnMoreFontSize
+    showBuyButton,
+    showSellButton,
+    showLicenseText,
+    showLearnMore
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
       className: "md_video_licensing"
     }),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography", "md-storyful-fse-full"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          value: headingFontSize,
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Buy Button", "md-storyful-fse-full"),
+          checked: showBuyButton,
           onChange: value => setAttributes({
-            headingFontSize: value
-          }),
-          fontSizes: fontSizes
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Buy Button Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          value: buyButtonFontSize,
+            showBuyButton: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Sell Button", "md-storyful-fse-full"),
+          checked: showSellButton,
           onChange: value => setAttributes({
-            buyButtonFontSize: value
-          }),
-          fontSizes: fontSizes
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Sell Button Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          value: sellButtonFontSize,
+            showSellButton: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show License Text", "md-storyful-fse-full"),
+          checked: showLicenseText,
           onChange: value => setAttributes({
-            sellButtonFontSize: value
-          }),
-          fontSizes: fontSizes
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("License Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          value: licenseFontSize,
+            showLicenseText: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Learn More Button", "md-storyful-fse-full"),
+          checked: showLearnMore,
           onChange: value => setAttributes({
-            licenseFontSize: value
-          }),
-          fontSizes: fontSizes
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Learn More Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          value: learnMoreFontSize,
-          onChange: value => setAttributes({
-            learnMoreFontSize: value
-          }),
-          fontSizes: fontSizes
+            showLearnMore: value
+          })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
         initialOpen: false,
-        colorSettings: [{
-          value: headingFontColor,
-          onChange: value => setAttributes({
-            headingFontColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Color")
-        }, {
-          value: buyButtonFontColor,
-          onChange: value => setAttributes({
-            buyButtonFontColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Buy Button Color")
-        }, {
-          value: sellButtonFontColor,
-          onChange: value => setAttributes({
-            sellButtonFontColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Sell Button Color")
-        }, {
-          value: licenseFontColor,
-          onChange: value => setAttributes({
-            licenseFontColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("License Color")
-        }]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+          initialOpen: false,
+          colorSettings: [{
+            value: headingFontColor,
+            onChange: value => setAttributes({
+              headingFontColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Color")
+          }, {
+            value: buyButtonFontColor,
+            onChange: value => setAttributes({
+              buyButtonFontColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Buy Button Color")
+          }, {
+            value: sellButtonFontColor,
+            onChange: value => setAttributes({
+              sellButtonFontColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Sell Button Color")
+          }, {
+            value: licenseFontColor,
+            onChange: value => setAttributes({
+              licenseFontColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("License Color")
+          }]
+        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       class: "storyful-video-licensing",
@@ -176,12 +146,11 @@ function Edit({
               }),
               placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title...", "md-blocks"),
               style: {
-                fontSize: headingFontSize,
                 color: headingFontColor
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               class: "bye-sell-button wow fadeInLeft",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              children: [showBuyButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "span",
                 className: "link",
                 value: buyButtonText,
@@ -190,10 +159,9 @@ function Edit({
                 }),
                 placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter buy button text...", "md-blocks"),
                 style: {
-                  fontSize: buyButtonFontSize,
                   color: buyButtonFontColor
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              }), showSellButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "span",
                 className: "link",
                 value: sellButtonText,
@@ -202,7 +170,6 @@ function Edit({
                 }),
                 placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter sell button text...", "md-blocks"),
                 style: {
-                  fontSize: sellButtonFontSize,
                   color: sellButtonFontColor
                 }
               })]
@@ -211,7 +178,7 @@ function Edit({
             class: "video-licensing-wrap__right",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               class: "licensing-description-and-button",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              children: [showLicenseText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "h2",
                 className: "licensing-description",
                 value: licenseText,
@@ -220,10 +187,9 @@ function Edit({
                 }),
                 placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description...", "md-blocks"),
                 style: {
-                  fontSize: licenseFontSize,
                   color: licenseFontColor
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              }), showLearnMore && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 class: "sbtn sbtn-arrow-primary",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                   class: "btn-text",
@@ -233,10 +199,7 @@ function Edit({
                     onChange: value => setAttributes({
                       learnMoreText: value
                     }),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter learn more button text...", "md-blocks"),
-                    style: {
-                      fontSize: learnMoreFontSize
-                    }
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter learn more button text...", "md-blocks")
                   })
                 })
               })]
@@ -355,15 +318,14 @@ function save({
     sellButtonText,
     licenseText,
     learnMoreText,
-    headingFontSize,
     headingFontColor,
-    buyButtonFontSize,
     buyButtonFontColor,
-    sellButtonFontSize,
     sellButtonFontColor,
-    licenseFontSize,
     licenseFontColor,
-    learnMoreFontSize
+    showBuyButton,
+    showSellButton,
+    showLicenseText,
+    showLearnMore
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
@@ -382,28 +344,25 @@ function save({
               className: "section-title h1 wow fadeInLeft",
               value: heading,
               style: {
-                fontSize: headingFontSize,
                 color: headingFontColor
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
               class: "bye-sell-button wow fadeInLeft",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: [showBuyButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                 class: "link",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                   tagName: "a",
                   value: buyButtonText,
                   style: {
-                    fontSize: buyButtonFontSize,
                     color: buyButtonFontColor
                   }
                 })
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              }), showSellButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                 class: "link",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                   tagName: "a",
                   value: sellButtonText,
                   style: {
-                    fontSize: sellButtonFontSize,
                     color: sellButtonFontColor
                   }
                 })
@@ -413,24 +372,20 @@ function save({
             class: "video-licensing-wrap__right",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
               class: "licensing-description-and-button",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+              children: [showLicenseText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                 tagName: "h2",
                 className: "licensing-description",
                 value: licenseText,
                 style: {
-                  fontSize: licenseFontSize,
                   color: licenseFontColor
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              }), showLearnMore && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                 class: "sbtn sbtn-arrow-primary",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                   class: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                     tagName: "a",
-                    value: learnMoreText,
-                    style: {
-                      fontSize: learnMoreFontSize
-                    }
+                    value: learnMoreText
                   })
                 })
               })]
@@ -512,7 +467,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-video-licensing","version":"0.1.0","title":"Video Licensing","apiVersion":3,"category":"md-storyful-fse-full","icon":"video-alt3","description":"A block to display video licensing options.","keywords":["video","licensing","storyful"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"heading":{"type":"string","default":""},"buyButtonText":{"type":"string","default":"Buy"},"sellButtonText":{"type":"string","default":"Sell"},"licenseText":{"type":"string","default":""},"learnMoreText":{"type":"string","default":"Learn More"},"headingFontSize":{"type":"string","default":""},"headingFontColor":{"type":"string","default":""},"buyButtonFontSize":{"type":"string","default":""},"buyButtonFontColor":{"type":"string","default":""},"sellButtonFontSize":{"type":"string","default":""},"sellButtonFontColor":{"type":"string","default":""},"licenseFontSize":{"type":"string","default":""},"licenseFontColor":{"type":"string","default":""},"learnMoreFontSize":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-video-licensing","version":"0.1.0","title":"Video Licensing","apiVersion":3,"category":"md-storyful-fse-full","icon":"video-alt3","description":"A block to display video licensing options.","keywords":["video","licensing","storyful"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"heading":{"type":"string","default":""},"buyButtonText":{"type":"string","default":"Buy"},"sellButtonText":{"type":"string","default":"Sell"},"licenseText":{"type":"string","default":""},"learnMoreText":{"type":"string","default":"Learn More"},"headingFontColor":{"type":"string","default":""},"buyButtonFontColor":{"type":"string","default":""},"sellButtonFontColor":{"type":"string","default":""},"licenseFontColor":{"type":"string","default":""},"showBuyButton":{"type":"boolean","default":true},"showSellButton":{"type":"boolean","default":true},"showLicenseText":{"type":"boolean","default":true},"showLearnMore":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

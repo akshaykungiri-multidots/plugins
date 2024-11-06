@@ -43,15 +43,7 @@
       "type": "string",
       "default": ""
     },
-    "headingFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "headingFontColor": {
-      "type": "string",
-      "default": ""
-    },
-    "columnTitleFontSize": {
       "type": "string",
       "default": ""
     },
@@ -59,17 +51,29 @@
       "type": "string",
       "default": ""
     },
-    "columnDescriptionFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "columnDescriptionFontColor": {
       "type": "string",
       "default": ""
     },
-    "buttonFontSize": {
-      "type": "string",
-      "default": ""
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showColumnTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showColumnDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showColumnImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

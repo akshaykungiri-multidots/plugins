@@ -65,5 +65,8 @@
 .storyful-three-col-list .threecol-wrap .threecol-list-items .threecol-list-items__item:last-child {
   border: none;
 }
+.storyful-three-col-list .sbtn-arrow-primary-v2 {
+  margin: 0 auto;
+}
 
 /*# sourceMappingURL=style-index.css.map*/

@@ -60,43 +60,23 @@ function Edit({
     newswire_button_link,
     newswire_theme_style,
     background_color,
-    newswire_title_font_size,
     newswire_title_font_color,
-    newswire_description_font_size,
     newswire_description_font_color,
-    newswire_button_font_size,
     newswire_button_font_color,
-    newswire_left_title_font_size,
     newswire_left_title_font_color,
-    newswire_left_description_font_size,
     newswire_left_description_font_color,
-    newswire_sub_title_font_size,
-    newswire_sub_title_font_color
+    newswire_sub_title_font_color,
+    showNewswireButton,
+    showNewswireBottom,
+    showNewswireLeftDescription
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Block Settings", "md-storyful-fse-full"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Theme Style", "md-storyful-fse-full"),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Block Style", "md-storyful-fse-full"),
           value: newswire_theme_style,
           options: [{
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 1", "md-storyful-fse-full"),
@@ -109,6 +89,37 @@ function Edit({
             newswire_theme_style: value
           }),
           __nextHasNoMarginBottom: true
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Newswire Bottom", "md-storyful-fse-full"),
+          checked: showNewswireBottom,
+          onChange: value => setAttributes({
+            showNewswireBottom: value
+          })
+        }), showNewswireBottom && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "md-newswire-bottom",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Newswire Button", "md-storyful-fse-full"),
+            checked: showNewswireButton,
+            onChange: value => setAttributes({
+              showNewswireButton: value
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Newswire Left Description", "md-storyful-fse-full"),
+            checked: showNewswireLeftDescription,
+            onChange: value => setAttributes({
+              showNewswireLeftDescription: value
+            })
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Settings", "md-storyful-fse-full"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Color", "md-storyful-fse-full")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.GradientPicker, {
           value: null,
           onChange: value => setAttributes({
@@ -128,109 +139,50 @@ function Edit({
             slug: "rastafari"
           }]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography", "md-storyful-fse-full"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Title Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: newswire_title_font_size,
-          fallbackFontSize: newswire_title_font_size,
-          onChange: newFontSize => setAttributes({
-            newswire_title_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Description Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: newswire_description_font_size,
-          fallbackFontSize: newswire_description_font_size,
-          onChange: newFontSize => setAttributes({
-            newswire_description_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Button Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: newswire_button_font_size,
-          fallbackFontSize: newswire_button_font_size,
-          onChange: newFontSize => setAttributes({
-            newswire_button_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Left Title Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: newswire_left_title_font_size,
-          fallbackFontSize: newswire_left_title_font_size,
-          onChange: newFontSize => setAttributes({
-            newswire_left_title_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Left Description Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: newswire_left_description_font_size,
-          fallbackFontSize: newswire_left_description_font_size,
-          onChange: newFontSize => setAttributes({
-            newswire_left_description_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Sub Title Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: newswire_sub_title_font_size,
-          fallbackFontSize: newswire_sub_title_font_size,
-          onChange: newFontSize => setAttributes({
-            newswire_sub_title_font_size: newFontSize
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
         initialOpen: false,
-        colorSettings: [{
-          value: newswire_title_font_color,
-          onChange: newColor => setAttributes({
-            newswire_title_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Title Font Color")
-        }, {
-          value: newswire_description_font_color,
-          onChange: newColor => setAttributes({
-            newswire_description_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Description Font Color")
-        }, {
-          value: newswire_button_font_color,
-          onChange: newColor => setAttributes({
-            newswire_button_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Button Font Color")
-        }, {
-          value: newswire_left_title_font_color,
-          onChange: newColor => setAttributes({
-            newswire_left_title_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Left Title Font Color")
-        }, {
-          value: newswire_left_description_font_color,
-          onChange: newColor => setAttributes({
-            newswire_left_description_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Left Description Font Color")
-        }, {
-          value: newswire_sub_title_font_color,
-          onChange: newColor => setAttributes({
-            newswire_sub_title_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Sub Title Font Color")
-        }]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+          initialOpen: false,
+          colorSettings: [{
+            value: newswire_title_font_color,
+            onChange: newColor => setAttributes({
+              newswire_title_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Title Font Color")
+          }, {
+            value: newswire_description_font_color,
+            onChange: newColor => setAttributes({
+              newswire_description_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Description Font Color")
+          }, {
+            value: newswire_button_font_color,
+            onChange: newColor => setAttributes({
+              newswire_button_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Button Font Color")
+          }, {
+            value: newswire_left_title_font_color,
+            onChange: newColor => setAttributes({
+              newswire_left_title_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Left Title Font Color")
+          }, {
+            value: newswire_left_description_font_color,
+            onChange: newColor => setAttributes({
+              newswire_left_description_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Left Description Font Color")
+          }, {
+            value: newswire_sub_title_font_color,
+            onChange: newColor => setAttributes({
+              newswire_sub_title_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Newswire Sub Title Font Color")
+          }]
+        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
@@ -252,7 +204,6 @@ function Edit({
                 value: newswire_left_title,
                 className: "section-title h1",
                 style: {
-                  fontSize: newswire_left_title_font_size,
                   color: newswire_left_title_font_color
                 },
                 onChange: value => setAttributes({
@@ -263,7 +214,6 @@ function Edit({
                 tagName: "h2",
                 value: newswire_left_description,
                 style: {
-                  fontSize: newswire_left_description_font_size,
                   color: newswire_left_description_font_color
                 },
                 onChange: value => setAttributes({
@@ -279,7 +229,6 @@ function Edit({
                 }),
                 placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Sub Title", "md-storyful-fse-full"),
                 style: {
-                  fontSize: newswire_sub_title_font_size,
                   color: newswire_sub_title_font_color
                 }
               })]
@@ -321,7 +270,7 @@ function Edit({
                 })
               })
             })]
-          }), newswire_theme_style == "style1" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          }), showNewswireBottom && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             class: "newswire-by-storyful-buttom",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               class: "newswire-by-storyful-buttom__grid",
@@ -336,27 +285,25 @@ function Edit({
                     onChange: value => setAttributes({
                       newswire_title: value
                     }),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Title", "md-storyful-fse-full"),
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Left Title", "md-storyful-fse-full"),
                     style: {
-                      fontSize: newswire_title_font_size,
                       color: newswire_title_font_color
                     }
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+                  }), showNewswireLeftDescription && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                     tagName: "p",
                     value: newswire_description,
                     className: "newswire-description",
                     onChange: value => setAttributes({
                       newswire_description: value
                     }),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Description", "md-storyful-fse-full"),
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Left Description", "md-storyful-fse-full"),
                     style: {
-                      fontSize: newswire_description_font_size,
                       color: newswire_description_font_color
                     }
                   })]
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            }), showNewswireButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
               class: "newswire-by-storyful-buttom__contact wow bounceIn",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 class: "circle-button",
@@ -371,7 +318,6 @@ function Edit({
                     }),
                     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Button Text", "md-storyful-fse-full"),
                     style: {
-                      fontSize: newswire_button_font_size,
                       color: newswire_button_font_color
                     }
                   })
@@ -496,18 +442,15 @@ function save({
     newswire_button_link,
     newswire_theme_style,
     background_color,
-    newswire_title_font_size,
     newswire_title_font_color,
-    newswire_description_font_size,
     newswire_description_font_color,
-    newswire_button_font_size,
     newswire_button_font_color,
-    newswire_left_title_font_size,
     newswire_left_title_font_color,
-    newswire_left_description_font_size,
     newswire_left_description_font_color,
-    newswire_sub_title_font_size,
-    newswire_sub_title_font_color
+    newswire_sub_title_font_color,
+    showNewswireButton,
+    showNewswireBottom,
+    showNewswireLeftDescription
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(),
@@ -527,14 +470,12 @@ function save({
               value: newswire_left_title,
               className: "section-title h1",
               style: {
-                fontSize: newswire_left_title_font_size + "px",
                 color: newswire_left_title_font_color
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
               tagName: "h2",
               value: newswire_left_description,
               style: {
-                fontSize: newswire_left_description_font_size + "px",
                 color: newswire_left_description_font_color
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
@@ -542,7 +483,6 @@ function save({
               value: newswire_sub_title,
               className: "newswire-sub-title",
               style: {
-                fontSize: newswire_sub_title_font_size + "px",
                 color: newswire_sub_title_font_color
               }
             })]
@@ -555,7 +495,7 @@ function save({
               })
             })
           })]
-        }), newswire_theme_style == 'style1' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), showNewswireBottom && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           class: "newswire-by-storyful-buttom",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             class: "newswire-by-storyful-buttom__grid",
@@ -568,21 +508,19 @@ function save({
                   value: newswire_title,
                   className: "newswire-sub-title",
                   style: {
-                    fontSize: newswire_title_font_size + "px",
                     color: newswire_title_font_color
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                }), showNewswireLeftDescription && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                   tagName: "p",
                   value: newswire_description,
                   className: "newswire-description",
                   style: {
-                    fontSize: newswire_description_font_size + "px",
                     color: newswire_description_font_color
                   }
                 })]
               })
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          }), showNewswireButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             class: "newswire-by-storyful-buttom__contact wow bounceIn",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               class: "circle-button",
@@ -593,7 +531,6 @@ function save({
                   value: newswire_button_link,
                   className: "btn btn-primary",
                   style: {
-                    fontSize: newswire_button_font_size + "px",
                     color: newswire_button_font_color
                   }
                 })
@@ -676,7 +613,7 @@ module.exports = window["wp"]["i18n"];
   \*******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-newswire","version":"0.1.0","title":"MD Newswire","apiVersion":3,"category":"md-storyful-fse-full","icon":"align-left","description":"A Newswire block with a left and right column.","keywords":["md-storyful-fse-full","md-newswire"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"newswire_title":{"type":"string","default":""},"newswire_description":{"type":"string","default":""},"newswire_button_link":{"type":"string","default":""},"newswire_left_title":{"type":"string","default":""},"newswire_left_description":{"type":"string","default":""},"newswire_sub_title":{"type":"string","default":""},"newswire_right_image":{"type":"string","default":""},"newswire_theme_style":{"type":"string","default":"style1"},"background_color":{"type":"string","default":""},"newswire_title_font_size":{"type":"string","default":""},"newswire_title_font_color":{"type":"string","default":""},"newswire_description_font_size":{"type":"string","default":""},"newswire_description_font_color":{"type":"string","default":""},"newswire_button_font_size":{"type":"string","default":""},"newswire_button_font_color":{"type":"string","default":""},"newswire_left_title_font_size":{"type":"string","default":""},"newswire_left_title_font_color":{"type":"string","default":""},"newswire_left_description_font_size":{"type":"string","default":""},"newswire_left_description_font_color":{"type":"string","default":""},"newswire_sub_title_font_size":{"type":"string","default":""},"newswire_sub_title_font_color":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-newswire","version":"0.1.0","title":"MD Newswire","apiVersion":3,"category":"md-storyful-fse-full","icon":"align-left","description":"A Newswire block with a left and right column.","keywords":["md-storyful-fse-full","md-newswire"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"newswire_title":{"type":"string","default":""},"newswire_description":{"type":"string","default":""},"newswire_button_link":{"type":"string","default":""},"newswire_left_title":{"type":"string","default":""},"newswire_left_description":{"type":"string","default":""},"newswire_sub_title":{"type":"string","default":""},"newswire_right_image":{"type":"string","default":""},"newswire_theme_style":{"type":"string","default":"style1"},"background_color":{"type":"string","default":""},"newswire_title_font_color":{"type":"string","default":""},"newswire_description_font_color":{"type":"string","default":""},"newswire_button_font_color":{"type":"string","default":""},"newswire_left_title_font_color":{"type":"string","default":""},"newswire_left_description_font_color":{"type":"string","default":""},"newswire_sub_title_font_color":{"type":"string","default":""},"showNewswireBottom":{"type":"boolean","default":true},"showNewswireButton":{"type":"boolean","default":true},"showNewswireLeftDescription":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

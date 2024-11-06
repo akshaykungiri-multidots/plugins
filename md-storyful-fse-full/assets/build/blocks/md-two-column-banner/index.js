@@ -58,118 +58,93 @@ function Edit({
     section_right_description,
     section_right_button_link,
     section_right_image,
-    section_left_title_font_size,
     section_left_title_font_color,
-    section_left_description_font_size,
     section_left_description_font_color,
-    section_left_button_font_size,
-    section_right_title_font_size,
     section_right_title_font_color,
-    section_right_description_font_size,
     section_right_description_font_color,
-    section_right_button_font_size
+    show_section_left_title,
+    show_section_left_description,
+    show_section_left_button,
+    show_section_right_title,
+    show_section_right_description,
+    show_section_right_button
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
       className: "md_two_column_banner"
     }),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography", "md-storyful-fse-full"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Title Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: section_left_title_font_size,
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Left Title", "md-storyful-fse-full"),
+          checked: show_section_left_title,
           onChange: value => setAttributes({
-            section_left_title_font_size: value
+            show_section_left_title: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Description Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: section_left_description_font_size,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Left Description", "md-storyful-fse-full"),
+          checked: show_section_left_description,
           onChange: value => setAttributes({
-            section_left_description_font_size: value
+            show_section_left_description: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Button Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: section_left_button_font_size,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Left Button", "md-storyful-fse-full"),
+          checked: show_section_left_button,
           onChange: value => setAttributes({
-            section_left_button_font_size: value
+            show_section_left_button: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Title Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: section_right_title_font_size,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Right Title", "md-storyful-fse-full"),
+          checked: show_section_right_title,
           onChange: value => setAttributes({
-            section_right_title_font_size: value
+            show_section_right_title: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Description Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: section_right_description_font_size,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Right Description", "md-storyful-fse-full"),
+          checked: show_section_right_description,
           onChange: value => setAttributes({
-            section_right_description_font_size: value
+            show_section_right_description: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Button Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: section_right_button_font_size,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Right Button", "md-storyful-fse-full"),
+          checked: show_section_right_button,
           onChange: value => setAttributes({
-            section_right_button_font_size: value
+            show_section_right_button: value
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
         initialOpen: false,
-        colorSettings: [{
-          value: section_left_title_font_color,
-          onChange: value => setAttributes({
-            section_left_title_font_color: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Title Font Color")
-        }, {
-          value: section_left_description_font_color,
-          onChange: value => setAttributes({
-            section_left_description_font_color: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Description Font Color")
-        }, {
-          value: section_right_title_font_color,
-          onChange: value => setAttributes({
-            section_right_title_font_color: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Title Font Color")
-        }, {
-          value: section_right_description_font_color,
-          onChange: value => setAttributes({
-            section_right_description_font_color: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Description Font Color")
-        }]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+          initialOpen: false,
+          colorSettings: [{
+            value: section_left_title_font_color,
+            onChange: value => setAttributes({
+              section_left_title_font_color: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Title Font Color")
+          }, {
+            value: section_left_description_font_color,
+            onChange: value => setAttributes({
+              section_left_description_font_color: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Description Font Color")
+          }, {
+            value: section_right_title_font_color,
+            onChange: value => setAttributes({
+              section_right_title_font_color: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Title Font Color")
+          }, {
+            value: section_right_description_font_color,
+            onChange: value => setAttributes({
+              section_right_description_font_color: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Description Font Color")
+          }]
+        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: "cta-section",
@@ -181,7 +156,7 @@ function Edit({
             className: "intelligence-section",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "intelligence-section__details wow fadeInLeft",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              children: [show_section_left_title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "h2",
                 className: "section-title h1 with-darkbg",
                 value: section_left_title,
@@ -190,10 +165,9 @@ function Edit({
                 }),
                 placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title...", "md-blocks"),
                 style: {
-                  fontSize: section_left_title_font_size,
                   color: section_left_title_font_color
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              }), show_section_left_description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "p",
                 className: "cta-section-desc",
                 value: section_left_description,
@@ -202,10 +176,9 @@ function Edit({
                 }),
                 placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description...", "md-blocks"),
                 style: {
-                  fontSize: section_left_description_font_size,
                   color: section_left_description_font_color
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              }), show_section_left_button && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 className: "sbtn sbtn-arrow-primary-v2",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                   className: "btn-text",
@@ -215,10 +188,7 @@ function Edit({
                     onChange: value => setAttributes({
                       section_left_button_link: value
                     }),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text...", "md-blocks"),
-                    style: {
-                      fontSize: section_left_button_font_size
-                    }
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text...", "md-blocks")
                   })
                 })
               })]
@@ -270,7 +240,7 @@ function Edit({
             className: "cta-news-section",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "cta-news-section__details wow fadeInLeft",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              children: [show_section_right_title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "h2",
                 className: "section-title h1",
                 value: section_right_title,
@@ -279,10 +249,9 @@ function Edit({
                 }),
                 placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title...", "md-blocks"),
                 style: {
-                  fontSize: section_right_title_font_size,
                   color: section_right_title_font_color
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              }), show_section_right_description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "p",
                 className: "cta-section-desc",
                 value: section_right_description,
@@ -291,10 +260,9 @@ function Edit({
                 }),
                 placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description...", "md-blocks"),
                 style: {
-                  fontSize: section_right_description_font_size,
                   color: section_right_description_font_color
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              }), show_section_right_button && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 className: "sbtn sbtn-arrow-primary-v2",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                   className: "btn-text",
@@ -304,10 +272,7 @@ function Edit({
                     onChange: value => setAttributes({
                       section_right_button_link: value
                     }),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text...", "md-blocks"),
-                    style: {
-                      fontSize: section_right_button_font_size
-                    }
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text...", "md-blocks")
                   })
                 })
               })]
@@ -469,16 +434,16 @@ function save({
     section_right_description,
     section_right_button_link,
     section_right_image,
-    section_left_title_font_size,
     section_left_title_font_color,
-    section_left_description_font_size,
     section_left_description_font_color,
-    section_left_button_font_size,
-    section_right_title_font_size,
     section_right_title_font_color,
-    section_right_description_font_size,
     section_right_description_font_color,
-    section_right_button_font_size
+    show_section_left_title,
+    show_section_left_description,
+    show_section_left_button,
+    show_section_right_title,
+    show_section_right_description,
+    show_section_right_button
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
@@ -499,7 +464,6 @@ function save({
                 className: "section-title h1 with-darkbg",
                 value: section_left_title,
                 style: {
-                  fontSize: section_left_title_font_size,
                   color: section_left_title_font_color
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
@@ -507,7 +471,6 @@ function save({
                 className: "cta-section-desc",
                 value: section_left_description,
                 style: {
-                  fontSize: section_left_description_font_size,
                   color: section_left_description_font_color
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -516,10 +479,7 @@ function save({
                   className: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                     tagName: "a",
-                    value: section_left_button_link,
-                    style: {
-                      fontSize: section_left_button_font_size
-                    }
+                    value: section_left_button_link
                   })
                 })
               })]
@@ -547,7 +507,6 @@ function save({
                 className: "section-title h1",
                 value: section_right_title,
                 style: {
-                  fontSize: section_right_title_font_size,
                   color: section_right_title_font_color
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
@@ -555,7 +514,6 @@ function save({
                 className: "cta-section-desc",
                 value: section_right_description,
                 style: {
-                  fontSize: section_right_description_font_size,
                   color: section_right_description_font_color
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -564,10 +522,7 @@ function save({
                   className: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                     tagName: "a",
-                    value: section_right_button_link,
-                    style: {
-                      fontSize: section_right_button_font_size
-                    }
+                    value: section_right_button_link
                   })
                 })
               })]
@@ -660,7 +615,7 @@ module.exports = window["wp"]["i18n"];
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-two-column-banner","version":"0.1.0","title":"MD Two Column Banner","apiVersion":3,"category":"md-storyful-fse-full","icon":"layout","description":"A Two Column Banner block for Storyful FSE","keywords":["md-storyful-fse-full","md-two-column-banner"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"section_left_strong_title":{"type":"string","default":""},"section_left_title":{"type":"string","default":""},"section_left_description":{"type":"string","default":""},"section_left_button_link":{"type":"string","default":""},"section_left_image":{"type":"string","default":""},"section_right_title":{"type":"string","default":""},"section_right_description":{"type":"string","default":""},"section_right_button_link":{"type":"string","default":""},"section_right_image":{"type":"string","default":""},"section_left_strong_title_font_size":{"type":"string","default":""},"section_left_strong_title_font_color":{"type":"string","default":""},"section_left_title_font_size":{"type":"string","default":""},"section_left_title_font_color":{"type":"string","default":""},"section_left_description_font_size":{"type":"string","default":""},"section_left_description_font_color":{"type":"string","default":""},"section_left_button_font_size":{"type":"string","default":""},"section_right_title_font_size":{"type":"string","default":""},"section_right_title_font_color":{"type":"string","default":""},"section_right_description_font_size":{"type":"string","default":""},"section_right_description_font_color":{"type":"string","default":""},"section_right_button_font_size":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-two-column-banner","version":"0.1.0","title":"MD Two Column Banner","apiVersion":3,"category":"md-storyful-fse-full","icon":"layout","description":"A Two Column Banner block for Storyful FSE","keywords":["md-storyful-fse-full","md-two-column-banner"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"section_left_strong_title":{"type":"string","default":""},"section_left_title":{"type":"string","default":""},"section_left_description":{"type":"string","default":""},"section_left_button_link":{"type":"string","default":""},"section_left_image":{"type":"string","default":""},"section_right_title":{"type":"string","default":""},"section_right_description":{"type":"string","default":""},"section_right_button_link":{"type":"string","default":""},"section_right_image":{"type":"string","default":""},"section_left_strong_title_font_color":{"type":"string","default":""},"section_left_title_font_color":{"type":"string","default":""},"section_left_description_font_color":{"type":"string","default":""},"section_right_title_font_color":{"type":"string","default":""},"section_right_description_font_color":{"type":"string","default":""},"show_section_left_title":{"type":"boolean","default":true},"show_section_left_description":{"type":"boolean","default":true},"show_section_left_button":{"type":"boolean","default":true},"show_section_right_title":{"type":"boolean","default":true},"show_section_right_description":{"type":"boolean","default":true},"show_section_right_button":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

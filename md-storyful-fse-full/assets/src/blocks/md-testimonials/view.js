@@ -1,14 +1,14 @@
 /**
  * File Sample-dynamic.js
- * 
+ *
  */
 (function ($) {
-    "use strict";
+  "use strict";
 
-  	$(document).ready(function () {
-      // Slick slider for client-testimonials
-      setTimeout(function() {
-      $('.client-testimonials').slick({
+  $(document).ready(function () {
+    // Slick slider for client-testimonials
+    setTimeout(function () {
+      $(".client-testimonials").slick({
         dots: false,
         arrows: true,
         infinite: true,
@@ -19,6 +19,5 @@
         autoplaySpeed: 5000,
       });
     }, 1000);
-    });
-
-})( jQuery );
+  });
+})(jQuery);

@@ -1106,6 +1106,10 @@
   opacity: 1;
   visibility: visible;
 }
+.image-preview img {
+  width: 100%;
+  height: auto;
+}
 
 .add-item-wrap {
   text-align: center;
@@ -1682,6 +1686,8 @@
   background-color: #fffdfa;
   padding: 10px 20px 10px 50px;
   transition: all 0.3s ease;
+  border: none;
+  align-self: flex-start;
 }
 
 .sbtn, .sbtn .btn-text, .sbtn a {
@@ -1700,6 +1706,7 @@
 
 .sbtn.sbtn-arrow-secondary {
   border: 1px solid #11152c;
+  line-height: 1.2;
 }
 
 .sbtn.sbtn-arrow-secondary .btn-text, .sbtn.sbtn-arrow-secondary a {
@@ -1722,6 +1729,7 @@
 .sbtn.sbtn-arrow-secondary:hover {
   background-color: #ff4c15;
   border: 1px solid #ff4c15;
+  line-height: 1.2;
 }
 
 .sbtn.sbtn-arrow-secondary:hover:after {
@@ -1736,6 +1744,7 @@
 .sbtn.sbtn-arrow-primary {
   background-color: #ff4c15;
   border: 1px solid #ff4c15;
+  line-height: 1.2;
 }
 
 .sbtn.sbtn-arrow-primary .btn-text, .sbtn.sbtn-arrow-primary a {
@@ -1826,7 +1835,7 @@
   z-index: 1;
 }
 
-.h1, h1 {
+.h1 {
   font-size: 75px;
   font-weight: 700;
   line-height: 82px;
@@ -1834,41 +1843,57 @@
   font-family: arial, helvetica, sans-serif;
 }
 
-.h1 strong, h1 strong {
+.h1 strong {
   color: #fffdfa;
   -webkit-text-stroke: 1px #11152c;
   caret-color: #11152c;
 }
 
-.h1.with-darkbg, h1.with-darkbg {
+.h1.with-darkbg {
   color: #fffdfa;
 }
 
-.h1.with-darkbg strong, h1.with-darkbg strong {
+.h1.with-darkbg strong {
   color: transparent;
   -webkit-text-stroke: 1px #fffdfa;
   caret-color: #fffdfa;
 }
 
-.h2, h2 {
+.h2 {
   font-size: 38px;
   font-family: PlayfairDisplay-SemiBold;
   line-height: 50px;
   font-weight: 600;
 }
 
-.h2, .h3, h2, h3 {
+.h2, .h3 {
   letter-spacing: -0.01em;
 }
 
-.h3, h3 {
+.h3 {
   font-size: 28px;
   font-weight: 700;
   line-height: 36px;
 }
 
-.btn a, .h3, h3 {
+.btn a, .h3 {
   font-family: arial, helvetica, sans-serif;
+}
+
+.storyful-video-slider .wrapper__box-inner {
+  width: 50%;
+  margin: 0 auto;
+}
+.storyful-video-slider .wrapper__box-inner video {
+  width: 100%;
+  height: auto;
+}
+.storyful-video-slider .slide-buttons {
+  text-align: center;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 /* editor inspector */

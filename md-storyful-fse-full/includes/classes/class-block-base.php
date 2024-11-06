@@ -60,4 +60,35 @@ abstract class Block_Base {
 			);
 		}
 	}
+
+	/**
+	 * Get style string from style array.
+	 *
+	 * @param array $style_array The style array.
+	 * @return string The style string.
+	 */
+	public function get_style_string( $style_array, $echo = false ) {
+		if ( ! is_array( $style_array ) || empty( $style_array ) ) {
+			return '';
+		}
+
+		$output = (
+			implode(
+				';',
+				array_map(
+					function ( $k, $v ) {
+						return $k . ':' . $v;
+					},
+					array_keys( $style_array ),
+					$style_array
+				)
+			)
+		);
+
+		if ( $echo ) {
+			echo esc_attr( $output );
+		} else {
+			return esc_attr( $output );
+		}
+	}
 }

@@ -19,7 +19,12 @@ import {
   PanelColorSettings,
 } from "@wordpress/block-editor";
 
-import { PanelBody, Button, FontSizePicker } from "@wordpress/components";
+import {
+  PanelBody,
+  Button,
+  Tooltip,
+  ToggleControl,
+} from "@wordpress/components";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -38,37 +43,15 @@ export default function Edit({ attributes, setAttributes }) {
     backgroundImage,
     columnList,
     buttonText,
-    headingFontSize,
     headingFontColor,
-    columnTitleFontSize,
     columnTitleFontColor,
-    columnDescriptionFontSize,
     columnDescriptionFontColor,
-    buttonFontSize,
+    showHeading,
+    showColumnTitle,
+    showColumnDescription,
+    showColumnImage,
+    showButton,
   } = attributes;
-
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -89,11 +72,14 @@ export default function Edit({ attributes, setAttributes }) {
     updatedStaticPostObj[index][key] = value;
     setAttributes({ columnList: updatedStaticPostObj });
   };
-  const removeStaticPostObj = (index) => {
-    const updatedStaticPostObj = [...columnList];
-    updatedStaticPostObj.splice(index, 1);
-    setAttributes({ columnList: updatedStaticPostObj });
-    setCurrentSlide(-1);
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...columnList];
+    arrayCopy[oldIndex] = columnList[newIndex];
+    arrayCopy[newIndex] = columnList[oldIndex];
+
+    setAttributes({
+      columnList: arrayCopy,
+    });
   };
 
   return (
@@ -103,132 +89,222 @@ export default function Edit({ attributes, setAttributes }) {
       })}
     >
       <InspectorControls>
-        <PanelBody title={__("Block Settings", "md-storyful-fse-full")}>
-          <label>{__("Background Image")}</label>
-          <MediaUpload
-            title={__("Background Image")}
-            onSelect={(media) =>
-              setAttributes({
-                backgroundImage: media.url,
-              })
-            }
-            multiple={false}
-            render={({ open }) => (
-              <>
-                <Button className="md_bg_image_upload" onClick={open}>
-                  {backgroundImage == "" ? (
-                    <i className="dashicons dashicons-format-image"> </i>
-                  ) : (
-                    <img src={backgroundImage} alt="background" />
+        <PanelBody
+          title={__("Background Settings", "md-prime")}
+        >
+          <div className="setting-row">
+            <label htmlFor="background-image">
+              {__("Background Image", "md-prime")}
+            </label>
+            <div>
+              {!backgroundImage ? (
+                <MediaUpload
+                  onSelect={(selectedImage) => {
+                    setAttributes({
+                      backgroundImage: selectedImage.url,
+                    });
+                  }}
+                  allowedTypes={["image"]}
+                  value={backgroundImage}
+                  render={({ open }) => (
+                    <Button onClick={open} className="button button-large">
+                      {__("Upload Image", "md-prime")}
+                    </Button>
                   )}
-                </Button>
-              </>
-            )}
-          />
+                />
+              ) : (
+                <>
+                  <div className="image-preview">
+                    <img src={backgroundImage} alt="Background-image-preview" />
+                  </div>
+                  <Button
+                    onClick={() => {
+                      setAttributes({
+                        backgroundImage: "",
+                      });
+                    }}
+                    className="is-link is-destructive"
+                  >
+                    {__("Remove Image", "md-prime")}
+                  </Button>
+                </>
+              )}
+            </div>
+          </div>
         </PanelBody>
-
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Heading Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={headingFontSize}
-            fallbackFontSize={headingFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ headingFontSize: newFontSize })
-            }
-          />
-          <label> {__("Column Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={columnTitleFontSize}
-            fallbackFontSize={columnTitleFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ columnTitleFontSize: newFontSize })
-            }
-          />
-          <label> {__("Column Description Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={columnDescriptionFontSize}
-            fallbackFontSize={columnDescriptionFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ columnDescriptionFontSize: newFontSize })
-            }
-          />
-          <label> {__("Button Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={buttonFontSize}
-            fallbackFontSize={buttonFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ buttonFontSize: newFontSize })
-            }
-          />
-        </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
+        <PanelBody
+          title={__("Toggle Settings", "md-storyful-fse-full")}
           initialOpen={false}
-          colorSettings={[
-            {
-              value: headingFontColor,
-              onChange: (newColor) =>
-                setAttributes({ headingFontColor: newColor }),
-              label: __("Heading Font Color"),
-            },
-            {
-              value: columnTitleFontColor,
-              onChange: (newColor) =>
-                setAttributes({ columnTitleFontColor: newColor }),
-              label: __("Column Title Font Color"),
-            },
-            {
-              value: columnDescriptionFontColor,
-              onChange: (newColor) =>
-                setAttributes({ columnDescriptionFontColor: newColor }),
-              label: __("Column Description Font Color"),
-            },
-          ]}
-        />
+        >
+          <ToggleControl
+            label={__("Show Heading", "md-storyful-fse-full")}
+            checked={showHeading}
+            onChange={(value) => setAttributes({ showHeading: value })}
+          />
+          <ToggleControl
+            label={__("Show Column Title", "md-storyful-fse-full")}
+            checked={showColumnTitle}
+            onChange={(value) => setAttributes({ showColumnTitle: value })}
+          />
+          <ToggleControl
+            label={__("Show Column Description", "md-storyful-fse-full")}
+            checked={showColumnDescription}
+            onChange={(value) =>
+              setAttributes({ showColumnDescription: value })
+            }
+          />
+          <ToggleControl
+            label={__("Show Column Image", "md-storyful-fse-full")}
+            checked={showColumnImage}
+            onChange={(value) => setAttributes({ showColumnImage: value })}
+          />
+          <ToggleControl
+            label={__("Show Button", "md-storyful-fse-full")}
+            checked={showButton}
+            onChange={(value) => setAttributes({ showButton: value })}
+          />
+        </PanelBody>
+        <PanelBody
+          title={__("Color Settings", "md-storyful-fse-full")}
+          initialOpen={false}
+        >
+          <PanelColorSettings
+            title={__("Typography Colors", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: headingFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ headingFontColor: newColor }),
+                label: __("Heading Font Color"),
+              },
+              {
+                value: columnTitleFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ columnTitleFontColor: newColor }),
+                label: __("Column Title Font Color"),
+              },
+              {
+                value: columnDescriptionFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ columnDescriptionFontColor: newColor }),
+                label: __("Column Description Font Color"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <section
         class="storyful-three-col-list"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div class="container">
-          <div class="storyful-three-col-list__title">
-            <RichText
-              tagName="h2"
-              value={heading}
-              onChange={(value) => setAttributes({ heading: value })}
-              placeholder={__("Enter Title")}
-              style={{
-                fontSize: headingFontSize,
-                color: headingFontColor,
-              }}
-            />
-          </div>
+          {showHeading && (
+            <div class="storyful-three-col-list__title">
+              <RichText
+                tagName="h2"
+                value={heading}
+                onChange={(value) => setAttributes({ heading: value })}
+                placeholder={__("Enter Title")}
+                style={{
+                  color: headingFontColor,
+                }}
+              />
+            </div>
+          )}
           <div class="threecol-wrap">
             <div class="threecol-list-items">
               {columnList &&
                 columnList.map((postObj, index) => (
-                  <div class="threecol-list-items__item">
-                    <div className="item-action-wrap show-items-hover small-icons">
+                  <div className="threecol-list-items__item stats-block-bottom__item fadeInUp show-items-hover-wrap">
+                    <div className="item-action-wrap show-items-hover pos-abs">
                       <div className="move-item">
-                        {/* <span className="dashicons dashicons-arrow-right-alt move-down"></span> */}
-                        <span
-                          onClick={() => setCurrentSlide(index)}
-                          className="move-down dashicons dashicons-admin-generic"
-                        ></span>
+                        {0 < index && (
+                          <Tooltip text={__("Move Left", "md-prime")}>
+                            <span
+                              className="dashicons dashicons-arrow-left-alt move-left"
+                              onClick={() => moveItem(index, index - 1)}
+                              onKeyDown={(event) => {
+                                if (
+                                  event.key === "Enter" ||
+                                  event.key === " "
+                                ) {
+                                  moveItem(index, index - 1);
+                                }
+                              }}
+                              role="button"
+                              tabIndex={0}
+                              aria-label="Move item left"
+                            ></span>
+                          </Tooltip>
+                        )}
+                        {index + 1 < columnList.length && (
+                          <Tooltip text={__("Move Right", "md-prime")}>
+                            <span
+                              className="dashicons dashicons-arrow-right-alt move-right"
+                              onClick={() => moveItem(index, index + 1)}
+                              tabIndex={0}
+                              onKeyDown={(e) => {
+                                if (e.key === "Enter" || e.key === " ") {
+                                  moveItem(index, index + 1);
+                                }
+                              }}
+                              role="button"
+                              aria-label="Move item right"
+                            ></span>
+                          </Tooltip>
+                        )}
                       </div>
-                      <i
-                        onClick={() => removeStaticPostObj(index)}
-                        className="remove-item dashicons dashicons-no-alt"
-                      ></i>
+                      {1 < columnList.length && (
+                        <Tooltip text={__("Remove Item", "md-prime")}>
+                          <i
+                            className="remove-item dashicons dashicons-no-alt"
+                            onClick={() => {
+                              const toDelete =
+                                // eslint-disable-next-line no-alert
+                                confirm(
+                                  __(
+                                    "Are you sure you want to delete this item?",
+                                    "md-prime"
+                                  )
+                                );
+                              if (toDelete) {
+                                const updatedArray = columnList.filter(
+                                  (item, itemIndex) => itemIndex !== index
+                                );
+                                setAttributes({
+                                  columnList: updatedArray,
+                                });
+                              }
+                            }}
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                const toDelete =
+                                  // eslint-disable-next-line no-alert
+                                  confirm(
+                                    __(
+                                      "Are you sure you want to delete this item?",
+                                      "md-prime"
+                                    )
+                                  );
+                                if (toDelete) {
+                                  const updatedArray = columnList.filter(
+                                    (item, itemIndex) => itemIndex !== index
+                                  );
+                                  setAttributes({
+                                    columnList: updatedArray,
+                                  });
+                                }
+                              }
+                            }}
+                            role="button"
+                            aria-label="Remove item"
+                          ></i>
+                        </Tooltip>
+                      )}
                     </div>
+                    {showColumnImage && (
                     <div class="column-item-img">
                       <MediaUpload
                         title={__("Image")}
@@ -252,32 +328,35 @@ export default function Edit({ attributes, setAttributes }) {
                         )}
                       />
                     </div>
-                    <RichText
-                      tagName="h3"
-                      className="column-item-title"
-                      value={postObj.title}
-                      onChange={(value) =>
-                        updateStaticPostObj(index, "title", value)
-                      }
-                      placeholder={__("Enter Title")}
-                      style={{
-                        fontSize: columnTitleFontSize,
-                        color: columnTitleFontColor,
-                      }}
-                    />
-                    <RichText
-                      tagName="p"
-                      className="column-item-desc"
-                      value={postObj.description}
-                      onChange={(value) =>
-                        updateStaticPostObj(index, "description", value)
-                      }
-                      placeholder={__("Enter Description")}
-                      style={{
-                        fontSize: columnDescriptionFontSize,
-                        color: columnDescriptionFontColor,
-                      }}
-                    />
+                    )}
+                    {showColumnTitle && (
+                      <RichText
+                        tagName="h3"
+                        className="column-item-title"
+                        value={postObj.title}
+                        onChange={(value) =>
+                          updateStaticPostObj(index, "title", value)
+                        }
+                        placeholder={__("Enter Title")}
+                        style={{
+                          color: columnTitleFontColor,
+                        }}
+                      />
+                    )}
+                    {showColumnDescription && (
+                      <RichText
+                        tagName="p"
+                        className="column-item-desc"
+                        value={postObj.description}
+                        onChange={(value) =>
+                          updateStaticPostObj(index, "description", value)
+                        }
+                        placeholder={__("Enter Description")}
+                        style={{
+                          color: columnDescriptionFontColor,
+                        }}
+                      />
+                    )}
                   </div>
                 ))}
               <div className="add-item-wrap">
@@ -286,20 +365,19 @@ export default function Edit({ attributes, setAttributes }) {
                 </Button>
               </div>
             </div>
-            <div class="sbtn sbtn-arrow-primary-v2 wow fadeInLeft">
-              <div class="storyful-three-col-list__button">
-                <RichText
-                  tagName="a"
-                  value={buttonText}
-                  onChange={(value) => setAttributes({ buttonText: value })}
-                  placeholder={__("Enter Button Text")}
-                  className="btn btn-primary"
-                  style={{
-                    fontSize: buttonFontSize,
-                  }}
-                />
+            {showButton && (
+              <div class="sbtn sbtn-arrow-primary-v2 wow fadeInLeft">
+                <div class="storyful-three-col-list__button">
+                  <RichText
+                    tagName="a"
+                    value={buttonText}
+                    onChange={(value) => setAttributes({ buttonText: value })}
+                    placeholder={__("Enter Button Text")}
+                    className="btn btn-primary"
+                  />
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </section>

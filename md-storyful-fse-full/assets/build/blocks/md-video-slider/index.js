@@ -88,11 +88,17 @@ function Edit({
   const addStaticPostObj = () => {
     const staticPostObj = [...slideItems, {
       id: slideItems.length + 1,
-      videoURL: ""
+      mediaurl: "",
+      youtubeurl: "",
+      videotype: "media-upload",
+      media: "",
+      mediaId: "",
+      mediaAlt: ""
     }];
     setAttributes({
       slideItems: staticPostObj
     });
+    setCurrentSlide(staticPostObj.length - 1);
   };
   const updateStaticPostObj = (index, key, value) => {
     const updatedStaticPostObj = [...slideItems];
@@ -111,8 +117,8 @@ function Edit({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("General Settings", "md-prime"),
         initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
@@ -158,23 +164,140 @@ function Edit({
             slideSlidesToScroll
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Slide Items", "md-prime"),
-        initialOpen: false,
-        children: [slideItems && slideItems.map((postObj, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
-          class: "threecol-list-items__item",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Video URL")
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("input", {
-            type: "text",
-            value: postObj.videoURL,
-            onChange: e => updateStaticPostObj(index, "videoURL", e.target.value)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-            variant: "danger",
-            onClick: () => removeStaticPostObj(index),
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Slide")
-          })]
-        })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "storyful-video-slider video-section",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "video-container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "video-wrapper",
+          children: currentSlide > -1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "wrapper__item mdprime-sidebar show-items-hover-wrap",
+            children: [slideItems.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              className: `item-action-wrap show-items-hover`,
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Item", "md-prime"),
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
+                  className: "remove-item dashicons dashicons-no-alt",
+                  role: "button",
+                  tabIndex: 0,
+                  onClick: () => {
+                    // eslint-disable-next-line no-alert
+                    const toDelete = confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Are you sure you want to delete this item?", "md-prime"));
+                    if (toDelete) {
+                      removeStaticPostObj(currentSlide);
+                    }
+                  },
+                  onKeyDown: e => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      // eslint-disable-next-line no-alert
+                      const toDelete = confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Are you sure you want to delete this item?", "md-prime"));
+                      if (toDelete) {
+                        removeStaticPostObj(currentSlide);
+                      }
+                    }
+                  },
+                  "aria-label": "Remove item"
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+              className: "wrapper__box-inner",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                className: "video-details-wrapper",
+                style: {
+                  textAlign: "center"
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "video-data-edit",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+                    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Select Video Type", "storyful"),
+                    value: slideItems[currentSlide].videotype,
+                    options: [{
+                      label: "Media Upload Video",
+                      value: "media-upload"
+                    }, {
+                      label: "Youtube Video",
+                      value: "youtube"
+                    }],
+                    onChange: videotype => {
+                      updateStaticPostObj(currentSlide, "videotype", videotype);
+                    }
+                  }), slideItems[currentSlide].videotype === "youtube" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+                      placeholder: "Enter youtube video URL",
+                      value: slideItems[currentSlide].youtubeurl,
+                      className: "video-item-url",
+                      onChange: youtubeurl => {
+                        updateStaticPostObj(currentSlide, "youtubeurl", youtubeurl);
+                      }
+                    }), slideItems[currentSlide].youtubeurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("iframe", {
+                      src: slideItems[currentSlide].youtubeurl.replace("watch?v=", "embed/") + "?controls=0",
+                      "data-src": slideItems[currentSlide].youtubeurl + "?enablejsapi=1&controls=0&rel=0",
+                      title: "video"
+                    })]
+                  })]
+                }), slideItems[currentSlide].videotype === "media-upload" && slideItems[currentSlide].mediaurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                  className: "image-preview image-controle-visible-hover",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("video", {
+                    autoPlay: "",
+                    muted: "",
+                    loop: "",
+                    className: "self-media",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("source", {
+                      src: slideItems[currentSlide].mediaurl,
+                      type: "video/mp4"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                    className: "item-action-wrap image-controls small-icons icon-center-fixed",
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+                      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Video"),
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
+                        className: "dashicons dashicons-no-alt remove-image",
+                        role: "button",
+                        tabIndex: 0,
+                        onClick: () => {
+                          updateStaticPostObj(currentSlide, "mediaurl", "");
+                        },
+                        onKeyDown: e => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            updateStaticPostObj(currentSlide, "mediaurl", "");
+                          }
+                        },
+                        "aria-label": "Remove image"
+                      })
+                    })
+                  })]
+                }), slideItems[currentSlide].videotype === "media-upload" && !slideItems[currentSlide].mediaurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+                    onSelect: newmedia => {
+                      updateStaticPostObj(currentSlide, "mediaurl", newmedia.url);
+                    },
+                    allowedTypes: ["video"],
+                    value: slideItems[currentSlide].mediaurl,
+                    render: ({
+                      open
+                    }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+                      onClick: open,
+                      className: "components-button button button-large",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
+                        className: "upload"
+                      }), " Upload video"]
+                    })
+                  })
+                })]
+              })
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "slide-buttons",
+          children: slideItems.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
+            className: `slide-button ${currentSlide === index ? "active" : ""}`,
+            onClick: () => setCurrentSlide(index),
+            children: index + 1
+          }, index))
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "add-item-wrap",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
             variant: "primary",
@@ -182,19 +305,7 @@ function Edit({
             children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add New Slide")
           })
         })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_1___default()), {
-      block: _block_json__WEBPACK_IMPORTED_MODULE_4__.name,
-      className: className,
-      attributes: {
-        autoplay,
-        arrows,
-        dots,
-        slideInfinite,
-        slideSlidesToShow,
-        slideSlidesToScroll,
-        slideItems
-      }
+      })
     })]
   });
 }
@@ -381,7 +492,7 @@ module.exports = window["wp"]["serverSideRender"];
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-video-slider","version":"0.1.0","title":"MD Video Slider","apiVersion":3,"category":"md-storyful-fse-full","icon":"slides","description":"A Video Slider block for Storyful FSE","keywords":["md-storyful-fse-full","md-video-slider"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"autoplay":{"type":"boolean","default":false},"arrows":{"type":"boolean","default":true},"dots":{"type":"boolean","default":false},"slideInfinite":{"type":"boolean","default":false},"slideSlidesToShow":{"type":"number","default":1},"slideSlidesToScroll":{"type":"number","default":1},"slideItems":{"type":"array","default":[{"id":1,"videoURL":""}]}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-video-slider","version":"0.1.0","title":"MD Video Slider","apiVersion":3,"category":"md-storyful-fse-full","icon":"slides","description":"A Video Slider block for Storyful FSE","keywords":["md-storyful-fse-full","md-video-slider"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"autoplay":{"type":"boolean","default":false},"arrows":{"type":"boolean","default":true},"dots":{"type":"boolean","default":false},"slideInfinite":{"type":"boolean","default":false},"slideSlidesToShow":{"type":"number","default":1},"slideSlidesToScroll":{"type":"number","default":1},"slideItems":{"type":"array","default":[{"id":1,"mediaurl":"","youtubeurl":"","videotype":"media-upload","media":"","mediaId":"","mediaAlt":""}]}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

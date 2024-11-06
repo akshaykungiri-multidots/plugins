@@ -32,7 +32,7 @@ import {
   PanelBody,
   SelectControl,
   ToggleControl,
-  FontSizePicker,
+  RangeControl,
 } from "@wordpress/components";
 
 import { useState, useEffect } from "react";
@@ -62,38 +62,11 @@ export default function Edit({ attributes, setAttributes, className }) {
     displayNewsLetterAfterRow,
     enableMostPopular,
     displayMostPopularAboveOrBelow,
-    postTitleFontSize,
     postTitleColor,
-    postDateFontSize,
     postDateColor,
-    mostPopularTitleFontSize,
     mostPopularTitleColor,
-    mostPopularDescriptionFontSize,
     mostPopularDescriptionColor,
   } = attributes;
-
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
 
   const builtInPostType = [
     "page",
@@ -139,33 +112,24 @@ export default function Edit({ attributes, setAttributes, className }) {
             options={postTypes}
             onChange={(postType) => setAttributes({ postType })}
           />
-          {/* Display in selectcontrol */}
-          <SelectControl
+          <RangeControl
             label={__("Number of Posts Per Row", "md-storyful-fse-full")}
             value={numberOfPostsPerRow}
-            options={[
-              { label: "1", value: 1 },
-              { label: "2", value: 2 },
-              { label: "3", value: 3 },
-              { label: "4", value: 4 },
-            ]}
             onChange={(numberOfPostsPerRow) =>
               setAttributes({ numberOfPostsPerRow })
             }
+            min={1}
+            max={4}
           />
-          {/* Display in selectcontrol */}
-          <SelectControl
+          <RangeControl
             label={__("Number of Rows", "md-storyful-fse-full")}
             value={numberOfRows}
-            options={[
-              { label: "1", value: 1 },
-              { label: "2", value: 2 },
-              { label: "3", value: 3 },
-              { label: "4", value: 4 },
-            ]}
             onChange={(numberOfRows) => setAttributes({ numberOfRows })}
+            min={1}
+            max={4}
           />
-          {/* Display in togglecontrol */}
+          </PanelBody>
+        <PanelBody title={__("Toggle Settings", "md-storyful-fse-full")} initialOpen={false}>
           <ToggleControl
             label={__("Enable Search", "md-storyful-fse-full")}
             checked={enableSearch}
@@ -185,21 +149,14 @@ export default function Edit({ attributes, setAttributes, className }) {
           />
           {/* Display in selectcontrol */}
           {enableNewsLetter && (
-            <SelectControl
-              label={__(
-                "Display News Letter After Row",
-                "md-storyful-fse-full"
-              )}
+            <RangeControl
+              label={__("Display News Letter After Row", "md-storyful-fse-full")}
               value={displayNewsLetterAfterRow}
-              options={[
-                { label: "1", value: 1 },
-                { label: "2", value: 2 },
-                { label: "3", value: 3 },
-                { label: "4", value: 4 },
-              ]}
               onChange={(displayNewsLetterAfterRow) =>
                 setAttributes({ displayNewsLetterAfterRow })
               }
+              min={1}
+              max={4}
             />
           )}
           {/* Display in togglecontrol */}
@@ -212,80 +169,47 @@ export default function Edit({ attributes, setAttributes, className }) {
           />
           {/* Display in selectcontrol */}
           {enableMostPopular && (
-            <SelectControl
-              label={__(
-                "Display Most Popular Above Or Below",
-                "md-storyful-fse-full"
-              )}
+            <RangeControl
+              label={__("Display Most Popular Above Or Below", "md-storyful-fse-full")}
               value={displayMostPopularAboveOrBelow}
-              options={[
-                { label: "Above", value: "above" },
-                { label: "Below", value: "below" },
-              ]}
               onChange={(displayMostPopularAboveOrBelow) =>
                 setAttributes({ displayMostPopularAboveOrBelow })
               }
+              min={1}
+              max={4}
             />
           )}
         </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label>{__("Post Title Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={postTitleFontSize}
-            onChange={(value) => setAttributes({ postTitleFontSize: value })}
-          />
-          <label>{__("Post Date Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={postDateFontSize}
-            onChange={(value) => setAttributes({ postDateFontSize: value })}
-          />
-          <label>{__("Most Popular Title Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={mostPopularTitleFontSize}
-            onChange={(value) =>
-              setAttributes({ mostPopularTitleFontSize: value })
-            }
-          />
-          <label>{__("Most Popular Description Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={mostPopularDescriptionFontSize}
-            onChange={(value) =>
-              setAttributes({ mostPopularDescriptionFontSize: value })
-            }
+        <PanelBody title={__("Color Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <PanelColorSettings
+            title={__("Color Settings", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: postTitleColor,
+                onChange: (value) => setAttributes({ postTitleColor: value }),
+                label: __("Post Title Color"),
+              },
+              {
+                value: postDateColor,
+                onChange: (value) => setAttributes({ postDateColor: value }),
+                label: __("Post Date Color"),
+              },
+              {
+                value: mostPopularTitleColor,
+                onChange: (value) =>
+                  setAttributes({ mostPopularTitleColor: value }),
+                label: __("Most Popular Title Color"),
+              },
+              {
+                value: mostPopularDescriptionColor,
+                onChange: (value) =>
+                  setAttributes({ mostPopularDescriptionColor: value }),
+                label: __("Most Popular Description Color"),
+              },
+            ]}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
-          initialOpen={false}
-          colorSettings={[
-            {
-              value: postTitleColor,
-              onChange: (value) => setAttributes({ postTitleColor: value }),
-              label: __("Post Title Color"),
-            },
-            {
-              value: postDateColor,
-              onChange: (value) => setAttributes({ postDateColor: value }),
-              label: __("Post Date Color"),
-            },
-            {
-              value: mostPopularTitleColor,
-              onChange: (value) =>
-                setAttributes({ mostPopularTitleColor: value }),
-              label: __("Most Popular Title Color"),
-            },
-            {
-              value: mostPopularDescriptionColor,
-              onChange: (value) =>
-                setAttributes({ mostPopularDescriptionColor: value }),
-              label: __("Most Popular Description Color"),
-            },
-          ]}
-        />
       </InspectorControls>
       <ServerSideRender
         block={metadata.name}
@@ -300,13 +224,9 @@ export default function Edit({ attributes, setAttributes, className }) {
           displayNewsLetterAfterRow,
           enableMostPopular,
           displayMostPopularAboveOrBelow,
-          postTitleFontSize,
           postTitleColor,
-          postDateFontSize,
           postDateColor,
-          mostPopularTitleFontSize,
           mostPopularTitleColor,
-          mostPopularDescriptionFontSize,
           mostPopularDescriptionColor,
         }}
       />

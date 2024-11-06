@@ -20,12 +20,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/md-case-studies/block.json");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/md-case-studies/editor.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/md-case-studies/block.json");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/md-case-studies/editor.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 /**
  * Retrieves the translation of text.
  *
@@ -56,7 +54,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -75,92 +72,131 @@ function Edit({
   className
 }) {
   const {
+    show_section_title,
     section_title,
+    orderBy,
+    order,
     number_of_case_studies,
     case_studies_ids,
     background_color,
     case_studies_style,
-    section_title_font_size,
     section_title_font_color,
-    case_studies_title_font_size,
     case_studies_title_font_color,
-    case_studies_description_font_size,
     case_studies_description_font_color,
-    main_case_study_title_font_size,
     main_case_study_title_font_color,
-    main_case_study_description_font_size,
     main_case_study_description_font_color,
-    main_case_study_button_font_size,
-    main_case_study_author_date_font_size,
-    main_case_study_author_date_font_color
+    main_case_study_author_date_font_color,
+    show_button,
+    button_style,
+    show_excerpt,
+    show_featured_image,
+    show_author_date
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("S"),
-    slug: "small",
-    size: "12px"
+  const orderByList = [{
+    label: 'Date',
+    value: 'date'
   }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("M"),
-    slug: "medium",
-    size: "18px"
+    label: 'Title',
+    value: 'title'
   }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
+    label: 'Random',
+    value: 'rand'
   }];
-  const [caseStudiesIds, setCaseStudiesIds] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)([]);
-  const fetchCaseStudies = async () => {
-    // fetch resources post where resource-type is case-studies
-    const response = await fetch("/wp-json/md-storyful-fse-full/v1/case-studies");
-    const data = await response.json();
-    setCaseStudiesIds(data);
-  };
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
-    fetchCaseStudies();
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+  const orderList = [{
+    label: 'Descending',
+    value: 'desc'
+  }, {
+    label: 'Ascending',
+    value: 'asc'
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_case_studies"
     }),
     style: {
       backgroundColor: background_color
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Block Settings", "md-storyful-fse-full"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading", "md-storyful-fse-full"),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Heading", "md-storyful-fse-full"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Number of Blog', 'md-prime'),
+          value: number_of_case_studies,
+          onChange: value => setAttributes({
+            number_of_case_studies: parseInt(value)
+          }),
+          min: 2,
+          max: 99,
+          step: 1
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Order By', 'md-prime'),
+          value: orderBy,
+          options: orderByList,
+          onChange: value => setAttributes({
+            orderBy: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Order', 'md-prime'),
+          value: order,
+          options: orderList,
+          onChange: value => setAttributes({
+            order: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Style", "md-storyful-fse-full"),
+          value: case_studies_style,
+          options: [{
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 1", "md-storyful-fse-full"),
+            value: "style_1"
+          }, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 2", "md-storyful-fse-full"),
+            value: "style_2"
+          }],
+          onChange: value => setAttributes({
+            case_studies_style: value
+          }),
+          __nextHasNoMarginBottom: true
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Section Title", "md-storyful-fse-full"),
+          checked: show_section_title,
+          onChange: value => setAttributes({
+            show_section_title: value
+          })
+        }), show_section_title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Section Title", "md-storyful-fse-full"),
           value: section_title,
           onChange: value => setAttributes({
             section_title: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Number of Case Studies", "md-storyful-fse-full"),
-          value: number_of_case_studies,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Excerpt", "md-storyful-fse-full"),
+          checked: show_excerpt,
           onChange: value => setAttributes({
-            number_of_case_studies: value
-          }),
-          min: 1,
-          max: 10
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies", "md-storyful-fse-full"),
-          value: case_studies_ids,
-          multiple: true,
+            show_excerpt: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Featured Image", "md-storyful-fse-full"),
+          checked: show_featured_image,
           onChange: value => setAttributes({
-            case_studies_ids: value
-          }),
-          options: caseStudiesIds.map(caseStudy => ({
-            label: caseStudy.title,
-            value: caseStudy.id
-          })),
-          __nextHasNoMarginBottom: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
+            show_featured_image: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Author Date", "md-storyful-fse-full"),
+          checked: show_author_date,
+          onChange: value => setAttributes({
+            show_author_date: value
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Settings", "md-storyful-fse-full"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
           children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Color", "md-storyful-fse-full")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.GradientPicker, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.GradientPicker, {
           value: null,
           onChange: value => setAttributes({
             background_color: value
@@ -178,157 +214,102 @@ function Edit({
             gradient: "linear-gradient(135deg,#1E9600 0%, #FFF200 0%, #FF0000 100%)",
             slug: "rastafari"
           }]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Style", "md-storyful-fse-full"),
-          value: case_studies_style,
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Settings", "md-storyful-fse-full"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Button", "md-storyful-fse-full"),
+          checked: show_button,
+          onChange: value => setAttributes({
+            show_button: value
+          })
+        }), show_button && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Style", "md-storyful-fse-full"),
+          value: button_style,
           options: [{
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 1", "md-storyful-fse-full"),
-            value: "style_1"
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Primary", "md-storyful-fse-full"),
+            value: "primary"
           }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 2", "md-storyful-fse-full"),
-            value: "style_2"
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Secondary", "md-storyful-fse-full"),
+            value: "secondary"
+          }, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Tertiary", "md-storyful-fse-full"),
+            value: "primary-v2"
           }],
           onChange: value => setAttributes({
-            case_studies_style: value
+            button_style: value
           }),
           __nextHasNoMarginBottom: true
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography", "md-storyful-fse-full"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Section Title Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: section_title_font_size,
-          fallbackFontSize: section_title_font_size,
-          onChange: newFontSize => setAttributes({
-            section_title_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Title Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: case_studies_title_font_size,
-          fallbackFontSize: case_studies_title_font_size,
-          onChange: newFontSize => setAttributes({
-            case_studies_title_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Description Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: case_studies_description_font_size,
-          fallbackFontSize: case_studies_description_font_size,
-          onChange: newFontSize => setAttributes({
-            case_studies_description_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Title Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: main_case_study_title_font_size,
-          fallbackFontSize: main_case_study_title_font_size,
-          onChange: newFontSize => setAttributes({
-            main_case_study_title_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Description Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: main_case_study_description_font_size,
-          fallbackFontSize: main_case_study_description_font_size,
-          onChange: newFontSize => setAttributes({
-            main_case_study_description_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Button Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: main_case_study_button_font_size,
-          fallbackFontSize: main_case_study_button_font_size,
-          onChange: newFontSize => setAttributes({
-            main_case_study_button_font_size: newFontSize
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("label", {
-          children: [" ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Author Date Font Size"), " "]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          __nextHasNoMarginBottom: true,
-          fontSizes: fontSizes,
-          value: main_case_study_author_date_font_size,
-          fallbackFontSize: main_case_study_author_date_font_size,
-          onChange: newFontSize => setAttributes({
-            main_case_study_author_date_font_size: newFontSize
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
         initialOpen: false,
-        colorSettings: [{
-          value: section_title_font_color,
-          onChange: newColor => setAttributes({
-            section_title_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Section Title Color", "md-storyful-fse-full")
-        }, {
-          value: case_studies_title_font_color,
-          onChange: newColor => setAttributes({
-            case_studies_title_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Title Color", "md-storyful-fse-full")
-        }, {
-          value: case_studies_description_font_color,
-          onChange: newColor => setAttributes({
-            case_studies_description_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Description Color", "md-storyful-fse-full")
-        }, {
-          value: main_case_study_title_font_color,
-          onChange: newColor => setAttributes({
-            main_case_study_title_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Title Color", "md-storyful-fse-full")
-        }, {
-          value: main_case_study_description_font_color,
-          onChange: newColor => setAttributes({
-            main_case_study_description_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Description Color", "md-storyful-fse-full")
-        }, {
-          value: main_case_study_author_date_font_color,
-          onChange: newColor => setAttributes({
-            main_case_study_author_date_font_color: newColor
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Author Date Color", "md-storyful-fse-full")
-        }]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Colors Settings", "md-storyful-fse-full"),
+          initialOpen: false,
+          colorSettings: [{
+            value: section_title_font_color,
+            onChange: newColor => setAttributes({
+              section_title_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Section Title Color", "md-storyful-fse-full")
+          }, {
+            value: case_studies_title_font_color,
+            onChange: newColor => setAttributes({
+              case_studies_title_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Title Color", "md-storyful-fse-full")
+          }, {
+            value: case_studies_description_font_color,
+            onChange: newColor => setAttributes({
+              case_studies_description_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Description Color", "md-storyful-fse-full")
+          }, {
+            value: main_case_study_title_font_color,
+            onChange: newColor => setAttributes({
+              main_case_study_title_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Title Color", "md-storyful-fse-full")
+          }, {
+            value: main_case_study_description_font_color,
+            onChange: newColor => setAttributes({
+              main_case_study_description_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Description Color", "md-storyful-fse-full")
+          }, {
+            value: main_case_study_author_date_font_color,
+            onChange: newColor => setAttributes({
+              main_case_study_author_date_font_color: newColor
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Author Date Color", "md-storyful-fse-full")
+          }]
+        })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_1___default()), {
-      block: _block_json__WEBPACK_IMPORTED_MODULE_5__.name,
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_1___default()), {
+      block: _block_json__WEBPACK_IMPORTED_MODULE_4__.name,
       className: className,
       attributes: {
+        show_section_title,
         section_title,
         number_of_case_studies,
         case_studies_ids,
         background_color,
         case_studies_style,
-        section_title_font_size,
         section_title_font_color,
-        case_studies_title_font_size,
         case_studies_title_font_color,
-        case_studies_description_font_size,
         case_studies_description_font_color,
-        main_case_study_title_font_size,
         main_case_study_title_font_color,
-        main_case_study_description_font_size,
         main_case_study_description_font_color,
-        main_case_study_button_font_size,
-        main_case_study_author_date_font_size,
-        main_case_study_author_date_font_color
+        main_case_study_author_date_font_color,
+        show_button,
+        button_style,
+        orderBy,
+        order,
+        show_excerpt,
+        show_featured_image,
+        show_author_date
       }
     })]
   });
@@ -480,16 +461,6 @@ module.exports = window["wp"]["components"];
 
 /***/ }),
 
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["element"];
-
-/***/ }),
-
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -516,7 +487,7 @@ module.exports = window["wp"]["serverSideRender"];
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-case-studies","version":"0.1.0","title":"MD Case Studies","apiVersion":3,"category":"md-storyful-fse-full","icon":"welcome-write-blog","description":"A Case Studies block for Storyful FSE","keywords":["md-case-studies","md-storyful-fse-full"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"section_title":{"type":"string","default":"This is Default Heading"},"section_title_font_size":{"type":"string","default":"24"},"section_title_font_color":{"type":"string","default":""},"case_studies_title_font_size":{"type":"string","default":"24"},"case_studies_title_font_color":{"type":"string","default":""},"case_studies_description_font_size":{"type":"string","default":"16"},"case_studies_description_font_color":{"type":"string","default":""},"main_case_study_title_font_size":{"type":"string","default":"24"},"main_case_study_title_font_color":{"type":"string","default":""},"main_case_study_description_font_size":{"type":"string","default":"16"},"main_case_study_description_font_color":{"type":"string","default":""},"main_case_study_button_font_size":{"type":"string","default":"16"},"main_case_study_author_date_font_size":{"type":"string","default":"16"},"main_case_study_author_date_font_color":{"type":"string","default":""},"number_of_case_studies":{"type":"number","default":3},"case_studies_ids":{"type":"array","default":[]},"background_color":{"type":"string","default":""},"case_studies_style":{"type":"string","default":"style_1"}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-case-studies","version":"0.1.0","title":"MD Case Studies","apiVersion":3,"category":"md-storyful-fse-full","icon":"welcome-write-blog","description":"A Case Studies block for Storyful FSE","keywords":["md-case-studies","md-storyful-fse-full"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"show_section_title":{"type":"boolean","default":true},"section_title":{"type":"string","default":""},"orderBy":{"type":"string","default":"date"},"order":{"type":"string","default":"desc"},"section_title_font_color":{"type":"string","default":""},"case_studies_title_font_color":{"type":"string","default":""},"case_studies_description_font_color":{"type":"string","default":""},"main_case_study_title_font_color":{"type":"string","default":""},"main_case_study_description_font_color":{"type":"string","default":""},"main_case_study_author_date_font_color":{"type":"string","default":""},"number_of_case_studies":{"type":"number","default":3},"case_studies_ids":{"type":"array","default":[]},"background_color":{"type":"string","default":""},"case_studies_style":{"type":"string","default":"style_1"},"show_button":{"type":"boolean","default":true},"button_style":{"type":"string","default":"primary"},"show_excerpt":{"type":"boolean","default":true},"show_featured_image":{"type":"boolean","default":true},"show_author_date":{"type":"boolean","default":true}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

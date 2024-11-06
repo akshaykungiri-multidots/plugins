@@ -19,7 +19,7 @@ import {
   PanelColorSettings,
 } from "@wordpress/block-editor";
 
-import { PanelBody, Button, FontSizePicker } from "@wordpress/components";
+import { PanelBody, Button, ToggleControl } from "@wordpress/components";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -39,118 +39,104 @@ export default function Edit({ attributes, setAttributes }) {
     section_right_description,
     section_right_button_link,
     section_right_image,
-    section_left_title_font_size,
     section_left_title_font_color,
-    section_left_description_font_size,
     section_left_description_font_color,
-    section_left_button_font_size,
-    section_right_title_font_size,
     section_right_title_font_color,
-    section_right_description_font_size,
     section_right_description_font_color,
-    section_right_button_font_size,
+    show_section_left_title,
+    show_section_left_description,
+    show_section_left_button,
+    show_section_right_title,
+    show_section_right_description,
+    show_section_right_button,
   } = attributes;
-
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
 
   return (
     <div {...useBlockProps({ className: "md_two_column_banner" })}>
       <InspectorControls>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-			<label>{__("Left Title Font Size")}</label>
-			<FontSizePicker
-			  fontSizes={fontSizes}
-			  value={section_left_title_font_size}
-			  onChange={(value) => setAttributes({ section_left_title_font_size: value })}
-			/>
-			<label>{__("Left Description Font Size")}</label>
-			<FontSizePicker
-			  fontSizes={fontSizes}
-			  value={section_left_description_font_size}
-			  onChange={(value) => setAttributes({ section_left_description_font_size: value })}
-			/>
-			<label>{__("Left Button Font Size")}</label>
-			<FontSizePicker
-			  fontSizes={fontSizes}
-			  value={section_left_button_font_size}
-			  onChange={(value) => setAttributes({ section_left_button_font_size: value })}
-			/>
-			<label>{__("Right Title Font Size")}</label>
-			<FontSizePicker
-			  fontSizes={fontSizes}
-			  value={section_right_title_font_size}
-			  onChange={(value) => setAttributes({ section_right_title_font_size: value })}
-			/>
-			<label>{__("Right Description Font Size")}</label>
-			<FontSizePicker
-			  fontSizes={fontSizes}
-			  value={section_right_description_font_size}
-			  onChange={(value) => setAttributes({ section_right_description_font_size: value })}
-			/>
-			<label>{__("Right Button Font Size")}</label>
-			<FontSizePicker
-			  fontSizes={fontSizes}
-			  value={section_right_button_font_size}
-			  onChange={(value) => setAttributes({ section_right_button_font_size: value })}
-			/>
+        <PanelBody title={__("Toggle Settings", "md-storyful-fse-full")}>
+          <ToggleControl
+            label={__("Show Left Title", "md-storyful-fse-full")}
+            checked={show_section_left_title}
+            onChange={(value) =>
+              setAttributes({ show_section_left_title: value })
+            }
+          />
+          <ToggleControl
+            label={__("Show Left Description", "md-storyful-fse-full")}
+            checked={show_section_left_description}
+            onChange={(value) =>
+              setAttributes({ show_section_left_description: value })
+            }
+          />
+          <ToggleControl
+            label={__("Show Left Button", "md-storyful-fse-full")}
+            checked={show_section_left_button}
+            onChange={(value) =>
+              setAttributes({ show_section_left_button: value })
+            }
+          />
+          <ToggleControl
+            label={__("Show Right Title", "md-storyful-fse-full")}
+            checked={show_section_right_title}
+            onChange={(value) =>
+              setAttributes({ show_section_right_title: value })
+            }
+          />
+          <ToggleControl
+            label={__("Show Right Description", "md-storyful-fse-full")}
+            checked={show_section_right_description}
+            onChange={(value) =>
+              setAttributes({ show_section_right_description: value })
+            }
+          />
+          <ToggleControl
+            label={__("Show Right Button", "md-storyful-fse-full")}
+            checked={show_section_right_button}
+            onChange={(value) =>
+              setAttributes({ show_section_right_button: value })
+            }
+          />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
-          initialOpen={false}
-		  colorSettings={[
-			{
-			  value: section_left_title_font_color,
-			  onChange: (value) =>
-				setAttributes({ section_left_title_font_color: value }),
-			  label: __("Left Title Font Color"),
-			},
-			{
-			  value: section_left_description_font_color,
-			  onChange: (value) =>
-				setAttributes({ section_left_description_font_color: value }),
-			  label: __("Left Description Font Color"),
-			},
-			{
-			  value: section_right_title_font_color,
-			  onChange: (value) =>
-				setAttributes({ section_right_title_font_color: value }),
-			  label: __("Right Title Font Color"),
-			},
-			{
-			  value: section_right_description_font_color,
-			  onChange: (value) =>
-				setAttributes({ section_right_description_font_color: value }),
-			  label: __("Right Description Font Color"),
-			}
-		  ]}
-        />
+        <PanelBody title={__("Color Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <PanelColorSettings
+            title={__("Typography Colors", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: section_left_title_font_color,
+                onChange: (value) =>
+                  setAttributes({ section_left_title_font_color: value }),
+                label: __("Left Title Font Color"),
+              },
+              {
+                value: section_left_description_font_color,
+                onChange: (value) =>
+                  setAttributes({ section_left_description_font_color: value }),
+                label: __("Left Description Font Color"),
+              },
+              {
+                value: section_right_title_font_color,
+                onChange: (value) =>
+                  setAttributes({ section_right_title_font_color: value }),
+                label: __("Right Title Font Color"),
+              },
+              {
+                value: section_right_description_font_color,
+                onChange: (value) =>
+                  setAttributes({ section_right_description_font_color: value }),
+                label: __("Right Description Font Color"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <div className="cta-section">
         <div className="container-fluid">
           <div className="cta-section__right">
             <div className="intelligence-section">
               <div className="intelligence-section__details wow fadeInLeft">
+                {show_section_left_title && (
                 <RichText
                   tagName="h2"
                   className="section-title h1 with-darkbg"
@@ -159,11 +145,12 @@ export default function Edit({ attributes, setAttributes }) {
                     setAttributes({ section_left_title: value })
                   }
                   placeholder={__("Enter title...", "md-blocks")}
-				  style={{
-					fontSize: section_left_title_font_size,
-					color: section_left_title_font_color,
-				  }}
+                  style={{
+                    color: section_left_title_font_color,
+                  }}
                 />
+                )}
+                {show_section_left_description && (
                 <RichText
                   tagName="p"
                   className="cta-section-desc"
@@ -172,11 +159,12 @@ export default function Edit({ attributes, setAttributes }) {
                     setAttributes({ section_left_description: value })
                   }
                   placeholder={__("Enter description...", "md-blocks")}
-				  style={{
-					fontSize: section_left_description_font_size,
-					color: section_left_description_font_color,
-				  }}
+                  style={{
+                    color: section_left_description_font_color,
+                  }}
                 />
+                )}
+                {show_section_left_button && (
                 <div className="sbtn sbtn-arrow-primary-v2">
                   <span className="btn-text">
                     <RichText
@@ -186,12 +174,10 @@ export default function Edit({ attributes, setAttributes }) {
                         setAttributes({ section_left_button_link: value })
                       }
                       placeholder={__("Enter button text...", "md-blocks")}
-					  style={{
-						fontSize: section_left_button_font_size,
-					  }}
                     />
                   </span>
                 </div>
+                )}
               </div>
               <div class="intelligence-section__media wow bounceIn">
                 <div class="media-image-wrapper">
@@ -236,6 +222,7 @@ export default function Edit({ attributes, setAttributes }) {
           <div className="cta-section__left">
             <div className="cta-news-section">
               <div className="cta-news-section__details wow fadeInLeft">
+                {show_section_right_title && (
                 <RichText
                   tagName="h2"
                   className="section-title h1"
@@ -244,11 +231,12 @@ export default function Edit({ attributes, setAttributes }) {
                     setAttributes({ section_right_title: value })
                   }
                   placeholder={__("Enter title...", "md-blocks")}
-				  style={{
-					fontSize: section_right_title_font_size,
-					color: section_right_title_font_color,
-				  }}
+                  style={{
+                    color: section_right_title_font_color,
+                  }}
                 />
+                )}
+                {show_section_right_description && (
                 <RichText
                   tagName="p"
                   className="cta-section-desc"
@@ -257,11 +245,12 @@ export default function Edit({ attributes, setAttributes }) {
                     setAttributes({ section_right_description: value })
                   }
                   placeholder={__("Enter description...", "md-blocks")}
-				  style={{
-					fontSize: section_right_description_font_size,
-					color: section_right_description_font_color,
-				  }}
+                  style={{
+                    color: section_right_description_font_color,
+                  }}
                 />
+                )}
+                {show_section_right_button && (
                 <div className="sbtn sbtn-arrow-primary-v2">
                   <span className="btn-text">
                     <RichText
@@ -271,12 +260,10 @@ export default function Edit({ attributes, setAttributes }) {
                         setAttributes({ section_right_button_link: value })
                       }
                       placeholder={__("Enter button text...", "md-blocks")}
-					  style={{
-						fontSize: section_right_button_font_size
-					  }}
                     />
                   </span>
                 </div>
+                )}
               </div>
               <div class="cta-news-section__media wow bounceIn">
                 <div class="media-image-wrapper">

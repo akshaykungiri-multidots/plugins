@@ -21,15 +21,7 @@
       "type": "string",
       "default": "style1"
     },
-    "headingFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "headingFontColor": {
-      "type": "string",
-      "default": ""
-    },
-    "testimonialTitleFontSize": {
       "type": "string",
       "default": ""
     },
@@ -37,16 +29,28 @@
       "type": "string",
       "default": ""
     },
-    "testimonialDescriptionFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "testimonialDescriptionFontColor": {
       "type": "string",
       "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTestimonialTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTestimonialDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTestimonialImage": {
+      "type": "boolean",
+      "default": true
     }
   },
-  "editorScript": "file:./index.js",
+  "editorScript": ["file:./index.js",  "file:./view.js" ],
   "viewScript": [ "file:./view.js" ],
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

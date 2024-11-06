@@ -14,7 +14,6 @@ const entry = {
 	geditor: JS_DIR + '/geditor.js',
 	themeoption: JS_DIR + '/theme-option.js',
 	slick: JS_DIR + '/slick.min.js',
-	md_admin: JS_DIR + '/admin.js',
 };
 
 const rules = [

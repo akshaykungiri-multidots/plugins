@@ -56,15 +56,7 @@
       "type": "string",
       "default": ""
     },
-    "newswire_title_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "newswire_title_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "newswire_description_font_size": {
       "type": "string",
       "default": ""
     },
@@ -72,15 +64,7 @@
       "type": "string",
       "default": ""
     },
-    "newswire_button_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "newswire_button_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "newswire_left_title_font_size": {
       "type": "string",
       "default": ""
     },
@@ -88,21 +72,25 @@
       "type": "string",
       "default": ""
     },
-    "newswire_left_description_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "newswire_left_description_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "newswire_sub_title_font_size": {
       "type": "string",
       "default": ""
     },
     "newswire_sub_title_font_color": {
       "type": "string",
       "default": ""
+    },
+    "showNewswireBottom": {
+      "type": "boolean",
+      "default": true
+    },
+    "showNewswireButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "showNewswireLeftDescription": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

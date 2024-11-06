@@ -74,106 +74,94 @@ function Edit({
   const {
     heading,
     themeStyle,
-    headingFontSize,
     headingFontColor,
-    testimonialTitleFontSize,
     testimonialTitleFontColor,
-    testimonialDescriptionFontSize,
-    testimonialDescriptionFontColor
+    testimonialDescriptionFontColor,
+    showHeading,
+    showTestimonialTitle,
+    showTestimonialDescription,
+    showTestimonialImage
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Block Settings', 'md-storyful-fse-full'),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading', 'md-storyful-fse-full'),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter Heading', 'md-storyful-fse-full'),
-          value: heading,
-          onChange: value => setAttributes({
-            heading: value
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Case Studies Style', 'md-storyful-fse-full'),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Block Settings", "md-storyful-fse-full"),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Style", "md-storyful-fse-full"),
           value: themeStyle,
           options: [{
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style 1', 'md-storyful-fse-full'),
-            value: 'style1'
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 1", "md-storyful-fse-full"),
+            value: "style1"
           }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style 2', 'md-storyful-fse-full'),
-            value: 'style2'
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 2", "md-storyful-fse-full"),
+            value: "style2"
           }],
           onChange: value => setAttributes({
             themeStyle: value
           }),
           __nextHasNoMarginBottom: true
-        })]
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography", "md-storyful-fse-full"),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: headingFontSize,
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Heading", "md-storyful-fse-full"),
+          checked: showHeading,
           onChange: value => setAttributes({
-            headingFontSize: value
+            showHeading: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Testimonial Title Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: testimonialTitleFontSize,
+        }), showHeading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading", "md-storyful-fse-full"),
+          value: heading,
           onChange: value => setAttributes({
-            testimonialTitleFontSize: value
+            heading: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
-          children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Testimonial Description Font Size")
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-          fontSizes: fontSizes,
-          value: testimonialDescriptionFontSize,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Testimonial Title", "md-storyful-fse-full"),
+          checked: showTestimonialTitle,
           onChange: value => setAttributes({
-            testimonialDescriptionFontSize: value
+            showTestimonialTitle: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Testimonial Description", "md-storyful-fse-full"),
+          checked: showTestimonialDescription,
+          onChange: value => setAttributes({
+            showTestimonialDescription: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Testimonial Image", "md-storyful-fse-full"),
+          checked: showTestimonialImage,
+          onChange: value => setAttributes({
+            showTestimonialImage: value
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
         initialOpen: false,
-        colorSettings: [{
-          value: headingFontColor,
-          onChange: value => setAttributes({
-            headingFontColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Font Color")
-        }, {
-          value: testimonialTitleFontColor,
-          onChange: value => setAttributes({
-            testimonialTitleFontColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Testimonial Title Font Color")
-        }, {
-          value: testimonialDescriptionFontColor,
-          onChange: value => setAttributes({
-            testimonialDescriptionFontColor: value
-          }),
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Testimonial Description Font Color")
-        }]
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+          initialOpen: false,
+          colorSettings: [{
+            value: headingFontColor,
+            onChange: value => setAttributes({
+              headingFontColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Font Color")
+          }, {
+            value: testimonialTitleFontColor,
+            onChange: value => setAttributes({
+              testimonialTitleFontColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Testimonial Title Font Color")
+          }, {
+            value: testimonialDescriptionFontColor,
+            onChange: value => setAttributes({
+              testimonialDescriptionFontColor: value
+            }),
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Testimonial Description Font Color")
+          }]
+        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_1___default()), {
       block: _block_json__WEBPACK_IMPORTED_MODULE_4__.name,
@@ -181,12 +169,13 @@ function Edit({
       attributes: {
         heading,
         themeStyle,
-        headingFontSize,
         headingFontColor,
-        testimonialTitleFontSize,
         testimonialTitleFontColor,
-        testimonialDescriptionFontSize,
-        testimonialDescriptionFontColor
+        testimonialDescriptionFontColor,
+        showHeading,
+        showTestimonialTitle,
+        showTestimonialDescription,
+        showTestimonialImage
       }
     })]
   });
@@ -364,7 +353,7 @@ module.exports = window["wp"]["serverSideRender"];
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-testimonials","version":"0.1.0","title":"MD Testimonials","apiVersion":3,"category":"md-storyful-fse-full","icon":"format-quote","description":"A Testimonials block for Storyful FSE","keywords":["md-testimonials","md-storyful-fse-full"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"heading":{"type":"string","default":"This is Default Heading"},"themeStyle":{"type":"string","default":"style1"},"headingFontSize":{"type":"string","default":""},"headingFontColor":{"type":"string","default":""},"testimonialTitleFontSize":{"type":"string","default":""},"testimonialTitleFontColor":{"type":"string","default":""},"testimonialDescriptionFontSize":{"type":"string","default":""},"testimonialDescriptionFontColor":{"type":"string","default":""}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-testimonials","version":"0.1.0","title":"MD Testimonials","apiVersion":3,"category":"md-storyful-fse-full","icon":"format-quote","description":"A Testimonials block for Storyful FSE","keywords":["md-testimonials","md-storyful-fse-full"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"heading":{"type":"string","default":"This is Default Heading"},"themeStyle":{"type":"string","default":"style1"},"headingFontColor":{"type":"string","default":""},"testimonialTitleFontColor":{"type":"string","default":""},"testimonialDescriptionFontColor":{"type":"string","default":""},"showHeading":{"type":"boolean","default":true},"showTestimonialTitle":{"type":"boolean","default":true},"showTestimonialDescription":{"type":"boolean","default":true},"showTestimonialImage":{"type":"boolean","default":true}},"editorScript":["file:./index.js","file:./view.js"],"viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

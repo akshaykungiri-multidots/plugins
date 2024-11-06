@@ -24,14 +24,6 @@
         }
       ]
     },
-    "columnTitleFontSize": {
-      "type": "string",
-      "default": "16"
-    },
-    "columnDescriptionFontSize": {
-      "type": "number",
-      "default": "16"
-    },
     "columnTitleFontColor": {
       "type": "string",
       "default": ""
@@ -39,7 +31,23 @@
     "columnDescriptionFontColor": {
       "type": "string",
       "default": ""
-    }
+    },
+    "borderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "columns": {
+			"type": "number",
+			"default": 3
+		},
+    "textAlign": {
+			"type": "string",
+			"default": "center"
+		}
   },
   "editorScript": "file:./index.js",
   "style": "file:./style-index.css"

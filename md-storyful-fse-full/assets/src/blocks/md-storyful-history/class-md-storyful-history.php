@@ -75,12 +75,12 @@ class MD_Storyful_History extends Block_Base {
 
 		// attributes.
 		$heading = isset( $attributes['heading'] ) ? $attributes['heading'] : '';
-		$heading_font_size = isset( $attributes['heading_font_size'] ) ? $attributes['heading_font_size'] : '';
 		$heading_font_color = isset( $attributes['heading_font_color'] ) ? $attributes['heading_font_color'] : '';
 		$titleFontColor = isset( $attributes['titleFontColor'] ) ? $attributes['titleFontColor'] : '';
-		$titleFontSize = isset( $attributes['titleFontSize'] ) ? $attributes['titleFontSize'] : '';
 		$descriptionFontColor = isset( $attributes['descriptionFontColor'] ) ? $attributes['descriptionFontColor'] : '';
-		$descriptionFontSize = isset( $attributes['descriptionFontSize'] ) ? $attributes['descriptionFontSize'] : '';
+		$displayHeading = isset( $attributes['displayHeading'] ) ? $attributes['displayHeading'] : '';
+		$displayDescription = isset( $attributes['displayDescription'] ) ? $attributes['displayDescription'] : '';
+		$displayImage = isset( $attributes['displayImage'] ) ? $attributes['displayImage'] : '';
 
 		// Get storyful_history post list.
 		$args = array(
@@ -111,15 +111,19 @@ class MD_Storyful_History extends Block_Base {
 							$timeline_item_image = get_post_thumbnail_id();
 							?>
 							<div class="storyful-timeline-item <?php echo esc_attr($activeClass); ?>" data-key="<?php echo esc_attr($key); ?>">
-								<?php if ( !empty($timeline_item_image) ) { ?>
+								<?php if ( !empty($timeline_item_image) && $displayImage ) { ?>
 									<div class="storyful-timeline-item-image">
 										<?php echo wp_get_attachment_image($timeline_item_image, 'full'); ?>
 									</div>
 								<?php } ?>
 								<div class="storyful-timeline-content">
-									<h3 class="storyful-timeline-title" style="font-size: <?php echo esc_attr($heading_font_size); ?>; color: <?php echo esc_attr($heading_font_color); ?>"><?php echo esc_html($heading); ?></h3>
-									<h4 class="storyful-timeline-item-title" style="font-size: <?php echo esc_attr($titleFontSize); ?>; color: <?php echo esc_attr($titleFontColor); ?>"><?php echo esc_html($timeline_item_title); ?></h4>
-									<div class="storyful-timeline-item-description" style="font-size: <?php echo esc_attr($descriptionFontSize); ?>; color: <?php echo esc_attr($descriptionFontColor); ?>"><?php echo wp_kses_post($timeline_item_description); ?></div>
+									<?php if ( $displayHeading ) { ?>
+										<h3 class="storyful-timeline-title" style="color: <?php echo esc_attr($heading_font_color); ?>"><?php echo esc_html($heading); ?></h3>
+									<?php } ?>
+									<h4 class="storyful-timeline-item-title" style="color: <?php echo esc_attr($titleFontColor); ?>"><?php echo esc_html($timeline_item_title); ?></h4>
+									<?php if ( $displayDescription ) { ?>
+										<div class="storyful-timeline-item-description" style="color: <?php echo esc_attr($descriptionFontColor); ?>"><?php echo wp_kses_post($timeline_item_description); ?></div>
+									<?php } ?>
 								</div>
 							</div>
 						<?php 

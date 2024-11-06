@@ -17,7 +17,7 @@ import {
   InspectorControls,
   PanelColorSettings,
 } from "@wordpress/block-editor";
-import { PanelBody, FontSizePicker } from "@wordpress/components";
+import { PanelBody, ToggleControl } from "@wordpress/components";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -34,103 +34,69 @@ export default function Edit({ attributes, setAttributes }) {
     sellButtonText,
     licenseText,
     learnMoreText,
-    headingFontSize,
     headingFontColor,
-    buyButtonFontSize,
     buyButtonFontColor,
-    sellButtonFontSize,
     sellButtonFontColor,
-    licenseFontSize,
     licenseFontColor,
-    learnMoreFontSize,
+    showBuyButton,
+    showSellButton,
+    showLicenseText,
+    showLearnMore,
   } = attributes;
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
   return (
     <div {...useBlockProps({ className: "md_video_licensing" })}>
       <InspectorControls>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-			<label>{__("Heading Font Size")}</label>
-			<FontSizePicker
-				value={headingFontSize}
-				onChange={(value) => setAttributes({ headingFontSize: value })}
-				fontSizes={fontSizes}
-			/>
-			<label>{__("Buy Button Font Size")}</label>
-			<FontSizePicker
-				value={buyButtonFontSize}
-				onChange={(value) => setAttributes({ buyButtonFontSize: value })}
-				fontSizes={fontSizes}
-			/>
-			<label>{__("Sell Button Font Size")}</label>
-			<FontSizePicker
-				value={sellButtonFontSize}
-				onChange={(value) => setAttributes({ sellButtonFontSize: value })}
-				fontSizes={fontSizes}
-			/>
-			<label>{__("License Font Size")}</label>
-			<FontSizePicker
-				value={licenseFontSize}
-				onChange={(value) => setAttributes({ licenseFontSize: value })}
-				fontSizes={fontSizes}
-			/>
-			<label>{__("Learn More Font Size")}</label>
-			<FontSizePicker
-				value={learnMoreFontSize}
-				onChange={(value) => setAttributes({ learnMoreFontSize: value })}
-				fontSizes={fontSizes}
-			/>
+        <PanelBody title={__("Toggle Settings", "md-storyful-fse-full")}>
+          <ToggleControl
+            label={__("Show Buy Button", "md-storyful-fse-full")}
+            checked={showBuyButton}
+            onChange={(value) => setAttributes({ showBuyButton: value })}
+          />
+          <ToggleControl
+            label={__("Show Sell Button", "md-storyful-fse-full")}
+            checked={showSellButton}
+            onChange={(value) => setAttributes({ showSellButton: value })}
+          />
+          <ToggleControl
+            label={__("Show License Text", "md-storyful-fse-full")}
+            checked={showLicenseText}
+            onChange={(value) => setAttributes({ showLicenseText: value })}
+          />
+          <ToggleControl
+            label={__("Show Learn More Button", "md-storyful-fse-full")}
+            checked={showLearnMore}
+            onChange={(value) => setAttributes({ showLearnMore: value })}
+          />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
-          initialOpen={false}
-		  colorSettings={[
-			{
-			  value: headingFontColor,
-			  onChange: (value) =>
-				setAttributes({ headingFontColor: value }),
-			  label: __("Heading Color"),
-			},
-			{
-			  value: buyButtonFontColor,
-			  onChange: (value) =>
-				setAttributes({ buyButtonFontColor: value }),
-			  label: __("Buy Button Color"),
-			},
-			{
-			  value: sellButtonFontColor,
-			  onChange: (value) =>
-				setAttributes({ sellButtonFontColor: value }),
-			  label: __("Sell Button Color"),
-			},
-			{
-			  value: licenseFontColor,
-			  onChange: (value) =>
-				setAttributes({ licenseFontColor: value }),
-			  label: __("License Color"),
-			},
-		  ]}
-        />
+        <PanelBody title={__("Color Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <PanelColorSettings
+            title={__("Typography Colors", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: headingFontColor,
+                onChange: (value) => setAttributes({ headingFontColor: value }),
+                label: __("Heading Color"),
+              },
+              {
+                value: buyButtonFontColor,
+                onChange: (value) => setAttributes({ buyButtonFontColor: value }),
+                label: __("Buy Button Color"),
+              },
+              {
+                value: sellButtonFontColor,
+                onChange: (value) =>
+                  setAttributes({ sellButtonFontColor: value }),
+                label: __("Sell Button Color"),
+              },
+              {
+                value: licenseFontColor,
+                onChange: (value) => setAttributes({ licenseFontColor: value }),
+                label: __("License Color"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <div class="storyful-video-licensing">
         <div class="container">
@@ -142,37 +108,48 @@ export default function Edit({ attributes, setAttributes }) {
                 value={heading}
                 onChange={(value) => setAttributes({ heading: value })}
                 placeholder={__("Enter title...", "md-blocks")}
-				style={{ fontSize: headingFontSize, color: headingFontColor }}
+                style={{ color: headingFontColor }}
               />
               <div class="bye-sell-button wow fadeInLeft">
+                {showBuyButton && (
                 <RichText
                   tagName="span"
                   className="link"
                   value={buyButtonText}
                   onChange={(value) => setAttributes({ buyButtonText: value })}
                   placeholder={__("Enter buy button text...", "md-blocks")}
-				  style={{ fontSize: buyButtonFontSize, color: buyButtonFontColor }}
+                  style={{
+                    color: buyButtonFontColor,
+                  }}
                 />
+                )}
+                {showSellButton && (
                 <RichText
                   tagName="span"
                   className="link"
                   value={sellButtonText}
                   onChange={(value) => setAttributes({ sellButtonText: value })}
                   placeholder={__("Enter sell button text...", "md-blocks")}
-				  style={{ fontSize: sellButtonFontSize, color: sellButtonFontColor }}
+                  style={{
+                    color: sellButtonFontColor,
+                  }}
                 />
+                )}
               </div>
             </div>
             <div class="video-licensing-wrap__right">
               <div class="licensing-description-and-button">
+                {showLicenseText && (
                 <RichText
                   tagName="h2"
                   className="licensing-description"
                   value={licenseText}
                   onChange={(value) => setAttributes({ licenseText: value })}
                   placeholder={__("Enter description...", "md-blocks")}
-				  style={{ fontSize: licenseFontSize, color: licenseFontColor }}
+                  style={{ color: licenseFontColor }}
                 />
+                )}
+                {showLearnMore && (
                 <div class="sbtn sbtn-arrow-primary">
                   <span class="btn-text">
                     <RichText
@@ -185,10 +162,10 @@ export default function Edit({ attributes, setAttributes }) {
                         "Enter learn more button text...",
                         "md-blocks"
                       )}
-					  style={{ fontSize: learnMoreFontSize }}
                     />
                   </span>
                 </div>
+                )}
               </div>
             </div>
           </div>

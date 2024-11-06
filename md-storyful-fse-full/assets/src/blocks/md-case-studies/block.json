@@ -14,57 +14,41 @@
   },
   "textdomain": "md-storyful-fse-full",
   "attributes": {
+    "show_section_title": {
+      "type": "boolean",
+      "default": true
+    },
     "section_title": {
-      "type": "string",
-      "default": "This is Default Heading"
-    },
-    "section_title_font_size": {
-      "type": "string",
-      "default": "24"
-    },
-    "section_title_font_color": {
       "type": "string",
       "default": ""
     },
-    "case_studies_title_font_size": {
+		"orderBy": {
+			"type": "string",
+			"default": "date"
+		},
+		"order": {
+			"type": "string",
+			"default": "desc"
+		},
+    "section_title_font_color": {
       "type": "string",
-      "default": "24"
+      "default": ""
     },
     "case_studies_title_font_color": {
       "type": "string",
       "default": ""
     },
-    "case_studies_description_font_size": {
-      "type": "string",
-      "default": "16"
-    },
     "case_studies_description_font_color": {
       "type": "string",
       "default": ""
-    },
-    "main_case_study_title_font_size": {
-      "type": "string",
-      "default": "24"
     },
     "main_case_study_title_font_color": {
       "type": "string",
       "default": ""
     },
-    "main_case_study_description_font_size": {
-      "type": "string",
-      "default": "16"
-    },
     "main_case_study_description_font_color": {
       "type": "string",
       "default": ""
-    },
-    "main_case_study_button_font_size": {
-      "type": "string",
-      "default": "16"
-    },
-    "main_case_study_author_date_font_size": {
-      "type": "string",
-      "default": "16"
     },
     "main_case_study_author_date_font_color": {
       "type": "string",
@@ -85,6 +69,26 @@
     "case_studies_style": {
       "type": "string",
       "default": "style_1"
+    },
+    "show_button": {
+      "type": "boolean",
+      "default": true
+    },
+    "button_style": {
+      "type": "string",
+      "default": "primary"
+    },
+    "show_excerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_featured_image": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_author_date": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

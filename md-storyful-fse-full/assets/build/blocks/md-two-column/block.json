@@ -32,15 +32,7 @@
       "type": "string",
       "default": ""
     },
-    "titleFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "titleFontColor": {
-      "type": "string",
-      "default": ""
-    },
-    "descriptionFontSize": {
       "type": "string",
       "default": ""
     },

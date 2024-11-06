@@ -33,19 +33,16 @@ export default function save({attributes}) {
 		newswire_button_link,
 		newswire_theme_style,
 		background_color,
-		newswire_title_font_size,
 		newswire_title_font_color,
-		newswire_description_font_size,
 		newswire_description_font_color,
-		newswire_button_font_size,
 		newswire_button_font_color,
-		newswire_left_title_font_size,
 		newswire_left_title_font_color,
-		newswire_left_description_font_size,
 		newswire_left_description_font_color,
-		newswire_sub_title_font_size,
 		newswire_sub_title_font_color,
-	} = attributes;
+		showNewswireButton,
+		showNewswireBottom,
+		showNewswireLeftDescription,
+	  } = attributes;
 	return (
 		<div { ...useBlockProps.save() }>
 			<div class={`newswire-by-storyful ${newswire_theme_style}`} style={{ background: background_color }}>
@@ -57,7 +54,6 @@ export default function save({attributes}) {
 									value={newswire_left_title}
 									className="section-title h1"
 									style={{
-										fontSize: newswire_left_title_font_size + "px",
 										color: newswire_left_title_font_color,
 									}}
 								/>
@@ -65,7 +61,6 @@ export default function save({attributes}) {
 									tagName="h2"
 									value={newswire_left_description}
 									style={{
-										fontSize: newswire_left_description_font_size + "px",
 										color: newswire_left_description_font_color,
 									}}
 								/>
@@ -74,7 +69,6 @@ export default function save({attributes}) {
 									value={newswire_sub_title}
 									className="newswire-sub-title"
 									style={{
-										fontSize: newswire_sub_title_font_size + "px",
 										color: newswire_sub_title_font_color,
 									}}
 								/>
@@ -87,7 +81,7 @@ export default function save({attributes}) {
 							</div>
 							)}
 						</div>
-						{ newswire_theme_style == 'style1' && (
+						{ showNewswireBottom && (
 						<div class="newswire-by-storyful-buttom">
 							<div class="newswire-by-storyful-buttom__grid">
 								<div class="newswire-by-storyful-items single-col">
@@ -97,22 +91,23 @@ export default function save({attributes}) {
 											value={newswire_title}
 											className="newswire-sub-title"
 											style={{
-												fontSize: newswire_title_font_size + "px",
 												color: newswire_title_font_color,
 											}}
 										/>
+										{ showNewswireLeftDescription && (
 										<RichText.Content
 											tagName="p"
 											value={newswire_description}
 											className="newswire-description"
 											style={{
-												fontSize: newswire_description_font_size + "px",
 												color: newswire_description_font_color,
 											}}
 										/>
+										)}
 									</div>
 								</div>
 							</div>
+							{ showNewswireButton && (
 							<div class="newswire-by-storyful-buttom__contact wow bounceIn">
 								<div class="circle-button">
 									<div class="circle-text">
@@ -121,13 +116,13 @@ export default function save({attributes}) {
 											value={newswire_button_link}
 											className="btn btn-primary"
 											style={{
-												fontSize: newswire_button_font_size + "px",
 												color: newswire_button_font_color,
 											}}
 										/>
 									</div>
 								</div>
 							</div>
+							)}
 						</div>
 						)}
 					</div>

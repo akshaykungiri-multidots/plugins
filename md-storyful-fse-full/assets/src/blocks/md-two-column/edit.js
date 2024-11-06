@@ -20,7 +20,7 @@ import {
   PanelColorSettings,
 } from "@wordpress/block-editor";
 
-import { PanelBody, FontSizePicker, Button } from "@wordpress/components";
+import { PanelBody, Button } from "@wordpress/components";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -35,100 +35,81 @@ export default function Edit({ attributes, setAttributes }) {
     title,
     description,
     background_image,
-    titleFontSize,
     titleFontColor,
-    descriptionFontSize,
     descriptionFontColor,
   } = attributes;
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__("Block Settings", "md-storyful-fse-full")}>
-          <label>{__("Background Image")}</label>
-          <MediaUpload
-            title={__("Background Image")}
-            onSelect={(media) =>
-              setAttributes({
-                background_image: media.url,
-              })
-            }
-            multiple={false}
-            render={({ open }) => (
-              <>
-                <Button className="md_bg_image_upload" onClick={open}>
-                  {background_image == "" ? (
-                    <i className="dashicons dashicons-format-image"> </i>
-                  ) : (
-                    <img src={background_image} alt="background" />
+        <PanelBody title={__("Background Settings", "md-prime")}>
+          <div className="setting-row">
+            <label htmlFor="background-image">
+              {__("Background Image", "md-prime")}
+            </label>
+            <div>
+              {!background_image ? (
+                <MediaUpload
+                  onSelect={(selectedImage) => {
+                    setAttributes({
+                      background_image: selectedImage.url,
+                    });
+                  }}
+                  allowedTypes={["image"]}
+                  value={background_image}
+                  render={({ open }) => (
+                    <Button onClick={open} className="button button-large">
+                      {__("Upload Image", "md-prime")}
+                    </Button>
                   )}
-                </Button>
-              </>
-            )}
-          />
+                />
+              ) : (
+                <>
+                  <div className="image-preview">
+                    <img src={background_image} alt="Background-image-preview" />
+                  </div>
+                  <Button
+                    onClick={() => {
+                      setAttributes({
+                        background_image: "",
+                      });
+                    }}
+                    className="is-link is-destructive"
+                  >
+                    {__("Remove Image", "md-prime")}
+                  </Button>
+                </>
+              )}
+            </div>
+          </div>
         </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Title Font Size")} </label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={titleFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ titleFontSize: newFontSize })
-            }
-          />
-          <label> {__("Description Font Size")} </label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={descriptionFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ descriptionFontSize: newFontSize })
-            }
-          />
-        </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
+        <PanelBody
+          title={__("Color Settings", "md-storyful-fse-full")}
           initialOpen={false}
-          colorSettings={[
-            {
-              value: titleFontColor,
-              onChange: (newColor) =>
-                setAttributes({ titleFontColor: newColor }),
-              label: __("Title Font Color"),
-            },
-            {
-              value: descriptionFontColor,
-              onChange: (newColor) =>
-                setAttributes({ descriptionFontColor: newColor }),
-              label: __("Description Font Color"),
-            },
-          ]}
-        />
+        >
+          <PanelColorSettings
+            title={__("Typography Colors", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: titleFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ titleFontColor: newColor }),
+                label: __("Title Font Color"),
+              },
+              {
+                value: descriptionFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ descriptionFontColor: newColor }),
+                label: __("Description Font Color"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <div {...useBlockProps({ className: "md_two_column" })}>
         <div
           className="storyful-two-column"
-          style={{ backgroundImage: `url(${background_image})` }}
+          style={{ background_image: `url(${background_image})` }}
         >
           <div class="container">
             <div class="two-columns__title">
@@ -137,7 +118,7 @@ export default function Edit({ attributes, setAttributes }) {
                 value={title}
                 onChange={(title) => setAttributes({ title })}
                 placeholder={__("Enter Title", "md-storyful-fse-full")}
-				style={{ fontSize: titleFontSize, color: titleFontColor }}
+                style={{ color: titleFontColor }}
               />
             </div>
             <div class="two-columns__description wow fadeInRight">
@@ -146,7 +127,9 @@ export default function Edit({ attributes, setAttributes }) {
                 value={description}
                 onChange={(description) => setAttributes({ description })}
                 placeholder={__("Enter Description", "md-storyful-fse-full")}
-				style={{ fontSize: descriptionFontSize, color: descriptionFontColor }}
+                style={{
+                  color: descriptionFontColor,
+                }}
               />
             </div>
           </div>

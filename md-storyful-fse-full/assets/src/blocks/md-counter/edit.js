@@ -15,10 +15,12 @@ import {
   useBlockProps,
   InspectorControls,
   RichText,
-  PanelColorSettings
+  PanelColorSettings,
 } from "@wordpress/block-editor";
 
-import { PanelBody, Button, FontSizePicker } from "@wordpress/components";
+import { PanelBody, Button, RangeControl, Tooltip } from "@wordpress/components";
+
+import { leftAlign, centerAlign, rightAlign } from "../icons";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,18 +31,16 @@ import { PanelBody, Button, FontSizePicker } from "@wordpress/components";
  * @return {WPElement} Element to render.
  */
 
-import { useState } from "@wordpress/element";
-
 export default function Edit({ attributes, setAttributes }) {
   const {
     columnList,
-    columnTitleFontSize,
-    columnDescriptionFontSize,
     columnTitleFontColor,
     columnDescriptionFontColor,
+    borderColor,
+    backgroundColor,
+    columns,
+    textAlign,
   } = attributes;
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const addStaticPostObj = () => {
     const staticPostObj = [
@@ -58,35 +58,16 @@ export default function Edit({ attributes, setAttributes }) {
     updatedStaticPostObj[index][key] = value;
     setAttributes({ columnList: updatedStaticPostObj });
   };
-  const removeStaticPostObj = (index) => {
-    const updatedStaticPostObj = [...columnList];
-    updatedStaticPostObj.splice(index, 1);
-    setAttributes({ columnList: updatedStaticPostObj });
-    setCurrentSlide(-1);
-  };
 
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...columnList];
+    arrayCopy[oldIndex] = columnList[newIndex];
+    arrayCopy[newIndex] = columnList[oldIndex];
+
+    setAttributes({
+      columnList: arrayCopy,
+    });
+  };
 
   return (
     <div
@@ -94,85 +75,200 @@ export default function Edit({ attributes, setAttributes }) {
         className: "md-counter_block",
       })}
     >
-	<InspectorControls>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Column Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={columnTitleFontSize}
-            fallbackFontSize={columnTitleFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ columnTitleFontSize: newFontSize })
-            }
+      <InspectorControls>
+        <PanelBody title={__("Settings", "md-prime")} initialOpen={true}>
+          <RangeControl
+            label={__("Columns", "md-prime")}
+            value={columns}
+            onChange={(value) => setAttributes({ columns: value })}
+            min={2}
+            max={4}
           />
-		  <label> {__("Column Description Font Size")} </label>
-		  <FontSizePicker
-			__nextHasNoMarginBottom
-			fontSizes={fontSizes}
-			value={columnDescriptionFontSize}
-			fallbackFontSize={columnDescriptionFontSize}
-			onChange={(newFontSize) =>
-			  setAttributes({ columnDescriptionFontSize: newFontSize })
-			}
-		  />
+          <div className="setting-row inspector-field inspector-field-alignment">
+            <label htmlFor="alignment" className="inspector-mb-0">
+              Alignment
+            </label>
+            <div className="inspector-field-button-list inspector-field-button-list-fluid">
+              <button
+                className={
+                  "left" === textAlign
+                    ? "active inspector-button"
+                    : " inspector-button"
+                }
+                onClick={() => setAttributes({ textAlign: "left" })}
+              >
+                {leftAlign}
+              </button>
+              <button
+                className={
+                  "center" === textAlign
+                    ? "active inspector-button"
+                    : " inspector-button"
+                }
+                onClick={() => setAttributes({ textAlign: "center" })}
+              >
+                {centerAlign}
+              </button>
+              <button
+                className={
+                  "right" === textAlign
+                    ? "active inspector-button"
+                    : " inspector-button"
+                }
+                onClick={() => setAttributes({ textAlign: "right" })}
+              >
+                {rightAlign}
+              </button>
+            </div>
+          </div>
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
-          initialOpen={false}
-          colorSettings={[
-            {
-              value: columnTitleFontColor,
-			  onChange: (newColor) =>
-				setAttributes({ columnTitleFontColor: newColor }),
-			  label: __("Column Title Font Color"),
-			},
-			{
-			  value: columnDescriptionFontColor,
-			  onChange: (newColor) =>
-				setAttributes({ columnDescriptionFontColor: newColor }),
-			  label: __("Column Description Font Color"),
-			},
-          ]}
-        />
+        <PanelBody title={__("Color Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <PanelColorSettings
+            title={__("Color Settings", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: backgroundColor,
+                onChange: (newColor) =>
+                  setAttributes({ backgroundColor: newColor }),
+                label: __("Background Color"),
+              },
+              {
+                value: borderColor,
+                onChange: (newColor) =>
+                  setAttributes({ borderColor: newColor }),
+                label: __("Border Color"),
+              },
+              {
+                value: columnTitleFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ columnTitleFontColor: newColor }),
+                label: __("Column Title Font Color"),
+              },
+              {
+                value: columnDescriptionFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ columnDescriptionFontColor: newColor }),
+                label: __("Column Description Font Color"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <div class="storyful-stat-number">
         <div class="container">
-          <div class="stats-block-bottom">
+          <div
+            class="stats-block-bottom"
+            style={{ borderColor, backgroundColor, gridTemplateColumns: `repeat(${columns}, 1fr)` }}
+          >
             {columnList &&
               columnList.map((postObj, index) => (
-                <div class="stats-block-bottom__item fadeInUp" key={index}>
-                  <div className="item-action-wrap show-items-hover small-icons">
+                <div
+                  class="stats-block-bottom__item fadeInUp show-items-hover-wrap"
+                  key={index}
+                >
+                  <div className="item-action-wrap show-items-hover pos-abs">
                     <div className="move-item">
-                      {/* <span className="dashicons dashicons-arrow-right-alt move-down"></span> */}
-                      <span
-                        onClick={() => setCurrentSlide(index)}
-                        className="move-down dashicons dashicons-admin-generic"
-                      ></span>
+                      {0 < index && (
+                        <Tooltip text={__("Move Left", "md-prime")}>
+                          <span
+                            className="dashicons dashicons-arrow-left-alt move-left"
+                            onClick={() => moveItem(index, index - 1)}
+                            onKeyDown={(event) => {
+                              if (event.key === "Enter" || event.key === " ") {
+                                moveItem(index, index - 1);
+                              }
+                            }}
+                            role="button"
+                            tabIndex={0}
+                            aria-label="Move item left"
+                          ></span>
+                        </Tooltip>
+                      )}
+                      {index + 1 < columnList.length && (
+                        <Tooltip text={__("Move Right", "md-prime")}>
+                          <span
+                            className="dashicons dashicons-arrow-right-alt move-right"
+                            onClick={() => moveItem(index, index + 1)}
+                            tabIndex={0}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                moveItem(index, index + 1);
+                              }
+                            }}
+                            role="button"
+                            aria-label="Move item right"
+                          ></span>
+                        </Tooltip>
+                      )}
                     </div>
-                    <i
-                      onClick={() => removeStaticPostObj(index)}
-                      className="remove-item dashicons dashicons-no-alt"
-                    ></i>
+                    {1 < columnList.length && (
+                      <Tooltip text={__("Remove Item", "md-prime")}>
+                        <i
+                          className="remove-item dashicons dashicons-no-alt"
+                          onClick={() => {
+                            const toDelete =
+                              // eslint-disable-next-line no-alert
+                              confirm(
+                                __(
+                                  "Are you sure you want to delete this item?",
+                                  "md-prime"
+                                )
+                              );
+                            if (toDelete) {
+                              const updatedArray = columnList.filter(
+                                (item, itemIndex) => itemIndex !== index
+                              );
+                              setAttributes({
+                                columnList: updatedArray,
+                              });
+                            }
+                          }}
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              const toDelete =
+                                // eslint-disable-next-line no-alert
+                                confirm(
+                                  __(
+                                    "Are you sure you want to delete this item?",
+                                    "md-prime"
+                                  )
+                                );
+                              if (toDelete) {
+                                const updatedArray = columnList.filter(
+                                  (item, itemIndex) => itemIndex !== index
+                                );
+                                setAttributes({
+                                  columnList: updatedArray,
+                                });
+                              }
+                            }
+                          }}
+                          role="button"
+                          aria-label="Remove item"
+                        ></i>
+                      </Tooltip>
+                    )}
                   </div>
                   <RichText
                     tagName="h3"
                     value={postObj.title}
-					style={{
-						fontSize: columnTitleFontSize,
-						color: columnTitleFontColor,
-					}}
+                    style={{
+                      color: columnTitleFontColor,
+                      textAlign: textAlign,
+                    }}
                     onChange={(value) =>
                       updateStaticPostObj(index, "title", value)
                     }
-                    placeholder={__("Enter Title")}
+                    placeholder={__("0+")}
                   />
                   <RichText
                     tagName="p"
-					style={{
-						fontSize: columnDescriptionFontSize,
-						color: columnDescriptionFontColor,
-					}}
+                    style={{
+                      color: columnDescriptionFontColor,
+                      textAlign: textAlign,
+                    }}
                     className="column-item-desc"
                     value={postObj.description}
                     onChange={(value) =>
@@ -184,7 +280,7 @@ export default function Edit({ attributes, setAttributes }) {
               ))}
             <div className="add-item-wrap">
               <Button variant="primary" onClick={addStaticPostObj}>
-                {__("Add New Slide")}
+                {__("Add New Column")}
               </Button>
             </div>
           </div>

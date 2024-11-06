@@ -25,8 +25,6 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 export default function save({attributes}) {
 	const {
 		columnList,
-		columnTitleFontSize,
-		columnDescriptionFontSize,
 		columnTitleFontColor,
 		columnDescriptionFontColor,
 	} = attributes;
@@ -42,7 +40,6 @@ export default function save({attributes}) {
 									tagName="h3"
 									value={postObj.title}
 									style={{
-										fontSize: columnTitleFontSize + "px",
 										color: columnTitleFontColor,
 									}}
 								/>
@@ -51,7 +48,6 @@ export default function save({attributes}) {
 									className='column-item-desc'
 									value={postObj.description}
 									style={{
-										fontSize: columnDescriptionFontSize + "px",
 										color: columnDescriptionFontColor,
 									}}
 								/>

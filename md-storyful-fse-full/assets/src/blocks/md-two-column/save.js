@@ -27,9 +27,7 @@ export default function save({ attributes }) {
 		title,
 		description,
 		background_image,
-		titleFontSize,
 		titleFontColor,
-		descriptionFontSize,
 		descriptionFontColor,
 	  } = attributes;
 	return (
@@ -41,7 +39,6 @@ export default function save({ attributes }) {
 							tagName="h2"
 							value={title}
 							style={{
-								fontSize: titleFontSize,
 								color: titleFontColor,
 							}}
 						/>
@@ -51,7 +48,6 @@ export default function save({ attributes }) {
 							tagName="p"
 							value={description}
 							style={{
-								fontSize: descriptionFontSize,
 								color: descriptionFontColor,
 							}}
 						/>

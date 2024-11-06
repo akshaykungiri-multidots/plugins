@@ -18,10 +18,6 @@
   "attributes": {
     "heading": {
       "type": "string",
-      "default": "This is Default Heading"
-    },
-    "heading_font_size": {
-      "type": "string",
       "default": ""
     },
     "heading_font_color": {
@@ -32,17 +28,21 @@
       "type": "string",
       "default": ""
     },
-    "titleFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "descriptionFontColor": {
       "type": "string",
       "default": ""
     },
-    "descriptionFontSize": {
-      "type": "string",
-      "default": ""
+    "displayHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayImage": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

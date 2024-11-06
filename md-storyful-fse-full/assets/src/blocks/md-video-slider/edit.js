@@ -17,9 +17,17 @@ import ServerSideRender from "@wordpress/server-side-render";
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/
  */
-import { useBlockProps, InspectorControls } from "@wordpress/block-editor";
+import { useBlockProps, InspectorControls, MediaUpload, } from "@wordpress/block-editor";
 
-import { PanelBody, RangeControl, ToggleControl, Button } from "@wordpress/components";
+import {
+  PanelBody,
+  RangeControl,
+  ToggleControl,
+  Button,
+  Tooltip,
+  SelectControl,
+  TextControl
+} from "@wordpress/components";
 
 /**
  * React hook that is used to mark the components element.
@@ -61,10 +69,16 @@ export default function Edit({ attributes, setAttributes, className }) {
       ...slideItems,
       {
         id: slideItems.length + 1,
-		videoURL: "",
+        mediaurl: "",
+        youtubeurl: "",
+        videotype: "media-upload",
+        media: "",
+        mediaId: "",
+        mediaAlt: "",
       },
     ];
     setAttributes({ slideItems: staticPostObj });
+    setCurrentSlide(staticPostObj.length - 1);
   };
   const updateStaticPostObj = (index, key, value) => {
     const updatedStaticPostObj = [...slideItems];
@@ -126,49 +140,180 @@ export default function Edit({ attributes, setAttributes, className }) {
             }
           />
         </PanelBody>
-		<PanelBody
-		  title={__("Slide Items", "md-prime")}
-		  initialOpen={false}
-		>
-			{slideItems &&
-				slideItems.map((postObj, index) => (
-					<div class="threecol-list-items__item">
-						<label>{__("Video URL")}</label>
-						<input
-							type="text"
-							value={postObj.videoURL}
-							onChange={(e) =>
-								updateStaticPostObj(index, "videoURL", e.target.value)
-							}
-						/>
-						<Button
-							variant="danger"
-							onClick={() => removeStaticPostObj(index)}
-						>
-							{__("Remove Slide")}
-						</Button>
-					</div>
-				))}
-				<div className="add-item-wrap">
-					<Button variant="primary" onClick={addStaticPostObj}>
-					{__("Add New Slide")}
-					</Button>
-				</div>
-		</PanelBody>
       </InspectorControls>
-      <ServerSideRender
-        block={metadata.name}
-        className={className}
-        attributes={{
-          autoplay,
-          arrows,
-          dots,
-          slideInfinite,
-          slideSlidesToShow,
-          slideSlidesToScroll,
-		      slideItems
-        }}
-      />
+      <div className="storyful-video-slider video-section">
+        <div className="video-container">
+          <div className="video-wrapper">
+            {currentSlide > -1 && (
+              <div className="wrapper__item mdprime-sidebar show-items-hover-wrap">
+                {slideItems.length > 0 && (
+                  <div className={`item-action-wrap show-items-hover`}>
+                    <Tooltip text={__("Remove Item", "md-prime")}>
+                      <i
+                        className="remove-item dashicons dashicons-no-alt"
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => {
+                          // eslint-disable-next-line no-alert
+                          const toDelete = confirm(
+                            __(
+                              "Are you sure you want to delete this item?",
+                              "md-prime"
+                            )
+                          );
+                          if (toDelete) {
+                            removeStaticPostObj(currentSlide);
+                          }
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            // eslint-disable-next-line no-alert
+                            const toDelete = confirm(
+                              __(
+                                "Are you sure you want to delete this item?",
+                                "md-prime"
+                              )
+                            );
+                            if (toDelete) {
+                              removeStaticPostObj(currentSlide);
+                            }
+                          }
+                        }}
+                        aria-label="Remove item"
+                      ></i>
+                    </Tooltip>
+                  </div>
+                )}
+                <div className="wrapper__box-inner">
+                  <div
+                    className="video-details-wrapper"
+                    style={{ textAlign: "center" }}
+                  >
+                    <div className="video-data-edit">
+                      <SelectControl
+                        label={__("Select Video Type", "storyful")}
+                        value={slideItems[currentSlide].videotype}
+                        options={[
+                          {
+                            label: "Media Upload Video",
+                            value: "media-upload",
+                          },
+                          {
+                            label: "Youtube Video",
+                            value: "youtube",
+                          },
+                        ]}
+                        onChange={(videotype) => {
+                          updateStaticPostObj(currentSlide, "videotype", videotype);
+                        }}
+                      />
+                      {slideItems[currentSlide].videotype === "youtube" && (
+                        <>
+                          <TextControl
+                            placeholder="Enter youtube video URL"
+                            value={slideItems[currentSlide].youtubeurl}
+                            className="video-item-url"
+                            onChange={(youtubeurl) => {
+                              updateStaticPostObj(currentSlide, "youtubeurl", youtubeurl);
+                            }}
+                          />
+                          {slideItems[currentSlide].youtubeurl && (
+                            <iframe
+                              src={
+                                slideItems[currentSlide].youtubeurl.replace(
+                                  "watch?v=",
+                                  "embed/"
+                                ) + "?controls=0"
+                              }
+                              data-src={
+                                slideItems[currentSlide].youtubeurl +
+                                "?enablejsapi=1&controls=0&rel=0"
+                              }
+                              title="video"
+                            ></iframe>
+                          )}
+                        </>
+                      )}
+                    </div>
+
+                    {slideItems[currentSlide].videotype === "media-upload" &&
+                      slideItems[currentSlide].mediaurl && (
+                        <div className="image-preview image-controle-visible-hover">
+                          <video
+                            autoPlay=""
+                            muted=""
+                            loop=""
+                            className="self-media"
+                          >
+                            <source src={slideItems[currentSlide].mediaurl} type="video/mp4" />
+                          </video>
+
+                          <div className="item-action-wrap image-controls small-icons icon-center-fixed">
+                            <Tooltip text={__("Remove Video")}>
+                              <i
+                                className="dashicons dashicons-no-alt remove-image"
+                                role="button"
+                                tabIndex={0}
+                                onClick={() => {
+                                  updateStaticPostObj(currentSlide, "mediaurl", "");
+                                }}
+                                onKeyDown={(e) => {
+                                  if (e.key === "Enter" || e.key === " ") {
+                                    e.preventDefault();
+                                    updateStaticPostObj(currentSlide, "mediaurl", "");
+                                  }
+                                }}
+                                aria-label="Remove image"
+                              ></i>
+                            </Tooltip>
+                          </div>
+                        </div>
+                      )}
+                    {slideItems[currentSlide].videotype === "media-upload" &&
+                      !slideItems[currentSlide].mediaurl && (
+                        <>
+                          <MediaUpload
+                            onSelect={(newmedia) => {
+                              updateStaticPostObj(currentSlide, "mediaurl", newmedia.url);
+                            }}
+                            allowedTypes={["video"]}
+                            value={slideItems[currentSlide].mediaurl}
+                            render={({ open }) => (
+                              <Button
+                                onClick={open}
+                                className="components-button button button-large"
+                              >
+                                <i className="upload"></i> Upload video
+                              </Button>
+                            )}
+                          />
+                        </>
+                      )}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          {/* Display Slides as Button */}
+          <div className="slide-buttons">
+            {slideItems.map((item, index) => (
+              <button
+                key={index}
+                className={`slide-button ${currentSlide === index ? "active" : ""}`}
+                onClick={() => setCurrentSlide(index)}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div>
+          <div className="add-item-wrap">
+            <Button variant="primary" onClick={addStaticPostObj}>
+              {__("Add New Slide")}
+            </Button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
