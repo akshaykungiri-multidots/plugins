@@ -23,7 +23,7 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  * @return {WPElement} Element to render.
  */
 export default function save({ attributes }) {
-  const { 
+  const {
     title,
     heading_content,
     button_link,
@@ -31,11 +31,11 @@ export default function save({ attributes }) {
     background_image,
     background_color,
     cover_cta_style,
-    title_font_size,
     title_font_color,
-    heading_content_font_size,
     heading_content_font_color,
-    button_font_size
+    show_title,
+    show_heading_content,
+    show_button,
   } = attributes;
   
   return (
@@ -56,23 +56,26 @@ export default function save({ attributes }) {
               <div className="container">
                   <div className="md_anitian_cover_cta__inner">
                       <div className="md_anitian_cover_cta__heading">
+                        {show_title && (
                         <RichText.Content
                           tagName="h2"
                           value={title}
-                          style={{fontSize: title_font_size, color: title_font_color}}
+                          style={{color: title_font_color}}
                         />
+                        )}
+                        {show_heading_content && (
                         <RichText.Content
                           tagName="p"
                           value={heading_content}
-                          style={{fontSize: heading_content_font_size, color: heading_content_font_color}}
+                          style={{color: heading_content_font_color}}
                         />
-                        {button_link && (
+                        )}
+                        {show_button && (
                           <div className="md_anitian_cover_cta__btn">
                               <RichText.Content
                                 tagName="p"
                                 className="btn-anitian md_anitian_cover_cta__btn"
                                 value={button_link}
-                                style={{fontSize: button_font_size}}
                               />
                           </div>
                         )}

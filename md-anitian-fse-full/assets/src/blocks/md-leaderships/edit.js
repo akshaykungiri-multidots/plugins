@@ -24,7 +24,7 @@ import { InspectorControls, PanelColorSettings, useBlockProps } from "@wordpress
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/components/
  */
-import { PanelBody, TextControl, FontSizePicker } from "@wordpress/components";
+import { PanelBody, TextControl, ToggleControl } from "@wordpress/components";
 
 import metadata from "./block.json";
 import "./editor.scss";
@@ -43,125 +43,93 @@ import "./editor.scss";
 export default function Edit({ attributes, setAttributes, className }) {
   const {
     heading,
-    headingFontSize,
     headingColor,
-    leaderTitleFontSize,
     leaderTitleFontColor,
-    leaderDesignationFontSize,
     leaderDesignationFontColor,
-    leaderDescriptionFontSize,
     leaderDescriptionFontColor,
+    showHeading,
+    showLeaderTitle,
+    showLeaderDesignation,
+    showLeaderDescription,
   } = attributes;
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
   return (
     <div {...useBlockProps()}>
       <InspectorControls>
-        <PanelBody title={__("Block Settings", "md-anitian-fse-full")}>
-          <TextControl
-            label={__("Heading", "md-anitian-fse-full")}
-            placeholder={__("Enter Heading", "md-anitian-fse-full")}
-            value={heading}
-            onChange={(value) => setAttributes({ heading: value })}
+        <PanelBody title={__("Toggle Settings", "md-anitian-fse-full")}>
+          <ToggleControl
+            label={__("Show Heading", "md-anitian-fse-full")}
+            checked={showHeading}
+            onChange={(value) => setAttributes({ showHeading: value })}
+          />
+          {showHeading && (
+            <TextControl
+              label={__("Heading", "md-anitian-fse-full")}
+              placeholder={__("Enter Heading", "md-anitian-fse-full")}
+              value={heading}
+              onChange={(value) => setAttributes({ heading: value })}
+            />
+          )}
+          <ToggleControl
+            label={__("Show Leader Title", "md-anitian-fse-full")}
+            checked={showLeaderTitle}
+            onChange={(value) => setAttributes({ showLeaderTitle: value })}
+          />
+          <ToggleControl
+            label={__("Show Leader Designation", "md-anitian-fse-full")}
+            checked={showLeaderDesignation}
+            onChange={(value) => setAttributes({ showLeaderDesignation: value })}
+          />
+          <ToggleControl
+            label={__("Show Leader Description", "md-anitian-fse-full")}
+            checked={showLeaderDescription}
+            onChange={(value) => setAttributes({ showLeaderDescription: value })}
           />
         </PanelBody>
-        <PanelBody title={__("Typography", "md-anitian-fse-full")}>
-          <label>{__("Heading Font Size", "md-anitian-fse-full")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={headingFontSize}
-            onChange={(value) =>
-              setAttributes({ headingFontSize: value })
-            }
-          />
-          <label> {__("Leader Title Font Size", "md-anitian-fse-full")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={leaderTitleFontSize}
-            onChange={(value) =>
-              setAttributes({ leaderTitleFontSize: value })
-            }
-          />
-          <label>{__("Leader Designation Font Size", "md-anitian-fse-full")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={leaderDesignationFontSize}
-            onChange={(value) =>
-              setAttributes({ leaderDesignationFontSize: value })
-            }
-          />
-          <label>{__("Leader Description Font Size", "md-anitian-fse-full")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={leaderDescriptionFontSize}
-            onChange={(value) =>
-              setAttributes({ leaderDescriptionFontSize: value })
-            }
+        <PanelBody title={__("Color Settings", "md-anitian-fse-full")} initialOpen={false}>
+          <PanelColorSettings
+            title={__("Typography Colors", "md-anitian-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: headingColor,
+                onChange: (value) => setAttributes({ headingColor: value }),
+                label: __("Heading Font Color", "md-anitian-fse-full"),
+              },
+              {
+                value: leaderTitleFontColor,
+                onChange: (value) =>
+                  setAttributes({ leaderTitleFontColor: value }),
+                label: __("Leader Title Font Color", "md-anitian-fse-full"),
+              },
+              {
+                value: leaderDesignationFontColor,
+                onChange: (value) =>
+                  setAttributes({ leaderDesignationFontColor: value }),
+                label: __("Leader Designation Font Color", "md-anitian-fse-full"),
+              },
+              {
+                value: leaderDescriptionFontColor,
+                onChange: (value) =>
+                  setAttributes({ leaderDescriptionFontColor: value }),
+                label: __("Leader Description Font Color", "md-anitian-fse-full"),
+              },
+            ]}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-anitian-fse-full")}
-          initialOpen={false}
-          colorSettings={[
-            {
-              value: headingColor,
-              onChange: (value) => setAttributes({ headingColor: value }),
-              label: __("Heading Font Color", "md-anitian-fse-full"),
-            },
-            {
-              value: leaderTitleFontColor,
-              onChange: (value) =>
-                setAttributes({ leaderTitleFontColor: value }),
-              label: __("Leader Title Font Color", "md-anitian-fse-full"),
-            },
-            {
-              value: leaderDesignationFontColor,
-              onChange: (value) =>
-                setAttributes({ leaderDesignationFontColor: value }),
-              label: __("Leader Designation Font Color", "md-anitian-fse-full"),
-            },
-            {
-              value: leaderDescriptionFontColor,
-              onChange: (value) =>
-                setAttributes({ leaderDescriptionFontColor: value }),
-              label: __("Leader Description Font Color", "md-anitian-fse-full"),
-            },
-          ]}
-        />
       </InspectorControls>
       <ServerSideRender
         block={metadata.name}
         className={className}
         attributes={{
           heading,
-          headingFontSize,
           headingColor,
-          leaderTitleFontSize,
           leaderTitleFontColor,
-          leaderDesignationFontSize,
           leaderDesignationFontColor,
-          leaderDescriptionFontSize,
           leaderDescriptionFontColor,
+          showHeading,
+          showLeaderTitle,
+          showLeaderDesignation,
+          showLeaderDescription,
         }}
       />
     </div>

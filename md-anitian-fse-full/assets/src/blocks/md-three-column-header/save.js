@@ -27,14 +27,15 @@ export default function save({ attributes }) {
     bannerTitle,
     backgroundMediaImage,
     columnList,
-    bannerTitleFontSize,
     bannerTitleColor,
-    columnTitleFontSize,
     columnTitleColor,
-    columnContentFontSize,
     columnContentColor,
-    columnLinkFontSize,
     columnLinkColor,
+    showBannerTitle,
+    showColumnImage,
+    showColumnTitle,
+    showColumnContent,
+    showColumnLink,
   } = attributes;
   return (
     <div
@@ -48,16 +49,17 @@ export default function save({ attributes }) {
           style={{ backgroundImage: `url(${backgroundMediaImage})` }}
         >
           <div className="container">
+            {showBannerTitle && (
             <div className="md_anitian_three_column_header__heading">
               <RichText.Content
                 tagName="h2"
                 value={bannerTitle}
                 style={{
-                  fontSize: bannerTitleFontSize,
                   color: bannerTitleColor,
                 }}
               />
             </div>
+            )}
           </div>
         </div>
         <div className="container">
@@ -65,37 +67,42 @@ export default function save({ attributes }) {
             {columnList &&
               columnList.map((postObj) => (
                 <div className="md_anitian_three_column_header__item  show-items-hover-wrap">
+                  {showColumnImage && (
                   <div className="md_anitian_three_column_header__item__image">
                     {postObj.image && (
                       <img onClick={open} src={postObj.image} />
                     )}
                   </div>
+                  )}
                   <div className="md_anitian_three_column_header__item__content">
+                    {showColumnTitle && (
                     <RichText.Content
                       tagName="h5"
                       value={postObj.column_title}
                       style={{
-                        fontSize: columnTitleFontSize,
                         color: columnTitleColor,
                       }}
                     />
+                    )}
+                    {showColumnContent && (
                     <RichText.Content
                       tagName="p"
                       value={postObj.column_description}
                       style={{
-                        fontSize: columnContentFontSize,
                         color: columnContentColor,
                       }}
                     />
+                    )}
+                    {showColumnLink && (
                     <RichText.Content
                       tagName="a"
                       className="md_anitian_three_column_header__item__link"
                       value={postObj.column_link}
                       style={{
-                        fontSize: columnLinkFontSize,
                         color: columnLinkColor,
                       }}
                     />
+                    )}
                   </div>
                 </div>
               ))}

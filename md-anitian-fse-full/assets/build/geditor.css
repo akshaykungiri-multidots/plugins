@@ -1105,6 +1105,10 @@
   opacity: 1;
   visibility: visible;
 }
+.image-preview img {
+  width: 100%;
+  height: auto;
+}
 
 .add-item-wrap {
   text-align: center;

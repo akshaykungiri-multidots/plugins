@@ -42,15 +42,7 @@
       "type": "string",
       "default": ""
     },
-    "title_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "title_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "heading_content_font_size": {
       "type": "string",
       "default": ""
     },
@@ -58,9 +50,17 @@
       "type": "string",
       "default": ""
     },
-    "button_font_size": {
-      "type": "string",
-      "default": ""
+    "show_title": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_heading_content": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_button": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

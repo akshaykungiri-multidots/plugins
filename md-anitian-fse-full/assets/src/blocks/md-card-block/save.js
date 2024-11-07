@@ -29,18 +29,20 @@ export default function save({ attributes }) {
     heading_content,
     card_block_style,
     card_block_list,
-    sub_title_font_size,
     sub_title_font_color,
-    title_font_size,
     title_font_color,
-    heading_content_font_size,
     heading_content_font_color,
-    card_title_font_size,
     card_title_font_color,
-    card_content_font_size,
     card_content_font_color,
-    card_learn_more_font_size,
     card_learn_more_font_color,
+    number_of_columns,
+    show_image,
+    show_title,
+    show_content,
+    show_link,
+    show_sub_heading,
+    show_heading_content,
+    show_heading,
   } = attributes;
   return (
     <div {...useBlockProps.save({ className: "md_anitian_card_block" })}>
@@ -48,32 +50,36 @@ export default function save({ attributes }) {
         <div className="md_anitian_card_block__head">
           <div className="container">
             <div className="md_anitian_card_block__heading">
+              {show_sub_heading && (
               <RichText.Content
                 tagName="h3"
                 value={sub_title}
                 style={{
-                  fontSize: sub_title_font_size,
                   color: sub_title_font_color,
                 }}
               />
+              )}
+              {show_heading && (
               <RichText.Content
                 tagName="h2"
                 value={title}
-                style={{ fontSize: title_font_size, color: title_font_color }}
+                style={{ color: title_font_color }}
               />
+              )}
+              {show_heading_content && (
               <RichText.Content
                 tagName="p"
                 value={heading_content}
                 style={{
-                  fontSize: heading_content_font_size,
                   color: heading_content_font_color,
                 }}
               />
+              )}
             </div>
           </div>
         </div>
         <div className="container">
-          <div className="md_anitian_card_block__content">
+          <div className="md_anitian_card_block__content" style={{ gridTemplateColumns: `repeat(${number_of_columns}, 1fr)` }}>
             {card_block_list &&
               card_block_list.map((postObj, index) => (
                 <div className="md_anitian_card_block__item  show-items-hover-wrap">
@@ -83,34 +89,37 @@ export default function save({ attributes }) {
                     )}
                   </div>
                   <div className="md_anitian_card_block__item__content">
+                    {show_title && (
                     <RichText.Content
                       tagName="h3"
                       className="column-item-title"
                       value={postObj.card_title}
                       style={{
-                        fontSize: card_title_font_size,
                         color: card_title_font_color,
                       }}
                     />
+                    )}
                     <div className="md_anitian_card_block__item__content__link">
+                      {show_content && (
                       <RichText.Content
                         tagName="p"
                         className="column-item-desc"
                         value={postObj.card_description}
                         style={{
-                          fontSize: card_content_font_size,
                           color: card_content_font_color,
                         }}
                       />
+                      )}
+                      {show_link && (
                       <RichText.Content
-                        tagName="a"
+                        tagName="p"
                         className="md_anitian_card_block__item__link"
                         value={postObj.learn_more_link}
                         style={{
-                          fontSize: card_learn_more_font_size,
                           color: card_learn_more_font_color,
                         }}
                       />
+                      )}
                     </div>
                   </div>
                 </div>

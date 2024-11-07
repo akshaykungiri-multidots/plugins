@@ -15,13 +15,20 @@ import {
   useBlockProps,
   RichText,
   MediaUpload,
+  MediaUploadCheck,
   InspectorControls,
-  PanelColorSettings
+  PanelColorSettings,
 } from "@wordpress/block-editor";
 
-import { Button, SelectControl, PanelBody, FontSizePicker, Tooltip } from "@wordpress/components";
+import {
+  Button,
+  SelectControl,
+  PanelBody,
+  Tooltip,
+  ToggleControl,
+  RangeControl,
+} from "@wordpress/components";
 
-import { useState } from "@wordpress/element";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -38,21 +45,21 @@ export default function Edit({ attributes, setAttributes }) {
     heading_content,
     card_block_style,
     card_block_list,
-    sub_title_font_size,
     sub_title_font_color,
-    title_font_size,
     title_font_color,
-    heading_content_font_size,
     heading_content_font_color,
-    card_title_font_size,
     card_title_font_color,
-    card_content_font_size,
     card_content_font_color,
-    card_learn_more_font_size,
     card_learn_more_font_color,
+    number_of_columns,
+    show_image,
+    show_title,
+    show_content,
+    show_link,
+    show_sub_heading,
+    show_heading_content,
+    show_heading,
   } = attributes;
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const addStaticPostObj = () => {
     const staticPostObj = [
@@ -82,33 +89,10 @@ export default function Edit({ attributes, setAttributes }) {
     });
   };
 
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
-
   return (
     <div {...useBlockProps({ className: "md_anitian_card_block" })}>
       <InspectorControls>
-        <PanelBody title={__("Block Settings", "md-storyful-fse-full")}>
+        <PanelBody title={__("Block Settings", "md-anitian-fse-full")}>
           <SelectControl
             label={__("Card Block Style", "md-anitian-fse-full")}
             value={card_block_style}
@@ -119,155 +103,145 @@ export default function Edit({ attributes, setAttributes }) {
             ]}
             onChange={(value) => setAttributes({ card_block_style: value })}
           />
-        </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Sub Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={sub_title_font_size}
-            fallbackFontSize={sub_title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ sub_title_font_size: newFontSize })
-            }
-          />
-          <label> {__("Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={title_font_size}
-            fallbackFontSize={title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ title_font_size: newFontSize })
-            }
-          />
-          <label> {__("Heading Content Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={heading_content_font_size}
-            fallbackFontSize={heading_content_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ heading_content_font_size: newFontSize })
-            }
-          />
-          <label> {__("Card Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={card_title_font_size}
-            fallbackFontSize={card_title_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ card_title_font_size: newFontSize })
-            }
-          />
-          <label> {__("Card Description Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={card_content_font_size}
-            fallbackFontSize={card_content_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ card_content_font_size: newFontSize })
-            }
-          />
-          <label> {__("Card Learn More Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={card_learn_more_font_size}
-            fallbackFontSize={card_learn_more_font_size}
-            onChange={(newFontSize) =>
-              setAttributes({ card_learn_more_font_size: newFontSize })
-            }
+          <RangeControl
+            label={__("Number of Columns", "md-anitian-fse-full")}
+            value={number_of_columns}
+            onChange={(value) => setAttributes({ number_of_columns: value })}
+            min={1}
+            max={4}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
+        <PanelBody title={__("Toggle Settings", "md-anitian-fse-full")} initialOpen={false}>
+          <ToggleControl
+            label={__("Show Sub Heading", "md-anitian-fse-full")}
+            checked={show_sub_heading}
+            onChange={(value) => setAttributes({ show_sub_heading: value })}
+          />
+          <ToggleControl
+            label={__("Show Heading", "md-anitian-fse-full")}
+            checked={show_heading}
+            onChange={(value) => setAttributes({ show_heading: value })}
+          />
+          <ToggleControl
+            label={__("Show Heading Content", "md-anitian-fse-full")}
+            checked={show_heading_content}
+            onChange={(value) => setAttributes({ show_heading_content: value })}
+          />
+          <ToggleControl
+            label={__("Show Image", "md-anitian-fse-full")}
+            checked={show_image}
+            onChange={(value) => setAttributes({ show_image: value })}
+          />
+          <ToggleControl
+            label={__("Show Title", "md-anitian-fse-full")}
+            checked={show_title}
+            onChange={(value) => setAttributes({ show_title: value })}
+          />
+          <ToggleControl
+            label={__("Show Content", "md-anitian-fse-full")}
+            checked={show_content}
+            onChange={(value) => setAttributes({ show_content: value })}
+          />
+          <ToggleControl
+            label={__("Show Link", "md-anitian-fse-full")}
+            checked={show_link}
+            onChange={(value) => setAttributes({ show_link: value })}
+          />
+        </PanelBody>
+        <PanelBody
+          title={__("Color Settings", "md-anitian-fse-full")}
           initialOpen={false}
-          colorSettings={[
-            {
-              value: sub_title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ sub_title_font_color: newColor }),
-              label: __("Sub Title Font Color"),
-            },
-            {
-              value: title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ title_font_color: newColor }),
-              label: __("Title Font Color"),
-            },
-            {
-              value: heading_content_font_color,
-              onChange: (newColor) =>
-                setAttributes({ heading_content_font_color: newColor }),
-              label: __("Heading Content Font Color"),
-            },
-            {
-              value: card_title_font_color,
-              onChange: (newColor) =>
-                setAttributes({ card_title_font_color: newColor }),
-              label: __("Card Title Font Color"),
-            },
-            {
-              value: card_content_font_color,
-              onChange: (newColor) =>
-                setAttributes({ card_content_font_color: newColor }),
-              label: __("Card Description Font Color"),
-            },
-            {
-              value: card_learn_more_font_color,
-              onChange: (newColor) =>
-                setAttributes({ card_learn_more_font_color: newColor }),
-              label: __("Card Learn More Font Color"),
-            },
-          ]}
-        />
+        >
+          <PanelColorSettings
+            title={__("Color Settings", "md-anitian-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: sub_title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ sub_title_font_color: newColor }),
+                label: __("Sub Title Font Color"),
+              },
+              {
+                value: title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ title_font_color: newColor }),
+                label: __("Title Font Color"),
+              },
+              {
+                value: heading_content_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ heading_content_font_color: newColor }),
+                label: __("Heading Content Font Color"),
+              },
+              {
+                value: card_title_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ card_title_font_color: newColor }),
+                label: __("Card Title Font Color"),
+              },
+              {
+                value: card_content_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ card_content_font_color: newColor }),
+                label: __("Card Description Font Color"),
+              },
+              {
+                value: card_learn_more_font_color,
+                onChange: (newColor) =>
+                  setAttributes({ card_learn_more_font_color: newColor }),
+                label: __("Card Learn More Font Color"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <div className={`md_anitian_card_block ${card_block_style}`}>
         <div className="md_anitian_card_block__head">
           <div className="container">
             <div className="md_anitian_card_block__heading">
+              {show_sub_heading && (
               <RichText
                 tagName="h3"
                 value={sub_title}
                 onChange={(value) => setAttributes({ sub_title: value })}
                 placeholder={__("Enter Sub Title", "md-anitian-fse-full")}
                 style={{
-                  fontSize: sub_title_font_size,
                   color: sub_title_font_color,
                 }}
               />
+              )}
+              {show_heading && (
               <RichText
                 tagName="h2"
                 value={title}
                 onChange={(value) => setAttributes({ title: value })}
                 placeholder={__("Enter Title", "md-anitian-fse-full")}
                 style={{
-                  fontSize: title_font_size,
                   color: title_font_color,
                 }}
               />
+              )}
+              {show_heading_content && (
               <RichText
                 tagName="p"
                 value={heading_content}
                 onChange={(value) => setAttributes({ heading_content: value })}
                 placeholder={__("Enter Heading Content", "md-anitian-fse-full")}
                 style={{
-                  fontSize: heading_content_font_size,
                   color: heading_content_font_color,
                 }}
               />
+              )}
             </div>
           </div>
         </div>
         <div className="container">
-          <div className="md_anitian_card_block__content">
+          <div className="md_anitian_card_block__content" style={{ gridTemplateColumns: `repeat(${number_of_columns}, 1fr)` }}>
             {card_block_list &&
               card_block_list.map((postObj, index) => (
                 <div className="md_anitian_card_block__item show-items-hover-wrap">
-                  <div className="item-action-wrap show-items-hover small-icons">
+                  <div className={`item-action-wrap show-items-hover pos-abs`}>
                     <div className="move-item">
                       {0 < index && (
                         <Tooltip text={__("Move Left", "md-prime")}>
@@ -290,7 +264,7 @@ export default function Edit({ attributes, setAttributes }) {
                           <span
                             className="dashicons dashicons-arrow-right-alt move-right"
                             role="button"
-                            tabIndex="0"
+                            tabIndex={0}
                             onClick={() => moveItem(index, index + 1)}
                             onKeyDown={(e) => {
                               if (e.key === "Enter" || e.key === " ") {
@@ -307,7 +281,7 @@ export default function Edit({ attributes, setAttributes }) {
                         <i
                           className="remove-item dashicons dashicons-no-alt"
                           role="button"
-                          tabIndex="0"
+                          tabIndex={0}
                           onClick={() => {
                             const toDelete =
                               // eslint-disable-next-line no-alert
@@ -317,7 +291,7 @@ export default function Edit({ attributes, setAttributes }) {
                                   "md-prime"
                                 )
                               );
-                            if (toDelete) {
+                            if (toDelete === true) {
                               const updatedArray = card_block_list.filter(
                                 (item, itemIndex) => itemIndex !== index
                               );
@@ -328,6 +302,8 @@ export default function Edit({ attributes, setAttributes }) {
                           }}
                           onKeyDown={(e) => {
                             if (e.key === "Enter" || e.key === " ") {
+                              // Simulate click behavior for keyboard users
+                              e.preventDefault(); // Prevent default action for space key
                               const toDelete =
                                 // eslint-disable-next-line no-alert
                                 confirm(
@@ -336,7 +312,7 @@ export default function Edit({ attributes, setAttributes }) {
                                     "md-prime"
                                   )
                                 );
-                              if (toDelete) {
+                              if (toDelete === true) {
                                 const updatedArray = card_block_list.filter(
                                   (item, itemIndex) => itemIndex !== index
                                 );
@@ -346,32 +322,118 @@ export default function Edit({ attributes, setAttributes }) {
                               }
                             }
                           }}
-                          aria-label="Delete item"
+                          aria-label={__("Remove this item", "md-prime")}
                         ></i>
                       </Tooltip>
                     )}
                   </div>
+                  {show_image && (
                   <div className="md_anitian_card_block__item__image">
-                    <MediaUpload
-                      title={__("Image")}
-                      onSelect={(media) =>
-                        updateStaticPostObj(index, "card_image", media.url)
-                      }
-                      multiple={false}
-                      render={({ open }) => (
-                        <>
-                          {postObj.card_image == "" ? (
-                            <Button variant="primary" onClick={open}>
-                              {__("Upload")}
-                            </Button>
-                          ) : (
-                            <img onClick={open} src={postObj.card_image} />
+                      <div className={`card-box-v1__box_image`}>
+                        <div className="md-prime-block-control image-preview image-controle-visible-hover">
+                          <div
+                            className={`image-controls small-icons icon-center-fixed`}
+                          >
+                            <MediaUploadCheck>
+                              <MediaUpload
+                                onSelect={(media) =>
+                                  updateStaticPostObj(
+                                    index,
+                                    "card_image",
+                                    media.url
+                                  )
+                                }
+                                allowedTypes={["image"]}
+                                value={postObj.card_image}
+                                render={({ open }) => {
+                                  return (
+                                    <Tooltip
+                                      text={__("Edit Image", "md-prime")}
+                                    >
+                                      <i
+                                        className="dashicons dashicons-edit edit-image"
+                                        onClick={open}
+                                        role="button"
+                                        tabIndex={0}
+                                        onKeyDown={(e) => {
+                                          if (
+                                            e.key === "Enter" ||
+                                            e.key === " "
+                                          ) {
+                                            e.preventDefault(); // Prevent default action for space key
+                                            open(); // Trigger the click handler
+                                          }
+                                        }}
+                                        aria-label={__(
+                                          "Edit image",
+                                          "md-prime"
+                                        )}
+                                      ></i>
+                                    </Tooltip>
+                                  );
+                                }}
+                              />
+                            </MediaUploadCheck>
+                            <Tooltip text={__("Remove Image", "md-prime")}>
+                              <i
+                                className="dashicons dashicons-no-alt remove-image"
+                                onClick={() => {
+                                  const toDelete =
+                                    // eslint-disable-next-line no-alert
+                                    confirm(
+                                      __(
+                                        "Are you sure you want to delete this image?",
+                                        "md-prime"
+                                      )
+                                    );
+                                  if (toDelete) {
+                                    updateStaticPostObj(index, "card_image", "");
+                                  }
+                                }}
+                                role="button"
+                                tabIndex={0}
+                                onKeyDown={(e) => {
+                                  if (e.key === "Enter" || e.key === " ") {
+                                    e.preventDefault();
+                                    updateStaticPostObj(index, "card_image", "");
+                                  }
+                                }}
+                                aria-label={__("Remove image", "md-prime")}
+                              ></i>
+                            </Tooltip>
+                          </div>
+                          {postObj.card_image && (
+                            <img src={postObj.card_image} />
                           )}
-                        </>
-                      )}
-                    />
+                        </div>
+                        {!postObj.card_image && (
+                          <MediaUpload
+                            onSelect={(item) => {
+                              updateStaticPostObj(index, "card_image", item.url);
+                            }}
+                            allowedTypes={["image"]}
+                            value={postObj.card_image}
+                            render={({ open }) => (
+                              <div className="upload-wrap">
+                                <Button
+                                  onClick={open}
+                                  className="button media_and_text__upload_btn"
+                                >
+                                  <Tooltip
+                                    text={__("Upload Image", "md-prime")}
+                                  >
+                                    <i className="dashicons dashicons-upload"></i>
+                                  </Tooltip>
+                                </Button>
+                              </div>
+                            )}
+                          />
+                        )}
+                      </div>
                   </div>
+                  )}
                   <div className="md_anitian_card_block__item__content">
+                    {show_title && (
                     <RichText
                       tagName="h3"
                       className="column-item-title"
@@ -381,11 +443,12 @@ export default function Edit({ attributes, setAttributes }) {
                       }
                       placeholder={__("Enter Title")}
                       style={{
-                        fontSize: card_title_font_size,
                         color: card_title_font_color,
                       }}
                     />
+                    )}
                     <div className="md_anitian_card_block__item__content__link">
+                      {show_content && (
                       <RichText
                         tagName="p"
                         className="column-item-desc"
@@ -395,32 +458,39 @@ export default function Edit({ attributes, setAttributes }) {
                         }
                         placeholder={__("Enter Description")}
                         style={{
-                          fontSize: card_content_font_size,
                           color: card_content_font_color,
                         }}
                       />
+                      )}
+                      {show_link && (
                       <RichText
-                        tagName="a"
+                        tagName="p"
                         className="md_anitian_card_block__item__link"
                         value={postObj.learn_more_link}
                         onChange={(value) =>
                           updateStaticPostObj(index, "learn_more_link", value)
                         }
-                        placeholder={__("Enter Title")}
+                        placeholder={__("Link")}
                         style={{
-                          fontSize: card_learn_more_font_size,
                           color: card_learn_more_font_color,
                         }}
                       />
+                      )}
                     </div>
                   </div>
                 </div>
               ))}
-            <div className="add-item-wrap">
-              <Button variant="primary" onClick={addStaticPostObj}>
-                {__("Add New Slide")}
-              </Button>
             </div>
+          <div
+            className="add-item-wrap"
+            onClick={addStaticPostObj}
+            role="button"
+            tabIndex={0}
+            aria-label={__("Add new item", "md-prime")}
+          >
+            <Tooltip text={__("Add New Item", "md-prime")}>
+              <i className="add-new-item dashicons dashicons-plus"></i>
+            </Tooltip>
           </div>
         </div>
       </div>

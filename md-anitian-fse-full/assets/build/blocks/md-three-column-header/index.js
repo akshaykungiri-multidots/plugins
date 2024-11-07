@@ -20,8 +20,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
 
 /**
  * Retrieves the translation of text.
@@ -36,7 +34,6 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-
 
 
 
@@ -56,33 +53,16 @@ function Edit({
     bannerTitle,
     backgroundMediaImage,
     columnList,
-    bannerTitleFontSize,
     bannerTitleColor,
-    columnTitleFontSize,
     columnTitleColor,
-    columnContentFontSize,
     columnContentColor,
-    columnLinkFontSize,
-    columnLinkColor
+    columnLinkColor,
+    showBannerTitle,
+    showColumnImage,
+    showColumnTitle,
+    showColumnContent,
+    showColumnLink
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
-  const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(0);
   const addStaticPostObj = () => {
     const staticPostObj = [...columnList, {
       id: columnList.length + 1,
@@ -115,51 +95,74 @@ function Edit({
       className: "md_anitian_three_column_header_section"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block Settings", "md-storyful-fse-full")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image"),
-    onSelect: media => setAttributes({
-      backgroundMediaImage: media.url
-    }),
-    multiple: false,
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Settings", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "setting-row"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "background-image"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image", "md-prime")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, !backgroundMediaImage ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: selectedImage => {
+      setAttributes({
+        backgroundMediaImage: selectedImage.url
+      });
+    },
+    allowedTypes: ["image"],
+    value: backgroundMediaImage,
     render: ({
       open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      className: "md_bg_image_upload",
-      onClick: open
-    }, backgroundMediaImage == "" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      className: "dashicons dashicons-format-image"
-    }, " ") : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: backgroundMediaImage,
-      alt: "background"
-    })))
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open,
+      className: "button button-large"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload Image", "md-prime"))
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-preview"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: backgroundMediaImage,
+    alt: "Background-image-preview"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    onClick: () => {
+      setAttributes({
+        backgroundMediaImage: ""
+      });
+    },
+    className: "is-link is-destructive"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime")))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Toggle Settings", "md-storyful-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Banner Title", "md-storyful-fse-full"),
+    checked: showBannerTitle,
+    onChange: value => setAttributes({
+      showBannerTitle: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Column Image", "md-storyful-fse-full"),
+    checked: showColumnImage,
+    onChange: value => setAttributes({
+      showColumnImage: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Column Title", "md-storyful-fse-full"),
+    checked: showColumnTitle,
+    onChange: value => setAttributes({
+      showColumnTitle: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Column Content", "md-storyful-fse-full"),
+    checked: showColumnContent,
+    onChange: value => setAttributes({
+      showColumnContent: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Column Link", "md-storyful-fse-full"),
+    checked: showColumnLink,
+    onChange: value => setAttributes({
+      showColumnLink: value
+    })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Banner Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: bannerTitleFontSize,
-    onChange: value => setAttributes({
-      bannerTitleFontSize: value
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: columnTitleFontSize,
-    onChange: value => setAttributes({
-      columnTitleFontSize: value
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Content Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: columnContentFontSize,
-    onChange: value => setAttributes({
-      columnContentFontSize: value
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Link Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: columnLinkFontSize,
-    onChange: value => setAttributes({
-      columnLinkFontSize: value
-    })
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-storyful-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
     initialOpen: false,
     colorSettings: [{
@@ -187,7 +190,7 @@ function Edit({
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Link Color")
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__bg_image",
@@ -196,7 +199,7 @@ function Edit({
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, showBannerTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__heading"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
@@ -206,7 +209,6 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title"),
     style: {
-      fontSize: bannerTitleFontSize,
       color: bannerTitleColor
     }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -276,7 +278,7 @@ function Edit({
       }
     },
     "aria-label": "Delete item"
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), showColumnImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__item__image"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image"),
@@ -321,40 +323,42 @@ function Edit({
     }))))
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__item__content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, showColumnTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h5",
     value: postObj.column_title,
     onChange: value => updateStaticPostObj(index, "column_title", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title"),
     style: {
-      fontSize: columnTitleFontSize,
       color: columnTitleColor
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), showColumnContent && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: postObj.column_description,
     onChange: value => updateStaticPostObj(index, "column_description", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description"),
     style: {
-      fontSize: columnContentFontSize,
       color: columnContentColor
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), showColumnLink && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "a",
     className: "md_anitian_three_column_header__item__link",
     value: postObj.column_link,
     onChange: value => updateStaticPostObj(index, "column_link", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add link"),
     style: {
-      fontSize: columnLinkFontSize,
       color: columnLinkColor
     }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "add-item-wrap"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    variant: "primary",
-    onClick: addStaticPostObj
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Slide")))))));
+    className: "add-item-wrap",
+    onClick: addStaticPostObj,
+    role: "button",
+    tabIndex: 0,
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "add-new-item dashicons dashicons-plus"
+  })))))));
 }
 
 /***/ }),
@@ -462,14 +466,15 @@ function save({
     bannerTitle,
     backgroundMediaImage,
     columnList,
-    bannerTitleFontSize,
     bannerTitleColor,
-    columnTitleFontSize,
     columnTitleColor,
-    columnContentFontSize,
     columnContentColor,
-    columnLinkFontSize,
-    columnLinkColor
+    columnLinkColor,
+    showBannerTitle,
+    showColumnImage,
+    showColumnTitle,
+    showColumnContent,
+    showColumnLink
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -484,13 +489,12 @@ function save({
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, showBannerTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__heading"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     value: bannerTitle,
     style: {
-      fontSize: bannerTitleFontSize,
       color: bannerTitleColor
     }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -499,33 +503,30 @@ function save({
     className: "md_anitian_three_column_header__content"
   }, columnList && columnList.map(postObj => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__item  show-items-hover-wrap"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, showColumnImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__item__image"
   }, postObj.image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     onClick: open,
     src: postObj.image
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_three_column_header__item__content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, showColumnTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h5",
     value: postObj.column_title,
     style: {
-      fontSize: columnTitleFontSize,
       color: columnTitleColor
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), showColumnContent && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     value: postObj.column_description,
     style: {
-      fontSize: columnContentFontSize,
       color: columnContentColor
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), showColumnLink && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "a",
     className: "md_anitian_three_column_header__item__link",
     value: postObj.column_link,
     style: {
-      fontSize: columnLinkFontSize,
       color: columnLinkColor
     }
   }))))))));
@@ -585,16 +586,6 @@ module.exports = window["wp"]["components"];
 
 /***/ }),
 
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["element"];
-
-/***/ }),
-
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -611,7 +602,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-three-column-header","version":"0.1.0","title":"MD Three Column Header","apiVersion":3,"category":"md-anitian-fse-full","icon":"screenoptions","description":"A block that displays a three column header with image boxes.","keywords":["md-anitian-fse-full","md-three-column-header"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"bannerTitle":{"type":"string","default":""},"backgroundMediaImage":{"type":"string","default":""},"columnList":{"type":"array","default":[]},"bannerTitleFontSize":{"type":"string","default":""},"bannerTitleColor":{"type":"string","default":""},"columnTitleFontSize":{"type":"string","default":""},"columnTitleColor":{"type":"string","default":""},"columnContentFontSize":{"type":"string","default":""},"columnContentColor":{"type":"string","default":""},"columnLinkFontSize":{"type":"string","default":""},"columnLinkColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-three-column-header","version":"0.1.0","title":"MD Three Column Header","apiVersion":3,"category":"md-anitian-fse-full","icon":"screenoptions","description":"A block that displays a three column header with image boxes.","keywords":["md-anitian-fse-full","md-three-column-header"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"bannerTitle":{"type":"string","default":""},"backgroundMediaImage":{"type":"string","default":""},"columnList":{"type":"array","default":[]},"bannerTitleColor":{"type":"string","default":""},"columnTitleColor":{"type":"string","default":""},"columnContentColor":{"type":"string","default":""},"columnLinkColor":{"type":"string","default":""},"showBannerTitle":{"type":"boolean","default":true},"showColumnImage":{"type":"boolean","default":true},"showColumnTitle":{"type":"boolean","default":true},"showColumnContent":{"type":"boolean","default":true},"showColumnLink":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

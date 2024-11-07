@@ -36,14 +36,6 @@
       "type": "boolean",
       "default": false
     },
-    "sub_heading_font_size": {
-      "type": "string",
-      "default": ""
-    },
-    "heading_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "sub_heading_color": {
       "type": "string",
       "default": ""
@@ -52,21 +44,33 @@
       "type": "string",
       "default": ""
     },
-    "image_box_content_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "image_box_content_color": {
-      "type": "string",
-      "default": ""
-    },
-    "image_box_button_font_size": {
       "type": "string",
       "default": ""
     },
     "image_box_button_color": {
       "type": "string",
       "default": ""
+    },
+    "show_sub_heading": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_heading": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_image": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_image_box_content": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_image_box_button": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

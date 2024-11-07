@@ -17,15 +17,7 @@
       "type": "string",
       "default": "This is Default Heading"
     },
-    "headingFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "headingColor": {
-      "type": "string",
-      "default": ""
-    },
-    "leaderTitleFontSize": {
       "type": "string",
       "default": ""
     },
@@ -33,21 +25,29 @@
       "type": "string",
       "default": ""
     },
-    "leaderDesignationFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "leaderDesignationFontColor": {
-      "type": "string",
-      "default": ""
-    },
-    "leaderDescriptionFontSize": {
       "type": "string",
       "default": ""
     },
     "leaderDescriptionFontColor": {
       "type": "string",
       "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLeaderTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLeaderDesignation": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLeaderDescription": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

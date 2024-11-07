@@ -34,15 +34,7 @@
       "type": "array",
       "default": []
     },
-    "sub_title_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "sub_title_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "title_font_size": {
       "type": "string",
       "default": ""
     },
@@ -50,15 +42,7 @@
       "type": "string",
       "default": ""
     },
-    "heading_content_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "heading_content_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "card_title_font_size": {
       "type": "string",
       "default": ""
     },
@@ -66,21 +50,45 @@
       "type": "string",
       "default": ""
     },
-    "card_content_font_size": {
-      "type": "string",
-      "default": ""
-    },
     "card_content_font_color": {
-      "type": "string",
-      "default": ""
-    },
-    "card_learn_more_font_size": {
       "type": "string",
       "default": ""
     },
     "card_learn_more_font_color": {
       "type": "string",
       "default": ""
+    },
+    "number_of_columns": {
+      "type": "number",
+      "default": 3
+    },
+    "show_image": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_title": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_content": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_link": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_sub_heading": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_heading_content": {
+      "type": "boolean",
+      "default": true
+    },
+    "show_heading": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

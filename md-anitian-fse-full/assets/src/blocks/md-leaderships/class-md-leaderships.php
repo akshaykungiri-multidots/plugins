@@ -75,14 +75,14 @@ class MD_Leaderships extends Block_Base {
 
 		// attributes.
 		$heading = isset( $attributes['heading'] ) ? $attributes['heading'] : '';
-		$headingFontSize = isset( $attributes['headingFontSize'] ) ? $attributes['headingFontSize'] : '';
 		$headingColor = isset( $attributes['headingColor'] ) ? $attributes['headingColor'] : '';
-		$leaderTitleFontSize = isset( $attributes['leaderTitleFontSize'] ) ? $attributes['leaderTitleFontSize'] : '';
 		$leaderTitleFontColor = isset( $attributes['leaderTitleFontColor'] ) ? $attributes['leaderTitleFontColor'] : '';
-		$leaderDesignationFontSize = isset( $attributes['leaderDesignationFontSize'] ) ? $attributes['leaderDesignationFontSize'] : '';
 		$leaderDesignationFontColor = isset( $attributes['leaderDesignationFontColor'] ) ? $attributes['leaderDesignationFontColor'] : '';
-		$leaderDescriptionFontSize = isset( $attributes['leaderDescriptionFontSize'] ) ? $attributes['leaderDescriptionFontSize'] : '';
 		$leaderDescriptionFontColor = isset( $attributes['leaderDescriptionFontColor'] ) ? $attributes['leaderDescriptionFontColor'] : '';
+		$showHeading = isset( $attributes['showHeading'] ) ? $attributes['showHeading'] : false;
+		$showLeaderTitle = isset( $attributes['showLeaderTitle'] ) ? $attributes['showLeaderTitle'] : false;
+		$showLeaderDesignation = isset( $attributes['showLeaderDesignation'] ) ? $attributes['showLeaderDesignation'] : false;
+		$showLeaderDescription = isset( $attributes['showLeaderDescription'] ) ? $attributes['showLeaderDescription'] : false;
 
 		$leadership_tabs = get_terms(
 			array(
@@ -99,9 +99,11 @@ class MD_Leaderships extends Block_Base {
 			<div class="md_anitian_leadership">
 				<div class="container">
 					<div class="md_anitian_leadership__inner">
-						<div class="md_anitian_leadership__heading">
-							<h2 style="font-size: <?php echo esc_attr( $headingFontSize ); ?>; color: <?php echo esc_attr( $headingColor ); ?>"><?php echo esc_html( $heading ); ?></h2>
-						</div>
+						<?php if ( $showHeading ) { ?>
+							<div class="md_anitian_leadership__heading">
+								<h2 style="color: <?php echo esc_attr( $headingColor ); ?>"><?php echo esc_html( $heading ); ?></h2>
+							</div>
+						<?php } ?>
 						<div class="md_anitian_leadership__tabs">
 							<ul class="nav nav-tabs" id="myTab" role="tablist">
 								<?php
@@ -154,24 +156,26 @@ class MD_Leaderships extends Block_Base {
 														<?php } ?>
                                                     </div>
                                                     <div class="md_anitian_leadership__leader__content">
-                                                        <h3 class="md_anitian_leadership__leader__name" style="font-size: <?php echo esc_attr($leaderTitleFontSize); ?>; color: <?php echo esc_attr($leaderTitleFontColor); ?>"><?php echo esc_html($leader_name); ?></h3>
-														<?php if (isset($leader_designation) && !empty($leader_designation)) { ?>
-															<p class="md_anitian_leadership__leader__designation" style="font-size: <?php echo esc_attr($leaderDesignationFontSize); ?>; color: <?php echo esc_attr($leaderDesignationFontColor); ?>"><?php echo esc_html($leader_designation); ?></p>
+														<?php if ($showLeaderTitle) { ?>
+                                                        	<h3 class="md_anitian_leadership__leader__name" style="color: <?php echo esc_attr($leaderTitleFontColor); ?>"><?php echo esc_html($leader_name); ?></h3>
 														<?php } ?>
-														<?php if (isset($leader_description) && !empty($leader_description)) {
+														<?php if (isset($leader_designation) && !empty($leader_designation) && $showLeaderDesignation) { ?>
+															<p class="md_anitian_leadership__leader__designation" style="color: <?php echo esc_attr($leaderDesignationFontColor); ?>"><?php echo esc_html($leader_designation); ?></p>
+														<?php } ?>
+														<?php if (isset($leader_description) && !empty($leader_description) && $showLeaderDescription) {
                                                             $visible_length = 300;
                                                             $description_length = strlen($leader_description);
                                                             $visible_description = substr($leader_description, 0, $visible_length);
                                                             $hidden_description = substr($leader_description, $visible_length, $description_length);
                                                             ?>
-                                                            <div class="leadership__member-description" style="font-size: <?php echo esc_attr($leaderDescriptionFontSize); ?>; color: <?php echo esc_attr($leaderDescriptionFontColor); ?>">
+                                                            <div class="leadership__member-description" style="color: <?php echo esc_attr($leaderDescriptionFontColor); ?>">
                                                                 <span><?php echo wp_kses_post($visible_description); ?></span>
 																<span class="ellipsis">... </span>
-																<a href="javascript:void(0)" class="read-more">Read More</a>
+																<a href="javascript:void(0)" class="read-more"><?php esc_html_e('Read More', 'md-anitian-fse-full'); ?></a>
 																<span class="hidden-description">
 																	<?php echo wp_kses_post($hidden_description); ?>
 																</span>
-																<a href="javascript:void(0)" class="read-less">Read Less</a>
+																<a href="javascript:void(0)" class="read-less"><?php esc_html_e('Read Less', 'md-anitian-fse-full'); ?></a>
                                                             </div>
                                                         <?php } ?>
                                                     </div>

@@ -22,11 +22,9 @@ import {
 import {
   PanelBody,
   Button,
-  FontSizePicker,
   Tooltip,
+  ToggleControl,
 } from "@wordpress/components";
-
-import { useState } from "@wordpress/element";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -41,40 +39,16 @@ export default function Edit({ attributes, setAttributes }) {
     bannerTitle,
     backgroundMediaImage,
     columnList,
-    bannerTitleFontSize,
     bannerTitleColor,
-    columnTitleFontSize,
     columnTitleColor,
-    columnContentFontSize,
     columnContentColor,
-    columnLinkFontSize,
     columnLinkColor,
+    showBannerTitle,
+    showColumnImage,
+    showColumnTitle,
+    showColumnContent,
+    showColumnLink,
   } = attributes;
-
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const addStaticPostObj = () => {
     const staticPostObj = [
@@ -112,87 +86,114 @@ export default function Edit({ attributes, setAttributes }) {
       })}
     >
       <InspectorControls>
-        <PanelBody title={__("Block Settings", "md-storyful-fse-full")}>
-          <label>{__("Background Image")}</label>
-          <MediaUpload
-            title={__("Background Image")}
-            onSelect={(media) =>
-              setAttributes({
-                backgroundMediaImage: media.url,
-              })
-            }
-            multiple={false}
-            render={({ open }) => (
-              <>
-                <Button className="md_bg_image_upload" onClick={open}>
-                  {backgroundMediaImage == "" ? (
-                    <i className="dashicons dashicons-format-image"> </i>
-                  ) : (
-                    <img src={backgroundMediaImage} alt="background" />
+      <PanelBody
+          title={__("Background Settings", "md-prime")}
+        >
+          <div className="setting-row">
+            <label htmlFor="background-image">
+              {__("Background Image", "md-prime")}
+            </label>
+            <div>
+              {!backgroundMediaImage ? (
+                <MediaUpload
+                  onSelect={(selectedImage) => {
+                    setAttributes({
+                      backgroundMediaImage: selectedImage.url,
+                    });
+                  }}
+                  allowedTypes={["image"]}
+                  value={backgroundMediaImage}
+                  render={({ open }) => (
+                    <Button onClick={open} className="button button-large">
+                      {__("Upload Image", "md-prime")}
+                    </Button>
                   )}
-                </Button>
-              </>
-            )}
+                />
+              ) : (
+                <>
+                  <div className="image-preview">
+                    <img
+                      src={backgroundMediaImage}
+                      alt="Background-image-preview"
+                    />
+                  </div>
+                  <Button
+                    onClick={() => {
+                      setAttributes({
+                        backgroundMediaImage: "",
+                      });
+                    }}
+                    className="is-link is-destructive"
+                  >
+                    {__("Remove Image", "md-prime")}
+                  </Button>
+                </>
+              )}
+            </div>
+          </div>
+        </PanelBody>
+        <PanelBody title={__("Toggle Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <ToggleControl
+            label={__("Show Banner Title", "md-storyful-fse-full")}
+            checked={showBannerTitle}
+            onChange={(value) => setAttributes({ showBannerTitle: value })}
+          />
+          <ToggleControl
+            label={__("Show Column Image", "md-storyful-fse-full")}
+            checked={showColumnImage}
+            onChange={(value) => setAttributes({ showColumnImage: value })}
+          />
+          <ToggleControl
+            label={__("Show Column Title", "md-storyful-fse-full")}
+            checked={showColumnTitle}
+            onChange={(value) => setAttributes({ showColumnTitle: value })}
+          />
+          <ToggleControl
+            label={__("Show Column Content", "md-storyful-fse-full")}
+            checked={showColumnContent}
+            onChange={(value) => setAttributes({ showColumnContent: value })}
+          />
+          <ToggleControl
+            label={__("Show Column Link", "md-storyful-fse-full")}
+            checked={showColumnLink}
+            onChange={(value) => setAttributes({ showColumnLink: value })}
           />
         </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Banner Title Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={bannerTitleFontSize}
-            onChange={(value) => setAttributes({ bannerTitleFontSize: value })}
-          />
-          <label> {__("Column Title Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={columnTitleFontSize}
-            onChange={(value) => setAttributes({ columnTitleFontSize: value })}
-          />
-          <label> {__("Column Content Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={columnContentFontSize}
-            onChange={(value) =>
-              setAttributes({ columnContentFontSize: value })
-            }
-          />
-          <label> {__("Column Link Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={columnLinkFontSize}
-            onChange={(value) => setAttributes({ columnLinkFontSize: value })}
-          />
-        </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
+        <PanelBody
+          title={__("Color Settings", "md-storyful-fse-full")}
           initialOpen={false}
-          colorSettings={[
-            {
-              value: bannerTitleColor,
-              onChange: (newColor) =>
-                setAttributes({ bannerTitleColor: newColor }),
-              label: __("Banner Title Color"),
-            },
-            {
-              value: columnTitleColor,
-              onChange: (newColor) =>
-                setAttributes({ columnTitleColor: newColor }),
-              label: __("Column Title Color"),
-            },
-            {
-              value: columnContentColor,
-              onChange: (newColor) =>
-                setAttributes({ columnContentColor: newColor }),
-              label: __("Column Content Color"),
-            },
-            {
-              value: columnLinkColor,
-              onChange: (newColor) =>
-                setAttributes({ columnLinkColor: newColor }),
-              label: __("Column Link Color"),
-            },
-          ]}
-        />
+        >
+          <PanelColorSettings
+            title={__("Typography Colors", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: bannerTitleColor,
+                onChange: (newColor) =>
+                  setAttributes({ bannerTitleColor: newColor }),
+                label: __("Banner Title Color"),
+              },
+              {
+                value: columnTitleColor,
+                onChange: (newColor) =>
+                  setAttributes({ columnTitleColor: newColor }),
+                label: __("Column Title Color"),
+              },
+              {
+                value: columnContentColor,
+                onChange: (newColor) =>
+                  setAttributes({ columnContentColor: newColor }),
+                label: __("Column Content Color"),
+              },
+              {
+                value: columnLinkColor,
+                onChange: (newColor) =>
+                  setAttributes({ columnLinkColor: newColor }),
+                label: __("Column Link Color"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <div className="md_anitian_three_column_header">
         <div
@@ -200,18 +201,19 @@ export default function Edit({ attributes, setAttributes }) {
           style={{ backgroundImage: `url(${backgroundMediaImage})` }}
         >
           <div className="container">
-            <div className="md_anitian_three_column_header__heading">
-              <RichText
-                tagName="h2"
-                value={bannerTitle}
-                onChange={(value) => setAttributes({ bannerTitle: value })}
-                placeholder={__("Enter Title")}
-                style={{
-                  fontSize: bannerTitleFontSize,
-                  color: bannerTitleColor,
-                }}
-              />
-            </div>
+            {showBannerTitle && (
+              <div className="md_anitian_three_column_header__heading">
+                <RichText
+                  tagName="h2"
+                  value={bannerTitle}
+                  onChange={(value) => setAttributes({ bannerTitle: value })}
+                  placeholder={__("Enter Title")}
+                  style={{
+                    color: bannerTitleColor,
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
         <div className="container">
@@ -303,45 +305,31 @@ export default function Edit({ attributes, setAttributes }) {
                       </Tooltip>
                     )}
                   </div>
-                  <div className="md_anitian_three_column_header__item__image">
-                    <MediaUpload
-                      title={__("Image")}
-                      onSelect={(media) =>
-                        updateStaticPostObj(index, "image", media.url)
-                      }
-                      multiple={false}
-                      render={({ open }) => (
-                        <>
-                          {postObj.image == "" ? (
-                            <Button variant="primary" onClick={open}>
-                              <i className="dashicons dashicons-format-image">
-                                {" "}
-                              </i>
-                            </Button>
-                          ) : (
-                            <>
-                              <img onClick={open} src={postObj.image} />
-                              <Tooltip text={__("Remove Image", "md-prime")}>
-                                <i
-                                  className="dashicons dashicons-no-alt remove-image"
-                                  role="button"
-                                  tabIndex="0"
-                                  onClick={() => {
-                                    const toDelete =
-                                      // eslint-disable-next-line no-alert
-                                      confirm(
-                                        __(
-                                          "Are you sure you want to remove this image?",
-                                          "md-prime"
-                                        )
-                                      );
-                                    if (toDelete) {
-                                      updateStaticPostObj(index, "image", "");
-                                    }
-                                  }}
-                                  onKeyDown={(e) => {
-                                    if (e.key === "Enter" || e.key === " ") {
-                                      e.preventDefault(); // Prevent default action for space key
+                  {showColumnImage && (
+                    <div className="md_anitian_three_column_header__item__image">
+                      <MediaUpload
+                        title={__("Image")}
+                        onSelect={(media) =>
+                          updateStaticPostObj(index, "image", media.url)
+                        }
+                        multiple={false}
+                        render={({ open }) => (
+                          <>
+                            {postObj.image == "" ? (
+                              <Button variant="primary" onClick={open}>
+                                <i className="dashicons dashicons-format-image">
+                                  {" "}
+                                </i>
+                              </Button>
+                            ) : (
+                              <>
+                                <img onClick={open} src={postObj.image} />
+                                <Tooltip text={__("Remove Image", "md-prime")}>
+                                  <i
+                                    className="dashicons dashicons-no-alt remove-image"
+                                    role="button"
+                                    tabIndex="0"
+                                    onClick={() => {
                                       const toDelete =
                                         // eslint-disable-next-line no-alert
                                         confirm(
@@ -353,62 +341,95 @@ export default function Edit({ attributes, setAttributes }) {
                                       if (toDelete) {
                                         updateStaticPostObj(index, "image", "");
                                       }
-                                    }
-                                  }}
-                                  aria-label="Remove image"
-                                ></i>
-                              </Tooltip>
-                            </>
-                          )}
-                        </>
-                      )}
-                    />
-                  </div>
+                                    }}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter" || e.key === " ") {
+                                        e.preventDefault(); // Prevent default action for space key
+                                        const toDelete =
+                                          // eslint-disable-next-line no-alert
+                                          confirm(
+                                            __(
+                                              "Are you sure you want to remove this image?",
+                                              "md-prime"
+                                            )
+                                          );
+                                        if (toDelete) {
+                                          updateStaticPostObj(
+                                            index,
+                                            "image",
+                                            ""
+                                          );
+                                        }
+                                      }
+                                    }}
+                                    aria-label="Remove image"
+                                  ></i>
+                                </Tooltip>
+                              </>
+                            )}
+                          </>
+                        )}
+                      />
+                    </div>
+                  )}
                   <div className="md_anitian_three_column_header__item__content">
-                    <RichText
-                      tagName="h5"
-                      value={postObj.column_title}
-                      onChange={(value) =>
-                        updateStaticPostObj(index, "column_title", value)
-                      }
-                      placeholder={__("Enter Title")}
-                      style={{
-                        fontSize: columnTitleFontSize,
-                        color: columnTitleColor,
-                      }}
-                    />
-                    <RichText
-                      tagName="p"
-                      value={postObj.column_description}
-                      onChange={(value) =>
-                        updateStaticPostObj(index, "column_description", value)
-                      }
-                      placeholder={__("Enter Description")}
-                      style={{
-                        fontSize: columnContentFontSize,
-                        color: columnContentColor,
-                      }}
-                    />
-                    <RichText
-                      tagName="a"
-                      className="md_anitian_three_column_header__item__link"
-                      value={postObj.column_link}
-                      onChange={(value) =>
-                        updateStaticPostObj(index, "column_link", value)
-                      }
-                      placeholder={__("Add link")}
-                      style={{
-                        fontSize: columnLinkFontSize,
-                        color: columnLinkColor,
-                      }}
-                    />
+                    {showColumnTitle && (
+                      <RichText
+                        tagName="h5"
+                        value={postObj.column_title}
+                        onChange={(value) =>
+                          updateStaticPostObj(index, "column_title", value)
+                        }
+                        placeholder={__("Enter Title")}
+                        style={{
+                          color: columnTitleColor,
+                        }}
+                      />
+                    )}
+                    {showColumnContent && (
+                      <RichText
+                        tagName="p"
+                        value={postObj.column_description}
+                        onChange={(value) =>
+                          updateStaticPostObj(
+                            index,
+                            "column_description",
+                            value
+                          )
+                        }
+                        placeholder={__("Enter Description")}
+                        style={{
+                          color: columnContentColor,
+                        }}
+                      />
+                    )}
+                    {showColumnLink && (
+                      <RichText
+                        tagName="a"
+                        className="md_anitian_three_column_header__item__link"
+                        value={postObj.column_link}
+                        onChange={(value) =>
+                          updateStaticPostObj(index, "column_link", value)
+                        }
+                        placeholder={__("Add link")}
+                        style={{
+                          color: columnLinkColor,
+                        }}
+                      />
+                    )}
                   </div>
                 </div>
               ))}
-            <div className="add-item-wrap">
-              <Button variant="primary" onClick={addStaticPostObj}>
-                {__("Add New Slide")}
-              </Button>
+            <div
+              className="add-item-wrap"
+              onClick={addStaticPostObj}
+              role="button"
+              tabIndex={0}
+              aria-label={__("Add new item", "md-prime")}
+            >
+              <Tooltip text={__("Add New Item", "md-prime")}>
+                <i className="add-new-item dashicons dashicons-plus"></i>
+              </Tooltip>
             </div>
           </div>
         </div>

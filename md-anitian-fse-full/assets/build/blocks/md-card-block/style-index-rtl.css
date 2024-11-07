@@ -48,16 +48,14 @@
   font-weight: 300;
 }
 .md_anitian_card_block .md_anitian_card_block__content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+  display: grid;
 }
 .md_anitian_card_block .md_anitian_card_block__content .md_anitian_card_block__item {
-  width: calc(33.3333333333% - 100px);
   background-color: #fff;
   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
   padding: 25px;
   border-radius: 0;
+  margin: 10px 20px;
   display: flex;
   flex-flow: wrap;
   align-content: baseline;
@@ -97,9 +95,9 @@
   line-height: 1.5em;
   font-size: 16px;
   margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 .md_anitian_card_block.style2 .md_anitian_card_block__item {
-  width: 40.5%;
   flex-direction: row;
   gap: 20px;
 }
@@ -127,15 +125,13 @@
   line-height: 1.5em;
   margin: 0 0 10px;
 }
-.md_anitian_card_block.style2 .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link p {
-  display: inline;
+.md_anitian_card_block.style2 .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link .column-item-desc {
   font-size: 15px;
   font-weight: 300;
-  display: inline;
   margin-left: 5px;
-}
-.md_anitian_card_block.style2 .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link a {
   display: inline;
+}
+.md_anitian_card_block.style2 .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link .md_anitian_card_block__item__link {
   font-size: 15px;
   font-weight: 300;
   display: inline;
@@ -144,18 +140,27 @@
   text-decoration: none;
   color: #2ea3f2;
 }
+.md_anitian_card_block.style2 .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link .md_anitian_card_block__item__link:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: #1ca5ff;
+  bottom: 0;
+  visibility: hidden;
+}
+.md_anitian_card_block.style2 .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link .md_anitian_card_block__item__link::after {
+  content: "\f344";
+  font-family: "dashicons";
+  margin-right: 5px;
+  font-weight: 400;
+  vertical-align: middle;
+}
 .md_anitian_card_block.style3 {
   padding: 180px 0 60px 0;
   margin: -100px 0 0;
 }
-.md_anitian_card_block.style3 .md_anitian_card_block__content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
 .md_anitian_card_block.style3 .md_anitian_card_block__content .md_anitian_card_block__item {
-  width: 21%;
   box-shadow: 0px 12px 18px -18px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
   position: relative;
@@ -181,13 +186,13 @@
   font-size: 18px;
   height: auto;
 }
-.md_anitian_card_block.style3 .md_anitian_card_block__content .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link p {
+.md_anitian_card_block.style3 .md_anitian_card_block__content .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link .column-item-desc {
   margin: 0 0 15px;
   font-size: 16px;
   line-height: 1.4em;
   font-weight: 300;
 }
-.md_anitian_card_block.style3 .md_anitian_card_block__content .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link a {
+.md_anitian_card_block.style3 .md_anitian_card_block__content .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link .md_anitian_card_block__item__link {
   cursor: pointer;
   display: inline-block;
   padding: 0 0.5em;
@@ -199,6 +204,6 @@
   font-weight: 300;
   background-color: rgba(0, 0, 0, 0);
 }
-.md_anitian_card_block.style3 .md_anitian_card_block__content .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link a i {
+.md_anitian_card_block.style3 .md_anitian_card_block__content .md_anitian_card_block__item .md_anitian_card_block__item__content .md_anitian_card_block__item__content__link .md_anitian_card_block__item__link i {
   display: none;
 }

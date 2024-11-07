@@ -27,15 +27,7 @@
       "default": [
       ]
     },
-    "bannerTitleFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "bannerTitleColor": {
-      "type": "string",
-      "default": ""
-    },
-    "columnTitleFontSize": {
       "type": "string",
       "default": ""
     },
@@ -43,21 +35,33 @@
       "type": "string",
       "default": ""
     },
-    "columnContentFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "columnContentColor": {
-      "type": "string",
-      "default": ""
-    },
-    "columnLinkFontSize": {
       "type": "string",
       "default": ""
     },
     "columnLinkColor": {
       "type": "string",
       "default": ""
+    },
+    "showBannerTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showColumnImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showColumnTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showColumnContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showColumnLink": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

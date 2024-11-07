@@ -28,14 +28,15 @@ export default function save({ attributes }) {
     heading,
     image_boxes,
     enable_slider,
-    sub_heading_font_size,
-    heading_font_size,
     sub_heading_color,
     heading_color,
-    image_box_content_font_size,
     image_box_content_color,
-    image_box_button_font_size,
     image_box_button_color,
+    show_sub_heading,
+    show_heading,
+    show_image,
+    show_image_box_content,
+    show_image_box_button,
   } = attributes;
   return (
     <div
@@ -48,22 +49,24 @@ export default function save({ attributes }) {
           <div className="text-video-slider__video-and-text">
             <div className="container">
               <div className="bakery_antian__heading">
+                {show_sub_heading && (
                 <RichText.Content
                   tagName="h6"
                   value={sub_heading}
                   style={{
-                    fontSize: sub_heading_font_size,
                     color: sub_heading_color,
                   }}
                 />
+                )}
+                {show_heading && (
                 <RichText.Content
                   tagName="h2"
                   value={heading}
                   style={{
-                    fontSize: heading_font_size,
                     color: heading_color,
                   }}
                 />
+                )}
               </div>
             </div>
           </div>
@@ -74,30 +77,32 @@ export default function save({ attributes }) {
                   image_boxes.map((postObj, index) => (
                     <div className="bakery_antian__slider-item show-items-hover-wrap">
                       <div className="bakery_antian__slider-image">
-                        {postObj.slider_image && (
+                        {show_image && (
                           <img onClick={open} src={postObj.slider_image} />
                         )}
                       </div>
                       <div className="bakery_antiab__slider-content">
+                        {show_image_box_content && (
                         <RichText.Content
                           tagName="p"
                           value={postObj.slider_content}
                           style={{
-                            fontSize: image_box_content_font_size,
                             color: image_box_content_color,
                           }}
                         />
+                        )}
+                        {show_image_box_button && (
                         <div class="bakery_antian__slider-button btn-anitian">
                         <RichText.Content
                           tagName="a"
                           className="btn"
                           value={postObj.slider_button}
                           style={{
-                            fontSize: image_box_button_font_size,
                             color: image_box_button_color,
                           }}
                         />
                         </div>
+                        )}
                       </div>
                     </div>
                   ))}

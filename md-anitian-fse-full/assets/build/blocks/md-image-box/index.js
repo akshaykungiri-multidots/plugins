@@ -20,8 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _placeholder_image_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./placeholder-image.png */ "./src/blocks/md-image-box/placeholder-image.png");
 
 /**
  * Retrieves the translation of text.
@@ -57,33 +56,17 @@ function Edit({
     heading,
     image_boxes,
     enable_slider,
-    sub_heading_font_size,
-    heading_font_size,
     sub_heading_color,
     heading_color,
-    image_box_content_font_size,
     image_box_content_color,
-    image_box_button_font_size,
-    image_box_button_color
+    image_box_button_color,
+    show_sub_heading,
+    show_heading,
+    show_image,
+    show_image_box_content,
+    show_image_box_button
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
-  const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(0);
+  const siteURL = window.location.origin;
   const addStaticPostObj = () => {
     const staticPostObj = [...image_boxes, {
       id: image_boxes.length + 1,
@@ -122,41 +105,40 @@ function Edit({
     onChange: value => setAttributes({
       enable_slider: value
     })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Sub Heading", "md-anitian-fse-full"),
+    checked: show_sub_heading,
+    onChange: value => setAttributes({
+      show_sub_heading: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Heading", "md-anitian-fse-full"),
+    checked: show_heading,
+    onChange: value => setAttributes({
+      show_heading: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Image", "md-anitian-fse-full"),
+    checked: show_image,
+    onChange: value => setAttributes({
+      show_image: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Image Box Content", "md-anitian-fse-full"),
+    checked: show_image_box_content,
+    onChange: value => setAttributes({
+      show_image_box_content: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Image Box Button", "md-anitian-fse-full"),
+    checked: show_image_box_button,
+    onChange: value => setAttributes({
+      show_image_box_button: value
+    })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Sub Heading Font Size", "md-anitian-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: sub_heading_font_size,
-    fallbackFontSize: sub_heading_font_size,
-    onChange: value => setAttributes({
-      sub_heading_font_size: value
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Font Size", "md-anitian-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: heading_font_size,
-    fallbackFontSize: heading_font_size,
-    onChange: value => setAttributes({
-      heading_font_size: value
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image Box Content Font Size", "md-anitian-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: image_box_content_font_size,
-    fallbackFontSize: image_box_content_font_size,
-    onChange: value => setAttributes({
-      image_box_content_font_size: value
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image Box Button Font Size", "md-anitian-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: image_box_button_font_size,
-    fallbackFontSize: image_box_button_font_size,
-    onChange: value => setAttributes({
-      image_box_button_font_size: value
-    })
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-storyful-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
     initialOpen: false,
     colorSettings: [{
@@ -184,7 +166,7 @@ function Edit({
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image Box Button Color", "md-storyful-fse-full")
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antian__slider-image-box"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antian__slider-image-box__inner"
@@ -194,7 +176,7 @@ function Edit({
     className: "container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antian__heading"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, show_sub_heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h6",
     value: sub_heading,
     onChange: value => setAttributes({
@@ -202,10 +184,9 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Sub Heading", "md-anitian-fse-full"),
     style: {
-      fontSize: sub_heading_font_size,
       color: sub_heading_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), show_heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
     value: heading,
     onChange: value => setAttributes({
@@ -213,7 +194,6 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Heading", "md-anitian-fse-full"),
     style: {
-      fontSize: heading_font_size,
       color: heading_color
     }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -285,33 +265,78 @@ function Edit({
       }
     },
     "aria-label": "Delete item"
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), show_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antian__slider-image"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image"),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "md-prime-block-control image-preview image-controle-visible-hover"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `image-controls small-icons icon-center-fixed`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: media => updateStaticPostObj(index, "slider_image", media.url),
-    multiple: false,
+    allowedTypes: ["image"],
+    value: postObj.slider_image,
     render: ({
       open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, postObj.slider_image == "" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      variant: "primary",
-      onClick: open
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, postObj.slider_image ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit Image", "md-prime")
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: "dashicons dashicons-edit edit-image",
       onClick: open,
-      src: postObj.slider_image
-    }))
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      role: "button",
+      tabIndex: 0,
+      onKeyDown: e => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault(); // Prevent default action for space key
+          open(); // Trigger the click handler
+        }
+      },
+      "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit image", "md-prime")
+    })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime")
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: "dashicons dashicons-no-alt remove-image",
+      onClick: () => {
+        const toDelete =
+        // eslint-disable-next-line no-alert
+        confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this image?", "md-prime"));
+        if (toDelete) {
+          updateStaticPostObj(index, "slider_image", "");
+        }
+      },
+      role: "button",
+      tabIndex: 0,
+      onKeyDown: e => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          updateStaticPostObj(index, "slider_image", "");
+        }
+      },
+      "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove image", "md-prime")
+    }))) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "upload-wrap"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open,
+      className: "button media_and_text__upload_btn"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload Image", "md-prime")
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: "dashicons dashicons-upload"
+    })))))
+  }))), postObj.slider_image ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: postObj.slider_image
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: siteURL + _placeholder_image_png__WEBPACK_IMPORTED_MODULE_4__
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antiab__slider-content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, show_image_box_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: postObj.slider_content,
     onChange: value => updateStaticPostObj(index, "slider_content", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Content"),
     style: {
-      fontSize: image_box_content_font_size,
       color: image_box_content_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), show_image_box_button && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "bakery_antian__slider-button btn-anitian"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "a",
@@ -320,15 +345,19 @@ function Edit({
     onChange: value => updateStaticPostObj(index, "slider_button", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Button Text"),
     style: {
-      fontSize: image_box_button_font_size,
       color: image_box_button_color
     }
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "add-item-wrap"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    variant: "primary",
-    onClick: addStaticPostObj
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Slide")))))))));
+    className: "add-item-wrap",
+    onClick: addStaticPostObj,
+    role: "button",
+    tabIndex: 0,
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "add-new-item dashicons dashicons-plus"
+  })))))))));
 }
 
 /***/ }),
@@ -437,14 +466,15 @@ function save({
     heading,
     image_boxes,
     enable_slider,
-    sub_heading_font_size,
-    heading_font_size,
     sub_heading_color,
     heading_color,
-    image_box_content_font_size,
     image_box_content_color,
-    image_box_button_font_size,
-    image_box_button_color
+    image_box_button_color,
+    show_sub_heading,
+    show_heading,
+    show_image,
+    show_image_box_content,
+    show_image_box_button
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -460,18 +490,16 @@ function save({
     className: "container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antian__heading"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, show_sub_heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h6",
     value: sub_heading,
     style: {
-      fontSize: sub_heading_font_size,
       color: sub_heading_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), show_heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     value: heading,
     style: {
-      fontSize: heading_font_size,
       color: heading_color
     }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -484,26 +512,24 @@ function save({
     className: "bakery_antian__slider-item show-items-hover-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antian__slider-image"
-  }, postObj.slider_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  }, show_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     onClick: open,
     src: postObj.slider_image
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "bakery_antiab__slider-content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, show_image_box_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     value: postObj.slider_content,
     style: {
-      fontSize: image_box_content_font_size,
       color: image_box_content_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), show_image_box_button && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "bakery_antian__slider-button btn-anitian"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "a",
     className: "btn",
     value: postObj.slider_button,
     style: {
-      fontSize: image_box_button_font_size,
       color: image_box_button_color
     }
   })))))))))));
@@ -520,6 +546,16 @@ function save({
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "./src/blocks/md-image-box/placeholder-image.png":
+/*!*******************************************************!*\
+  !*** ./src/blocks/md-image-box/placeholder-image.png ***!
+  \*******************************************************/
+/***/ ((module) => {
+
+module.exports = "/wp-content/themes/md-anitian-fse-full/assets/build/images/placeholder-image.2d0b00c1.png";
 
 /***/ }),
 
@@ -563,16 +599,6 @@ module.exports = window["wp"]["components"];
 
 /***/ }),
 
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["element"];
-
-/***/ }),
-
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -589,7 +615,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-image-box","version":"0.1.0","title":"MD Image Box","apiVersion":3,"category":"md-anitian-fse-full","icon":"format-image","description":"A block that displays an image with a title and description.","keywords":["md-anitian-fse-full","md-image-box"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"sub_heading":{"type":"string","default":""},"heading":{"type":"string","default":""},"image_boxes":{"type":"array","default":[]},"enable_slider":{"type":"boolean","default":false},"sub_heading_font_size":{"type":"string","default":""},"heading_font_size":{"type":"string","default":""},"sub_heading_color":{"type":"string","default":""},"heading_color":{"type":"string","default":""},"image_box_content_font_size":{"type":"string","default":""},"image_box_content_color":{"type":"string","default":""},"image_box_button_font_size":{"type":"string","default":""},"image_box_button_color":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-image-box","version":"0.1.0","title":"MD Image Box","apiVersion":3,"category":"md-anitian-fse-full","icon":"format-image","description":"A block that displays an image with a title and description.","keywords":["md-anitian-fse-full","md-image-box"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"sub_heading":{"type":"string","default":""},"heading":{"type":"string","default":""},"image_boxes":{"type":"array","default":[]},"enable_slider":{"type":"boolean","default":false},"sub_heading_color":{"type":"string","default":""},"heading_color":{"type":"string","default":""},"image_box_content_color":{"type":"string","default":""},"image_box_button_color":{"type":"string","default":""},"show_sub_heading":{"type":"boolean","default":true},"show_heading":{"type":"boolean","default":true},"show_image":{"type":"boolean","default":true},"show_image_box_content":{"type":"boolean","default":true},"show_image_box_button":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

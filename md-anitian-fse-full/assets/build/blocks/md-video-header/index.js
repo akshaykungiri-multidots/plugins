@@ -40,7 +40,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -58,35 +57,20 @@ function Edit({
     title,
     heading_content,
     button_link,
-    cover_video,
     background_image,
     background_color,
-    sub_title_font_size,
-    title_font_size,
-    heading_content_font_size,
-    button_font_size,
     sub_title_color,
     title_color,
     heading_content_color,
-    button_color
+    button_color,
+    show_sub_title,
+    show_title,
+    show_heading_content,
+    show_button,
+    mediaurl,
+    youtubeurl,
+    videotype
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_anitian_video_header_section"
@@ -123,43 +107,37 @@ function Edit({
       });
     },
     className: "is-link is-destructive"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime"))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "setting-row"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Cover Video")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "url",
-    className: "components-text-control__input is-next-40px-default-size",
-    value: cover_video,
-    onChange: e => setAttributes({
-      cover_video: e.target.value
-    }),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Youtube Video URL", "md-anitian-fse-full")
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-anitian-fse-full")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Sub Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    value: sub_title_font_size,
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime")))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show/Hide", "md-anitian-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Sub Title", "md-anitian-fse-full"),
+    checked: show_sub_title,
     onChange: value => setAttributes({
-      sub_title_font_size: value
-    }),
-    fontSizes: fontSizes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    value: title_font_size,
+      show_sub_title: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Title", "md-anitian-fse-full"),
+    checked: show_title,
     onChange: value => setAttributes({
-      title_font_size: value
-    }),
-    fontSizes: fontSizes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Content Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    value: heading_content_font_size,
+      show_title: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Heading Content", "md-anitian-fse-full"),
+    checked: show_heading_content,
     onChange: value => setAttributes({
-      heading_content_font_size: value
-    }),
-    fontSizes: fontSizes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    value: button_font_size,
+      show_heading_content: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Button", "md-anitian-fse-full"),
+    checked: show_button,
     onChange: value => setAttributes({
-      button_font_size: value
-    }),
-    fontSizes: fontSizes
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+      show_button: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-anitian-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-anitian-fse-full"),
     initialOpen: false,
     colorSettings: [{
@@ -193,7 +171,7 @@ function Edit({
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color", "md-anitian-fse-full")
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video_wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video",
@@ -206,7 +184,7 @@ function Edit({
     className: "md_anitian_text_video__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__heading"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, show_sub_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h4",
     value: sub_title,
     onChange: value => setAttributes({
@@ -214,10 +192,9 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Sub Title", "md-anitian-fse-full"),
     style: {
-      fontSize: sub_title_font_size,
       color: sub_title_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), show_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
     value: title,
     onChange: value => setAttributes({
@@ -225,10 +202,9 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-anitian-fse-full"),
     style: {
-      fontSize: title_font_size,
       color: title_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), show_heading_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: heading_content,
     onChange: value => setAttributes({
@@ -236,10 +212,9 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Content", "md-anitian-fse-full"),
     style: {
-      fontSize: heading_content_font_size,
       color: heading_content_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), show_button && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     className: "btn-anitian md_anitian_text_video__btn",
@@ -250,21 +225,101 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Button Text", "md-anitian-fse-full"),
     style: {
-      fontSize: button_font_size,
       color: button_color
     }
-  }))), cover_video && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__youtube"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "text_video__youtube"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "video_section_wrapper",
     id: "MdYTplayer"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
-    src: cover_video,
-    frameborder: "0",
-    allowfullscreen: true
-  })))))))));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wrapper__box-inner"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "video-details-wrapper",
+    style: {
+      textAlign: "center"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "video-data-edit"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select Video Type", "storyful"),
+    value: videotype,
+    options: [{
+      label: "Media Upload Video",
+      value: "media-upload"
+    }, {
+      label: "Youtube Video",
+      value: "youtube"
+    }],
+    onChange: videotype => {
+      setAttributes({
+        videotype
+      });
+    }
+  }), videotype === "youtube" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    placeholder: "Enter youtube video URL",
+    value: youtubeurl,
+    className: "video-item-url",
+    onChange: youtubeurl => {
+      setAttributes({
+        youtubeurl
+      });
+    }
+  }), youtubeurl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+    src: youtubeurl.replace("watch?v=", "embed/") + "?controls=0",
+    "data-src": youtubeurl + "?enablejsapi=1&controls=0&rel=0",
+    title: "video"
+  }))), videotype === "media-upload" && mediaurl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-preview image-controle-visible-hover"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
+    autoPlay: "",
+    muted: "",
+    loop: "",
+    className: "self-media"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("source", {
+    src: mediaurl,
+    type: "video/mp4"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "item-action-wrap image-controls small-icons icon-center-fixed"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Video")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "dashicons dashicons-no-alt remove-image",
+    role: "button",
+    tabIndex: 0,
+    onClick: () => {
+      setAttributes({
+        mediaurl: ""
+      });
+    },
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        setAttributes({
+          mediaurl: ""
+        });
+      }
+    },
+    "aria-label": "Remove image"
+  })))), videotype === "media-upload" && !mediaurl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: newmedia => {
+      setAttributes({
+        mediaurl: newmedia.url
+      });
+    },
+    allowedTypes: ["video"],
+    value: mediaurl,
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+      onClick: open,
+      className: "components-button button button-large"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: "upload"
+    }), " Upload video")
+  }))))))))))));
 }
 
 /***/ }),
@@ -373,17 +428,19 @@ function save({
     title,
     heading_content,
     button_link,
-    cover_video,
     background_image,
     background_color,
-    sub_title_font_size,
-    title_font_size,
-    heading_content_font_size,
-    button_font_size,
     sub_title_color,
     title_color,
     heading_content_color,
-    button_color
+    button_color,
+    show_sub_title,
+    show_title,
+    show_heading_content,
+    show_button,
+    mediaurl,
+    youtubeurl,
+    videotype
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -402,49 +459,64 @@ function save({
     className: "md_anitian_text_video__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__heading"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, show_sub_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h4",
     value: sub_title,
     style: {
-      fontSize: sub_title_font_size,
       color: sub_title_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), show_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     value: title,
     style: {
-      fontSize: title_font_size,
       color: title_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), show_heading_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     value: heading_content,
     style: {
-      fontSize: heading_content_font_size,
       color: heading_content_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), show_button && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     className: "btn-anitian md_anitian_text_video__btn",
     tagName: "p",
     value: button_link,
     style: {
-      fontSize: button_font_size,
       color: button_color
     }
-  }))), cover_video && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__youtube"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "text_video__youtube"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "video_section_wrapper",
     id: "MdYTplayer"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
-    src: cover_video,
-    frameborder: "0",
-    allowfullscreen: true
-  })))))))));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "wrapper__box-inner"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "video-details-wrapper",
+    style: {
+      textAlign: "center"
+    }
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "video-data-edit"
+  }, videotype === "youtube" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, youtubeurl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
+    src: youtubeurl.replace("watch?v=", "embed/") + "?controls=0",
+    "data-src": youtubeurl + "?enablejsapi=1&controls=0&rel=0",
+    title: "video"
+  }))), videotype === "media-upload" && mediaurl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-preview image-controle-visible-hover"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("video", {
+    autoPlay: "",
+    muted: "",
+    loop: "",
+    className: "self-media"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("source", {
+    src: mediaurl,
+    type: "video/mp4"
+  })))))))))))));
 }
 
 /***/ }),
@@ -527,7 +599,7 @@ module.exports = window["wp"]["i18n"];
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-video-header","version":"0.1.0","title":"MD Video Header","apiVersion":3,"category":"md-anitian-fse-full","icon":"video-alt2","description":"A block that displays a video header with a heading and subheading.","keywords":["md-anitian-fse-full","md-video-header"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"sub_title":{"type":"string","default":""},"title":{"type":"string","default":""},"heading_content":{"type":"string","default":""},"button_link":{"type":"string","default":""},"cover_video":{"type":"string","default":""},"background_image":{"type":"string","default":""},"background_color":{"type":"string","default":""},"sub_title_font_size":{"type":"string","default":""},"title_font_size":{"type":"string","default":""},"heading_content_font_size":{"type":"string","default":""},"button_font_size":{"type":"string","default":""},"sub_title_color":{"type":"string","default":""},"title_color":{"type":"string","default":""},"heading_content_color":{"type":"string","default":""},"button_color":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-video-header","version":"0.1.0","title":"MD Video Header","apiVersion":3,"category":"md-anitian-fse-full","icon":"video-alt2","description":"A block that displays a video header with a heading and subheading.","keywords":["md-anitian-fse-full","md-video-header"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"sub_title":{"type":"string","default":""},"title":{"type":"string","default":""},"heading_content":{"type":"string","default":""},"button_link":{"type":"string","default":""},"cover_video":{"type":"string","default":""},"background_image":{"type":"string","default":""},"background_color":{"type":"string","default":""},"sub_title_color":{"type":"string","default":""},"title_color":{"type":"string","default":""},"heading_content_color":{"type":"string","default":""},"button_color":{"type":"string","default":""},"show_sub_title":{"type":"boolean","default":true},"show_title":{"type":"boolean","default":true},"show_heading_content":{"type":"boolean","default":true},"show_button":{"type":"boolean","default":true},"mediaurl":{"type":"string","default":""},"youtubeurl":{"type":"string","default":""},"videotype":{"type":"string","default":"media-upload"}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

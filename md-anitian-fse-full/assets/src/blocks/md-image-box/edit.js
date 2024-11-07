@@ -15,6 +15,7 @@ import {
   useBlockProps,
   RichText,
   InspectorControls,
+  MediaUploadCheck,
   MediaUpload,
   PanelColorSettings,
 } from "@wordpress/block-editor";
@@ -23,11 +24,10 @@ import {
   PanelBody,
   Button,
   ToggleControl,
-  FontSizePicker,
   Tooltip,
 } from "@wordpress/components";
 
-import { useState } from "@wordpress/element";
+import placeholder from "./placeholder-image.png";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -43,40 +43,18 @@ export default function Edit({ attributes, setAttributes }) {
     heading,
     image_boxes,
     enable_slider,
-    sub_heading_font_size,
-    heading_font_size,
     sub_heading_color,
     heading_color,
-    image_box_content_font_size,
     image_box_content_color,
-    image_box_button_font_size,
     image_box_button_color,
+    show_sub_heading,
+    show_heading,
+    show_image,
+    show_image_box_content,
+    show_image_box_button,
   } = attributes;
 
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
-
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const siteURL = window.location.origin;
 
   const addStaticPostObj = () => {
     const staticPostObj = [
@@ -114,104 +92,92 @@ export default function Edit({ attributes, setAttributes }) {
             checked={enable_slider}
             onChange={(value) => setAttributes({ enable_slider: value })}
           />
-        </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Sub Heading Font Size", "md-anitian-fse-full")}</label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={sub_heading_font_size}
-            fallbackFontSize={sub_heading_font_size}
-            onChange={(value) =>
-              setAttributes({ sub_heading_font_size: value })
-            }
+          <ToggleControl
+            label={__("Show Sub Heading", "md-anitian-fse-full")}
+            checked={show_sub_heading}
+            onChange={(value) => setAttributes({ show_sub_heading: value })}
           />
-          <label> {__("Heading Font Size", "md-anitian-fse-full")}</label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={heading_font_size}
-            fallbackFontSize={heading_font_size}
-            onChange={(value) => setAttributes({ heading_font_size: value })}
+          <ToggleControl
+            label={__("Show Heading", "md-anitian-fse-full")}
+            checked={show_heading}
+            onChange={(value) => setAttributes({ show_heading: value })}
           />
-          <label>
-            {" "}
-            {__("Image Box Content Font Size", "md-anitian-fse-full")}
-          </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={image_box_content_font_size}
-            fallbackFontSize={image_box_content_font_size}
-            onChange={(value) =>
-              setAttributes({ image_box_content_font_size: value })
-            }
+          <ToggleControl
+            label={__("Show Image", "md-anitian-fse-full")}
+            checked={show_image}
+            onChange={(value) => setAttributes({ show_image: value })}
           />
-          <label>
-            {" "}
-            {__("Image Box Button Font Size", "md-anitian-fse-full")}
-          </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={image_box_button_font_size}
-            fallbackFontSize={image_box_button_font_size}
-            onChange={(value) =>
-              setAttributes({ image_box_button_font_size: value })
-            }
+          <ToggleControl
+            label={__("Show Image Box Content", "md-anitian-fse-full")}
+            checked={show_image_box_content}
+            onChange={(value) => setAttributes({ show_image_box_content: value })}
+          />
+          <ToggleControl
+            label={__("Show Image Box Button", "md-anitian-fse-full")}
+            checked={show_image_box_button}
+            onChange={(value) => setAttributes({ show_image_box_button: value })}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
+        <PanelBody
+          title={__("Color Settings", "md-storyful-fse-full")}
           initialOpen={false}
-          colorSettings={[
-            {
-              value: sub_heading_color,
-              onChange: (value) => setAttributes({ sub_heading_color: value }),
-              label: __("Sub Heading Color", "md-storyful-fse-full"),
-            },
-            {
-              value: heading_color,
-              onChange: (value) => setAttributes({ heading_color: value }),
-              label: __("Heading Color", "md-storyful-fse-full"),
-            },
-            {
-              value: image_box_content_color,
-              onChange: (value) =>
-                setAttributes({ image_box_content_color: value }),
-              label: __("Image Box Content Color", "md-storyful-fse-full"),
-            },
-            {
-              value: image_box_button_color,
-              onChange: (value) =>
-                setAttributes({ image_box_button_color: value }),
-              label: __("Image Box Button Color", "md-storyful-fse-full"),
-            },
-          ]}
-        />
+        >
+          <PanelColorSettings
+            title={__("Typography Colors", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: sub_heading_color,
+                onChange: (value) =>
+                  setAttributes({ sub_heading_color: value }),
+                label: __("Sub Heading Color", "md-storyful-fse-full"),
+              },
+              {
+                value: heading_color,
+                onChange: (value) => setAttributes({ heading_color: value }),
+                label: __("Heading Color", "md-storyful-fse-full"),
+              },
+              {
+                value: image_box_content_color,
+                onChange: (value) =>
+                  setAttributes({ image_box_content_color: value }),
+                label: __("Image Box Content Color", "md-storyful-fse-full"),
+              },
+              {
+                value: image_box_button_color,
+                onChange: (value) =>
+                  setAttributes({ image_box_button_color: value }),
+                label: __("Image Box Button Color", "md-storyful-fse-full"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <div className="bakery_antian__slider-image-box">
         <div className="bakery_antian__slider-image-box__inner">
           <div className="text-video-slider__video-and-text">
             <div className="container">
               <div className="bakery_antian__heading">
+                {show_sub_heading && (
                 <RichText
                   tagName="h6"
                   value={sub_heading}
                   onChange={(value) => setAttributes({ sub_heading: value })}
                   placeholder={__("Enter Sub Heading", "md-anitian-fse-full")}
                   style={{
-                    fontSize: sub_heading_font_size,
                     color: sub_heading_color,
                   }}
                 />
+                )}
+                {show_heading && (
                 <RichText
                   tagName="h2"
                   value={heading}
                   onChange={(value) => setAttributes({ heading: value })}
                   placeholder={__("Enter Heading", "md-anitian-fse-full")}
-                  style={{ fontSize: heading_font_size, color: heading_color }}
+                  style={{ color: heading_color }}
                 />
+                )}
               </div>
             </div>
           </div>
@@ -308,34 +274,126 @@ export default function Edit({ attributes, setAttributes }) {
                           </Tooltip>
                         )}
                       </div>
+                      {show_image && (
                       <div className="bakery_antian__slider-image">
-                        <MediaUpload
-                          title={__("Image")}
-                          onSelect={(media) =>
-                            updateStaticPostObj(
-                              index,
-                              "slider_image",
-                              media.url
-                            )
-                          }
-                          multiple={false}
-                          render={({ open }) => (
-                            <>
-                              {postObj.slider_image == "" ? (
-                                <Button variant="primary" onClick={open}>
-                                  {__("Upload")}
-                                </Button>
-                              ) : (
-                                <img
-                                  onClick={open}
-                                  src={postObj.slider_image}
-                                />
-                              )}
-                            </>
+                        <div className="md-prime-block-control image-preview image-controle-visible-hover">
+                          <div
+                            className={`image-controls small-icons icon-center-fixed`}
+                          >
+                            <MediaUploadCheck>
+                              <MediaUpload
+                                onSelect={(media) =>
+                                  updateStaticPostObj(
+                                    index,
+                                    "slider_image",
+                                    media.url
+                                  )
+                                }
+                                allowedTypes={["image"]}
+                                value={postObj.slider_image}
+                                render={({ open }) => (
+                                  <>
+                                    {postObj.slider_image ? (
+                                      <>
+                                        <Tooltip
+                                          text={__("Edit Image", "md-prime")}
+                                        >
+                                          <i
+                                            className="dashicons dashicons-edit edit-image"
+                                            onClick={open}
+                                            role="button"
+                                            tabIndex={0}
+                                            onKeyDown={(e) => {
+                                              if (
+                                                e.key === "Enter" ||
+                                                e.key === " "
+                                              ) {
+                                                e.preventDefault(); // Prevent default action for space key
+                                                open(); // Trigger the click handler
+                                              }
+                                            }}
+                                            aria-label={__(
+                                              "Edit image",
+                                              "md-prime"
+                                            )}
+                                          ></i>
+                                        </Tooltip>
+                                        <Tooltip
+                                          text={__("Remove Image", "md-prime")}
+                                        >
+                                          <i
+                                            className="dashicons dashicons-no-alt remove-image"
+                                            onClick={() => {
+                                              const toDelete =
+                                                // eslint-disable-next-line no-alert
+                                                confirm(
+                                                  __(
+                                                    "Are you sure you want to delete this image?",
+                                                    "md-prime"
+                                                  )
+                                                );
+                                              if (toDelete) {
+                                                updateStaticPostObj(
+                                                  index,
+                                                  "slider_image",
+                                                  ""
+                                                );
+                                              }
+                                            }}
+                                            role="button"
+                                            tabIndex={0}
+                                            onKeyDown={(e) => {
+                                              if (
+                                                e.key === "Enter" ||
+                                                e.key === " "
+                                              ) {
+                                                e.preventDefault();
+                                                updateStaticPostObj(
+                                                  index,
+                                                  "slider_image",
+                                                  ""
+                                                );
+                                              }
+                                            }}
+                                            aria-label={__(
+                                              "Remove image",
+                                              "md-prime"
+                                            )}
+                                          ></i>
+                                        </Tooltip>
+                                      </>
+                                    ) : (
+                                      <div className="upload-wrap">
+                                        <Button
+                                          onClick={open}
+                                          className="button media_and_text__upload_btn"
+                                        >
+                                          <Tooltip
+                                            text={__(
+                                              "Upload Image",
+                                              "md-prime"
+                                            )}
+                                          >
+                                            <i className="dashicons dashicons-upload"></i>
+                                          </Tooltip>
+                                        </Button>
+                                      </div>
+                                    )}
+                                  </>
+                                )}
+                              />
+                            </MediaUploadCheck>
+                          </div>
+                          {postObj.slider_image ? (
+                            <img src={postObj.slider_image} />
+                          ) : (
+                            <img src={siteURL + placeholder} />
                           )}
-                        />
+                        </div>
                       </div>
+                      )}
                       <div className="bakery_antiab__slider-content">
+                        {show_image_box_content && (
                         <RichText
                           tagName="p"
                           value={postObj.slider_content}
@@ -344,10 +402,11 @@ export default function Edit({ attributes, setAttributes }) {
                           }
                           placeholder={__("Enter Content")}
                           style={{
-                            fontSize: image_box_content_font_size,
                             color: image_box_content_color,
                           }}
                         />
+                        )}
+                        {show_image_box_button && (
                         <div class="bakery_antian__slider-button btn-anitian">
                           <RichText
                             tagName="a"
@@ -358,18 +417,24 @@ export default function Edit({ attributes, setAttributes }) {
                             }
                             placeholder={__("Enter Button Text")}
                             style={{
-                              fontSize: image_box_button_font_size,
                               color: image_box_button_color,
                             }}
                           />
                         </div>
+                        )}
                       </div>
                     </div>
                   ))}
-                <div className="add-item-wrap">
-                  <Button variant="primary" onClick={addStaticPostObj}>
-                    {__("Add New Slide")}
-                  </Button>
+                <div
+                  className="add-item-wrap"
+                  onClick={addStaticPostObj}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={__("Add new item", "md-prime")}
+                >
+                  <Tooltip text={__("Add New Item", "md-prime")}>
+                    <i className="add-new-item dashicons dashicons-plus"></i>
+                  </Tooltip>
                 </div>
               </div>
             </div>

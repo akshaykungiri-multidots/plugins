@@ -20,8 +20,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
 
 /**
  * Retrieves the translation of text.
@@ -36,7 +34,6 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-
 
 
 
@@ -58,20 +55,21 @@ function Edit({
     heading_content,
     card_block_style,
     card_block_list,
-    sub_title_font_size,
     sub_title_font_color,
-    title_font_size,
     title_font_color,
-    heading_content_font_size,
     heading_content_font_color,
-    card_title_font_size,
     card_title_font_color,
-    card_content_font_size,
     card_content_font_color,
-    card_learn_more_font_size,
-    card_learn_more_font_color
+    card_learn_more_font_color,
+    number_of_columns,
+    show_image,
+    show_title,
+    show_content,
+    show_link,
+    show_sub_heading,
+    show_heading_content,
+    show_heading
   } = attributes;
-  const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(0);
   const addStaticPostObj = () => {
     const staticPostObj = [...card_block_list, {
       id: card_block_list.length + 1,
@@ -99,29 +97,12 @@ function Edit({
       card_block_list: arrayCopy
     });
   };
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_anitian_card_block"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block Settings", "md-storyful-fse-full")
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block Settings", "md-anitian-fse-full")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Card Block Style", "md-anitian-fse-full"),
     value: card_block_style,
@@ -138,58 +119,64 @@ function Edit({
     onChange: value => setAttributes({
       card_block_style: value
     })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Number of Columns", "md-anitian-fse-full"),
+    value: number_of_columns,
+    onChange: value => setAttributes({
+      number_of_columns: value
+    }),
+    min: 1,
+    max: 4
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Sub Title Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: sub_title_font_size,
-    fallbackFontSize: sub_title_font_size,
-    onChange: newFontSize => setAttributes({
-      sub_title_font_size: newFontSize
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Toggle Settings", "md-anitian-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Sub Heading", "md-anitian-fse-full"),
+    checked: show_sub_heading,
+    onChange: value => setAttributes({
+      show_sub_heading: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: title_font_size,
-    fallbackFontSize: title_font_size,
-    onChange: newFontSize => setAttributes({
-      title_font_size: newFontSize
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Heading", "md-anitian-fse-full"),
+    checked: show_heading,
+    onChange: value => setAttributes({
+      show_heading: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Content Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: heading_content_font_size,
-    fallbackFontSize: heading_content_font_size,
-    onChange: newFontSize => setAttributes({
-      heading_content_font_size: newFontSize
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Heading Content", "md-anitian-fse-full"),
+    checked: show_heading_content,
+    onChange: value => setAttributes({
+      show_heading_content: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Card Title Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: card_title_font_size,
-    fallbackFontSize: card_title_font_size,
-    onChange: newFontSize => setAttributes({
-      card_title_font_size: newFontSize
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Image", "md-anitian-fse-full"),
+    checked: show_image,
+    onChange: value => setAttributes({
+      show_image: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Card Description Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: card_content_font_size,
-    fallbackFontSize: card_content_font_size,
-    onChange: newFontSize => setAttributes({
-      card_content_font_size: newFontSize
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Title", "md-anitian-fse-full"),
+    checked: show_title,
+    onChange: value => setAttributes({
+      show_title: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Card Learn More Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: card_learn_more_font_size,
-    fallbackFontSize: card_learn_more_font_size,
-    onChange: newFontSize => setAttributes({
-      card_learn_more_font_size: newFontSize
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Content", "md-anitian-fse-full"),
+    checked: show_content,
+    onChange: value => setAttributes({
+      show_content: value
     })
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Link", "md-anitian-fse-full"),
+    checked: show_link,
+    onChange: value => setAttributes({
+      show_link: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-anitian-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-anitian-fse-full"),
     initialOpen: false,
     colorSettings: [{
       value: sub_title_font_color,
@@ -228,7 +215,7 @@ function Edit({
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Card Learn More Font Color")
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `md_anitian_card_block ${card_block_style}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__head"
@@ -236,7 +223,7 @@ function Edit({
     className: "container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__heading"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, show_sub_heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h3",
     value: sub_title,
     onChange: value => setAttributes({
@@ -244,10 +231,9 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Sub Title", "md-anitian-fse-full"),
     style: {
-      fontSize: sub_title_font_size,
       color: sub_title_font_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), show_heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
     value: title,
     onChange: value => setAttributes({
@@ -255,10 +241,9 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-anitian-fse-full"),
     style: {
-      fontSize: title_font_size,
       color: title_font_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), show_heading_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: heading_content,
     onChange: value => setAttributes({
@@ -266,17 +251,19 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Heading Content", "md-anitian-fse-full"),
     style: {
-      fontSize: heading_content_font_size,
       color: heading_content_font_color
     }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "md_anitian_card_block__content"
+    className: "md_anitian_card_block__content",
+    style: {
+      gridTemplateColumns: `repeat(${number_of_columns}, 1fr)`
+    }
   }, card_block_list && card_block_list.map((postObj, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__item show-items-hover-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "item-action-wrap show-items-hover small-icons"
+    className: `item-action-wrap show-items-hover pos-abs`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "move-item"
   }, 0 < index && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
@@ -297,7 +284,7 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "dashicons dashicons-arrow-right-alt move-right",
     role: "button",
-    tabIndex: "0",
+    tabIndex: 0,
     onClick: () => moveItem(index, index + 1),
     onKeyDown: e => {
       if (e.key === "Enter" || e.key === " ") {
@@ -310,12 +297,12 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
     className: "remove-item dashicons dashicons-no-alt",
     role: "button",
-    tabIndex: "0",
+    tabIndex: 0,
     onClick: () => {
       const toDelete =
       // eslint-disable-next-line no-alert
       confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
-      if (toDelete) {
+      if (toDelete === true) {
         const updatedArray = card_block_list.filter((item, itemIndex) => itemIndex !== index);
         setAttributes({
           card_block_list: updatedArray
@@ -324,10 +311,12 @@ function Edit({
     },
     onKeyDown: e => {
       if (e.key === "Enter" || e.key === " ") {
+        // Simulate click behavior for keyboard users
+        e.preventDefault(); // Prevent default action for space key
         const toDelete =
         // eslint-disable-next-line no-alert
         confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
-        if (toDelete) {
+        if (toDelete === true) {
           const updatedArray = card_block_list.filter((item, itemIndex) => itemIndex !== index);
           setAttributes({
             card_block_list: updatedArray
@@ -335,62 +324,121 @@ function Edit({
         }
       }
     },
-    "aria-label": "Delete item"
-  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove this item", "md-prime")
+  }))), show_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__item__image"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Image"),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `card-box-v1__box_image`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "md-prime-block-control image-preview image-controle-visible-hover"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `image-controls small-icons icon-center-fixed`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: media => updateStaticPostObj(index, "card_image", media.url),
-    multiple: false,
+    allowedTypes: ["image"],
+    value: postObj.card_image,
     render: ({
       open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, postObj.card_image == "" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      variant: "primary",
-      onClick: open
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload")) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    }) => {
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+        text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit Image", "md-prime")
+      }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+        className: "dashicons dashicons-edit edit-image",
+        onClick: open,
+        role: "button",
+        tabIndex: 0,
+        onKeyDown: e => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault(); // Prevent default action for space key
+            open(); // Trigger the click handler
+          }
+        },
+        "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit image", "md-prime")
+      }));
+    }
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "dashicons dashicons-no-alt remove-image",
+    onClick: () => {
+      const toDelete =
+      // eslint-disable-next-line no-alert
+      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this image?", "md-prime"));
+      if (toDelete) {
+        updateStaticPostObj(index, "card_image", "");
+      }
+    },
+    role: "button",
+    tabIndex: 0,
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        updateStaticPostObj(index, "card_image", "");
+      }
+    },
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove image", "md-prime")
+  }))), postObj.card_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: postObj.card_image
+  })), !postObj.card_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: item => {
+      updateStaticPostObj(index, "card_image", item.url);
+    },
+    allowedTypes: ["image"],
+    value: postObj.card_image,
+    render: ({
+      open
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "upload-wrap"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
       onClick: open,
-      src: postObj.card_image
-    }))
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "button media_and_text__upload_btn"
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload Image", "md-prime")
+    }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+      className: "dashicons dashicons-upload"
+    }))))
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__item__content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, show_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h3",
     className: "column-item-title",
     value: postObj.card_title,
     onChange: value => updateStaticPostObj(index, "card_title", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title"),
     style: {
-      fontSize: card_title_font_size,
       color: card_title_font_color
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__item__content__link"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, show_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     className: "column-item-desc",
     value: postObj.card_description,
     onChange: value => updateStaticPostObj(index, "card_description", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description"),
     style: {
-      fontSize: card_content_font_size,
       color: card_content_font_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "a",
+  }), show_link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "p",
     className: "md_anitian_card_block__item__link",
     value: postObj.learn_more_link,
     onChange: value => updateStaticPostObj(index, "learn_more_link", value),
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title"),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Link"),
     style: {
-      fontSize: card_learn_more_font_size,
       color: card_learn_more_font_color
     }
-  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "add-item-wrap"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    variant: "primary",
-    onClick: addStaticPostObj
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Slide")))))));
+  })))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "add-item-wrap",
+    onClick: addStaticPostObj,
+    role: "button",
+    tabIndex: 0,
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "add-new-item dashicons dashicons-plus"
+  }))))));
 }
 
 /***/ }),
@@ -500,18 +548,20 @@ function save({
     heading_content,
     card_block_style,
     card_block_list,
-    sub_title_font_size,
     sub_title_font_color,
-    title_font_size,
     title_font_color,
-    heading_content_font_size,
     heading_content_font_color,
-    card_title_font_size,
     card_title_font_color,
-    card_content_font_size,
     card_content_font_color,
-    card_learn_more_font_size,
-    card_learn_more_font_color
+    card_learn_more_font_color,
+    number_of_columns,
+    show_image,
+    show_title,
+    show_content,
+    show_link,
+    show_sub_heading,
+    show_heading_content,
+    show_heading
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -525,31 +575,31 @@ function save({
     className: "container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__heading"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, show_sub_heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h3",
     value: sub_title,
     style: {
-      fontSize: sub_title_font_size,
       color: sub_title_font_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), show_heading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     value: title,
     style: {
-      fontSize: title_font_size,
       color: title_font_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), show_heading_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     value: heading_content,
     style: {
-      fontSize: heading_content_font_size,
       color: heading_content_font_color
     }
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "md_anitian_card_block__content"
+    className: "md_anitian_card_block__content",
+    style: {
+      gridTemplateColumns: `repeat(${number_of_columns}, 1fr)`
+    }
   }, card_block_list && card_block_list.map((postObj, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__item  show-items-hover-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -559,30 +609,27 @@ function save({
     alt: postObj.card_title
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__item__content"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, show_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h3",
     className: "column-item-title",
     value: postObj.card_title,
     style: {
-      fontSize: card_title_font_size,
       color: card_title_font_color
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_card_block__item__content__link"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, show_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     className: "column-item-desc",
     value: postObj.card_description,
     style: {
-      fontSize: card_content_font_size,
       color: card_content_font_color
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "a",
+  }), show_link && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+    tagName: "p",
     className: "md_anitian_card_block__item__link",
     value: postObj.learn_more_link,
     style: {
-      fontSize: card_learn_more_font_size,
       color: card_learn_more_font_color
     }
   })))))))));
@@ -642,16 +689,6 @@ module.exports = window["wp"]["components"];
 
 /***/ }),
 
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ ((module) => {
-
-module.exports = window["wp"]["element"];
-
-/***/ }),
-
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -668,7 +705,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-card-block","version":"0.1.0","title":"MD Card Block","apiVersion":3,"category":"md-anitian-fse-full","icon":"index-card","description":"A flexible block that displays information in a card format, often used for showcasing services, features, or profiles with an image, title, and description.","keywords":["md-anitian-fse-full","md-card-block"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"sub_title":{"type":"string","default":""},"title":{"type":"string","default":""},"heading_content":{"type":"string","default":""},"card_block_style":{"type":"string","default":"style1"},"card_block_list":{"type":"array","default":[]},"sub_title_font_size":{"type":"string","default":""},"sub_title_font_color":{"type":"string","default":""},"title_font_size":{"type":"string","default":""},"title_font_color":{"type":"string","default":""},"heading_content_font_size":{"type":"string","default":""},"heading_content_font_color":{"type":"string","default":""},"card_title_font_size":{"type":"string","default":""},"card_title_font_color":{"type":"string","default":""},"card_content_font_size":{"type":"string","default":""},"card_content_font_color":{"type":"string","default":""},"card_learn_more_font_size":{"type":"string","default":""},"card_learn_more_font_color":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-card-block","version":"0.1.0","title":"MD Card Block","apiVersion":3,"category":"md-anitian-fse-full","icon":"index-card","description":"A flexible block that displays information in a card format, often used for showcasing services, features, or profiles with an image, title, and description.","keywords":["md-anitian-fse-full","md-card-block"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"sub_title":{"type":"string","default":""},"title":{"type":"string","default":""},"heading_content":{"type":"string","default":""},"card_block_style":{"type":"string","default":"style1"},"card_block_list":{"type":"array","default":[]},"sub_title_font_color":{"type":"string","default":""},"title_font_color":{"type":"string","default":""},"heading_content_font_color":{"type":"string","default":""},"card_title_font_color":{"type":"string","default":""},"card_content_font_color":{"type":"string","default":""},"card_learn_more_font_color":{"type":"string","default":""},"number_of_columns":{"type":"number","default":3},"show_image":{"type":"boolean","default":true},"show_title":{"type":"boolean","default":true},"show_content":{"type":"boolean","default":true},"show_link":{"type":"boolean","default":true},"show_sub_heading":{"type":"boolean","default":true},"show_heading_content":{"type":"boolean","default":true},"show_heading":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 
