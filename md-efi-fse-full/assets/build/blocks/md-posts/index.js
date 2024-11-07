@@ -76,28 +76,14 @@ function Edit({
     postType,
     postsToShow,
     postInRow,
-    postTitleFontSize,
     postTitleColor,
-    postContentFontSize,
-    postContentColor
+    postContentColor,
+    showFilter,
+    showLoadMore,
+    showFeaturedImage,
+    showPostTitle,
+    showExcerpt
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   const builtInPostType = ["page", "attachment", "nav_menu_item", "wp_block", "wp_template", "wp_template_part", "wp_navigation", "wp_font_family", "wp_font_face", "wp_global_styles"];
   const [postTypes, setPostTypes] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
@@ -128,70 +114,60 @@ function Edit({
     onChange: value => setAttributes({
       postType: value
     })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
     label: "Posts to Show",
     value: postsToShow,
-    options: [{
-      label: "2",
-      value: "2"
-    }, {
-      label: "4",
-      value: "4"
-    }, {
-      label: "6",
-      value: "6"
-    }, {
-      label: "8",
-      value: "8"
-    }, {
-      label: "10",
-      value: "10"
-    }],
     onChange: value => setAttributes({
       postsToShow: value
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.SelectControl, {
+    }),
+    min: 1,
+    max: 20
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
     label: "Posts in Row",
     value: postInRow,
-    options: [{
-      label: "1",
-      value: "1"
-    }, {
-      label: "2",
-      value: "2"
-    }, {
-      label: "3",
-      value: "3"
-    }, {
-      label: "4",
-      value: "4"
-    }, {
-      label: "5",
-      value: "5"
-    }],
     onChange: value => setAttributes({
       postInRow: value
+    }),
+    min: 1,
+    max: 4
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Toggle Settings", "md-efi-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: "Show Filter",
+    checked: showFilter,
+    onChange: value => setAttributes({
+      showFilter: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: "Show Load More",
+    checked: showLoadMore,
+    onChange: value => setAttributes({
+      showLoadMore: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: "Show Featured Image",
+    checked: showFeaturedImage,
+    onChange: value => setAttributes({
+      showFeaturedImage: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: "Show Post Title",
+    checked: showPostTitle,
+    onChange: value => setAttributes({
+      showPostTitle: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: "Show Excerpt",
+    checked: showExcerpt,
+    onChange: value => setAttributes({
+      showExcerpt: value
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Title Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: postTitleFontSize,
-    fallbackFontSize: postTitleFontSize,
-    onChange: newFontSize => setAttributes({
-      postTitleFontSize: newFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Description Font Size"), " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: postContentFontSize,
-    fallbackFontSize: postContentFontSize,
-    onChange: newFontSize => setAttributes({
-      postContentFontSize: newFontSize
-    })
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.PanelColorSettings, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-efi-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-efi-fse-full"),
     initialOpen: false,
     colorSettings: [{
       value: postTitleColor,
@@ -206,17 +182,20 @@ function Edit({
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Column Description Font Color")
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default()), {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)((_wordpress_server_side_render__WEBPACK_IMPORTED_MODULE_2___default()), {
     block: _block_json__WEBPACK_IMPORTED_MODULE_5__.name,
     className: className,
     attributes: {
       postType,
       postsToShow,
       postInRow,
-      postTitleFontSize,
       postTitleColor,
-      postContentFontSize,
-      postContentColor
+      postContentColor,
+      showFilter,
+      showLoadMore,
+      showFeaturedImage,
+      showPostTitle,
+      showExcerpt
     }
   }));
 }
@@ -393,7 +372,7 @@ module.exports = window["wp"]["serverSideRender"];
   \****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-posts","version":"0.1.0","title":"MD Posts","apiVersion":3,"category":"md-efi-fse-full","icon":"list-view","description":"A block to display posts","keywords":["md-posts","md-efi-fse-full"],"supports":{"html":false},"textdomain":"md-efi-fse-full","attributes":{"postType":{"type":"string","default":"post"},"postsToShow":{"type":"string","default":"5"},"postInRow":{"type":"string","default":"2"},"postTitleFontSize":{"type":"string","default":""},"postTitleColor":{"type":"string","default":"#000000"},"postContentFontSize":{"type":"string","default":""},"postContentColor":{"type":"string","default":"#000000"}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-posts","version":"0.1.0","title":"MD Posts","apiVersion":3,"category":"md-efi-fse-full","icon":"list-view","description":"A block to display posts","keywords":["md-posts","md-efi-fse-full"],"supports":{"html":false},"textdomain":"md-efi-fse-full","attributes":{"postType":{"type":"string","default":"post"},"postsToShow":{"type":"number","default":5},"postInRow":{"type":"number","default":2},"postTitleColor":{"type":"string","default":"#000000"},"postContentColor":{"type":"string","default":"#000000"},"showFilter":{"type":"boolean","default":true},"showLoadMore":{"type":"boolean","default":true},"showFeaturedImage":{"type":"boolean","default":true},"showPostTitle":{"type":"boolean","default":true},"showExcerpt":{"type":"boolean","default":true}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

@@ -31,11 +31,8 @@ export default function save({ attributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    sliderTitleFontSize,
     sliderTitleFontColor,
-    sliderDescriptionFontSize,
     sliderDescriptionFontColor,
-    sliderLinkFontSize,
     sliderLinkFontColor,
   } = attributes;
   return (
@@ -70,7 +67,6 @@ export default function save({ attributes }) {
                       className="md_slider__item__content__title"
                       value={slideItems[currentSlide].title}
                       style={{
-                        fontSize: sliderTitleFontSize,
                         color: sliderTitleFontColor,
                       }}
                     />
@@ -79,7 +75,6 @@ export default function save({ attributes }) {
                       className="md_slider__item__content__description"
                       value={slideItems[currentSlide].description}
                       style={{
-                        fontSize: sliderDescriptionFontSize,
                         color: sliderDescriptionFontColor,
                       }}
                     />
@@ -88,7 +83,6 @@ export default function save({ attributes }) {
                         tagName="p"
                         value={slideItems[currentSlide].link}
                         style={{
-                          fontSize: sliderLinkFontSize,
                           color: sliderLinkFontColor,
                         }}
                       />

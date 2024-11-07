@@ -60,11 +60,8 @@ function Edit({
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    sliderTitleFontSize,
     sliderTitleFontColor,
-    sliderDescriptionFontSize,
     sliderDescriptionFontColor,
-    sliderLinkFontSize,
     sliderLinkFontColor
   } = attributes;
   const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(0);
@@ -91,44 +88,19 @@ function Edit({
   const removeStaticPostObj = index => {
     const updatedStaticPostObj = [...slideItems];
     updatedStaticPostObj.splice(index, 1);
+    if (currentSlide >= updatedStaticPostObj.length) {
+      setCurrentSlide(updatedStaticPostObj.length - 1); // Set to last slide if current is out of bounds
+    }
     setAttributes({
       slideItems: updatedStaticPostObj
     });
-    setCurrentSlide(-1);
   };
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
+  console.log(currentSlide);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_slider_section"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Items")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "md_slider_section__items"
-  }, slideItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    key: index,
-    isPrimary: true,
-    onClick: () => setCurrentSlide(index)
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide"), " ", index + 1)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    isPrimary: true,
-    onClick: addStaticPostObj
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Slide")))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Settings")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Autoplay", "md-prime"),
@@ -173,22 +145,35 @@ function Edit({
       slideSlidesToScroll
     })
   })), currentSlide > -1 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Current Slide Settings")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image"),
-    onSelect: media => updateStaticPostObj(currentSlide, "backgroundImage", media.url),
-    multiple: false,
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Current Slide Settings"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "setting-row"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "background-image"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image", "md-prime")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, !slideItems[currentSlide].backgroundImage ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    onSelect: media => {
+      updateStaticPostObj(currentSlide, "backgroundImage", media.url);
+    },
+    allowedTypes: ["image"],
+    value: slideItems[currentSlide].background_image,
     render: ({
       open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-      className: "md_bg_image_upload",
-      onClick: open
-    }, slideItems[currentSlide].backgroundImage == "" ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
-      className: "dashicons dashicons-format-image"
-    }, " ") : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-      src: slideItems[currentSlide].backgroundImage
-    })))
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Box Background Color")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.GradientPicker, {
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+      onClick: open,
+      className: "button button-large"
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Upload Image", "md-prime"))
+  }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "image-preview"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: slideItems[currentSlide].backgroundImage,
+    alt: "Background-image-preview"
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    onClick: () => {
+      updateStaticPostObj(currentSlide, "backgroundImage", "");
+    },
+    className: "is-link is-destructive"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime"))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Box Background Color")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.GradientPicker, {
     value: slideItems[currentSlide].boxColor !== undefined ? slideItems[currentSlide].boxColor : null,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Box Color"),
     onChange: color => updateStaticPostObj(currentSlide, "boxColor", color),
@@ -209,34 +194,10 @@ function Edit({
     isDestructive: true,
     onClick: () => removeStaticPostObj(currentSlide)
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Delete Slide"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings"),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Title Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: sliderTitleFontSize,
-    fallbackFontSize: sliderTitleFontSize,
-    onChange: newFontSize => setAttributes({
-      sliderTitleFontSize: newFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Description Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: sliderDescriptionFontSize,
-    fallbackFontSize: sliderDescriptionFontSize,
-    onChange: newFontSize => setAttributes({
-      sliderDescriptionFontSize: newFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Link Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    __nextHasNoMarginBottom: true,
-    fontSizes: fontSizes,
-    value: sliderLinkFontSize,
-    fallbackFontSize: sliderLinkFontSize,
-    onChange: newFontSize => setAttributes({
-      sliderLinkFontSize: newFontSize
-    })
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-storyful-fse-full"),
     initialOpen: false,
     colorSettings: [{
       value: sliderTitleFontColor,
@@ -257,8 +218,8 @@ function Edit({
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Link Font Color")
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "md_hero_banner_slider"
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "md_hero_banner_slider md_slider_grid"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider",
     "data-autoplay": autoplay,
@@ -267,51 +228,130 @@ function Edit({
     "data-infinite": slideInfinite,
     "data-slidesToShow": slideSlidesToShow,
     "data-slidesToScroll": slideSlidesToScroll
-  }, currentSlide > -1 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "md_slider__item"
-  }, slideItems[currentSlide].backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  }, slideItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `md_slider_grid_item ${currentSlide === index ? "active" : ""}`,
+    key: index
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `md_slider__item`
+  }, item.backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     className: "md_slider__item__bg",
-    src: slideItems[currentSlide].backgroundImage,
+    src: item.backgroundImage,
     alt: "slide"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider__item__content",
     style: {
-      background: slideItems[currentSlide].boxColor
+      background: item.boxColor
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider__item__content__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
     className: "md_slider__item__content__title",
-    value: slideItems[currentSlide].title,
-    onChange: value => updateStaticPostObj(currentSlide, "title", value),
+    value: item.title,
+    onChange: value => updateStaticPostObj(index, "title", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-prime"),
     style: {
-      fontSize: sliderTitleFontSize,
       color: sliderTitleFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     className: "md_slider__item__content__description",
-    value: slideItems[currentSlide].description,
-    onChange: value => updateStaticPostObj(currentSlide, "description", value),
+    value: item.description,
+    onChange: value => updateStaticPostObj(index, "description", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description", "md-prime"),
     style: {
-      fontSize: sliderDescriptionFontSize,
       color: sliderDescriptionFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider__item__content__btn md_btn_arrow"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
-    value: slideItems[currentSlide].link,
-    onChange: value => updateStaticPostObj(currentSlide, "link", value),
+    value: item.link,
+    onChange: value => updateStaticPostObj(index, "link", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Button Text", "md-prime"),
     style: {
-      fontSize: sliderLinkFontSize,
       color: sliderLinkFontColor
     }
-  }))))))));
+  }))))))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "md_slider_section__items"
+  }, slideItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "md_slider_section__item show-items-hover-wrap" + ` ${currentSlide === index ? "active" : ""}`,
+    key: index,
+    role: "button",
+    tabIndex: 0,
+    "data-index": index,
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit this item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `item-action-wrap show-items-hover pos-abs`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "move-item"
+  }, 0 < index && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Left", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-left-alt move-left",
+    onClick: () => moveItem(index, index - 1),
+    onKeyDown: event => {
+      if (event.key === "Enter" || event.key === " ") {
+        moveItem(index, index - 1);
+      }
+    },
+    role: "button",
+    tabIndex: 0,
+    "aria-label": "Move item left"
+  })), index + 1 < slideItems.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Right", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-right-alt move-right",
+    role: "button",
+    tabIndex: 0,
+    onClick: () => moveItem(index, index + 1),
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        moveItem(index, index + 1);
+      }
+    },
+    "aria-label": "Move item right"
+  }))), 1 < slideItems.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "remove-item dashicons dashicons-no-alt",
+    role: "button",
+    tabIndex: 0,
+    onClick: () => {
+      const toDelete =
+      // eslint-disable-next-line no-alert
+      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+      if (toDelete === true) {
+        removeStaticPostObj(index);
+      }
+    },
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        // Simulate click behavior for keyboard users
+        e.preventDefault(); // Prevent default action for space key
+        const toDelete =
+        // eslint-disable-next-line no-alert
+        confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+        if (toDelete === true) {
+          removeStaticPostObj(index);
+        }
+      }
+    },
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove this item", "md-prime")
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "item-title",
+    onClick: () => setCurrentSlide(index)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide"), " ", index + 1)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "add-item-wrap",
+    onClick: addStaticPostObj,
+    role: "button",
+    tabIndex: 0,
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "add-new-item dashicons dashicons-plus"
+  }))));
 }
 
 /***/ }),
@@ -423,11 +463,8 @@ function save({
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    sliderTitleFontSize,
     sliderTitleFontColor,
-    sliderDescriptionFontSize,
     sliderDescriptionFontColor,
-    sliderLinkFontSize,
     sliderLinkFontColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -462,7 +499,6 @@ function save({
     className: "md_slider__item__content__title",
     value: slideItems[currentSlide].title,
     style: {
-      fontSize: sliderTitleFontSize,
       color: sliderTitleFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
@@ -470,7 +506,6 @@ function save({
     className: "md_slider__item__content__description",
     value: slideItems[currentSlide].description,
     style: {
-      fontSize: sliderDescriptionFontSize,
       color: sliderDescriptionFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -479,7 +514,6 @@ function save({
     tagName: "p",
     value: slideItems[currentSlide].link,
     style: {
-      fontSize: sliderLinkFontSize,
       color: sliderLinkFontColor
     }
   })))))))));

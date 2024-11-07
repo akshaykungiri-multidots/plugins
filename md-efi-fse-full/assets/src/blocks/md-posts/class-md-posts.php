@@ -81,6 +81,7 @@ class MD_Posts extends Block_Base {
 		$postType = isset( $attributes['postType'] ) ? $attributes['postType'] : 'post';
 		$postsToShow = isset( $attributes['postsToShow'] ) ? $attributes['postsToShow'] : '';
 		$postInRow = isset( $attributes['postInRow'] ) ? $attributes['postInRow'] : '';
+		$showLoadMore = isset( $attributes['showLoadMore'] ) ? $attributes['showLoadMore'] : ''; 
 		
 		// Get all texonomies of the post type.
 		$taxonomies = get_object_taxonomies( $postType, 'names' );
@@ -138,7 +139,7 @@ class MD_Posts extends Block_Base {
 					<?php // Display Load More button. ?>
 					<input type="hidden" name="md-posts__loadmore-post_attributes" value="<?php echo esc_attr( wp_json_encode( $attributes ) ); ?>">
 					<input type="hidden" name="md-posts__loadmore-current_page" value="1">
-					<?php if ( $query->max_num_pages > 1 ) : ?>
+					<?php if ( $query->max_num_pages > 1 && $showLoadMore ) : ?>
 						<div class="md-posts__loadmore">
 							<a href="javascript:void(0);" class="md-posts__loadmore-button btn-main" data-page="1" data-post-type="<?php echo esc_attr( $postType ); ?>" data-posts-per-page="<?php echo esc_attr( $postsToShow ); ?>" data-post-in-row="<?php echo esc_attr( $postInRow ); ?>">
 								<?php esc_html_e( 'Load More', 'md-efi-fse-full' ); ?>

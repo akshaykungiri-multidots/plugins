@@ -53,6 +53,7 @@ function Edit({
   setAttributes
 }) {
   const {
+    enableHeading,
     heading,
     autoplay,
     arrows,
@@ -61,19 +62,12 @@ function Edit({
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    headingFontSize,
     headingFontColor,
-    sliderCompanyNameFontSize,
     sliderCompanyNameFontColor,
-    sliderTestimonialFontSize,
     sliderTestimonialFontColor,
-    sliderAuthorNameFontSize,
     sliderAuthorNameFontColor,
-    sliderDesignationFontSize,
     sliderDesignationFontColor,
-    sliderVideoLinkFontSize,
     sliderVideoLinkFontColor,
-    sliderReadMoreLinkFontSize,
     sliderReadMoreLinkFontColor
   } = attributes;
   const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(0);
@@ -101,35 +95,26 @@ function Edit({
   const removeStaticPostObj = index => {
     const updatedStaticPostObj = [...slideItems];
     updatedStaticPostObj.splice(index, 1);
+    if (currentSlide >= updatedStaticPostObj.length) {
+      setCurrentSlide(updatedStaticPostObj.length - 1); // Set to last slide if current is out of bounds
+    }
     setAttributes({
       slideItems: updatedStaticPostObj
     });
-    setCurrentSlide(-1);
   };
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_slider_section"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("General Settings")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable Heading", "md-prime"),
+    checked: enableHeading,
+    onChange: enableHeading => setAttributes({
+      enableHeading
+    })
+  }), enableHeading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading"),
     value: heading,
     onChange: heading => setAttributes({
@@ -137,16 +122,8 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Heading", "md-prime")
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Items")
-  }, slideItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    key: index,
-    isPrimary: true,
-    onClick: () => setCurrentSlide(index)
-  }, item.title || (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide"), " ", index + 1)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    isPrimary: true,
-    onClick: addStaticPostObj
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Slide"))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Settings")
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Settings"),
+    initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Autoplay", "md-prime"),
     checked: autoplay,
@@ -190,52 +167,10 @@ function Edit({
       slideSlidesToScroll
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-storyful-fse-full"),
     initialOpen: false
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: headingFontSize,
-    onChange: headingFontSize => setAttributes({
-      headingFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Company Name Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: sliderCompanyNameFontSize,
-    onChange: sliderCompanyNameFontSize => setAttributes({
-      sliderCompanyNameFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Testimonial Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: sliderTestimonialFontSize,
-    onChange: sliderTestimonialFontSize => setAttributes({
-      sliderTestimonialFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Author Name Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: sliderAuthorNameFontSize,
-    onChange: sliderAuthorNameFontSize => setAttributes({
-      sliderAuthorNameFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Designation Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: sliderDesignationFontSize,
-    onChange: sliderDesignationFontSize => setAttributes({
-      sliderDesignationFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Video Link Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: sliderVideoLinkFontSize,
-    onChange: sliderVideoLinkFontSize => setAttributes({
-      sliderVideoLinkFontSize
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Read More Link Font Size")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FontSizePicker, {
-    fontSizes: fontSizes,
-    value: sliderReadMoreLinkFontSize,
-    onChange: sliderReadMoreLinkFontSize => setAttributes({
-      sliderReadMoreLinkFontSize
-    })
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-storyful-fse-full"),
     initialOpen: false,
     colorSettings: [{
       value: headingFontColor,
@@ -280,7 +215,7 @@ function Edit({
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Read More Link Font Color")
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_hero_banner_slider_v3"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider",
@@ -299,7 +234,6 @@ function Edit({
     className: "md_slider__item--inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     style: {
-      fontSize: headingFontSize,
       color: headingFontColor
     }
   }, heading), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -311,7 +245,6 @@ function Edit({
     onChange: value => updateStaticPostObj(currentSlide, "companyName", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Company Name", "md-prime"),
     style: {
-      fontSize: sliderCompanyNameFontSize,
       color: sliderCompanyNameFontColor
     }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -323,7 +256,6 @@ function Edit({
     onChange: value => updateStaticPostObj(currentSlide, "testimonial", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Testimonial", "md-prime"),
     style: {
-      fontSize: sliderTestimonialFontSize,
       color: sliderTestimonialFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -337,7 +269,6 @@ function Edit({
     onChange: value => updateStaticPostObj(currentSlide, "authorName", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Author Name", "md-prime"),
     style: {
-      fontSize: sliderAuthorNameFontSize,
       color: sliderAuthorNameFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
@@ -347,7 +278,6 @@ function Edit({
     onChange: value => updateStaticPostObj(currentSlide, "designation", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Designation", "md-prime"),
     style: {
-      fontSize: sliderDesignationFontSize,
       color: sliderDesignationFontColor
     }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
@@ -357,7 +287,6 @@ function Edit({
     onChange: value => updateStaticPostObj(currentSlide, "videoLink", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Video Link", "md-prime"),
     style: {
-      fontSize: sliderVideoLinkFontSize,
       color: sliderVideoLinkFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -369,12 +298,90 @@ function Edit({
     onChange: value => updateStaticPostObj(currentSlide, "readMoreLink", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Read More Link", "md-prime"),
     style: {
-      fontSize: sliderReadMoreLinkFontSize,
       color: sliderReadMoreLinkFontColor
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider__item__count"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, currentSlide + 1), " /", " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, slideItems.length))))))));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, currentSlide + 1), " /", " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, slideItems.length))))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "md_slider_section__items"
+  }, slideItems.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "md_slider_section__item show-items-hover-wrap" + ` ${currentSlide === index ? "active" : ""}`,
+    key: index,
+    role: "button",
+    tabIndex: 0,
+    "data-index": index,
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit this item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `item-action-wrap show-items-hover pos-abs`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "move-item"
+  }, 0 < index && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Left", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-left-alt move-left",
+    onClick: () => moveItem(index, index - 1),
+    onKeyDown: event => {
+      if (event.key === "Enter" || event.key === " ") {
+        moveItem(index, index - 1);
+      }
+    },
+    role: "button",
+    tabIndex: 0,
+    "aria-label": "Move item left"
+  })), index + 1 < slideItems.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Right", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-right-alt move-right",
+    role: "button",
+    tabIndex: 0,
+    onClick: () => moveItem(index, index + 1),
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        moveItem(index, index + 1);
+      }
+    },
+    "aria-label": "Move item right"
+  }))), 1 < slideItems.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "remove-item dashicons dashicons-no-alt",
+    role: "button",
+    tabIndex: 0,
+    onClick: () => {
+      const toDelete =
+      // eslint-disable-next-line no-alert
+      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+      if (toDelete === true) {
+        removeStaticPostObj(index);
+      }
+    },
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        // Simulate click behavior for keyboard users
+        e.preventDefault(); // Prevent default action for space key
+        const toDelete =
+        // eslint-disable-next-line no-alert
+        confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-prime"));
+        if (toDelete === true) {
+          removeStaticPostObj(index);
+        }
+      }
+    },
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove this item", "md-prime")
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "item-title",
+    onClick: () => setCurrentSlide(index)
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide"), " ", index + 1)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "add-item-wrap",
+    onClick: addStaticPostObj,
+    role: "button",
+    tabIndex: 0,
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Item", "md-prime")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "add-new-item dashicons dashicons-plus"
+  }))));
 }
 
 /***/ }),
@@ -479,6 +486,7 @@ function save({
   attributes
 }) {
   const {
+    enableHeading,
     heading,
     autoplay,
     arrows,
@@ -487,19 +495,12 @@ function save({
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    headingFontSize,
     headingFontColor,
-    sliderCompanyNameFontSize,
     sliderCompanyNameFontColor,
-    sliderTestimonialFontSize,
     sliderTestimonialFontColor,
-    sliderAuthorNameFontSize,
     sliderAuthorNameFontColor,
-    sliderDesignationFontSize,
     sliderDesignationFontColor,
-    sliderVideoLinkFontSize,
     sliderVideoLinkFontColor,
-    sliderReadMoreLinkFontSize,
     sliderReadMoreLinkFontColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -522,9 +523,8 @@ function save({
     className: "md_slider__item__gradient_theme"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider__item--inner"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+  }, enableHeading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     style: {
-      fontSize: headingFontSize,
       color: headingFontColor
     }
   }, heading), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -534,7 +534,6 @@ function save({
     className: "md_slider__item__company_name h4",
     value: slideItems[currentSlide].companyName,
     style: {
-      fontSize: sliderCompanyNameFontSize,
       color: sliderCompanyNameFontColor
     }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -544,7 +543,6 @@ function save({
     className: "md_slider__item__testimonial__content",
     value: slideItems[currentSlide].testimonial,
     style: {
-      fontSize: sliderTestimonialFontSize,
       color: sliderTestimonialFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -556,7 +554,6 @@ function save({
     className: "md_slider__item__testimonial__author__name",
     value: slideItems[currentSlide].authorName,
     style: {
-      fontSize: sliderAuthorNameFontSize,
       color: sliderAuthorNameFontColor
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
@@ -564,7 +561,6 @@ function save({
     className: "md_slider__item__testimonial__author__designation",
     value: slideItems[currentSlide].designation,
     style: {
-      fontSize: sliderDesignationFontSize,
       color: sliderDesignationFontColor
     }
   })), slideItems[currentSlide].videoLink && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
@@ -572,7 +568,6 @@ function save({
     className: "md_slider__item__testimonial__video",
     value: slideItems[currentSlide].videoLink,
     style: {
-      fontSize: sliderVideoLinkFontSize,
       color: sliderVideoLinkFontColor
     }
   }), slideItems[currentSlide].readMoreLink && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -582,7 +577,6 @@ function save({
     className: "btn-main",
     value: slideItems[currentSlide].readMoreLink,
     style: {
-      fontSize: sliderReadMoreLinkFontSize,
       color: sliderReadMoreLinkFontColor
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -670,7 +664,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-slider-v3","version":"0.1.0","title":"MD Slider V3","apiVersion":3,"category":"md-efi-fse-full","icon":"format-gallery","description":"A block to display slider but with more options","keywords":["md-efi-fse-full","md-slider-v3"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-efi-fse-full","attributes":{"heading":{"type":"string","default":"MD Slider V3"},"slideItems":{"type":"array","default":[{"id":1,"companyName":"","testimonial":"","authorName":"","designation":"","videoLink":"","readMoreLink":""}]},"headingFontSize":{"type":"string","default":""},"headingFontColor":{"type":"string","default":"#000000"},"sliderCompanyNameFontSize":{"type":"string","default":""},"sliderCompanyNameFontColor":{"type":"string","default":"#000000"},"sliderTestimonialFontSize":{"type":"string","default":""},"sliderTestimonialFontColor":{"type":"string","default":"#000000"},"sliderAuthorNameFontSize":{"type":"string","default":""},"sliderAuthorNameFontColor":{"type":"string","default":"#000000"},"sliderDesignationFontSize":{"type":"string","default":""},"sliderDesignationFontColor":{"type":"string","default":"#000000"},"sliderVideoLinkFontSize":{"type":"string","default":""},"sliderVideoLinkFontColor":{"type":"string","default":"#000000"},"sliderReadMoreLinkFontSize":{"type":"string","default":""},"sliderReadMoreLinkFontColor":{"type":"string","default":"#000000"},"autoplay":{"type":"boolean","default":false},"arrows":{"type":"boolean","default":true},"dots":{"type":"boolean","default":false},"slideInfinite":{"type":"boolean","default":false},"slideSlidesToShow":{"type":"number","default":1},"slideSlidesToScroll":{"type":"number","default":1}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-slider-v3","version":"0.1.0","title":"MD Slider V3","apiVersion":3,"category":"md-efi-fse-full","icon":"format-gallery","description":"A block to display slider but with more options","keywords":["md-efi-fse-full","md-slider-v3"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-efi-fse-full","attributes":{"enableHeading":{"type":"boolean","default":true},"heading":{"type":"string","default":""},"slideItems":{"type":"array","default":[{"id":1,"companyName":"","testimonial":"","authorName":"","designation":"","videoLink":"","readMoreLink":""}]},"headingFontColor":{"type":"string","default":"#000000"},"sliderCompanyNameFontColor":{"type":"string","default":"#000000"},"sliderTestimonialFontColor":{"type":"string","default":"#000000"},"sliderAuthorNameFontColor":{"type":"string","default":"#000000"},"sliderDesignationFontColor":{"type":"string","default":"#000000"},"sliderVideoLinkFontColor":{"type":"string","default":"#000000"},"sliderReadMoreLinkFontColor":{"type":"string","default":"#000000"},"autoplay":{"type":"boolean","default":false},"arrows":{"type":"boolean","default":true},"dots":{"type":"boolean","default":false},"slideInfinite":{"type":"boolean","default":false},"slideSlidesToShow":{"type":"number","default":1},"slideSlidesToScroll":{"type":"number","default":1}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

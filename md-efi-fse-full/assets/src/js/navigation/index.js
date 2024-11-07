@@ -170,23 +170,12 @@
         .addClass("active");
     }
   });
-  $(document).on(
-    "click",
-    ".history-list .history-list__years-list .history-list__year-item",
-    function () {
+  $(document).on("click", ".history-list .history-list__years-list .history-list__year-item",function () {
       let year = $(this).data("getyear");
-      $(
-        ".history-list .history-list__years-list .history-list__year-item"
-      ).removeClass("active");
+      $( ".history-list .history-list__years-list .history-list__year-item").removeClass("active");
       $(this).addClass("active");
-      $(
-        ".history-list__year-detail .history-list__year-detail-item"
-      ).removeClass("active");
-      $(
-        ".history-list__year-detail .history-list__year-detail-item[data-year=" +
-          year +
-          "]"
-      ).addClass("active");
+      $(".history-list__year-detail .history-list__year-detail-item").removeClass("active");
+      $(".history-list__year-detail .history-list__year-detail-item[data-year=" + year + "]").addClass("active");
     }
   );
 })(jQuery);

@@ -14,9 +14,13 @@
   },
   "textdomain": "md-efi-fse-full",
   "attributes": {
+	"enableHeading": {
+		"type": "boolean",
+		"default": true
+	},
 	"heading": {
 		"type": "string",
-		"default": "MD Slider V3"
+		"default": ""
 	},
     "slideItems": {
       "type": "array",
@@ -32,57 +36,29 @@
 		}
 	  ]
     },
-	"headingFontSize": {
-		"type": "string",
-		"default": ""
-	},
 	"headingFontColor": {
 		"type": "string",
 		"default": "#000000"
-	},
-	"sliderCompanyNameFontSize": {
-		"type": "string",
-		"default": ""
 	},
 	"sliderCompanyNameFontColor": {
 		"type": "string",
 		"default": "#000000"
 	},
-	"sliderTestimonialFontSize": {
-		"type": "string",
-		"default": ""
-	},
 	"sliderTestimonialFontColor": {
 		"type": "string",
 		"default": "#000000"
-	},
-	"sliderAuthorNameFontSize": {
-		"type": "string",
-		"default": ""
 	},
 	"sliderAuthorNameFontColor": {
 		"type": "string",
 		"default": "#000000"
 	},
-	"sliderDesignationFontSize": {
-		"type": "string",
-		"default": ""
-	},
 	"sliderDesignationFontColor": {
 		"type": "string",
 		"default": "#000000"
 	},
-	"sliderVideoLinkFontSize": {
-		"type": "string",
-		"default": ""
-	},
 	"sliderVideoLinkFontColor": {
 		"type": "string",
 		"default": "#000000"
-	},
-	"sliderReadMoreLinkFontSize": {
-		"type": "string",
-		"default": ""
 	},
 	"sliderReadMoreLinkFontColor": {
 		"type": "string",

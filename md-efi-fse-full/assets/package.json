@@ -21,7 +21,7 @@
 	"license": "MIT",
 	"private": true,
 	"devDependencies": {
-		"@wordpress/scripts": "^27.9.0",
+		"@wordpress/scripts": "^30.4.0",
 		"@wordpress/stylelint-config": "^22.2.0",
 		"camelcase": "^6.0.0",
 		"chalk": "^4.0.0",
@@ -34,5 +34,8 @@
 		"postcss-preset-env": "^9.3.0",
 		"postcss-sort-media-queries": "^5.2.0",
 		"slugify": "^1.6.5"
+	},
+	"dependencies": {
+		"react": "^17.0.0"
 	}
 }

@@ -26,7 +26,7 @@ import {
   RangeControl,
   ToggleControl,
   Button,
-  FontSizePicker,
+  Tooltip
 } from "@wordpress/components";
 
 /**
@@ -46,9 +46,7 @@ export default function Edit({ attributes, setAttributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    sliderTitleFontSize,
 		sliderTitleFontColor,
-		sliderDescriptionFontSize,
 		sliderDescriptionFontColor
   } = attributes;
 
@@ -73,31 +71,11 @@ export default function Edit({ attributes, setAttributes }) {
   const removeStaticPostObj = (index) => {
     const updatedStaticPostObj = [...slideItems];
     updatedStaticPostObj.splice(index, 1);
+    if (currentSlide >= updatedStaticPostObj.length) {
+      setCurrentSlide(updatedStaticPostObj.length - 1); // Set to last slide if current is out of bounds
+    }
     setAttributes({ slideItems: updatedStaticPostObj });
-    setCurrentSlide(-1);
   };
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
   return (
     <div
       {...useBlockProps({
@@ -105,22 +83,6 @@ export default function Edit({ attributes, setAttributes }) {
       })}
     >
       <InspectorControls>
-        <PanelBody title={__("Slider Items")}>
-          <div className="md_slider_section__items">
-            {slideItems.map((item, index) => (
-              <Button
-                key={index}
-                isPrimary
-                onClick={() => setCurrentSlide(index)}
-              >
-                {item.title || __("Slide")} {index + 1}
-              </Button>
-            ))}
-            <Button isPrimary onClick={addStaticPostObj}>
-              {__("Add Slide")}
-            </Button>
-          </div>
-        </PanelBody>
         <PanelBody title={__("Slider Settings")}>
           <ToggleControl
             label={__("Autoplay", "md-prime")}
@@ -163,46 +125,26 @@ export default function Edit({ attributes, setAttributes }) {
             }
           />
         </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")} initialOpen={false}>
-          <label>{__("Slider Title Font Size")}</label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={sliderTitleFontSize}
-            fallbackFontSize={sliderTitleFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ sliderTitleFontSize: newFontSize })
-            }
-          />
-          <label>{__("Slider Description Font Size")}</label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={sliderDescriptionFontSize}
-            fallbackFontSize={sliderDescriptionFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ sliderDescriptionFontSize: newFontSize })
-            }
+        <PanelBody title={__("Color Settings")} initialOpen={false}>
+          <PanelColorSettings
+            title={__("Typography Colors", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: sliderTitleFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ sliderTitleFontColor: newColor }),
+                label: __("Slider Title Font Color"),
+              },
+              {
+                value: sliderDescriptionFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ sliderDescriptionFontColor: newColor }),
+                label: __("Slider Description Font Color"),
+              }
+            ]}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
-          initialOpen={false}
-          colorSettings={[
-            {
-              value: sliderTitleFontColor,
-              onChange: (newColor) =>
-                setAttributes({ sliderTitleFontColor: newColor }),
-              label: __("Slider Title Font Color"),
-            },
-            {
-              value: sliderDescriptionFontColor,
-              onChange: (newColor) =>
-                setAttributes({ sliderDescriptionFontColor: newColor }),
-              label: __("Slider Description Font Color"),
-            }
-          ]}
-        />
       </InspectorControls>
       <div className="md_hero_banner_slider_v2">
         <div
@@ -267,7 +209,6 @@ export default function Edit({ attributes, setAttributes }) {
                     }
                     placeholder={__("Enter Title", "md-prime")}
                     style={{
-                      fontSize: sliderTitleFontSize,
                       color: sliderTitleFontColor,
                     }}
                   />
@@ -280,7 +221,6 @@ export default function Edit({ attributes, setAttributes }) {
                     }
                     placeholder={__("Enter Description", "md-prime")}
                     style={{
-                      fontSize: sliderDescriptionFontSize,
                       color: sliderDescriptionFontColor,
                     }}
                   />
@@ -289,6 +229,113 @@ export default function Edit({ attributes, setAttributes }) {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="md_slider_section__items">
+        {slideItems.map((item, index) => (
+          <div
+            className={
+              "md_slider_section__item show-items-hover-wrap" +
+              ` ${currentSlide === index ? "active" : ""}`
+            }
+            key={index}
+            role="button"
+            tabIndex={0}
+            data-index={index}
+            aria-label={__("Edit this item", "md-prime")}
+          >
+            <div className={`item-action-wrap show-items-hover pos-abs`}>
+              <div className="move-item">
+                {0 < index && (
+                  <Tooltip text={__("Move Left", "md-efi-fse-full")}>
+                    <span
+                      className="dashicons dashicons-arrow-left-alt move-left"
+                      onClick={() => moveItem(index, index - 1)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          moveItem(index, index - 1);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label="Move item left"
+                    ></span>
+                  </Tooltip>
+                )}
+                {index + 1 < slideItems.length && (
+                  <Tooltip text={__("Move Right", "md-efi-fse-full")}>
+                    <span
+                      className="dashicons dashicons-arrow-right-alt move-right"
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => moveItem(index, index + 1)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          moveItem(index, index + 1);
+                        }
+                      }}
+                      aria-label="Move item right"
+                    ></span>
+                  </Tooltip>
+                )}
+              </div>
+              {1 < slideItems.length && (
+                <Tooltip text={__("Remove Item", "md-prime")}>
+                  <i
+                    className="remove-item dashicons dashicons-no-alt"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => {
+                      const toDelete =
+                        // eslint-disable-next-line no-alert
+                        confirm(
+                          __(
+                            "Are you sure you want to delete this item?",
+                            "md-prime"
+                          )
+                        );
+                      if (toDelete === true) {
+                        removeStaticPostObj(index);
+                      }
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        // Simulate click behavior for keyboard users
+                        e.preventDefault(); // Prevent default action for space key
+                        const toDelete =
+                          // eslint-disable-next-line no-alert
+                          confirm(
+                            __(
+                              "Are you sure you want to delete this item?",
+                              "md-prime"
+                            )
+                          );
+                        if (toDelete === true) {
+                          removeStaticPostObj(index);
+                        }
+                      }
+                    }}
+                    aria-label={__("Remove this item", "md-prime")}
+                  ></i>
+                </Tooltip>
+              )}
+            </div>
+            <div className="item-title" onClick={() => setCurrentSlide(index)}>
+              {__("Slide")} {index + 1}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div
+        className="add-item-wrap"
+        onClick={addStaticPostObj}
+        role="button"
+        tabIndex={0}
+        aria-label={__("Add new item", "md-prime")}
+      >
+        <Tooltip text={__("Add New Item", "md-prime")}>
+          <i className="add-new-item dashicons dashicons-plus"></i>
+        </Tooltip>
       </div>
     </div>
   );

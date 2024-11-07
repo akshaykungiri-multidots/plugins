@@ -540,3 +540,33 @@
 		margin-bottom: 5px;
 	}
 }
+
+.md_slider_section__items {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	margin: 0 -10px;
+	.md_slider_section__item {
+		width: 100px;
+		height: 100px;
+		border: 1px solid #000;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		&.active {
+			background: #000;
+			color: #fff;
+			font-weight: 700;
+		}
+	}
+}
+
+.md_slider_grid {
+	.md_slider_grid_item {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+}

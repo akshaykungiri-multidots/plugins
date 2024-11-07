@@ -16,7 +16,7 @@ import {
   InspectorControls,
   RichText,
   MediaUpload,
-  PanelColorSettings
+  PanelColorSettings,
 } from "@wordpress/block-editor";
 
 import { useState } from "@wordpress/element";
@@ -27,7 +27,7 @@ import {
   ToggleControl,
   Button,
   GradientPicker,
-  FontSizePicker
+  Tooltip,
 } from "@wordpress/components";
 
 /**
@@ -47,12 +47,9 @@ export default function Edit({ attributes, setAttributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    sliderTitleFontSize,
-		sliderTitleFontColor,
-		sliderDescriptionFontSize,
-		sliderDescriptionFontColor,
-		sliderLinkFontSize,
-		sliderLinkFontColor,
+    sliderTitleFontColor,
+    sliderDescriptionFontColor,
+    sliderLinkFontColor,
   } = attributes;
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -78,32 +75,12 @@ export default function Edit({ attributes, setAttributes }) {
   const removeStaticPostObj = (index) => {
     const updatedStaticPostObj = [...slideItems];
     updatedStaticPostObj.splice(index, 1);
+    if (currentSlide >= updatedStaticPostObj.length) {
+      setCurrentSlide(updatedStaticPostObj.length - 1); // Set to last slide if current is out of bounds
+    }
     setAttributes({ slideItems: updatedStaticPostObj });
-    setCurrentSlide(-1);
   };
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
-
+  console.log(currentSlide);
   return (
     <div
       {...useBlockProps({
@@ -111,22 +88,6 @@ export default function Edit({ attributes, setAttributes }) {
       })}
     >
       <InspectorControls>
-        <PanelBody title={__("Slider Items")}>
-          <div className="md_slider_section__items">
-            {slideItems.map((item, index) => (
-              <Button
-                key={index}
-                isPrimary
-                onClick={() => setCurrentSlide(index)}
-              >
-                {__("Slide")} {index + 1}
-              </Button>
-            ))}
-            <Button isPrimary onClick={addStaticPostObj}>
-              {__("Add New Slide")}
-            </Button>
-          </div>
-        </PanelBody>
         <PanelBody title={__("Slider Settings")}>
           <ToggleControl
             label={__("Autoplay", "md-prime")}
@@ -170,26 +131,45 @@ export default function Edit({ attributes, setAttributes }) {
           />
         </PanelBody>
         {currentSlide > -1 && (
-          <PanelBody title={__("Current Slide Settings")}>
-            <label>{__("Background Image")}</label>
-            <MediaUpload
-              title={__("Background Image")}
-              onSelect={(media) =>
-                updateStaticPostObj(currentSlide, "backgroundImage", media.url)
-              }
-              multiple={false}
-              render={({ open }) => (
-                <>
-                  <Button className="md_bg_image_upload" onClick={open}>
-                    {slideItems[currentSlide].backgroundImage == "" ? (
-                      <i className="dashicons dashicons-format-image"> </i>
-                    ) : (
-                      <img src={slideItems[currentSlide].backgroundImage} />
+          <PanelBody title={__("Current Slide Settings")} initialOpen={false}>
+            <div className="setting-row">
+              <label htmlFor="background-image">
+                {__("Background Image", "md-prime")}
+              </label>
+              <div>
+                {!slideItems[currentSlide].backgroundImage ? (
+                  <MediaUpload
+                    onSelect={(media) => {
+                      updateStaticPostObj(currentSlide, "backgroundImage", media.url)
+                    }}
+                    allowedTypes={["image"]}
+                    value={slideItems[currentSlide].background_image}
+                    render={({ open }) => (
+                      <Button onClick={open} className="button button-large">
+                        {__("Upload Image", "md-prime")}
+                      </Button>
                     )}
-                  </Button>
-                </>
-              )}
-            />
+                  />
+                ) : (
+                  <>
+                    <div className="image-preview">
+                      <img
+                        src={slideItems[currentSlide].backgroundImage}
+                        alt="Background-image-preview"
+                      />
+                    </div>
+                    <Button
+                      onClick={() => {
+                        updateStaticPostObj(currentSlide, "backgroundImage", "")
+                      }}
+                      className="is-link is-destructive"
+                    >
+                      {__("Remove Image", "md-prime")}
+                    </Button>
+                  </>
+                )}
+              </div>
+            </div>
             <label>{__("Box Background Color")}</label>
             <GradientPicker
               value={
@@ -230,40 +210,9 @@ export default function Edit({ attributes, setAttributes }) {
             </Button>
           </PanelBody>
         )}
-        <PanelBody title={__("Typography", "md-storyful-fse-full")} initialOpen={false}>
-          <label>{__("Slider Title Font Size")}</label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={sliderTitleFontSize}
-            fallbackFontSize={sliderTitleFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ sliderTitleFontSize: newFontSize })
-            }
-          />
-          <label>{__("Slider Description Font Size")}</label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={sliderDescriptionFontSize}
-            fallbackFontSize={sliderDescriptionFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ sliderDescriptionFontSize: newFontSize })
-            }
-          />
-          <label>{__("Slider Link Font Size")}</label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={sliderLinkFontSize}
-            fallbackFontSize={sliderLinkFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ sliderLinkFontSize: newFontSize })
-            }
-          />
-        </PanelBody>
+        <PanelBody title={__("Color Settings")} initialOpen={false}>
         <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
+          title={__("Color Settings", "md-storyful-fse-full")}
           initialOpen={false}
           colorSettings={[
             {
@@ -286,8 +235,9 @@ export default function Edit({ attributes, setAttributes }) {
             },
           ]}
         />
+        </PanelBody>
       </InspectorControls>
-      <div className="md_hero_banner_slider">
+      <div className="md_hero_banner_slider md_slider_grid">
         <div
           className="md_slider"
           data-autoplay={autoplay}
@@ -297,62 +247,175 @@ export default function Edit({ attributes, setAttributes }) {
           data-slidesToShow={slideSlidesToShow}
           data-slidesToScroll={slideSlidesToScroll}
         >
-          {(currentSlide > -1) && (
-            <div className="md_slider__item">
-              {slideItems[currentSlide].backgroundImage && (
-                <img
-                  className="md_slider__item__bg"
-                  src={slideItems[currentSlide].backgroundImage}
-                  alt="slide"
-                />
-              )}
-              <div className="md_slider__item__content" style={{background: slideItems[currentSlide].boxColor}}>
-                <div className="md_slider__item__content__inner">
-                  <RichText
-                    tagName="h2"
-                    className="md_slider__item__content__title"
-                    value={slideItems[currentSlide].title}
-                    onChange={(value) =>
-                      updateStaticPostObj(currentSlide, "title", value)
-                    }
-                    placeholder={__("Enter Title", "md-prime")}
-                    style={{
-                      fontSize: sliderTitleFontSize,
-                      color: sliderTitleFontColor,
-                    }}
+          {slideItems.map((item, index) => (
+            <div
+              className={`md_slider_grid_item ${
+                currentSlide === index ? "active" : ""
+              }`}
+              key={index}
+            >
+              <div className={`md_slider__item`}>
+                {item.backgroundImage && (
+                  <img
+                    className="md_slider__item__bg"
+                    src={item.backgroundImage}
+                    alt="slide"
                   />
-                  <RichText
-                    tagName="p"
-                    className="md_slider__item__content__description"
-                    value={slideItems[currentSlide].description}
-                    onChange={(value) =>
-                      updateStaticPostObj(currentSlide, "description", value)
-                    }
-                    placeholder={__("Enter Description", "md-prime")}
-                    style={{
-                      fontSize: sliderDescriptionFontSize,
-                      color: sliderDescriptionFontColor,
-                    }}
-                  />
-                  <div className="md_slider__item__content__btn md_btn_arrow">
+                )}
+                <div
+                  className="md_slider__item__content"
+                  style={{ background: item.boxColor }}
+                >
+                  <div className="md_slider__item__content__inner">
                     <RichText
-                      tagName="p"
-                      value={slideItems[currentSlide].link}
+                      tagName="h2"
+                      className="md_slider__item__content__title"
+                      value={item.title}
                       onChange={(value) =>
-                        updateStaticPostObj(currentSlide, "link", value)
+                        updateStaticPostObj(index, "title", value)
                       }
-                      placeholder={__("Enter Button Text", "md-prime")}
+                      placeholder={__("Enter Title", "md-prime")}
                       style={{
-                        fontSize: sliderLinkFontSize,
-                        color: sliderLinkFontColor,
+                        color: sliderTitleFontColor,
                       }}
                     />
+                    <RichText
+                      tagName="p"
+                      className="md_slider__item__content__description"
+                      value={item.description}
+                      onChange={(value) =>
+                        updateStaticPostObj(index, "description", value)
+                      }
+                      placeholder={__("Enter Description", "md-prime")}
+                      style={{
+                        color: sliderDescriptionFontColor,
+                      }}
+                    />
+                    <div className="md_slider__item__content__btn md_btn_arrow">
+                      <RichText
+                        tagName="p"
+                        value={item.link}
+                        onChange={(value) =>
+                          updateStaticPostObj(index, "link", value)
+                        }
+                        placeholder={__("Enter Button Text", "md-prime")}
+                        style={{
+                          color: sliderLinkFontColor,
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          )}
+          ))}
         </div>
+      </div>
+      <div className="md_slider_section__items">
+        {slideItems.map((item, index) => (
+          <div
+            className={
+              "md_slider_section__item show-items-hover-wrap" +
+              ` ${currentSlide === index ? "active" : ""}`
+            }
+            key={index}
+            role="button"
+            tabIndex={0}
+            data-index={index}
+            aria-label={__("Edit this item", "md-prime")}
+          >
+            <div className={`item-action-wrap show-items-hover pos-abs`}>
+              <div className="move-item">
+                {0 < index && (
+                  <Tooltip text={__("Move Left", "md-efi-fse-full")}>
+                    <span
+                      className="dashicons dashicons-arrow-left-alt move-left"
+                      onClick={() => moveItem(index, index - 1)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          moveItem(index, index - 1);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label="Move item left"
+                    ></span>
+                  </Tooltip>
+                )}
+                {index + 1 < slideItems.length && (
+                  <Tooltip text={__("Move Right", "md-efi-fse-full")}>
+                    <span
+                      className="dashicons dashicons-arrow-right-alt move-right"
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => moveItem(index, index + 1)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          moveItem(index, index + 1);
+                        }
+                      }}
+                      aria-label="Move item right"
+                    ></span>
+                  </Tooltip>
+                )}
+              </div>
+              {1 < slideItems.length && (
+                <Tooltip text={__("Remove Item", "md-prime")}>
+                  <i
+                    className="remove-item dashicons dashicons-no-alt"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => {
+                      const toDelete =
+                        // eslint-disable-next-line no-alert
+                        confirm(
+                          __(
+                            "Are you sure you want to delete this item?",
+                            "md-prime"
+                          )
+                        );
+                      if (toDelete === true) {
+                        removeStaticPostObj(index);
+                      }
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        // Simulate click behavior for keyboard users
+                        e.preventDefault(); // Prevent default action for space key
+                        const toDelete =
+                          // eslint-disable-next-line no-alert
+                          confirm(
+                            __(
+                              "Are you sure you want to delete this item?",
+                              "md-prime"
+                            )
+                          );
+                        if (toDelete === true) {
+                          removeStaticPostObj(index);
+                        }
+                      }
+                    }}
+                    aria-label={__("Remove this item", "md-prime")}
+                  ></i>
+                </Tooltip>
+              )}
+            </div>
+            <div className="item-title" onClick={() => setCurrentSlide(index)}>
+              {__("Slide")} {index + 1}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div
+        className="add-item-wrap"
+        onClick={addStaticPostObj}
+        role="button"
+        tabIndex={0}
+        aria-label={__("Add new item", "md-prime")}
+      >
+        <Tooltip text={__("Add New Item", "md-prime")}>
+          <i className="add-new-item dashicons dashicons-plus"></i>
+        </Tooltip>
       </div>
     </div>
   );

@@ -11,9 +11,14 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps, RichText, InspectorControls, PanelColorSettings } from "@wordpress/block-editor";
+import {
+  useBlockProps,
+  RichText,
+  InspectorControls,
+  PanelColorSettings,
+} from "@wordpress/block-editor";
 
-import { Button, PanelBody, FontSizePicker } from "@wordpress/components";
+import { Button, PanelBody, Tooltip, ToggleControl } from "@wordpress/components";
 
 import { useState } from "@wordpress/element";
 
@@ -29,39 +34,15 @@ export default function Edit({ attributes, setAttributes }) {
   const {
     heading,
     historyTimeline,
-    headingFontSize,
     headingFontColor,
-    yearFontSize,
     yearFontColor,
-    titleFontSize,
     titleFontColor,
-    descriptionFontSize,
     descriptionFontColor,
+    showHeading,
+    showYear,
+    showDescription,
   } = attributes;
 
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
-  
   const [currentSlide, setCurrentSlide] = useState(0);
   const addStaticPostObj = () => {
     const staticPostObj = [
@@ -79,94 +60,87 @@ export default function Edit({ attributes, setAttributes }) {
     updatedStaticPostObj[index][key] = value;
     setAttributes({ historyTimeline: updatedStaticPostObj });
   };
-  const removeStaticPostObj = (index) => {
-    const updatedStaticPostObj = [...historyTimeline];
-    updatedStaticPostObj.splice(index, 1);
-    setAttributes({ historyTimeline: updatedStaticPostObj });
-    setCurrentSlide(-1);
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...historyTimeline];
+    arrayCopy[oldIndex] = historyTimeline[newIndex];
+    arrayCopy[newIndex] = historyTimeline[oldIndex];
+
+    setAttributes({
+      historyTimeline: arrayCopy,
+    });
   };
+  const currentObj = historyTimeline[currentSlide];
   return (
     <div {...useBlockProps({ className: "md_history_timeline history-list" })}>
       <InspectorControls>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Heading Font Size", "md-storyful-fse-full")}</label>
-          <FontSizePicker
-            value={headingFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ headingFontSize: newFontSize })
-            }
-            fontSizes={fontSizes}
+      <PanelBody title={__("Toggle Settings", "md-efi-fse-full")}>
+          <ToggleControl
+            label={__("Show Heading", "md-efi-fse-full")}
+            checked={showHeading}
+            onChange={(value) => setAttributes({ showHeading: value })}
           />
-          <label> {__("Year Font Size", "md-storyful-fse-full")}</label>
-          <FontSizePicker
-            value={yearFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ yearFontSize: newFontSize })
-            }
-            fontSizes={fontSizes}
+          <ToggleControl
+            label={__("Show year", "md-efi-fse-full")}
+            checked={showYear}
+            onChange={(value) => setAttributes({ showYear: value })}
           />
-          <label> {__("Title Font Size", "md-storyful-fse-full")}</label>
-          <FontSizePicker
-            value={titleFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ titleFontSize: newFontSize })
-            }
-            fontSizes={fontSizes}
-          />
-          <label> {__("Description Font Size", "md-storyful-fse-full")}</label>
-          <FontSizePicker
-            value={descriptionFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ descriptionFontSize: newFontSize })
-            }
-            fontSizes={fontSizes}
+          <ToggleControl
+            label={__("Show Content", "md-efi-fse-full")}
+            checked={showDescription}
+            onChange={(value) => setAttributes({ showDescription: value })}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
+        <PanelBody
+          title={__("Color Settings", "md-efi-fse-full")}
           initialOpen={false}
-          colorSettings={[
-            {
-              value: headingFontColor,
-              onChange: (newColor) =>
-                setAttributes({ headingFontColor: newColor }),
-              label: __("Heading Color", "md-storyful-fse-full"),
-            },
-            {
-              value: yearFontColor,
-              onChange: (newColor) =>
-                setAttributes({ yearFontColor: newColor }),
-              label: __("Year Color", "md-storyful-fse-full"),
-            },
-            {
-              value: titleFontColor,
-              onChange: (newColor) =>
-                setAttributes({ titleFontColor: newColor }),
-              label: __("Title Color", "md-storyful-fse-full"),
-            },
-            {
-              value: descriptionFontColor,
-              onChange: (newColor) =>
-                setAttributes({ descriptionFontColor: newColor }),
-              label: __("Description Color", "md-storyful-fse-full"),
-            },
-          ]}
-        />
+        >
+          <PanelColorSettings
+            title={__("Typography Colors", "md-efi-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: headingFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ headingFontColor: newColor }),
+                label: __("Heading Color", "md-efi-fse-full"),
+              },
+              {
+                value: yearFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ yearFontColor: newColor }),
+                label: __("Year Color", "md-efi-fse-full"),
+              },
+              {
+                value: titleFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ titleFontColor: newColor }),
+                label: __("Title Color", "md-efi-fse-full"),
+              },
+              {
+                value: descriptionFontColor,
+                onChange: (newColor) =>
+                  setAttributes({ descriptionFontColor: newColor }),
+                label: __("Description Color", "md-efi-fse-full"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <div className="history-list__inner">
-        <div className="history-list__head">
-          <RichText
-            tagName="h2"
-            className="history-list__title"
-            value={heading}
-            onChange={(value) => setAttributes({ heading: value })}
-            placeholder={__("Add Heading", "md-blocks")}
-            style={{
-              fontSize: headingFontSize,
-              color: headingFontColor,
-            }}
-          />
-        </div>
+        {showHeading && (
+          <div className="history-list__head">
+            <RichText
+              tagName="h2"
+              className="history-list__title"
+              value={heading}
+              onChange={(value) => setAttributes({ heading: value })}
+              placeholder={__("Add Heading", "md-blocks")}
+              style={{
+                color: headingFontColor,
+              }}
+            />
+          </div>
+        )}
         <div className="history-list__row">
           <div className="history-list__years-wrap">
             <div className="history-list__years-bar">
@@ -186,39 +160,136 @@ export default function Edit({ attributes, setAttributes }) {
                       onClick={() => setCurrentSlide(index)}
                       placeholder={__("Add Year", "md-blocks")}
                       style={{
-                        fontSize: yearFontSize,
                         color: yearFontColor,
                       }}
                     />
                   </div>
                 ))}
-              <div className="add-item-wrap">
-                <Button variant="primary" onClick={addStaticPostObj}>
-                  {__("Add New Slide")}
-                </Button>
+              <div
+                className="add-item-wrap"
+                onClick={addStaticPostObj}
+                role="button"
+                tabIndex={0}
+                aria-label={__("Add new item", "md-efi-fse-full")}
+              >
+                <Tooltip text={__("Add New Item", "md-efi-fse-full")}>
+                  <i className="add-new-item dashicons dashicons-plus"></i>
+                </Tooltip>
               </div>
             </div>
           </div>
           <div className="history-list__year-detail">
             {currentSlide > -1 && (
-              <div className="history-list__year-detail-item">
+              <div className="history-list__year-detail-item show-items-hover-wrap">
+                <div className={`item-action-wrap show-items-hover pos-abs`}>
+                  <div className="move-item">
+                    {0 < currentSlide && (
+                      <Tooltip text={__("Move Left", "md-efi-fse-full")}>
+                        <span
+                          className="dashicons dashicons-arrow-left-alt move-left"
+                          onClick={() => moveItem(currentSlide, currentSlide - 1)}
+                          onKeyDown={(event) => {
+                            if (event.key === "Enter" || event.key === " ") {
+                              moveItem(currentSlide, currentSlide - 1);
+                            }
+                          }}
+                          role="button"
+                          tabIndex={0}
+                          aria-label="Move item left"
+                        ></span>
+                      </Tooltip>
+                    )}
+                    {currentSlide + 1 < historyTimeline.length && (
+                      <Tooltip text={__("Move Right", "md-efi-fse-full")}>
+                        <span
+                          className="dashicons dashicons-arrow-right-alt move-right"
+                          role="button"
+                          tabIndex={0}
+                          onClick={() => moveItem(currentSlide, currentSlide + 1)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              moveItem(currentSlide, currentSlide + 1);
+                            }
+                          }}
+                          aria-label="Move item right"
+                        ></span>
+                      </Tooltip>
+                    )}
+                  </div>
+                  {1 < historyTimeline.length && (
+                    <Tooltip text={__("Remove Item", "md-efi-fse-full")}>
+                      <i
+                        className="remove-item dashicons dashicons-no-alt"
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => {
+                          const toDelete =
+                            // eslint-disable-next-line no-alert
+                            confirm(
+                              __(
+                                "Are you sure you want to delete this item?",
+                                "md-efi-fse-full"
+                              )
+                            );
+                          if (toDelete === true) {
+                            const updatedArray = historyTimeline.filter(
+                              (currentObj, itemIndex) => itemIndex !== currentSlide
+                            );
+                            setAttributes({
+                              historyTimeline: updatedArray,
+                            });
+                          }
+                        }}
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter" || e.key === " ") {
+                            // Simulate click behavior for keyboard users
+                            e.preventDefault(); // Prevent default action for space key
+                            const toDelete =
+                              // eslint-disable-next-line no-alert
+                              confirm(
+                                __(
+                                  "Are you sure you want to delete this item?",
+                                  "md-efi-fse-full"
+                                )
+                              );
+                            if (toDelete === true) {
+                              const updatedArray = historyTimeline.filter(
+                                (item, itemIndex) => itemIndex !== currentSlide
+                              );
+                              setAttributes({
+                                historyTimeline: updatedArray,
+                              });
+                            }
+                          }
+                        }}
+                        aria-label={__("Remove this item", "md-efi-fse-full")}
+                      ></i>
+                    </Tooltip>
+                  )}
+                </div>
                 <div className="history-list__cnt">
-                  <h3 className="history-list__year-title" style={{ fontSize: titleFontSize, color: titleFontColor }}>
-                    {historyTimeline[currentSlide].year}
-                  </h3>
-                  <RichText
-                    tagName="p"
-                    className="history-list__year-description"
-                    value={historyTimeline[currentSlide].description}
-                    onChange={(value) =>
-                      updateStaticPostObj(currentSlide, "description", value)
-                    }
-                    placeholder={__("Add Description", "md-blocks")}
-                    style={{
-                      fontSize: descriptionFontSize,
-                      color: descriptionFontColor,
-                    }}
-                  />
+                  {showYear && (
+                    <h3
+                      className="history-list__year-title"
+                      style={{ color: titleFontColor }}
+                    >
+                      {historyTimeline[currentSlide].year}
+                    </h3>
+                  )}
+                  {showDescription && (
+                    <RichText
+                      tagName="p"
+                      className="history-list__year-description"
+                      value={historyTimeline[currentSlide].description}
+                      onChange={(value) =>
+                        updateStaticPostObj(currentSlide, "description", value)
+                      }
+                      placeholder={__("Add Description", "md-blocks")}
+                      style={{
+                        color: descriptionFontColor,
+                      }}
+                    />
+                  )}
                 </div>
               </div>
             )}

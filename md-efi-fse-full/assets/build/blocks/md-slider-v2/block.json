@@ -31,17 +31,9 @@
         }
       ]
     },
-    "sliderTitleFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "sliderTitleFontColor": {
       "type": "string",
       "default": "#000000"
-    },
-    "sliderDescriptionFontSize": {
-      "type": "string",
-      "default": ""
     },
     "sliderDescriptionFontColor": {
       "type": "string",

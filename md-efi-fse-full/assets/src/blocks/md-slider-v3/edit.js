@@ -25,8 +25,7 @@ import {
   RangeControl,
   ToggleControl,
   TextControl,
-  Button,
-  FontSizePicker,
+  Tooltip
 } from "@wordpress/components";
 
 /**
@@ -39,6 +38,7 @@ import {
  */
 export default function Edit({ attributes, setAttributes }) {
   const {
+    enableHeading,
     heading,
     autoplay,
     arrows,
@@ -47,19 +47,12 @@ export default function Edit({ attributes, setAttributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    headingFontSize,
     headingFontColor,
-    sliderCompanyNameFontSize,
     sliderCompanyNameFontColor,
-    sliderTestimonialFontSize,
     sliderTestimonialFontColor,
-    sliderAuthorNameFontSize,
     sliderAuthorNameFontColor,
-    sliderDesignationFontSize,
     sliderDesignationFontColor,
-    sliderVideoLinkFontSize,
     sliderVideoLinkFontColor,
-    sliderReadMoreLinkFontSize,
     sliderReadMoreLinkFontColor,
   } = attributes;
 
@@ -87,31 +80,11 @@ export default function Edit({ attributes, setAttributes }) {
   const removeStaticPostObj = (index) => {
     const updatedStaticPostObj = [...slideItems];
     updatedStaticPostObj.splice(index, 1);
+    if (currentSlide >= updatedStaticPostObj.length) {
+      setCurrentSlide(updatedStaticPostObj.length - 1); // Set to last slide if current is out of bounds
+    }
     setAttributes({ slideItems: updatedStaticPostObj });
-    setCurrentSlide(-1);
   };
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
   return (
     <div
       {...useBlockProps({
@@ -120,28 +93,21 @@ export default function Edit({ attributes, setAttributes }) {
     >
       <InspectorControls>
         <PanelBody title={__("General Settings")}>
-          <TextControl
-            label={__("Heading")}
-            value={heading}
-            onChange={(heading) => setAttributes({ heading })}
-            placeholder={__("Enter Heading", "md-prime")}
+          <ToggleControl
+            label={__("Enable Heading", "md-prime")}
+            checked={enableHeading}
+            onChange={(enableHeading) => setAttributes({ enableHeading })}
           />
+          {enableHeading && (
+            <TextControl
+              label={__("Heading")}
+              value={heading}
+              onChange={(heading) => setAttributes({ heading })}
+              placeholder={__("Enter Heading", "md-prime")}
+            />
+          )}
         </PanelBody>
-        <PanelBody title={__("Slider Items")}>
-          {slideItems.map((item, index) => (
-            <Button
-              key={index}
-              isPrimary
-              onClick={() => setCurrentSlide(index)}
-            >
-              {item.title || __("Slide")} {index + 1}
-            </Button>
-          ))}
-          <Button isPrimary onClick={addStaticPostObj}>
-            {__("Add Slide")}
-          </Button>
-        </PanelBody>
-        <PanelBody title={__("Slider Settings")}>
+        <PanelBody title={__("Slider Settings")} initialOpen={false}>
           <ToggleControl
             label={__("Autoplay", "md-prime")}
             checked={autoplay}
@@ -183,110 +149,59 @@ export default function Edit({ attributes, setAttributes }) {
             }
           />
         </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")} initialOpen={false}>
-          <label>{__("Heading Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={headingFontSize}
-            onChange={(headingFontSize) => setAttributes({ headingFontSize })}
-          />
-          <label>{__("Slider Company Name Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={sliderCompanyNameFontSize}
-            onChange={(sliderCompanyNameFontSize) =>
-              setAttributes({ sliderCompanyNameFontSize })
-            }
-          />
-          <label>{__("Slider Testimonial Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={sliderTestimonialFontSize}
-            onChange={(sliderTestimonialFontSize) =>
-              setAttributes({ sliderTestimonialFontSize })
-            }
-          />
-          <label>{__("Slider Author Name Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={sliderAuthorNameFontSize}
-            onChange={(sliderAuthorNameFontSize) =>
-              setAttributes({ sliderAuthorNameFontSize })
-            }
-          />
-          <label>{__("Slider Designation Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={sliderDesignationFontSize}
-            onChange={(sliderDesignationFontSize) =>
-              setAttributes({ sliderDesignationFontSize })
-            }
-          />
-          <label>{__("Slider Video Link Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={sliderVideoLinkFontSize}
-            onChange={(sliderVideoLinkFontSize) =>
-              setAttributes({ sliderVideoLinkFontSize })
-            }
-          />
-          <label>{__("Slider Read More Link Font Size")}</label>
-          <FontSizePicker
-            fontSizes={fontSizes}
-            value={sliderReadMoreLinkFontSize}
-            onChange={(sliderReadMoreLinkFontSize) =>
-              setAttributes({ sliderReadMoreLinkFontSize })
-            }
+        <PanelBody
+          title={__("Color Settings", "md-storyful-fse-full")}
+          initialOpen={false}
+        >
+          <PanelColorSettings
+            title={__("Color Settings", "md-storyful-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: headingFontColor,
+                onChange: (headingFontColor) =>
+                  setAttributes({ headingFontColor }),
+                label: __("Heading Font Color"),
+              },
+              {
+                value: sliderCompanyNameFontColor,
+                onChange: (sliderCompanyNameFontColor) =>
+                  setAttributes({ sliderCompanyNameFontColor }),
+                label: __("Slider Company Name Font Color"),
+              },
+              {
+                value: sliderTestimonialFontColor,
+                onChange: (sliderTestimonialFontColor) =>
+                  setAttributes({ sliderTestimonialFontColor }),
+                label: __("Slider Testimonial Font Color"),
+              },
+              {
+                value: sliderAuthorNameFontColor,
+                onChange: (sliderAuthorNameFontColor) =>
+                  setAttributes({ sliderAuthorNameFontColor }),
+                label: __("Slider Author Name Font Color"),
+              },
+              {
+                value: sliderDesignationFontColor,
+                onChange: (sliderDesignationFontColor) =>
+                  setAttributes({ sliderDesignationFontColor }),
+                label: __("Slider Designation Font Color"),
+              },
+              {
+                value: sliderVideoLinkFontColor,
+                onChange: (sliderVideoLinkFontColor) =>
+                  setAttributes({ sliderVideoLinkFontColor }),
+                label: __("Slider Video Link Font Color"),
+              },
+              {
+                value: sliderReadMoreLinkFontColor,
+                onChange: (sliderReadMoreLinkFontColor) =>
+                  setAttributes({ sliderReadMoreLinkFontColor }),
+                label: __("Slider Read More Link Font Color"),
+              },
+            ]}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
-          initialOpen={false}
-          colorSettings={[
-            {
-              value: headingFontColor,
-              onChange: (headingFontColor) =>
-                setAttributes({ headingFontColor }),
-              label: __("Heading Font Color"),
-            },
-            {
-              value: sliderCompanyNameFontColor,
-              onChange: (sliderCompanyNameFontColor) =>
-                setAttributes({ sliderCompanyNameFontColor }),
-              label: __("Slider Company Name Font Color"),
-            },
-            {
-              value: sliderTestimonialFontColor,
-              onChange: (sliderTestimonialFontColor) =>
-                setAttributes({ sliderTestimonialFontColor }),
-              label: __("Slider Testimonial Font Color"),
-            },
-            {
-              value: sliderAuthorNameFontColor,
-              onChange: (sliderAuthorNameFontColor) =>
-                setAttributes({ sliderAuthorNameFontColor }),
-              label: __("Slider Author Name Font Color"),
-            },
-            {
-              value: sliderDesignationFontColor,
-              onChange: (sliderDesignationFontColor) =>
-                setAttributes({ sliderDesignationFontColor }),
-              label: __("Slider Designation Font Color"),
-            },
-            {
-              value: sliderVideoLinkFontColor,
-              onChange: (sliderVideoLinkFontColor) =>
-                setAttributes({ sliderVideoLinkFontColor }),
-              label: __("Slider Video Link Font Color"),
-            },
-            {
-              value: sliderReadMoreLinkFontColor,
-              onChange: (sliderReadMoreLinkFontColor) =>
-                setAttributes({ sliderReadMoreLinkFontColor }),
-              label: __("Slider Read More Link Font Color"),
-            },
-          ]}
-        />
       </InspectorControls>
       <div className="md_hero_banner_slider_v3">
         <div
@@ -303,7 +218,9 @@ export default function Edit({ attributes, setAttributes }) {
             <div className="md_slider__item">
               <div className="md_slider__item__gradient_theme"></div>
               <div className="md_slider__item--inner">
-                <h3 style={{ fontSize: headingFontSize, color: headingFontColor }}>
+                <h3
+                  style={{ color: headingFontColor }}
+                >
                   {heading}
                 </h3>
                 <div className="md_slider__item__company_info">
@@ -316,7 +233,6 @@ export default function Edit({ attributes, setAttributes }) {
                     }
                     placeholder={__("Enter Company Name", "md-prime")}
                     style={{
-                      fontSize: sliderCompanyNameFontSize,
                       color: sliderCompanyNameFontColor,
                     }}
                   />
@@ -331,7 +247,6 @@ export default function Edit({ attributes, setAttributes }) {
                     }
                     placeholder={__("Enter Testimonial", "md-prime")}
                     style={{
-                      fontSize: sliderTestimonialFontSize,
                       color: sliderTestimonialFontColor,
                     }}
                   />
@@ -346,7 +261,6 @@ export default function Edit({ attributes, setAttributes }) {
                         }
                         placeholder={__("Enter Author Name", "md-prime")}
                         style={{
-                          fontSize: sliderAuthorNameFontSize,
                           color: sliderAuthorNameFontColor,
                         }}
                       />
@@ -363,7 +277,6 @@ export default function Edit({ attributes, setAttributes }) {
                         }
                         placeholder={__("Enter Designation", "md-prime")}
                         style={{
-                          fontSize: sliderDesignationFontSize,
                           color: sliderDesignationFontColor,
                         }}
                       />
@@ -377,7 +290,6 @@ export default function Edit({ attributes, setAttributes }) {
                       }
                       placeholder={__("Enter Video Link", "md-prime")}
                       style={{
-                        fontSize: sliderVideoLinkFontSize,
                         color: sliderVideoLinkFontColor,
                       }}
                     />
@@ -395,7 +307,6 @@ export default function Edit({ attributes, setAttributes }) {
                         }
                         placeholder={__("Enter Read More Link", "md-prime")}
                         style={{
-                          fontSize: sliderReadMoreLinkFontSize,
                           color: sliderReadMoreLinkFontColor,
                         }}
                       />
@@ -410,6 +321,112 @@ export default function Edit({ attributes, setAttributes }) {
             </div>
           )}
         </div>
+      </div>
+      <div className="md_slider_section__items">
+        {slideItems.map((item, index) => (
+          <div
+            className={
+              "md_slider_section__item show-items-hover-wrap" +
+              ` ${currentSlide === index ? "active" : ""}`
+            }
+            key={index}
+            role="button"
+            tabIndex={0}
+            data-index={index}
+            aria-label={__("Edit this item", "md-prime")}
+          >
+            <div className={`item-action-wrap show-items-hover pos-abs`}>
+              <div className="move-item">
+                {0 < index && (
+                  <Tooltip text={__("Move Left", "md-efi-fse-full")}>
+                    <span
+                      className="dashicons dashicons-arrow-left-alt move-left"
+                      onClick={() => moveItem(index, index - 1)}
+                      onKeyDown={(event) => {
+                        if (event.key === "Enter" || event.key === " ") {
+                          moveItem(index, index - 1);
+                        }
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label="Move item left"
+                    ></span>
+                  </Tooltip>
+                )}
+                {index + 1 < slideItems.length && (
+                  <Tooltip text={__("Move Right", "md-efi-fse-full")}>
+                    <span
+                      className="dashicons dashicons-arrow-right-alt move-right"
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => moveItem(index, index + 1)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          moveItem(index, index + 1);
+                        }
+                      }}
+                      aria-label="Move item right"
+                    ></span>
+                  </Tooltip>
+                )}
+              </div>
+              {1 < slideItems.length && (
+                <Tooltip text={__("Remove Item", "md-prime")}>
+                  <i
+                    className="remove-item dashicons dashicons-no-alt"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => {
+                      const toDelete =
+                        // eslint-disable-next-line no-alert
+                        confirm(
+                          __(
+                            "Are you sure you want to delete this item?",
+                            "md-prime"
+                          )
+                        );
+                      if (toDelete === true) {
+                        removeStaticPostObj(index);
+                      }
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        // Simulate click behavior for keyboard users
+                        e.preventDefault(); // Prevent default action for space key
+                        const toDelete =
+                          // eslint-disable-next-line no-alert
+                          confirm(
+                            __(
+                              "Are you sure you want to delete this item?",
+                              "md-prime"
+                            )
+                          );
+                        if (toDelete === true) {
+                          removeStaticPostObj(index);
+                        }
+                      }
+                    }}
+                    aria-label={__("Remove this item", "md-prime")}
+                  ></i>
+                </Tooltip>
+              )}
+            </div>
+            <div className="item-title" onClick={() => setCurrentSlide(index)}>
+              {__("Slide")} {index + 1}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div
+        className="add-item-wrap"
+        onClick={addStaticPostObj}
+        role="button"
+        tabIndex={0}
+        aria-label={__("Add new item", "md-prime")}
+      >
+        <Tooltip text={__("Add New Item", "md-prime")}>
+          <i className="add-new-item dashicons dashicons-plus"></i>
+        </Tooltip>
       </div>
     </div>
   );

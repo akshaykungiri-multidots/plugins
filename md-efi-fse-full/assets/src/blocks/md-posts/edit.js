@@ -31,7 +31,8 @@ import {
 import {
   PanelBody,
   SelectControl,
-  FontSizePicker,
+  ToggleControl,
+  RangeControl,
 } from "@wordpress/components";
 
 import { useState, useEffect } from "react";
@@ -55,34 +56,14 @@ export default function Edit({ attributes, setAttributes, className }) {
     postType,
     postsToShow,
     postInRow,
-    postTitleFontSize,
     postTitleColor,
-    postContentFontSize,
     postContentColor,
+    showFilter,
+    showLoadMore,
+    showFeaturedImage,
+    showPostTitle,
+    showExcerpt,
   } = attributes;
-
-  const fontSizes = [
-    {
-      name: __("S"),
-      slug: "small",
-      size: "12px",
-    },
-    {
-      name: __("M"),
-      slug: "medium",
-      size: "18px",
-    },
-    {
-      name: __("L"),
-      slug: "large",
-      size: "26px",
-    },
-    {
-      name: __("XL"),
-      slug: "xtra-large",
-      size: "48px",
-    },
-  ];
 
   const builtInPostType = [
     "page",
@@ -127,71 +108,71 @@ export default function Edit({ attributes, setAttributes, className }) {
             options={postTypes}
             onChange={(value) => setAttributes({ postType: value })}
           />
-          <SelectControl
+          <RangeControl
             label="Posts to Show"
             value={postsToShow}
-            options={[
-              { label: "2", value: "2" },
-              { label: "4", value: "4" },
-              { label: "6", value: "6" },
-              { label: "8", value: "8" },
-              { label: "10", value: "10" },
-            ]}
             onChange={(value) => setAttributes({ postsToShow: value })}
+            min={1}
+            max={20}
           />
-          <SelectControl
+          <RangeControl
             label="Posts in Row"
             value={postInRow}
-            options={[
-              { label: "1", value: "1" },
-              { label: "2", value: "2" },
-              { label: "3", value: "3" },
-              { label: "4", value: "4" },
-              { label: "5", value: "5" },
-            ]}
             onChange={(value) => setAttributes({ postInRow: value })}
+            min={1}
+            max={4}
           />
         </PanelBody>
-        <PanelBody title={__("Typography", "md-storyful-fse-full")}>
-          <label> {__("Column Title Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={postTitleFontSize}
-            fallbackFontSize={postTitleFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ postTitleFontSize: newFontSize })
-            }
+        <PanelBody title={__("Toggle Settings", "md-efi-fse-full")} initialOpen={false}>
+          <ToggleControl
+            label="Show Filter"
+            checked={showFilter}
+            onChange={(value) => setAttributes({ showFilter: value })}
           />
-          <label> {__("Column Description Font Size")} </label>
-          <FontSizePicker
-            __nextHasNoMarginBottom
-            fontSizes={fontSizes}
-            value={postContentFontSize}
-            fallbackFontSize={postContentFontSize}
-            onChange={(newFontSize) =>
-              setAttributes({ postContentFontSize: newFontSize })
-            }
+          <ToggleControl
+            label="Show Load More"
+            checked={showLoadMore}
+            onChange={(value) => setAttributes({ showLoadMore: value })}
+          />
+          <ToggleControl
+            label="Show Featured Image"
+            checked={showFeaturedImage}
+            onChange={(value) => setAttributes({ showFeaturedImage: value })}
+          />
+          <ToggleControl
+            label="Show Post Title"
+            checked={showPostTitle}
+            onChange={(value) => setAttributes({ showPostTitle: value })}
+          />
+          <ToggleControl
+            label="Show Excerpt"
+            checked={showExcerpt}
+            onChange={(value) => setAttributes({ showExcerpt: value })}
           />
         </PanelBody>
-        <PanelColorSettings
-          title={__("Typography Colors", "md-storyful-fse-full")}
+        <PanelBody
+          title={__("Color Settings", "md-efi-fse-full")}
           initialOpen={false}
-          colorSettings={[
-            {
-              value: postTitleColor,
-              onChange: (newColor) =>
-                setAttributes({ postTitleColor: newColor }),
-              label: __("Column Title Font Color"),
-            },
-            {
-              value: postContentColor,
-              onChange: (newColor) =>
-                setAttributes({ postContentColor: newColor }),
-              label: __("Column Description Font Color"),
-            },
-          ]}
-        />
+        >
+          <PanelColorSettings
+            title={__("Typography Colors", "md-efi-fse-full")}
+            initialOpen={false}
+            colorSettings={[
+              {
+                value: postTitleColor,
+                onChange: (newColor) =>
+                  setAttributes({ postTitleColor: newColor }),
+                label: __("Column Title Font Color"),
+              },
+              {
+                value: postContentColor,
+                onChange: (newColor) =>
+                  setAttributes({ postContentColor: newColor }),
+                label: __("Column Description Font Color"),
+              },
+            ]}
+          />
+        </PanelBody>
       </InspectorControls>
       <ServerSideRender
         block={metadata.name}
@@ -200,10 +181,13 @@ export default function Edit({ attributes, setAttributes, className }) {
           postType,
           postsToShow,
           postInRow,
-          postTitleFontSize,
           postTitleColor,
-          postContentFontSize,
           postContentColor,
+          showFilter,
+          showLoadMore,
+          showFeaturedImage,
+          showPostTitle,
+          showExcerpt,
         }}
       />
     </div>

@@ -24,6 +24,7 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  */
 export default function save({ attributes }) {
   const {
+    enableHeading,
     heading,
     autoplay,
     arrows,
@@ -32,19 +33,12 @@ export default function save({ attributes }) {
     slideSlidesToShow,
     slideSlidesToScroll,
     slideItems,
-    headingFontSize,
     headingFontColor,
-    sliderCompanyNameFontSize,
     sliderCompanyNameFontColor,
-    sliderTestimonialFontSize,
     sliderTestimonialFontColor,
-    sliderAuthorNameFontSize,
     sliderAuthorNameFontColor,
-    sliderDesignationFontSize,
     sliderDesignationFontColor,
-    sliderVideoLinkFontSize,
     sliderVideoLinkFontColor,
-    sliderReadMoreLinkFontSize,
     sliderReadMoreLinkFontColor,
   } = attributes;
   return (
@@ -64,16 +58,17 @@ export default function save({ attributes }) {
             <div className="md_slider__item">
               <div className="md_slider__item__gradient_theme"></div>
               <div className="md_slider__item--inner">
-                <h3 style={{ fontSize: headingFontSize, color: headingFontColor }}>
-                  {heading}
-                </h3>
+                {enableHeading && (
+                  <h3 style={{ color: headingFontColor }}>
+                    {heading}
+                  </h3>
+                )}
                 <div className="md_slider__item__company_info">
                   <RichText.Content
                     tagName="h2"
                     className="md_slider__item__company_name h4"
                     value={slideItems[currentSlide].companyName}
                     style={{
-                      fontSize: sliderCompanyNameFontSize,
                       color: sliderCompanyNameFontColor,
                     }}
                   />
@@ -84,7 +79,6 @@ export default function save({ attributes }) {
                     className="md_slider__item__testimonial__content"
                     value={slideItems[currentSlide].testimonial}
                     style={{
-                      fontSize: sliderTestimonialFontSize,
                       color: sliderTestimonialFontColor,
                     }}
                   />
@@ -95,7 +89,6 @@ export default function save({ attributes }) {
                         className="md_slider__item__testimonial__author__name"
                         value={slideItems[currentSlide].authorName}
                         style={{
-                          fontSize: sliderAuthorNameFontSize,
                           color: sliderAuthorNameFontColor,
                         }}
                       />
@@ -104,7 +97,6 @@ export default function save({ attributes }) {
                         className="md_slider__item__testimonial__author__designation"
                         value={slideItems[currentSlide].designation}
                         style={{
-                          fontSize: sliderDesignationFontSize,
                           color: sliderDesignationFontColor,
                         }}
                       />
@@ -115,7 +107,6 @@ export default function save({ attributes }) {
                         className="md_slider__item__testimonial__video"
                         value={slideItems[currentSlide].videoLink}
                         style={{
-                          fontSize: sliderVideoLinkFontSize,
                           color: sliderVideoLinkFontColor,
                         }}
                       />
@@ -127,7 +118,6 @@ export default function save({ attributes }) {
                           className="btn-main"
                           value={slideItems[currentSlide].readMoreLink}
                           style={{
-                            fontSize: sliderReadMoreLinkFontSize,
                             color: sliderReadMoreLinkFontColor,
                           }}
                         />

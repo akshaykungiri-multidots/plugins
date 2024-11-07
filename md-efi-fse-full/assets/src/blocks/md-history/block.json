@@ -27,15 +27,7 @@
         }
       ]
     },
-    "headingFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "headingFontColor": {
-      "type": "string",
-      "default": ""
-    },
-    "yearFontSize": {
       "type": "string",
       "default": ""
     },
@@ -43,21 +35,25 @@
       "type": "string",
       "default": ""
     },
-    "titleFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "titleFontColor": {
-      "type": "string",
-      "default": ""
-    },
-    "descriptionFontSize": {
       "type": "string",
       "default": ""
     },
     "descriptionFontColor": {
       "type": "string",
       "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showYear": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

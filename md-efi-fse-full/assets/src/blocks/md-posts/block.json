@@ -18,28 +18,40 @@
       "default": "post"
     },
     "postsToShow": {
-      "type": "string",
-      "default": "5"
+      "type": "number",
+      "default": 5
     },
     "postInRow": {
-      "type": "string",
-      "default": "2"
-    },
-    "postTitleFontSize": {
-      "type": "string",
-      "default": ""
+      "type": "number",
+      "default": 2
     },
     "postTitleColor": {
       "type": "string",
       "default": "#000000"
     },
-    "postContentFontSize": {
-      "type": "string",
-      "default": ""
-    },
     "postContentColor": {
       "type": "string",
       "default": "#000000"
+    },
+    "showFilter": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLoadMore": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPostTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showExcerpt": {
+      "type": "boolean",
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

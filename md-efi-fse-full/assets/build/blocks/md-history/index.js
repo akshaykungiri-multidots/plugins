@@ -55,32 +55,14 @@ function Edit({
   const {
     heading,
     historyTimeline,
-    headingFontSize,
     headingFontColor,
-    yearFontSize,
     yearFontColor,
-    titleFontSize,
     titleFontColor,
-    descriptionFontSize,
-    descriptionFontColor
+    descriptionFontColor,
+    showHeading,
+    showYear,
+    showDescription
   } = attributes;
-  const fontSizes = [{
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("S"),
-    slug: "small",
-    size: "12px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("M"),
-    slug: "medium",
-    size: "18px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("L"),
-    slug: "large",
-    size: "26px"
-  }, {
-    name: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("XL"),
-    slug: "xtra-large",
-    size: "48px"
-  }];
   const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(0);
   const addStaticPostObj = () => {
     const staticPostObj = [...historyTimeline, {
@@ -99,75 +81,73 @@ function Edit({
       historyTimeline: updatedStaticPostObj
     });
   };
-  const removeStaticPostObj = index => {
-    const updatedStaticPostObj = [...historyTimeline];
-    updatedStaticPostObj.splice(index, 1);
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...historyTimeline];
+    arrayCopy[oldIndex] = historyTimeline[newIndex];
+    arrayCopy[newIndex] = historyTimeline[oldIndex];
     setAttributes({
-      historyTimeline: updatedStaticPostObj
+      historyTimeline: arrayCopy
     });
-    setCurrentSlide(-1);
   };
+  const currentObj = historyTimeline[currentSlide];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_history_timeline history-list"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography", "md-storyful-fse-full")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Font Size", "md-storyful-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    value: headingFontSize,
-    onChange: newFontSize => setAttributes({
-      headingFontSize: newFontSize
-    }),
-    fontSizes: fontSizes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Year Font Size", "md-storyful-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    value: yearFontSize,
-    onChange: newFontSize => setAttributes({
-      yearFontSize: newFontSize
-    }),
-    fontSizes: fontSizes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Font Size", "md-storyful-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    value: titleFontSize,
-    onChange: newFontSize => setAttributes({
-      titleFontSize: newFontSize
-    }),
-    fontSizes: fontSizes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, " ", (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Description Font Size", "md-storyful-fse-full")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FontSizePicker, {
-    value: descriptionFontSize,
-    onChange: newFontSize => setAttributes({
-      descriptionFontSize: newFontSize
-    }),
-    fontSizes: fontSizes
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Toggle Settings", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Heading", "md-efi-fse-full"),
+    checked: showHeading,
+    onChange: value => setAttributes({
+      showHeading: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show year", "md-efi-fse-full"),
+    checked: showYear,
+    onChange: value => setAttributes({
+      showYear: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Content", "md-efi-fse-full"),
+    checked: showDescription,
+    onChange: value => setAttributes({
+      showDescription: value
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-efi-fse-full"),
+    initialOpen: false
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-efi-fse-full"),
     initialOpen: false,
     colorSettings: [{
       value: headingFontColor,
       onChange: newColor => setAttributes({
         headingFontColor: newColor
       }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Color", "md-storyful-fse-full")
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Color", "md-efi-fse-full")
     }, {
       value: yearFontColor,
       onChange: newColor => setAttributes({
         yearFontColor: newColor
       }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Year Color", "md-storyful-fse-full")
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Year Color", "md-efi-fse-full")
     }, {
       value: titleFontColor,
       onChange: newColor => setAttributes({
         titleFontColor: newColor
       }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Color", "md-storyful-fse-full")
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Color", "md-efi-fse-full")
     }, {
       value: descriptionFontColor,
       onChange: newColor => setAttributes({
         descriptionFontColor: newColor
       }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Description Color", "md-storyful-fse-full")
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Description Color", "md-efi-fse-full")
     }]
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__inner"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, showHeading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__head"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
@@ -178,7 +158,6 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Heading", "md-blocks"),
     style: {
-      fontSize: headingFontSize,
       color: headingFontColor
     }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -201,34 +180,99 @@ function Edit({
     onClick: () => setCurrentSlide(index),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Year", "md-blocks"),
     style: {
-      fontSize: yearFontSize,
       color: yearFontColor
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "add-item-wrap"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    variant: "primary",
-    onClick: addStaticPostObj
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Slide"))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "add-item-wrap",
+    onClick: addStaticPostObj,
+    role: "button",
+    tabIndex: 0,
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add New Item", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "add-new-item dashicons dashicons-plus"
+  }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__year-detail"
   }, currentSlide > -1 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "history-list__year-detail-item"
+    className: "history-list__year-detail-item show-items-hover-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `item-action-wrap show-items-hover pos-abs`
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "move-item"
+  }, 0 < currentSlide && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Left", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-left-alt move-left",
+    onClick: () => moveItem(currentSlide, currentSlide - 1),
+    onKeyDown: event => {
+      if (event.key === "Enter" || event.key === " ") {
+        moveItem(currentSlide, currentSlide - 1);
+      }
+    },
+    role: "button",
+    tabIndex: 0,
+    "aria-label": "Move item left"
+  })), currentSlide + 1 < historyTimeline.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Move Right", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "dashicons dashicons-arrow-right-alt move-right",
+    role: "button",
+    tabIndex: 0,
+    onClick: () => moveItem(currentSlide, currentSlide + 1),
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        moveItem(currentSlide, currentSlide + 1);
+      }
+    },
+    "aria-label": "Move item right"
+  }))), 1 < historyTimeline.length && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Item", "md-efi-fse-full")
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
+    className: "remove-item dashicons dashicons-no-alt",
+    role: "button",
+    tabIndex: 0,
+    onClick: () => {
+      const toDelete =
+      // eslint-disable-next-line no-alert
+      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-efi-fse-full"));
+      if (toDelete === true) {
+        const updatedArray = historyTimeline.filter((currentObj, itemIndex) => itemIndex !== currentSlide);
+        setAttributes({
+          historyTimeline: updatedArray
+        });
+      }
+    },
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        // Simulate click behavior for keyboard users
+        e.preventDefault(); // Prevent default action for space key
+        const toDelete =
+        // eslint-disable-next-line no-alert
+        confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-efi-fse-full"));
+        if (toDelete === true) {
+          const updatedArray = historyTimeline.filter((item, itemIndex) => itemIndex !== currentSlide);
+          setAttributes({
+            historyTimeline: updatedArray
+          });
+        }
+      }
+    },
+    "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove this item", "md-efi-fse-full")
+  }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__cnt"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+  }, showYear && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "history-list__year-title",
     style: {
-      fontSize: titleFontSize,
       color: titleFontColor
     }
-  }, historyTimeline[currentSlide].year), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, historyTimeline[currentSlide].year), showDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     className: "history-list__year-description",
     value: historyTimeline[currentSlide].description,
     onChange: value => updateStaticPostObj(currentSlide, "description", value),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add Description", "md-blocks"),
     style: {
-      fontSize: descriptionFontSize,
       color: descriptionFontColor
     }
   })))))));
@@ -338,14 +382,13 @@ function save({
   const {
     heading,
     historyTimeline,
-    headingFontSize,
     headingFontColor,
-    yearFontSize,
     yearFontColor,
-    titleFontSize,
     titleFontColor,
-    descriptionFontSize,
-    descriptionFontColor
+    descriptionFontColor,
+    showHeading,
+    showYear,
+    showDescription
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
@@ -353,14 +396,13 @@ function save({
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__inner"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, showHeading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__head"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     className: "history-list__title",
     value: heading,
     style: {
-      fontSize: headingFontSize,
       color: headingFontColor
     }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -376,35 +418,32 @@ function save({
   }, historyTimeline && historyTimeline.map((postObj, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__year-item",
     key: index,
-    "data-getyear": postObj.year
+    "data-getyear": "year-" + index
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     className: "history-list__year history-list__year-title",
     value: postObj.year,
     onClick: () => setCurrentSlide(index),
     style: {
-      fontSize: yearFontSize,
       color: yearFontColor
     }
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__year-detail"
   }, historyTimeline && historyTimeline.map((postObj, currentSlide) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__year-detail-item",
-    "data-year": historyTimeline[currentSlide].year
+    "data-year": "year-" + currentSlide
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__cnt"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+  }, showYear && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "history-list__year-title",
     style: {
-      fontSize: titleFontSize,
       color: titleFontColor
     }
-  }, historyTimeline[currentSlide].year), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, historyTimeline[currentSlide].year), showDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     className: "history-list__year-description",
     value: historyTimeline[currentSlide].description,
     style: {
-      fontSize: descriptionFontSize,
       color: descriptionFontColor
     }
   }))))))));
@@ -490,7 +529,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-history","version":"0.1.0","title":"MD History","apiVersion":3,"category":"md-efi-fse-full","icon":"clock","description":"A block to display history timeline","keywords":["md-efi-fse-full","md-history"],"supports":{"html":false},"textdomain":"md-efi-fse-full","attributes":{"heading":{"type":"string","default":""},"historyTimeline":{"type":"array","default":[{"id":0,"year":"xxxx","description":"Loream ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, eleifend nunc. Nulla ut turpis ut nisi ultricies sollicitudin. Sed nec odio sit amet erat luctus suscipit. Proin ut semper odio. Sed nec odio sit amet erat luctus suscipit. Proin ut semper odio."}]},"headingFontSize":{"type":"string","default":""},"headingFontColor":{"type":"string","default":""},"yearFontSize":{"type":"string","default":""},"yearFontColor":{"type":"string","default":""},"titleFontSize":{"type":"string","default":""},"titleFontColor":{"type":"string","default":""},"descriptionFontSize":{"type":"string","default":""},"descriptionFontColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-efi-fse-full/md-history","version":"0.1.0","title":"MD History","apiVersion":3,"category":"md-efi-fse-full","icon":"clock","description":"A block to display history timeline","keywords":["md-efi-fse-full","md-history"],"supports":{"html":false},"textdomain":"md-efi-fse-full","attributes":{"heading":{"type":"string","default":""},"historyTimeline":{"type":"array","default":[{"id":0,"year":"xxxx","description":"Loream ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, eleifend nunc. Nulla ut turpis ut nisi ultricies sollicitudin. Sed nec odio sit amet erat luctus suscipit. Proin ut semper odio. Sed nec odio sit amet erat luctus suscipit. Proin ut semper odio."}]},"headingFontColor":{"type":"string","default":""},"yearFontColor":{"type":"string","default":""},"titleFontColor":{"type":"string","default":""},"descriptionFontColor":{"type":"string","default":""},"showHeading":{"type":"boolean","default":true},"showYear":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 
