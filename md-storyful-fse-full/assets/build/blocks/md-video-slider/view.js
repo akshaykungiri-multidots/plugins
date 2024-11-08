@@ -4,30 +4,31 @@
   \********************************************/
 /**
  * File Sample-dynamic.js
- * 
+ *
+ * @param $
  */
 (function ($) {
-  "use strict";
+  'use strict';
 
   $(document).ready(function () {
     // Slick slider for storyful-video-slider
     setTimeout(function () {
       if ($('.video-wrapper').length > 0) {
         $('.video-wrapper').each(function () {
-          var slide_to_show = $(this).data('slider-to-show');
-          var slider_to_scroll = $(this).data('slider-to-scroll');
-          var autoplay = $(this).data('slider-autoplay');
-          var infinite = $(this).data('slider-infinite');
-          var slider_dots = $(this).data('slider-dots');
-          var slider_arrows = $(this).data('slider-arrows');
+          const slide_to_show = $(this).data('slider-to-show');
+          const slider_to_scroll = $(this).data('slider-to-scroll');
+          const autoplay = $(this).data('slider-autoplay');
+          const infinite = $(this).data('slider-infinite');
+          const slider_dots = $(this).data('slider-dots');
+          const slider_arrows = $(this).data('slider-arrows');
           $(this).slick({
             dots: slider_dots ? true : false,
             arrows: slider_arrows ? true : false,
-            infinite: infinite,
+            infinite,
             speed: 300,
             slidesToShow: slide_to_show,
             slidesToScroll: slider_to_scroll,
-            autoplay: autoplay,
+            autoplay,
             autoplaySpeed: 5000,
             pauseOnHover: true,
             centerMode: true,

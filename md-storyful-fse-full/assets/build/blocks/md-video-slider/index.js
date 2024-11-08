@@ -20,12 +20,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/blocks/md-video-slider/block.json");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/md-video-slider/editor.scss");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/md-video-slider/editor.scss");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
 /**
  * Retrieves the translation of text.
  *
@@ -57,23 +56,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param root0
- * @param root0.attributes
- * @param root0.attributes.heading
- * @param root0.setAttributes
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.attributes.heading
+ * @param  root0.setAttributes
+ * @param  root0.className
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
 
 function Edit({
   attributes,
-  setAttributes,
-  className
+  setAttributes
 }) {
   const {
     autoplay,
@@ -84,16 +82,16 @@ function Edit({
     slideSlidesToScroll,
     slideItems
   } = attributes;
-  const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_6__.useState)(0);
+  const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_5__.useState)(0);
   const addStaticPostObj = () => {
     const staticPostObj = [...slideItems, {
       id: slideItems.length + 1,
-      mediaurl: "",
-      youtubeurl: "",
-      videotype: "media-upload",
-      media: "",
-      mediaId: "",
-      mediaAlt: ""
+      mediaurl: '',
+      youtubeurl: '',
+      videotype: 'media-upload',
+      media: '',
+      mediaId: '',
+      mediaAlt: ''
     }];
     setAttributes({
       slideItems: staticPostObj
@@ -115,84 +113,84 @@ function Edit({
     });
     setCurrentSlide(-1);
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("General Settings", "md-prime"),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General Settings', 'md-prime'),
         initialOpen: false,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Autoplay", "md-prime"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Autoplay', 'md-prime'),
           checked: autoplay,
-          onChange: autoplay => setAttributes({
-            autoplay
+          onChange: value => setAttributes({
+            autoplay: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Hide/Show Arrows", "md-prime"),
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hide/Show Arrows', 'md-prime'),
           checked: arrows,
-          onChange: arrows => setAttributes({
-            arrows
+          onChange: value => setAttributes({
+            arrows: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Hide/Show Dots", "md-prime"),
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Hide/Show Dots', 'md-prime'),
           checked: dots,
-          onChange: dots => setAttributes({
-            dots
+          onChange: value => setAttributes({
+            dots: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Infinite Loop", "md-prime"),
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Infinite Loop', 'md-prime'),
           checked: slideInfinite,
-          onChange: slideInfinite => setAttributes({
-            slideInfinite
+          onChange: value => setAttributes({
+            slideInfinite: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Slides To Show"),
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Slides To Show'),
           value: slideSlidesToShow,
           min: 1,
           max: 10,
           step: 1,
-          onChange: slideSlidesToShow => setAttributes({
-            slideSlidesToShow
+          onChange: value => setAttributes({
+            slideSlidesToShow: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Slides To Scroll"),
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Slides To Scroll'),
           value: slideSlidesToScroll,
           min: 1,
           max: 10,
           step: 1,
-          onChange: slideSlidesToScroll => setAttributes({
-            slideSlidesToScroll
+          onChange: value => setAttributes({
+            slideSlidesToScroll: value
           })
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "storyful-video-slider video-section",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "video-container",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "video-wrapper",
-          children: currentSlide > -1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          children: currentSlide > -1 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "wrapper__item mdprime-sidebar show-items-hover-wrap",
-            children: [slideItems.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            children: [slideItems.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: `item-action-wrap show-items-hover`,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
-                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Item", "md-prime"),
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Item', 'md-prime'),
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                   className: "remove-item dashicons dashicons-no-alt",
                   role: "button",
                   tabIndex: 0,
                   onClick: () => {
                     // eslint-disable-next-line no-alert
-                    const toDelete = confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Are you sure you want to delete this item?", "md-prime"));
+                    const toDelete = confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Are you sure you want to delete this item?', 'md-prime'));
                     if (toDelete) {
                       removeStaticPostObj(currentSlide);
                     }
                   },
                   onKeyDown: e => {
-                    if (e.key === "Enter" || e.key === " ") {
+                    if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault();
                       // eslint-disable-next-line no-alert
-                      const toDelete = confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Are you sure you want to delete this item?", "md-prime"));
+                      const toDelete = confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Are you sure you want to delete this item?', 'md-prime'));
                       if (toDelete) {
                         removeStaticPostObj(currentSlide);
                       }
@@ -201,108 +199,108 @@ function Edit({
                   "aria-label": "Remove item"
                 })
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
               className: "wrapper__box-inner",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                 className: "video-details-wrapper",
                 style: {
-                  textAlign: "center"
+                  textAlign: 'center'
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                   className: "video-data-edit",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-                    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Select Video Type", "storyful"),
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+                    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Select Video Type', 'storyful'),
                     value: slideItems[currentSlide].videotype,
                     options: [{
-                      label: "Media Upload Video",
-                      value: "media-upload"
+                      label: 'Media Upload Video',
+                      value: 'media-upload'
                     }, {
-                      label: "Youtube Video",
-                      value: "youtube"
+                      label: 'Youtube Video',
+                      value: 'youtube'
                     }],
                     onChange: videotype => {
-                      updateStaticPostObj(currentSlide, "videotype", videotype);
+                      updateStaticPostObj(currentSlide, 'videotype', videotype);
                     }
-                  }), slideItems[currentSlide].videotype === "youtube" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+                  }), slideItems[currentSlide].videotype === 'youtube' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
                       placeholder: "Enter youtube video URL",
                       value: slideItems[currentSlide].youtubeurl,
                       className: "video-item-url",
                       onChange: youtubeurl => {
-                        updateStaticPostObj(currentSlide, "youtubeurl", youtubeurl);
+                        updateStaticPostObj(currentSlide, 'youtubeurl', youtubeurl);
                       }
-                    }), slideItems[currentSlide].youtubeurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("iframe", {
-                      src: slideItems[currentSlide].youtubeurl.replace("watch?v=", "embed/") + "?controls=0",
-                      "data-src": slideItems[currentSlide].youtubeurl + "?enablejsapi=1&controls=0&rel=0",
+                    }), slideItems[currentSlide].youtubeurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("iframe", {
+                      src: slideItems[currentSlide].youtubeurl.replace('watch?v=', 'embed/') + '?controls=0',
+                      "data-src": slideItems[currentSlide].youtubeurl + '?enablejsapi=1&controls=0&rel=0',
                       title: "video"
                     })]
                   })]
-                }), slideItems[currentSlide].videotype === "media-upload" && slideItems[currentSlide].mediaurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+                }), slideItems[currentSlide].videotype === 'media-upload' && slideItems[currentSlide].mediaurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
                   className: "image-preview image-controle-visible-hover",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("video", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("video", {
                     autoPlay: "",
                     muted: "",
                     loop: "",
                     className: "self-media",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("source", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("source", {
                       src: slideItems[currentSlide].mediaurl,
                       type: "video/mp4"
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
                     className: "item-action-wrap image-controls small-icons icon-center-fixed",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
-                      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Video"),
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+                      text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Video'),
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                         className: "dashicons dashicons-no-alt remove-image",
                         role: "button",
                         tabIndex: 0,
                         onClick: () => {
-                          updateStaticPostObj(currentSlide, "mediaurl", "");
+                          updateStaticPostObj(currentSlide, 'mediaurl', '');
                         },
                         onKeyDown: e => {
-                          if (e.key === "Enter" || e.key === " ") {
+                          if (e.key === 'Enter' || e.key === ' ') {
                             e.preventDefault();
-                            updateStaticPostObj(currentSlide, "mediaurl", "");
+                            updateStaticPostObj(currentSlide, 'mediaurl', '');
                           }
                         },
                         "aria-label": "Remove image"
                       })
                     })
                   })]
-                }), slideItems[currentSlide].videotype === "media-upload" && !slideItems[currentSlide].mediaurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+                }), slideItems[currentSlide].videotype === 'media-upload' && !slideItems[currentSlide].mediaurl && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
                     onSelect: newmedia => {
-                      updateStaticPostObj(currentSlide, "mediaurl", newmedia.url);
+                      updateStaticPostObj(currentSlide, 'mediaurl', newmedia.url);
                     },
-                    allowedTypes: ["video"],
+                    allowedTypes: ['video'],
                     value: slideItems[currentSlide].mediaurl,
                     render: ({
                       open
-                    }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+                    }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
                       onClick: open,
                       className: "components-button button button-large",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                         className: "upload"
-                      }), " Upload video"]
+                      }), ' ', "Upload video"]
                     })
                   })
                 })]
               })
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "slide-buttons",
-          children: slideItems.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
-            className: `slide-button ${currentSlide === index ? "active" : ""}`,
+          children: slideItems.map((item, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            className: `slide-button ${currentSlide === index ? 'active' : ''}`,
             onClick: () => setCurrentSlide(index),
             children: index + 1
           }, index))
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "add-item-wrap",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
             variant: "primary",
             onClick: addStaticPostObj,
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add New Slide")
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add New Slide')
           })
         })]
       })

@@ -83,7 +83,7 @@ const leftAlign = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
       d: "M1 .708v15.851",
       className: "inspector-svg-stroke",
-      "stroke-linecap": "square"
+      strokeLinecap: "square"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
       className: "inspector-svg-fill",
       x: "5",
@@ -105,7 +105,7 @@ const centerAlign = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
       d: "M8 .708v15.851",
       className: "inspector-svg-stroke",
-      "stroke-linecap": "square"
+      strokeLinecap: "square"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
       className: "inspector-svg-fill",
       y: "5",
@@ -126,7 +126,7 @@ const rightAlign = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0_
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
       d: "M1 .708v15.851",
       className: "inspector-svg-stroke",
-      "stroke-linecap": "square"
+      strokeLinecap: "square"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("rect", {
       className: "inspector-svg-fill",
       fillRule: "nonzero",
@@ -195,7 +195,7 @@ const logoIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.
     d: "M12 3c-5 0-9 4-9 9s4 9 9 9 9-4 9-9-4-9-9-9zm0 1.5c4.1 0 7.5 3.4 7.5 7.5v.1c-1.4-.8-3.3-1.7-3.4-1.8-.2-.1-.5-.1-.8.1l-2.9 2.1L9 11.3c-.2-.1-.4 0-.6.1l-3.7 2.2c-.1-.5-.2-1-.2-1.5 0-4.2 3.4-7.6 7.5-7.6zm0 15c-3.1 0-5.7-1.9-6.9-4.5l3.7-2.2 3.5 1.2c.2.1.5 0 .7-.1l2.9-2.1c.8.4 2.5 1.2 3.5 1.9-.9 3.3-3.9 5.8-7.4 5.8z"
   })
 });
-const hexBulletIcon = (fill = "white", stroke = "#3333FF") => {
+const hexBulletIcon = (fill = 'white', stroke = '#3333FF') => {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
     className: "fsq-anim-title-bullet",
     width: "39",
@@ -207,7 +207,7 @@ const hexBulletIcon = (fill = "white", stroke = "#3333FF") => {
       d: "M4.1125 10.616L19.5 1.73206L34.8875 10.616V28.384L19.5 37.2679L4.1125 28.384V10.616Z",
       fill: fill,
       stroke: stroke,
-      "stroke-width": "3",
+      strokeWidth: "3",
       className: "hexaone"
     })
   });
@@ -370,28 +370,28 @@ const newsletterIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODUL
 });
 const prevArrow = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
   "aria-label": "Previous",
-  class: "prev",
+  className: "prev",
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: "31",
     height: "31",
     viewBox: "0 0 31 31",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      "fill-rule": "evenodd",
+      fillRule: "evenodd",
       d: "M17.38,29.5795583 L29.619,16.4945583 C29.629,16.4845583 29.636,16.4705583 29.645,16.4595583 C29.696,16.4035583 29.74,16.3405583 29.784,16.2765583 C29.811,16.2385583 29.839,16.2035583 29.863,16.1635583 C29.907,16.0895583 29.942,16.0095583 29.977,15.9295583 C29.992,15.8935583 30.012,15.8595583 30.026,15.8225583 C30.061,15.7265583 30.086,15.6245583 30.108,15.5215583 C30.114,15.4955583 30.124,15.4715583 30.128,15.4445583 C30.151,15.3145583 30.164,15.1795583 30.164,15.0415583 C30.164,14.9025583 30.151,14.7675583 30.128,14.6375583 C30.124,14.6115583 30.114,14.5875583 30.108,14.5615583 C30.086,14.4575583 30.061,14.3565583 30.026,14.2595583 C30.012,14.2225583 29.992,14.1895583 29.977,14.1535583 C29.942,14.0725583 29.907,13.9925583 29.863,13.9195583 C29.839,13.8795583 29.811,13.8445583 29.785,13.8065583 C29.74,13.7425583 29.696,13.6795583 29.645,13.6225583 C29.636,13.6115583 29.629,13.5985583 29.619,13.5875583 L17.38,0.50255826 C16.704,-0.22044174 15.661,-0.15544174 15.052,0.64655826 C14.442,1.45055826 14.497,2.68755826 15.174,3.41055826 L24.222,13.0845583 L1.648,13.0845583 C0.738,13.0845583 0,13.9605583 0,15.0415583 C0,16.1215583 0.738,16.9975583 1.648,16.9975583 L24.222,16.9975583 L15.174,26.6715583 C14.812,27.0585583 14.628,27.5915583 14.628,28.1265583 C14.628,28.5935583 14.768,29.0615583 15.052,29.4355583 C15.661,30.2385583 16.704,30.3025583 17.38,29.5795583"
     })
   })
 });
 const nextArrow = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("button", {
   "aria-label": "Next",
-  class: "next",
+  className: "next",
   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: "31",
     height: "31",
     viewBox: "0 0 31 31",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("path", {
-      "fill-rule": "evenodd",
+      fillRule: "evenodd",
       d: "M17.38,29.5795583 L29.619,16.4945583 C29.629,16.4845583 29.636,16.4705583 29.645,16.4595583 C29.696,16.4035583 29.74,16.3405583 29.784,16.2765583 C29.811,16.2385583 29.839,16.2035583 29.863,16.1635583 C29.907,16.0895583 29.942,16.0095583 29.977,15.9295583 C29.992,15.8935583 30.012,15.8595583 30.026,15.8225583 C30.061,15.7265583 30.086,15.6245583 30.108,15.5215583 C30.114,15.4955583 30.124,15.4715583 30.128,15.4445583 C30.151,15.3145583 30.164,15.1795583 30.164,15.0415583 C30.164,14.9025583 30.151,14.7675583 30.128,14.6375583 C30.124,14.6115583 30.114,14.5875583 30.108,14.5615583 C30.086,14.4575583 30.061,14.3565583 30.026,14.2595583 C30.012,14.2225583 29.992,14.1895583 29.977,14.1535583 C29.942,14.0725583 29.907,13.9925583 29.863,13.9195583 C29.839,13.8795583 29.811,13.8445583 29.785,13.8065583 C29.74,13.7425583 29.696,13.6795583 29.645,13.6225583 C29.636,13.6115583 29.629,13.5985583 29.619,13.5875583 L17.38,0.50255826 C16.704,-0.22044174 15.661,-0.15544174 15.052,0.64655826 C14.442,1.45055826 14.497,2.68755826 15.174,3.41055826 L24.222,13.0845583 L1.648,13.0845583 C0.738,13.0845583 0,13.9605583 0,15.0415583 C0,16.1215583 0.738,16.9975583 1.648,16.9975583 L24.222,16.9975583 L15.174,26.6715583 C14.812,27.0585583 14.628,27.5915583 14.628,28.1265583 C14.628,28.5935583 14.768,29.0615583 15.052,29.4355583 C15.661,30.2385583 16.704,30.3025583 17.38,29.5795583"
     })
   })
@@ -460,8 +460,8 @@ function Edit({
   const addStaticPostObj = () => {
     const staticPostObj = [...columnList, {
       id: columnList.length + 1,
-      title: "",
-      description: ""
+      title: '',
+      description: ''
     }];
     setAttributes({
       columnList: staticPostObj
@@ -484,14 +484,14 @@ function Edit({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
-      className: "md-counter_block"
+      className: 'md-counter_block'
     }),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Settings", "md-prime"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Settings', 'md-prime'),
         initialOpen: true,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Columns", "md-prime"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Columns', 'md-prime'),
           value: columns,
           onChange: value => setAttributes({
             columns: value
@@ -507,83 +507,83 @@ function Edit({
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "inspector-field-button-list inspector-field-button-list-fluid",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              className: "left" === textAlign ? "active inspector-button" : " inspector-button",
+              className: 'left' === textAlign ? 'active inspector-button' : ' inspector-button',
               onClick: () => setAttributes({
-                textAlign: "left"
+                textAlign: 'left'
               }),
               children: _icons__WEBPACK_IMPORTED_MODULE_3__.leftAlign
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              className: "center" === textAlign ? "active inspector-button" : " inspector-button",
+              className: 'center' === textAlign ? 'active inspector-button' : ' inspector-button',
               onClick: () => setAttributes({
-                textAlign: "center"
+                textAlign: 'center'
               }),
               children: _icons__WEBPACK_IMPORTED_MODULE_3__.centerAlign
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              className: "right" === textAlign ? "active inspector-button" : " inspector-button",
+              className: 'right' === textAlign ? 'active inspector-button' : ' inspector-button',
               onClick: () => setAttributes({
-                textAlign: "right"
+                textAlign: 'right'
               }),
               children: _icons__WEBPACK_IMPORTED_MODULE_3__.rightAlign
             })]
           })]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color Settings', 'md-storyful-fse-full'),
         initialOpen: false,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color Settings', 'md-storyful-fse-full'),
           initialOpen: false,
           colorSettings: [{
             value: backgroundColor,
             onChange: newColor => setAttributes({
               backgroundColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color')
           }, {
             value: borderColor,
             onChange: newColor => setAttributes({
               borderColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Border Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Border Color')
           }, {
             value: columnTitleFontColor,
             onChange: newColor => setAttributes({
               columnTitleFontColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Column Title Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Column Title Font Color')
           }, {
             value: columnDescriptionFontColor,
             onChange: newColor => setAttributes({
               columnDescriptionFontColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Column Description Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Column Description Font Color')
           }]
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      class: "storyful-stat-number",
+      className: "storyful-stat-number",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        class: "container",
+        className: "container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          class: "stats-block-bottom",
+          className: "stats-block-bottom",
           style: {
             borderColor,
             backgroundColor,
             gridTemplateColumns: `repeat(${columns}, 1fr)`
           },
           children: [columnList && columnList.map((postObj, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-            class: "stats-block-bottom__item fadeInUp show-items-hover-wrap",
+            className: "stats-block-bottom__item fadeInUp show-items-hover-wrap",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "item-action-wrap show-items-hover pos-abs",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                 className: "move-item",
                 children: [0 < index && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
-                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Move Left", "md-prime"),
+                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Left', 'md-prime'),
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                     className: "dashicons dashicons-arrow-left-alt move-left",
                     onClick: () => moveItem(index, index - 1),
                     onKeyDown: event => {
-                      if (event.key === "Enter" || event.key === " ") {
+                      if (event.key === 'Enter' || event.key === ' ') {
                         moveItem(index, index - 1);
                       }
                     },
@@ -592,13 +592,13 @@ function Edit({
                     "aria-label": "Move item left"
                   })
                 }), index + 1 < columnList.length && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
-                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Move Right", "md-prime"),
+                  text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Move Right', 'md-prime'),
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                     className: "dashicons dashicons-arrow-right-alt move-right",
                     onClick: () => moveItem(index, index + 1),
                     tabIndex: 0,
                     onKeyDown: e => {
-                      if (e.key === "Enter" || e.key === " ") {
+                      if (e.key === 'Enter' || e.key === ' ') {
                         moveItem(index, index + 1);
                       }
                     },
@@ -607,13 +607,13 @@ function Edit({
                   })
                 })]
               }), 1 < columnList.length && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
-                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Item", "md-prime"),
+                text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Item', 'md-prime'),
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("i", {
                   className: "remove-item dashicons dashicons-no-alt",
                   onClick: () => {
                     const toDelete =
                     // eslint-disable-next-line no-alert
-                    confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Are you sure you want to delete this item?", "md-prime"));
+                    confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Are you sure you want to delete this item?', 'md-prime'));
                     if (toDelete) {
                       const updatedArray = columnList.filter((item, itemIndex) => itemIndex !== index);
                       setAttributes({
@@ -623,10 +623,10 @@ function Edit({
                   },
                   tabIndex: 0,
                   onKeyDown: e => {
-                    if (e.key === "Enter" || e.key === " ") {
+                    if (e.key === 'Enter' || e.key === ' ') {
                       const toDelete =
                       // eslint-disable-next-line no-alert
-                      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Are you sure you want to delete this item?", "md-prime"));
+                      confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Are you sure you want to delete this item?', 'md-prime'));
                       if (toDelete) {
                         const updatedArray = columnList.filter((item, itemIndex) => itemIndex !== index);
                         setAttributes({
@@ -644,27 +644,27 @@ function Edit({
               value: postObj.title,
               style: {
                 color: columnTitleFontColor,
-                textAlign: textAlign
+                textAlign
               },
-              onChange: value => updateStaticPostObj(index, "title", value),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("0+")
+              onChange: value => updateStaticPostObj(index, 'title', value),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('0+')
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
               tagName: "p",
               style: {
                 color: columnDescriptionFontColor,
-                textAlign: textAlign
+                textAlign
               },
               className: "column-item-desc",
               value: postObj.description,
-              onChange: value => updateStaticPostObj(index, "description", value),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Description")
+              onChange: value => updateStaticPostObj(index, 'description', value),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter Description')
             })]
           }, index)), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "add-item-wrap",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
               variant: "primary",
               onClick: addStaticPostObj,
-              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Add New Column")
+              children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add New Column')
             })
           })]
         })
@@ -766,6 +766,8 @@ __webpack_require__.r(__webpack_exports__);
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param  root0
+ * @param  root0.attributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
@@ -781,16 +783,16 @@ function save({
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-      className: "md-counter_block"
+      className: 'md-counter_block'
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      class: "storyful-stat-number",
+      className: "storyful-stat-number",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        class: "container",
+        className: "container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          class: "stats-block-bottom",
+          className: "stats-block-bottom",
           children: columnList && columnList.map((postObj, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            class: "stats-block-bottom__item fadeInUp",
+            className: "stats-block-bottom__item fadeInUp",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
               tagName: "h3",
               value: postObj.title,

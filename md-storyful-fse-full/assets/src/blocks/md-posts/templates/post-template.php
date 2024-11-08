@@ -31,7 +31,7 @@ $dates = array();
 if (!empty($date_query->posts)) {
     foreach ($date_query->posts as $date_post_id) {
         $date = get_the_date('F Y', $date_post_id);
-        if (!in_array($date, $dates)) {
+        if (!in_array($date, $dates, true)) {
             $dates[] = $date;
         }
     }

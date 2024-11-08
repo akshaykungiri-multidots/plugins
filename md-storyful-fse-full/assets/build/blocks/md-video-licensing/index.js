@@ -40,6 +40,9 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.setAttributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
  * @return {WPElement} Element to render.
@@ -66,77 +69,77 @@ function Edit({
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
-      className: "md_video_licensing"
+      className: 'md_video_licensing'
     }),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Toggle Settings', 'md-storyful-fse-full'),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Buy Button", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Buy Button', 'md-storyful-fse-full'),
           checked: showBuyButton,
           onChange: value => setAttributes({
             showBuyButton: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Sell Button", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Sell Button', 'md-storyful-fse-full'),
           checked: showSellButton,
           onChange: value => setAttributes({
             showSellButton: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show License Text", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show License Text', 'md-storyful-fse-full'),
           checked: showLicenseText,
           onChange: value => setAttributes({
             showLicenseText: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Learn More Button", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Learn More Button', 'md-storyful-fse-full'),
           checked: showLearnMore,
           onChange: value => setAttributes({
             showLearnMore: value
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color Settings', 'md-storyful-fse-full'),
         initialOpen: false,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography Colors', 'md-storyful-fse-full'),
           initialOpen: false,
           colorSettings: [{
             value: headingFontColor,
             onChange: value => setAttributes({
               headingFontColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading Color')
           }, {
             value: buyButtonFontColor,
             onChange: value => setAttributes({
               buyButtonFontColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Buy Button Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Buy Button Color')
           }, {
             value: sellButtonFontColor,
             onChange: value => setAttributes({
               sellButtonFontColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Sell Button Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sell Button Color')
           }, {
             value: licenseFontColor,
             onChange: value => setAttributes({
               licenseFontColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("License Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('License Color')
           }]
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      class: "storyful-video-licensing",
+      className: "storyful-video-licensing",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        class: "container",
+        className: "container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          class: "video-licensing-wrap",
+          className: "video-licensing-wrap",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            class: "video-licensing-wrap__left",
+            className: "video-licensing-wrap__left",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
               tagName: "h1",
               className: "section-title h1 wow fadeInLeft",
@@ -144,12 +147,12 @@ function Edit({
               onChange: value => setAttributes({
                 heading: value
               }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title...", "md-blocks"),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter title…', 'md-blocks'),
               style: {
                 color: headingFontColor
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              class: "bye-sell-button wow fadeInLeft",
+              className: "bye-sell-button wow fadeInLeft",
               children: [showBuyButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "span",
                 className: "link",
@@ -157,7 +160,7 @@ function Edit({
                 onChange: value => setAttributes({
                   buyButtonText: value
                 }),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter buy button text...", "md-blocks"),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter buy button text…', 'md-blocks'),
                 style: {
                   color: buyButtonFontColor
                 }
@@ -168,16 +171,16 @@ function Edit({
                 onChange: value => setAttributes({
                   sellButtonText: value
                 }),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter sell button text...", "md-blocks"),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter sell button text…', 'md-blocks'),
                 style: {
                   color: sellButtonFontColor
                 }
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            class: "video-licensing-wrap__right",
+            className: "video-licensing-wrap__right",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              class: "licensing-description-and-button",
+              className: "licensing-description-and-button",
               children: [showLicenseText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "h2",
                 className: "licensing-description",
@@ -185,21 +188,21 @@ function Edit({
                 onChange: value => setAttributes({
                   licenseText: value
                 }),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description...", "md-blocks"),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter description…', 'md-blocks'),
                 style: {
                   color: licenseFontColor
                 }
               }), showLearnMore && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                class: "sbtn sbtn-arrow-primary",
+                className: "sbtn sbtn-arrow-primary",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                  class: "btn-text",
+                  className: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                     tagName: "a",
                     value: learnMoreText,
                     onChange: value => setAttributes({
                       learnMoreText: value
                     }),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter learn more button text...", "md-blocks")
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter learn more button text…', 'md-blocks')
                   })
                 })
               })]
@@ -304,6 +307,8 @@ __webpack_require__.r(__webpack_exports__);
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param  root0
+ * @param  root0.attributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
@@ -329,16 +334,16 @@ function save({
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-      className: "storyful-video-licensing"
+      className: 'storyful-video-licensing'
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      class: "storyful-video-licensing",
+      className: "storyful-video-licensing",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        class: "container",
+        className: "container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          class: "video-licensing-wrap",
+          className: "video-licensing-wrap",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            class: "video-licensing-wrap__left",
+            className: "video-licensing-wrap__left",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
               tagName: "h1",
               className: "section-title h1 wow fadeInLeft",
@@ -347,9 +352,9 @@ function save({
                 color: headingFontColor
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              class: "bye-sell-button wow fadeInLeft",
+              className: "bye-sell-button wow fadeInLeft",
               children: [showBuyButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                class: "link",
+                className: "link",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                   tagName: "a",
                   value: buyButtonText,
@@ -358,7 +363,7 @@ function save({
                   }
                 })
               }), showSellButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                class: "link",
+                className: "link",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                   tagName: "a",
                   value: sellButtonText,
@@ -369,9 +374,9 @@ function save({
               })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            class: "video-licensing-wrap__right",
+            className: "video-licensing-wrap__right",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              class: "licensing-description-and-button",
+              className: "licensing-description-and-button",
               children: [showLicenseText && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                 tagName: "h2",
                 className: "licensing-description",
@@ -380,9 +385,9 @@ function save({
                   color: licenseFontColor
                 }
               }), showLearnMore && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                class: "sbtn sbtn-arrow-primary",
+                className: "sbtn sbtn-arrow-primary",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                  class: "btn-text",
+                  className: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                     tagName: "a",
                     value: learnMoreText

@@ -18,41 +18,43 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param  root0
+ * @param  root0.attributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
  */
-export default function save({attributes}) {
-	const {
-		columnList,
-		columnTitleFontColor,
-		columnDescriptionFontColor,
-	} = attributes;
+export default function save({ attributes }) {
+	const { columnList, columnTitleFontColor, columnDescriptionFontColor } =
+		attributes;
 	return (
-		<div {...useBlockProps.save({className: "md-counter_block"})}>
-			<div class="storyful-stat-number">
-				<div class="container">
-					<div class="stats-block-bottom">
+		<div {...useBlockProps.save({ className: 'md-counter_block' })}>
+			<div className="storyful-stat-number">
+				<div className="container">
+					<div className="stats-block-bottom">
 						{columnList &&
-						columnList.map((postObj, index) => (
-							<div class="stats-block-bottom__item fadeInUp" key={index}>
-								<RichText.Content
-									tagName="h3"
-									value={postObj.title}
-									style={{
-										color: columnTitleFontColor,
-									}}
-								/>
-								<RichText.Content
-									tagName="p"
-									className='column-item-desc'
-									value={postObj.description}
-									style={{
-										color: columnDescriptionFontColor,
-									}}
-								/>
-							</div>
-						))}
+							columnList.map((postObj, index) => (
+								<div
+									className="stats-block-bottom__item fadeInUp"
+									key={index}
+								>
+									<RichText.Content
+										tagName="h3"
+										value={postObj.title}
+										style={{
+											color: columnTitleFontColor,
+										}}
+									/>
+									<RichText.Content
+										tagName="p"
+										className="column-item-desc"
+										value={postObj.description}
+										style={{
+											color: columnDescriptionFontColor,
+										}}
+									/>
+								</div>
+							))}
 					</div>
 				</div>
 			</div>

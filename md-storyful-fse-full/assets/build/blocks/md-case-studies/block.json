@@ -20,11 +20,11 @@
   },
   "textdomain": "md-storyful-fse-full",
   "attributes": {
-    "show_section_title": {
+    "showSectionTitle": {
       "type": "boolean",
       "default": true
     },
-    "section_title": {
+    "sectionTitle": {
       "type": "string",
       "default": ""
     },
@@ -36,63 +36,59 @@
       "type": "string",
       "default": "desc"
     },
-    "section_title_font_color": {
+    "sectionTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "case_studies_title_font_color": {
+    "caseStudiesTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "case_studies_description_font_color": {
+    "caseStudiesDescriptionFontColor": {
       "type": "string",
       "default": ""
     },
-    "main_case_study_title_font_color": {
+    "mainCaseStudyTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "main_case_study_description_font_color": {
+    "mainCaseStudyDescriptionFontColor": {
       "type": "string",
       "default": ""
     },
-    "main_case_study_author_date_font_color": {
+    "mainCaseStudyAuthorDateFontColor": {
       "type": "string",
       "default": ""
     },
-    "number_of_case_studies": {
+    "numberOfCaseStudies": {
       "type": "number",
       "default": 3
     },
-    "case_studies_ids": {
-      "type": "array",
-      "default": []
-    },
-    "background_color": {
+    "backgroundColor": {
       "type": "string",
       "default": ""
     },
-    "case_studies_style": {
+    "caseStudiesStyle": {
       "type": "string",
       "default": "style_1"
     },
-    "show_button": {
+    "showButton": {
       "type": "boolean",
       "default": true
     },
-    "button_style": {
+    "buttonStyle": {
       "type": "string",
       "default": "primary"
     },
-    "show_excerpt": {
+    "showExcerpt": {
       "type": "boolean",
       "default": true
     },
-    "show_featured_image": {
+    "showFeaturedImage": {
       "type": "boolean",
       "default": true
     },
-    "show_author_date": {
+    "showAuthorDate": {
       "type": "boolean",
       "default": true
     }

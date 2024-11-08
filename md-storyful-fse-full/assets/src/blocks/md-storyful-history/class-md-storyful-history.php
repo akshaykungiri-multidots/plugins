@@ -75,7 +75,7 @@ class MD_Storyful_History extends Block_Base {
 
 		// attributes.
 		$heading = isset( $attributes['heading'] ) ? $attributes['heading'] : '';
-		$heading_font_color = isset( $attributes['heading_font_color'] ) ? $attributes['heading_font_color'] : '';
+		$headingFontColor = isset( $attributes['headingFontColor'] ) ? $attributes['headingFontColor'] : '';
 		$titleFontColor = isset( $attributes['titleFontColor'] ) ? $attributes['titleFontColor'] : '';
 		$descriptionFontColor = isset( $attributes['descriptionFontColor'] ) ? $attributes['descriptionFontColor'] : '';
 		$displayHeading = isset( $attributes['displayHeading'] ) ? $attributes['displayHeading'] : '';
@@ -118,7 +118,7 @@ class MD_Storyful_History extends Block_Base {
 								<?php } ?>
 								<div class="storyful-timeline-content">
 									<?php if ( $displayHeading ) { ?>
-										<h3 class="storyful-timeline-title" style="color: <?php echo esc_attr($heading_font_color); ?>"><?php echo esc_html($heading); ?></h3>
+										<h3 class="storyful-timeline-title" style="color: <?php echo esc_attr($headingFontColor); ?>"><?php echo esc_html($heading); ?></h3>
 									<?php } ?>
 									<h4 class="storyful-timeline-item-title" style="color: <?php echo esc_attr($titleFontColor); ?>"><?php echo esc_html($timeline_item_title); ?></h4>
 									<?php if ( $displayDescription ) { ?>

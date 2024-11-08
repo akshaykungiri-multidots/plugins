@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
-  "name": "md-storyful-fse-full/team-v2",
+  "name": "md-storyful-fse-full/md-team",
   "version": "0.1.0",
   "apiVersion": 3,
-  "title": "37 Team V2",
+  "title": "MD Team",
   "category": "md-storyful-fse-full",
   "icon": "dashicons dashicons-admin-users",
   "description": "Team Block with popup",

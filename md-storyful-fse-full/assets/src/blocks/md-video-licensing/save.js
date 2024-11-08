@@ -18,6 +18,8 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param  root0
+ * @param  root0.attributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
@@ -39,11 +41,11 @@ export default function save({ attributes }) {
 		showLearnMore,
 	} = attributes;
 	return (
-		<div {...useBlockProps.save({className: "storyful-video-licensing"})}>
-			<div class="storyful-video-licensing">
-				<div class="container">
-					<div class="video-licensing-wrap">
-						<div class="video-licensing-wrap__left">
+		<div {...useBlockProps.save({ className: 'storyful-video-licensing' })}>
+			<div className="storyful-video-licensing">
+				<div className="container">
+					<div className="video-licensing-wrap">
+						<div className="video-licensing-wrap__left">
 							<RichText.Content
 								tagName="h1"
 								className="section-title h1 wow fadeInLeft"
@@ -52,52 +54,52 @@ export default function save({ attributes }) {
 									color: headingFontColor,
 								}}
 							/>
-							<div class="bye-sell-button wow fadeInLeft">
+							<div className="bye-sell-button wow fadeInLeft">
 								{showBuyButton && (
-								<span class='link'>
-									<RichText.Content
-										tagName="a"
-										value={buyButtonText}
-										style={{
-											color: buyButtonFontColor,
-										}}
-									/>
-								</span>
+									<span className="link">
+										<RichText.Content
+											tagName="a"
+											value={buyButtonText}
+											style={{
+												color: buyButtonFontColor,
+											}}
+										/>
+									</span>
 								)}
 								{showSellButton && (
-								<span class='link'>
-									<RichText.Content
-										tagName="a"
-										value={sellButtonText}
-										style={{
-											color: sellButtonFontColor,
-										}}
-									/>
-								</span>
+									<span className="link">
+										<RichText.Content
+											tagName="a"
+											value={sellButtonText}
+											style={{
+												color: sellButtonFontColor,
+											}}
+										/>
+									</span>
 								)}
 							</div>
 						</div>
-						<div class="video-licensing-wrap__right">
-							<div class="licensing-description-and-button">
+						<div className="video-licensing-wrap__right">
+							<div className="licensing-description-and-button">
 								{showLicenseText && (
-								<RichText.Content
-									tagName="h2"
-									className="licensing-description"
-									value={licenseText}
-									style={{
-										color: licenseFontColor,
-									}}
-								/>
+									<RichText.Content
+										tagName="h2"
+										className="licensing-description"
+										value={licenseText}
+										style={{
+											color: licenseFontColor,
+										}}
+									/>
 								)}
 								{showLearnMore && (
-								<div class="sbtn sbtn-arrow-primary">
-									<span class="btn-text">
-										<RichText.Content
-											tagName="a"
-											value={learnMoreText}
-										/>
-									</span>
-								</div>
+									<div className="sbtn sbtn-arrow-primary">
+										<span className="btn-text">
+											<RichText.Content
+												tagName="a"
+												value={learnMoreText}
+											/>
+										</span>
+									</div>
 								)}
 							</div>
 						</div>

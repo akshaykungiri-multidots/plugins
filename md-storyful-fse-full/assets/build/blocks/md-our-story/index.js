@@ -62,6 +62,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/md-our-story/editor.scss");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
+/* eslint-disable prettier/prettier */
 /**
  * Retrieves the translation of text.
  *
@@ -96,26 +97,26 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param root0
- * @param root0.attributes
- * @param root0.attributes.heading
- * @param root0.setAttributes
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.attributes.heading
+ * @param  root0.setAttributes
+ * @param  root0.className
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
 
 function Edit({
   attributes,
-  setAttributes,
-  className
+  setAttributes
 }) {
   const {
-    our_story_title,
-    our_story_video_image,
+    ourStoryTitle,
+    ourStoryVideoImage,
     vidType,
     youtubeLink,
     video,
-    our_story_title_font_color
+    ourStoryTitleFontColor
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.useBlockProps)(),
@@ -132,8 +133,8 @@ function Edit({
             value: "youtube"
           }],
           selected: vidType,
-          onChange: vidType => setAttributes({
-            vidType
+          onChange: value => setAttributes({
+            vidType: value
           })
         }), vidType && vidType === "media-upload" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
           children: [video && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
@@ -160,8 +161,8 @@ function Edit({
             })]
           }), !video && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUpload, {
-              onSelect: video => setAttributes({
-                video: video.url ? video.url : ""
+              onSelect: media => setAttributes({
+                video: media.url ? media.url : ""
               }),
               allowedTypes: ["video"],
               type: "video",
@@ -179,8 +180,8 @@ function Edit({
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
             label: "Enter youtube video link",
             value: youtubeLink.replace("watch?v=", "embed/"),
-            onChange: youtubeLink => setAttributes({
-              youtubeLink
+            onChange: value => setAttributes({
+              youtubeLink: value
             })
           })
         })]
@@ -191,9 +192,9 @@ function Edit({
           title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
           initialOpen: false,
           colorSettings: [{
-            value: our_story_title_font_color,
+            value: ourStoryTitleFontColor,
             onChange: newColor => setAttributes({
-              our_story_title_font_color: newColor
+              ourStoryTitleFontColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Our Story Title Font Color")
           }]
@@ -211,11 +212,11 @@ function Edit({
               tagName: "h3",
               className: "our-story-title",
               style: {
-                color: our_story_title_font_color
+                color: ourStoryTitleFontColor
               },
-              value: our_story_title,
+              value: ourStoryTitle,
               onChange: newText => setAttributes({
-                our_story_title: newText
+                ourStoryTitle: newText
               }),
               placeholder: "Our Story Title"
             })
@@ -232,13 +233,13 @@ function Edit({
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUpload, {
                 title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Feature Image"),
                 onSelect: media => setAttributes({
-                  our_story_video_image: media.url
+                  ourStoryVideoImage: media.url
                 }),
                 multiple: false,
                 render: ({
                   open
                 }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-                  children: our_story_video_image == "" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+                  children: ourStoryVideoImage === "" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
                     children: [vidType && vidType === "media-upload" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("video", {
                         src: video,
@@ -266,13 +267,13 @@ function Edit({
                         className: "dashicons dashicons-edit edit-image"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                         onClick: () => setAttributes({
-                          our_story_video_image: ""
+                          ourStoryVideoImage: ""
                         }),
                         className: "dashicons dashicons-no-alt remove-image"
                       })]
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("figure", {
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-                        src: our_story_video_image,
+                        src: ourStoryVideoImage,
                         className: "self-media"
                       })
                     })]
@@ -469,7 +470,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-our-story","version":"0.1.0","title":"MD Our Story","apiVersion":3,"category":"md-storyful-fse-full","icon":"book-alt","description":"A Our Story block with visual and text","keywords":["md-storyful-fse-full","md-our-story"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"our_story_title":{"type":"string","default":"Our Story"},"our_story_video_image":{"type":"string"},"vidType":{"type":"string","default":"media-upload"},"youtubeLink":{"type":"string","default":""},"video":{"type":"string"},"our_story_title_font_color":{"type":"string","default":""}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-our-story","version":"0.1.0","title":"MD Our Story","apiVersion":3,"category":"md-storyful-fse-full","icon":"book-alt","description":"A Our Story block with visual and text","keywords":["md-storyful-fse-full","md-our-story"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"ourStoryTitle":{"type":"string","default":"Our Story"},"ourStoryVideoImage":{"type":"string"},"vidType":{"type":"string","default":"media-upload"},"youtubeLink":{"type":"string","default":""},"video":{"type":"string"},"ourStoryTitleFontColor":{"type":"string","default":""}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

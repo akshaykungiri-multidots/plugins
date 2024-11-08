@@ -5,14 +5,15 @@
 /**
  * File Sample-dynamic.js
  *
+ * @param $
  */
 (function ($) {
-  "use strict";
+  'use strict';
 
   $(document).ready(function () {
     // Slick slider for client-testimonials
     setTimeout(function () {
-      $(".client-testimonials").slick({
+      $('.client-testimonials').slick({
         dots: false,
         arrows: true,
         infinite: true,

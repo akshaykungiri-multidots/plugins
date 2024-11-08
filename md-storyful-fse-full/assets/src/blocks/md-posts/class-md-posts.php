@@ -106,17 +106,17 @@ class MD_Posts extends Block_Base {
 			wp_send_json_error( array( 'message' => 'Invalid nonce' ) );
 		}
 		$attributes = array();
-		$postType = isset( $_POST['post_type'] ) ? sanitize_text_field( wp_unslash( $_POST['post_type'] ) ) : 'post';
-		if ( isset( $_POST['resources_atts'] ) && !empty( $_POST['resources_atts'] ) ) {
-			$attributes = json_decode( stripslashes( sanitize_text_field( wp_unslash( $_POST['resources_atts'] ) ) ), true );
+		$postType = isset( $_POST['postType'] ) ? sanitize_text_field( wp_unslash( $_POST['postType'] ) ) : 'post';
+		if ( isset( $_POST['resourcesAtts'] ) && !empty( $_POST['resourcesAtts'] ) ) {
+			$attributes = json_decode( stripslashes( sanitize_text_field( wp_unslash( $_POST['resourcesAtts'] ) ) ), true );
 		}
-		$post_cat = isset( $_POST['resources_cat'] ) ? sanitize_text_field( wp_unslash( $_POST['resources_cat'] ) ) : '';
-		$filter_by_date = isset( $_POST['filter_by_date'] ) ? sanitize_text_field( wp_unslash( $_POST['filter_by_date'] ) ) : '';
-		$page_number = isset( $_POST['page_number'] ) ? sanitize_text_field( wp_unslash( $_POST['page_number'] ) ) : 1;
-		$search_val = isset( $_POST['search_val'] ) ? sanitize_text_field( wp_unslash( $_POST['search_val'] ) ) : '';
+		$post_cat = isset( $_POST['resourcesCat'] ) ? sanitize_text_field( wp_unslash( $_POST['resourcesCat'] ) ) : '';
+		$filter_by_date = isset( $_POST['filterByDate'] ) ? sanitize_text_field( wp_unslash( $_POST['filterByDate'] ) ) : '';
+		$page_number = isset( $_POST['pageNumber'] ) ? sanitize_text_field( wp_unslash( $_POST['pageNumber'] ) ) : 1;
+		$search_val = isset( $_POST['searchVal'] ) ? sanitize_text_field( wp_unslash( $_POST['searchVal'] ) ) : '';
 		$resource_type = '';
 		if ( $postType === 'resources' ) {
-			$resource_type = isset( $_POST['resource_type'] ) ? sanitize_text_field( wp_unslash( $_POST['resource_type'] ) ) : '';
+			$resource_type = isset( $_POST['resourceType'] ) ? sanitize_text_field( wp_unslash( $_POST['resourceType'] ) ) : '';
 		}
 		require_once get_template_directory() . '/assets/src/blocks/md-posts/templates/post-template.php';
 		die();

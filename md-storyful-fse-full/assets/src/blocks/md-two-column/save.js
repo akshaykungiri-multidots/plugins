@@ -18,6 +18,8 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param  root0
+ * @param  root0.attributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
@@ -26,15 +28,18 @@ export default function save({ attributes }) {
 	const {
 		title,
 		description,
-		background_image,
+		backgroundImage,
 		titleFontColor,
 		descriptionFontColor,
-	  } = attributes;
+	} = attributes;
 	return (
-		<div {...useBlockProps.save({className: "md_two_column"})}>
-			<div className="storyful-two-column" style={{backgroundImage: `url(${background_image})`}}>
-				<div class="container">
-					<div class="two-columns__title">
+		<div {...useBlockProps.save({ className: 'md_two_column' })}>
+			<div
+				className="storyful-two-column"
+				style={{ backgroundImage: `url(${backgroundImage})` }}
+			>
+				<div className="container">
+					<div className="two-columns__title">
 						<RichText.Content
 							tagName="h2"
 							value={title}
@@ -43,7 +48,7 @@ export default function save({ attributes }) {
 							}}
 						/>
 					</div>
-					<div class="two-columns__description wow fadeInRight">
+					<div className="two-columns__description wow fadeInRight">
 						<RichText.Content
 							tagName="p"
 							value={description}

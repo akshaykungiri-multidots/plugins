@@ -35,8 +35,6 @@ import {
  * @return {WPElement} Element to render.
  */
 
-import { useState } from "@wordpress/element";
-
 export default function Edit({ attributes, setAttributes }) {
   const {
     heading,
@@ -52,8 +50,6 @@ export default function Edit({ attributes, setAttributes }) {
     showColumnImage,
     showButton,
   } = attributes;
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const addStaticPostObj = () => {
     const staticPostObj = [
@@ -89,9 +85,7 @@ export default function Edit({ attributes, setAttributes }) {
       })}
     >
       <InspectorControls>
-        <PanelBody
-          title={__("Background Settings", "md-prime")}
-        >
+        <PanelBody title={__("Background Settings", "md-prime")}>
           <div className="setting-row">
             <label htmlFor="background-image">
               {__("Background Image", "md-prime")}
@@ -175,19 +169,25 @@ export default function Edit({ attributes, setAttributes }) {
               {
                 value: headingFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ headingFontColor: newColor }),
+                  setAttributes({
+                    headingFontColor: newColor,
+                  }),
                 label: __("Heading Font Color"),
               },
               {
                 value: columnTitleFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ columnTitleFontColor: newColor }),
+                  setAttributes({
+                    columnTitleFontColor: newColor,
+                  }),
                 label: __("Column Title Font Color"),
               },
               {
                 value: columnDescriptionFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ columnDescriptionFontColor: newColor }),
+                  setAttributes({
+                    columnDescriptionFontColor: newColor,
+                  }),
                 label: __("Column Description Font Color"),
               },
             ]}
@@ -195,12 +195,12 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
       <section
-        class="storyful-three-col-list"
+        className="storyful-three-col-list"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div class="container">
+        <div className="container">
           {showHeading && (
-            <div class="storyful-three-col-list__title">
+            <div className="storyful-three-col-list__title">
               <RichText
                 tagName="h2"
                 value={heading}
@@ -212,11 +212,14 @@ export default function Edit({ attributes, setAttributes }) {
               />
             </div>
           )}
-          <div class="threecol-wrap">
-            <div class="threecol-list-items">
+          <div className="threecol-wrap">
+            <div className="threecol-list-items">
               {columnList &&
                 columnList.map((postObj, index) => (
-                  <div className="threecol-list-items__item stats-block-bottom__item fadeInUp show-items-hover-wrap">
+                  <div
+                    key={index}
+                    className="threecol-list-items__item stats-block-bottom__item fadeInUp show-items-hover-wrap"
+                  >
                     <div className="item-action-wrap show-items-hover pos-abs">
                       <div className="move-item">
                         {0 < index && (
@@ -305,29 +308,29 @@ export default function Edit({ attributes, setAttributes }) {
                       )}
                     </div>
                     {showColumnImage && (
-                    <div class="column-item-img">
-                      <MediaUpload
-                        title={__("Image")}
-                        onSelect={(media) =>
-                          updateStaticPostObj(index, "image", media.url)
-                        }
-                        multiple={false}
-                        render={({ open }) => (
-                          <>
-                            {columnList[index].image == "" ? (
-                              <Button variant="primary" onClick={open}>
-                                {__("Upload")}
-                              </Button>
-                            ) : (
-                              <img
-                                onClick={open}
-                                src={columnList[index].image}
-                              />
-                            )}
-                          </>
-                        )}
-                      />
-                    </div>
+                      <div className="column-item-img">
+                        <MediaUpload
+                          title={__("Image")}
+                          onSelect={(media) =>
+                            updateStaticPostObj(index, "image", media.url)
+                          }
+                          multiple={false}
+                          render={({ open }) => (
+                            <>
+                              {columnList[index].image === "" ? (
+                                <Button variant="primary" onClick={open}>
+                                  {__("Upload")}
+                                </Button>
+                              ) : (
+                                <img
+                                  onClick={open}
+                                  src={columnList[index].image} alt={columnList[index].title || ""}
+                                />
+                              )}
+                            </>
+                          )}
+                        />
+                      </div>
                     )}
                     {showColumnTitle && (
                       <RichText
@@ -366,8 +369,8 @@ export default function Edit({ attributes, setAttributes }) {
               </div>
             </div>
             {showButton && (
-              <div class="sbtn sbtn-arrow-primary-v2 wow fadeInLeft">
-                <div class="storyful-three-col-list__button">
+              <div className="sbtn sbtn-arrow-primary-v2 wow fadeInLeft">
+                <div className="storyful-three-col-list__button">
                   <RichText
                     tagName="a"
                     value={buttonText}

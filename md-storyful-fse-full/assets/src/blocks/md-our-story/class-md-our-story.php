@@ -74,8 +74,8 @@ class MD_Our_Story extends Block_Base {
 		$wrapper_attributes = get_block_wrapper_attributes();
 
 		// attributes.
-		$our_story_title = isset( $attributes['our_story_title'] ) ? $attributes['our_story_title'] : '';
-		$our_story_video_image = isset( $attributes['our_story_video_image'] ) ? $attributes['our_story_video_image'] : '';
+		$ourStoryTitle = isset( $attributes['ourStoryTitle'] ) ? $attributes['ourStoryTitle'] : '';
+		$ourStoryVideoImage = isset( $attributes['ourStoryVideoImage'] ) ? $attributes['ourStoryVideoImage'] : '';
 		$vid_type = isset( $attributes['vidType'] ) ? $attributes['vidType'] : '';
 		$youtube_link = isset( $attributes['youtubeLink'] ) ? $attributes['youtubeLink'] : '';
 		$video = isset( $attributes['video'] ) ? $attributes['video'] : '';
@@ -88,7 +88,7 @@ class MD_Our_Story extends Block_Base {
 					<div class="media-section">
 						<div class="our-story-text-wrapper wow bounceIn">
 							<h3 class="our-story-title" style="color: <?php echo esc_attr($our_story_title_font_color); ?>">
-								<?php echo wp_kses_post($our_story_title); ?>
+								<?php echo wp_kses_post($ourStoryTitle); ?>
 							</h3>
 						</div>
 						<div class="media-video-wrapper">
@@ -96,7 +96,7 @@ class MD_Our_Story extends Block_Base {
 								<button class="media-video__playbtn">
 									<img src="<?php echo esc_url(get_template_directory_uri().'/assets/src/images/playbtn.svg'); ?>" alt="play button">
 								</button>
-								<img class="self-media" src="<?php echo esc_url($our_story_video_image); ?>" alt="video image">
+								<img class="self-media" src="<?php echo esc_url($ourStoryVideoImage); ?>" alt="video image">
 							</div>
 						</div>
 					</div>

@@ -20,63 +20,63 @@
   },
   "textdomain": "md-storyful-fse-full",
   "attributes": {
-    "newswire_title": {
+    "newswireTitle": {
       "type": "string",
       "default": ""
     },
-    "newswire_description": {
+    "newswireDescription": {
       "type": "string",
       "default": ""
     },
-    "newswire_button_link": {
+    "newswireButtonLink": {
       "type": "string",
       "default": ""
     },
-    "newswire_left_title": {
+    "newswireLeftTitle": {
       "type": "string",
       "default": ""
     },
-    "newswire_left_description": {
+    "newswireLeftDescription": {
       "type": "string",
       "default": ""
     },
-    "newswire_sub_title": {
+    "newswireSubTitle": {
       "type": "string",
       "default": ""
     },
-    "newswire_right_image": {
+    "newswireRightImage": {
       "type": "string",
       "default": ""
     },
-    "newswire_theme_style": {
+    "newswireThemeStyle": {
       "type": "string",
       "default": "style1"
     },
-    "background_color": {
+    "backgroundColor": {
       "type": "string",
       "default": ""
     },
-    "newswire_title_font_color": {
+    "newswireTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "newswire_description_font_color": {
+    "newswireDescriptionFontColor": {
       "type": "string",
       "default": ""
     },
-    "newswire_button_font_color": {
+    "newswireButtonFontColor": {
       "type": "string",
       "default": ""
     },
-    "newswire_left_title_font_color": {
+    "newswireLeftTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "newswire_left_description_font_color": {
+    "newswireLeftDescriptionFontColor": {
       "type": "string",
       "default": ""
     },
-    "newswire_sub_title_font_color": {
+    "newswireSubTitleFontColor": {
       "type": "string",
       "default": ""
     },

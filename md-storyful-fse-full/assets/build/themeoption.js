@@ -54,6 +54,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
+(() => {
 /*!********************************!*\
   !*** ./src/js/theme-option.js ***!
   \********************************/
@@ -96,6 +98,8 @@ jQuery(document).ready(function ($) {
     hide: false
   });
 });
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=themeoption.js.map

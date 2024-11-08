@@ -49,19 +49,29 @@ function Edit() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "form-group-radio",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+          htmlFor: "newsletter-news",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            id: "newsletter-news",
             type: "radio",
             name: "newsletter",
             value: "news"
           }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('News', 'md-storyful-fse-full')]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+          htmlFor: "newsletter-intelligence",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            id: "newsletter-intelligence",
             type: "radio",
             name: "newsletter",
             value: "intelligence"
           }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Intelligence', 'md-storyful-fse-full')]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+          htmlFor: "newsletter-both",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            id: "newsletter-both",
+            type: "radio",
+            name: "newsletter",
+            value: "both"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
             type: "radio",
             name: "newsletter",
             value: "both"
@@ -193,20 +203,26 @@ function save() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "form-group-radio",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+          htmlFor: "newsletter-news",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
             type: "radio",
+            id: "newsletter-news",
             name: "newsletter",
             value: "news"
           }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('News', 'md-storyful-fse-full')]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+          htmlFor: "newsletter-intelligence",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
             type: "radio",
+            id: "newsletter-intelligence",
             name: "newsletter",
             value: "intelligence"
           }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Intelligence', 'md-storyful-fse-full')]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("label", {
+          htmlFor: "newsletter-both",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
             type: "radio",
+            id: "newsletter-both",
             name: "newsletter",
             value: "both"
           }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Both', 'md-storyful-fse-full')]

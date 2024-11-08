@@ -61,10 +61,11 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param root0
- * @param root0.attributes
- * @param root0.attributes.heading
- * @param root0.setAttributes
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.attributes.heading
+ * @param  root0.setAttributes
+ * @param  root0.className
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
@@ -89,12 +90,12 @@ function Edit({
     mostPopularTitleColor,
     mostPopularDescriptionColor
   } = attributes;
-  const builtInPostType = ["page", "attachment", "nav_menu_item", "wp_block", "wp_template", "wp_template_part", "wp_navigation", "wp_font_family", "wp_font_face", "wp_global_styles"];
+  const builtInPostType = ['page', 'attachment', 'nav_menu_item', 'wp_block', 'wp_template', 'wp_template_part', 'wp_navigation', 'wp_font_family', 'wp_font_face', 'wp_global_styles'];
   const [postTypes, setPostTypes] = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]);
   (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
     // Fetch the posttypes not post list and set it as options
     wp.apiFetch({
-      path: "/wp/v2/types"
+      path: '/wp/v2/types'
     }).then(response => {
       const fetchedPostTypes = Object.keys(response).filter(function (key) {
         if (!builtInPostType.includes(response[key].slug)) {
@@ -112,105 +113,105 @@ function Edit({
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Block Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Block Settings', 'md-storyful-fse-full'),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Type", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Post Type', 'md-storyful-fse-full'),
           value: postType,
           options: postTypes,
-          onChange: postType => setAttributes({
-            postType
+          onChange: value => setAttributes({
+            postType: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Number of Posts Per Row", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Number of Posts Per Row', 'md-storyful-fse-full'),
           value: numberOfPostsPerRow,
-          onChange: numberOfPostsPerRow => setAttributes({
-            numberOfPostsPerRow
+          onChange: value => setAttributes({
+            numberOfPostsPerRow: value
           }),
           min: 1,
           max: 4
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Number of Rows", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Number of Rows', 'md-storyful-fse-full'),
           value: numberOfRows,
-          onChange: numberOfRows => setAttributes({
-            numberOfRows
+          onChange: value => setAttributes({
+            numberOfRows: value
           }),
           min: 1,
           max: 4
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Toggle Settings', 'md-storyful-fse-full'),
         initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enable Search", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Search', 'md-storyful-fse-full'),
           checked: enableSearch,
-          onChange: enableSearch => setAttributes({
-            enableSearch
+          onChange: value => setAttributes({
+            enableSearch: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enable Filter", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Filter', 'md-storyful-fse-full'),
           checked: enableFilter,
-          onChange: enableFilter => setAttributes({
-            enableFilter
+          onChange: value => setAttributes({
+            enableFilter: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enable News Letter", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable News Letter', 'md-storyful-fse-full'),
           checked: enableNewsLetter,
-          onChange: enableNewsLetter => setAttributes({
-            enableNewsLetter
+          onChange: value => setAttributes({
+            enableNewsLetter: value
           })
         }), enableNewsLetter && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Display News Letter After Row", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display News Letter After Row', 'md-storyful-fse-full'),
           value: displayNewsLetterAfterRow,
-          onChange: displayNewsLetterAfterRow => setAttributes({
-            displayNewsLetterAfterRow
+          onChange: value => setAttributes({
+            displayNewsLetterAfterRow: value
           }),
           min: 1,
           max: 4
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enable Most Popular", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enable Most Popular', 'md-storyful-fse-full'),
           checked: enableMostPopular,
-          onChange: enableMostPopular => setAttributes({
-            enableMostPopular
+          onChange: value => setAttributes({
+            enableMostPopular: value
           })
         }), enableMostPopular && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Display Most Popular Above Or Below", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display Most Popular Above Or Below', 'md-storyful-fse-full'),
           value: displayMostPopularAboveOrBelow,
-          onChange: displayMostPopularAboveOrBelow => setAttributes({
-            displayMostPopularAboveOrBelow
+          onChange: value => setAttributes({
+            displayMostPopularAboveOrBelow: value
           }),
           min: 1,
           max: 4
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color Settings', 'md-storyful-fse-full'),
         initialOpen: false,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color Settings', 'md-storyful-fse-full'),
           initialOpen: false,
           colorSettings: [{
             value: postTitleColor,
             onChange: value => setAttributes({
               postTitleColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Title Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Post Title Color')
           }, {
             value: postDateColor,
             onChange: value => setAttributes({
               postDateColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Date Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Post Date Color')
           }, {
             value: mostPopularTitleColor,
             onChange: value => setAttributes({
               mostPopularTitleColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Most Popular Title Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Most Popular Title Color')
           }, {
             value: mostPopularDescriptionColor,
             onChange: value => setAttributes({
               mostPopularDescriptionColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Most Popular Description Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Most Popular Description Color')
           }]
         })
       })]

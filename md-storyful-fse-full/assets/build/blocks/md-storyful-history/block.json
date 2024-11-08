@@ -20,7 +20,7 @@
       "type": "string",
       "default": ""
     },
-    "heading_font_color": {
+    "headingFontColor": {
       "type": "string",
       "default": ""
     },

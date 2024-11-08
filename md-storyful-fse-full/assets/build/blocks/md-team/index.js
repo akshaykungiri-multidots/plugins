@@ -2,9 +2,9 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/team-v2/team-linkedin-icon.svg":
+/***/ "./src/blocks/md-team/team-linkedin-icon.svg":
 /*!***************************************************!*\
-  !*** ./src/blocks/team-v2/team-linkedin-icon.svg ***!
+  !*** ./src/blocks/md-team/team-linkedin-icon.svg ***!
   \***************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -217,9 +217,9 @@ function isMobileDevice() {
 
 /***/ }),
 
-/***/ "./src/blocks/team-v2/edit.js":
+/***/ "./src/blocks/md-team/edit.js":
 /*!************************************!*\
-  !*** ./src/blocks/team-v2/edit.js ***!
+  !*** ./src/blocks/md-team/edit.js ***!
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -235,10 +235,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _placeholder_image_jpeg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./placeholder-image.jpeg */ "./src/blocks/team-v2/placeholder-image.jpeg");
-/* harmony import */ var _team_linkedin_icon_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./team-linkedin-icon.svg */ "./src/blocks/team-v2/team-linkedin-icon.svg");
+/* harmony import */ var _placeholder_image_jpeg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./placeholder-image.jpeg */ "./src/blocks/md-team/placeholder-image.jpeg");
+/* harmony import */ var _team_linkedin_icon_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./team-linkedin-icon.svg */ "./src/blocks/md-team/team-linkedin-icon.svg");
 /* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../common */ "./src/blocks/common.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/team-v2/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/md-team/editor.scss");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__);
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -683,7 +683,7 @@ function Edit({
               authortitlecolor: newColor
             });
           },
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Team member Position color '),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Team member Position color'),
           mdprimeColors: _common__WEBPACK_IMPORTED_MODULE_6__.mdprimeColors
         }, {
           value: bgcolor,
@@ -692,7 +692,7 @@ function Edit({
               bgcolor: newColor
             });
           },
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading background color '),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading background color'),
           mdprimeColors: _common__WEBPACK_IMPORTED_MODULE_6__.mdprimeColors
         }]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
@@ -863,19 +863,19 @@ function Edit({
 
 /***/ }),
 
-/***/ "./src/blocks/team-v2/index.js":
+/***/ "./src/blocks/md-team/index.js":
 /*!*************************************!*\
-  !*** ./src/blocks/team-v2/index.js ***!
+  !*** ./src/blocks/md-team/index.js ***!
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/blocks/team-v2/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/blocks/team-v2/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/team-v2/block.json");
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/team-v2/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/blocks/md-team/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/blocks/md-team/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/md-team/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/blocks/md-team/style.scss");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -909,9 +909,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/blocks/team-v2/save.js":
+/***/ "./src/blocks/md-team/save.js":
 /*!************************************!*\
-  !*** ./src/blocks/team-v2/save.js ***!
+  !*** ./src/blocks/md-team/save.js ***!
   \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -935,9 +935,9 @@ function save() {
 
 /***/ }),
 
-/***/ "./src/blocks/team-v2/editor.scss":
+/***/ "./src/blocks/md-team/editor.scss":
 /*!****************************************!*\
-  !*** ./src/blocks/team-v2/editor.scss ***!
+  !*** ./src/blocks/md-team/editor.scss ***!
   \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -947,9 +947,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/blocks/team-v2/style.scss":
+/***/ "./src/blocks/md-team/style.scss":
 /*!***************************************!*\
-  !*** ./src/blocks/team-v2/style.scss ***!
+  !*** ./src/blocks/md-team/style.scss ***!
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -959,9 +959,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/blocks/team-v2/placeholder-image.jpeg":
+/***/ "./src/blocks/md-team/placeholder-image.jpeg":
 /*!***************************************************!*\
-  !*** ./src/blocks/team-v2/placeholder-image.jpeg ***!
+  !*** ./src/blocks/md-team/placeholder-image.jpeg ***!
   \***************************************************/
 /***/ ((module) => {
 
@@ -1039,13 +1039,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./src/blocks/team-v2/block.json":
+/***/ "./src/blocks/md-team/block.json":
 /*!***************************************!*\
-  !*** ./src/blocks/team-v2/block.json ***!
+  !*** ./src/blocks/md-team/block.json ***!
   \***************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/team-v2","version":"0.1.0","apiVersion":3,"title":"37 Team V2","category":"md-storyful-fse-full","icon":"dashicons dashicons-admin-users","description":"Team Block with popup","keywords":["Team","Leader"],"attributes":{"products":{"type":"array","default":[]},"heading":{"type":"string","default":"Leadership"},"bgcolor":{"type":"string"},"authornamecolor":{"type":"string"},"authortitlecolor":{"type":"string"},"headingcolor":{"type":"string"},"teamheading":{"type":"string","default":"Want to work with us"},"teamheadinginner":{"type":"string","default":"Join our growing team!"},"button":{"type":"string","default":"Request a Demo"},"callToAction":{"type":"boolean","default":true},"displayAuthorname":{"type":"boolean","default":true},"displayAuthortitle":{"type":"boolean","default":true},"displayTeamHeading":{"type":"boolean","default":true},"displayLinkedin":{"type":"boolean","default":true}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-team","version":"0.1.0","apiVersion":3,"title":"MD Team","category":"md-storyful-fse-full","icon":"dashicons dashicons-admin-users","description":"Team Block with popup","keywords":["Team","Leader"],"attributes":{"products":{"type":"array","default":[]},"heading":{"type":"string","default":"Leadership"},"bgcolor":{"type":"string"},"authornamecolor":{"type":"string"},"authortitlecolor":{"type":"string"},"headingcolor":{"type":"string"},"teamheading":{"type":"string","default":"Want to work with us"},"teamheadinginner":{"type":"string","default":"Join our growing team!"},"button":{"type":"string","default":"Request a Demo"},"callToAction":{"type":"boolean","default":true},"displayAuthorname":{"type":"boolean","default":true},"displayAuthortitle":{"type":"boolean","default":true},"displayTeamHeading":{"type":"boolean","default":true},"displayLinkedin":{"type":"boolean","default":true}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 
@@ -1161,8 +1161,8 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"blocks/team-v2/index": 0,
-/******/ 			"blocks/team-v2/style-index": 0
+/******/ 			"blocks/md-team/index": 0,
+/******/ 			"blocks/md-team/style-index": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -1214,7 +1214,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/team-v2/style-index"], () => (__webpack_require__("./src/blocks/team-v2/index.js")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["blocks/md-team/style-index"], () => (__webpack_require__("./src/blocks/md-team/index.js")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

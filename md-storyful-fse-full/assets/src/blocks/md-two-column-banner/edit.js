@@ -25,30 +25,33 @@ import { PanelBody, Button, ToggleControl } from "@wordpress/components";
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.setAttributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
   const {
-    section_left_title,
-    section_left_description,
-    section_left_button_link,
-    section_left_image,
-    section_right_title,
-    section_right_description,
-    section_right_button_link,
-    section_right_image,
-    section_left_title_font_color,
-    section_left_description_font_color,
-    section_right_title_font_color,
-    section_right_description_font_color,
-    show_section_left_title,
-    show_section_left_description,
-    show_section_left_button,
-    show_section_right_title,
-    show_section_right_description,
-    show_section_right_button,
+    sectionLeftTitle,
+    sectionLeftDescription,
+    sectionLeftButtonLink,
+    sectionLeftImage,
+    sectionRightTitle,
+    sectionRightDescription,
+    sectionRightButtonLink,
+    sectionRightImage,
+    sectionLeftTitleFontColor,
+    sectionLeftDescriptionFontColor,
+    sectionRightTitleFontColor,
+    sectionRightDescriptionFontColor,
+    showSectionLeftTitle,
+    showSectionLeftDescription,
+    showSectionLeftButton,
+    showSectionRightTitle,
+    showSectionRightDescription,
+    showSectionRightButton,
   } = attributes;
 
   return (
@@ -57,74 +60,87 @@ export default function Edit({ attributes, setAttributes }) {
         <PanelBody title={__("Toggle Settings", "md-storyful-fse-full")}>
           <ToggleControl
             label={__("Show Left Title", "md-storyful-fse-full")}
-            checked={show_section_left_title}
-            onChange={(value) =>
-              setAttributes({ show_section_left_title: value })
-            }
+            checked={showSectionLeftTitle}
+            onChange={(value) => setAttributes({ showSectionLeftTitle: value })}
           />
           <ToggleControl
             label={__("Show Left Description", "md-storyful-fse-full")}
-            checked={show_section_left_description}
+            checked={showSectionLeftDescription}
             onChange={(value) =>
-              setAttributes({ show_section_left_description: value })
+              setAttributes({
+                showSectionLeftDescription: value,
+              })
             }
           />
           <ToggleControl
             label={__("Show Left Button", "md-storyful-fse-full")}
-            checked={show_section_left_button}
+            checked={showSectionLeftButton}
             onChange={(value) =>
-              setAttributes({ show_section_left_button: value })
+              setAttributes({ showSectionLeftButton: value })
             }
           />
           <ToggleControl
             label={__("Show Right Title", "md-storyful-fse-full")}
-            checked={show_section_right_title}
+            checked={showSectionRightTitle}
             onChange={(value) =>
-              setAttributes({ show_section_right_title: value })
+              setAttributes({ showSectionRightTitle: value })
             }
           />
           <ToggleControl
             label={__("Show Right Description", "md-storyful-fse-full")}
-            checked={show_section_right_description}
+            checked={showSectionRightDescription}
             onChange={(value) =>
-              setAttributes({ show_section_right_description: value })
+              setAttributes({
+                showSectionRightDescription: value,
+              })
             }
           />
           <ToggleControl
             label={__("Show Right Button", "md-storyful-fse-full")}
-            checked={show_section_right_button}
+            checked={showSectionRightButton}
             onChange={(value) =>
-              setAttributes({ show_section_right_button: value })
+              setAttributes({ showSectionRightButton: value })
             }
           />
         </PanelBody>
-        <PanelBody title={__("Color Settings", "md-storyful-fse-full")} initialOpen={false}>
+        <PanelBody
+          title={__("Color Settings", "md-storyful-fse-full")}
+          initialOpen={false}
+        >
           <PanelColorSettings
             title={__("Typography Colors", "md-storyful-fse-full")}
             initialOpen={false}
             colorSettings={[
               {
-                value: section_left_title_font_color,
+                value: sectionLeftTitleFontColor,
                 onChange: (value) =>
-                  setAttributes({ section_left_title_font_color: value }),
+                  setAttributes({
+                    sectionLeftTitleFontColor: value,
+                  }),
                 label: __("Left Title Font Color"),
               },
               {
-                value: section_left_description_font_color,
+                value: sectionLeftDescriptionFontColor,
                 onChange: (value) =>
-                  setAttributes({ section_left_description_font_color: value }),
+                  setAttributes({
+                    sectionLeftDescriptionFontColor: value,
+                  }),
                 label: __("Left Description Font Color"),
               },
               {
-                value: section_right_title_font_color,
+                value: sectionRightTitleFontColor,
                 onChange: (value) =>
-                  setAttributes({ section_right_title_font_color: value }),
+                  setAttributes({
+                    sectionRightTitleFontColor: value,
+                  }),
                 label: __("Right Title Font Color"),
               },
               {
-                value: section_right_description_font_color,
+                value: sectionRightDescriptionFontColor,
                 onChange: (value) =>
-                  setAttributes({ section_right_description_font_color: value }),
+                  setAttributes({
+                    sectionRightDescriptionFontColor: value,
+                  }),
                 label: __("Right Description Font Color"),
               },
             ]}
@@ -136,61 +152,69 @@ export default function Edit({ attributes, setAttributes }) {
           <div className="cta-section__right">
             <div className="intelligence-section">
               <div className="intelligence-section__details wow fadeInLeft">
-                {show_section_left_title && (
-                <RichText
-                  tagName="h2"
-                  className="section-title h1 with-darkbg"
-                  value={section_left_title}
-                  onChange={(value) =>
-                    setAttributes({ section_left_title: value })
-                  }
-                  placeholder={__("Enter title...", "md-blocks")}
-                  style={{
-                    color: section_left_title_font_color,
-                  }}
-                />
+                {showSectionLeftTitle && (
+                  <RichText
+                    tagName="h2"
+                    className="section-title h1 with-darkbg"
+                    value={sectionLeftTitle}
+                    onChange={(value) =>
+                      setAttributes({
+                        sectionLeftTitle: value,
+                      })
+                    }
+                    placeholder={__("Enter title…", "md-blocks")}
+                    style={{
+                      color: sectionLeftTitleFontColor,
+                    }}
+                  />
                 )}
-                {show_section_left_description && (
-                <RichText
-                  tagName="p"
-                  className="cta-section-desc"
-                  value={section_left_description}
-                  onChange={(value) =>
-                    setAttributes({ section_left_description: value })
-                  }
-                  placeholder={__("Enter description...", "md-blocks")}
-                  style={{
-                    color: section_left_description_font_color,
-                  }}
-                />
+                {showSectionLeftDescription && (
+                  <RichText
+                    tagName="p"
+                    className="cta-section-desc"
+                    value={sectionLeftDescription}
+                    onChange={(value) =>
+                      setAttributes({
+                        sectionLeftDescription: value,
+                      })
+                    }
+                    placeholder={__("Enter description…", "md-blocks")}
+                    style={{
+                      color: sectionLeftDescriptionFontColor,
+                    }}
+                  />
                 )}
-                {show_section_left_button && (
-                <div className="sbtn sbtn-arrow-primary-v2">
-                  <span className="btn-text">
-                    <RichText
-                      tagName="a"
-                      value={section_left_button_link}
-                      onChange={(value) =>
-                        setAttributes({ section_left_button_link: value })
-                      }
-                      placeholder={__("Enter button text...", "md-blocks")}
-                    />
-                  </span>
-                </div>
+                {showSectionLeftButton && (
+                  <div className="sbtn sbtn-arrow-primary-v2">
+                    <span className="btn-text">
+                      <RichText
+                        tagName="a"
+                        value={sectionLeftButtonLink}
+                        onChange={(value) =>
+                          setAttributes({
+                            sectionLeftButtonLink: value,
+                          })
+                        }
+                        placeholder={__("Enter button text…", "md-blocks")}
+                      />
+                    </span>
+                  </div>
                 )}
               </div>
-              <div class="intelligence-section__media wow bounceIn">
-                <div class="media-image-wrapper">
+              <div className="intelligence-section__media wow bounceIn">
+                <div className="media-image-wrapper">
                   <figure id="img-two">
                     <MediaUpload
                       title={__("Feature Image")}
                       onSelect={(media) =>
-                        setAttributes({ section_left_image: media.url })
+                        setAttributes({
+                          sectionLeftImage: media.url,
+                        })
                       }
                       multiple={false}
                       render={({ open }) => (
                         <>
-                          {section_left_image == "" ? (
+                          {sectionLeftImage === "" ? (
                             <Button onClick={open} variant="primary">
                               {__("Upload")}
                             </Button>
@@ -203,12 +227,14 @@ export default function Edit({ attributes, setAttributes }) {
                                 ></i>
                                 <i
                                   onClick={() =>
-                                    setAttributes({ section_left_image: "" })
+                                    setAttributes({
+                                      sectionLeftImage: "",
+                                    })
                                   }
                                   className="dashicons dashicons-no-alt remove-image"
                                 ></i>
                               </div>
-                              <img src={section_left_image} />
+                              <img src={sectionLeftImage} alt={sectionLeftTitle} />
                             </div>
                           )}
                         </>
@@ -222,61 +248,69 @@ export default function Edit({ attributes, setAttributes }) {
           <div className="cta-section__left">
             <div className="cta-news-section">
               <div className="cta-news-section__details wow fadeInLeft">
-                {show_section_right_title && (
-                <RichText
-                  tagName="h2"
-                  className="section-title h1"
-                  value={section_right_title}
-                  onChange={(value) =>
-                    setAttributes({ section_right_title: value })
-                  }
-                  placeholder={__("Enter title...", "md-blocks")}
-                  style={{
-                    color: section_right_title_font_color,
-                  }}
-                />
+                {showSectionRightTitle && (
+                  <RichText
+                    tagName="h2"
+                    className="section-title h1"
+                    value={sectionRightTitle}
+                    onChange={(value) =>
+                      setAttributes({
+                        sectionRightTitle: value,
+                      })
+                    }
+                    placeholder={__("Enter title…", "md-blocks")}
+                    style={{
+                      color: sectionRightTitleFontColor,
+                    }}
+                  />
                 )}
-                {show_section_right_description && (
-                <RichText
-                  tagName="p"
-                  className="cta-section-desc"
-                  value={section_right_description}
-                  onChange={(value) =>
-                    setAttributes({ section_right_description: value })
-                  }
-                  placeholder={__("Enter description...", "md-blocks")}
-                  style={{
-                    color: section_right_description_font_color,
-                  }}
-                />
+                {showSectionRightDescription && (
+                  <RichText
+                    tagName="p"
+                    className="cta-section-desc"
+                    value={sectionRightDescription}
+                    onChange={(value) =>
+                      setAttributes({
+                        sectionRightDescription: value,
+                      })
+                    }
+                    placeholder={__("Enter description…", "md-blocks")}
+                    style={{
+                      color: sectionRightDescriptionFontColor,
+                    }}
+                  />
                 )}
-                {show_section_right_button && (
-                <div className="sbtn sbtn-arrow-primary-v2">
-                  <span className="btn-text">
-                    <RichText
-                      tagName="a"
-                      value={section_right_button_link}
-                      onChange={(value) =>
-                        setAttributes({ section_right_button_link: value })
-                      }
-                      placeholder={__("Enter button text...", "md-blocks")}
-                    />
-                  </span>
-                </div>
+                {showSectionRightButton && (
+                  <div className="sbtn sbtn-arrow-primary-v2">
+                    <span className="btn-text">
+                      <RichText
+                        tagName="a"
+                        value={sectionRightButtonLink}
+                        onChange={(value) =>
+                          setAttributes({
+                            sectionRightButtonLink: value,
+                          })
+                        }
+                        placeholder={__("Enter button text…", "md-blocks")}
+                      />
+                    </span>
+                  </div>
                 )}
               </div>
-              <div class="cta-news-section__media wow bounceIn">
-                <div class="media-image-wrapper">
+              <div className="cta-news-section__media wow bounceIn">
+                <div className="media-image-wrapper">
                   <figure id="img-one">
                     <MediaUpload
                       title={__("Feature Image")}
                       onSelect={(media) =>
-                        setAttributes({ section_right_image: media.url })
+                        setAttributes({
+                          sectionRightImage: media.url,
+                        })
                       }
                       multiple={false}
                       render={({ open }) => (
                         <>
-                          {section_right_image == "" ? (
+                          {sectionRightImage === "" ? (
                             <Button onClick={open} variant="primary">
                               {__("Upload")}
                             </Button>
@@ -289,12 +323,14 @@ export default function Edit({ attributes, setAttributes }) {
                                 ></i>
                                 <i
                                   onClick={() =>
-                                    setAttributes({ section_right_image: "" })
+                                    setAttributes({
+                                      sectionRightImage: "",
+                                    })
                                   }
                                   className="dashicons dashicons-no-alt remove-image"
                                 ></i>
                               </div>
-                              <img src={section_right_image} />
+                              <img src={sectionRightImage} alt={sectionRightTitle} />
                             </div>
                           )}
                         </>

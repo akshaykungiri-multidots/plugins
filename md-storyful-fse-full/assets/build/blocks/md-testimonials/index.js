@@ -58,10 +58,11 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param root0
- * @param root0.attributes
- * @param root0.attributes.heading
- * @param root0.setAttributes
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.attributes.heading
+ * @param  root0.setAttributes
+ * @param  root0.className
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
@@ -86,16 +87,16 @@ function Edit({
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Block Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Block Settings', 'md-storyful-fse-full'),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Style", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Case Studies Style', 'md-storyful-fse-full'),
           value: themeStyle,
           options: [{
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 1", "md-storyful-fse-full"),
-            value: "style1"
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style 1', 'md-storyful-fse-full'),
+            value: 'style1'
           }, {
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 2", "md-storyful-fse-full"),
-            value: "style2"
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Style 2', 'md-storyful-fse-full'),
+            value: 'style2'
           }],
           onChange: value => setAttributes({
             themeStyle: value
@@ -103,63 +104,63 @@ function Edit({
           __nextHasNoMarginBottom: true
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Toggle Settings', 'md-storyful-fse-full'),
         initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Heading", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Heading', 'md-storyful-fse-full'),
           checked: showHeading,
           onChange: value => setAttributes({
             showHeading: value
           })
         }), showHeading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading', 'md-storyful-fse-full'),
           value: heading,
           onChange: value => setAttributes({
             heading: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Testimonial Title", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Testimonial Title', 'md-storyful-fse-full'),
           checked: showTestimonialTitle,
           onChange: value => setAttributes({
             showTestimonialTitle: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Testimonial Description", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Testimonial Description', 'md-storyful-fse-full'),
           checked: showTestimonialDescription,
           onChange: value => setAttributes({
             showTestimonialDescription: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Testimonial Image", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Testimonial Image', 'md-storyful-fse-full'),
           checked: showTestimonialImage,
           onChange: value => setAttributes({
             showTestimonialImage: value
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color Settings', 'md-storyful-fse-full'),
         initialOpen: false,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography Colors', 'md-storyful-fse-full'),
           initialOpen: false,
           colorSettings: [{
             value: headingFontColor,
             onChange: value => setAttributes({
               headingFontColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading Font Color')
           }, {
             value: testimonialTitleFontColor,
             onChange: value => setAttributes({
               testimonialTitleFontColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Testimonial Title Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Testimonial Title Font Color')
           }, {
             value: testimonialDescriptionFontColor,
             onChange: value => setAttributes({
               testimonialDescriptionFontColor: value
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Testimonial Description Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Testimonial Description Font Color')
           }]
         })
       })]

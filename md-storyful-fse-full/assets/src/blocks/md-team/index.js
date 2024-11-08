@@ -18,7 +18,7 @@ import './style.scss';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( metadata, {
+registerBlockType(metadata, {
 	/**
 	 * @see ./edit.js
 	 */
@@ -27,4 +27,4 @@ registerBlockType( metadata, {
 	 * @see ./save.js
 	 */
 	save: Save,
-} );
+});

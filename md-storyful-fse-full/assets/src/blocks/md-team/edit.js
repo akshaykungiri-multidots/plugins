@@ -38,7 +38,7 @@ import './editor.scss';
 
 const siteURL = window.location.origin;
 
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit({ attributes, setAttributes }) {
 	const {
 		products,
 		heading,
@@ -56,14 +56,14 @@ export default function Edit( { attributes, setAttributes } ) {
 		displayLinkedin,
 	} = attributes;
 
-	useEffect( () => {
-		if ( 0 === products.length ) {
+	useEffect(() => {
+		if (0 === products.length) {
 			initList();
 		}
-	}, [] );
+	}, []);
 
 	const initList = () => {
-		setAttributes( {
+		setAttributes({
 			products: [
 				...products,
 				{
@@ -75,7 +75,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					popup: false,
 				},
 			],
-		} );
+		});
 	};
 
 	const addNewItem = () => {
@@ -87,62 +87,58 @@ export default function Edit( { attributes, setAttributes } ) {
 			leaderlink: '',
 			popup: false,
 		};
-		setAttributes( {
-			products: [ ...products, attr ],
+		setAttributes({
+			products: [...products, attr],
 			uniqueId: Math.random(),
-		} );
+		});
 	};
 
-	const moveItem = ( oldIndex, newIndex ) => {
-		const arrayCopy = [ ...products ];
-		arrayCopy[ oldIndex ] = products[ newIndex ];
-		arrayCopy[ newIndex ] = products[ oldIndex ];
+	const moveItem = (oldIndex, newIndex) => {
+		const arrayCopy = [...products];
+		arrayCopy[oldIndex] = products[newIndex];
+		arrayCopy[newIndex] = products[oldIndex];
 
-		setAttributes( {
+		setAttributes({
 			products: arrayCopy,
-		} );
+		});
 	};
 
-	const itemList = products.map( ( product, index ) => {
+	const itemList = products.map((product, index) => {
 		return (
 			<div
 				className=" leadership__author__box-item show-items-hover-wrap"
-				key={ index }
+				key={index}
 			>
 				<div className="item-action-wrap show-items-hover small-icons">
 					<div className="move-item">
-						{ 0 < index && (
-							<Tooltip text={ __( 'Move Left', 'md-prime' ) }>
+						{0 < index && (
+							<Tooltip text={__('Move Left', 'md-prime')}>
 								<span
 									className="dashicons dashicons-arrow-left-alt move-up"
-									onClick={ () =>
-										moveItem( index, index - 1 )
-									}
-									onKeyDown={ ( event ) => {
+									onClick={() => moveItem(index, index - 1)}
+									onKeyDown={(event) => {
 										if (
 											event.key === 'Enter' ||
 											event.key === ' '
 										) {
-											moveItem( index, index - 1 );
+											moveItem(index, index - 1);
 										}
-									} }
+									}}
 									role="button"
-									tabIndex={ 0 }
+									tabIndex={0}
 									aria-label="Move item left"
 								></span>
 							</Tooltip>
-						) }
-						{ index + 1 < products.length && (
-							<Tooltip text={ __( 'Move Right', 'md-prime' ) }>
+						)}
+						{index + 1 < products.length && (
+							<Tooltip text={__('Move Right', 'md-prime')}>
 								<span
 									className="dashicons dashicons-arrow-right-alt move-down"
-									onClick={ () =>
-										moveItem( index, index + 1 )
-									}
+									onClick={() => moveItem(index, index + 1)}
 									role="button"
-									tabIndex={ 0 }
+									tabIndex={0}
 									aria-label="Move item down"
-									onKeyDown={ ( event ) => {
+									onKeyDown={(event) => {
 										if (
 											event.key === 'Enter' ||
 											event.key === ' '
@@ -151,16 +147,16 @@ export default function Edit( { attributes, setAttributes } ) {
 											// Simulate the click event on Enter or Space key
 											event.target.click();
 										}
-									} }
+									}}
 								></span>
 							</Tooltip>
-						) }
+						)}
 					</div>
-					{ 1 < products.length && (
-						<Tooltip text={ __( 'Remove Item', 'md-prime' ) }>
+					{1 < products.length && (
+						<Tooltip text={__('Remove Item', 'md-prime')}>
 							<i
 								className="remove-item dashicons dashicons-no-alt"
-								onClick={ () => {
+								onClick={() => {
 									const toDelete =
 										// eslint-disable-next-line no-alert
 										confirm(
@@ -169,21 +165,21 @@ export default function Edit( { attributes, setAttributes } ) {
 												'md-prime'
 											)
 										);
-									if ( toDelete === true ) {
+									if (toDelete === true) {
 										const updatedProducts = products.filter(
-											( item, itemIndex ) =>
+											(item, itemIndex) =>
 												itemIndex !== index
 										);
 
-										setAttributes( {
+										setAttributes({
 											products: updatedProducts,
-										} );
+										});
 									}
-								} }
+								}}
 								role="button"
-								tabIndex={ 0 }
+								tabIndex={0}
 								aria-label="Remove item"
-								onKeyDown={ ( event ) => {
+								onKeyDown={(event) => {
 									if (
 										event.key === 'Enter' ||
 										event.key === ' '
@@ -192,37 +188,37 @@ export default function Edit( { attributes, setAttributes } ) {
 										// Simulate the click event on Enter or Space key
 										event.target.click();
 									}
-								} }
+								}}
 							></i>
 						</Tooltip>
-					) }
+					)}
 				</div>
 				<div className=" leadership__author__box-item-inner">
 					<div className="leadership__author__box-item-inner-img">
 						<MediaUpload
-							onSelect={ ( leadershipHeadshot ) => {
-								const copyData = [ ...products ];
-								copyData[ index ].leadershipHeadshot =
+							onSelect={(leadershipHeadshot) => {
+								const copyData = [...products];
+								copyData[index].leadershipHeadshot =
 									leadershipHeadshot.sizes.full.url;
-								setAttributes( {
+								setAttributes({
 									products: copyData,
-								} );
-							} }
-							allowedTypes={ [ 'image' ] }
-							value={ product.leadershipHeadshot }
-							render={ ( { open } ) =>
-								! product.leadershipHeadshot ? (
+								});
+							}}
+							allowedTypes={['image']}
+							value={product.leadershipHeadshot}
+							render={({ open }) =>
+								!product.leadershipHeadshot ? (
 									<Button
 										className={
 											product.leadershipHeadshot
 												? 'image-button '
 												: ' button-large'
 										}
-										onClick={ open }
+										onClick={open}
 									>
 										<p className="components-button button button-large">
 											<i className="fa fa-upload"></i>
-											{ __( 'Update Image', 'md-prime' ) }
+											{__('Update Image', 'md-prime')}
 										</p>
 									</Button>
 								) : (
@@ -232,37 +228,37 @@ export default function Edit( { attributes, setAttributes } ) {
 												? 'image-button '
 												: ' button-large'
 										}
-										onClick={ open }
+										onClick={open}
 									>
 										<p className="components-button button button-large">
 											<i className="fa fa-pencil"></i>
-											{ __( 'Update Image', 'md-prime' ) }
+											{__('Update Image', 'md-prime')}
 										</p>
 									</Button>
 								)
 							}
 						/>
 
-						{ product.leadershipHeadshot ? (
+						{product.leadershipHeadshot ? (
 							<img
-								src={ product.leadershipHeadshot }
+								src={product.leadershipHeadshot}
 								alt="Leadership"
 								className="author-img"
 							/>
 						) : (
 							<img
-								src={ siteURL + defaultImage }
+								src={siteURL + defaultImage}
 								alt="placeholder img"
 								className="author-img"
 							/>
-						) }
-						{ displayLinkedin && (
+						)}
+						{displayLinkedin && (
 							<div className="link">
 								<TextControl
 									placeholder="Linked-in Link"
 									type="string"
-									value={ product.leaderlink }
-									onChange={ ( leaderlink ) => {
+									value={product.leaderlink}
+									onChange={(leaderlink) => {
 										const newObject = Object.assign(
 											{},
 											product,
@@ -270,52 +266,52 @@ export default function Edit( { attributes, setAttributes } ) {
 												leaderlink,
 											}
 										);
-										const blockDetails = [ ...products ];
-										blockDetails[ index ] = newObject;
-										setAttributes( {
+										const blockDetails = [...products];
+										blockDetails[index] = newObject;
+										setAttributes({
 											products: blockDetails,
-										} );
-									} }
+										});
+									}}
 								/>
-								{ product.leaderlink && (
+								{product.leaderlink && (
 									<a
-										href={ product.leaderlink }
+										href={product.leaderlink}
 										target="_blank"
 										rel="noreferrer"
 									>
 										<img
-											src={ linkedInIcon }
+											src={linkedInIcon}
 											className="linkedin-icon"
 											alt="linkedin-icon"
 										></img>
 									</a>
-								) }
+								)}
 								{
 									<img
-										src={ linkedInIcon }
+										src={linkedInIcon}
 										className="linkedin-icon"
 										alt="linkedin-icon"
 									></img>
 								}
 							</div>
-						) }
+						)}
 					</div>
 					<div className="leadership__author__box-item-inner-content">
-						{ displayAuthorname && (
+						{displayAuthorname && (
 							<RichText
 								tagName="h3"
-								placeholder={ __( 'Name' ) }
-								value={ product.leadershipName }
+								placeholder={__('Name')}
+								value={product.leadershipName}
 								keepPlaceholderOnFocus="true"
 								className="leadershipName"
 								style={
 									authornamecolor
 										? {
 												color: authornamecolor,
-										  }
+											}
 										: {}
 								}
-								onChange={ ( leadershipName ) => {
+								onChange={(leadershipName) => {
 									const newObject = Object.assign(
 										{},
 										product,
@@ -323,29 +319,29 @@ export default function Edit( { attributes, setAttributes } ) {
 											leadershipName,
 										}
 									);
-									const blockDetails = [ ...products ];
-									blockDetails[ index ] = newObject;
-									setAttributes( {
+									const blockDetails = [...products];
+									blockDetails[index] = newObject;
+									setAttributes({
 										products: blockDetails,
-									} );
-								} }
+									});
+								}}
 							/>
-						) }
-						{ displayAuthortitle && (
+						)}
+						{displayAuthortitle && (
 							<RichText
 								tagName="p"
-								placeholder={ __( 'Position' ) }
-								value={ product.leadershipTitle }
+								placeholder={__('Position')}
+								value={product.leadershipTitle}
 								className="leadershipTitle"
 								keepPlaceholderOnFocus="true"
 								style={
 									authortitlecolor
 										? {
 												color: authortitlecolor,
-										  }
+											}
 										: {}
 								}
-								onChange={ ( leadershipTitle ) => {
+								onChange={(leadershipTitle) => {
 									const newObject = Object.assign(
 										{},
 										product,
@@ -353,27 +349,27 @@ export default function Edit( { attributes, setAttributes } ) {
 											leadershipTitle,
 										}
 									);
-									const blockDetails = [ ...products ];
-									blockDetails[ index ] = newObject;
-									setAttributes( {
+									const blockDetails = [...products];
+									blockDetails[index] = newObject;
+									setAttributes({
 										products: blockDetails,
-									} );
-								} }
+									});
+								}}
 							/>
-						) }
+						)}
 						<strong
 							className="about-popup"
-							onClick={ () => {
-								const updatedProducts = [ ...products ];
-								updatedProducts[ index ].popup = true;
-								setAttributes( {
+							onClick={() => {
+								const updatedProducts = [...products];
+								updatedProducts[index].popup = true;
+								setAttributes({
 									products: updatedProducts,
-								} );
-							} }
+								});
+							}}
 							role="button"
-							tabIndex={ 0 }
+							tabIndex={0}
 							aria-label="Open popup"
-							onKeyDown={ ( event ) => {
+							onKeyDown={(event) => {
 								if (
 									event.key === 'Enter' ||
 									event.key === ' '
@@ -382,15 +378,15 @@ export default function Edit( { attributes, setAttributes } ) {
 									// Trigger the click event when Enter or Space key is pressed
 									event.target.click();
 								}
-							} }
+							}}
 						>
 							Edit Bio
 							<i className="fa fa-pencil-square-o"></i>
 						</strong>
 						<div
-							className={ `leadership__popup-model ${
+							className={`leadership__popup-model ${
 								product.popup ? 'open-popup' : ''
-							}` }
+							}`}
 						>
 							<div className=" leadership__popup-model-content">
 								<div className="leadership__popup-model-header">
@@ -399,13 +395,13 @@ export default function Edit( { attributes, setAttributes } ) {
 										className="close"
 										data-dismiss="modal"
 										aria-label="Close"
-										onClick={ () => {
-											const tempProdcut = [ ...products ];
-											tempProdcut[ index ].popup = false;
-											setAttributes( {
+										onClick={() => {
+											const tempProdcut = [...products];
+											tempProdcut[index].popup = false;
+											setAttributes({
 												products: tempProdcut,
-											} );
-										} }
+											});
+										}}
 									>
 										<span aria-hidden="true">X</span>
 									</button>
@@ -414,7 +410,7 @@ export default function Edit( { attributes, setAttributes } ) {
 								<div className="leadership__popup-model-body">
 									<div className="leadership__popup-model-author-details-main">
 										<div className="leadership__popup-model-author-details-main-img-section">
-											{ product.leadershipHeadshot ? (
+											{product.leadershipHeadshot ? (
 												<figure>
 													<img
 														src={
@@ -427,14 +423,17 @@ export default function Edit( { attributes, setAttributes } ) {
 											) : (
 												<figure>
 													<img
-														src={ siteURL + defaultImage }
+														src={
+															siteURL +
+															defaultImage
+														}
 														className="author-img"
 														alt="placeholder img"
 													/>
 												</figure>
-											) }
+											)}
 
-											{ displayLinkedin && (
+											{displayLinkedin && (
 												<div className="linked-in-icon">
 													<a
 														href={
@@ -442,20 +441,20 @@ export default function Edit( { attributes, setAttributes } ) {
 														}
 													>
 														<img
-															src={ linkedInIcon }
+															src={linkedInIcon}
 															alt="linkedin-icon"
 														></img>
 													</a>
 												</div>
-											) }
+											)}
 										</div>
 										<div className="leadership__popup-model-author-details-box">
-											{ displayAuthorname && (
+											{displayAuthorname && (
 												<RichText
 													value={
 														product.leadershipName
 													}
-													onChange={ (
+													onChange={(
 														leadershipName
 													) => {
 														const newObject =
@@ -469,23 +468,23 @@ export default function Edit( { attributes, setAttributes } ) {
 														const blockDetails = [
 															...products,
 														];
-														blockDetails[ index ] =
+														blockDetails[index] =
 															newObject;
-														setAttributes( {
+														setAttributes({
 															products:
 																blockDetails,
-														} );
-													} }
+														});
+													}}
 													className="leadershipName"
 												/>
-											) }
-											{ displayAuthortitle && (
+											)}
+											{displayAuthortitle && (
 												<RichText
 													value={
 														product.leadershipTitle
 													}
 													className="leadershipTitle"
-													onChange={ (
+													onChange={(
 														leadershipTitle
 													) => {
 														const newObject =
@@ -499,15 +498,15 @@ export default function Edit( { attributes, setAttributes } ) {
 														const blockDetails = [
 															...products,
 														];
-														blockDetails[ index ] =
+														blockDetails[index] =
 															newObject;
-														setAttributes( {
+														setAttributes({
 															products:
 																blockDetails,
-														} );
-													} }
+														});
+													}}
 												/>
-											) }
+											)}
 										</div>
 									</div>
 
@@ -518,12 +517,10 @@ export default function Edit( { attributes, setAttributes } ) {
 										<RichText
 											tagName="p"
 											className="leadershipBio"
-											placeholder={ __(
-												'Leadership Bio'
-											) }
-											value={ product.leadershipBio }
+											placeholder={__('Leadership Bio')}
+											value={product.leadershipBio}
 											keepPlaceholderOnFocus="true"
-											onChange={ ( leadershipBio ) => {
+											onChange={(leadershipBio) => {
 												const newObject = Object.assign(
 													{},
 													product,
@@ -534,12 +531,11 @@ export default function Edit( { attributes, setAttributes } ) {
 												const blockDetails = [
 													...products,
 												];
-												blockDetails[ index ] =
-													newObject;
-												setAttributes( {
+												blockDetails[index] = newObject;
+												setAttributes({
 													products: blockDetails,
-												} );
-											} }
+												});
+											}}
 										/>
 									</div>
 								</div>
@@ -547,17 +543,17 @@ export default function Edit( { attributes, setAttributes } ) {
 						</div>
 						<div
 							className="bg_overlay"
-							onClick={ () => {
-								const updatedProducts = [ ...products ];
-								updatedProducts[ index ].popup = false;
-								setAttributes( {
+							onClick={() => {
+								const updatedProducts = [...products];
+								updatedProducts[index].popup = false;
+								setAttributes({
 									products: updatedProducts,
-								} );
-							} }
+								});
+							}}
 							role="button"
-							tabIndex={ 0 }
+							tabIndex={0}
 							aria-label="Close popup overlay"
-							onKeyDown={ ( event ) => {
+							onKeyDown={(event) => {
 								if (
 									event.key === 'Enter' ||
 									event.key === ' '
@@ -565,162 +561,162 @@ export default function Edit( { attributes, setAttributes } ) {
 									event.preventDefault();
 									event.target.click();
 								}
-							} }
+							}}
 						></div>
 					</div>
 				</div>
 			</div>
 		);
-	} );
+	});
 
 	return (
 		<>
 			<InspectorControls>
 				<PanelColorSettings
-					title={ __( 'Color Settings' ) }
-					colorSettings={ [
+					title={__('Color Settings')}
+					colorSettings={[
 						{
 							value: headingcolor,
-							onChange: ( newColor ) => {
-								setAttributes( { headingcolor: newColor } );
+							onChange: (newColor) => {
+								setAttributes({ headingcolor: newColor });
 							},
-							label: __( 'Heading Color' ),
+							label: __('Heading Color'),
 							mdprimeColors,
 						},
 						{
 							value: authornamecolor,
-							onChange: ( newColor ) => {
-								setAttributes( {
+							onChange: (newColor) => {
+								setAttributes({
 									authornamecolor: newColor,
-								} );
+								});
 							},
-							label: __( 'Team member name color' ),
+							label: __('Team member name color'),
 							mdprimeColors,
 						},
 						{
 							value: authortitlecolor,
-							onChange: ( newColor ) => {
-								setAttributes( {
+							onChange: (newColor) => {
+								setAttributes({
 									authortitlecolor: newColor,
-								} );
+								});
 							},
-							label: __( 'Team member Position color ' ),
+							label: __('Team member Position color'),
 							mdprimeColors,
 						},
 						{
 							value: bgcolor,
-							onChange: ( newColor ) => {
-								setAttributes( { bgcolor: newColor } );
+							onChange: (newColor) => {
+								setAttributes({ bgcolor: newColor });
 							},
-							label: __( 'Heading background color ' ),
+							label: __('Heading background color'),
 							mdprimeColors,
 						},
-					] }
+					]}
 				/>
 
 				<PanelBody title="Visibility Settings">
 					<PanelRow>
 						<label htmlFor="display settings">
-							{ __( 'Name Visibility', 'md-prime' ) }
+							{__('Name Visibility', 'md-prime')}
 						</label>
 						<FormToggle
-							checked={ displayAuthorname }
-							onChange={ () =>
-								setAttributes( {
-									displayAuthorname: ! displayAuthorname,
-								} )
+							checked={displayAuthorname}
+							onChange={() =>
+								setAttributes({
+									displayAuthorname: !displayAuthorname,
+								})
 							}
 						/>
 					</PanelRow>
 					<PanelRow>
 						<label htmlFor="display settings">
-							{ __( 'Position Visibility', 'md-prime' ) }
+							{__('Position Visibility', 'md-prime')}
 						</label>
 						<FormToggle
-							checked={ displayAuthortitle }
-							onChange={ () =>
-								setAttributes( {
-									displayAuthortitle: ! displayAuthortitle,
-								} )
+							checked={displayAuthortitle}
+							onChange={() =>
+								setAttributes({
+									displayAuthortitle: !displayAuthortitle,
+								})
 							}
 						/>
 					</PanelRow>
 					<PanelRow>
 						<label htmlFor="display settings">
-							{ __( 'Linkedin Icon Visibility', 'md-prime' ) }
+							{__('Linkedin Icon Visibility', 'md-prime')}
 						</label>
 						<FormToggle
-							checked={ displayLinkedin }
-							onChange={ () =>
-								setAttributes( {
-									displayLinkedin: ! displayLinkedin,
-								} )
+							checked={displayLinkedin}
+							onChange={() =>
+								setAttributes({
+									displayLinkedin: !displayLinkedin,
+								})
 							}
 						/>
 					</PanelRow>
 					<PanelRow>
 						<label htmlFor="display settings">
-							{ __( 'CTA Heading Visibility', 'md-prime' ) }
+							{__('CTA Heading Visibility', 'md-prime')}
 						</label>
 						<FormToggle
-							checked={ displayTeamHeading }
-							onChange={ () =>
-								setAttributes( {
-									displayTeamHeading: ! displayTeamHeading,
-								} )
+							checked={displayTeamHeading}
+							onChange={() =>
+								setAttributes({
+									displayTeamHeading: !displayTeamHeading,
+								})
 							}
 						/>
 					</PanelRow>
 					<PanelRow>
 						<label htmlFor="display settings">
-							{ __( 'CTA Button Visibility', 'md-prime' ) }
+							{__('CTA Button Visibility', 'md-prime')}
 						</label>
 						<FormToggle
-							checked={ callToAction }
-							onChange={ () =>
-								setAttributes( {
-									callToAction: ! callToAction,
-								} )
+							checked={callToAction}
+							onChange={() =>
+								setAttributes({
+									callToAction: !callToAction,
+								})
 							}
 						/>
 					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<div { ...useBlockProps() }>
+			<div {...useBlockProps()}>
 				<div className="leadership">
 					<div
 						className="leadership__header"
-						style={ bgcolor ? { background: bgcolor } : {} }
+						style={bgcolor ? { background: bgcolor } : {}}
 					>
 						<RichText
 							tagName="h2"
-							value={ heading }
+							value={heading}
 							className="leadership__header-heading"
-							onChange={ ( value ) =>
-								setAttributes( { heading: value } )
+							onChange={(value) =>
+								setAttributes({ heading: value })
 							}
 							placeholder="Leadership"
 							style={
 								headingcolor
 									? {
 											color: headingcolor,
-									  }
+										}
 									: {}
 							}
 						/>
 					</div>
 					<div className="container">
 						<div className="box-main leadership__author__box">
-							{ itemList }
+							{itemList}
 							<div
 								className="add-item-wrap"
-								onClick={ () => {
+								onClick={() => {
 									addNewItem();
-								} }
+								}}
 								role="button"
-								tabIndex={ 0 }
+								tabIndex={0}
 								aria-label="Add new item"
-								onKeyDown={ ( event ) => {
+								onKeyDown={(event) => {
 									if (
 										event.key === 'Enter' ||
 										event.key === ' '
@@ -728,14 +724,12 @@ export default function Edit( { attributes, setAttributes } ) {
 										event.preventDefault();
 										addNewItem();
 									}
-								} }
+								}}
 							>
-								<Tooltip
-									text={ __( 'Add New Item', 'md-prime' ) }
-								>
+								<Tooltip text={__('Add New Item', 'md-prime')}>
 									<i
-										onClick={ () => {
-											setAttributes( {
+										onClick={() => {
+											setAttributes({
 												products: [
 													...products,
 													{
@@ -747,14 +741,14 @@ export default function Edit( { attributes, setAttributes } ) {
 														popup: false,
 													},
 												],
-											} );
-										} }
-										onKeyDown={ ( event ) => {
+											});
+										}}
+										onKeyDown={(event) => {
 											if (
 												event.key === 'Enter' ||
 												event.key === ' '
 											) {
-												setAttributes( {
+												setAttributes({
 													products: [
 														...products,
 														{
@@ -767,11 +761,11 @@ export default function Edit( { attributes, setAttributes } ) {
 															popup: false,
 														},
 													],
-												} );
+												});
 											}
-										} }
+										}}
 										role="button"
-										tabIndex={ 0 }
+										tabIndex={0}
 										aria-label="Add new product"
 										className="add-new-item dashicons dashicons-plus"
 									></i>
@@ -779,44 +773,44 @@ export default function Edit( { attributes, setAttributes } ) {
 							</div>
 						</div>
 						<div className="leadership__join-team">
-							{ displayTeamHeading && (
+							{displayTeamHeading && (
 								<RichText
 									tagName="h4"
-									value={ teamheading }
+									value={teamheading}
 									className="leadership__join-team__heading"
-									onChange={ ( value ) =>
-										setAttributes( { teamheading: value } )
+									onChange={(value) =>
+										setAttributes({ teamheading: value })
 									}
 									placeholder="Want to work with us"
 								/>
-							) }
-							{ displayTeamHeading && (
+							)}
+							{displayTeamHeading && (
 								<RichText
 									tagName="span"
-									value={ teamheadinginner }
+									value={teamheadinginner}
 									className="leadership__join-team__heading-span"
-									onChange={ ( value ) =>
-										setAttributes( {
+									onChange={(value) =>
+										setAttributes({
 											teamheadinginner: value,
-										} )
+										})
 									}
 									placeholder="Join our growing team"
 								/>
-							) }
+							)}
 
-							{ callToAction && (
+							{callToAction && (
 								<div className="sbtn sbtn-arrow-primary">
 									<RichText
 										tagName="span"
-										value={ button }
+										value={button}
 										className="btn-main"
-										onChange={ ( value ) =>
-											setAttributes( { button: value } )
+										onChange={(value) =>
+											setAttributes({ button: value })
 										}
 										placeholder="Request a Demo"
 									/>
 								</div>
-							) }
+							)}
 						</div>
 					</div>
 				</div>

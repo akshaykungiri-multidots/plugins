@@ -28,7 +28,7 @@
       "type": "string",
       "default": ""
     },
-    "background_image": {
+    "backgroundImage": {
       "type": "string",
       "default": ""
     },

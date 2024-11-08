@@ -1,6 +1,6 @@
 /******/ (() => { // webpackBootstrap
 /*!************************************!*\
-  !*** ./src/blocks/team-v2/view.js ***!
+  !*** ./src/blocks/md-team/view.js ***!
   \************************************/
 /**
  * File company-tabs.js.

@@ -58,10 +58,11 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param root0
- * @param root0.attributes
- * @param root0.attributes.heading
- * @param root0.setAttributes
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.attributes.heading
+ * @param  root0.setAttributes
+ * @param  root0.className
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
@@ -73,7 +74,7 @@ function Edit({
 }) {
   const {
     heading,
-    heading_font_color,
+    headingFontColor,
     titleFontColor,
     descriptionFontColor,
     displayHeading,
@@ -84,57 +85,57 @@ function Edit({
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Toggle Settings', 'md-storyful-fse-full'),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Display Heading", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display Heading', 'md-storyful-fse-full'),
           checked: displayHeading,
           onChange: value => setAttributes({
             displayHeading: value
           })
         }), displayHeading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading", "md-storyful-fse-full"),
-          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Heading", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading', 'md-storyful-fse-full'),
+          placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter Heading', 'md-storyful-fse-full'),
           value: heading,
           onChange: value => setAttributes({
             heading: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Display Description", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display Description', 'md-storyful-fse-full'),
           checked: displayDescription,
           onChange: value => setAttributes({
             displayDescription: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Display Image", "md-storyful-fse-full"),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Display Image', 'md-storyful-fse-full'),
           checked: displayImage,
           onChange: value => setAttributes({
             displayImage: value
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color Settings', 'md-storyful-fse-full'),
         initialOpen: false,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography Colors', 'md-storyful-fse-full'),
           initialOpen: false,
           colorSettings: [{
-            value: heading_font_color,
+            value: headingFontColor,
             onChange: newColor => setAttributes({
-              heading_font_color: newColor
+              headingFontColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading Font Color')
           }, {
             value: titleFontColor,
             onChange: newColor => setAttributes({
               titleFontColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Title Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Font Color')
           }, {
             value: descriptionFontColor,
             onChange: newColor => setAttributes({
               descriptionFontColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Description Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Font Color')
           }]
         })
       })]
@@ -143,7 +144,7 @@ function Edit({
       className: className,
       attributes: {
         heading,
-        heading_font_color,
+        headingFontColor,
         titleFontColor,
         descriptionFontColor,
         displayHeading,
@@ -326,7 +327,7 @@ module.exports = window["wp"]["serverSideRender"];
   \***************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-storyful-history","version":"0.1.0","title":"MD Storyful History","apiVersion":3,"category":"md-storyful-fse-full","icon":"backup","description":"A History block for Storyful FSE","keywords":["md-storyful-fse-full","md-storyful-history"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"heading":{"type":"string","default":""},"heading_font_color":{"type":"string","default":""},"titleFontColor":{"type":"string","default":""},"descriptionFontColor":{"type":"string","default":""},"displayHeading":{"type":"boolean","default":true},"displayDescription":{"type":"boolean","default":true},"displayImage":{"type":"boolean","default":true}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-storyful-history","version":"0.1.0","title":"MD Storyful History","apiVersion":3,"category":"md-storyful-fse-full","icon":"backup","description":"A History block for Storyful FSE","keywords":["md-storyful-fse-full","md-storyful-history"],"supports":{"html":false},"textdomain":"md-storyful-fse-full","attributes":{"heading":{"type":"string","default":""},"headingFontColor":{"type":"string","default":""},"titleFontColor":{"type":"string","default":""},"descriptionFontColor":{"type":"string","default":""},"displayHeading":{"type":"boolean","default":true},"displayDescription":{"type":"boolean","default":true},"displayImage":{"type":"boolean","default":true}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

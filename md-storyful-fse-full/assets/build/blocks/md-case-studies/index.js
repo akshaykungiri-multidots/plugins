@@ -58,10 +58,11 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param root0
- * @param root0.attributes
- * @param root0.attributes.heading
- * @param root0.setAttributes
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.attributes.heading
+ * @param  root0.setAttributes
+ * @param  root0.className
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
@@ -72,71 +73,70 @@ function Edit({
   className
 }) {
   const {
-    show_section_title,
-    section_title,
+    showSectionTitle,
+    sectionTitle,
     orderBy,
     order,
-    number_of_case_studies,
-    case_studies_ids,
-    background_color,
-    case_studies_style,
-    section_title_font_color,
-    case_studies_title_font_color,
-    case_studies_description_font_color,
-    main_case_study_title_font_color,
-    main_case_study_description_font_color,
-    main_case_study_author_date_font_color,
-    show_button,
-    button_style,
-    show_excerpt,
-    show_featured_image,
-    show_author_date
+    numberOfCaseStudies,
+    backgroundColor,
+    caseStudiesStyle,
+    sectionTitleFontColor,
+    caseStudiesTitleFontColor,
+    caseStudiesDescriptionFontColor,
+    mainCaseStudyTitleFontColor,
+    mainCaseStudyDescriptionFontColor,
+    mainCaseStudyAuthorDateFontColor,
+    showButton,
+    buttonStyle,
+    showExcerpt,
+    showFeaturedImage,
+    showAuthorDate
   } = attributes;
   const orderByList = [{
-    label: 'Date',
-    value: 'date'
+    label: "Date",
+    value: "date"
   }, {
-    label: 'Title',
-    value: 'title'
+    label: "Title",
+    value: "title"
   }, {
-    label: 'Random',
-    value: 'rand'
+    label: "Random",
+    value: "rand"
   }];
   const orderList = [{
-    label: 'Descending',
-    value: 'desc'
+    label: "Descending",
+    value: "desc"
   }, {
-    label: 'Ascending',
-    value: 'asc'
+    label: "Ascending",
+    value: "asc"
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_case_studies"
     }),
     style: {
-      backgroundColor: background_color
+      backgroundColor
     },
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Block Settings", "md-storyful-fse-full"),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Number of Blog', 'md-prime'),
-          value: number_of_case_studies,
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Number of Blog", "md-prime"),
+          value: numberOfCaseStudies,
           onChange: value => setAttributes({
-            number_of_case_studies: parseInt(value)
+            numberOfCaseStudies: parseInt(value)
           }),
           min: 2,
           max: 99,
           step: 1
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Order By', 'md-prime'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Order By", "md-prime"),
           value: orderBy,
           options: orderByList,
           onChange: value => setAttributes({
             orderBy: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Order', 'md-prime'),
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Order", "md-prime"),
           value: order,
           options: orderList,
           onChange: value => setAttributes({
@@ -144,7 +144,7 @@ function Edit({
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Style", "md-storyful-fse-full"),
-          value: case_studies_style,
+          value: caseStudiesStyle,
           options: [{
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Style 1", "md-storyful-fse-full"),
             value: "style_1"
@@ -153,7 +153,7 @@ function Edit({
             value: "style_2"
           }],
           onChange: value => setAttributes({
-            case_studies_style: value
+            caseStudiesStyle: value
           }),
           __nextHasNoMarginBottom: true
         })]
@@ -162,44 +162,46 @@ function Edit({
         initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Section Title", "md-storyful-fse-full"),
-          checked: show_section_title,
+          checked: showSectionTitle,
           onChange: value => setAttributes({
-            show_section_title: value
+            showSectionTitle: value
           })
-        }), show_section_title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+        }), showSectionTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Section Title", "md-storyful-fse-full"),
-          value: section_title,
+          value: sectionTitle,
           onChange: value => setAttributes({
-            section_title: value
+            sectionTitle: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Excerpt", "md-storyful-fse-full"),
-          checked: show_excerpt,
+          checked: showExcerpt,
           onChange: value => setAttributes({
-            show_excerpt: value
+            showExcerpt: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Featured Image", "md-storyful-fse-full"),
-          checked: show_featured_image,
+          checked: showFeaturedImage,
           onChange: value => setAttributes({
-            show_featured_image: value
+            showFeaturedImage: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Author Date", "md-storyful-fse-full"),
-          checked: show_author_date,
+          checked: showAuthorDate,
           onChange: value => setAttributes({
-            show_author_date: value
+            showAuthorDate: value
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Settings", "md-storyful-fse-full"),
         initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("label", {
+          htmlFor: "background-color-picker",
           children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Color", "md-storyful-fse-full")
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.GradientPicker, {
+          id: "background-color-picker",
           value: null,
           onChange: value => setAttributes({
-            background_color: value
+            backgroundColor: value
           }),
           gradients: [{
             name: "gradient1",
@@ -220,13 +222,13 @@ function Edit({
         initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Button", "md-storyful-fse-full"),
-          checked: show_button,
+          checked: showButton,
           onChange: value => setAttributes({
-            show_button: value
+            showButton: value
           })
-        }), show_button && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+        }), showButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Style", "md-storyful-fse-full"),
-          value: button_style,
+          value: buttonStyle,
           options: [{
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Primary", "md-storyful-fse-full"),
             value: "primary"
@@ -238,7 +240,7 @@ function Edit({
             value: "primary-v2"
           }],
           onChange: value => setAttributes({
-            button_style: value
+            buttonStyle: value
           }),
           __nextHasNoMarginBottom: true
         })]
@@ -249,39 +251,39 @@ function Edit({
           title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Colors Settings", "md-storyful-fse-full"),
           initialOpen: false,
           colorSettings: [{
-            value: section_title_font_color,
+            value: sectionTitleFontColor,
             onChange: newColor => setAttributes({
-              section_title_font_color: newColor
+              sectionTitleFontColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Section Title Color", "md-storyful-fse-full")
           }, {
-            value: case_studies_title_font_color,
+            value: caseStudiesTitleFontColor,
             onChange: newColor => setAttributes({
-              case_studies_title_font_color: newColor
+              caseStudiesTitleFontColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Title Color", "md-storyful-fse-full")
           }, {
-            value: case_studies_description_font_color,
+            value: caseStudiesDescriptionFontColor,
             onChange: newColor => setAttributes({
-              case_studies_description_font_color: newColor
+              caseStudiesDescriptionFontColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Case Studies Description Color", "md-storyful-fse-full")
           }, {
-            value: main_case_study_title_font_color,
+            value: mainCaseStudyTitleFontColor,
             onChange: newColor => setAttributes({
-              main_case_study_title_font_color: newColor
+              mainCaseStudyTitleFontColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Title Color", "md-storyful-fse-full")
           }, {
-            value: main_case_study_description_font_color,
+            value: mainCaseStudyDescriptionFontColor,
             onChange: newColor => setAttributes({
-              main_case_study_description_font_color: newColor
+              mainCaseStudyDescriptionFontColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Description Color", "md-storyful-fse-full")
           }, {
-            value: main_case_study_author_date_font_color,
+            value: mainCaseStudyAuthorDateFontColor,
             onChange: newColor => setAttributes({
-              main_case_study_author_date_font_color: newColor
+              mainCaseStudyAuthorDateFontColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Main Case Study Author Date Color", "md-storyful-fse-full")
           }]
@@ -291,25 +293,24 @@ function Edit({
       block: _block_json__WEBPACK_IMPORTED_MODULE_4__.name,
       className: className,
       attributes: {
-        show_section_title,
-        section_title,
-        number_of_case_studies,
-        case_studies_ids,
-        background_color,
-        case_studies_style,
-        section_title_font_color,
-        case_studies_title_font_color,
-        case_studies_description_font_color,
-        main_case_study_title_font_color,
-        main_case_study_description_font_color,
-        main_case_study_author_date_font_color,
-        show_button,
-        button_style,
+        showSectionTitle,
+        sectionTitle,
         orderBy,
         order,
-        show_excerpt,
-        show_featured_image,
-        show_author_date
+        numberOfCaseStudies,
+        backgroundColor,
+        caseStudiesStyle,
+        sectionTitleFontColor,
+        caseStudiesTitleFontColor,
+        caseStudiesDescriptionFontColor,
+        mainCaseStudyTitleFontColor,
+        mainCaseStudyDescriptionFontColor,
+        mainCaseStudyAuthorDateFontColor,
+        showButton,
+        buttonStyle,
+        showExcerpt,
+        showFeaturedImage,
+        showAuthorDate
       }
     })]
   });
@@ -487,7 +488,7 @@ module.exports = window["wp"]["serverSideRender"];
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-case-studies","version":"0.1.0","title":"MD Case Studies","apiVersion":3,"category":"md-storyful-fse-full","icon":"welcome-write-blog","description":"A Case Studies block for Storyful FSE","keywords":["md-case-studies","md-storyful-fse-full"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"show_section_title":{"type":"boolean","default":true},"section_title":{"type":"string","default":""},"orderBy":{"type":"string","default":"date"},"order":{"type":"string","default":"desc"},"section_title_font_color":{"type":"string","default":""},"case_studies_title_font_color":{"type":"string","default":""},"case_studies_description_font_color":{"type":"string","default":""},"main_case_study_title_font_color":{"type":"string","default":""},"main_case_study_description_font_color":{"type":"string","default":""},"main_case_study_author_date_font_color":{"type":"string","default":""},"number_of_case_studies":{"type":"number","default":3},"case_studies_ids":{"type":"array","default":[]},"background_color":{"type":"string","default":""},"case_studies_style":{"type":"string","default":"style_1"},"show_button":{"type":"boolean","default":true},"button_style":{"type":"string","default":"primary"},"show_excerpt":{"type":"boolean","default":true},"show_featured_image":{"type":"boolean","default":true},"show_author_date":{"type":"boolean","default":true}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-case-studies","version":"0.1.0","title":"MD Case Studies","apiVersion":3,"category":"md-storyful-fse-full","icon":"welcome-write-blog","description":"A Case Studies block for Storyful FSE","keywords":["md-case-studies","md-storyful-fse-full"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"showSectionTitle":{"type":"boolean","default":true},"sectionTitle":{"type":"string","default":""},"orderBy":{"type":"string","default":"date"},"order":{"type":"string","default":"desc"},"sectionTitleFontColor":{"type":"string","default":""},"caseStudiesTitleFontColor":{"type":"string","default":""},"caseStudiesDescriptionFontColor":{"type":"string","default":""},"mainCaseStudyTitleFontColor":{"type":"string","default":""},"mainCaseStudyDescriptionFontColor":{"type":"string","default":""},"mainCaseStudyAuthorDateFontColor":{"type":"string","default":""},"numberOfCaseStudies":{"type":"number","default":3},"backgroundColor":{"type":"string","default":""},"caseStudiesStyle":{"type":"string","default":"style_1"},"showButton":{"type":"boolean","default":true},"buttonStyle":{"type":"string","default":"primary"},"showExcerpt":{"type":"boolean","default":true},"showFeaturedImage":{"type":"boolean","default":true},"showAuthorDate":{"type":"boolean","default":true}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

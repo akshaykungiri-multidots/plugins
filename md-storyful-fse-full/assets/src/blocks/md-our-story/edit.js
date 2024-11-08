@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * Retrieves the translation of text.
  *
@@ -36,7 +37,7 @@ import {
   TextControl,
   Button,
   RadioControl,
-  PanelRow
+  PanelRow,
 } from "@wordpress/components";
 
 import "./editor.scss";
@@ -45,21 +46,22 @@ import "./editor.scss";
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
- * @param root0
- * @param root0.attributes
- * @param root0.attributes.heading
- * @param root0.setAttributes
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.attributes.heading
+ * @param  root0.setAttributes
+ * @param  root0.className
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
-export default function Edit({ attributes, setAttributes, className }) {
+export default function Edit({ attributes, setAttributes }) {
   const {
-    our_story_title,
-    our_story_video_image,
+    ourStoryTitle,
+    ourStoryVideoImage,
     vidType,
     youtubeLink,
     video,
-    our_story_title_font_color,
+    ourStoryTitleFontColor
   } = attributes;
   return (
     <div {...useBlockProps()}>
@@ -75,7 +77,7 @@ export default function Edit({ attributes, setAttributes, className }) {
               { label: "Youtube Video", value: "youtube" },
             ]}
             selected={vidType}
-            onChange={(vidType) => setAttributes({ vidType })}
+            onChange={(value) => setAttributes({ vidType: value })}
           />
           {vidType && vidType === "media-upload" && (
             <>
@@ -107,9 +109,9 @@ export default function Edit({ attributes, setAttributes, className }) {
               {!video && (
                 <>
                   <MediaUpload
-                    onSelect={(video) =>
+                    onSelect={(media) =>
                       setAttributes({
-                        video: video.url ? video.url : "",
+                        video: media.url ? media.url : "",
                       })
                     }
                     allowedTypes={["video"]}
@@ -133,20 +135,23 @@ export default function Edit({ attributes, setAttributes, className }) {
               <TextControl
                 label="Enter youtube video link"
                 value={youtubeLink.replace("watch?v=", "embed/")}
-                onChange={(youtubeLink) => setAttributes({ youtubeLink })}
+                onChange={(value) => setAttributes({ youtubeLink: value })}
               />
             </PanelRow>
           )}
         </PanelBody>
-        <PanelBody title={__("Color Settings", "md-storyful-fse-full")} initialOpen={false}>
+        <PanelBody
+          title={__("Color Settings", "md-storyful-fse-full")}
+          initialOpen={false}
+        >
           <PanelColorSettings
             title={__("Color Settings", "md-storyful-fse-full")}
             initialOpen={false}
             colorSettings={[
               {
-                value: our_story_title_font_color,
+                value: ourStoryTitleFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ our_story_title_font_color: newColor }),
+                  setAttributes({ ourStoryTitleFontColor: newColor }),
                 label: __("Our Story Title Font Color"),
               },
             ]}
@@ -160,10 +165,10 @@ export default function Edit({ attributes, setAttributes, className }) {
               <RichText
                 tagName="h3"
                 className="our-story-title"
-                style={{ color: our_story_title_font_color }}
-                value={our_story_title}
+                style={{ color: ourStoryTitleFontColor }}
+                value={ourStoryTitle}
                 onChange={(newText) =>
-                  setAttributes({ our_story_title: newText })
+                  setAttributes({ ourStoryTitle: newText })
                 }
                 placeholder="Our Story Title"
               />
@@ -176,14 +181,14 @@ export default function Edit({ attributes, setAttributes, className }) {
                 <MediaUpload
                   title={__("Feature Image")}
                   onSelect={(media) =>
-                    setAttributes({ our_story_video_image: media.url })
+                    setAttributes({ ourStoryVideoImage: media.url })
                   }
                   multiple={false}
                   render={({ open }) => (
                     <>
-                      {our_story_video_image == "" ? (
+                      {ourStoryVideoImage === "" ? (
                         <>
-                          { vidType && vidType === "media-upload" ? (
+                          {vidType && vidType === "media-upload" ? (
                             <>
                               <video src={video} className="self-media" />
                             </>
@@ -211,13 +216,16 @@ export default function Edit({ attributes, setAttributes, className }) {
                             ></i>
                             <i
                               onClick={() =>
-                                setAttributes({ our_story_video_image: "" })
+                                setAttributes({ ourStoryVideoImage: "" })
                               }
                               className="dashicons dashicons-no-alt remove-image"
                             ></i>
                           </div>
                           <figure>
-                            <img src={our_story_video_image} className="self-media" />
+                            <img
+                              src={ourStoryVideoImage}
+                              className="self-media"
+                            />
                           </figure>
                         </>
                       )}

@@ -41,6 +41,9 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.setAttributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
  * @return {WPElement} Element to render.
@@ -53,108 +56,108 @@ function Edit({
   const {
     title,
     description,
-    background_image,
+    backgroundImage,
     titleFontColor,
     descriptionFontColor
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Settings", "md-prime"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Settings', 'md-prime'),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "setting-row",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
             htmlFor: "background-image",
-            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background Image", "md-prime")
+            children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Image', 'md-prime')
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            children: !background_image ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
+            children: !backgroundImage ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
               onSelect: selectedImage => {
                 setAttributes({
-                  background_image: selectedImage.url
+                  backgroundImage: selectedImage.url
                 });
               },
-              allowedTypes: ["image"],
-              value: background_image,
+              allowedTypes: ['image'],
+              value: backgroundImage,
               render: ({
                 open
               }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
                 onClick: open,
                 className: "button button-large",
-                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Upload Image", "md-prime")
+                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upload Image', 'md-prime')
               })
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 className: "image-preview",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-                  src: background_image,
+                  src: backgroundImage,
                   alt: "Background-image-preview"
                 })
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
                 onClick: () => {
                   setAttributes({
-                    background_image: ""
+                    backgroundImage: ''
                   });
                 },
                 className: "is-link is-destructive",
-                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Image", "md-prime")
+                children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Image', 'md-prime')
               })]
             })
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color Settings", "md-storyful-fse-full"),
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color Settings', 'md-storyful-fse-full'),
         initialOpen: false,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.PanelColorSettings, {
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Typography Colors', 'md-storyful-fse-full'),
           initialOpen: false,
           colorSettings: [{
             value: titleFontColor,
             onChange: newColor => setAttributes({
               titleFontColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Title Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title Font Color')
           }, {
             value: descriptionFontColor,
             onChange: newColor => setAttributes({
               descriptionFontColor: newColor
             }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Description Font Color")
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Font Color')
           }]
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
-        className: "md_two_column"
+        className: 'md_two_column'
       }),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "storyful-two-column",
         style: {
-          background_image: `url(${background_image})`
+          backgroundImage: `url(${backgroundImage})`
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          class: "container",
+          className: "container",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            class: "two-columns__title",
+            className: "two-columns__title",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
               tagName: "h2",
               value: title,
-              onChange: title => setAttributes({
-                title
+              onChange: value => setAttributes({
+                title: value
               }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Title", "md-storyful-fse-full"),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter Title', 'md-storyful-fse-full'),
               style: {
                 color: titleFontColor
               }
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            class: "two-columns__description wow fadeInRight",
+            className: "two-columns__description wow fadeInRight",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
               tagName: "p",
               value: description,
-              onChange: description => setAttributes({
-                description
+              onChange: value => setAttributes({
+                description: value
               }),
-              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter Description", "md-storyful-fse-full"),
+              placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Enter Description', 'md-storyful-fse-full'),
               style: {
                 color: descriptionFontColor
               }
@@ -259,6 +262,8 @@ __webpack_require__.r(__webpack_exports__);
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param  root0
+ * @param  root0.attributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
@@ -270,23 +275,23 @@ function save({
   const {
     title,
     description,
-    background_image,
+    backgroundImage,
     titleFontColor,
     descriptionFontColor
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-      className: "md_two_column"
+      className: 'md_two_column'
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "storyful-two-column",
       style: {
-        backgroundImage: `url(${background_image})`
+        backgroundImage: `url(${backgroundImage})`
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        class: "container",
+        className: "container",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          class: "two-columns__title",
+          className: "two-columns__title",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
             tagName: "h2",
             value: title,
@@ -295,7 +300,7 @@ function save({
             }
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          class: "two-columns__description wow fadeInRight",
+          className: "two-columns__description wow fadeInRight",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
             tagName: "p",
             value: description,
@@ -379,7 +384,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-two-column","version":"0.1.0","title":"MD Two Column","apiVersion":3,"category":"md-storyful-fse-full","icon":"columns","description":"A Two Column block for Storyful FSE","keywords":["two column","md-storyful-fse-full"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"title":{"type":"string","default":""},"description":{"type":"string","default":""},"background_image":{"type":"string","default":""},"titleFontColor":{"type":"string","default":""},"descriptionFontColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-two-column","version":"0.1.0","title":"MD Two Column","apiVersion":3,"category":"md-storyful-fse-full","icon":"columns","description":"A Two Column block for Storyful FSE","keywords":["two column","md-storyful-fse-full"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"title":{"type":"string","default":""},"description":{"type":"string","default":""},"backgroundImage":{"type":"string","default":""},"titleFontColor":{"type":"string","default":""},"descriptionFontColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

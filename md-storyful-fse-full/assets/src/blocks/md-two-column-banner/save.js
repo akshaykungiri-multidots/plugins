@@ -18,37 +18,39 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param  root0
+ * @param  root0.attributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
  */
-export default function save({attributes}) {
+export default function save({ attributes }) {
 	const {
-		section_left_title,
-		section_left_description,
-		section_left_button_link,
-		section_left_image,
-		section_right_title,
-		section_right_description,
-		section_right_button_link,
-		section_right_image,
-		section_left_title_font_color,
-		section_left_description_font_color,
-		section_right_title_font_color,
-		section_right_description_font_color,
-		show_section_left_title,
-		show_section_left_description,
-		show_section_left_button,
-		show_section_right_title,
-		show_section_right_description,
-		show_section_right_button,
+		sectionLeftTitle,
+		sectionLeftDescription,
+		sectionLeftButtonLink,
+		sectionLeftImage,
+		sectionRightTitle,
+		sectionRightDescription,
+		sectionRightButtonLink,
+		sectionRightImage,
+		sectionLeftTitleFontColor,
+		sectionLeftDescriptionFontColor,
+		sectionRightTitleFontColor,
+		sectionRightDescriptionFontColor,
+		showSectionLeftTitle,
+		showSectionLeftDescription,
+		showSectionLeftButton,
+		showSectionRightTitle,
+		showSectionRightDescription,
+		showSectionRightButton,
 	} = attributes;
 
 	return (
 		<div
-		{...useBlockProps.save({
-			className: "md_two_column_banner",
-		})}
+			{...useBlockProps.save({
+				className: 'md_two_column_banner',
+			})}
 		>
 			<div className="cta-section">
 				<div className="container-fluid">
@@ -58,33 +60,33 @@ export default function save({attributes}) {
 								<RichText.Content
 									tagName="h2"
 									className="section-title h1 with-darkbg"
-									value={section_left_title}
+									value={sectionLeftTitle}
 									style={{
-										color: section_left_title_font_color,
+										color: sectionLeftTitleFontColor,
 									}}
 								/>
 								<RichText.Content
 									tagName="p"
 									className="cta-section-desc"
-									value={section_left_description}
+									value={sectionLeftDescription}
 									style={{
-										color: section_left_description_font_color,
+										color: sectionLeftDescriptionFontColor,
 									}}
 								/>
 								<div className="sbtn sbtn-arrow-primary-v2">
 									<span className="btn-text">
 										<RichText.Content
 											tagName="a"
-											value={section_left_button_link}
+											value={sectionLeftButtonLink}
 										/>
 									</span>
 								</div>
 							</div>
-							{ section_left_image && (
-								<div class="intelligence-section__media wow bounceIn">
-									<div class="media-image-wrapper">
+							{sectionLeftImage && (
+								<div className="intelligence-section__media wow bounceIn">
+									<div className="media-image-wrapper">
 										<figure id="img-two">
-											<img src={section_left_image} />
+											<img src={sectionLeftImage} />
 										</figure>
 									</div>
 								</div>
@@ -97,36 +99,36 @@ export default function save({attributes}) {
 								<RichText.Content
 									tagName="h2"
 									className="section-title h1"
-									value={section_right_title}
+									value={sectionRightTitle}
 									style={{
-										color: section_right_title_font_color,
+										color: sectionRightTitleFontColor,
 									}}
 								/>
 								<RichText.Content
 									tagName="p"
 									className="cta-section-desc"
-									value={section_right_description}
+									value={sectionRightDescription}
 									style={{
-										color: section_right_description_font_color,
+										color: sectionRightDescriptionFontColor,
 									}}
 								/>
 								<div className="sbtn sbtn-arrow-primary-v2">
 									<span className="btn-text">
 										<RichText.Content
 											tagName="a"
-											value={section_right_button_link}
+											value={sectionRightButtonLink}
 										/>
 									</span>
 								</div>
 							</div>
-							{ section_right_image && (
-							<div class="cta-news-section__media wow bounceIn">
-								<div class="media-image-wrapper">
-									<figure id="img-one">
-										<img src={section_right_image} />
-									</figure>
+							{sectionRightImage && (
+								<div className="cta-news-section__media wow bounceIn">
+									<div className="media-image-wrapper">
+										<figure id="img-one">
+											<img src={sectionRightImage} />
+										</figure>
+									</div>
 								</div>
-							</div>
 							)}
 						</div>
 					</div>

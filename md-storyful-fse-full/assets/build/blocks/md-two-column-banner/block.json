@@ -24,35 +24,35 @@
       "type": "string",
       "default": ""
     },
-    "section_left_title": {
+    "sectionLeftTitle": {
       "type": "string",
       "default": ""
     },
-    "section_left_description": {
+    "sectionLeftDescription": {
       "type": "string",
       "default": ""
     },
-    "section_left_button_link": {
+    "sectionLeftButtonLink": {
       "type": "string",
       "default": ""
     },
-    "section_left_image": {
+    "sectionLeftImage": {
       "type": "string",
       "default": ""
     },
-    "section_right_title": {
+    "sectionRightTitle": {
       "type": "string",
       "default": ""
     },
-    "section_right_description": {
+    "sectionRightDescription": {
       "type": "string",
       "default": ""
     },
-    "section_right_button_link": {
+    "sectionRightButtonLink": {
       "type": "string",
       "default": ""
     },
-    "section_right_image": {
+    "sectionRightImage": {
       "type": "string",
       "default": ""
     },
@@ -60,43 +60,43 @@
       "type": "string",
       "default": ""
     },
-    "section_left_title_font_color": {
+    "sectionLeftTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "section_left_description_font_color": {
+    "sectionLeftDescriptionFontColor": {
       "type": "string",
       "default": ""
     },
-    "section_right_title_font_color": {
+    "sectionRightTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "section_right_description_font_color": {
+    "sectionRightDescriptionFontColor": {
       "type": "string",
       "default": ""
     },
-    "show_section_left_title": {
+    "showSectionLeftTitle": {
       "type": "boolean",
       "default": true
     },
-    "show_section_left_description": {
+    "showSectionLeftDescription": {
       "type": "boolean",
       "default": true
     },
-    "show_section_left_button": {
+    "showSectionLeftButton": {
       "type": "boolean",
       "default": true
     },
-    "show_section_right_title": {
+    "showSectionRightTitle": {
       "type": "boolean",
       "default": true
     },
-    "show_section_right_description": {
+    "showSectionRightDescription": {
       "type": "boolean",
       "default": true
     },
-    "show_section_right_button": {
+    "showSectionRightButton": {
       "type": "boolean",
       "default": true
     }

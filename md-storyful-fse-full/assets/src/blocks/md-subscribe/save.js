@@ -29,23 +29,39 @@ export default function save() {
 			<form>
 				<div className="form-group-radio">
 					{/* News, Intelligence, Both */}
-					<label>
-						<input type="radio" name="newsletter" value="news" />
+					<label htmlFor="newsletter-news">
+						<input type="radio" id="newsletter-news" name="newsletter" value="news" />
 						{__('News', 'md-storyful-fse-full')}
 					</label>
-					<label>
-						<input type="radio" name="newsletter" value="intelligence" />
+					<label htmlFor="newsletter-intelligence">
+						<input
+							type="radio"
+							id="newsletter-intelligence"
+							name="newsletter"
+							value="intelligence"
+						/>
 						{__('Intelligence', 'md-storyful-fse-full')}
 					</label>
-					<label>
-						<input type="radio" name="newsletter" value="both" />
+					<label htmlFor="newsletter-both">
+						<input type="radio" id="newsletter-both" name="newsletter" value="both" />
 						{__('Both', 'md-storyful-fse-full')}
 					</label>
 				</div>
 				<div className="form-group-subscribe">
 					<div className="form-group">
-						<input type="email" name="email" id="email" placeholder={__('Email Address', 'md-storyful-fse-full')} />
-						<input type="submit" value={__('Sign Up', 'md-storyful-fse-full')} />
+						<input
+							type="email"
+							name="email"
+							id="email"
+							placeholder={__(
+								'Email Address',
+								'md-storyful-fse-full'
+							)}
+						/>
+						<input
+							type="submit"
+							value={__('Sign Up', 'md-storyful-fse-full')}
+						/>
 					</div>
 				</div>
 			</form>

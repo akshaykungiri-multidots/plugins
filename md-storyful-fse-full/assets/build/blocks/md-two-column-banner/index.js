@@ -40,6 +40,9 @@ __webpack_require__.r(__webpack_exports__);
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
+ * @param  root0
+ * @param  root0.attributes
+ * @param  root0.setAttributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  *
  * @return {WPElement} Element to render.
@@ -50,24 +53,24 @@ function Edit({
   setAttributes
 }) {
   const {
-    section_left_title,
-    section_left_description,
-    section_left_button_link,
-    section_left_image,
-    section_right_title,
-    section_right_description,
-    section_right_button_link,
-    section_right_image,
-    section_left_title_font_color,
-    section_left_description_font_color,
-    section_right_title_font_color,
-    section_right_description_font_color,
-    show_section_left_title,
-    show_section_left_description,
-    show_section_left_button,
-    show_section_right_title,
-    show_section_right_description,
-    show_section_right_button
+    sectionLeftTitle,
+    sectionLeftDescription,
+    sectionLeftButtonLink,
+    sectionLeftImage,
+    sectionRightTitle,
+    sectionRightDescription,
+    sectionRightButtonLink,
+    sectionRightImage,
+    sectionLeftTitleFontColor,
+    sectionLeftDescriptionFontColor,
+    sectionRightTitleFontColor,
+    sectionRightDescriptionFontColor,
+    showSectionLeftTitle,
+    showSectionLeftDescription,
+    showSectionLeftButton,
+    showSectionRightTitle,
+    showSectionRightDescription,
+    showSectionRightButton
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
@@ -78,39 +81,39 @@ function Edit({
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Toggle Settings", "md-storyful-fse-full"),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Left Title", "md-storyful-fse-full"),
-          checked: show_section_left_title,
+          checked: showSectionLeftTitle,
           onChange: value => setAttributes({
-            show_section_left_title: value
+            showSectionLeftTitle: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Left Description", "md-storyful-fse-full"),
-          checked: show_section_left_description,
+          checked: showSectionLeftDescription,
           onChange: value => setAttributes({
-            show_section_left_description: value
+            showSectionLeftDescription: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Left Button", "md-storyful-fse-full"),
-          checked: show_section_left_button,
+          checked: showSectionLeftButton,
           onChange: value => setAttributes({
-            show_section_left_button: value
+            showSectionLeftButton: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Right Title", "md-storyful-fse-full"),
-          checked: show_section_right_title,
+          checked: showSectionRightTitle,
           onChange: value => setAttributes({
-            show_section_right_title: value
+            showSectionRightTitle: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Right Description", "md-storyful-fse-full"),
-          checked: show_section_right_description,
+          checked: showSectionRightDescription,
           onChange: value => setAttributes({
-            show_section_right_description: value
+            showSectionRightDescription: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Right Button", "md-storyful-fse-full"),
-          checked: show_section_right_button,
+          checked: showSectionRightButton,
           onChange: value => setAttributes({
-            show_section_right_button: value
+            showSectionRightButton: value
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
@@ -120,27 +123,27 @@ function Edit({
           title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Typography Colors", "md-storyful-fse-full"),
           initialOpen: false,
           colorSettings: [{
-            value: section_left_title_font_color,
+            value: sectionLeftTitleFontColor,
             onChange: value => setAttributes({
-              section_left_title_font_color: value
+              sectionLeftTitleFontColor: value
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Title Font Color")
           }, {
-            value: section_left_description_font_color,
+            value: sectionLeftDescriptionFontColor,
             onChange: value => setAttributes({
-              section_left_description_font_color: value
+              sectionLeftDescriptionFontColor: value
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Left Description Font Color")
           }, {
-            value: section_right_title_font_color,
+            value: sectionRightTitleFontColor,
             onChange: value => setAttributes({
-              section_right_title_font_color: value
+              sectionRightTitleFontColor: value
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Title Font Color")
           }, {
-            value: section_right_description_font_color,
+            value: sectionRightDescriptionFontColor,
             onChange: value => setAttributes({
-              section_right_description_font_color: value
+              sectionRightDescriptionFontColor: value
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Right Description Font Color")
           }]
@@ -156,58 +159,58 @@ function Edit({
             className: "intelligence-section",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "intelligence-section__details wow fadeInLeft",
-              children: [show_section_left_title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              children: [showSectionLeftTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "h2",
                 className: "section-title h1 with-darkbg",
-                value: section_left_title,
+                value: sectionLeftTitle,
                 onChange: value => setAttributes({
-                  section_left_title: value
+                  sectionLeftTitle: value
                 }),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title...", "md-blocks"),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title…", "md-blocks"),
                 style: {
-                  color: section_left_title_font_color
+                  color: sectionLeftTitleFontColor
                 }
-              }), show_section_left_description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              }), showSectionLeftDescription && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "p",
                 className: "cta-section-desc",
-                value: section_left_description,
+                value: sectionLeftDescription,
                 onChange: value => setAttributes({
-                  section_left_description: value
+                  sectionLeftDescription: value
                 }),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description...", "md-blocks"),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description…", "md-blocks"),
                 style: {
-                  color: section_left_description_font_color
+                  color: sectionLeftDescriptionFontColor
                 }
-              }), show_section_left_button && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              }), showSectionLeftButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 className: "sbtn sbtn-arrow-primary-v2",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                   className: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                     tagName: "a",
-                    value: section_left_button_link,
+                    value: sectionLeftButtonLink,
                     onChange: value => setAttributes({
-                      section_left_button_link: value
+                      sectionLeftButtonLink: value
                     }),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text...", "md-blocks")
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text…", "md-blocks")
                   })
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              class: "intelligence-section__media wow bounceIn",
+              className: "intelligence-section__media wow bounceIn",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                class: "media-image-wrapper",
+                className: "media-image-wrapper",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("figure", {
                   id: "img-two",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
                     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Feature Image"),
                     onSelect: media => setAttributes({
-                      section_left_image: media.url
+                      sectionLeftImage: media.url
                     }),
                     multiple: false,
                     render: ({
                       open
                     }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-                      children: section_left_image == "" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                      children: sectionLeftImage === "" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
                         onClick: open,
                         variant: "primary",
                         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Upload")
@@ -220,12 +223,13 @@ function Edit({
                             className: "dashicons dashicons-edit edit-image"
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
                             onClick: () => setAttributes({
-                              section_left_image: ""
+                              sectionLeftImage: ""
                             }),
                             className: "dashicons dashicons-no-alt remove-image"
                           })]
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-                          src: section_left_image
+                          src: sectionLeftImage,
+                          alt: sectionLeftTitle
                         })]
                       })
                     })
@@ -240,58 +244,58 @@ function Edit({
             className: "cta-news-section",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "cta-news-section__details wow fadeInLeft",
-              children: [show_section_right_title && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              children: [showSectionRightTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "h2",
                 className: "section-title h1",
-                value: section_right_title,
+                value: sectionRightTitle,
                 onChange: value => setAttributes({
-                  section_right_title: value
+                  sectionRightTitle: value
                 }),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title...", "md-blocks"),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter title…", "md-blocks"),
                 style: {
-                  color: section_right_title_font_color
+                  color: sectionRightTitleFontColor
                 }
-              }), show_section_right_description && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+              }), showSectionRightDescription && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                 tagName: "p",
                 className: "cta-section-desc",
-                value: section_right_description,
+                value: sectionRightDescription,
                 onChange: value => setAttributes({
-                  section_right_description: value
+                  sectionRightDescription: value
                 }),
-                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description...", "md-blocks"),
+                placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter description…", "md-blocks"),
                 style: {
-                  color: section_right_description_font_color
+                  color: sectionRightDescriptionFontColor
                 }
-              }), show_section_right_button && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              }), showSectionRightButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
                 className: "sbtn sbtn-arrow-primary-v2",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
                   className: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                     tagName: "a",
-                    value: section_right_button_link,
+                    value: sectionRightButtonLink,
                     onChange: value => setAttributes({
-                      section_right_button_link: value
+                      sectionRightButtonLink: value
                     }),
-                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text...", "md-blocks")
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Enter button text…", "md-blocks")
                   })
                 })
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              class: "cta-news-section__media wow bounceIn",
+              className: "cta-news-section__media wow bounceIn",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-                class: "media-image-wrapper",
+                className: "media-image-wrapper",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("figure", {
                   id: "img-one",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
                     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Feature Image"),
                     onSelect: media => setAttributes({
-                      section_right_image: media.url
+                      sectionRightImage: media.url
                     }),
                     multiple: false,
                     render: ({
                       open
                     }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-                      children: section_right_image == "" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                      children: sectionRightImage === "" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
                         onClick: open,
                         variant: "primary",
                         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Upload")
@@ -304,12 +308,13 @@ function Edit({
                             className: "dashicons dashicons-edit edit-image"
                           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
                             onClick: () => setAttributes({
-                              section_right_image: ""
+                              sectionRightImage: ""
                             }),
                             className: "dashicons dashicons-no-alt remove-image"
                           })]
                         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
-                          src: section_right_image
+                          src: sectionRightImage,
+                          alt: sectionRightTitle
                         })]
                       })
                     })
@@ -417,6 +422,8 @@ __webpack_require__.r(__webpack_exports__);
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
+ * @param  root0
+ * @param  root0.attributes
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#save
  *
  * @return {WPElement} Element to render.
@@ -426,28 +433,28 @@ function save({
   attributes
 }) {
   const {
-    section_left_title,
-    section_left_description,
-    section_left_button_link,
-    section_left_image,
-    section_right_title,
-    section_right_description,
-    section_right_button_link,
-    section_right_image,
-    section_left_title_font_color,
-    section_left_description_font_color,
-    section_right_title_font_color,
-    section_right_description_font_color,
-    show_section_left_title,
-    show_section_left_description,
-    show_section_left_button,
-    show_section_right_title,
-    show_section_right_description,
-    show_section_right_button
+    sectionLeftTitle,
+    sectionLeftDescription,
+    sectionLeftButtonLink,
+    sectionLeftImage,
+    sectionRightTitle,
+    sectionRightDescription,
+    sectionRightButtonLink,
+    sectionRightImage,
+    sectionLeftTitleFontColor,
+    sectionLeftDescriptionFontColor,
+    sectionRightTitleFontColor,
+    sectionRightDescriptionFontColor,
+    showSectionLeftTitle,
+    showSectionLeftDescription,
+    showSectionLeftButton,
+    showSectionRightTitle,
+    showSectionRightDescription,
+    showSectionRightButton
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
-      className: "md_two_column_banner"
+      className: 'md_two_column_banner'
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "cta-section",
@@ -462,16 +469,16 @@ function save({
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                 tagName: "h2",
                 className: "section-title h1 with-darkbg",
-                value: section_left_title,
+                value: sectionLeftTitle,
                 style: {
-                  color: section_left_title_font_color
+                  color: sectionLeftTitleFontColor
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                 tagName: "p",
                 className: "cta-section-desc",
-                value: section_left_description,
+                value: sectionLeftDescription,
                 style: {
-                  color: section_left_description_font_color
+                  color: sectionLeftDescriptionFontColor
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                 className: "sbtn sbtn-arrow-primary-v2",
@@ -479,18 +486,18 @@ function save({
                   className: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                     tagName: "a",
-                    value: section_left_button_link
+                    value: sectionLeftButtonLink
                   })
                 })
               })]
-            }), section_left_image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              class: "intelligence-section__media wow bounceIn",
+            }), sectionLeftImage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "intelligence-section__media wow bounceIn",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                class: "media-image-wrapper",
+                className: "media-image-wrapper",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("figure", {
                   id: "img-two",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                    src: section_left_image
+                    src: sectionLeftImage
                   })
                 })
               })
@@ -505,16 +512,16 @@ function save({
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                 tagName: "h2",
                 className: "section-title h1",
-                value: section_right_title,
+                value: sectionRightTitle,
                 style: {
-                  color: section_right_title_font_color
+                  color: sectionRightTitleFontColor
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                 tagName: "p",
                 className: "cta-section-desc",
-                value: section_right_description,
+                value: sectionRightDescription,
                 style: {
-                  color: section_right_description_font_color
+                  color: sectionRightDescriptionFontColor
                 }
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
                 className: "sbtn sbtn-arrow-primary-v2",
@@ -522,18 +529,18 @@ function save({
                   className: "btn-text",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                     tagName: "a",
-                    value: section_right_button_link
+                    value: sectionRightButtonLink
                   })
                 })
               })]
-            }), section_right_image && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-              class: "cta-news-section__media wow bounceIn",
+            }), sectionRightImage && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "cta-news-section__media wow bounceIn",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                class: "media-image-wrapper",
+                className: "media-image-wrapper",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("figure", {
                   id: "img-one",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-                    src: section_right_image
+                    src: sectionRightImage
                   })
                 })
               })
@@ -615,7 +622,7 @@ module.exports = window["wp"]["i18n"];
   \****************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-two-column-banner","version":"0.1.0","title":"MD Two Column Banner","apiVersion":3,"category":"md-storyful-fse-full","icon":"layout","description":"A Two Column Banner block for Storyful FSE","keywords":["md-storyful-fse-full","md-two-column-banner"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"section_left_strong_title":{"type":"string","default":""},"section_left_title":{"type":"string","default":""},"section_left_description":{"type":"string","default":""},"section_left_button_link":{"type":"string","default":""},"section_left_image":{"type":"string","default":""},"section_right_title":{"type":"string","default":""},"section_right_description":{"type":"string","default":""},"section_right_button_link":{"type":"string","default":""},"section_right_image":{"type":"string","default":""},"section_left_strong_title_font_color":{"type":"string","default":""},"section_left_title_font_color":{"type":"string","default":""},"section_left_description_font_color":{"type":"string","default":""},"section_right_title_font_color":{"type":"string","default":""},"section_right_description_font_color":{"type":"string","default":""},"show_section_left_title":{"type":"boolean","default":true},"show_section_left_description":{"type":"boolean","default":true},"show_section_left_button":{"type":"boolean","default":true},"show_section_right_title":{"type":"boolean","default":true},"show_section_right_description":{"type":"boolean","default":true},"show_section_right_button":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-storyful-fse-full/md-two-column-banner","version":"0.1.0","title":"MD Two Column Banner","apiVersion":3,"category":"md-storyful-fse-full","icon":"layout","description":"A Two Column Banner block for Storyful FSE","keywords":["md-storyful-fse-full","md-two-column-banner"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-storyful-fse-full","attributes":{"section_left_strong_title":{"type":"string","default":""},"sectionLeftTitle":{"type":"string","default":""},"sectionLeftDescription":{"type":"string","default":""},"sectionLeftButtonLink":{"type":"string","default":""},"sectionLeftImage":{"type":"string","default":""},"sectionRightTitle":{"type":"string","default":""},"sectionRightDescription":{"type":"string","default":""},"sectionRightButtonLink":{"type":"string","default":""},"sectionRightImage":{"type":"string","default":""},"section_left_strong_title_font_color":{"type":"string","default":""},"sectionLeftTitleFontColor":{"type":"string","default":""},"sectionLeftDescriptionFontColor":{"type":"string","default":""},"sectionRightTitleFontColor":{"type":"string","default":""},"sectionRightDescriptionFontColor":{"type":"string","default":""},"showSectionLeftTitle":{"type":"boolean","default":true},"showSectionLeftDescription":{"type":"boolean","default":true},"showSectionLeftButton":{"type":"boolean","default":true},"showSectionRightTitle":{"type":"boolean","default":true},"showSectionRightDescription":{"type":"boolean","default":true},"showSectionRightButton":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

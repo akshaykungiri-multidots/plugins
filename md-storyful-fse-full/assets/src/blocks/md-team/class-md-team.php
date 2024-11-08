@@ -15,15 +15,15 @@ use MD_STORYFUL_FSE_FULL\Includes\Block_Base;
 use WP_Block;
 
 /**
- * Team_V2 class.
+ * MD_Team class.
  */
-class Team_V2 extends Block_Base {
+class MD_Team extends Block_Base {
 
 	/**
 	 * Constructor.
 	 */
 	public function __construct() {
-		$this->_block = 'team-v2';
+		$this->_block = 'md-team';
 	}
 
 	/**

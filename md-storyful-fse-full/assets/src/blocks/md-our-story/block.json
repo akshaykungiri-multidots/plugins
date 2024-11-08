@@ -14,11 +14,11 @@
   },
   "textdomain": "md-storyful-fse-full",
   "attributes": {
-    "our_story_title": {
+    "ourStoryTitle": {
       "type": "string",
       "default": "Our Story"
     },
-    "our_story_video_image": {
+    "ourStoryVideoImage": {
       "type": "string"
     },
     "vidType": {
@@ -32,7 +32,7 @@
     "video": {
 			"type": "string"
 		},
-    "our_story_title_font_color": {
+    "ourStoryTitleFontColor": {
       "type": "string",
       "default": ""
     }
