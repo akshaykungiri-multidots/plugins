@@ -40,52 +40,52 @@ import {
  */
 export default function Edit({ attributes, setAttributes }) {
   const {
-    sub_title,
+    subTitle,
     title,
-    heading_content,
-    card_block_style,
-    card_block_list,
-    sub_title_font_color,
-    title_font_color,
-    heading_content_font_color,
-    card_title_font_color,
-    card_content_font_color,
-    card_learn_more_font_color,
-    number_of_columns,
-    show_image,
-    show_title,
-    show_content,
-    show_link,
-    show_sub_heading,
-    show_heading_content,
-    show_heading,
+    headingContent,
+    cardBlockStyle,
+    cardBlockList,
+    subTitleFontColor,
+    titleFontColor,
+    headingContentFontColor,
+    cardTitleFontColor,
+    cardContentFontColor,
+    cardLearnMoreFontColor,
+    numberOfColumns,
+    showImage,
+    showTitle,
+    showContent,
+    showLink,
+    showSubHeading,
+    showHeadingContent,
+    showHeading,
   } = attributes;
 
   const addStaticPostObj = () => {
     const staticPostObj = [
-      ...card_block_list,
+      ...cardBlockList,
       {
-        id: card_block_list.length + 1,
+        id: cardBlockList.length + 1,
         card_image: "",
         card_title: "",
         card_description: "",
         learn_more_link: "",
       },
     ];
-    setAttributes({ card_block_list: staticPostObj });
+    setAttributes({ cardBlockList: staticPostObj });
   };
   const updateStaticPostObj = (index, key, value) => {
-    const updatedStaticPostObj = [...card_block_list];
+    const updatedStaticPostObj = [...cardBlockList];
     updatedStaticPostObj[index][key] = value;
-    setAttributes({ card_block_list: updatedStaticPostObj });
+    setAttributes({ cardBlockList: updatedStaticPostObj });
   };
   const moveItem = (oldIndex, newIndex) => {
-    const arrayCopy = [...card_block_list];
-    arrayCopy[oldIndex] = card_block_list[newIndex];
-    arrayCopy[newIndex] = card_block_list[oldIndex];
+    const arrayCopy = [...cardBlockList];
+    arrayCopy[oldIndex] = cardBlockList[newIndex];
+    arrayCopy[newIndex] = cardBlockList[oldIndex];
 
     setAttributes({
-      card_block_list: arrayCopy,
+      cardBlockList: arrayCopy,
     });
   };
 
@@ -95,18 +95,18 @@ export default function Edit({ attributes, setAttributes }) {
         <PanelBody title={__("Block Settings", "md-anitian-fse-full")}>
           <SelectControl
             label={__("Card Block Style", "md-anitian-fse-full")}
-            value={card_block_style}
+            value={cardBlockStyle}
             options={[
               { label: "Style 1", value: "style1" },
               { label: "Style 2", value: "style2" },
               { label: "Style 3", value: "style3" },
             ]}
-            onChange={(value) => setAttributes({ card_block_style: value })}
+            onChange={(value) => setAttributes({ cardBlockStyle: value })}
           />
           <RangeControl
             label={__("Number of Columns", "md-anitian-fse-full")}
-            value={number_of_columns}
-            onChange={(value) => setAttributes({ number_of_columns: value })}
+            value={numberOfColumns}
+            onChange={(value) => setAttributes({ numberOfColumns: value })}
             min={1}
             max={4}
           />
@@ -114,38 +114,38 @@ export default function Edit({ attributes, setAttributes }) {
         <PanelBody title={__("Toggle Settings", "md-anitian-fse-full")} initialOpen={false}>
           <ToggleControl
             label={__("Show Sub Heading", "md-anitian-fse-full")}
-            checked={show_sub_heading}
-            onChange={(value) => setAttributes({ show_sub_heading: value })}
+            checked={showSubHeading}
+            onChange={(value) => setAttributes({ showSubHeading: value })}
           />
           <ToggleControl
             label={__("Show Heading", "md-anitian-fse-full")}
-            checked={show_heading}
-            onChange={(value) => setAttributes({ show_heading: value })}
+            checked={showHeading}
+            onChange={(value) => setAttributes({ showHeading: value })}
           />
           <ToggleControl
             label={__("Show Heading Content", "md-anitian-fse-full")}
-            checked={show_heading_content}
-            onChange={(value) => setAttributes({ show_heading_content: value })}
+            checked={showHeadingContent}
+            onChange={(value) => setAttributes({ showHeadingContent: value })}
           />
           <ToggleControl
             label={__("Show Image", "md-anitian-fse-full")}
-            checked={show_image}
-            onChange={(value) => setAttributes({ show_image: value })}
+            checked={showImage}
+            onChange={(value) => setAttributes({ showImage: value })}
           />
           <ToggleControl
             label={__("Show Title", "md-anitian-fse-full")}
-            checked={show_title}
-            onChange={(value) => setAttributes({ show_title: value })}
+            checked={showTitle}
+            onChange={(value) => setAttributes({ showTitle: value })}
           />
           <ToggleControl
             label={__("Show Content", "md-anitian-fse-full")}
-            checked={show_content}
-            onChange={(value) => setAttributes({ show_content: value })}
+            checked={showContent}
+            onChange={(value) => setAttributes({ showContent: value })}
           />
           <ToggleControl
             label={__("Show Link", "md-anitian-fse-full")}
-            checked={show_link}
-            onChange={(value) => setAttributes({ show_link: value })}
+            checked={showLink}
+            onChange={(value) => setAttributes({ showLink: value })}
           />
         </PanelBody>
         <PanelBody
@@ -157,79 +157,79 @@ export default function Edit({ attributes, setAttributes }) {
             initialOpen={false}
             colorSettings={[
               {
-                value: sub_title_font_color,
+                value: subTitleFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ sub_title_font_color: newColor }),
+                  setAttributes({ subTitleFontColor: newColor }),
                 label: __("Sub Title Font Color"),
               },
               {
-                value: title_font_color,
+                value: titleFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ title_font_color: newColor }),
+                  setAttributes({ titleFontColor: newColor }),
                 label: __("Title Font Color"),
               },
               {
-                value: heading_content_font_color,
+                value: headingContentFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ heading_content_font_color: newColor }),
+                  setAttributes({ headingContentFontColor: newColor }),
                 label: __("Heading Content Font Color"),
               },
               {
-                value: card_title_font_color,
+                value: cardTitleFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ card_title_font_color: newColor }),
+                  setAttributes({ cardTitleFontColor: newColor }),
                 label: __("Card Title Font Color"),
               },
               {
-                value: card_content_font_color,
+                value: cardContentFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ card_content_font_color: newColor }),
+                  setAttributes({ cardContentFontColor: newColor }),
                 label: __("Card Description Font Color"),
               },
               {
-                value: card_learn_more_font_color,
+                value: cardLearnMoreFontColor,
                 onChange: (newColor) =>
-                  setAttributes({ card_learn_more_font_color: newColor }),
+                  setAttributes({ cardLearnMoreFontColor: newColor }),
                 label: __("Card Learn More Font Color"),
               },
             ]}
           />
         </PanelBody>
       </InspectorControls>
-      <div className={`md_anitian_card_block ${card_block_style}`}>
+      <div className={`md_anitian_card_block ${cardBlockStyle}`}>
         <div className="md_anitian_card_block__head">
           <div className="container">
             <div className="md_anitian_card_block__heading">
-              {show_sub_heading && (
+              {showSubHeading && (
               <RichText
                 tagName="h3"
-                value={sub_title}
-                onChange={(value) => setAttributes({ sub_title: value })}
+                value={subTitle}
+                onChange={(value) => setAttributes({ subTitle: value })}
                 placeholder={__("Enter Sub Title", "md-anitian-fse-full")}
                 style={{
-                  color: sub_title_font_color,
+                  color: subTitleFontColor,
                 }}
               />
               )}
-              {show_heading && (
+              {showHeading && (
               <RichText
                 tagName="h2"
                 value={title}
                 onChange={(value) => setAttributes({ title: value })}
                 placeholder={__("Enter Title", "md-anitian-fse-full")}
                 style={{
-                  color: title_font_color,
+                  color: titleFontColor,
                 }}
               />
               )}
-              {show_heading_content && (
+              {showHeadingContent && (
               <RichText
                 tagName="p"
-                value={heading_content}
-                onChange={(value) => setAttributes({ heading_content: value })}
+                value={headingContent}
+                onChange={(value) => setAttributes({ headingContent: value })}
                 placeholder={__("Enter Heading Content", "md-anitian-fse-full")}
                 style={{
-                  color: heading_content_font_color,
+                  color: headingContentFontColor,
                 }}
               />
               )}
@@ -237,10 +237,10 @@ export default function Edit({ attributes, setAttributes }) {
           </div>
         </div>
         <div className="container">
-          <div className="md_anitian_card_block__content" style={{ gridTemplateColumns: `repeat(${number_of_columns}, 1fr)` }}>
-            {card_block_list &&
-              card_block_list.map((postObj, index) => (
-                <div className="md_anitian_card_block__item show-items-hover-wrap">
+          <div className="md_anitian_card_block__content" style={{ gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)` }}>
+            {cardBlockList &&
+              cardBlockList.map((postObj, index) => (
+                <div className="md_anitian_card_block__item show-items-hover-wrap" key={index}>
                   <div className={`item-action-wrap show-items-hover pos-abs`}>
                     <div className="move-item">
                       {0 < index && (
@@ -259,7 +259,7 @@ export default function Edit({ attributes, setAttributes }) {
                           ></span>
                         </Tooltip>
                       )}
-                      {index + 1 < card_block_list.length && (
+                      {index + 1 < cardBlockList.length && (
                         <Tooltip text={__("Move Right", "md-prime")}>
                           <span
                             className="dashicons dashicons-arrow-right-alt move-right"
@@ -276,7 +276,7 @@ export default function Edit({ attributes, setAttributes }) {
                         </Tooltip>
                       )}
                     </div>
-                    {1 < card_block_list.length && (
+                    {1 < cardBlockList.length && (
                       <Tooltip text={__("Remove Item", "md-prime")}>
                         <i
                           className="remove-item dashicons dashicons-no-alt"
@@ -292,11 +292,11 @@ export default function Edit({ attributes, setAttributes }) {
                                 )
                               );
                             if (toDelete === true) {
-                              const updatedArray = card_block_list.filter(
+                              const updatedArray = cardBlockList.filter(
                                 (item, itemIndex) => itemIndex !== index
                               );
                               setAttributes({
-                                card_block_list: updatedArray,
+                                cardBlockList: updatedArray,
                               });
                             }
                           }}
@@ -313,11 +313,11 @@ export default function Edit({ attributes, setAttributes }) {
                                   )
                                 );
                               if (toDelete === true) {
-                                const updatedArray = card_block_list.filter(
+                                const updatedArray = cardBlockList.filter(
                                   (item, itemIndex) => itemIndex !== index
                                 );
                                 setAttributes({
-                                  card_block_list: updatedArray,
+                                  cardBlockList: updatedArray,
                                 });
                               }
                             }
@@ -327,7 +327,7 @@ export default function Edit({ attributes, setAttributes }) {
                       </Tooltip>
                     )}
                   </div>
-                  {show_image && (
+                  {showImage && (
                   <div className="md_anitian_card_block__item__image">
                       <div className={`card-box-v1__box_image`}>
                         <div className="md-prime-block-control image-preview image-controle-visible-hover">
@@ -403,7 +403,7 @@ export default function Edit({ attributes, setAttributes }) {
                             </Tooltip>
                           </div>
                           {postObj.card_image && (
-                            <img src={postObj.card_image} />
+                            <img src={postObj.card_image} alt={postObj.card_title} />
                           )}
                         </div>
                         {!postObj.card_image && (
@@ -433,7 +433,7 @@ export default function Edit({ attributes, setAttributes }) {
                   </div>
                   )}
                   <div className="md_anitian_card_block__item__content">
-                    {show_title && (
+                    {showTitle && (
                     <RichText
                       tagName="h3"
                       className="column-item-title"
@@ -443,12 +443,12 @@ export default function Edit({ attributes, setAttributes }) {
                       }
                       placeholder={__("Enter Title")}
                       style={{
-                        color: card_title_font_color,
+                        color: cardTitleFontColor,
                       }}
                     />
                     )}
                     <div className="md_anitian_card_block__item__content__link">
-                      {show_content && (
+                      {showContent && (
                       <RichText
                         tagName="p"
                         className="column-item-desc"
@@ -458,11 +458,11 @@ export default function Edit({ attributes, setAttributes }) {
                         }
                         placeholder={__("Enter Description")}
                         style={{
-                          color: card_content_font_color,
+                          color: cardContentFontColor,
                         }}
                       />
                       )}
-                      {show_link && (
+                      {showLink && (
                       <RichText
                         tagName="p"
                         className="md_anitian_card_block__item__link"
@@ -472,7 +472,7 @@ export default function Edit({ attributes, setAttributes }) {
                         }
                         placeholder={__("Link")}
                         style={{
-                          color: card_learn_more_font_color,
+                          color: cardLearnMoreFontColor,
                         }}
                       />
                       )}
@@ -484,6 +484,12 @@ export default function Edit({ attributes, setAttributes }) {
           <div
             className="add-item-wrap"
             onClick={addStaticPostObj}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault(); // Prevent default action for space key
+                addStaticPostObj(); // Trigger the click handler
+              }
+            }}
             role="button"
             tabIndex={0}
             aria-label={__("Add new item", "md-prime")}

@@ -41,17 +41,17 @@ import placeholder from "./placeholder-image.png";
 export default function Edit({ attributes, setAttributes }) {
   const {
     title,
-    heading_content,
-    button_link,
-    cover_image,
-    background_image,
-    background_color,
-    cover_cta_style,
-    title_font_color,
-    heading_content_font_color,
-    show_title,
-    show_heading_content,
-    show_button,
+    headingContent,
+    buttonLink,
+    coverImage,
+    backgroundImage,
+    backgroundColor,
+    coverCtaStyle,
+    titleFontColor,
+    headingContentFontColor,
+    showTitle,
+    showHeadingContent,
+    showButton,
   } = attributes;
 
   const siteURL = window.location.origin;
@@ -62,13 +62,13 @@ export default function Edit({ attributes, setAttributes }) {
         <PanelBody title={__("Block Settings", "md-storyful-fse-full")}>
           <SelectControl
             label={__("Cover CTA Style", "md-anitian-fse-full")}
-            value={cover_cta_style}
+            value={coverCtaStyle}
             options={[
               { label: "Style 1", value: "style1" },
               { label: "Style 2", value: "style2" },
               { label: "Style 3", value: "style3" },
             ]}
-            onChange={(value) => setAttributes({ cover_cta_style: value })}
+            onChange={(value) => setAttributes({ coverCtaStyle: value })}
           />
         </PanelBody>
         <PanelBody
@@ -77,18 +77,18 @@ export default function Edit({ attributes, setAttributes }) {
         >
           <ToggleControl
             label={__("Show Title", "md-anitian-fse-full")}
-            checked={show_title}
-            onChange={(value) => setAttributes({ show_title: value })}
+            checked={showTitle}
+            onChange={(value) => setAttributes({ showTitle: value })}
           />
           <ToggleControl
             label={__("Show Heading Content", "md-anitian-fse-full")}
-            checked={show_heading_content}
-            onChange={(value) => setAttributes({ show_heading_content: value })}
+            checked={showHeadingContent}
+            onChange={(value) => setAttributes({ showHeadingContent: value })}
           />
           <ToggleControl
             label={__("Show Button", "md-anitian-fse-full")}
-            checked={show_button}
-            onChange={(value) => setAttributes({ show_button: value })}
+            checked={showButton}
+            onChange={(value) => setAttributes({ showButton: value })}
           />
         </PanelBody>
         <PanelBody
@@ -100,15 +100,15 @@ export default function Edit({ attributes, setAttributes }) {
               {__("Background Image", "md-prime")}
             </label>
             <div>
-              {!background_image ? (
+              {!backgroundImage ? (
                 <MediaUpload
                   onSelect={(selectedImage) => {
                     setAttributes({
-                      background_image: selectedImage.url,
+                      backgroundImage: selectedImage.url,
                     });
                   }}
                   allowedTypes={["image"]}
-                  value={background_image}
+                  value={backgroundImage}
                   render={({ open }) => (
                     <Button onClick={open} className="button button-large">
                       {__("Upload Image", "md-prime")}
@@ -119,14 +119,14 @@ export default function Edit({ attributes, setAttributes }) {
                 <>
                   <div className="image-preview">
                     <img
-                      src={background_image}
+                      src={backgroundImage}
                       alt="Background-image-preview"
                     />
                   </div>
                   <Button
                     onClick={() => {
                       setAttributes({
-                        background_image: "",
+                        backgroundImage: "",
                       });
                     }}
                     className="is-link is-destructive"
@@ -147,19 +147,19 @@ export default function Edit({ attributes, setAttributes }) {
             initialOpen={false}
             colorSettings={[
               {
-                value: title_font_color,
-                onChange: (value) => setAttributes({ title_font_color: value }),
+                value: titleFontColor,
+                onChange: (value) => setAttributes({ titleFontColor: value }),
                 label: __("Title Color", "md-storyful-fse-full"),
               },
               {
-                value: heading_content_font_color,
+                value: headingContentFontColor,
                 onChange: (value) =>
-                  setAttributes({ heading_content_font_color: value }),
+                  setAttributes({ headingContentFontColor: value }),
                 label: __("Heading Content Color", "md-storyful-fse-full"),
               },
               {
-                value: background_color,
-                onChange: (value) => setAttributes({ background_color: value }),
+                value: backgroundColor,
+                onChange: (value) => setAttributes({ backgroundColor: value }),
                 label: __("Background Color", "md-storyful-fse-full"),
               },
             ]}
@@ -167,57 +167,57 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
       <div
-        className={`md_anitian_cover_cta_wrap ${cover_cta_style}`}
-        style={{ backgroundColor: background_color }}
+        className={`md_anitian_cover_cta_wrap ${coverCtaStyle}`}
+        style={{ backgroundColor }}
       >
-        {cover_cta_style !== "style1" && (
+        {coverCtaStyle !== "style1" && (
           <div className="md_anitian_cover_cta_arc"></div>
         )}
         <div
           className="md_anitian_cover_cta"
-          style={{ backgroundImage: `url(${background_image})` }}
+          style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-          {cover_cta_style === "style1" && (
+          {coverCtaStyle === "style1" && (
             <div
               className="background_overlay"
               style={{
-                background: `linear-gradient(180deg, ${background_color} 0%, ${background_color} 100%)`,
+                background: `linear-gradient(180deg, ${backgroundColor} 0%, ${backgroundColor} 100%)`,
               }}
             ></div>
           )}
           <div className="container">
             <div className="md_anitian_cover_cta__inner">
               <div className="md_anitian_cover_cta__heading">
-                {show_title && (
+                {showTitle && (
                   <RichText
                     tagName="h2"
                     value={title}
                     onChange={(value) => setAttributes({ title: value })}
                     placeholder={__("Enter Title", "md-anitian-fse-full")}
-                    style={{ color: title_font_color }}
+                    style={{ color: titleFontColor }}
                   />
                 )}
-                {show_heading_content && (
+                {showHeadingContent && (
                   <RichText
                     tagName="p"
-                    value={heading_content}
+                    value={headingContent}
                     onChange={(value) =>
-                      setAttributes({ heading_content: value })
+                      setAttributes({ headingContent: value })
                     }
                     placeholder={__("Enter Content", "md-anitian-fse-full")}
                     style={{
-                      color: heading_content_font_color,
+                      color: headingContentFontColor,
                     }}
                   />
                 )}
-                {show_button && (
+                {showButton && (
                   <div className="md_anitian_cover_cta__btn">
                     <RichText
                       tagName="p"
                       className="btn-anitian md_anitian_cover_cta__btn"
-                      value={button_link}
+                      value={buttonLink}
                       onChange={(value) =>
-                        setAttributes({ button_link: value })
+                        setAttributes({ buttonLink: value })
                       }
                       placeholder={__(
                         "Enter Button Link",
@@ -237,14 +237,14 @@ export default function Edit({ attributes, setAttributes }) {
                         <MediaUpload
                           onSelect={(media) =>
                             setAttributes({
-                              cover_image: media.url,
+                              coverImage: media.url,
                             })
                           }
                           allowedTypes={["image"]}
-                          value={cover_image}
+                          value={coverImage}
                           render={({ open }) => (
                             <>
-                              {cover_image ? (
+                              {coverImage ? (
                                 <>
                                   <Tooltip text={__("Edit Image", "md-prime")}>
                                     <i
@@ -280,7 +280,7 @@ export default function Edit({ attributes, setAttributes }) {
                                           );
                                         if (toDelete) {
                                           setAttributes({
-                                            cover_image: "",
+                                            coverImage: "",
                                           });
                                         }
                                       }}
@@ -325,7 +325,7 @@ export default function Edit({ attributes, setAttributes }) {
                         />
                       </MediaUploadCheck>
                     </div>
-                    {cover_image ? <img src={cover_image} /> : <img src={siteURL + placeholder} />}
+                    {coverImage ? <img src={coverImage} alt={title} /> : <img src={siteURL + placeholder} alt={title} />}
                   </div>
                 </div>
               </div>

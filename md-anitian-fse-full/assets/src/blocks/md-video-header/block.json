@@ -14,7 +14,7 @@
   },
   "textdomain": "md-anitian-fse-full",
   "attributes": {
-    "sub_title": {
+    "subTitle": {
       "type": "string",
       "default": ""
     },
@@ -22,11 +22,11 @@
       "type": "string",
       "default": ""
     },
-    "heading_content": {
+    "headingContent": {
       "type": "string",
       "default": ""
     },
-    "button_link": {
+    "buttonLink": {
       "type": "string",
       "default": ""
     },
@@ -34,43 +34,43 @@
       "type": "string",
       "default": ""
     },
-    "background_image": {
+    "backgroundImage": {
       "type": "string",
       "default": ""
     },
-    "background_color": {
+    "backgroundColor": {
       "type": "string",
       "default": ""
     },
-    "sub_title_color": {
+    "subTitleColor": {
       "type": "string",
       "default": ""
     },
-    "title_color": {
+    "titleColor": {
       "type": "string",
       "default": ""
     },
-    "heading_content_color": {
+    "headingContentColor": {
       "type": "string",
       "default": ""
     },
-    "button_color": {
+    "buttonColor": {
       "type": "string",
       "default": ""
     },
-    "show_sub_title": {
+    "showSubTitle": {
       "type": "boolean",
       "default": true
     },
-    "show_title": {
+    "showTitle": {
       "type": "boolean",
       "default": true
     },
-    "show_heading_content": {
+    "showHeadingContent": {
       "type": "boolean",
       "default": true
     },
-    "show_button": {
+    "showButton": {
       "type": "boolean",
       "default": true
     },

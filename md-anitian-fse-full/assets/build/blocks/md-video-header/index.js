@@ -53,20 +53,20 @@ function Edit({
   setAttributes
 }) {
   const {
-    sub_title,
+    subTitle,
     title,
-    heading_content,
-    button_link,
-    background_image,
-    background_color,
-    sub_title_color,
-    title_color,
-    heading_content_color,
-    button_color,
-    show_sub_title,
-    show_title,
-    show_heading_content,
-    show_button,
+    headingContent,
+    buttonLink,
+    backgroundImage,
+    backgroundColor,
+    subTitleColor,
+    titleColor,
+    headingContentColor,
+    buttonColor,
+    showSubTitle,
+    showTitle,
+    showHeadingContent,
+    showButton,
     mediaurl,
     youtubeurl,
     videotype
@@ -81,14 +81,14 @@ function Edit({
     className: "setting-row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     htmlFor: "background-image"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image", "md-prime")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, !background_image ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image", "md-prime")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, !backgroundImage ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: selectedImage => {
       setAttributes({
-        background_image: selectedImage.url
+        backgroundImage: selectedImage.url
       });
     },
     allowedTypes: ["image"],
-    value: background_image,
+    value: backgroundImage,
     render: ({
       open
     }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
@@ -98,12 +98,12 @@ function Edit({
   }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-preview"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: background_image,
+    src: backgroundImage,
     alt: "Background-image-preview"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
     onClick: () => {
       setAttributes({
-        background_image: ""
+        backgroundImage: ""
       });
     },
     className: "is-link is-destructive"
@@ -112,27 +112,27 @@ function Edit({
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Sub Title", "md-anitian-fse-full"),
-    checked: show_sub_title,
+    checked: showSubTitle,
     onChange: value => setAttributes({
-      show_sub_title: value
+      showSubTitle: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Title", "md-anitian-fse-full"),
-    checked: show_title,
+    checked: showTitle,
     onChange: value => setAttributes({
-      show_title: value
+      showTitle: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Heading Content", "md-anitian-fse-full"),
-    checked: show_heading_content,
+    checked: showHeadingContent,
     onChange: value => setAttributes({
-      show_heading_content: value
+      showHeadingContent: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Button", "md-anitian-fse-full"),
-    checked: show_button,
+    checked: showButton,
     onChange: value => setAttributes({
-      show_button: value
+      showButton: value
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-anitian-fse-full"),
@@ -141,33 +141,33 @@ function Edit({
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-anitian-fse-full"),
     initialOpen: false,
     colorSettings: [{
-      value: sub_title_color,
+      value: subTitleColor,
       onChange: colorValue => setAttributes({
-        sub_title_color: colorValue
+        subTitleColor: colorValue
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Sub Title Color", "md-anitian-fse-full")
     }, {
-      value: title_color,
+      value: titleColor,
       onChange: colorValue => setAttributes({
-        title_color: colorValue
+        titleColor: colorValue
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Color", "md-anitian-fse-full")
     }, {
-      value: heading_content_color,
+      value: headingContentColor,
       onChange: colorValue => setAttributes({
-        heading_content_color: colorValue
+        headingContentColor: colorValue
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Content Color", "md-anitian-fse-full")
     }, {
-      value: button_color,
+      value: buttonColor,
       onChange: colorValue => setAttributes({
-        button_color: colorValue
+        buttonColor: colorValue
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Color", "md-anitian-fse-full")
     }, {
-      value: background_color,
+      value: backgroundColor,
       onChange: colorValue => setAttributes({
-        background_color: colorValue
+        backgroundColor: colorValue
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color", "md-anitian-fse-full")
     }]
@@ -176,7 +176,7 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video",
     style: {
-      background: `${background_color} url(${background_image}) no-repeat center center / cover`
+      background: `${backgroundColor} url(${backgroundImage}) no-repeat center center / cover`
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
@@ -184,17 +184,17 @@ function Edit({
     className: "md_anitian_text_video__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__heading"
-  }, show_sub_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, showSubTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h4",
-    value: sub_title,
+    value: subTitle,
     onChange: value => setAttributes({
-      sub_title: value
+      subTitle: value
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Sub Title", "md-anitian-fse-full"),
     style: {
-      color: sub_title_color
+      color: subTitleColor
     }
-  }), show_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), showTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
     value: title,
     onChange: value => setAttributes({
@@ -202,30 +202,30 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-anitian-fse-full"),
     style: {
-      color: title_color
+      color: titleColor
     }
-  }), show_heading_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), showHeadingContent && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
-    value: heading_content,
+    value: headingContent,
     onChange: value => setAttributes({
-      heading_content: value
+      headingContent: value
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Content", "md-anitian-fse-full"),
     style: {
-      color: heading_content_color
+      color: headingContentColor
     }
-  }), show_button && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), showButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     className: "btn-anitian md_anitian_text_video__btn",
     tagName: "p",
-    value: button_link,
+    value: buttonLink,
     onChange: value => setAttributes({
-      button_link: value
+      buttonLink: value
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Button Text", "md-anitian-fse-full"),
     style: {
-      color: button_color
+      color: buttonColor
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__youtube"
@@ -253,18 +253,18 @@ function Edit({
       label: "Youtube Video",
       value: "youtube"
     }],
-    onChange: videotype => {
+    onChange: value => {
       setAttributes({
-        videotype
+        videotype: value
       });
     }
   }), videotype === "youtube" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     placeholder: "Enter youtube video URL",
     value: youtubeurl,
     className: "video-item-url",
-    onChange: youtubeurl => {
+    onChange: value => {
       setAttributes({
-        youtubeurl
+        youtubeurl: value
       });
     }
   }), youtubeurl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("iframe", {
@@ -283,7 +283,7 @@ function Edit({
     type: "video/mp4"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "item-action-wrap image-controls small-icons icon-center-fixed"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Tooltip, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
     text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Video")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
     className: "dashicons dashicons-no-alt remove-image",
@@ -424,20 +424,20 @@ function save({
   attributes
 }) {
   const {
-    sub_title,
+    subTitle,
     title,
-    heading_content,
-    button_link,
-    background_image,
-    background_color,
-    sub_title_color,
-    title_color,
-    heading_content_color,
-    button_color,
-    show_sub_title,
-    show_title,
-    show_heading_content,
-    show_button,
+    headingContent,
+    buttonLink,
+    backgroundImage,
+    backgroundColor,
+    subTitleColor,
+    titleColor,
+    headingContentColor,
+    buttonColor,
+    showSubTitle,
+    showTitle,
+    showHeadingContent,
+    showButton,
     mediaurl,
     youtubeurl,
     videotype
@@ -451,7 +451,7 @@ function save({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video",
     style: {
-      background: `${background_color} url(${background_image}) no-repeat center center / cover`
+      background: `${backgroundColor} url(${backgroundImage}) no-repeat center center / cover`
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
@@ -459,32 +459,32 @@ function save({
     className: "md_anitian_text_video__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__heading"
-  }, show_sub_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, showSubTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h4",
-    value: sub_title,
+    value: subTitle,
     style: {
-      color: sub_title_color
+      color: subTitleColor
     }
-  }), show_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), showTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     value: title,
     style: {
-      color: title_color
+      color: titleColor
     }
-  }), show_heading_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), showHeadingContent && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
-    value: heading_content,
+    value: headingContent,
     style: {
-      color: heading_content_color
+      color: headingContentColor
     }
-  }), show_button && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), showButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     className: "btn-anitian md_anitian_text_video__btn",
     tagName: "p",
-    value: button_link,
+    value: buttonLink,
     style: {
-      color: button_color
+      color: buttonColor
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_text_video__youtube"
@@ -599,7 +599,7 @@ module.exports = window["wp"]["i18n"];
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-video-header","version":"0.1.0","title":"MD Video Header","apiVersion":3,"category":"md-anitian-fse-full","icon":"video-alt2","description":"A block that displays a video header with a heading and subheading.","keywords":["md-anitian-fse-full","md-video-header"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"sub_title":{"type":"string","default":""},"title":{"type":"string","default":""},"heading_content":{"type":"string","default":""},"button_link":{"type":"string","default":""},"cover_video":{"type":"string","default":""},"background_image":{"type":"string","default":""},"background_color":{"type":"string","default":""},"sub_title_color":{"type":"string","default":""},"title_color":{"type":"string","default":""},"heading_content_color":{"type":"string","default":""},"button_color":{"type":"string","default":""},"show_sub_title":{"type":"boolean","default":true},"show_title":{"type":"boolean","default":true},"show_heading_content":{"type":"boolean","default":true},"show_button":{"type":"boolean","default":true},"mediaurl":{"type":"string","default":""},"youtubeurl":{"type":"string","default":""},"videotype":{"type":"string","default":"media-upload"}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-video-header","version":"0.1.0","title":"MD Video Header","apiVersion":3,"category":"md-anitian-fse-full","icon":"video-alt2","description":"A block that displays a video header with a heading and subheading.","keywords":["md-anitian-fse-full","md-video-header"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"subTitle":{"type":"string","default":""},"title":{"type":"string","default":""},"headingContent":{"type":"string","default":""},"buttonLink":{"type":"string","default":""},"cover_video":{"type":"string","default":""},"backgroundImage":{"type":"string","default":""},"backgroundColor":{"type":"string","default":""},"subTitleColor":{"type":"string","default":""},"titleColor":{"type":"string","default":""},"headingContentColor":{"type":"string","default":""},"buttonColor":{"type":"string","default":""},"showSubTitle":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"showHeadingContent":{"type":"boolean","default":true},"showButton":{"type":"boolean","default":true},"mediaurl":{"type":"string","default":""},"youtubeurl":{"type":"string","default":""},"videotype":{"type":"string","default":"media-upload"}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

@@ -141,6 +141,7 @@ class MD_Leaderships extends Block_Base {
 															'terms' => $leadership_tab->slug,
 														),
 													),
+													"suppress_filters" => false,
 												)
 											);
 											foreach ($leaders as $leader) {

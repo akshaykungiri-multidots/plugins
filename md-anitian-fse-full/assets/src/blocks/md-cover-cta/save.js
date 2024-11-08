@@ -25,17 +25,17 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
 export default function save({ attributes }) {
   const {
     title,
-    heading_content,
-    button_link,
-    cover_image,
-    background_image,
-    background_color,
-    cover_cta_style,
-    title_font_color,
-    heading_content_font_color,
-    show_title,
-    show_heading_content,
-    show_button,
+    headingContent,
+    buttonLink,
+    coverImage,
+    backgroundImage,
+    backgroundColor,
+    coverCtaStyle,
+    titleFontColor,
+    headingContentFontColor,
+    showTitle,
+    showHeadingContent,
+    showButton,
   } = attributes;
   
   return (
@@ -44,46 +44,46 @@ export default function save({ attributes }) {
         className: "md_anitian_cover_cta_section",
       })}
     >
-      <div className={`md_anitian_cover_cta_wrap ${cover_cta_style}`} style={{backgroundColor: background_color}}>
-        {cover_cta_style !== "style1" && (
+      <div className={`md_anitian_cover_cta_wrap ${coverCtaStyle}`} style={{backgroundColor}}>
+        {coverCtaStyle !== "style1" && (
           <div className="md_anitian_cover_cta_arc"></div>
         )}
-          <div className="md_anitian_cover_cta" style={{backgroundImage: `url(${background_image})`}}>
-            {cover_cta_style === "style1" && (
-              <div className="background_overlay" style={{background: `linear-gradient(180deg, ${background_color} 0%, ${background_color} 100%)`}}>
+          <div className="md_anitian_cover_cta" style={{backgroundImage: `url(${backgroundImage})`}}>
+            {coverCtaStyle === "style1" && (
+              <div className="background_overlay" style={{background: `linear-gradient(180deg, ${backgroundColor} 0%, ${backgroundColor} 100%)`}}>
               </div>
             )}
               <div className="container">
                   <div className="md_anitian_cover_cta__inner">
                       <div className="md_anitian_cover_cta__heading">
-                        {show_title && (
+                        {showTitle && (
                         <RichText.Content
                           tagName="h2"
                           value={title}
-                          style={{color: title_font_color}}
+                          style={{color: titleFontColor}}
                         />
                         )}
-                        {show_heading_content && (
+                        {showHeadingContent && (
                         <RichText.Content
                           tagName="p"
-                          value={heading_content}
-                          style={{color: heading_content_font_color}}
+                          value={headingContent}
+                          style={{color: headingContentFontColor}}
                         />
                         )}
-                        {show_button && (
+                        {showButton && (
                           <div className="md_anitian_cover_cta__btn">
                               <RichText.Content
                                 tagName="p"
                                 className="btn-anitian md_anitian_cover_cta__btn"
-                                value={button_link}
+                                value={buttonLink}
                               />
                           </div>
                         )}
                       </div>
-                      {cover_image && (
+                      {coverImage && (
                         <div className="md_anitian_cover_cta__image">
                             <div className="cover_cta__image">
-                              <img src={cover_image} alt="cover" />
+                              <img src={coverImage} alt="cover" />
                             </div>
                         </div>
                       )}

@@ -65,12 +65,12 @@ export default function save({ attributes }) {
         <div className="container">
           <div className="md_anitian_three_column_header__content">
             {columnList &&
-              columnList.map((postObj) => (
-                <div className="md_anitian_three_column_header__item  show-items-hover-wrap">
+              columnList.map((postObj, index) => (
+                <div className="md_anitian_three_column_header__item  show-items-hover-wrap" key={index}>
                   {showColumnImage && (
                   <div className="md_anitian_three_column_header__item__image">
                     {postObj.image && (
-                      <img onClick={open} src={postObj.image} />
+                      <img src={postObj.image} alt={"postImage"} />
                     )}
                   </div>
                   )}

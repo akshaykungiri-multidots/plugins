@@ -39,47 +39,47 @@ import placeholder from "./placeholder-image.png";
  */
 export default function Edit({ attributes, setAttributes }) {
   const {
-    sub_heading,
+    subHeading,
     heading,
-    image_boxes,
-    enable_slider,
-    sub_heading_color,
-    heading_color,
-    image_box_content_color,
-    image_box_button_color,
-    show_sub_heading,
-    show_heading,
-    show_image,
-    show_image_box_content,
-    show_image_box_button,
+    imageBoxes,
+    enableSlider,
+    subHeadingColor,
+    headingColor,
+    imageBoxContentColor,
+    imageBoxButtonColor,
+    showSubHeading,
+    showHeading,
+    showImage,
+    showImageBoxContent,
+    showImageBoxButton,
   } = attributes;
 
   const siteURL = window.location.origin;
 
   const addStaticPostObj = () => {
     const staticPostObj = [
-      ...image_boxes,
+      ...imageBoxes,
       {
-        id: image_boxes.length + 1,
+        id: imageBoxes.length + 1,
         slider_content: "",
         slider_button: "",
         slider_image: "",
       },
     ];
-    setAttributes({ image_boxes: staticPostObj });
+    setAttributes({ imageBoxes: staticPostObj });
   };
   const updateStaticPostObj = (index, key, value) => {
-    const updatedStaticPostObj = [...image_boxes];
+    const updatedStaticPostObj = [...imageBoxes];
     updatedStaticPostObj[index][key] = value;
-    setAttributes({ image_boxes: updatedStaticPostObj });
+    setAttributes({ imageBoxes: updatedStaticPostObj });
   };
   const moveItem = (oldIndex, newIndex) => {
-    const arrayCopy = [...image_boxes];
-    arrayCopy[oldIndex] = image_boxes[newIndex];
-    arrayCopy[newIndex] = image_boxes[oldIndex];
+    const arrayCopy = [...imageBoxes];
+    arrayCopy[oldIndex] = imageBoxes[newIndex];
+    arrayCopy[newIndex] = imageBoxes[oldIndex];
 
     setAttributes({
-      image_boxes: arrayCopy,
+      imageBoxes: arrayCopy,
     });
   };
 
@@ -89,33 +89,33 @@ export default function Edit({ attributes, setAttributes }) {
         <PanelBody title={__("Block Settings", "md-anitian-fse-full")}>
           <ToggleControl
             label={__("Enable Slider", "md-anitian-fse-full")}
-            checked={enable_slider}
-            onChange={(value) => setAttributes({ enable_slider: value })}
+            checked={enableSlider}
+            onChange={(value) => setAttributes({ enableSlider: value })}
           />
           <ToggleControl
             label={__("Show Sub Heading", "md-anitian-fse-full")}
-            checked={show_sub_heading}
-            onChange={(value) => setAttributes({ show_sub_heading: value })}
+            checked={showSubHeading}
+            onChange={(value) => setAttributes({ showSubHeading: value })}
           />
           <ToggleControl
             label={__("Show Heading", "md-anitian-fse-full")}
-            checked={show_heading}
-            onChange={(value) => setAttributes({ show_heading: value })}
+            checked={showHeading}
+            onChange={(value) => setAttributes({ showHeading: value })}
           />
           <ToggleControl
             label={__("Show Image", "md-anitian-fse-full")}
-            checked={show_image}
-            onChange={(value) => setAttributes({ show_image: value })}
+            checked={showImage}
+            onChange={(value) => setAttributes({ showImage: value })}
           />
           <ToggleControl
             label={__("Show Image Box Content", "md-anitian-fse-full")}
-            checked={show_image_box_content}
-            onChange={(value) => setAttributes({ show_image_box_content: value })}
+            checked={showImageBoxContent}
+            onChange={(value) => setAttributes({ showImageBoxContent: value })}
           />
           <ToggleControl
             label={__("Show Image Box Button", "md-anitian-fse-full")}
-            checked={show_image_box_button}
-            onChange={(value) => setAttributes({ show_image_box_button: value })}
+            checked={showImageBoxButton}
+            onChange={(value) => setAttributes({ showImageBoxButton: value })}
           />
         </PanelBody>
         <PanelBody
@@ -127,26 +127,26 @@ export default function Edit({ attributes, setAttributes }) {
             initialOpen={false}
             colorSettings={[
               {
-                value: sub_heading_color,
+                value: subHeadingColor,
                 onChange: (value) =>
-                  setAttributes({ sub_heading_color: value }),
+                  setAttributes({ subHeadingColor: value }),
                 label: __("Sub Heading Color", "md-storyful-fse-full"),
               },
               {
-                value: heading_color,
-                onChange: (value) => setAttributes({ heading_color: value }),
+                value: headingColor,
+                onChange: (value) => setAttributes({ headingColor: value }),
                 label: __("Heading Color", "md-storyful-fse-full"),
               },
               {
-                value: image_box_content_color,
+                value: imageBoxContentColor,
                 onChange: (value) =>
-                  setAttributes({ image_box_content_color: value }),
+                  setAttributes({ imageBoxContentColor: value }),
                 label: __("Image Box Content Color", "md-storyful-fse-full"),
               },
               {
-                value: image_box_button_color,
+                value: imageBoxButtonColor,
                 onChange: (value) =>
-                  setAttributes({ image_box_button_color: value }),
+                  setAttributes({ imageBoxButtonColor: value }),
                 label: __("Image Box Button Color", "md-storyful-fse-full"),
               },
             ]}
@@ -158,24 +158,24 @@ export default function Edit({ attributes, setAttributes }) {
           <div className="text-video-slider__video-and-text">
             <div className="container">
               <div className="bakery_antian__heading">
-                {show_sub_heading && (
+                {showSubHeading && (
                 <RichText
                   tagName="h6"
-                  value={sub_heading}
-                  onChange={(value) => setAttributes({ sub_heading: value })}
+                  value={subHeading}
+                  onChange={(value) => setAttributes({ subHeading: value })}
                   placeholder={__("Enter Sub Heading", "md-anitian-fse-full")}
                   style={{
-                    color: sub_heading_color,
+                    color: subHeadingColor,
                   }}
                 />
                 )}
-                {show_heading && (
+                {showHeading && (
                 <RichText
                   tagName="h2"
                   value={heading}
                   onChange={(value) => setAttributes({ heading: value })}
                   placeholder={__("Enter Heading", "md-anitian-fse-full")}
-                  style={{ color: heading_color }}
+                  style={{ color: headingColor }}
                 />
                 )}
               </div>
@@ -184,9 +184,9 @@ export default function Edit({ attributes, setAttributes }) {
           <div className="text-video-slider__slider">
             <div className="container">
               <div className="bakery_antian__slider md-slick-slider">
-                {image_boxes &&
-                  image_boxes.map((postObj, index) => (
-                    <div className="bakery_antian__slider-item show-items-hover-wrap">
+                {imageBoxes &&
+                  imageBoxes.map((postObj, index) => (
+                    <div className="bakery_antian__slider-item show-items-hover-wrap" key={index}>
                       <div className="item-action-wrap show-items-hover small-icons">
                         <div className="move-item">
                           {0 < index && (
@@ -208,7 +208,7 @@ export default function Edit({ attributes, setAttributes }) {
                               ></span>
                             </Tooltip>
                           )}
-                          {index + 1 < image_boxes.length && (
+                          {index + 1 < imageBoxes.length && (
                             <Tooltip text={__("Move Right", "md-prime")}>
                               <span
                                 className="dashicons dashicons-arrow-right-alt move-right"
@@ -225,7 +225,7 @@ export default function Edit({ attributes, setAttributes }) {
                             </Tooltip>
                           )}
                         </div>
-                        {1 < image_boxes.length && (
+                        {1 < imageBoxes.length && (
                           <Tooltip text={__("Remove Item", "md-prime")}>
                             <i
                               className="remove-item dashicons dashicons-no-alt"
@@ -241,11 +241,11 @@ export default function Edit({ attributes, setAttributes }) {
                                     )
                                   );
                                 if (toDelete) {
-                                  const updatedArray = image_boxes.filter(
+                                  const updatedArray = imageBoxes.filter(
                                     (item, itemIndex) => itemIndex !== index
                                   );
                                   setAttributes({
-                                    image_boxes: updatedArray,
+                                    imageBoxes: updatedArray,
                                   });
                                 }
                               }}
@@ -260,11 +260,11 @@ export default function Edit({ attributes, setAttributes }) {
                                       )
                                     );
                                   if (toDelete) {
-                                    const updatedArray = image_boxes.filter(
+                                    const updatedArray = imageBoxes.filter(
                                       (item, itemIndex) => itemIndex !== index
                                     );
                                     setAttributes({
-                                      image_boxes: updatedArray,
+                                      imageBoxes: updatedArray,
                                     });
                                   }
                                 }
@@ -274,7 +274,7 @@ export default function Edit({ attributes, setAttributes }) {
                           </Tooltip>
                         )}
                       </div>
-                      {show_image && (
+                      {showImage && (
                       <div className="bakery_antian__slider-image">
                         <div className="md-prime-block-control image-preview image-controle-visible-hover">
                           <div
@@ -385,15 +385,15 @@ export default function Edit({ attributes, setAttributes }) {
                             </MediaUploadCheck>
                           </div>
                           {postObj.slider_image ? (
-                            <img src={postObj.slider_image} />
+                            <img src={postObj.slider_image} alt={"slider"} />
                           ) : (
-                            <img src={siteURL + placeholder} />
+                            <img src={siteURL + placeholder} alt={"slider"} />
                           )}
                         </div>
                       </div>
                       )}
                       <div className="bakery_antiab__slider-content">
-                        {show_image_box_content && (
+                        {showImageBoxContent && (
                         <RichText
                           tagName="p"
                           value={postObj.slider_content}
@@ -402,12 +402,12 @@ export default function Edit({ attributes, setAttributes }) {
                           }
                           placeholder={__("Enter Content")}
                           style={{
-                            color: image_box_content_color,
+                            color: imageBoxContentColor,
                           }}
                         />
                         )}
-                        {show_image_box_button && (
-                        <div class="bakery_antian__slider-button btn-anitian">
+                        {showImageBoxButton && (
+                        <div className="bakery_antian__slider-button btn-anitian">
                           <RichText
                             tagName="a"
                             className="btn"
@@ -417,7 +417,7 @@ export default function Edit({ attributes, setAttributes }) {
                             }
                             placeholder={__("Enter Button Text")}
                             style={{
-                              color: image_box_button_color,
+                              color: imageBoxButtonColor,
                             }}
                           />
                         </div>
@@ -428,6 +428,12 @@ export default function Edit({ attributes, setAttributes }) {
                 <div
                   className="add-item-wrap"
                   onClick={addStaticPostObj}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault(); // Prevent default action for space key
+                      addStaticPostObj(); // Trigger the click handler
+                    }
+                  }}
                   role="button"
                   tabIndex={0}
                   aria-label={__("Add new item", "md-prime")}

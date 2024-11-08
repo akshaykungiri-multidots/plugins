@@ -53,17 +53,17 @@ function Edit({
 }) {
   const {
     title,
-    heading_content,
-    button_link,
-    cover_image,
-    background_image,
-    background_color,
-    cover_cta_style,
-    title_font_color,
-    heading_content_font_color,
-    show_title,
-    show_heading_content,
-    show_button
+    headingContent,
+    buttonLink,
+    coverImage,
+    backgroundImage,
+    backgroundColor,
+    coverCtaStyle,
+    titleFontColor,
+    headingContentFontColor,
+    showTitle,
+    showHeadingContent,
+    showButton
   } = attributes;
   const siteURL = window.location.origin;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -74,7 +74,7 @@ function Edit({
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block Settings", "md-storyful-fse-full")
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Cover CTA Style", "md-anitian-fse-full"),
-    value: cover_cta_style,
+    value: coverCtaStyle,
     options: [{
       label: "Style 1",
       value: "style1"
@@ -86,28 +86,28 @@ function Edit({
       value: "style3"
     }],
     onChange: value => setAttributes({
-      cover_cta_style: value
+      coverCtaStyle: value
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Toggle Settings", "md-storyful-fse-full"),
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Title", "md-anitian-fse-full"),
-    checked: show_title,
+    checked: showTitle,
     onChange: value => setAttributes({
-      show_title: value
+      showTitle: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Heading Content", "md-anitian-fse-full"),
-    checked: show_heading_content,
+    checked: showHeadingContent,
     onChange: value => setAttributes({
-      show_heading_content: value
+      showHeadingContent: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Button", "md-anitian-fse-full"),
-    checked: show_button,
+    checked: showButton,
     onChange: value => setAttributes({
-      show_button: value
+      showButton: value
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Settings", "md-prime"),
@@ -116,14 +116,14 @@ function Edit({
     className: "setting-row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     htmlFor: "background-image"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image", "md-prime")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, !background_image ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Image", "md-prime")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, !backgroundImage ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: selectedImage => {
       setAttributes({
-        background_image: selectedImage.url
+        backgroundImage: selectedImage.url
       });
     },
     allowedTypes: ["image"],
-    value: background_image,
+    value: backgroundImage,
     render: ({
       open
     }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
@@ -133,12 +133,12 @@ function Edit({
   }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "image-preview"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: background_image,
+    src: backgroundImage,
     alt: "Background-image-preview"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     onClick: () => {
       setAttributes({
-        background_image: ""
+        backgroundImage: ""
       });
     },
     className: "is-link is-destructive"
@@ -149,40 +149,40 @@ function Edit({
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Typography Colors", "md-storyful-fse-full"),
     initialOpen: false,
     colorSettings: [{
-      value: title_font_color,
+      value: titleFontColor,
       onChange: value => setAttributes({
-        title_font_color: value
+        titleFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Title Color", "md-storyful-fse-full")
     }, {
-      value: heading_content_font_color,
+      value: headingContentFontColor,
       onChange: value => setAttributes({
-        heading_content_font_color: value
+        headingContentFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Content Color", "md-storyful-fse-full")
     }, {
-      value: background_color,
+      value: backgroundColor,
       onChange: value => setAttributes({
-        background_color: value
+        backgroundColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Background Color", "md-storyful-fse-full")
     }]
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `md_anitian_cover_cta_wrap ${cover_cta_style}`,
+    className: `md_anitian_cover_cta_wrap ${coverCtaStyle}`,
     style: {
-      backgroundColor: background_color
+      backgroundColor
     }
-  }, cover_cta_style !== "style1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, coverCtaStyle !== "style1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta_arc"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta",
     style: {
-      backgroundImage: `url(${background_image})`
+      backgroundImage: `url(${backgroundImage})`
     }
-  }, cover_cta_style === "style1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, coverCtaStyle === "style1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "background_overlay",
     style: {
-      background: `linear-gradient(180deg, ${background_color} 0%, ${background_color} 100%)`
+      background: `linear-gradient(180deg, ${backgroundColor} 0%, ${backgroundColor} 100%)`
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
@@ -190,7 +190,7 @@ function Edit({
     className: "md_anitian_cover_cta__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__heading"
-  }, show_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }, showTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "h2",
     value: title,
     onChange: value => setAttributes({
@@ -198,26 +198,26 @@ function Edit({
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Title", "md-anitian-fse-full"),
     style: {
-      color: title_font_color
+      color: titleFontColor
     }
-  }), show_heading_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+  }), showHeadingContent && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
-    value: heading_content,
+    value: headingContent,
     onChange: value => setAttributes({
-      heading_content: value
+      headingContent: value
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Content", "md-anitian-fse-full"),
     style: {
-      color: heading_content_font_color
+      color: headingContentFontColor
     }
-  }), show_button && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), showButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     className: "btn-anitian md_anitian_cover_cta__btn",
-    value: button_link,
+    value: buttonLink,
     onChange: value => setAttributes({
-      button_link: value
+      buttonLink: value
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Button Link", "md-anitian-fse-full")
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -230,13 +230,13 @@ function Edit({
     className: `image-controls small-icons icon-center-fixed`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: media => setAttributes({
-      cover_image: media.url
+      coverImage: media.url
     }),
     allowedTypes: ["image"],
-    value: cover_image,
+    value: coverImage,
     render: ({
       open
-    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, cover_image ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+    }) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, coverImage ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
       text: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Edit Image", "md-prime")
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       className: "dashicons dashicons-edit edit-image",
@@ -260,7 +260,7 @@ function Edit({
         confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this image?", "md-prime"));
         if (toDelete) {
           setAttributes({
-            cover_image: ""
+            coverImage: ""
           });
         }
       },
@@ -283,10 +283,12 @@ function Edit({
     }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("i", {
       className: "dashicons dashicons-upload"
     })))))
-  }))), cover_image ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: cover_image
+  }))), coverImage ? (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: coverImage,
+    alt: title
   }) : (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: siteURL + _placeholder_image_png__WEBPACK_IMPORTED_MODULE_4__
+    src: siteURL + _placeholder_image_png__WEBPACK_IMPORTED_MODULE_4__,
+    alt: title
   })))))))));
 }
 
@@ -393,38 +395,38 @@ function save({
 }) {
   const {
     title,
-    heading_content,
-    button_link,
-    cover_image,
-    background_image,
-    background_color,
-    cover_cta_style,
-    title_font_color,
-    heading_content_font_color,
-    show_title,
-    show_heading_content,
-    show_button
+    headingContent,
+    buttonLink,
+    coverImage,
+    backgroundImage,
+    backgroundColor,
+    coverCtaStyle,
+    titleFontColor,
+    headingContentFontColor,
+    showTitle,
+    showHeadingContent,
+    showButton
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
       className: "md_anitian_cover_cta_section"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `md_anitian_cover_cta_wrap ${cover_cta_style}`,
+    className: `md_anitian_cover_cta_wrap ${coverCtaStyle}`,
     style: {
-      backgroundColor: background_color
+      backgroundColor
     }
-  }, cover_cta_style !== "style1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, coverCtaStyle !== "style1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta_arc"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta",
     style: {
-      backgroundImage: `url(${background_image})`
+      backgroundImage: `url(${backgroundImage})`
     }
-  }, cover_cta_style === "style1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, coverCtaStyle === "style1" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "background_overlay",
     style: {
-      background: `linear-gradient(180deg, ${background_color} 0%, ${background_color} 100%)`
+      background: `linear-gradient(180deg, ${backgroundColor} 0%, ${backgroundColor} 100%)`
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "container"
@@ -432,30 +434,30 @@ function save({
     className: "md_anitian_cover_cta__inner"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__heading"
-  }, show_title && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, showTitle && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "h2",
     value: title,
     style: {
-      color: title_font_color
+      color: titleFontColor
     }
-  }), show_heading_content && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), showHeadingContent && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
-    value: heading_content,
+    value: headingContent,
     style: {
-      color: heading_content_font_color
+      color: headingContentFontColor
     }
-  }), show_button && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), showButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__btn"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "p",
     className: "btn-anitian md_anitian_cover_cta__btn",
-    value: button_link
-  }))), cover_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    value: buttonLink
+  }))), coverImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_anitian_cover_cta__image"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "cover_cta__image"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
-    src: cover_image,
+    src: coverImage,
     alt: "cover"
   }))))))));
 }
@@ -540,7 +542,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-cover-cta","version":"0.1.0","title":"MD Cover CTA","apiVersion":3,"category":"md-anitian-fse-full","icon":"megaphone","description":"A block that displays a cover image with a call-to-action.","keywords":["md-anitian-fse-full","md-cover-cta"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"title":{"type":"string","default":""},"heading_content":{"type":"string","default":""},"button_link":{"type":"string","default":""},"cover_image":{"type":"string","default":""},"background_image":{"type":"string","default":""},"background_color":{"type":"string","default":""},"cover_cta_style":{"type":"string","default":""},"title_font_color":{"type":"string","default":""},"heading_content_font_color":{"type":"string","default":""},"show_title":{"type":"boolean","default":true},"show_heading_content":{"type":"boolean","default":true},"show_button":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-full/md-cover-cta","version":"0.1.0","title":"MD Cover CTA","apiVersion":3,"category":"md-anitian-fse-full","icon":"megaphone","description":"A block that displays a cover image with a call-to-action.","keywords":["md-anitian-fse-full","md-cover-cta"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-anitian-fse-full","attributes":{"title":{"type":"string","default":""},"headingContent":{"type":"string","default":""},"buttonLink":{"type":"string","default":""},"coverImage":{"type":"string","default":""},"backgroundImage":{"type":"string","default":""},"backgroundColor":{"type":"string","default":""},"coverCtaStyle":{"type":"string","default":""},"titleFontColor":{"type":"string","default":""},"headingContentFontColor":{"type":"string","default":""},"showTitle":{"type":"boolean","default":true},"showHeadingContent":{"type":"boolean","default":true},"showButton":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

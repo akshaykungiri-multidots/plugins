@@ -24,47 +24,47 @@
       "type": "string",
       "default": ""
     },
-    "heading_content": {
+    "headingContent": {
       "type": "string",
       "default": ""
     },
-    "button_link": {
+    "buttonLink": {
       "type": "string",
       "default": ""
     },
-    "cover_image": {
+    "coverImage": {
       "type": "string",
       "default": ""
     },
-    "background_image": {
+    "backgroundImage": {
       "type": "string",
       "default": ""
     },
-    "background_color": {
+    "backgroundColor": {
       "type": "string",
       "default": ""
     },
-    "cover_cta_style": {
+    "coverCtaStyle": {
       "type": "string",
       "default": ""
     },
-    "title_font_color": {
+    "titleFontColor": {
       "type": "string",
       "default": ""
     },
-    "heading_content_font_color": {
+    "headingContentFontColor": {
       "type": "string",
       "default": ""
     },
-    "show_title": {
+    "showTitle": {
       "type": "boolean",
       "default": true
     },
-    "show_heading_content": {
+    "showHeadingContent": {
       "type": "boolean",
       "default": true
     },
-    "show_button": {
+    "showButton": {
       "type": "boolean",
       "default": true
     }

@@ -220,7 +220,7 @@ export default function Edit({ attributes, setAttributes }) {
           <div className="md_anitian_three_column_header__content">
             {columnList &&
               columnList.map((postObj, index) => (
-                <div className="md_anitian_three_column_header__item  show-items-hover-wrap">
+                <div className="md_anitian_three_column_header__item  show-items-hover-wrap" key={index}>
                   <div className="item-action-wrap show-items-hover small-icons">
                     <div className="move-item">
                       {0 < index && (
@@ -315,7 +315,7 @@ export default function Edit({ attributes, setAttributes }) {
                         multiple={false}
                         render={({ open }) => (
                           <>
-                            {postObj.image == "" ? (
+                            {postObj.image === "" ? (
                               <Button variant="primary" onClick={open}>
                                 <i className="dashicons dashicons-format-image">
                                   {" "}
@@ -323,7 +323,21 @@ export default function Edit({ attributes, setAttributes }) {
                               </Button>
                             ) : (
                               <>
-                                <img onClick={open} src={postObj.image} />
+                                <img src={postObj.image} alt="post" />
+                                <Tooltip text={__("Edit Image", "md-prime")}>
+                                  <i
+                                    className="dashicons dashicons-edit edit-image"
+                                    role="button"
+                                    tabIndex="0"
+                                    onClick={open}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter" || e.key === " ") {
+                                        open();
+                                      }
+                                    }}
+                                    aria-label="Edit image"
+                                  ></i>
+                                </Tooltip>
                                 <Tooltip text={__("Remove Image", "md-prime")}>
                                   <i
                                     className="dashicons dashicons-no-alt remove-image"
@@ -423,6 +437,11 @@ export default function Edit({ attributes, setAttributes }) {
             <div
               className="add-item-wrap"
               onClick={addStaticPostObj}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  addStaticPostObj();
+                }
+              }}
               role="button"
               tabIndex={0}
               aria-label={__("Add new item", "md-prime")}

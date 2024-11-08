@@ -24,19 +24,19 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  */
 export default function save({ attributes }) {
   const {
-    sub_heading,
+    subHeading,
     heading,
-    image_boxes,
-    enable_slider,
-    sub_heading_color,
-    heading_color,
-    image_box_content_color,
-    image_box_button_color,
-    show_sub_heading,
-    show_heading,
-    show_image,
-    show_image_box_content,
-    show_image_box_button,
+    imageBoxes,
+    enableSlider,
+    subHeadingColor,
+    headingColor,
+    imageBoxContentColor,
+    imageBoxButtonColor,
+    showSubHeading,
+    showHeading,
+    showImage,
+    showImageBoxContent,
+    showImageBoxButton,
   } = attributes;
   return (
     <div
@@ -49,21 +49,21 @@ export default function save({ attributes }) {
           <div className="text-video-slider__video-and-text">
             <div className="container">
               <div className="bakery_antian__heading">
-                {show_sub_heading && (
+                {showSubHeading && (
                 <RichText.Content
                   tagName="h6"
-                  value={sub_heading}
+                  value={subHeading}
                   style={{
-                    color: sub_heading_color,
+                    color: subHeadingColor,
                   }}
                 />
                 )}
-                {show_heading && (
+                {showHeading && (
                 <RichText.Content
                   tagName="h2"
                   value={heading}
                   style={{
-                    color: heading_color,
+                    color: headingColor,
                   }}
                 />
                 )}
@@ -72,33 +72,33 @@ export default function save({ attributes }) {
           </div>
           <div className="text-video-slider__slider">
             <div className="container">
-              <div className={ enable_slider ? "bakery_antian__slider md-slick-slider enable_slider" : "bakery_antian__slider md-slick-slider"}>
-                {image_boxes &&
-                  image_boxes.map((postObj, index) => (
-                    <div className="bakery_antian__slider-item show-items-hover-wrap">
+              <div className={ enableSlider ? "bakery_antian__slider md-slick-slider enableSlider" : "bakery_antian__slider md-slick-slider"}>
+                {imageBoxes &&
+                  imageBoxes.map((postObj, index) => (
+                    <div className="bakery_antian__slider-item show-items-hover-wrap" key={index}>
                       <div className="bakery_antian__slider-image">
-                        {show_image && (
-                          <img onClick={open} src={postObj.slider_image} />
+                        {showImage && (
+                          <img src={postObj.slider_image} alt={"Slider"} />
                         )}
                       </div>
                       <div className="bakery_antiab__slider-content">
-                        {show_image_box_content && (
+                        {showImageBoxContent && (
                         <RichText.Content
                           tagName="p"
                           value={postObj.slider_content}
                           style={{
-                            color: image_box_content_color,
+                            color: imageBoxContentColor,
                           }}
                         />
                         )}
-                        {show_image_box_button && (
-                        <div class="bakery_antian__slider-button btn-anitian">
+                        {showImageBoxButton && (
+                        <div className="bakery_antian__slider-button btn-anitian">
                         <RichText.Content
                           tagName="a"
                           className="btn"
                           value={postObj.slider_button}
                           style={{
-                            color: image_box_button_color,
+                            color: imageBoxButtonColor,
                           }}
                         />
                         </div>

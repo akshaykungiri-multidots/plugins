@@ -3,7 +3,6 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from "@wordpress/i18n";
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -24,54 +23,54 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  */
 export default function save({ attributes }) {
   const {
-    sub_title,
+    subTitle,
     title,
-    heading_content,
-    card_block_style,
-    card_block_list,
-    sub_title_font_color,
-    title_font_color,
-    heading_content_font_color,
-    card_title_font_color,
-    card_content_font_color,
-    card_learn_more_font_color,
-    number_of_columns,
-    show_image,
-    show_title,
-    show_content,
-    show_link,
-    show_sub_heading,
-    show_heading_content,
-    show_heading,
+    headingContent,
+    cardBlockStyle,
+    cardBlockList,
+    subTitleFontColor,
+    titleFontColor,
+    headingContentFontColor,
+    cardTitleFontColor,
+    cardContentFontColor,
+    cardLearnMoreFontColor,
+    numberOfColumns,
+    showImage,
+    showTitle,
+    showContent,
+    showLink,
+    showSubHeading,
+    showHeadingContent,
+    showHeading,
   } = attributes;
   return (
     <div {...useBlockProps.save({ className: "md_anitian_card_block" })}>
-      <div className={`md_anitian_card_block ${card_block_style}`}>
+      <div className={`md_anitian_card_block ${cardBlockStyle}`}>
         <div className="md_anitian_card_block__head">
           <div className="container">
             <div className="md_anitian_card_block__heading">
-              {show_sub_heading && (
+              {showSubHeading && (
               <RichText.Content
                 tagName="h3"
-                value={sub_title}
+                value={subTitle}
                 style={{
-                  color: sub_title_font_color,
+                  color: subTitleFontColor,
                 }}
               />
               )}
-              {show_heading && (
+              {showHeading && (
               <RichText.Content
                 tagName="h2"
                 value={title}
-                style={{ color: title_font_color }}
+                style={{ color: titleFontColor }}
               />
               )}
-              {show_heading_content && (
+              {showHeadingContent && (
               <RichText.Content
                 tagName="p"
-                value={heading_content}
+                value={headingContent}
                 style={{
-                  color: heading_content_font_color,
+                  color: headingContentFontColor,
                 }}
               />
               )}
@@ -79,44 +78,46 @@ export default function save({ attributes }) {
           </div>
         </div>
         <div className="container">
-          <div className="md_anitian_card_block__content" style={{ gridTemplateColumns: `repeat(${number_of_columns}, 1fr)` }}>
-            {card_block_list &&
-              card_block_list.map((postObj, index) => (
-                <div className="md_anitian_card_block__item  show-items-hover-wrap">
+          <div className="md_anitian_card_block__content" style={{ gridTemplateColumns: `repeat(${numberOfColumns}, 1fr)` }}>
+            {cardBlockList &&
+              cardBlockList.map((postObj, index) => (
+                <div className="md_anitian_card_block__item  show-items-hover-wrap" key={index}>
+                  {showImage && (
                   <div className="md_anitian_card_block__item__image">
                     {postObj.card_image && (
                       <img src={postObj.card_image} alt={postObj.card_title} />
                     )}
                   </div>
+                  )}
                   <div className="md_anitian_card_block__item__content">
-                    {show_title && (
+                    {showTitle && (
                     <RichText.Content
                       tagName="h3"
                       className="column-item-title"
                       value={postObj.card_title}
                       style={{
-                        color: card_title_font_color,
+                        color: cardTitleFontColor,
                       }}
                     />
                     )}
                     <div className="md_anitian_card_block__item__content__link">
-                      {show_content && (
+                      {showContent && (
                       <RichText.Content
                         tagName="p"
                         className="column-item-desc"
                         value={postObj.card_description}
                         style={{
-                          color: card_content_font_color,
+                          color: cardContentFontColor,
                         }}
                       />
                       )}
-                      {show_link && (
+                      {showLink && (
                       <RichText.Content
                         tagName="p"
                         className="md_anitian_card_block__item__link"
                         value={postObj.learn_more_link}
                         style={{
-                          color: card_learn_more_font_color,
+                          color: cardLearnMoreFontColor,
                         }}
                       />
                       )}

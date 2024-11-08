@@ -40,10 +40,10 @@
 		});
 	});
 
-	function md_create_slick_slider() {
+	function mdCreateSlickSlider() {
 		// Create slick slider js for md-slick-slider.
 		setTimeout(function(){
-			var $slider = $('.md-slick-slider.enable_slider');
+			const $slider = $('.md-slick-slider.enableSlider');
 			if ( $slider.length > 0 ) {
 				$slider.each(function(){
 					if ( $( this ).hasClass( 'slick-initialized' ) ) {
@@ -59,5 +59,5 @@
 			}
 		}, 10 );
 	}
-	md_create_slick_slider();
+	mdCreateSlickSlider();
 })(jQuery);

@@ -21,7 +21,7 @@ import {
 
 import { Fragment } from "@wordpress/element";
 
-import { PanelBody, Button, ToggleControl, SelectControl, TextControl } from "@wordpress/components";
+import { PanelBody, Button, ToggleControl, SelectControl, TextControl, Tooltip } from "@wordpress/components";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -33,20 +33,20 @@ import { PanelBody, Button, ToggleControl, SelectControl, TextControl } from "@w
  */
 export default function Edit({ attributes, setAttributes }) {
   const {
-    sub_title,
+    subTitle,
     title,
-    heading_content,
-    button_link,
-    background_image,
-    background_color,
-    sub_title_color,
-    title_color,
-    heading_content_color,
-    button_color,
-    show_sub_title,
-    show_title,
-    show_heading_content,
-    show_button,
+    headingContent,
+    buttonLink,
+    backgroundImage,
+    backgroundColor,
+    subTitleColor,
+    titleColor,
+    headingContentColor,
+    buttonColor,
+    showSubTitle,
+    showTitle,
+    showHeadingContent,
+    showButton,
     mediaurl,
     youtubeurl,
     videotype,
@@ -61,15 +61,15 @@ export default function Edit({ attributes, setAttributes }) {
               {__("Background Image", "md-prime")}
             </label>
             <div>
-              {!background_image ? (
+              {!backgroundImage ? (
                 <MediaUpload
                   onSelect={(selectedImage) => {
                     setAttributes({
-                      background_image: selectedImage.url,
+                      backgroundImage: selectedImage.url,
                     });
                   }}
                   allowedTypes={["image"]}
-                  value={background_image}
+                  value={backgroundImage}
                   render={({ open }) => (
                     <Button onClick={open} className="button button-large">
                       {__("Upload Image", "md-prime")}
@@ -80,14 +80,14 @@ export default function Edit({ attributes, setAttributes }) {
                 <Fragment>
                   <div className="image-preview">
                     <img
-                      src={background_image}
+                      src={backgroundImage}
                       alt="Background-image-preview"
                     />
                   </div>
                   <Button
                     onClick={() => {
                       setAttributes({
-                        background_image: "",
+                        backgroundImage: "",
                       });
                     }}
                     className="is-link is-destructive"
@@ -105,23 +105,23 @@ export default function Edit({ attributes, setAttributes }) {
         >
           <ToggleControl
             label={__("Show Sub Title", "md-anitian-fse-full")}
-            checked={show_sub_title}
-            onChange={(value) => setAttributes({ show_sub_title: value })}
+            checked={showSubTitle}
+            onChange={(value) => setAttributes({ showSubTitle: value })}
           />
           <ToggleControl
             label={__("Show Title", "md-anitian-fse-full")}
-            checked={show_title}
-            onChange={(value) => setAttributes({ show_title: value })}
+            checked={showTitle}
+            onChange={(value) => setAttributes({ showTitle: value })}
           />
           <ToggleControl
             label={__("Show Heading Content", "md-anitian-fse-full")}
-            checked={show_heading_content}
-            onChange={(value) => setAttributes({ show_heading_content: value })}
+            checked={showHeadingContent}
+            onChange={(value) => setAttributes({ showHeadingContent: value })}
           />
           <ToggleControl
             label={__("Show Button", "md-anitian-fse-full")}
-            checked={show_button}
-            onChange={(value) => setAttributes({ show_button: value })}
+            checked={showButton}
+            onChange={(value) => setAttributes({ showButton: value })}
           />
         </PanelBody>
         <PanelBody
@@ -133,33 +133,33 @@ export default function Edit({ attributes, setAttributes }) {
             initialOpen={false}
             colorSettings={[
               {
-                value: sub_title_color,
+                value: subTitleColor,
                 onChange: (colorValue) =>
-                  setAttributes({ sub_title_color: colorValue }),
+                  setAttributes({ subTitleColor: colorValue }),
                 label: __("Sub Title Color", "md-anitian-fse-full"),
               },
               {
-                value: title_color,
+                value: titleColor,
                 onChange: (colorValue) =>
-                  setAttributes({ title_color: colorValue }),
+                  setAttributes({ titleColor: colorValue }),
                 label: __("Title Color", "md-anitian-fse-full"),
               },
               {
-                value: heading_content_color,
+                value: headingContentColor,
                 onChange: (colorValue) =>
-                  setAttributes({ heading_content_color: colorValue }),
+                  setAttributes({ headingContentColor: colorValue }),
                 label: __("Heading Content Color", "md-anitian-fse-full"),
               },
               {
-                value: button_color,
+                value: buttonColor,
                 onChange: (colorValue) =>
-                  setAttributes({ button_color: colorValue }),
+                  setAttributes({ buttonColor: colorValue }),
                 label: __("Button Color", "md-anitian-fse-full"),
               },
               {
-                value: background_color,
+                value: backgroundColor,
                 onChange: (colorValue) =>
-                  setAttributes({ background_color: colorValue }),
+                  setAttributes({ backgroundColor: colorValue }),
                 label: __("Background Color", "md-anitian-fse-full"),
               },
             ]}
@@ -170,59 +170,59 @@ export default function Edit({ attributes, setAttributes }) {
         <div
           className="md_anitian_text_video"
           style={{
-            background: `${background_color} url(${background_image}) no-repeat center center / cover`,
+            background: `${backgroundColor} url(${backgroundImage}) no-repeat center center / cover`,
           }}
         >
           <div className="container">
             <div className="md_anitian_text_video__inner">
               <div className="md_anitian_text_video__heading">
-                {show_sub_title && (
+                {showSubTitle && (
                   <RichText
                     tagName="h4"
-                    value={sub_title}
-                    onChange={(value) => setAttributes({ sub_title: value })}
+                    value={subTitle}
+                    onChange={(value) => setAttributes({ subTitle: value })}
                     placeholder={__("Enter Sub Title", "md-anitian-fse-full")}
                     style={{
-                      color: sub_title_color,
+                      color: subTitleColor,
                     }}
                   />
                 )}
-                {show_title && (
+                {showTitle && (
                   <RichText
                     tagName="h2"
                     value={title}
                     onChange={(value) => setAttributes({ title: value })}
                     placeholder={__("Enter Title", "md-anitian-fse-full")}
-                    style={{ color: title_color }}
+                    style={{ color: titleColor }}
                   />
                 )}
-                {show_heading_content && (
+                {showHeadingContent && (
                   <RichText
                     tagName="p"
-                    value={heading_content}
+                    value={headingContent}
                     onChange={(value) =>
-                      setAttributes({ heading_content: value })
+                      setAttributes({ headingContent: value })
                     }
                     placeholder={__("Enter Content", "md-anitian-fse-full")}
                     style={{
-                      color: heading_content_color,
+                      color: headingContentColor,
                     }}
                   />
                 )}
-                {show_button && (
+                {showButton && (
                   <div className="md_anitian_text_video__btn">
                     <RichText
                       className="btn-anitian md_anitian_text_video__btn"
                       tagName="p"
-                      value={button_link}
+                      value={buttonLink}
                       onChange={(value) =>
-                        setAttributes({ button_link: value })
+                        setAttributes({ buttonLink: value })
                       }
                       placeholder={__(
                         "Enter Button Text",
                         "md-anitian-fse-full"
                       )}
-                      style={{ color: button_color }}
+                      style={{ color: buttonColor }}
                     />
                   </div>
                 )}
@@ -249,8 +249,8 @@ export default function Edit({ attributes, setAttributes }) {
                                 value: "youtube",
                               },
                             ]}
-                            onChange={(videotype) => {
-                              setAttributes({ videotype });
+                            onChange={(value) => {
+                              setAttributes({ videotype: value });
                             }}
                           />
                           {videotype === "youtube" && (
@@ -259,8 +259,8 @@ export default function Edit({ attributes, setAttributes }) {
                                 placeholder="Enter youtube video URL"
                                 value={youtubeurl}
                                 className="video-item-url"
-                                onChange={(youtubeurl) => {
-                                  setAttributes({ youtubeurl });
+                                onChange={(value) => {
+                                  setAttributes({ youtubeurl: value });
                                 }}
                               />
                               {youtubeurl && (

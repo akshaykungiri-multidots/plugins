@@ -20,7 +20,7 @@
   },
   "textdomain": "md-anitian-fse-full",
   "attributes": {
-    "sub_title": {
+    "subTitle": {
       "type": "string",
       "default": ""
     },
@@ -28,71 +28,71 @@
       "type": "string",
       "default": ""
     },
-    "heading_content": {
+    "headingContent": {
       "type": "string",
       "default": ""
     },
-    "card_block_style": {
+    "cardBlockStyle": {
       "type": "string",
       "default": "style1"
     },
-    "card_block_list": {
+    "cardBlockList": {
       "type": "array",
       "default": []
     },
-    "sub_title_font_color": {
+    "subTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "title_font_color": {
+    "titleFontColor": {
       "type": "string",
       "default": ""
     },
-    "heading_content_font_color": {
+    "headingContentFontColor": {
       "type": "string",
       "default": ""
     },
-    "card_title_font_color": {
+    "cardTitleFontColor": {
       "type": "string",
       "default": ""
     },
-    "card_content_font_color": {
+    "cardContentFontColor": {
       "type": "string",
       "default": ""
     },
-    "card_learn_more_font_color": {
+    "cardLearnMoreFontColor": {
       "type": "string",
       "default": ""
     },
-    "number_of_columns": {
+    "numberOfColumns": {
       "type": "number",
       "default": 3
     },
-    "show_image": {
+    "showImage": {
       "type": "boolean",
       "default": true
     },
-    "show_title": {
+    "showTitle": {
       "type": "boolean",
       "default": true
     },
-    "show_content": {
+    "showContent": {
       "type": "boolean",
       "default": true
     },
-    "show_link": {
+    "showLink": {
       "type": "boolean",
       "default": true
     },
-    "show_sub_heading": {
+    "showSubHeading": {
       "type": "boolean",
       "default": true
     },
-    "show_heading_content": {
+    "showHeadingContent": {
       "type": "boolean",
       "default": true
     },
-    "show_heading": {
+    "showHeading": {
       "type": "boolean",
       "default": true
     }

@@ -24,20 +24,20 @@ import { useBlockProps, RichText } from "@wordpress/block-editor";
  */
 export default function save({ attributes }) {
   const {
-    sub_title,
+    subTitle,
     title,
-    heading_content,
-    button_link,
-    background_image,
-    background_color,
-    sub_title_color,
-    title_color,
-    heading_content_color,
-    button_color,
-    show_sub_title,
-    show_title,
-    show_heading_content,
-    show_button,
+    headingContent,
+    buttonLink,
+    backgroundImage,
+    backgroundColor,
+    subTitleColor,
+    titleColor,
+    headingContentColor,
+    buttonColor,
+    showSubTitle,
+    showTitle,
+    showHeadingContent,
+    showButton,
     mediaurl,
     youtubeurl,
     videotype,
@@ -53,44 +53,44 @@ export default function save({ attributes }) {
         <div
           className="md_anitian_text_video"
           style={{
-            background: `${background_color} url(${background_image}) no-repeat center center / cover`,
+            background: `${backgroundColor} url(${backgroundImage}) no-repeat center center / cover`,
           }}
         >
           <div className="container">
             <div className="md_anitian_text_video__inner">
               <div className="md_anitian_text_video__heading">
-                {show_sub_title && (
+                {showSubTitle && (
                   <RichText.Content
                     tagName="h4"
-                    value={sub_title}
+                    value={subTitle}
                     style={{
-                      color: sub_title_color,
+                      color: subTitleColor,
                     }}
                   />
                 )}
-                {show_title && (
+                {showTitle && (
                   <RichText.Content
                     tagName="h2"
                     value={title}
-                    style={{ color: title_color }}
+                    style={{ color: titleColor }}
                   />
                 )}
-                {show_heading_content && (
+                {showHeadingContent && (
                   <RichText.Content
                     tagName="p"
-                    value={heading_content}
+                    value={headingContent}
                     style={{
-                      color: heading_content_color,
+                      color: headingContentColor,
                     }}
                   />
                 )}
-                {show_button && (
+                {showButton && (
                   <div className="md_anitian_text_video__btn">
                     <RichText.Content
                       className="btn-anitian md_anitian_text_video__btn"
                       tagName="p"
-                      value={button_link}
-                      style={{ color: button_color }}
+                      value={buttonLink}
+                      style={{ color: buttonColor }}
                     />
                   </div>
                 )}
