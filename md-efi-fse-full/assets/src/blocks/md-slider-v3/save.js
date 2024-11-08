@@ -55,7 +55,7 @@ export default function save({ attributes }) {
         >
           {slideItems &&
             slideItems.map((postObj, currentSlide) => (
-            <div className="md_slider__item">
+            <div className="md_slider__item" key={currentSlide}>
               <div className="md_slider__item__gradient_theme"></div>
               <div className="md_slider__item--inner">
                 {enableHeading && (

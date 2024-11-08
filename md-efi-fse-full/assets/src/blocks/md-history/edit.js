@@ -18,7 +18,7 @@ import {
   PanelColorSettings,
 } from "@wordpress/block-editor";
 
-import { Button, PanelBody, Tooltip, ToggleControl } from "@wordpress/components";
+import { PanelBody, Tooltip, ToggleControl } from "@wordpress/components";
 
 import { useState } from "@wordpress/element";
 
@@ -69,7 +69,6 @@ export default function Edit({ attributes, setAttributes }) {
       historyTimeline: arrayCopy,
     });
   };
-  const currentObj = historyTimeline[currentSlide];
   return (
     <div {...useBlockProps({ className: "md_history_timeline history-list" })}>
       <InspectorControls>
@@ -149,7 +148,7 @@ export default function Edit({ attributes, setAttributes }) {
             <div className="history-list__years-list">
               {historyTimeline &&
                 historyTimeline.map((postObj, index) => (
-                  <div className="history-list__year-item">
+                  <div className="history-list__year-item" key={index}>
                     <RichText
                       tagName="p"
                       className="history-list__year history-list__year-title"
@@ -168,6 +167,11 @@ export default function Edit({ attributes, setAttributes }) {
               <div
                 className="add-item-wrap"
                 onClick={addStaticPostObj}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    addStaticPostObj();
+                  }
+                }}
                 role="button"
                 tabIndex={0}
                 aria-label={__("Add new item", "md-efi-fse-full")}
@@ -233,7 +237,7 @@ export default function Edit({ attributes, setAttributes }) {
                             );
                           if (toDelete === true) {
                             const updatedArray = historyTimeline.filter(
-                              (currentObj, itemIndex) => itemIndex !== currentSlide
+                              (item, itemIndex) => itemIndex !== currentSlide
                             );
                             setAttributes({
                               historyTimeline: updatedArray,

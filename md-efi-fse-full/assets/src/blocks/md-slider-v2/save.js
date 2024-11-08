@@ -3,7 +3,6 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from "@wordpress/i18n";
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -49,16 +48,16 @@ export default function save({ attributes }) {
         >
           {slideItems &&
             slideItems.map((postObj, currentSlide) => (
-            <div className="md_slider__item">
+            <div className="md_slider__item" key={currentSlide}>
               <div className="md_slider__item__image">
                 {slideItems[currentSlide].sliderImage && (
                   <div className="md-prime-image__inner">
                     {arrows && (
-                      <buttton className="slick-prev slick-arrow" tabindex="0">Previous</buttton>
+                      <buttton className="slick-prev slick-arrow" tabIndex="0">Previous</buttton>
                     )}
-                    <img src={slideItems[currentSlide].sliderImage} />
+                    <img src={slideItems[currentSlide].sliderImage} alt={"SliderImage"} />
                     {arrows && (
-                      <buttton className="slick-next slick-arrow" tabindex="0">Next</buttton>
+                      <buttton className="slick-next slick-arrow" tabIndex="0">Next</buttton>
                     )}
                   </div>
                 )}

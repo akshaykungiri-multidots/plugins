@@ -76,6 +76,15 @@ export default function Edit({ attributes, setAttributes }) {
     }
     setAttributes({ slideItems: updatedStaticPostObj });
   };
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...slideItems];
+    arrayCopy[oldIndex] = slideItems[newIndex];
+    arrayCopy[newIndex] = slideItems[oldIndex];
+
+    setAttributes({
+      slideItems: arrayCopy,
+    });
+  };
   return (
     <div
       {...useBlockProps({
@@ -87,22 +96,22 @@ export default function Edit({ attributes, setAttributes }) {
           <ToggleControl
             label={__("Autoplay", "md-prime")}
             checked={autoplay}
-            onChange={(autoplay) => setAttributes({ autoplay })}
+            onChange={(value) => setAttributes({ autoplay: value })}
           />
           <ToggleControl
             label={__("Hide/Show Arrows", "md-prime")}
             checked={arrows}
-            onChange={(arrows) => setAttributes({ arrows })}
+            onChange={(value) => setAttributes({ arrows: value })}
           />
           <ToggleControl
             label={__("Hide/Show Dots", "md-prime")}
             checked={dots}
-            onChange={(dots) => setAttributes({ dots })}
+            onChange={(value) => setAttributes({ dots: value })}
           />
           <ToggleControl
             label={__("Infinite Loop", "md-prime")}
             checked={slideInfinite}
-            onChange={(slideInfinite) => setAttributes({ slideInfinite })}
+            onChange={(value) => setAttributes({ slideInfinite: value })}
           />
           <RangeControl
             label={__("Slides To Show")}
@@ -110,8 +119,8 @@ export default function Edit({ attributes, setAttributes }) {
             min={1}
             max={10}
             step={1}
-            onChange={(slideSlidesToShow) =>
-              setAttributes({ slideSlidesToShow })
+            onChange={(value) =>
+              setAttributes({ slideSlidesToShow: value })
             }
           />
           <RangeControl
@@ -120,8 +129,8 @@ export default function Edit({ attributes, setAttributes }) {
             min={1}
             max={10}
             step={1}
-            onChange={(slideSlidesToScroll) =>
-              setAttributes({ slideSlidesToScroll })
+            onChange={(value) =>
+              setAttributes({ slideSlidesToScroll: value })
             }
           />
         </PanelBody>
@@ -175,14 +184,36 @@ export default function Edit({ attributes, setAttributes }) {
                           ( 
                             <div className="md-prime-image image-preview image-controle-visible-hover">
                               <div className="item-action-wrap image-controls small-icons icon-center-fixed">
-                                <i onClick={open} className="dashicons dashicons-edit edit-image"></i>
-                                <i onClick={() => updateStaticPostObj(currentSlide, "sliderImage", null)} className="dashicons dashicons-no-alt remove-image"></i>
+                                <i 
+                                  onClick={open} 
+                                  onKeyDown={(e) => {
+                                    if (e.key === "Enter" || e.key === " ") {
+                                      open();
+                                    }
+                                  }} 
+                                  className="dashicons dashicons-edit edit-image" 
+                                  role="button" 
+                                  tabIndex={0} 
+                                  aria-label={__("Edit image", "md-prime")}
+                                ></i>
+                                <i 
+                                  onClick={() => updateStaticPostObj(currentSlide, "sliderImage", null)} 
+                                  onKeyDown={(e) => {
+                                    if (e.key === "Enter" || e.key === " ") {
+                                      updateStaticPostObj(currentSlide, "sliderImage", null);
+                                    }
+                                  }} 
+                                  className="dashicons dashicons-no-alt remove-image" 
+                                  role="button" 
+                                  tabIndex={0} 
+                                  aria-label={__("Remove image", "md-prime")}
+                                ></i>
                               </div>
                               <div className="md-prime-image__inner">
                                 {arrows && (
                                   <Button className="slick-prev slick-arrow" tabindex="0">Previous</Button>
                                 )}
-                                <img src={slideItems[currentSlide].sliderImage} />
+                                <img src={slideItems[currentSlide].sliderImage} alt={"SliderImage"} />
                                 {arrows && (
                                   <Button className="slick-next slick-arrow" tabindex="0">Next</Button>
                                 )}
@@ -320,7 +351,17 @@ export default function Edit({ attributes, setAttributes }) {
                 </Tooltip>
               )}
             </div>
-            <div className="item-title" onClick={() => setCurrentSlide(index)}>
+            <div 
+              className="item-title" 
+              role="button" 
+              tabIndex={0} 
+              onClick={() => setCurrentSlide(index)} 
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setCurrentSlide(index);
+                }
+              }}
+            >
               {__("Slide")} {index + 1}
             </div>
           </div>
@@ -329,6 +370,11 @@ export default function Edit({ attributes, setAttributes }) {
       <div
         className="add-item-wrap"
         onClick={addStaticPostObj}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            addStaticPostObj();
+          }
+        }}
         role="button"
         tabIndex={0}
         aria-label={__("Add new item", "md-prime")}

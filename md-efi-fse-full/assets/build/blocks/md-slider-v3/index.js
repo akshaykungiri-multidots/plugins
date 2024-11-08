@@ -102,6 +102,14 @@ function Edit({
       slideItems: updatedStaticPostObj
     });
   };
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...slideItems];
+    arrayCopy[oldIndex] = slideItems[newIndex];
+    arrayCopy[newIndex] = slideItems[oldIndex];
+    setAttributes({
+      slideItems: arrayCopy
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_slider_section"
@@ -111,14 +119,14 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enable Heading", "md-prime"),
     checked: enableHeading,
-    onChange: enableHeading => setAttributes({
-      enableHeading
+    onChange: value => setAttributes({
+      enableHeadin: value
     })
   }), enableHeading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading"),
     value: heading,
-    onChange: heading => setAttributes({
-      heading
+    onChange: value => setAttributes({
+      heading: value
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Heading", "md-prime")
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
@@ -127,26 +135,26 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Autoplay", "md-prime"),
     checked: autoplay,
-    onChange: autoplay => setAttributes({
-      autoplay
+    onChange: value => setAttributes({
+      autoplay: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide/Show Arrows", "md-prime"),
     checked: arrows,
-    onChange: arrows => setAttributes({
-      arrows
+    onChange: value => setAttributes({
+      arrows: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide/Show Dots", "md-prime"),
     checked: dots,
-    onChange: dots => setAttributes({
-      dots
+    onChange: value => setAttributes({
+      dots: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Infinite Loop", "md-prime"),
     checked: slideInfinite,
-    onChange: slideInfinite => setAttributes({
-      slideInfinite
+    onChange: value => setAttributes({
+      slideInfinite: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slides To Show"),
@@ -154,8 +162,8 @@ function Edit({
     min: 1,
     max: 10,
     step: 1,
-    onChange: slideSlidesToShow => setAttributes({
-      slideSlidesToShow
+    onChange: value => setAttributes({
+      slideSlidesToShow: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slides To Scroll"),
@@ -163,8 +171,8 @@ function Edit({
     min: 1,
     max: 10,
     step: 1,
-    onChange: slideSlidesToScroll => setAttributes({
-      slideSlidesToScroll
+    onChange: value => setAttributes({
+      slideSlidesToScroll: value
     })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings", "md-storyful-fse-full"),
@@ -174,44 +182,44 @@ function Edit({
     initialOpen: false,
     colorSettings: [{
       value: headingFontColor,
-      onChange: headingFontColor => setAttributes({
-        headingFontColor
+      onChange: value => setAttributes({
+        headingFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Heading Font Color")
     }, {
       value: sliderCompanyNameFontColor,
-      onChange: sliderCompanyNameFontColor => setAttributes({
-        sliderCompanyNameFontColor
+      onChange: value => setAttributes({
+        sliderCompanyNameFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Company Name Font Color")
     }, {
       value: sliderTestimonialFontColor,
-      onChange: sliderTestimonialFontColor => setAttributes({
-        sliderTestimonialFontColor
+      onChange: value => setAttributes({
+        sliderTestimonialFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Testimonial Font Color")
     }, {
       value: sliderAuthorNameFontColor,
-      onChange: sliderAuthorNameFontColor => setAttributes({
-        sliderAuthorNameFontColor
+      onChange: value => setAttributes({
+        sliderAuthorNameFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Author Name Font Color")
     }, {
       value: sliderDesignationFontColor,
-      onChange: sliderDesignationFontColor => setAttributes({
-        sliderDesignationFontColor
+      onChange: value => setAttributes({
+        sliderDesignationFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Designation Font Color")
     }, {
       value: sliderVideoLinkFontColor,
-      onChange: sliderVideoLinkFontColor => setAttributes({
-        sliderVideoLinkFontColor
+      onChange: value => setAttributes({
+        sliderVideoLinkFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Video Link Font Color")
     }, {
       value: sliderReadMoreLinkFontColor,
-      onChange: sliderReadMoreLinkFontColor => setAttributes({
-        sliderReadMoreLinkFontColor
+      onChange: value => setAttributes({
+        sliderReadMoreLinkFontColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slider Read More Link Font Color")
     }]
@@ -370,10 +378,22 @@ function Edit({
     "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove this item", "md-prime")
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "item-title",
-    onClick: () => setCurrentSlide(index)
+    role: "button",
+    tabIndex: 0,
+    onClick: () => setCurrentSlide(index),
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        setCurrentSlide(index);
+      }
+    }
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide"), " ", index + 1)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "add-item-wrap",
     onClick: addStaticPostObj,
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        addStaticPostObj();
+      }
+    },
     role: "button",
     tabIndex: 0,
     "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-prime")
@@ -518,7 +538,8 @@ function save({
     "data-slidesToShow": slideSlidesToShow,
     "data-slidesToScroll": slideSlidesToScroll
   }, slideItems && slideItems.map((postObj, currentSlide) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "md_slider__item"
+    className: "md_slider__item",
+    key: currentSlide
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider__item__gradient_theme"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {

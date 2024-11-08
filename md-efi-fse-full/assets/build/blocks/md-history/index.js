@@ -89,7 +89,6 @@ function Edit({
       historyTimeline: arrayCopy
     });
   };
-  const currentObj = historyTimeline[currentSlide];
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_history_timeline history-list"
@@ -171,7 +170,8 @@ function Edit({
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__years-list"
   }, historyTimeline && historyTimeline.map((postObj, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "history-list__year-item"
+    className: "history-list__year-item",
+    key: index
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     className: "history-list__year history-list__year-title",
@@ -185,6 +185,11 @@ function Edit({
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "add-item-wrap",
     onClick: addStaticPostObj,
+    onKeyDown: event => {
+      if (event.key === "Enter" || event.key === " ") {
+        addStaticPostObj();
+      }
+    },
     role: "button",
     tabIndex: 0,
     "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-efi-fse-full")
@@ -237,7 +242,7 @@ function Edit({
       // eslint-disable-next-line no-alert
       confirm((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Are you sure you want to delete this item?", "md-efi-fse-full"));
       if (toDelete === true) {
-        const updatedArray = historyTimeline.filter((currentObj, itemIndex) => itemIndex !== currentSlide);
+        const updatedArray = historyTimeline.filter((item, itemIndex) => itemIndex !== currentSlide);
         setAttributes({
           historyTimeline: updatedArray
         });
@@ -347,17 +352,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 
 /**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -391,14 +393,14 @@ function save({
     showDescription
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
       className: "md_history_timeline history-list"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__inner"
   }, showHeading && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__head"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "h2",
     className: "history-list__title",
     value: heading,
@@ -419,17 +421,17 @@ function save({
     className: "history-list__year-item",
     key: index,
     "data-getyear": "year-" + index
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "p",
     className: "history-list__year history-list__year-title",
     value: postObj.year,
-    onClick: () => setCurrentSlide(index),
     style: {
       color: yearFontColor
     }
   }))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "history-list__year-detail"
   }, historyTimeline && historyTimeline.map((postObj, currentSlide) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    key: currentSlide,
     className: "history-list__year-detail-item",
     "data-year": "year-" + currentSlide
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -439,7 +441,7 @@ function save({
     style: {
       color: titleFontColor
     }
-  }, historyTimeline[currentSlide].year), showDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, historyTimeline[currentSlide].year), showDescription && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "p",
     className: "history-list__year-description",
     value: historyTimeline[currentSlide].description,

@@ -3,7 +3,6 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from "@wordpress/i18n";
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -68,7 +67,6 @@ export default function save({ attributes }) {
                       tagName="p"
                       className="history-list__year history-list__year-title"
                       value={postObj.year}
-                      onClick={() => setCurrentSlide(index)}
                       style={{
                         color: yearFontColor,
                       }}
@@ -81,6 +79,7 @@ export default function save({ attributes }) {
             {historyTimeline &&
               historyTimeline.map((postObj, currentSlide) => (
                 <div
+                  key={currentSlide}
                   className="history-list__year-detail-item"
                   data-year={"year-" + currentSlide}
                 >

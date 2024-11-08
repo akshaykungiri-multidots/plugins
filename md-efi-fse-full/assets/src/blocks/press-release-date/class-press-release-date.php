@@ -90,7 +90,7 @@ class Press_Release_Date extends Block_Base {
 
 					if ( !empty( $press_release_date ) ) {
 						// get the date format from the settings.
-						$press_release_date = date( get_option( 'date_format' ), strtotime( $press_release_date ) );
+						$press_release_date = gmdate( get_option( 'date_format' ), strtotime( $press_release_date ) );
 					}
 				}
 

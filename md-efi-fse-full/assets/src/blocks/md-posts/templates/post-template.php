@@ -8,7 +8,6 @@ $showExcerpt = isset( $attributes['showExcerpt'] ) ? $attributes['showExcerpt'] 
 
 while ($query->have_posts()) :
     $query->the_post();
-    $post_date = get_the_date('F j, Y');
 ?>
     <div class="md-posts__grid-item">
         <div class="md-posts__grid-item-inner">

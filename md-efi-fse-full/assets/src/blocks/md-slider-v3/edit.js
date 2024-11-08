@@ -85,6 +85,15 @@ export default function Edit({ attributes, setAttributes }) {
     }
     setAttributes({ slideItems: updatedStaticPostObj });
   };
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...slideItems];
+    arrayCopy[oldIndex] = slideItems[newIndex];
+    arrayCopy[newIndex] = slideItems[oldIndex];
+
+    setAttributes({
+      slideItems: arrayCopy,
+    });
+  };
   return (
     <div
       {...useBlockProps({
@@ -96,13 +105,13 @@ export default function Edit({ attributes, setAttributes }) {
           <ToggleControl
             label={__("Enable Heading", "md-prime")}
             checked={enableHeading}
-            onChange={(enableHeading) => setAttributes({ enableHeading })}
+            onChange={(value) => setAttributes({ enableHeadin: value })}
           />
           {enableHeading && (
             <TextControl
               label={__("Heading")}
               value={heading}
-              onChange={(heading) => setAttributes({ heading })}
+              onChange={(value) => setAttributes({ heading: value })}
               placeholder={__("Enter Heading", "md-prime")}
             />
           )}
@@ -111,22 +120,22 @@ export default function Edit({ attributes, setAttributes }) {
           <ToggleControl
             label={__("Autoplay", "md-prime")}
             checked={autoplay}
-            onChange={(autoplay) => setAttributes({ autoplay })}
+            onChange={(value) => setAttributes({ autoplay: value })}
           />
           <ToggleControl
             label={__("Hide/Show Arrows", "md-prime")}
             checked={arrows}
-            onChange={(arrows) => setAttributes({ arrows })}
+            onChange={(value) => setAttributes({ arrows: value })}
           />
           <ToggleControl
             label={__("Hide/Show Dots", "md-prime")}
             checked={dots}
-            onChange={(dots) => setAttributes({ dots })}
+            onChange={(value) => setAttributes({ dots: value })}
           />
           <ToggleControl
             label={__("Infinite Loop", "md-prime")}
             checked={slideInfinite}
-            onChange={(slideInfinite) => setAttributes({ slideInfinite })}
+            onChange={(value) => setAttributes({ slideInfinite: value })}
           />
           <RangeControl
             label={__("Slides To Show")}
@@ -134,8 +143,8 @@ export default function Edit({ attributes, setAttributes }) {
             min={1}
             max={10}
             step={1}
-            onChange={(slideSlidesToShow) =>
-              setAttributes({ slideSlidesToShow })
+            onChange={(value) =>
+              setAttributes({ slideSlidesToShow: value })
             }
           />
           <RangeControl
@@ -144,8 +153,8 @@ export default function Edit({ attributes, setAttributes }) {
             min={1}
             max={10}
             step={1}
-            onChange={(slideSlidesToScroll) =>
-              setAttributes({ slideSlidesToScroll })
+            onChange={(value) =>
+              setAttributes({ slideSlidesToScroll: value })
             }
           />
         </PanelBody>
@@ -159,44 +168,44 @@ export default function Edit({ attributes, setAttributes }) {
             colorSettings={[
               {
                 value: headingFontColor,
-                onChange: (headingFontColor) =>
-                  setAttributes({ headingFontColor }),
+                onChange: (value) =>
+                  setAttributes({ headingFontColor: value }),
                 label: __("Heading Font Color"),
               },
               {
                 value: sliderCompanyNameFontColor,
-                onChange: (sliderCompanyNameFontColor) =>
-                  setAttributes({ sliderCompanyNameFontColor }),
+                onChange: (value) =>
+                  setAttributes({ sliderCompanyNameFontColor: value }),
                 label: __("Slider Company Name Font Color"),
               },
               {
                 value: sliderTestimonialFontColor,
-                onChange: (sliderTestimonialFontColor) =>
-                  setAttributes({ sliderTestimonialFontColor }),
+                onChange: (value) =>
+                  setAttributes({ sliderTestimonialFontColor: value }),
                 label: __("Slider Testimonial Font Color"),
               },
               {
                 value: sliderAuthorNameFontColor,
-                onChange: (sliderAuthorNameFontColor) =>
-                  setAttributes({ sliderAuthorNameFontColor }),
+                onChange: (value) =>
+                  setAttributes({ sliderAuthorNameFontColor: value }),
                 label: __("Slider Author Name Font Color"),
               },
               {
                 value: sliderDesignationFontColor,
-                onChange: (sliderDesignationFontColor) =>
-                  setAttributes({ sliderDesignationFontColor }),
+                onChange: (value) =>
+                  setAttributes({ sliderDesignationFontColor: value }),
                 label: __("Slider Designation Font Color"),
               },
               {
                 value: sliderVideoLinkFontColor,
-                onChange: (sliderVideoLinkFontColor) =>
-                  setAttributes({ sliderVideoLinkFontColor }),
+                onChange: (value) =>
+                  setAttributes({ sliderVideoLinkFontColor: value }),
                 label: __("Slider Video Link Font Color"),
               },
               {
                 value: sliderReadMoreLinkFontColor,
-                onChange: (sliderReadMoreLinkFontColor) =>
-                  setAttributes({ sliderReadMoreLinkFontColor }),
+                onChange: (value) =>
+                  setAttributes({ sliderReadMoreLinkFontColor: value }),
                 label: __("Slider Read More Link Font Color"),
               },
             ]}
@@ -411,7 +420,17 @@ export default function Edit({ attributes, setAttributes }) {
                 </Tooltip>
               )}
             </div>
-            <div className="item-title" onClick={() => setCurrentSlide(index)}>
+            <div
+              className="item-title"
+              role="button"
+              tabIndex={0}
+              onClick={() => setCurrentSlide(index)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  setCurrentSlide(index);
+                }
+              }}
+            >
               {__("Slide")} {index + 1}
             </div>
           </div>
@@ -420,6 +439,11 @@ export default function Edit({ attributes, setAttributes }) {
       <div
         className="add-item-wrap"
         onClick={addStaticPostObj}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            addStaticPostObj();
+          }
+        }}
         role="button"
         tabIndex={0}
         aria-label={__("Add new item", "md-prime")}

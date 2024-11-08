@@ -95,7 +95,14 @@ function Edit({
       slideItems: updatedStaticPostObj
     });
   };
-  console.log(currentSlide);
+  const moveItem = (oldIndex, newIndex) => {
+    const arrayCopy = [...slideItems];
+    arrayCopy[oldIndex] = slideItems[newIndex];
+    arrayCopy[newIndex] = slideItems[oldIndex];
+    setAttributes({
+      slideItems: arrayCopy
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
       className: "md_slider_section"
@@ -105,26 +112,26 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Autoplay", "md-prime"),
     checked: autoplay,
-    onChange: autoplay => setAttributes({
-      autoplay
+    onChange: value => setAttributes({
+      autoplay: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide/Show Arrows", "md-prime"),
     checked: arrows,
-    onChange: arrows => setAttributes({
-      arrows
+    onChange: value => setAttributes({
+      arrows: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hide/Show Dots", "md-prime"),
     checked: dots,
-    onChange: dots => setAttributes({
-      dots
+    onChange: value => setAttributes({
+      dots: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Infinite Loop", "md-prime"),
     checked: slideInfinite,
-    onChange: slideInfinite => setAttributes({
-      slideInfinite
+    onChange: value => setAttributes({
+      slideInfinite: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slides To Show"),
@@ -132,8 +139,8 @@ function Edit({
     min: 1,
     max: 10,
     step: 1,
-    onChange: slideSlidesToShow => setAttributes({
-      slideSlidesToShow
+    onChange: value => setAttributes({
+      slideSlidesToShow: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slides To Scroll"),
@@ -141,8 +148,8 @@ function Edit({
     min: 1,
     max: 10,
     step: 1,
-    onChange: slideSlidesToScroll => setAttributes({
-      slideSlidesToScroll
+    onChange: value => setAttributes({
+      slideSlidesToScroll: value
     })
   })), currentSlide > -1 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Current Slide Settings"),
@@ -173,7 +180,10 @@ function Edit({
       updateStaticPostObj(currentSlide, "backgroundImage", "");
     },
     className: "is-link is-destructive"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime"))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Box Background Color")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.GradientPicker, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove Image", "md-prime"))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "box-background-color"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Box Background Color")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.GradientPicker, {
+    id: "box-background-color",
     value: slideItems[currentSlide].boxColor !== undefined ? slideItems[currentSlide].boxColor : null,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Box Color"),
     onChange: color => updateStaticPostObj(currentSlide, "boxColor", color),
@@ -340,10 +350,22 @@ function Edit({
     "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Remove this item", "md-prime")
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "item-title",
-    onClick: () => setCurrentSlide(index)
+    role: "button",
+    tabIndex: 0,
+    onClick: () => setCurrentSlide(index),
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        setCurrentSlide(index);
+      }
+    }
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Slide"), " ", index + 1)))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "add-item-wrap",
     onClick: addStaticPostObj,
+    onKeyDown: e => {
+      if (e.key === "Enter" || e.key === " ") {
+        addStaticPostObj();
+      }
+    },
     role: "button",
     tabIndex: 0,
     "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add new item", "md-prime")
@@ -423,17 +445,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 
 /**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -468,7 +487,7 @@ function save({
     sliderLinkFontColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
       className: "md_slider_section"
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -482,7 +501,8 @@ function save({
     "data-slidesToShow": slideSlidesToShow,
     "data-slidesToScroll": slideSlidesToScroll
   }, slideItems && slideItems.map((postObj, currentSlide) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "md_slider__item"
+    className: "md_slider__item",
+    key: currentSlide
   }, slideItems[currentSlide].backgroundImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     className: "md_slider__item__bg",
     src: slideItems[currentSlide].backgroundImage,
@@ -494,14 +514,14 @@ function save({
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider__item__content__inner"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "h2",
     className: "md_slider__item__content__title",
     value: slideItems[currentSlide].title,
     style: {
       color: sliderTitleFontColor
     }
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "p",
     className: "md_slider__item__content__description",
     value: slideItems[currentSlide].description,
@@ -510,7 +530,7 @@ function save({
     }
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_slider__item__content__btn md_btn_arrow"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "p",
     value: slideItems[currentSlide].link,
     style: {

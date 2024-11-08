@@ -65,29 +65,27 @@ export default function Edit({ attributes, setAttributes, className }) {
     showExcerpt,
   } = attributes;
 
-  const builtInPostType = [
-    "page",
-    "attachment",
-    "nav_menu_item",
-    "wp_block",
-    "wp_template",
-    "wp_template_part",
-    "wp_navigation",
-    "wp_font_family",
-    "wp_font_face",
-    "wp_global_styles",
-  ];
-
   const [postTypes, setPostTypes] = useState([]);
 
   useEffect(() => {
+    const builtInPostType = [
+      "page",
+      "attachment",
+      "nav_menu_item",
+      "wp_block",
+      "wp_template",
+      "wp_template_part",
+      "wp_navigation",
+      "wp_font_family",
+      "wp_font_face",
+      "wp_global_styles",
+    ];
+
     // Fetch the posttypes not post list and set it as options
     wp.apiFetch({ path: "/wp/v2/types" }).then((response) => {
       const fetchedPostTypes = Object.keys(response)
         .filter(function (key) {
-          if (!builtInPostType.includes(response[key].slug)) {
-            return key;
-          }
+          return !builtInPostType.includes(response[key].slug);
         })
         .map((key) => ({
           value: key,

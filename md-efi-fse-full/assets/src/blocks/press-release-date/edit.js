@@ -3,7 +3,6 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the server side render element.
@@ -25,7 +24,6 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/components/
  */
-import { PanelBody, TextControl } from '@wordpress/components';
 
 import metadata from './block.json';
 import './editor.scss';
@@ -41,7 +39,7 @@ import './editor.scss';
  * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
  * @return {WPElement} Element to render.
  */
-export default function Edit({ attributes, setAttributes, className }) {
+export default function Edit({ className }) {
 	return (
 		<div { ...useBlockProps() }>
 			<ServerSideRender

@@ -64,8 +64,6 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 function Edit({
-  attributes,
-  setAttributes,
   className
 }) {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
