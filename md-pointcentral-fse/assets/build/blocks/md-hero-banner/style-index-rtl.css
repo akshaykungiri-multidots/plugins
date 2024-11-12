@@ -1,0 +1,98 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-hero-banner/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-pointcentral-fse-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.pointcentral-hero-banner {
+  padding: 80px 0 160px 0;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 100px;
+}
+.pointcentral-hero-banner .hero-banner-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: self-start;
+  z-index: 2;
+  position: relative;
+  margin-bottom: -70px;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner .pointcentral-hero-banner-left {
+  width: 60%;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner .pointcentral-hero-banner-left .pointcentral-hero-banner-content h1 {
+  font-size: 45px;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 40px;
+  display: inline-block;
+  color: #fff;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner .pointcentral-hero-banner-left .pointcentral-hero-banner-content h1::after {
+  content: "";
+  width: 50%;
+  display: block;
+  height: 3px;
+  background: #fff;
+  margin-top: 30px;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner .pointcentral-hero-banner-left .pointcentral-hero-banner-content p {
+  font-size: 24px;
+  font-weight: 500;
+  padding-bottom: 40px;
+  color: #ced6de;
+  line-height: 32px;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner .pointcentral-hero-banner-left .pointcentral-hero-banner-content .pointcentral-hero-banner-button span {
+  color: #1e62aa;
+  background-color: #fff;
+  padding: 10px 25px;
+  border-radius: 0 !important;
+  font-size: 18px !important;
+  font-family: Montserrat;
+  display: inline-block;
+  font-weight: 500;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner .pointcentral-hero-banner-right {
+  width: 40%;
+  position: relative;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner .pointcentral-hero-banner-right .solution-image {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  bottom: 0;
+}
+.pointcentral-hero-banner .pointcentral-hero-banner-inner .pointcentral-hero-banner-right .solution-image img {
+  max-width: 100%;
+  height: auto;
+}
+.pointcentral-hero-banner.style2 {
+  padding-top: 150px;
+  padding-bottom: 275px;
+}
+.pointcentral-hero-banner.style2 .pointcentral-hero-banner-inner .pointcentral-hero-banner-left .pointcentral-hero-banner-content h1 {
+  font-size: 60px;
+  color: #ffffff;
+  line-height: 55px;
+  text-align: right;
+}
+.pointcentral-hero-banner.style2 .pointcentral-hero-banner-inner .pointcentral-hero-banner-left .pointcentral-hero-banner-content h1::after {
+  content: none !important;
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-pointcentral-fse/md-quotes",
+  "version": "0.1.0",
+  "title": "MD Quotes",
+  "apiVersion": 3,
+  "category": "md-pointcentral-fse",
+  "icon": "format-quote",
+  "description": "A block that displays a quote in slider",
+  "keywords": [
+    "quote"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-pointcentral-fse",
+  "attributes": {
+    "quoteItems": {
+      "type": "array",
+      "default": []
+    },
+    "quoteIcon": {
+      "type": "string",
+      "default": ""
+    },
+    "quoteBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "quoteTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "quoteTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showQuoteTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showQuoteIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "showQuoteAuthor": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

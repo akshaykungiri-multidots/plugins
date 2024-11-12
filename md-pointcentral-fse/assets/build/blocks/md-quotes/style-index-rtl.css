@@ -1,0 +1,195 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-quotes/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-pointcentral-fse-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_quote_slider {
+  position: relative;
+}
+.md_quote_slider .md-quote-slider__items {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.md_quote_slider blockquote {
+  padding: 0 25px;
+  transition: transform 0.5s, opacity 0.5s;
+  -webkit-transition: transform 0.5s, opacity 0.5s;
+  text-align: center;
+  color: inherit;
+  background-image: none;
+  font-size: 22px;
+  width: 100%;
+  margin: 0 auto;
+}
+.md_quote_slider blockquote .testimonial-name {
+  color: #225ba3;
+  font-size: 18px !important;
+  font-weight: 800;
+  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  display: block;
+  line-height: 22px;
+}
+
+.md_quote_slider blockquote.no-trans {
+  transition: none;
+  -webkit-transition: none;
+  opacity: 0;
+  transform: translateX(25px);
+  z-index: 1;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+.md_quote_slider blockquote.no-trans p,
+.md_quote_slider blockquote.no-trans span,
+.md_quote_slider blockquote.no-trans div {
+  margin: 0;
+  height: 0;
+  padding: 0;
+  font-size: 0;
+  display: block;
+}
+
+.md_quote_slider .control-wrap {
+  width: 20px;
+  line-height: 20px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.md_quote_slider .controls .out-of,
+.md_quote_slider .controls .total {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 20px;
+  color: inherit;
+  vertical-align: top;
+}
+
+.md_quote_slider .control-wrap {
+  font-size: 16px;
+}
+
+.md_quote_slider .controls .out-of,
+.md_quote_slider .controls .total {
+  width: 20px;
+  text-align: center;
+}
+
+.md_quote_slider .controls .out-of {
+  width: 13px;
+  top: -1px;
+  position: relative;
+}
+
+.md_quote_slider .control-wrap ul {
+  width: auto;
+  transition: transform 0.33s;
+}
+
+.md_quote_slider .control-wrap ul li {
+  color: inherit;
+  display: block;
+  float: right;
+  width: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: auto;
+}
+
+.md_quote_slider .controls {
+  vertical-align: top;
+}
+
+.md_quote_slider .testimonial-next-prev .prev {
+  position: absolute;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+  transform: translateY(-50%);
+  margin-top: -40px;
+  right: 7.5%;
+  margin-right: -8px;
+  color: inherit;
+  text-align: center;
+}
+
+.md_quote_slider .testimonial-next-prev .next {
+  position: absolute;
+  top: 50%;
+  height: 40px;
+  margin-top: -40px;
+  font-size: 25px;
+  width: 40px;
+  margin-left: -8px;
+  color: inherit;
+  transform: translateY(-50%);
+  left: 7.5%;
+  text-align: center;
+}
+
+.md_quote_slider .testimonial-next-prev .next:before,
+.md_quote_slider .testimonial-next-prev .prev:before {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.md_quote_slider .testimonial-next-prev .next:after,
+.md_quote_slider .testimonial-next-prev .prev:after {
+  backface-visibility: hidden;
+  display: block;
+  content: " ";
+  z-index: 100;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: currentColor;
+  top: 48%;
+  opacity: 0;
+  left: 3px;
+  cursor: pointer;
+  transform: translateY(-50%) scaleX(0) translateZ(0);
+  -webkit-transform: translateY(-50%) scaleX(0) translateZ(0);
+  transition: opacity 0.5s cubic-bezier(0.2, 1, 0.2, 1), transform 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+  -webkit-transition: opacity 0.5s cubic-bezier(0.2, 1, 0.2, 1), -webkit-transform 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.md_quote_slider .image-icon {
+  background-size: contain;
+  border-radius: 0 !important;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border: none;
+  text-indent: -9999px;
+  margin: 0 auto;
+}
+
+.md_quote_slider p {
+  font-size: 19px;
+  line-height: 25px;
+  font-family: Montserrat !important;
+  font-weight: 500;
+  padding-bottom: 30px;
+  color: #545454;
+  z-index: 9999;
+  position: relative;
+}
+
+.md_quote_slider .testimonial-next-prev button {
+  background: 100% 0;
+  border: none;
+  cursor: pointer;
+  color: #15487e !important;
+  font-size: 50px !important;
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-pointcentral-fse/md-image-box",
+  "version": "0.1.0",
+  "title": "MD Image Box",
+  "apiVersion": 3,
+  "category": "md-pointcentral-fse",
+  "icon": "format-image",
+  "description": "A block to display a box with an image",
+  "keywords": ["md-pointcentral-fse", "image", "box"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-pointcentral-fse",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "imageItems": {
+      "type": "array",
+      "default": []
+    },
+    "buttonLink": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfColumns": {
+      "type": "number",
+      "default": 3
+    },
+    "themeStyle": {
+      "type": "string",
+      "default": "default"
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "imageItemTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showImageTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

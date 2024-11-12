@@ -1,0 +1,113 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-tabs-box/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-pointcentral-fse-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.pointcentral-tab-banner {
+  margin: 20px 0;
+}
+.pointcentral-tab-banner .tab-list .tab-list-inner {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 0;
+  align-items: start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pointcentral-tab-banner .tab-list .tab-list-inner .tab-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 10%;
+}
+.pointcentral-tab-banner .tab-list .tab-list-inner .tab-list-item .md-tab-icon {
+  background: #0b325b;
+  width: 40px;
+  padding: 26px 20px;
+  border-radius: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+}
+.pointcentral-tab-banner .tab-list .tab-list-inner .tab-list-item .md-tab-icon img {
+  width: 100%;
+  height: auto;
+}
+.pointcentral-tab-banner .tab-list .tab-list-inner .tab-list-item .tab-title {
+  color: #fff !important;
+  font-size: 18px !important;
+  font-weight: 500;
+  text-align: center;
+}
+.pointcentral-tab-banner .tab-list .tab-list-inner .tab-list-item.active .md-tab-icon {
+  background: #92c4e9;
+}
+.pointcentral-tab-banner .tab-content {
+  padding: 30px 80px;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item {
+  display: none;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item.active {
+  display: block;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item .tab-content-inner {
+  display: flex;
+  align-items: center;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item .tab-content-inner .tab-content-left {
+  padding-left: 60px;
+  padding-right: 1%;
+  text-align: center;
+  width: 66%;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item .tab-content-inner .tab-content-left h2 {
+  color: #545454;
+  font-size: 28px !important;
+  line-height: normal !important;
+  margin-bottom: 30px !important;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item .tab-content-inner .tab-content-left p {
+  font-size: 19px !important;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.2;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item .tab-content-inner .tab-content-left .tab-content-button {
+  border-radius: 0 !important;
+  font-size: 16px;
+  padding: 10px 40px !important;
+  font-family: Montserrat !important;
+  font-weight: 600;
+  margin: 0 auto;
+  display: inline-block;
+  background-color: #0e5aa8 !important;
+  color: #fff;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item .tab-content-inner .tab-content-left .tab-content-button a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item .tab-content-inner .tab-content-right {
+  width: 33%;
+  padding: 0 10px;
+}
+.pointcentral-tab-banner .tab-content .tab-content-item .tab-content-inner .tab-content-right img {
+  width: 100%;
+  height: auto;
+}

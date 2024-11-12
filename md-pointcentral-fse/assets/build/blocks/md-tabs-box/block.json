@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-pointcentral-fse/md-tabs-box",
+  "version": "0.1.0",
+  "title": "MD Tabs Box",
+  "apiVersion": 3,
+  "category": "md-pointcentral-fse",
+  "icon": "index-card",
+  "description": "A block to display a box with tabs",
+  "keywords": [
+    "tabs",
+    "box"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-pointcentral-fse",
+  "attributes": {
+    "tabItems": {
+      "type": "array",
+      "default": []
+    },
+    "tabBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabActiveBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabActiveTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabContentTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabContentTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabContentButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showTabContentTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTabContentText": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTabContentButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTabContentImage": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

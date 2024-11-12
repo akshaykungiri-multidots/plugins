@@ -1,0 +1,76 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-anitian-fse-full-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+
+.bakery_antian__slider-image-box {
+  .bakery_antian__heading {
+    h2 {
+      font-size: 32px;
+      color: #225ba3;
+      line-height: 36px;
+      margin-bottom: 50px;
+      font-weight: 600;
+      font-family: Montserrat;
+    }
+  }
+  .bakery_antian__slider {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .bakery_antian__slider-item {
+    margin: 0 20px;
+    margin-bottom: 40px;
+    width: calc(100% / 3 - 40px);
+    background-color: #e6f0f3;
+    .bakery_antian__slider-image {
+      display: flex;
+      justify-content: center;
+      padding-top: 40px;
+      img {
+        width: 80px;
+        height: auto;
+        position: relative;
+      }
+    }
+    .bakery_antiab__slider-content {
+      padding: 0 40px 40px 40px;
+      text-align: center;
+      .bakery_antian__slider-title {
+        color: #225ba3;
+        margin: 20px 0;
+        font-size: 22px;
+        font-weight: 600;
+        font-family: Montserrat
+      }
+      p {
+        color: #000;
+        font-weight: 400;
+        font-family: Montserrat;
+        font-size: 19px;
+      }
+      .bakery_antian__slider-button {
+        background-color: #0c71c3;
+        color: #fff;
+        font-weight: 700;
+        padding: 10px 15px;
+        margin-top: 20px;
+        display: inline-block;
+        a {
+          color: inherit;
+          font-size: inherit;
+          font-weight: inherit;
+        }
+      }
+    }
+  }
+  .text-video-slider__video-and-text {
+    padding: 20px 0;
+    position: relative;
+    text-align: center;
+  }
+}

@@ -1,0 +1,142 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-pointcentral-fse-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+
+.pointcentral-press-listing {
+    padding-top: 100px;
+    padding-bottom: 30px;
+    margin-bottom: 1.5em;
+    .pointcentral-press-listing__header {
+        h2 {
+            font-weight: 600;
+            margin-bottom: 40px;
+            position: relative;
+            font-size: 22px;
+            font-style: normal;
+            line-height: 20px;
+            text-align: center;
+            &::before {
+                content: '';
+                background: url(../../images/Left-arrow-design.png);
+                display: -webkit-inline-box;
+                width: 70px;
+                height: 40px;
+                background-repeat: no-repeat;
+                vertical-align: middle;
+                margin-right: 20px;
+                position: relative;
+                top: 3px;
+            }
+            &::after {
+                content: '';
+                background: url(../../images/Left-arrow-design.png);
+                display: -webkit-inline-box;
+                width: 70px;
+                height: 40px;
+                background-repeat: no-repeat;
+                vertical-align: middle;
+                transform: rotate(180deg);
+                margin-left: 20px;
+                position: relative;
+                top: 0px;
+            }
+        }
+    }
+    .pointcentral-press-listing__items {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        .pointcentral-press-listing__item {
+            width: calc((100% / 4) - 30px);
+            text-align: center;
+            .pointcentral-press-listing__item-image {
+                width: 100%;
+                height: auto;
+                margin-bottom: 15px;
+                img {
+                    margin-bottom: 0px;
+                    height: auto;
+                    width: 100%;
+                }
+            }
+            .pointcentral-press-listing__item-link {
+                text-decoration: none;
+                color: #000;
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+    .pointcentral-press-listing__button {
+        padding-top: 50px;
+        text-align: center;
+        span {
+            border-radius: 0 !important;
+            font-size: 16px;
+            padding: 18px 22px ! IMPORTANT;
+            font-family: Montserrat !important;
+            font-weight: 600;
+            color: rgb(255, 255, 255);
+            background-color: rgb(11, 50, 91);
+            visibility: visible;
+            display: inline-block;
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // Style 2
+    &.style_2 {
+        .pointcentral-press-listing__header {
+            h2 {
+                font-size: 32px;
+                color: #225ba3;
+                line-height: 70px;
+                text-align: center;
+                &::before, &::after {
+                    display: none;
+                }
+            }
+        }
+        .pointcentral-press-listing__item {
+            .pointcentral-press-listing__item-image {
+                margin-bottom: 0;
+                img {
+                    transition: transform .75s cubic-bezier(.2,.75,.5,1), opacity .5s ease .3s;
+                }
+                overflow: hidden;
+                &:hover {
+                    img {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            .pointcentral-press-listing__item-title {
+                color: #fff;
+                background: #0b325b;
+                display: inline-block;
+                padding: 15px 0;
+                text-align: center;
+                z-index: 99;
+                position: relative;
+                top: -22px;
+                width: 100%;
+                .pointcentral-press-listing__item-link {
+                    width: 100%;
+                    color: inherit;
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}

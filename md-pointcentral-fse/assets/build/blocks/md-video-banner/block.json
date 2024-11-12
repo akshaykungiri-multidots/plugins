@@ -1,0 +1,91 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-pointcentral-fse/md-video-banner",
+  "version": "0.1.0",
+  "title": "MD Video Banner",
+  "apiVersion": 3,
+  "category": "md-pointcentral-fse",
+  "icon": "format-video",
+  "description": "A block to display a video banner",
+  "keywords": [
+    "md-pointcentral-fse",
+    "video",
+    "banner"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-pointcentral-fse",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "subheading": {
+      "type": "string",
+      "default": ""
+    },
+    "contentText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaurl": {
+      "type": "string",
+      "default": ""
+    },
+    "youtubeurl": {
+      "type": "string",
+      "default": ""
+    },
+    "videotype": {
+      "type": "string",
+      "default": "media-upload"
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubheading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}
