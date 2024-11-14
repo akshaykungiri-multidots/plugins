@@ -12,6 +12,9 @@
     box-sizing: border-box;
     padding-left: 30px;
     margin-left: calc((100vw - 1245px) / 2);
+    .md_slider {
+        position: unset;
+    }
     .md_slider__item {
         position: relative;
         margin-right: 30px;

@@ -14,6 +14,10 @@
   padding-left: 30px;
   margin-left: calc((100vw - 1245px) / 2);
 }
+.md_hero_banner_slider_v2 .md_slider {
+  position: static;
+  position: initial;
+}
 .md_hero_banner_slider_v2 .md_slider__item {
   position: relative;
   margin-right: 30px;

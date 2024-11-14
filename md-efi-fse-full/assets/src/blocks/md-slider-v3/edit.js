@@ -28,6 +28,9 @@ import {
   Tooltip
 } from "@wordpress/components";
 
+import Slider from "react-slick";
+import React, { useRef } from 'react';
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -57,6 +60,28 @@ export default function Edit({ attributes, setAttributes }) {
   } = attributes;
 
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const settings = {
+    dots,
+    slidesToShow: slideSlidesToShow,
+    slidesToScroll: slideSlidesToScroll,
+    infinite: slideInfinite,
+    autoplay,
+    arrows,
+    speed: 1000,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    afterChange: (index) => setCurrentSlide(index),
+  };
+
+  const sliderRef = useRef(null);
+
+  const goToSlide = (index) => {
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(index);
+    }
+  };
+
   const addStaticPostObj = () => {
     const staticPostObj = [
       ...slideItems,
@@ -81,7 +106,7 @@ export default function Edit({ attributes, setAttributes }) {
     const updatedStaticPostObj = [...slideItems];
     updatedStaticPostObj.splice(index, 1);
     if (currentSlide >= updatedStaticPostObj.length) {
-      setCurrentSlide(updatedStaticPostObj.length - 1); // Set to last slide if current is out of bounds
+      goToSlide(updatedStaticPostObj.length - 1);
     }
     setAttributes({ slideItems: updatedStaticPostObj });
   };
@@ -123,12 +148,12 @@ export default function Edit({ attributes, setAttributes }) {
             onChange={(value) => setAttributes({ autoplay: value })}
           />
           <ToggleControl
-            label={__("Hide/Show Arrows", "md-prime")}
+            label={__("Show Arrows", "md-prime")}
             checked={arrows}
             onChange={(value) => setAttributes({ arrows: value })}
           />
           <ToggleControl
-            label={__("Hide/Show Dots", "md-prime")}
+            label={__("Show Dots", "md-prime")}
             checked={dots}
             onChange={(value) => setAttributes({ dots: value })}
           />
@@ -213,18 +238,9 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
       <div className="md_hero_banner_slider_v3">
-        <div
-          className="md_slider"
-          data-autoplay={autoplay}
-          data-arrows={arrows}
-          data-dots={dots}
-          data-infinite={slideInfinite}
-          data-slidesToShow={slideSlidesToShow}
-          data-slidesToScroll={slideSlidesToScroll}
-          data-centerMode="true"
-        >
-          {currentSlide > -1 && (
-            <div className="md_slider__item">
+        <Slider {...settings} className="md_slider" ref={sliderRef}>
+          {slideItems.map((item, index) => (
+            <div className="md_slider__item" key={index}>
               <div className="md_slider__item__gradient_theme"></div>
               <div className="md_slider__item--inner">
                 <h3
@@ -236,9 +252,9 @@ export default function Edit({ attributes, setAttributes }) {
                   <RichText
                     tagName="h2"
                     className="md_slider__item__company_name h4"
-                    value={slideItems[currentSlide].companyName}
+                    value={item.companyName}
                     onChange={(value) =>
-                      updateStaticPostObj(currentSlide, "companyName", value)
+                      updateStaticPostObj(index, "companyName", value)
                     }
                     placeholder={__("Enter Company Name", "md-prime")}
                     style={{
@@ -250,9 +266,9 @@ export default function Edit({ attributes, setAttributes }) {
                   <RichText
                     tagName="blockquote"
                     className="md_slider__item__testimonial__content"
-                    value={slideItems[currentSlide].testimonial}
+                    value={item.testimonial}
                     onChange={(value) =>
-                      updateStaticPostObj(currentSlide, "testimonial", value)
+                      updateStaticPostObj(index, "testimonial", value)
                     }
                     placeholder={__("Enter Testimonial", "md-prime")}
                     style={{
@@ -264,9 +280,9 @@ export default function Edit({ attributes, setAttributes }) {
                       <RichText
                         tagName="h4"
                         className="md_slider__item__testimonial__author__name"
-                        value={slideItems[currentSlide].authorName}
+                        value={item.authorName}
                         onChange={(value) =>
-                          updateStaticPostObj(currentSlide, "authorName", value)
+                          updateStaticPostObj(index, "authorName", value)
                         }
                         placeholder={__("Enter Author Name", "md-prime")}
                         style={{
@@ -276,10 +292,10 @@ export default function Edit({ attributes, setAttributes }) {
                       <RichText
                         tagName="p"
                         className="md_slider__item__testimonial__author__designation"
-                        value={slideItems[currentSlide].designation}
+                        value={item.designation}
                         onChange={(value) =>
                           updateStaticPostObj(
-                            currentSlide,
+                            index,
                             "designation",
                             value
                           )
@@ -293,9 +309,9 @@ export default function Edit({ attributes, setAttributes }) {
                     <RichText
                       tagName="div"
                       className="md_slider__item__testimonial__video"
-                      value={slideItems[currentSlide].videoLink}
+                      value={item.videoLink}
                       onChange={(value) =>
-                        updateStaticPostObj(currentSlide, "videoLink", value)
+                        updateStaticPostObj(index, "videoLink", value)
                       }
                       placeholder={__("Enter Video Link", "md-prime")}
                       style={{
@@ -306,10 +322,10 @@ export default function Edit({ attributes, setAttributes }) {
                       <RichText
                         tagName="p"
                         className="btn-main"
-                        value={slideItems[currentSlide].readMoreLink}
+                        value={item.readMoreLink}
                         onChange={(value) =>
                           updateStaticPostObj(
-                            currentSlide,
+                            index,
                             "readMoreLink",
                             value
                           )
@@ -322,14 +338,14 @@ export default function Edit({ attributes, setAttributes }) {
                     </div>
                   </div>
                   <div className="md_slider__item__count">
-                    <span>{currentSlide + 1}</span> /{" "}
+                    <span>{index + 1}</span> /{" "}
                     <span>{slideItems.length}</span>
                   </div>
                 </div>
               </div>
             </div>
-          )}
-        </div>
+          ))}
+        </Slider>
       </div>
       <div className="md_slider_section__items">
         {slideItems.map((item, index) => (
@@ -424,10 +440,10 @@ export default function Edit({ attributes, setAttributes }) {
               className="item-title"
               role="button"
               tabIndex={0}
-              onClick={() => setCurrentSlide(index)}
+              onClick={() => goToSlide(index)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
-                  setCurrentSlide(index);
+                  goToSlide(index);
                 }
               }}
             >

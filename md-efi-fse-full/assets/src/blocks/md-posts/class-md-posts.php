@@ -173,7 +173,7 @@ class MD_Posts extends Block_Base {
 		$posts_per_page = isset( $attributes['postsToShow'] ) ? $attributes['postsToShow'] : '';
 		
 		$current_page = isset( $_POST['current_page'] ) ? sanitize_text_field( wp_unslash( $_POST['current_page'] ) ) : 0;
-		$taxonomies = isset( $_POST['taxonomies'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['taxonomies'] ) ) : array();
+		$taxonomies = isset( $_POST['taxonomies'] ) ? wp_unslash( $_POST['taxonomies'] ) : array();
 		$current_page++;
 
 		// Get the posts.

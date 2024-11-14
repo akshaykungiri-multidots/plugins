@@ -61,7 +61,8 @@ function Edit({
     descriptionFontColor,
     showHeading,
     showYear,
-    showDescription
+    showDescription,
+    test_abc
   } = attributes;
   const [currentSlide, setCurrentSlide] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(0);
   const addStaticPostObj = () => {

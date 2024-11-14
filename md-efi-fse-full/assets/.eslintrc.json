@@ -13,5 +13,6 @@
         "jquery": true
     },
     "rules": {
+        "prettier/prettier": "off"
     }
 }

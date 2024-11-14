@@ -168,6 +168,9 @@ class Assets {
 			);
 		}
 
+		wp_enqueue_style( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css' );
+    	wp_enqueue_style( 'slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css' );
+
 		// Change block Priority to head.
 		$blocks = \WP_Block_Type_Registry::get_instance()->get_all_registered();
 		foreach ( $blocks as $block ) {

@@ -29,6 +29,9 @@ import {
   Tooltip
 } from "@wordpress/components";
 
+import Slider from "react-slick";
+import React, { useRef } from 'react';
+
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -51,6 +54,28 @@ export default function Edit({ attributes, setAttributes }) {
   } = attributes;
 
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  const settings = {
+    dots,
+    slidesToShow: slideSlidesToShow,
+    slidesToScroll: slideSlidesToScroll,
+    infinite: slideInfinite,
+    autoplay,
+    arrows: false,
+    speed: 1000,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    afterChange: (index) => setCurrentSlide(index),
+  };
+
+  const sliderRef = useRef(null);
+
+  const goToSlide = (index) => {
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(index);
+    }
+  };
+
   const addStaticPostObj = () => {
     const staticPostObj = [
       ...slideItems,
@@ -72,7 +97,7 @@ export default function Edit({ attributes, setAttributes }) {
     const updatedStaticPostObj = [...slideItems];
     updatedStaticPostObj.splice(index, 1);
     if (currentSlide >= updatedStaticPostObj.length) {
-      setCurrentSlide(updatedStaticPostObj.length - 1); // Set to last slide if current is out of bounds
+      goToSlide(updatedStaticPostObj.length - 1);
     }
     setAttributes({ slideItems: updatedStaticPostObj });
   };
@@ -99,12 +124,12 @@ export default function Edit({ attributes, setAttributes }) {
             onChange={(value) => setAttributes({ autoplay: value })}
           />
           <ToggleControl
-            label={__("Hide/Show Arrows", "md-prime")}
+            label={__("Show Arrows", "md-prime")}
             checked={arrows}
             onChange={(value) => setAttributes({ arrows: value })}
           />
           <ToggleControl
-            label={__("Hide/Show Dots", "md-prime")}
+            label={__("Show Dots", "md-prime")}
             checked={dots}
             onChange={(value) => setAttributes({ dots: value })}
           />
@@ -156,28 +181,19 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
       <div className="md_hero_banner_slider_v2">
-        <div
-          className="md_slider"
-          data-autoplay={autoplay}
-          data-arrows={arrows}
-          data-dots={dots}
-          data-infinite={slideInfinite}
-          data-slidesToShow={slideSlidesToShow}
-          data-slidesToScroll={slideSlidesToScroll}
-          data-centerMode="true"
-        >
-          {(currentSlide > -1) && (
-            <div className="md_slider__item">
+        <Slider {...settings} className="md_slider" ref={sliderRef} >
+          {slideItems.map((postObj, index) => (
+            <div className="md_slider__item" key={index}>
               <div className="md_slider__item__image">
                 <MediaUpload
                   onSelect={(media) =>
-                    updateStaticPostObj(currentSlide, "sliderImage", media.url)
+                    updateStaticPostObj(index, "sliderImage", media.url)
                   }
                   multiple={false}
                   render={({ open }) => (
                     <>
                       <div>
-                        { slideItems[currentSlide].sliderImage === ""
+                        { postObj.sliderImage === ""
                           ? 
                           <Button onClick={open} variant="primary">{ __("Upload") }</Button>
                           : 
@@ -197,10 +213,10 @@ export default function Edit({ attributes, setAttributes }) {
                                   aria-label={__("Edit image", "md-prime")}
                                 ></i>
                                 <i 
-                                  onClick={() => updateStaticPostObj(currentSlide, "sliderImage", null)} 
+                                  onClick={() => updateStaticPostObj(index, "sliderImage", null)} 
                                   onKeyDown={(e) => {
                                     if (e.key === "Enter" || e.key === " ") {
-                                      updateStaticPostObj(currentSlide, "sliderImage", null);
+                                      updateStaticPostObj(index, "sliderImage", null);
                                     }
                                   }} 
                                   className="dashicons dashicons-no-alt remove-image" 
@@ -211,11 +227,11 @@ export default function Edit({ attributes, setAttributes }) {
                               </div>
                               <div className="md-prime-image__inner">
                                 {arrows && (
-                                  <Button className="slick-prev slick-arrow" tabindex="0">Previous</Button>
+                                  <Button onClick={() => sliderRef.current.slickPrev()} className="slick-prev slick-arrow" tabindex="0">Prev</Button>
                                 )}
-                                <img src={slideItems[currentSlide].sliderImage} alt={"SliderImage"} />
+                                <img src={postObj.sliderImage} alt={"SliderImage"} />
                                 {arrows && (
-                                  <Button className="slick-next slick-arrow" tabindex="0">Next</Button>
+                                  <Button onClick={() => sliderRef.current.slickNext()} className="slick-next slick-arrow" tabindex="0">Next</Button>
                                 )}
                               </div>
                             </div> 
@@ -258,8 +274,8 @@ export default function Edit({ attributes, setAttributes }) {
                 </div>
               </div>
             </div>
-          )}
-        </div>
+          ))}
+        </Slider>
       </div>
 
       <div className="md_slider_section__items">
@@ -355,10 +371,10 @@ export default function Edit({ attributes, setAttributes }) {
               className="item-title" 
               role="button" 
               tabIndex={0} 
-              onClick={() => setCurrentSlide(index)} 
+              onClick={() => goToSlide(index)}
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ") {
-                  setCurrentSlide(index);
+                  goToSlide(index);
                 }
               }}
             >

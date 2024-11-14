@@ -41,6 +41,7 @@ export default function Edit({ attributes, setAttributes }) {
     showHeading,
     showYear,
     showDescription,
+    test_abc
   } = attributes;
 
   const [currentSlide, setCurrentSlide] = useState(0);
