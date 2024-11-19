@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-v2/md-image-box",
+  "version": "0.1.0",
+  "title": "MD Image Box",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-v2",
+  "icon": "format-image",
+  "description": "A block that displays an image with a title and description.",
+  "keywords": ["md-anitian-fse-v2", "md-image-box"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-anitian-fse-v2",
+  "attributes": {
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "imageBoxes": {
+      "type": "array",
+      "default": [
+      ]
+    },
+    "enableSlider": {
+      "type": "boolean",
+      "default": false
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "imageBoxContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "imageBoxButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showImageBoxContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showImageBoxButton": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

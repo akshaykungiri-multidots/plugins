@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-v2/md-quote",
+  "version": "0.1.0",
+  "title": "MD Quote",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-v2",
+  "icon": "format-image",
+  "description": "A block to display the quote with paragraph",
+  "keywords": ["md-anitian-fse-v2", "md-quote"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-anitian-fse-v2",
+  "attributes": {
+    "quoteIcon": {
+      "type": "string",
+      "default": ""
+    },
+    "quoteText": {
+      "type": "string",
+      "default": ""
+    },
+    "quoteBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "quoteTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showQuoteIcon": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

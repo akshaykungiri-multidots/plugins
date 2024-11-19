@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-v2/md-slider",
+  "version": "0.1.0",
+  "title": "MD Slider",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-v2",
+  "icon": "slides",
+  "description": "A block to display slider",
+  "keywords": [
+    "md-anitian-fse-v2",
+    "md-slider"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-anitian-fse-v2",
+  "attributes": {
+    "slideItems": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "subTitle": "",
+          "title": "",
+          "description": "",
+          "backgroundType": "media",
+          "backgroundImage": "",
+          "backgroundColor": null
+        }
+      ]
+    },
+    "sliderTitleFontColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "sliderDescriptionFontColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "sliderLinkFontColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideInfinite": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slideSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

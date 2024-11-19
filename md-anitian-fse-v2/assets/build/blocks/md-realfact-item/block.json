@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-v2/md-realfact-item",
+  "version": "0.1.0",
+  "title": "MD RealFact Item",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-v2",
+  "icon": "groups",
+  "description": "A block to display the RealFact Item",
+  "keywords": [
+    "md-anitian-fse-v2",
+    "md-realfact-item"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-anitian-fse-v2",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "content": {
+      "type": "string",
+      "default": ""
+    },
+    "enableHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableTopBorder": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "contentColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "topBorderColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

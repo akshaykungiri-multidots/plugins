@@ -1,0 +1,40 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-see-more/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.md_real_facts {
+  text-align: center;
+  padding: 0 0 60px;
+  font-family: "Poppins", sans-serif;
+}
+
+.md_real_facts .md_real_facts_line {
+  height: 76px;
+  border: 6px solid #1ca5ff;
+  border-bottom: none;
+}
+
+.md_real_facts .md_real_facts_heading {
+  padding: 0 20px;
+  margin: 0 0 20px;
+  font-size: 40px;
+  color: #333;
+  font-weight: 500;
+}
+
+.md_real_facts_desc {
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+.md_real_facts_btn {
+  border: 2px solid rgba(0, 0, 0, 0);
+  padding: 8px 20px;
+  border-radius: 50px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.md_real_facts__more_item {
+  display: none;
+}

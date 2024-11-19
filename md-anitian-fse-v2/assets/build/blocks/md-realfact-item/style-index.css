@@ -1,0 +1,35 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-realfact-item/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-anitian-fse-v2-sample-dynamic {
+  color: #000000;
+}
+
+.md_real_facts_item {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.md_real_facts_item .md_real_facts_line {
+  border-top: 17px solid #1ca5ff;
+}
+
+.md_real_facts_item .md_real_facts_heading {
+  padding: 0 20px;
+  margin: 15px;
+  font-size: 40px;
+  color: #333;
+  font-weight: 500;
+}
+
+.md_real_facts_btn {
+  border: 2px solid rgba(0, 0, 0, 0);
+  padding: 8px 20px;
+  border-radius: 50px;
+}
+
+.md_real_facts__more_item {
+  display: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

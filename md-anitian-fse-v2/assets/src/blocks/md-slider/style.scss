@@ -1,0 +1,106 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-efi-fse-full-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+
+.md_hero_banner_slider {
+    .md_slider__item {
+        position: relative;
+        .md_slider__item__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            text-align: center;
+            .md_slider__item__content__subtitle {
+                text-transform: uppercase;
+                font-size: 22px;
+                line-height: 1.5;
+                font-weight: bold;
+                width: 80%;
+                margin: 0 auto;
+            }
+            .md_slider__item__content__title {
+                font-size: 39px;
+                line-height: 1.5;
+                font-weight: bold;
+                width: 80%;
+                margin: 0 auto 30px;
+            }
+            .md_slider__item__content__description {
+                font-size: 21px;
+                line-height: normal;
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    }
+    .slick-slider .slick-next, .slick-slider .slick-prev {
+        cursor: pointer;
+        height: 72px;
+        width: 72px;
+        z-index: 50;
+        font-size: 0;
+        border: none;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        padding: 0;
+        transform: translateY(calc(-50% + 10px));
+        display: block;
+        color: #fff;
+        background: #000;
+        background: linear-gradient(to right, #5E39C1 50%, black 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        opacity: .7;
+        transition: all .3s ease-in;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        &::before {
+            border-top: 3px solid #fff;
+            border-left: 3px solid #fff;
+            position: relative;
+            top: 0;
+        }
+    }
+    .slick-slider .slick-prev {
+        left: 0;
+        right: auto;
+    }
+    .slick-dots {
+        display: flex;
+        gap: 8px;
+        position: absolute;
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 10px;
+        width: -moz-fit-content;
+        width: fit-content
+    }
+    .slick-dots li {
+        height: 100%
+    }
+    
+    .slick-dots li button {
+        height: 100%;
+        font-size: 0;
+        opacity: .15;
+        background: #fff;
+        transition: ease-in .4s opacity;
+        border: none;
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer
+    }
+    
+    .slick-dots li.slick-active button {
+        opacity: .5
+    }
+}

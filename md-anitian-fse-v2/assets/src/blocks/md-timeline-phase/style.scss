@@ -1,0 +1,153 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-anitian-fse-v2-sample-dynamic {
+    color: abstracts.$primary-theme-color;
+}
+// MD Timeline Phase
+.md_timeline_phase_block .md_timeline_phase_wrapper {
+    display: flex;
+    justify-content: right;
+    align-items: flex-start;
+    gap: 42px;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    @include abstracts.media-breakpoint( max-991 ) {
+        margin-top: 50px;
+    }
+}
+.md_timeline_phase_block .md_timeline_phase_icon {
+    margin-top: 40px;
+    max-width: 120px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include abstracts.media-breakpoint( max-991 ) {
+        display: none;
+    }
+}
+.md_timeline_phase_block .md_timeline_phase_icon img {
+    width: 100%;
+    height: 120px;
+    border-radius: 50%;
+}
+.md_timeline_phase_block .md_timeline_phase_wrapper .md_timeline_phase_content {
+    width: calc(43% - 20px);
+    @include abstracts.media-breakpoint( max-991 ) {
+        width: 100%;
+    }
+}
+.md_timeline_phase_block .md_timeline_phase_wrapper .md_timeline_phase_content {
+    .heading {
+        padding-left: 20px;
+        font-weight: bold;
+        max-width: 70%;
+        font-size: 24px;
+        line-height: 1.3em;
+    }
+    mark {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+.md_timeline_phase_block .md_timeline_phase_wrapper .md_timeline_phase_content .timeline__phase-card {
+    margin-bottom: 50px;
+    border-radius: 15px;
+    padding: 14px;
+    min-height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.md_timeline_phase_block .md_timeline_phase_wrapper .md_timeline_phase_content .timeline__phase-card:before {
+    content: "";
+    background: #1870b8;
+    height: 20px;
+    width: 20px;
+    border: inherit;
+    position: absolute;
+    left: -35px;
+    -webkit-clip-path: polygon(0 0, 20px 20px, 0 20px);
+    clip-path: polygon(0 0, 20px 20px, 0 20px);
+    transform: rotate(225deg);
+    top: calc(50% - 15px);
+    @include abstracts.media-breakpoint( max-991 ) {
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%) rotate(-45deg);
+    }
+}
+.md_timeline_phase_block .md_timeline_phase_wrapper .timeline__phase-image {
+    position: absolute;
+    right: 0;
+    width: 25%;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+.md_timeline_phase_block .md_timeline_phase_wrapper .timeline__phase-image img {
+    max-width: 90px;
+    max-height: 90px;
+}
+.md_timeline_phase_block .md_timeline_phase_wrapper .timeline__phase-card h4 {
+    padding-left: 20px;
+    font-weight: bold;
+    max-width: 70%;
+    font-size: 24px;
+    line-height: 1.3em;
+}
+
+// MD Timeline Phase Behind
+.md_timeline_phase_block.behind .md_timeline_phase_wrapper {
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+.md_timeline_phase_block.behind .md_timeline_phase_icon {
+    margin-top: 75px;
+    height: 58px;
+    width: 60px;
+    display: flex;
+}
+.md_timeline_phase_block.behind .md_timeline_phase_icon img {
+    width: 100px;
+}
+.md_timeline_phase_block.behind .md_timeline_phase_wrapper .md_timeline_phase_content .heading {
+    padding-left: 0;
+    padding-right: 20px;
+    text-align: right;
+}
+.md_timeline_phase_block.behind .md_timeline__phase-caution {
+    border-radius: 50%;
+    background-color: #f47528;
+    padding: 15px;
+    color: #fff;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.md_timeline_phase_block.behind .md_timeline__phase-caution i {
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+.md_timeline_phase_block.behind .md_timeline_phase_wrapper .md_timeline_phase_content .timeline__phase-card:before {
+    content: "";
+    background: #f47528;
+    left: auto;
+    right: -50px;
+    transform: rotate(45deg);
+}
+.md_timeline_phase_block.behind .md_timeline_phase_wrapper .timeline__phase-card {
+    background: linear-gradient(270deg, #f7f7f7 75%, #f47528 25%);
+    flex-direction: row-reverse;
+}
+.md_timeline_phase_block.behind .md_timeline_phase_wrapper .timeline__phase-card .timeline__phase-image {
+    right: auto;
+    left: 0;
+}
+.md_timeline_phase_block.behind p::before {
+    content: "\f071";
+    color: rgb(244, 117, 40);
+    font-family: fontawesome;
+    margin-right: 5px;
+}

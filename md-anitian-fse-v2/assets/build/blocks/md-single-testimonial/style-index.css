@@ -1,0 +1,56 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-single-testimonial/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-anitian-fse-v2-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_anitian_single_testimonial {
+  font-family: "Poppins", sans-serif;
+}
+.md_anitian_single_testimonial .md_anitian_single_tesimonial__inner {
+  background-repeat: no-repeat;
+  padding: 60px 0;
+  background-position: left top;
+  background-size: auto auto;
+  background-size: initial;
+}
+.md_anitian_single_testimonial .md_anitian_single_tesimonial__inner .md_anitian_single_tesimonial__heading .header-page-title__heading {
+  margin: 20px 0 30px;
+  font-weight: 800;
+  color: #0c71c3;
+  font-size: 40px;
+}
+.md_anitian_single_testimonial .md_anitian_single_tesimonial__inner .md_anitian_single_tesimonial__image {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 50px;
+  width: 150px;
+}
+.md_anitian_single_testimonial .md_anitian_single_tesimonial__inner .md_anitian_single_tesimonial__image img {
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
+}
+.md_anitian_single_testimonial .md_anitian_single_tesimonial__inner .md_anitian_single_tesimonial__content {
+  text-align: center;
+}
+.md_anitian_single_testimonial .md_anitian_single_tesimonial__inner .md_anitian_single_tesimonial__content .testimonials__content {
+  font-size: 24px;
+  color: #000;
+  text-align: center;
+  margin: 0 0 30px;
+  line-height: 1.5em;
+}
+.md_anitian_single_testimonial .md_anitian_single_tesimonial__inner .md_anitian_single_tesimonial__content .testimonials__author, .md_anitian_single_testimonial .md_anitian_single_tesimonial__inner .md_anitian_single_tesimonial__content .testimonials__author__designation {
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  margin: 0;
+  line-height: 1.5em;
+  text-transform: capitalize;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,118 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-anitian-fse-v2-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+
+.md_anitian_cover_cta_wrap {
+  position: relative;
+  font-family: "Poppins",sans-serif;
+  .md_anitian_cover_cta_arc {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIzMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0wIDE0MGgxMjgwQzU3My4wOCAxNDAgMCAwIDAgMHoiLz48L2c+PC9zdmc+);
+    background-size: 100% 300px;
+    bottom: 0;
+    height: 300px;
+    z-index: 1;
+    transform: scale(-1, 1);
+    position: absolute;
+    width: 100%;
+  }
+  .md_anitian_cover_cta {
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: normal;
+    padding: 70px 0;
+    .md_anitian_cover_cta__inner {
+      z-index: 9;
+      position: relative;
+      display: flex;
+      .md_anitian_cover_cta__heading {
+        width: 50%;
+        .header-page-title__heading {
+          font-weight: 500;
+          line-height: 1em;
+          color: #fff;
+          font-size: 40px;
+          margin: 0 0 10px;
+        }
+        p {
+          color: #fff;
+          margin: 0 0 1em;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 1.3em;
+        }
+        .md_anitian_cover_cta__btn {
+          background: rgba(0, 0, 0, 0);
+          border: 2px solid #fff;
+          border-radius: 0;
+          position: relative;
+          font-size: 18px;
+          margin-top: 20px;
+        }
+      }
+      .md_anitian_cover_cta__image {
+        width: 50%;
+        .cover_cta__image {
+          width: 100%;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+    .background_overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      z-index: 1;
+      top: 0;
+      &::before {
+        content: "";
+      }
+    }
+  }
+
+  &.style2 {
+    .md_anitian_cover_cta__inner {
+      justify-content: space-between;
+      .md_anitian_cover_cta__heading {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        .header-page-title__heading {
+          line-height: 50px;
+        }
+        p {
+          color: #fff;
+          font-size: 20px;
+          line-height: 30px;
+          font-weight: 500;
+          margin: 0;
+        }
+        .md_anitian_cover_cta__btn {
+          background-color: #f75227;
+          color: #fff;
+          font-size: 14px;
+          letter-spacing: .7px;
+          text-transform: uppercase;
+          border-radius: 50px;
+          border: 2px solid rgba(0, 0, 0, 0);
+          margin-top: 0;
+        }
+      }
+      .md_anitian_cover_cta__image {
+        width: 51.3%;
+        img {
+          max-width: 100%;
+          width: auto !important;
+        }
+      }
+    }
+  }
+}

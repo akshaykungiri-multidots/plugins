@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-v2/md-card-block",
+  "version": "0.1.0",
+  "title": "MD Card Block",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-v2",
+  "icon": "index-card",
+  "description": "A flexible block that displays information in a card format, often used for showcasing services, features, or profiles with an image, title, and description.",
+  "keywords": ["md-anitian-fse-v2", "md-card-block"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-anitian-fse-v2",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBlockStyle": {
+      "type": "string",
+      "default": "style1"
+    },
+    "cardBlockList": {
+      "type": "array",
+      "default": []
+    },
+    "subTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "cardTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "cardContentFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "cardLearnMoreFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfColumns": {
+      "type": "number",
+      "default": 3
+    },
+    "showImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLink": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

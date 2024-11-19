@@ -1,0 +1,49 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-timeline/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-anitian-fse-v2-sample-dynamic {
+  color: #000000;
+}
+
+.md_timeline_block .md_timeline_heading {
+  margin-top: 32px;
+  font-size: 35px;
+  line-height: 1.4em;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.md_timeline_block {
+  position: relative;
+}
+
+.md_timeline__line {
+  position: absolute;
+  height: calc(100% - 105px);
+  width: 5px;
+  background: #424242;
+  right: 50%;
+  margin-top: 106px;
+  transform: translateX(50%);
+  z-index: 0;
+  top: 0;
+}
+
+.md_timeline_phase_selection {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.md_timeline_phase_selection .md_phase_grid_selection {
+  justify-items: center;
+  gap: 20px;
+}
+
+.md_timeline_phase_selection .md_phase_grid_selection .md_phase_item {
+  padding: 50px;
+  text-align: center;
+  background-color: lightgray;
+}

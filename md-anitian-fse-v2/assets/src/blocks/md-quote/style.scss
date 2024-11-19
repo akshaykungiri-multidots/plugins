@@ -1,0 +1,24 @@
+@use "../../scss/abstracts";
+.md_quote_block {
+  margin: 10px 0;
+  .md_quote_inner {
+    background-color: #f7f7f7;
+    padding: 12px;
+    border-radius: 15px;
+    img {
+      width: 30px;
+      height: auto;
+      margin-right: 10px;
+      display: inline-block;
+    }
+    p {
+      color: #666;
+      font-size: 16px !important;
+      font-weight: 500;
+      line-height: 1.2;
+      margin: 0;
+      vertical-align: super;
+      display: inline;
+    }
+  }
+}

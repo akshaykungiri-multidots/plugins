@@ -1,0 +1,26 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-quote/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.md_quote_block {
+  margin: 10px 0;
+}
+.md_quote_block .md_quote_inner {
+  background-color: #f7f7f7;
+  padding: 12px;
+  border-radius: 15px;
+}
+.md_quote_block .md_quote_inner img {
+  width: 30px;
+  height: auto;
+  margin-left: 10px;
+  display: inline-block;
+}
+.md_quote_block .md_quote_inner p {
+  color: #666;
+  font-size: 16px !important;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  vertical-align: super;
+  display: inline;
+}

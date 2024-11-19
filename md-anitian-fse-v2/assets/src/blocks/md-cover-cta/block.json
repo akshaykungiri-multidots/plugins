@@ -1,0 +1,80 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-v2/md-cover-cta",
+  "version": "0.1.0",
+  "title": "MD Cover CTA",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-v2",
+  "icon": "megaphone",
+  "description": "A block that displays a cover image with a call-to-action.",
+  "keywords": ["md-anitian-fse-v2", "md-cover-cta"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-anitian-fse-v2",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonLink": {
+      "type": "string",
+      "default": ""
+    },
+    "coverImage": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "enableOverlay": {
+      "type": "boolean",
+      "default": false
+    },
+    "backgroundImageOverlay": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "coverCtaStyle": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "enablrArc": {
+      "type": "boolean",
+      "default": false
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

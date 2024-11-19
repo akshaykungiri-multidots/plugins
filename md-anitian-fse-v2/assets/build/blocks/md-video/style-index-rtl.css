@@ -1,0 +1,71 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-video/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.md-video-block {
+  border: 1px solid black;
+  padding: 18px;
+}
+
+.md-video-content, .md-video-upload {
+  margin-top: 20px;
+}
+
+.md-video-upload input, .md-video-upload .upload-btn {
+  margin: 0 0 20px;
+  padding: 5px;
+}
+
+.area-video-box {
+  position: relative;
+}
+
+.area-video-box a {
+  width: 100%;
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 90px 0 150px;
+}
+
+.area-video-box a img {
+  width: 100px;
+  position: relative;
+  z-index: 30;
+  right: 0;
+  top: 5px;
+  cursor: pointer;
+}
+
+.area-video-box a p {
+  font-weight: 700;
+  position: absolute;
+  right: 50%;
+  top: calc(50% + 80px);
+  transform: translate(50%, -50%);
+  cursor: pointer;
+}
+
+.area-video-box .circle {
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px #b3b3b3 solid;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  opacity: 0;
+  animation: scaleIn 4s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+  right: calc(50% - 51px);
+  top: calc(50% - 52px);
+  transform: translate(50%, -50%);
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.5, 0.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5, 2.5);
+    opacity: 0;
+  }
+}

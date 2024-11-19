@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-v2/md-single-testimonial",
+  "version": "0.1.0",
+  "title": "MD Single Testimonial",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-v2",
+  "icon": "megaphone",
+  "description": "A block that displays a single testimonial",
+  "keywords": ["md-anitian-fse-v2", "md-single-testimonial"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-anitian-fse-v2",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "authorImage": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialContent": {
+      "type": "string",
+      "default": ""
+    },
+    "authorName": {
+      "type": "string",
+      "default": ""
+    },
+    "authorDesignation": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "authorNameColor": {
+      "type": "string",
+      "default": ""
+    },
+    "authorDesignationColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorName": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorDesignation": {
+      "type": "boolean",
+      "default": true
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "enableOverlay": {
+      "type": "boolean",
+      "default": false
+    },
+    "backgroundImageOverlay": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

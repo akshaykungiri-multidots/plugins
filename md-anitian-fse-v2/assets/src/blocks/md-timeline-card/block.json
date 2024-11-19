@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-anitian-fse-v2/md-timeline-card",
+  "version": "0.1.0",
+  "title": "MD Timeline Card",
+  "apiVersion": 3,
+  "category": "md-anitian-fse-v2",
+  "icon": "groups",
+  "description": "A custom block for displaying timeline card.",
+  "keywords": ["md-anitian-fse-v2", "md-timeline-card"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-anitian-fse-v2",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "backHeadingColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "content": {
+      "type": "string",
+      "default": "This is Default Content....."
+    },
+    "contentColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "backContentColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "enableSliderImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "sliderImage": {
+      "type": "string",
+      "default": ""
+    },
+    "sliderImageBGColor": {
+      "type": "string",
+      "default": "#1ca5ff"
+    },
+    "sliderBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "enableClickHere": {
+      "type": "boolean",
+      "default": true
+    },
+    "backgroundMediaType": {
+      "type": "boolean",
+      "default": true
+    },
+    "backgroundMediaColor": {
+      "type": "string",
+      "default": "linear-gradient(to right bottom, #fac534, #ffa549, #ff8966, #ff7482, #e46a99)"
+    },
+    "backgroundMediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "innerHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "innerContent": {
+      "type": "string",
+      "default": ""
+    },
+    "showCardTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCardContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showInnerCardTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showInnerCardContent": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
