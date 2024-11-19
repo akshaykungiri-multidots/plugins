@@ -5,7 +5,7 @@
   "title": "MD Quote",
   "apiVersion": 3,
   "category": "md-anitian-fse-v2",
-  "icon": "format-image",
+  "icon": "format-quote",
   "description": "A block to display the quote with paragraph",
   "keywords": [
     "md-anitian-fse-v2",

@@ -5,7 +5,7 @@
   "title": "MD See More",
   "apiVersion": 3,
   "category": "md-anitian-fse-v2",
-  "icon": "groups",
+  "icon": "arrow-right-alt",
   "description": "A block to display the see more",
   "keywords": ["md-anitian-fse-v2", "md-see-more"],
   "supports": {

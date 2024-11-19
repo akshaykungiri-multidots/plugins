@@ -5,7 +5,7 @@
   "title": "MD Timeline",
   "apiVersion": 3,
   "category": "md-anitian-fse-v2",
-  "icon": "groups",
+  "icon": "clock",
   "description": "A custom block for MD Timeline",
   "keywords": [
     "md-anitian-fse-v2",

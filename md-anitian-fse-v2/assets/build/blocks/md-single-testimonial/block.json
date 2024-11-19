@@ -5,7 +5,7 @@
   "title": "MD Single Testimonial",
   "apiVersion": 3,
   "category": "md-anitian-fse-v2",
-  "icon": "megaphone",
+  "icon": "testimonial",
   "description": "A block that displays a single testimonial",
   "keywords": [
     "md-anitian-fse-v2",

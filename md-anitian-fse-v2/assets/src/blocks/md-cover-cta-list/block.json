@@ -5,7 +5,7 @@
   "title": "MD Cover CTA List",
   "apiVersion": 3,
   "category": "md-anitian-fse-v2",
-  "icon": "megaphone",
+  "icon": "editor-ul",
   "description": "A block that displays a cover image and list with a call-to-action.",
   "keywords": ["md-anitian-fse-v2", "md-cover-cta-list"],
   "supports": {

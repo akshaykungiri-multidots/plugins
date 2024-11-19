@@ -5,7 +5,7 @@
   "title": "MD Timeline Card",
   "apiVersion": 3,
   "category": "md-anitian-fse-v2",
-  "icon": "groups",
+  "icon": "id-alt",
   "description": "A custom block for displaying timeline card.",
   "keywords": ["md-anitian-fse-v2", "md-timeline-card"],
   "supports": {

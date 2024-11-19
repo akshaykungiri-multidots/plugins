@@ -5,7 +5,7 @@
   "title": "MD RealFact Item",
   "apiVersion": 3,
   "category": "md-anitian-fse-v2",
-  "icon": "groups",
+  "icon": "editor-textcolor",
   "description": "A block to display the RealFact Item",
   "keywords": ["md-anitian-fse-v2", "md-realfact-item"],
   "supports": {
