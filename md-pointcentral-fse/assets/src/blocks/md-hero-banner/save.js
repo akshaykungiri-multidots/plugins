@@ -61,7 +61,7 @@ export default function save({attributes}) {
                                         style={{color: descriptionColor}}
                                     />
                                 )}
-                                {showButton && (
+                                {showButton && buttonText && (
                                     <div className="pointcentral-hero-banner-button">
                                         <RichText.Content
                                             tagName="span"

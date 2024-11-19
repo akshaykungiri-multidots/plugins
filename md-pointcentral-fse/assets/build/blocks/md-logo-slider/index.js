@@ -4782,7 +4782,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pointcentral-fse/md-logo-slider","version":"0.1.0","title":"MD Logo Slider","apiVersion":3,"category":"md-pointcentral-fse","icon":"lock","description":"A custom block for MD PointCentral FSE","keywords":["md-pointcentral-fse","md-logo-slider"],"supports":{"html":false},"textdomain":"md-pointcentral-fse","attributes":{"logos":{"type":"array","default":[]},"slidesToShow":{"type":"number","default":5},"slidesToScroll":{"type":"number","default":1},"autoplay":{"type":"boolean","default":true},"infinite":{"type":"boolean","default":true},"showDots":{"type":"boolean","default":true},"showArrows":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pointcentral-fse/md-logo-slider","version":"0.1.0","title":"MD Logo Slider","apiVersion":3,"category":"md-pointcentral-fse","icon":"images-alt","description":"A block to display a slider of logos","keywords":["md-pointcentral-fse","md-logo-slider"],"supports":{"html":false},"textdomain":"md-pointcentral-fse","attributes":{"logos":{"type":"array","default":[]},"slidesToShow":{"type":"number","default":5},"slidesToScroll":{"type":"number","default":1},"autoplay":{"type":"boolean","default":true},"infinite":{"type":"boolean","default":true},"showDots":{"type":"boolean","default":true},"showArrows":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

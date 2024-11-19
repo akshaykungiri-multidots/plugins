@@ -105,7 +105,13 @@ function Edit({
     })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Block Settings", "md-prime")
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Quote Icon", "md-storyful-fse-full"),
+    checked: showQuoteIcon,
+    onChange: value => setAttributes({
+      showQuoteIcon: value
+    })
+  }), showQuoteIcon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "setting-row"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     htmlFor: "background-image"
@@ -143,12 +149,6 @@ function Edit({
     checked: showQuoteTitle,
     onChange: value => setAttributes({
       showQuoteTitle: value
-    })
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Quote Icon", "md-storyful-fse-full"),
-    checked: showQuoteIcon,
-    onChange: value => setAttributes({
-      showQuoteIcon: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Quote Author", "md-storyful-fse-full"),

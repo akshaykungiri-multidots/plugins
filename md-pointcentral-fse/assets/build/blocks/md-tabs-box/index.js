@@ -208,7 +208,7 @@ function Edit({
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "tab-list-inner"
-  }, tabItems && tabItems.map((postObj, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, tabItems.length && tabItems.map((postObj, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `tab-list-item show-items-hover-wrap ${index === selectedTab ? "active" : ""}`,
     "data-tab": index,
     key: index,
@@ -759,7 +759,7 @@ module.exports = window["wp"]["i18n"];
   \*******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pointcentral-fse/md-tabs-box","version":"0.1.0","title":"MD Tabs Box","apiVersion":3,"category":"md-pointcentral-fse","icon":"index-card","description":"A block to display a box with tabs","keywords":["tabs","box"],"supports":{"html":false},"textdomain":"md-pointcentral-fse","attributes":{"tabItems":{"type":"array","default":[]},"tabBackgroundColor":{"type":"string","default":""},"tabTextColor":{"type":"string","default":""},"tabActiveBackgroundColor":{"type":"string","default":""},"tabActiveTextColor":{"type":"string","default":""},"tabContentTitleColor":{"type":"string","default":""},"tabContentTextColor":{"type":"string","default":""},"tabContentButtonColor":{"type":"string","default":""},"showTabContentTitle":{"type":"boolean","default":true},"showTabContentText":{"type":"boolean","default":true},"showTabContentButton":{"type":"boolean","default":true},"showTabContentImage":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pointcentral-fse/md-tabs-box","version":"0.1.0","title":"MD Tabs Box","apiVersion":3,"category":"md-pointcentral-fse","icon":"index-card","description":"A block to display a box with tabs","keywords":["tabs","box"],"supports":{"html":false},"textdomain":"md-pointcentral-fse","attributes":{"tabItems":{"type":"array","default":[{"id":1,"icon":"","title":"","tabInnerTitle":"","tabInnerContent":"","tabInnerButton":"","tabInnerImage":""}]},"tabBackgroundColor":{"type":"string","default":""},"tabTextColor":{"type":"string","default":""},"tabActiveBackgroundColor":{"type":"string","default":""},"tabActiveTextColor":{"type":"string","default":""},"tabContentTitleColor":{"type":"string","default":""},"tabContentTextColor":{"type":"string","default":""},"tabContentButtonColor":{"type":"string","default":""},"showTabContentTitle":{"type":"boolean","default":true},"showTabContentText":{"type":"boolean","default":true},"showTabContentButton":{"type":"boolean","default":true},"showTabContentImage":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

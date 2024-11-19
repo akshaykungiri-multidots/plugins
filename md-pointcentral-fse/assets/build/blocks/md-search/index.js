@@ -235,7 +235,7 @@ module.exports = window["wp"]["serverSideRender"];
   \*****************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pointcentral-fse/md-search","version":"0.1.0","title":"MD Search","apiVersion":3,"category":"md-pointcentral-fse","icon":"lock","description":"MD Search block.","keywords":["search","block"],"supports":{"html":false},"textdomain":"md-pointcentral-fse","attributes":{},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pointcentral-fse/md-search","version":"0.1.0","title":"MD Search","apiVersion":3,"category":"md-pointcentral-fse","icon":"search","description":"A block to display the search bar","keywords":["search","block"],"supports":{"html":false},"textdomain":"md-pointcentral-fse","attributes":{},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

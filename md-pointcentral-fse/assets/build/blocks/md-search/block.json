@@ -5,8 +5,8 @@
   "title": "MD Search",
   "apiVersion": 3,
   "category": "md-pointcentral-fse",
-  "icon": "lock",
-  "description": "MD Search block.",
+  "icon": "search",
+  "description": "A block to display the search bar",
   "keywords": [
     "search",
     "block"

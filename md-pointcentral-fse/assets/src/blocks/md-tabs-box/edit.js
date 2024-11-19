@@ -184,7 +184,7 @@ export default function Edit({ attributes, setAttributes }) {
         <div className="md_container">
           <div className="tab-list" style={{ backgroundColor: "#0f5aa8" }}>
             <div className="tab-list-inner">
-              {tabItems &&
+              {tabItems.length &&
                 tabItems.map((postObj, index) => (
                   <div
                     className={`tab-list-item show-items-hover-wrap ${

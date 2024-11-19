@@ -407,7 +407,7 @@ function save({
     style: {
       color: descriptionColor
     }
-  }), showButton && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), showButton && buttonText && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "pointcentral-hero-banner-button"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
     tagName: "span",

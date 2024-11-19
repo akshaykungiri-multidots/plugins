@@ -5,8 +5,8 @@
   "title": "MD Logo Slider",
   "apiVersion": 3,
   "category": "md-pointcentral-fse",
-  "icon": "lock",
-  "description": "A custom block for MD PointCentral FSE",
+  "icon": "images-alt",
+  "description": "A block to display a slider of logos",
   "keywords": [
     "md-pointcentral-fse",
     "md-logo-slider"

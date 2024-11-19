@@ -88,59 +88,58 @@ export default function Edit({ attributes, setAttributes }) {
     <div {...useBlockProps({ className: "md_quote_slider" })}>
       <InspectorControls>
         <PanelBody title={__("Block Settings", "md-prime")}>
-          <div className="setting-row">
-            <label htmlFor="background-image">
-              {__("Quote Image", "md-prime")}
-            </label>
-            <div>
-              {!quoteIcon ? (
-                <MediaUpload
-                  onSelect={(selectedImage) => {
-                    setAttributes({
-                      quoteIcon: selectedImage.url,
-                    });
-                  }}
-                  allowedTypes={["image"]}
-                  value={quoteIcon}
-                  render={({ open }) => (
-                    <Button onClick={open} className="button button-large">
-                      {__("Upload Image", "md-prime")}
-                    </Button>
-                  )}
-                />
-              ) : (
-                <>
-                  <div className="image-preview">
-                    <img src={quoteIcon} alt="Background-image-preview" />
-                  </div>
-                  <Button
-                    onClick={() => {
-                      setAttributes({
-                        quoteIcon: "",
-                      });
-                    }}
-                    className="is-link is-destructive"
-                  >
-                    {__("Remove Image", "md-prime")}
-                  </Button>
-                </>
-              )}
-            </div>
-          </div>
-        </PanelBody>
-        <PanelBody
-          title={__("Toggle Settings", "md-storyful-fse-full")}
-          initialOpen={false}
-        >
-          <ToggleControl
-            label={__("Show Quote Text", "md-storyful-fse-full")}
-            checked={showQuoteTitle}
-            onChange={(value) => setAttributes({ showQuoteTitle: value })}
-          />
           <ToggleControl
             label={__("Show Quote Icon", "md-storyful-fse-full")}
             checked={showQuoteIcon}
             onChange={(value) => setAttributes({ showQuoteIcon: value })}
+          />
+          {showQuoteIcon && (
+            <div className="setting-row">
+              <label htmlFor="background-image">
+                {__("Quote Image", "md-prime")}
+              </label>
+              <div>
+                {!quoteIcon ? (
+                  <MediaUpload
+                    onSelect={(selectedImage) => {
+                      setAttributes({
+                        quoteIcon: selectedImage.url,
+                      });
+                    }}
+                    allowedTypes={["image"]}
+                    value={quoteIcon}
+                    render={({ open }) => (
+                      <Button onClick={open} className="button button-large">
+                        {__("Upload Image", "md-prime")}
+                      </Button>
+                    )}
+                  />
+                ) : (
+                  <>
+                    <div className="image-preview">
+                      <img src={quoteIcon} alt="Background-image-preview" />
+                    </div>
+                    <Button
+                      onClick={() => {
+                        setAttributes({
+                          quoteIcon: "",
+                        });
+                      }}
+                      className="is-link is-destructive"
+                    >
+                      {__("Remove Image", "md-prime")}
+                    </Button>
+                  </>
+                )}
+              </div>
+            </div>
+          )}
+        </PanelBody>
+        <PanelBody title={__("Toggle Settings", "md-storyful-fse-full")} initialOpen={false}>
+          <ToggleControl
+            label={__("Show Quote Text", "md-storyful-fse-full")}
+            checked={showQuoteTitle}
+            onChange={(value) => setAttributes({ showQuoteTitle: value })}
           />
           <ToggleControl
             label={__("Show Quote Author", "md-storyful-fse-full")}
@@ -184,7 +183,10 @@ export default function Edit({ attributes, setAttributes }) {
           />
         </PanelBody>
       </InspectorControls>
-      <div className="md-quote-slider__inner" style={{ backgroundColor: quoteBackgroundColor }}>
+      <div
+        className="md-quote-slider__inner"
+        style={{ backgroundColor: quoteBackgroundColor }}
+      >
         <div className="md-quote-slider__items">
           {quoteItems &&
             quoteItems.map((postObj, index) => (

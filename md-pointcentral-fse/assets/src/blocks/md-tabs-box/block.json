@@ -15,7 +15,17 @@
   "attributes": {
     "tabItems": {
       "type": "array",
-      "default": []
+      "default": [
+        {
+          "id": 1,
+          "icon": "",
+          "title": "",
+          "tabInnerTitle": "",
+          "tabInnerContent": "",
+          "tabInnerButton": "",
+          "tabInnerImage": ""
+        }
+      ]
     },
     "tabBackgroundColor": {
       "type": "string",
