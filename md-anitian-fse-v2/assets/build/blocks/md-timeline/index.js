@@ -321,7 +321,7 @@ module.exports = window["wp"]["i18n"];
   \*******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-v2/md-timeline","version":"0.1.0","title":"MD Timeline","apiVersion":3,"category":"md-anitian-fse-v2","icon":"clock","description":"A custom block for MD Timeline","keywords":["md-anitian-fse-v2","md-timeline"],"supports":{"html":false},"textdomain":"md-anitian-fse-v2","attributes":{"heading":{"type":"string","default":""},"enableHeading":{"type":"boolean","default":true},"enableTimelineBorder":{"type":"boolean","default":true},"TimelineBorderColor":{"type":"string","default":""},"headingColor":{"type":"string","default":"#000"}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-anitian-fse-v2/md-timeline","version":"0.1.0","title":"MD Timeline","apiVersion":3,"category":"md-anitian-fse-v2","icon":"clock","description":"A custom block for MD Timeline","keywords":["md-anitian-fse-v2","md-timeline"],"supports":{"html":false},"textdomain":"md-anitian-fse-v2","attributes":{"heading":{"type":"string","default":""},"enableHeading":{"type":"boolean","default":true},"enableTimelineBorder":{"type":"boolean","default":true},"TimelineBorderColor":{"type":"string","default":""},"headingColor":{"type":"string","default":"#000"}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

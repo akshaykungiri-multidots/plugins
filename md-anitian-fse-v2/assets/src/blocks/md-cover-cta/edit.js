@@ -311,11 +311,7 @@ export default function Edit({ attributes, setAttributes }) {
                                           e.key === " "
                                         ) {
                                           e.preventDefault();
-                                          updateStaticPostObj(
-                                            index,
-                                            "card_image",
-                                            ""
-                                          );
+                                          setAttributes({ coverImage: "" });
                                         }
                                       }}
                                       aria-label={__(

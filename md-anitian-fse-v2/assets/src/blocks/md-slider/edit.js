@@ -161,7 +161,7 @@ export default function Edit({ attributes, setAttributes }) {
             onChange={(value) => setAttributes({ slideSlidesToScroll: value })}
           />
         </PanelBody>
-        {currentSlide >= 0 && (
+        {currentSlide >= 0 && currentSlide in slideItems && (
           <PanelBody title={__("Current Slide Settings")} initialOpen={false}>
             <ToggleControl
               label={__("Background Type")}
