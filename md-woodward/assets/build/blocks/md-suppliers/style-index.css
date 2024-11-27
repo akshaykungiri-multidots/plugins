@@ -1,0 +1,116 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-suppliers/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-woodward-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_suppliers_block {
+  position: relative;
+}
+.md_suppliers_block .md_suppliers_block__inner {
+  padding: 100px 0;
+  position: relative;
+}
+.md_suppliers_block .md_suppliers_block__inner img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+.md_suppliers_block .md_suppliers_block__inner .md_suppliers_background_overlay {
+  opacity: 0.85;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.md_suppliers_block .md_suppliers_block__inner .container {
+  position: relative;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__heading {
+  margin-bottom: 40px;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs {
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-title {
+  width: 40%;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-title .md_suppliers_block__tab-title-wrap {
+  gap: 30px;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 70px;
+  position: relative;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-title .md_suppliers_block__tab-title-wrap::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 10%;
+  left: 4px;
+  width: 1px;
+  z-index: -1;
+  opacity: 0.3;
+  background: #e9e9f9;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-title .md_suppliers_block__tab-title-wrap .md_suppliers_block__tab-icon {
+  width: 10px;
+  height: 10px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  top: 10px;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-title .md_suppliers_block__tab-title-wrap .md_suppliers_block__tab-title__input {
+  font-size: max(18px, min(2.6vw, 22px));
+  color: #fff;
+  cursor: pointer;
+  width: calc(100% - 20px);
+  opacity: 0.4;
+  margin: 0;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-title .md_suppliers_block__tab-title-wrap.active .md_suppliers_block__tab-icon {
+  background: linear-gradient(90deg, #c73727 0%, #e76a24 100.28%);
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-title .md_suppliers_block__tab-title-wrap.active .md_suppliers_block__tab-title__input {
+  opacity: 1;
+  color: #ed7423;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-title .add-item-wrap {
+  position: relative;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-content {
+  width: 60%;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-content .md_suppliers_block__tab-content_item {
+  display: none;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-content .md_suppliers_block__tab-content_item p {
+  font-size: 16px;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .md_suppliers_block__tabs-content .md_suppliers_block__tab-content_item.active {
+  display: block;
+}
+.md_suppliers_block .md_suppliers_block__inner .container .md_suppliers_block__tabs .item-action-wrap {
+  position: absolute;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,214 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-leadership/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.leadership .leadership__header {
+  margin: 0;
+  padding: 0;
+}
+.leadership .leadership__header h2 {
+  text-align: center;
+  padding: 0 0 30px;
+  font-size: max(30px, min(5.2vw, 44px));
+  margin: 0;
+}
+.leadership .leadership__roles {
+  gap: 40px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.leadership .leadership__roles h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #181e22;
+  padding-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.leadership .leadership__roles .leadership__roles__box-item {
+  cursor: pointer;
+}
+.leadership .leadership__roles .leadership__roles__box-item.active h3 {
+  color: #bf3126;
+  border-bottom: 3px solid #bf3126;
+}
+.leadership .leadership__author__box {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.leadership .leadership__author__box .leadership__author__box-item {
+  width: calc(25% - 23px);
+  height: 400px;
+  background-color: #fff;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(36, 39, 42, 0.1);
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-img {
+  height: 270px;
+  overflow: hidden;
+  position: relative;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #242a5c;
+  z-index: 1;
+  opacity: 0.4;
+  transition: opacity 0.7s ease-in-out;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-img button {
+  display: block;
+  height: auto;
+  text-align: center;
+  z-index: 9999;
+  position: absolute;
+  left: 20%;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-img button p {
+  color: #fff;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-content {
+  padding: 30px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background: linear-gradient(90deg, #fff, #fff 100.28%);
+  clip-path: polygon(90% 0, 100% 15%, 100% 100%, 0 100%, 0 0);
+  transition: padding 0.5s ease-in-out;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #c73727, #e76a24 100.28%);
+  clip-path: polygon(90% 0, 100% 15%, 100% 100%, 0 100%, 0 0);
+  z-index: -1;
+  transition: opacity 0.7s ease-in-out;
+  opacity: 0;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-content .leadershipName {
+  color: #000;
+  transition: all 0.4s ease-in-out;
+  font-size: max(16px, min(2vw, 18px));
+  margin: 0;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-content .leadershipTitle {
+  margin: 10px 0 0;
+  transition: all 0.4s ease-in-out;
+  font-size: 16px;
+}
+.leadership .leadership__author__box .leadership__author__box-item .leadership__author__box-item-inner-content .leadership__author__box-item-inner-button {
+  margin-top: 20px;
+  display: none;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-content {
+  padding: 30px 20px 50px;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-content::before {
+  opacity: 1;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-content .leadershipName {
+  color: #fff;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-content .leadershipTitle {
+  color: #fff;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-content .leadership__author__box-item-inner-button {
+  display: block;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-content .leadership__author__box-item-inner-button .btn-link-right-arrow {
+  color: #fff;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-content .leadership__author__box-item-inner-button .btn-link-right-arrow::before {
+  width: 20px;
+  right: 10px;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-content .leadership__author__box-item-inner-button .btn-link-right-arrow::after {
+  right: 8px;
+}
+.leadership .leadership__author__box .leadership__author__box-item:hover .leadership__author__box-item-inner-img::before {
+  opacity: 0.2;
+}
+.leadership .leader_role_popup__wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  overflow: auto;
+  display: none;
+  align-items: center;
+}
+.leadership .leader_role_popup__wrap.show-popup {
+  display: block;
+}
+.leadership .leader_role_popup__wrap .leader_role_popup__inner {
+  max-width: 970px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  padding: 60px;
+  background: #fff;
+  max-height: 90vh;
+  overflow: auto;
+}
+.leadership .leader_role_popup__wrap .leader_role_popup__inner i.close-popup {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.leadership .leader_role_popup__wrap .leader_role_popup__inner .leader_role_popup__inner-content .leader_role_popup__inner-content-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+}
+.leadership .leader_role_popup__wrap .leader_role_popup__inner .leader_role_popup__inner-content .leader_role_popup__inner-content-heading .leader_role_popup__inner-content-img-wrap {
+  width: 200px;
+}
+.leadership .leader_role_popup__wrap .leader_role_popup__inner .leader_role_popup__inner-content .leader_role_popup__inner-content-heading .leader_role_popup__inner-content-img-wrap img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.leadership .leader_role_popup__wrap .leader_role_popup__inner .leader_role_popup__inner-content .leader_role_popup__inner-content-heading .leader_role_popup__inner-content-heading-text {
+  width: calc(100% - 230px);
+}
+.leadership .leader_role_popup__wrap .leader_role_popup__inner .leader_role_popup__inner-content .leader_role_popup__inner-content-heading .leader_role_popup__inner-content-heading-text .leadershipName {
+  font-size: 32px;
+  font-weight: 700;
+}
+.leadership .leader_role_popup__wrap .leader_role_popup__inner .leader_role_popup__inner-content .leader_role_popup__inner-content-heading .leader_role_popup__inner-content-heading-text .leadershipTitle {
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

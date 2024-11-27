@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-tab-navigation",
+  "version": "0.1.0",
+  "title": "MD Tab Navigation",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "menu",
+  "description": "A sample block for MD Tab Navigation",
+  "keywords": [
+    "md-woodward",
+    "tab",
+    "navigation"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "tabs": {
+      "type": "array",
+      "default": [
+        {
+          "tabId": 1,
+          "tabTitle": ""
+        }
+      ]
+    },
+    "tabItemColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabItemActiveColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabItemBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabItemActiveBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

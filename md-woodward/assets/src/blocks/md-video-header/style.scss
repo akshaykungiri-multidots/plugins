@@ -1,0 +1,72 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-woodward-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_woodward_text_video_wrap {
+  position: relative;
+  .md_woodward_text_video {
+    background-position: center !important;
+    background-size: cover !important;
+    background-blend-mode: normal;
+    padding: 60px 0;
+    .md_woodward_text_video__inner {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      .md_woodward_text_video__heading {
+        max-width: 45%;
+        width: 100%;
+        h4 {
+          font-size: 16px;
+          text-transform: uppercase;
+          color: #bf3126;
+          margin: 0;
+        }
+        h2 {
+          font-weight: 700;
+          line-height: 1.4em;
+          margin: 0 0 20px;
+          color: #000;
+          font-size: 40px;
+        }
+        p {
+          font-size: 16px;
+          color: #000;
+          margin-bottom: 1em;
+        }
+        .md_woodward_text_video__btn {
+        }
+      }
+      .md_woodward_text_video__youtube {
+        max-width: 55%;
+        width: 100%;
+        .video_section_wrapper {
+          .item-action-wrap { z-index: 99; }
+          .image-preview { position: relative; }
+          iframe {
+            width: 100%;
+            min-height: 300px;
+            height: 100%;
+          }
+          video {
+            width: 100%;
+            height: auto;
+          }
+          .media-and-text__video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 10;
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-logo-slider/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-woodward-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_logo_slider {
+  padding: 20px 40px;
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+  /* Slick Slider Arrows */
+  /* Slick Slider Dots */
+}
+.md_logo_slider .md_logo_slider__heading_wrapper {
+  text-align: center;
+}
+.md_logo_slider .md_logo_slider__heading_wrapper .md_logo_slider__sub_heading {
+  font-size: 16px;
+}
+.md_logo_slider .md_logo_slider__heading_wrapper .md_logo_slider__heading {
+  margin: 0;
+}
+.md_logo_slider .md_logo_slider__slider__controls {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-top: 50px;
+}
+.md_logo_slider .md_logo_slider__slider__controls button {
+  color: #fff;
+  background-color: #0b325b;
+  padding: 10px 25px;
+  border-radius: 0 !important;
+  font-size: 18px !important;
+  display: inline-block;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  width: 65px;
+}
+.md_logo_slider .slick-list .slick-track {
+  display: flex;
+  align-items: center;
+}
+.md_logo_slider .logo-slide {
+  padding: 0 10px;
+}
+.md_logo_slider .logo-slide img {
+  width: 100%;
+  height: auto;
+}
+.md_logo_slider ul.slick-dots {
+  flex-wrap: wrap;
+}
+.md_logo_slider .slick-arrow {
+  width: 40px !important;
+  height: 40px !important;
+  font-size: 0 !important;
+  background: rgba(0, 0, 0, 0) !important;
+  cursor: pointer !important;
+  top: 40%;
+  transform: translateY(-50%);
+  border: none !important;
+  position: absolute;
+  display: block;
+}
+.md_logo_slider .slick-arrow:before {
+  width: 16px;
+  height: 16px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 11px;
+}
+.md_logo_slider .slick-prev {
+  left: -40px;
+  z-index: 1;
+}
+.md_logo_slider .slick-prev:before {
+  border-top: 3px solid #000000;
+  border-left: 3px solid #000000;
+  transform: rotate(-45deg);
+}
+.md_logo_slider .slick-prev[aria-disabled=true] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.md_logo_slider .slick-next {
+  right: -50px;
+}
+.md_logo_slider .slick-next:before {
+  border-top: 3px solid #000000;
+  border-left: 3px solid #000000;
+  transform: rotate(135deg);
+}
+.md_logo_slider .slick-next[aria-disabled=true] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.md_logo_slider .slick-dots {
+  text-align: center; /* Center align dots */
+  margin-top: 20px; /* Space above dots */
+}
+.md_logo_slider .slick-dots li {
+  display: inline-block;
+  margin: 0 5px; /* Space between dots */
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-posts",
+  "version": "0.1.0",
+  "title": "MD Posts",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "list-view",
+  "description": "A block to display posts",
+  "keywords": [
+    "md-posts",
+    "md-woodward"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "postsToShow": {
+      "type": "number",
+      "default": 6
+    },
+    "enableFilter": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPostTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPostDate": {
+      "type": "boolean",
+      "default": true
+    },
+    "postTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "postExcerptColor": {
+      "type": "string",
+      "default": ""
+    },
+    "postDateColor": {
+      "type": "string",
+      "default": ""
+    },
+    "enablePagination": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableViewAll": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

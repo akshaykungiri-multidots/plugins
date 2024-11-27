@@ -1,0 +1,63 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-our-team/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-woodward-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_our_team {
+  position: relative;
+}
+.md_our_team .md_our_team_wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.md_our_team .md_our_team_wrapper.right {
+  flex-direction: row-reverse;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_content {
+  width: calc(50% - 10px);
+}
+.md_our_team .md_our_team_wrapper .md_our_team_content .md_our_team_content_inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_content .md_our_team_content_inner .md-our-team-heading {
+  margin: 0 0 20px;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_content .md_our_team_content_inner p {
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_content .md_our_team_content_inner .md-our-team-button_wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_content .md_our_team_content_inner .md-our-team-button_wrapper .md-our-team-button {
+  color: #000;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_media {
+  width: calc(50% - 10px);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_media .md_our_team_media__wrapper {
+  width: 100%;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_media .md_our_team_media__wrapper .md_slider {
+  width: 100%;
+}
+.md_our_team .md_our_team_wrapper .md_our_team_media .md_our_team_media__wrapper .md_slider img {
+  width: 100%;
+  height: auto;
+}

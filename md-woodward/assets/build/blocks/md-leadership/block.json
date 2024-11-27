@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-leadership",
+  "version": "0.1.0",
+  "apiVersion": 3,
+  "title": "MD Leadership",
+  "category": "md-woodward",
+  "icon": "dashicons dashicons-admin-users",
+  "description": "A block to display leadership team",
+  "keywords": [
+    "Team",
+    "Leader"
+  ],
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Leadership"
+    },
+    "leadersRoles": {
+      "type": "array",
+      "default": []
+    },
+    "bgcolor": {
+      "type": "string"
+    },
+    "authornamecolor": {
+      "type": "string"
+    },
+    "authortitlecolor": {
+      "type": "string"
+    },
+    "headingcolor": {
+      "type": "string"
+    },
+    "displayAuthorname": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayAuthortitle": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-woodward",
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

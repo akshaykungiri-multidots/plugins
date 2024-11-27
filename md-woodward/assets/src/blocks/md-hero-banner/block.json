@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-hero-banner",
+  "version": "0.1.0",
+  "title": "MD Hero Banner",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "welcome-widgets-menus",
+  "description": "A block to display a hero banner.",
+  "keywords": ["hero", "banner"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMedia": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

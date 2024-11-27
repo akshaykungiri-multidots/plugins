@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-breadcrumb",
+  "version": "0.1.0",
+  "title": "MD Breadcrumb",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "editor-table",
+  "description": "A block to display breadcrumb",
+  "keywords": ["breadcrumb", "md-woodward"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

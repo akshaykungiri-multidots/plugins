@@ -1,0 +1,62 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-woodward-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_media_text_slideshow {
+  position: relative;
+  overflow-y: auto; /* Ensure vertical scrolling */
+  height: 755px;
+  .md_media_text_slideshow_wrapper {
+    display: flex;
+    justify-content: space-between;
+    &.right {
+      flex-direction: row-reverse;
+    }
+    .md_media_text_slideshow_content {
+      width: 38%;
+      .md_media_text_slideshow_content_inner {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        padding: 150px 85px 150px 135px;
+        position: sticky;
+        top: 0;
+        .md-media-text-slideshow-heading {
+          margin: 0 0 20px;
+        }
+        p {
+          margin: 0 0 20px;
+          font-size: 16px;
+        }
+      }
+    }
+    .md_media_text_slideshow_media {
+      width: 62%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      .md_media_text_slideshow_media__wrapper {
+        width: 100%;
+        .md_slider {
+          width: 100%;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      .md_media_text_slideshow_media__static {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}

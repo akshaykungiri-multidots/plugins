@@ -1,0 +1,88 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-media-text",
+  "version": "0.1.0",
+  "title": "MD Media Text",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "format-image",
+  "description": "A block that displays an image and text side by side.",
+  "keywords": ["image", "media", "text"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaContent": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaURL": {
+      "type": "string",
+      "default": ""
+    },
+    "featureTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "featureList": {
+      "type": "array",
+      "default": []
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMediaContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMedia": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeatureList": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": "left"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featureTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featureListColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-media-text-slideshow",
+  "version": "0.1.0",
+  "title": "MD Media Text Slideshow",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "format-gallery",
+  "description": "A block to display media and text slideshow",
+  "keywords": [
+    "md-media-text-slideshow",
+    "Block"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "default": "left"
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "content": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaGallery": {
+      "type": "array",
+      "default": []
+    },
+    "staicImage": {
+      "type": "string",
+      "default": ""
+    },
+    "showContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showStaticImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplaySpeed": {
+      "type": "number",
+      "default": 3000
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideInfinite": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slideSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

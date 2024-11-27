@@ -1,0 +1,134 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-our-team",
+  "version": "0.1.0",
+  "title": "MD Our Team",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "groups",
+  "description": "A block to display team members in a slider",
+  "keywords": [
+    "md-our-team",
+    "Block"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "default": "left"
+    },
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "content": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "bannerLink": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaGallery": {
+      "type": "array",
+      "default": []
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showBannerLink": {
+      "type": "boolean",
+      "default": false
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "bannerLinkColor": {
+      "type": "string",
+      "default": ""
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplaySpeed": {
+      "type": "number",
+      "default": 3000
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideInfinite": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slideSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

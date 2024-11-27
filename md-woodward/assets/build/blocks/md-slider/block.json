@@ -1,0 +1,91 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-slider",
+  "version": "0.1.0",
+  "title": "MD Slider",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "slides",
+  "description": "A block to display slider",
+  "keywords": [
+    "md-woodward",
+    "md-slider"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "slideItems": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "title": "",
+          "description": "",
+          "buttonText": "",
+          "mediaurl": "",
+          "youtubeurl": "",
+          "videotype": "media-upload",
+          "enableOverlay": true,
+          "overlayColor": "#3b4c68",
+          "overlayOpacity": 0.75
+        }
+      ]
+    },
+    "sliderTitleFontColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "sliderDescriptionFontColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideInfinite": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slideSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-suppliers",
+  "version": "0.1.0",
+  "title": "MD Suppliers",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "admin-site",
+  "description": "A block to display a list of suppliers list with contents.",
+  "keywords": [
+    "md-woodward",
+    "suppliers"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTabs": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "title": "New Tab",
+          "content": "New Content",
+          "buttonTitle": "Read More"
+        }
+      ]
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "enableOverlay": {
+      "type": "boolean",
+      "default": false
+    },
+    "backgroundOverlay": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTabTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTabContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTabButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTabButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTabButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentTabButtonBackgroundHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showContentTabButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,29 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-tab-navigation/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-woodward-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_tab_navigations .md_tab_navigation_inner .md_tab_navigation_list {
+  list-style-type: none;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  overflow: auto;
+  text-align: center;
+}
+.md_tab_navigations .md_tab_navigation_inner .md_tab_navigation_list li {
+  cursor: pointer;
+  display: inline-block;
+}
+.md_tab_navigations .md_tab_navigation_inner .md_tab_navigation_list li .tabTitle {
+  padding: 10px 24px;
+  display: block;
+  background-color: rgba(237, 116, 35, 0.2);
+  color: #000;
+  height: 100%;
+  align-items: center;
+  text-align: right;
+}
