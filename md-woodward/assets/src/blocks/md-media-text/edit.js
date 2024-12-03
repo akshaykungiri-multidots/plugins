@@ -104,6 +104,11 @@ export default function Edit({ attributes, setAttributes }) {
             onChange={(value) => setAttributes({ showMedia: value })}
           />
           <ToggleControl
+            label={__("Show Media Content")}
+            checked={showMediaContent}
+            onChange={(value) => setAttributes({ showMediaContent: value })}
+          />
+          <ToggleControl
             label={__("Show Feature List")}
             checked={showFeatureList}
             onChange={(value) => setAttributes({ showFeatureList: value })}
@@ -186,92 +191,100 @@ export default function Edit({ attributes, setAttributes }) {
             placeholder={__("Enter Description")}
           />
         )}
-        <div className={`md_media_text_block__content__wrapper ${mediaPosition}`}>
-          <div className="md_media_text_block__content">
-            {showMediaContent && (
-              <RichText
-                className="md_media_text_block__media_content"
-                tagName="p"
-                value={mediaContent}
-                onChange={(value) => setAttributes({ mediaContent: value })}
-                style={{ color: mediaContentColor }}
-                placeholder={__("Enter Media Content")}
-              />
-            )}
-          </div>
-          <div className="md_media_text_block__media">
-            {showMedia && (
-              <div className="md-prime-block-control image-preview image-controle-visible-hover">
-                <div className={`image-controls small-icons icon-center-fixed`}>
-                  <MediaUploadCheck>
-                    <MediaUpload
-                      onSelect={(media) =>
-                        setAttributes({ mediaURL: media.url })
-                      }
-                      allowedTypes={["image"]}
-                      value={mediaURL}
-                      render={({ open }) => (
-                        <>
-                          {mediaURL ? (
-                            <>
-                              <Tooltip text={__("Edit Image", "md-prime")}>
-                                <i
-                                  className="dashicons dashicons-edit edit-image"
-                                  onClick={open}
-                                  role="button"
-                                  tabIndex={0}
-                                  onKeyDown={(e) => {
-                                    if (e.key === "Enter" || e.key === " ") {
-                                      e.preventDefault(); // Prevent default action for space key
-                                      open(); // Trigger the click handler
-                                    }
-                                  }}
-                                  aria-label={__("Edit image", "md-prime")}
-                                ></i>
-                              </Tooltip>
-                              <Tooltip text={__("Remove Image", "md-prime")}>
-                                <i
-                                  className="dashicons dashicons-no-alt remove-image"
-                                  onClick={() =>
-                                    setAttributes({ mediaURL: "" })
-                                  }
-                                  role="button"
-                                  tabIndex={0}
-                                  onKeyDown={(e) => {
-                                    if (e.key === "Enter" || e.key === " ") {
-                                      e.preventDefault();
-                                      setAttributes({ mediaURL: "" });
-                                    }
-                                  }}
-                                  aria-label={__("Remove image", "md-prime")}
-                                ></i>
-                              </Tooltip>
-                            </>
-                          ) : (
-                            <div className="upload-wrap">
-                              <Button
-                                onClick={open}
-                                className="button media_and_text__upload_btn"
-                              >
-                                <Tooltip text={__("Upload Image", "md-prime")}>
-                                  <i className="dashicons dashicons-upload"></i>
-                                </Tooltip>
-                              </Button>
-                            </div>
-                          )}
-                        </>
-                      )}
-                    />
-                  </MediaUploadCheck>
-                </div>
-                <img
-                  src={mediaURL ? mediaURL : siteURL + placeholder}
-                  alt={"slider"}
+        {(showMediaContent || showMedia) && (
+          <div
+            className={`md_media_text_block__content__wrapper ${mediaPosition}`}
+          >
+            <div className="md_media_text_block__content">
+              {showMediaContent && (
+                <RichText
+                  className="md_media_text_block__media_content"
+                  tagName="p"
+                  value={mediaContent}
+                  onChange={(value) => setAttributes({ mediaContent: value })}
+                  style={{ color: mediaContentColor }}
+                  placeholder={__("Enter Media Content")}
                 />
-              </div>
-            )}
+              )}
+            </div>
+            <div className="md_media_text_block__media">
+              {showMedia && (
+                <div className="md-prime-block-control image-preview image-controle-visible-hover">
+                  <div
+                    className={`image-controls small-icons icon-center-fixed`}
+                  >
+                    <MediaUploadCheck>
+                      <MediaUpload
+                        onSelect={(media) =>
+                          setAttributes({ mediaURL: media.url })
+                        }
+                        allowedTypes={["image"]}
+                        value={mediaURL}
+                        render={({ open }) => (
+                          <>
+                            {mediaURL ? (
+                              <>
+                                <Tooltip text={__("Edit Image", "md-prime")}>
+                                  <i
+                                    className="dashicons dashicons-edit edit-image"
+                                    onClick={open}
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter" || e.key === " ") {
+                                        e.preventDefault(); // Prevent default action for space key
+                                        open(); // Trigger the click handler
+                                      }
+                                    }}
+                                    aria-label={__("Edit image", "md-prime")}
+                                  ></i>
+                                </Tooltip>
+                                <Tooltip text={__("Remove Image", "md-prime")}>
+                                  <i
+                                    className="dashicons dashicons-no-alt remove-image"
+                                    onClick={() =>
+                                      setAttributes({ mediaURL: "" })
+                                    }
+                                    role="button"
+                                    tabIndex={0}
+                                    onKeyDown={(e) => {
+                                      if (e.key === "Enter" || e.key === " ") {
+                                        e.preventDefault();
+                                        setAttributes({ mediaURL: "" });
+                                      }
+                                    }}
+                                    aria-label={__("Remove image", "md-prime")}
+                                  ></i>
+                                </Tooltip>
+                              </>
+                            ) : (
+                              <div className="upload-wrap">
+                                <Button
+                                  onClick={open}
+                                  className="button media_and_text__upload_btn"
+                                >
+                                  <Tooltip
+                                    text={__("Upload Image", "md-prime")}
+                                  >
+                                    <i className="dashicons dashicons-upload"></i>
+                                  </Tooltip>
+                                </Button>
+                              </div>
+                            )}
+                          </>
+                        )}
+                      />
+                    </MediaUploadCheck>
+                  </div>
+                  <img
+                    src={mediaURL ? mediaURL : siteURL + placeholder}
+                    alt={"slider"}
+                  />
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
         {showFeatureList && (
           <div className="md_media_text_block__feature_list">
             <RichText

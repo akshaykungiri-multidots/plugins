@@ -1,0 +1,51 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-icon-text/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-woodward-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_icon_text {
+  padding: 20px 40px;
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+}
+.md_icon_text .md_icon_text__heading_wrapper {
+  text-align: center;
+}
+.md_icon_text .md_icon_text__heading_wrapper .md_icon_text__sub_heading {
+  font-size: 16px;
+}
+.md_icon_text .md_icon_text__heading_wrapper .md_icon_text__heading {
+  margin: 0;
+}
+.md_icon_text .md_icon_text__slider {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.md_icon_text .md_icon_text__slider .logo-slide {
+  width: calc(33.333% - 27px);
+}
+.md_icon_text .md_icon_text__slider .logo-slide .md_icon_text__item-image {
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-right: 1px solid #f5f5f5;
+  padding-right: 40px;
+  width: 100%;
+  height: auto;
+}
+.md_icon_text .md_icon_text__slider .logo-slide .md_icon_text__item-image img {
+  width: 55px;
+  height: auto;
+}
+.md_icon_text .md_icon_text__slider .logo-slide .image-text {
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

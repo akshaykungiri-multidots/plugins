@@ -13,7 +13,6 @@ import {
   PanelBody,
   PanelRow,
   FormToggle,
-  TextControl,
   Tooltip,
 } from "@wordpress/components";
 

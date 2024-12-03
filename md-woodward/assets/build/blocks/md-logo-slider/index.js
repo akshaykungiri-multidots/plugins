@@ -219,7 +219,7 @@ function Edit({
     className: "md_logo_slider__slider"
   }, logos && logos.map((postObj, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: postObj.id,
-    className: "logo-slide"
+    className: "logo-slide show-items-hover-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "item-action-wrap show-items-hover small-icons"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {

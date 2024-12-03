@@ -63,6 +63,7 @@ export default function save({ attributes }) {
             placeholder={__("Enter Description")}
           />
         )}
+        {(showMediaContent || showMedia) && (
         <div className={`md_media_text_block__content__wrapper ${mediaPosition}`}>
           <div className="md_media_text_block__content">
             {showMediaContent && (
@@ -86,6 +87,7 @@ export default function save({ attributes }) {
             )}
           </div>
         </div>
+        )}
         {showFeatureList && (
           <div className="md_media_text_block__feature_list">
             <RichText.Content

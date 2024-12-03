@@ -1,0 +1,43 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-woodward-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_woodward_cta_text_wrap {
+  position: relative;
+  .md_woodward_cta_text__inner {
+    .md_woodward_cta_text__heading {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      padding: 40px 0;
+      .md_woodward_cta_text__content {
+        flex: 1;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0;
+      }
+      .md_woodward_cta_text__btn_wrapper {
+        .md_woodward_cta_text__btn {
+          margin-left: auto;
+          color: #000;
+          background-color: #fff;
+          border-color: #fff;
+          font-weight: 600;
+          padding: 16px 30px;
+          background: #f7f7f7;
+          border: 1px solid #ccc;
+          font-size: 16px;
+          margin: 0;
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -473,6 +473,12 @@ function Edit({
       showMedia: value
     })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Media Content"),
+    checked: showMediaContent,
+    onChange: value => setAttributes({
+      showMediaContent: value
+    })
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Show Feature List"),
     checked: showFeatureList,
     onChange: value => setAttributes({
@@ -549,7 +555,7 @@ function Edit({
       color: descriptionColor
     },
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description")
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), (showMediaContent || showMedia) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `md_media_text_block__content__wrapper ${mediaPosition}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_media_text_block__content"
@@ -868,7 +874,7 @@ function save({
       color: descriptionColor
     },
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Enter Description")
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), (showMediaContent || showMedia) && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `md_media_text_block__content__wrapper ${mediaPosition}`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_media_text_block__content"

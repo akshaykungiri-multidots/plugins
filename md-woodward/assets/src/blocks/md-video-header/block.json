@@ -30,10 +30,6 @@
       "type": "string",
       "default": ""
     },
-    "cover_video": {
-      "type": "string",
-      "default": ""
-    },
     "videoPosterImage": {
       "type": "string",
       "default": ""

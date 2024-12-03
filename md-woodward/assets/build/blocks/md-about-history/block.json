@@ -1,0 +1,99 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-about-history",
+  "version": "0.1.0",
+  "title": "MD About History",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "images-alt",
+  "description": "A block that displays a banner with an image and text.",
+  "keywords": [
+    "md-woodward",
+    "md-about-history"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonLink": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

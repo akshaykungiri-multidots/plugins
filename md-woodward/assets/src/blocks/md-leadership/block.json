@@ -18,7 +18,20 @@
 		},
 		"leadersRoles": {
 			"type": "array",
-			"default": []
+			"default": [
+				{
+					"leadershipRole": "",
+					"leaders": [
+						{
+							"leadershipName": "",
+							"leadershipTitle": "",
+							"leadershipHeadshot": "",
+							"leadershipBio": "",
+							"popup": false
+						}
+					]
+				}
+			]
 		},
 		"bgcolor": {
 			"type": "string"

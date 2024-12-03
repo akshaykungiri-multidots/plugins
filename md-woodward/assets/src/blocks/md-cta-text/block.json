@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-woodward/md-cta-text",
+  "version": "0.1.0",
+  "title": "MD CTA Text",
+  "apiVersion": 3,
+  "category": "md-woodward",
+  "icon": "format-image",
+  "description": "A block that displays a call to action with text.",
+  "keywords": ["md-woodward", "md-cta-text"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-woodward",
+  "attributes": {
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonLink": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverBackgroundColor": {
+			"type": "string",
+			"default": ""
+		}
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

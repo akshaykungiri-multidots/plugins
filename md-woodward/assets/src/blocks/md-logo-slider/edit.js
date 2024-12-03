@@ -206,7 +206,7 @@ export default function Edit({ attributes, setAttributes }) {
         <Slider {...settings} className="md_logo_slider__slider">
           {logos &&
             logos.map((postObj, index) => (
-              <div key={postObj.id} className="logo-slide">
+              <div key={postObj.id} className="logo-slide show-items-hover-wrap">
                 <div className="item-action-wrap show-items-hover small-icons">
                   <div className="move-item">
                     {0 < index && (
