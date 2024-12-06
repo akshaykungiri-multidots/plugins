@@ -1,0 +1,139 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "md-crafto/md-company-slider",
+	"version": "0.1.0",
+	"title": "MD Company Slider",
+	"apiVersion": 3,
+	"category": "md-crafto",
+	"icon": "slides",
+	"description": "A block to display company slider.",
+	"keywords": [
+		"slider",
+		"company",
+		"md-crafto"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"textdomain": "md-crafto",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"headingColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideItems": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"companyImage": "",
+					"testimonialText": "",
+					"authorImage": "",
+					"authorName": ""
+				}
+			]
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"dots": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideInfinite": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideSlidesToShow": {
+			"type": "number",
+			"default": 1
+		},
+		"slideSlidesToScroll": {
+			"type": "number",
+			"default": 1
+		},
+		"showCompanyImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTestimonialText": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAuthorImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAuthorName": {
+			"type": "boolean",
+			"default": true
+		},
+		"testimonialTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"authorNameColor": {
+			"type": "string",
+			"default": ""
+		},
+		"companyList": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"companyImage": "",
+					"text": "",
+					"subText": ""
+				}
+			]
+		},
+		"showCompanyList": {
+			"type": "boolean",
+			"default": true
+		},
+		"companyListTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"companyListSubTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"companyListBgColor": {
+			"type": "string",
+			"default": ""
+		},
+		"companyLogos": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"companyLogo": ""
+				}
+			]
+		},
+		"showCompanyLogos": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

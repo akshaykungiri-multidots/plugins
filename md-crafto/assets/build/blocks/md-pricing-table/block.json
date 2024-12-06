@@ -1,0 +1,178 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto/md-pricing-table",
+  "version": "0.1.0",
+  "title": "MD Pricing Table",
+  "apiVersion": 3,
+  "category": "md-crafto",
+  "icon": "lock",
+  "description": "A block that displays a pricing table.",
+  "keywords": [
+    "pricing",
+    "table"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-crafto",
+  "attributes": {
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTable": {
+      "type": "array",
+      "default": []
+    },
+    "featuresList": {
+      "type": "array",
+      "default": []
+    },
+    "showPricingTableSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableFeatures": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTablePrice": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableFooter": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturesList": {
+      "type": "boolean",
+      "default": true
+    },
+    "pricingTableHeaderBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableFooterBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableSubTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableFeaturesColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTablePriceColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableFooterColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featuresListColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlitedTextBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableHeaderBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableFooterBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableSubTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableFeaturesColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTablePriceColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableFooterColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

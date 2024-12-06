@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto/md-page-title",
+  "version": "0.1.0",
+  "title": "MD Page Title",
+  "apiVersion": 3,
+  "category": "md-crafto",
+  "icon": "format-image",
+  "description": "A block that displays a title with a background image.",
+  "keywords": [
+    "md-crafto",
+    "md-page-title"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-crafto",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "enableOverlay": {
+      "type": "boolean",
+      "default": true
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0.5
+    },
+    "backgroundPosition": {
+      "type": "string",
+      "default": "center"
+    },
+    "backgroundSize": {
+      "type": "string",
+      "default": "cover"
+    },
+    "backgroundRepeat": {
+      "type": "string",
+      "default": "no-repeat"
+    },
+    "backgroundAttachment": {
+      "type": "string",
+      "default": "scroll"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#000000"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

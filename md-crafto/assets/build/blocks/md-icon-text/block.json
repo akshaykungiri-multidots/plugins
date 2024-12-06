@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto/md-icon-text",
+  "version": "0.1.0",
+  "title": "MD Icon Text",
+  "apiVersion": 3,
+  "category": "md-crafto",
+  "icon": "images-alt",
+  "description": "A block to display a logo with text.",
+  "keywords": [
+    "md-crafto",
+    "md-icon-text"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-crafto",
+  "attributes": {
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logosTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logosDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logos": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

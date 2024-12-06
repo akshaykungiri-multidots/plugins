@@ -1,0 +1,104 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "md-crafto/md-about-slider",
+	"version": "0.1.0",
+	"title": "MD About Slider",
+	"apiVersion": 3,
+	"category": "md-crafto",
+	"icon": "slides",
+	"description": "A block to display visual content in a slider.",
+	"keywords": [
+		"md-crafto",
+		"md-about-slider"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"textdomain": "md-crafto",
+	"attributes": {
+		"slideItems": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"subTitle": "",
+					"title": "",
+					"description": "",
+					"buttonText": "",
+					"enableMask": false,
+					"maskText": "",
+					"mediaurl": "",
+					"enableOverlay": true,
+					"overlayColor": "#3b4c68",
+					"overlayOpacity": 0.75
+				}
+			]
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"dots": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideInfinite": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideSlidesToShow": {
+			"type": "number",
+			"default": 1
+		},
+		"slideSlidesToScroll": {
+			"type": "number",
+			"default": 1
+		},
+		"sliderSubTitleFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"sliderTitleFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"sliderDescriptionFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"showSubTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDescription": {
+			"type": "boolean",
+			"default": true
+		},
+		"mediaImage": {
+		  "type": "string",
+		  "default": ""
+		},
+		"mediaImage2": {
+		  "type": "string",
+		  "default": ""
+		},
+		"mediaImage3": {
+		  "type": "string",
+		  "default": ""
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

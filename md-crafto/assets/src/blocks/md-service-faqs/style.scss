@@ -1,0 +1,148 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-crafto-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_crafto_service_faqs_wrap {
+  position: relative;
+  .md_crafto_service_faqs {
+    background-position: center !important;
+    background-size: cover !important;
+    background-blend-mode: normal;
+    padding: 60px 0;
+    .md_crafto_service_faqs__inner {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      .md_crafto_service_faqs__heading {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 50%;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        h4 {
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 0 25px;
+          margin: 0;
+          background: linear-gradient(
+            to right,
+            rgba(240, 244, 253, 1),
+            rgba(255, 255, 255, 0)
+          );
+          display: inline-block;
+          line-height: 42px;
+          margin-bottom: 20px;
+          border-radius: 100px;
+        }
+        h2 {
+          font-weight: 700;
+          line-height: 1.4em;
+          margin: 0 0 20px;
+          color: #000;
+          font-size: 45px;
+        }
+        .md_faq_section__faq_items {
+          .ma_faq_block--inner-item {
+            .ma_faq_block--inner-item-heading {
+              padding: 15px 0;
+              background-color: transparent;
+              border: none;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 17px;
+              font-weight: 400;
+              cursor: pointer;
+            }
+            .ma_faq_block--inner-item-content {
+              display: none;
+              padding: 0 0 20px 0;
+              font-size: 17px;
+              font-weight: 400;
+              color: #878898;
+              position: relative;
+              .faq-content {
+                width: 80%;
+              }
+              .md_crafto_service_faqs__image {
+                position: absolute !important;
+                transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+                top: 0;
+                right: 0;
+                transform: translateY(16.3848px);
+                width: 80px;
+                img {
+                  width: 100%;
+                  height: auto;
+                  opacity: 0.2;
+                }
+              }
+            }
+            &.active {
+              .ma_faq_block--inner-item-content {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      .md_crafto_service_faqs__media {
+        position: relative;
+        flex: 0 0 auto;
+        width: calc(50% - 50px);
+        .md_crafto_service_faqs__background {
+          left: 50%;
+          top: 50%;
+          position: absolute !important;
+          transform: translate(-50%, -50%);
+        }
+        .md_crafto_service_faqs__media {
+          z-index: 9;
+          top: 40px;
+          position: relative;
+        }
+        .md_crafto_service_faqs__media2 {
+          position: absolute !important;
+          transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+          top: 50px;
+          left: 0;
+          transform: translateY(16.3848px);
+          width: 200px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .md_crafto_service_faqs__media3 {
+          position: absolute !important;
+          transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+          top: 15%;
+          right: 80px;
+          z-index: 99;
+          transform: translateY(-9.81941px);
+          width: 100px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .md_crafto_service_faqs__media4 {
+          position: absolute !important;
+          transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+          bottom: 5%;
+          left: -60px;
+          z-index: 99;
+          transform: translateY(-9.81941px);
+          width: 200px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
