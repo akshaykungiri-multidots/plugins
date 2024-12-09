@@ -75,8 +75,6 @@ function Edit({
     pricingTablePriceColor,
     pricingTableButtonColor,
     pricingTableButtonBackgroundColor,
-    pricingTableButtonHoverColor,
-    pricingTableButtonHoverBackgroundColor,
     pricingTableFooterColor,
     featuresListColor,
     highlitedTextBackgroundColor,
@@ -88,8 +86,6 @@ function Edit({
     highlightedPricingTablePriceColor,
     highlightedPricingTableButtonColor,
     highlightedPricingTableButtonBackgroundColor,
-    highlightedPricingTableButtonHoverColor,
-    highlightedPricingTableButtonHoverBackgroundColor,
     highlightedPricingTableFooterColor
   } = attributes;
   const addStaticPostObj = () => {
@@ -160,14 +156,6 @@ function Edit({
     updatedFeaturesList[index][key] = value;
     setAttributes({
       featuresList: updatedFeaturesList
-    });
-  };
-  const moveFeaturesListItem = (oldIndex, newIndex) => {
-    const arrayCopy = [...featuresList];
-    arrayCopy[oldIndex] = featuresList[newIndex];
-    arrayCopy[newIndex] = featuresList[oldIndex];
-    setAttributes({
-      featuresList: arrayCopy
     });
   };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -297,18 +285,6 @@ function Edit({
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Background Color")
     }, {
-      value: pricingTableButtonHoverColor,
-      onChange: value => setAttributes({
-        pricingTableButtonHoverColor: value
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Hover Color")
-    }, {
-      value: pricingTableButtonHoverBackgroundColor,
-      onChange: value => setAttributes({
-        pricingTableButtonHoverBackgroundColor: value
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Hover Background Color")
-    }, {
       value: pricingTableFooterColor,
       onChange: value => setAttributes({
         pricingTableFooterColor: value
@@ -371,18 +347,6 @@ function Edit({
         highlightedPricingTableButtonBackgroundColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Background Color")
-    }, {
-      value: highlightedPricingTableButtonHoverColor,
-      onChange: value => setAttributes({
-        highlightedPricingTableButtonHoverColor: value
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Hover Color")
-    }, {
-      value: highlightedPricingTableButtonHoverBackgroundColor,
-      onChange: value => setAttributes({
-        highlightedPricingTableButtonHoverBackgroundColor: value
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Button Hover Background Color")
     }, {
       value: highlightedPricingTableFooterColor,
       onChange: value => setAttributes({
@@ -3296,8 +3260,6 @@ function save({
     pricingTablePriceColor,
     pricingTableButtonColor,
     pricingTableButtonBackgroundColor,
-    pricingTableButtonHoverColor,
-    pricingTableButtonHoverBackgroundColor,
     pricingTableFooterColor,
     featuresListColor,
     highlitedTextBackgroundColor,
@@ -3309,8 +3271,6 @@ function save({
     highlightedPricingTablePriceColor,
     highlightedPricingTableButtonColor,
     highlightedPricingTableButtonBackgroundColor,
-    highlightedPricingTableButtonHoverColor,
-    highlightedPricingTableButtonHoverBackgroundColor,
     highlightedPricingTableFooterColor
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -3523,7 +3483,7 @@ module.exports = window["wp"]["i18n"];
   \************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-crafto/md-pricing-table","version":"0.1.0","title":"MD Pricing Table","apiVersion":3,"category":"md-crafto","icon":"lock","description":"A block that displays a pricing table.","keywords":["pricing","table"],"supports":{"html":false},"textdomain":"md-crafto","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"showSubHeading":{"type":"boolean","default":true},"showHeading":{"type":"boolean","default":true},"headingColor":{"type":"string","default":""},"subHeadingColor":{"type":"string","default":""},"pricingTable":{"type":"array","default":[]},"featuresList":{"type":"array","default":[]},"showPricingTableSubTitle":{"type":"boolean","default":true},"showPricingTableTitle":{"type":"boolean","default":true},"showPricingTableFeatures":{"type":"boolean","default":true},"showPricingTablePrice":{"type":"boolean","default":true},"showPricingTableButton":{"type":"boolean","default":true},"showPricingTableFooter":{"type":"boolean","default":true},"showFeaturesList":{"type":"boolean","default":true},"pricingTableHeaderBackgroundColor":{"type":"string","default":""},"pricingTableFooterBackgroundColor":{"type":"string","default":""},"pricingTableSubTitleColor":{"type":"string","default":""},"pricingTableTitleColor":{"type":"string","default":""},"pricingTableFeaturesColor":{"type":"string","default":""},"pricingTablePriceColor":{"type":"string","default":""},"pricingTableButtonColor":{"type":"string","default":""},"pricingTableButtonBackgroundColor":{"type":"string","default":""},"pricingTableButtonHoverColor":{"type":"string","default":""},"pricingTableButtonHoverBackgroundColor":{"type":"string","default":""},"pricingTableFooterColor":{"type":"string","default":""},"featuresListColor":{"type":"string","default":""},"highlitedTextBackgroundColor":{"type":"string","default":""},"highlightedPricingTableHeaderBackgroundColor":{"type":"string","default":""},"highlightedPricingTableFooterBackgroundColor":{"type":"string","default":""},"highlightedPricingTableSubTitleColor":{"type":"string","default":""},"highlightedPricingTableTitleColor":{"type":"string","default":""},"highlightedPricingTableFeaturesColor":{"type":"string","default":""},"highlightedPricingTablePriceColor":{"type":"string","default":""},"highlightedPricingTableButtonColor":{"type":"string","default":""},"highlightedPricingTableButtonBackgroundColor":{"type":"string","default":""},"highlightedPricingTableButtonHoverColor":{"type":"string","default":""},"highlightedPricingTableButtonHoverBackgroundColor":{"type":"string","default":""},"highlightedPricingTableFooterColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-crafto/md-pricing-table","version":"0.1.0","title":"MD Pricing Table","apiVersion":3,"category":"md-crafto","icon":"tag","description":"A block that displays a pricing table.","keywords":["pricing","table"],"supports":{"html":false},"textdomain":"md-crafto","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"showSubHeading":{"type":"boolean","default":true},"showHeading":{"type":"boolean","default":true},"headingColor":{"type":"string","default":""},"subHeadingColor":{"type":"string","default":""},"pricingTable":{"type":"array","default":[]},"featuresList":{"type":"array","default":[]},"showPricingTableSubTitle":{"type":"boolean","default":true},"showPricingTableTitle":{"type":"boolean","default":true},"showPricingTableFeatures":{"type":"boolean","default":true},"showPricingTablePrice":{"type":"boolean","default":true},"showPricingTableButton":{"type":"boolean","default":true},"showPricingTableFooter":{"type":"boolean","default":true},"showFeaturesList":{"type":"boolean","default":true},"pricingTableHeaderBackgroundColor":{"type":"string","default":""},"pricingTableFooterBackgroundColor":{"type":"string","default":""},"pricingTableSubTitleColor":{"type":"string","default":""},"pricingTableTitleColor":{"type":"string","default":""},"pricingTableFeaturesColor":{"type":"string","default":""},"pricingTablePriceColor":{"type":"string","default":""},"pricingTableButtonColor":{"type":"string","default":""},"pricingTableButtonBackgroundColor":{"type":"string","default":""},"pricingTableButtonHoverColor":{"type":"string","default":""},"pricingTableButtonHoverBackgroundColor":{"type":"string","default":""},"pricingTableFooterColor":{"type":"string","default":""},"featuresListColor":{"type":"string","default":""},"highlitedTextBackgroundColor":{"type":"string","default":""},"highlightedPricingTableHeaderBackgroundColor":{"type":"string","default":""},"highlightedPricingTableFooterBackgroundColor":{"type":"string","default":""},"highlightedPricingTableSubTitleColor":{"type":"string","default":""},"highlightedPricingTableTitleColor":{"type":"string","default":""},"highlightedPricingTableFeaturesColor":{"type":"string","default":""},"highlightedPricingTablePriceColor":{"type":"string","default":""},"highlightedPricingTableButtonColor":{"type":"string","default":""},"highlightedPricingTableButtonBackgroundColor":{"type":"string","default":""},"highlightedPricingTableButtonHoverColor":{"type":"string","default":""},"highlightedPricingTableButtonHoverBackgroundColor":{"type":"string","default":""},"highlightedPricingTableFooterColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

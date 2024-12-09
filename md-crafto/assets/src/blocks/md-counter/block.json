@@ -43,11 +43,11 @@
     },
     "showCounterSign": {
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "showCounterText": {
       "type": "boolean",
-      "default": false
+      "default": true
     }
   },
   "editorScript": "file:./index.js",

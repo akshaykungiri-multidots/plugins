@@ -63,6 +63,10 @@
     "displaySocialIcon": {
       "type": "boolean",
       "default": true
+    },
+    "displayBio": {
+      "type": "boolean",
+      "default": true
     }
   },
   "supports": {

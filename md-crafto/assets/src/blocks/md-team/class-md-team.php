@@ -73,6 +73,7 @@ class MD_Team extends Block_Base
 		$displayauthortitle = $attributes['displayAuthortitle'];
 		$displayteamheading = $attributes['displayTeamHeading'];
 		$displaysocialIcon    = $attributes['displaySocialIcon'];
+		$displayBio 	   = $attributes['displayBio'];
 
 		$classes = 'leadership';
 
@@ -133,7 +134,7 @@ class MD_Team extends Block_Base
 											<p class="leadershipTitle wow" style="<?php echo esc_attr($authortitle_styles); ?>"><?php echo wp_kses_post($product['leadershipTitle']); ?></p>
 										<?php endif; ?>
 									</div>
-									<?php if ($displaysocialIcon) : ?>
+									<?php if ($displaysocialIcon && isset($product['leaderlink']) && isset($product['leaderlinkIcon'])) : ?>
 										<div class="linked-in-icon wow">
 											<a href="<?php echo esc_url($product['leaderlink']); ?>">
 												<i class="fa <?php echo esc_attr($product['leaderlinkIcon']); ?>"></i>
@@ -142,6 +143,7 @@ class MD_Team extends Block_Base
 									<?php endif; ?>
 								</div>
 							</div>
+							<?php if ($displayBio) : ?>
 							<!-- Leadership Popup Model -->
 							<div class="leadership__popup-model">
 								<div class="leadership__popup-model-content">
@@ -187,6 +189,7 @@ class MD_Team extends Block_Base
 								</div>
 								<div class="bg_overlay"></div>
 							</div>
+							<?php endif; ?>
 						</div>
 					<?php endforeach; ?>
 				</div>

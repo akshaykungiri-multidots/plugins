@@ -5,7 +5,7 @@
   "title": "MD Service Slider",
   "apiVersion": 3,
   "category": "md-crafto",
-  "icon": "format-image",
+  "icon": "slides",
   "description": "A block that displays a slider with service post.",
   "keywords": [
     "service",

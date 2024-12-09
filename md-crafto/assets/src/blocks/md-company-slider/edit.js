@@ -27,9 +27,7 @@ import {
   RangeControl,
   ToggleControl,
   Button,
-  GradientPicker,
   Tooltip,
-  TextControl,
 } from "@wordpress/components";
 
 import Slider from "react-slick";
@@ -67,7 +65,6 @@ export default function Edit({ attributes, setAttributes }) {
     showCompanyList,
     companyListTextColor,
     companyListSubTextColor,
-    companyListBgColor,
     companyLogos,
     showCompanyLogos,
   } = attributes;
@@ -313,15 +310,6 @@ export default function Edit({ attributes, setAttributes }) {
                   "md-storyful-fse-full"
                 ),
               },
-              {
-                value: companyListBgColor,
-                onChange: (value) =>
-                  setAttributes({ companyListBgColor: value }),
-                label: __(
-                  "Company List Background Color",
-                  "md-storyful-fse-full"
-                ),
-              },
             ]}
           />
         </PanelBody>
@@ -453,7 +441,7 @@ export default function Edit({ attributes, setAttributes }) {
                     </div>
                   )}
                   <div className="md_company_slider_grid_item__content">
-                    {showAuthorImage && (
+                    {showCompanyImage && (
                       <div className="md-prime-block-control image-preview image-controle-visible-hover md_company_slider_grid_item__companyImage">
                         <div
                           className={`image-controls small-icons icon-center-fixed`}

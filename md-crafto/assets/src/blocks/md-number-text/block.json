@@ -5,7 +5,7 @@
   "title": "MD Number Text",
   "apiVersion": 3,
   "category": "md-crafto",
-  "icon": "images-alt",
+  "icon": "editor-ol",
   "description": "A block to display a number with a text.",
   "keywords": ["md-crafto", "md-number-text"],
   "supports": {

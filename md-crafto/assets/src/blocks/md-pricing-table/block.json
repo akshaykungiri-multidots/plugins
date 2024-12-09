@@ -5,7 +5,7 @@
   "title": "MD Pricing Table",
   "apiVersion": 3,
   "category": "md-crafto",
-  "icon": "lock",
+  "icon": "tag",
   "description": "A block that displays a pricing table.",
   "keywords": ["pricing", "table"],
   "supports": {

@@ -61,8 +61,6 @@ export default function Edit({ attributes, setAttributes }) {
     pricingTablePriceColor,
     pricingTableButtonColor,
     pricingTableButtonBackgroundColor,
-    pricingTableButtonHoverColor,
-    pricingTableButtonHoverBackgroundColor,
     pricingTableFooterColor,
     featuresListColor,
     highlitedTextBackgroundColor,
@@ -74,8 +72,6 @@ export default function Edit({ attributes, setAttributes }) {
     highlightedPricingTablePriceColor,
     highlightedPricingTableButtonColor,
     highlightedPricingTableButtonBackgroundColor,
-    highlightedPricingTableButtonHoverColor,
-    highlightedPricingTableButtonHoverBackgroundColor,
     highlightedPricingTableFooterColor,
   } = attributes;
 
@@ -147,15 +143,6 @@ export default function Edit({ attributes, setAttributes }) {
     const updatedFeaturesList = [...featuresList];
     updatedFeaturesList[index][key] = value;
     setAttributes({ featuresList: updatedFeaturesList });
-  };
-  const moveFeaturesListItem = (oldIndex, newIndex) => {
-    const arrayCopy = [...featuresList];
-    arrayCopy[oldIndex] = featuresList[newIndex];
-    arrayCopy[newIndex] = featuresList[oldIndex];
-
-    setAttributes({
-      featuresList: arrayCopy,
-    });
   };
 
   return (
@@ -283,20 +270,6 @@ export default function Edit({ attributes, setAttributes }) {
                 label: __("Button Background Color"),
               },
               {
-                value: pricingTableButtonHoverColor,
-                onChange: (value) =>
-                  setAttributes({ pricingTableButtonHoverColor: value }),
-                label: __("Button Hover Color"),
-              },
-              {
-                value: pricingTableButtonHoverBackgroundColor,
-                onChange: (value) =>
-                  setAttributes({
-                    pricingTableButtonHoverBackgroundColor: value,
-                  }),
-                label: __("Button Hover Background Color"),
-              },
-              {
                 value: pricingTableFooterColor,
                 onChange: (value) =>
                   setAttributes({ pricingTableFooterColor: value }),
@@ -370,22 +343,6 @@ export default function Edit({ attributes, setAttributes }) {
                     highlightedPricingTableButtonBackgroundColor: value,
                   }),
                 label: __("Button Background Color"),
-              },
-              {
-                value: highlightedPricingTableButtonHoverColor,
-                onChange: (value) =>
-                  setAttributes({
-                    highlightedPricingTableButtonHoverColor: value,
-                  }),
-                label: __("Button Hover Color"),
-              },
-              {
-                value: highlightedPricingTableButtonHoverBackgroundColor,
-                onChange: (value) =>
-                  setAttributes({
-                    highlightedPricingTableButtonHoverBackgroundColor: value,
-                  }),
-                label: __("Button Hover Background Color"),
               },
               {
                 value: highlightedPricingTableFooterColor,

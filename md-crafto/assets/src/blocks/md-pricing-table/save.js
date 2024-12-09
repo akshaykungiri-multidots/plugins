@@ -47,8 +47,6 @@ export default function save({ attributes }) {
     pricingTablePriceColor,
     pricingTableButtonColor,
     pricingTableButtonBackgroundColor,
-    pricingTableButtonHoverColor,
-    pricingTableButtonHoverBackgroundColor,
     pricingTableFooterColor,
     featuresListColor,
     highlitedTextBackgroundColor,
@@ -60,8 +58,6 @@ export default function save({ attributes }) {
     highlightedPricingTablePriceColor,
     highlightedPricingTableButtonColor,
     highlightedPricingTableButtonBackgroundColor,
-    highlightedPricingTableButtonHoverColor,
-    highlightedPricingTableButtonHoverBackgroundColor,
     highlightedPricingTableFooterColor,
   } = attributes;
   return (

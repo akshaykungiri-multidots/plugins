@@ -77,7 +77,7 @@ export default function save({ attributes }) {
         </div>
         <div  className="md_icon_text__slider">
           {logos &&
-            logos.map((postObj, index) => (
+            logos.map((postObj) => (
               <div key={postObj.id} className="logo-slide show-items-hover-wrap">
                 <div className="md_icon_text__item-image">
                   <div className="md-prime-block-control image-preview image-controle-visible-hover">

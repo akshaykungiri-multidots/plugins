@@ -159,7 +159,13 @@ class MD_Posts extends Block_Base
 				<div class="insights-results-main">
 					<?php if ($query->have_posts()) : ?>
 						<div class="md-posts__grid">
-							<?php include get_stylesheet_directory() . '/assets/src/blocks/md-posts/templates/post-template.php'; ?>
+							<?php 
+							if ($postType === 'service') {
+								include get_stylesheet_directory() . '/assets/src/blocks/md-posts/templates/service-template.php';
+							} else {
+								include get_stylesheet_directory() . '/assets/src/blocks/md-posts/templates/post-template.php'; 
+							}
+							?>
 						</div>
 						<?php // Display Load More button. 
 						?>
@@ -236,7 +242,11 @@ class MD_Posts extends Block_Base
 
 		ob_start();
 
-		include get_stylesheet_directory() . '/assets/src/blocks/md-posts/templates/post-template.php';
+		if ($post_type === 'service') {
+			include get_stylesheet_directory() . '/assets/src/blocks/md-posts/templates/service-template.php';
+		} else {
+			include get_stylesheet_directory() . '/assets/src/blocks/md-posts/templates/post-template.php'; 
+		}
 
 		$data = ob_get_clean();
 		if ($query->max_num_pages > $current_page) {

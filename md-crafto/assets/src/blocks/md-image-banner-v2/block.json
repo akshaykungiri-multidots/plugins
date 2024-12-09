@@ -5,7 +5,7 @@
   "title": "MD Image Banner V2",
   "apiVersion": 3,
   "category": "md-crafto",
-  "icon": "format-image",
+  "icon": "images-alt2",
   "description": "A block that displays a banner with an image and text.",
   "keywords": ["md-crafto", "md-image-banner-v2"],
   "supports": {

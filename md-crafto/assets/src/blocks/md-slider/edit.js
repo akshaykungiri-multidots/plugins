@@ -28,7 +28,6 @@ import {
   Button,
   GradientPicker,
   Tooltip,
-  TextControl,
 } from "@wordpress/components";
 
 import Slider from "react-slick";

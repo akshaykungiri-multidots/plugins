@@ -5,7 +5,7 @@
   "title": "MD Icon Text",
   "apiVersion": 3,
   "category": "md-crafto",
-  "icon": "images-alt",
+  "icon": "star-filled",
   "description": "A block to display a logo with text.",
   "keywords": ["md-crafto", "md-icon-text"],
   "supports": {

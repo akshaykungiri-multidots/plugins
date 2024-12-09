@@ -54,6 +54,7 @@ export default function Edit({ attributes, setAttributes }) {
     displayAuthortitle,
     displayTeamHeading,
     displaySocialIcon,
+    displayBio,
   } = attributes;
 
   const siteURL = window.location.origin;
@@ -74,7 +75,7 @@ export default function Edit({ attributes, setAttributes }) {
           leadershipHeadshot: "",
           leadershipBio: "",
           leaderlink: "",
-          leaderlinkIcon: "",
+          leaderlinkIcon: "fa fa-linkedin",
           popup: false,
         },
       ],
@@ -342,160 +343,164 @@ export default function Edit({ attributes, setAttributes }) {
                 }}
               />
             )}
-            <strong
-              className="about-popup"
-              onClick={() => {
-                const updatedProducts = [...products];
-                updatedProducts[index].popup = true;
-                setAttributes({
-                  products: updatedProducts,
-                });
-              }}
-              role="button"
-              tabIndex={0}
-              aria-label="Open popup"
-              onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  // Trigger the click event when Enter or Space key is pressed
-                  event.target.click();
-                }
-              }}
-            >
-              Edit Bio
-              <i className="fa fa-pencil-square-o"></i>
-            </strong>
-            <div
-              className={`leadership__popup-model ${
-                product.popup ? "open-popup" : ""
-              }`}
-            >
-              <div className=" leadership__popup-model-content">
-                <div className="leadership__popup-model-header">
-                  <button
-                    type="button"
-                    className="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                    onClick={() => {
-                      const tempProdcut = [...products];
-                      tempProdcut[index].popup = false;
-                      setAttributes({
-                        products: tempProdcut,
-                      });
-                    }}
-                  >
-                    <span aria-hidden="true">X</span>
-                  </button>
-                </div>
+            {displayBio && (
+              <>
+                <strong
+                  className="about-popup"
+                  onClick={() => {
+                    const updatedProducts = [...products];
+                    updatedProducts[index].popup = true;
+                    setAttributes({
+                      products: updatedProducts,
+                    });
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Open popup"
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      // Trigger the click event when Enter or Space key is pressed
+                      event.target.click();
+                    }
+                  }}
+                >
+                  Edit Bio
+                  <i className="fa fa-pencil-square-o"></i>
+                </strong>
+                <div
+                  className={`leadership__popup-model ${
+                    product.popup ? "open-popup" : ""
+                  }`}
+                >
+                  <div className=" leadership__popup-model-content">
+                    <div className="leadership__popup-model-header">
+                      <button
+                        type="button"
+                        className="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                        onClick={() => {
+                          const tempProdcut = [...products];
+                          tempProdcut[index].popup = false;
+                          setAttributes({
+                            products: tempProdcut,
+                          });
+                        }}
+                      >
+                        <span aria-hidden="true">X</span>
+                      </button>
+                    </div>
 
-                <div className="leadership__popup-model-body">
-                  <div className="leadership__popup-model-author-details-main">
-                    <div className="leadership__popup-model-author-details-main-img-section">
-                      {product.leadershipHeadshot ? (
-                        <figure>
-                          <img
-                            src={product.leadershipHeadshot}
-                            alt="First img"
-                            className="author-img"
-                          />
-                        </figure>
-                      ) : (
-                        <figure>
-                          <img
-                            src={siteURL + defaultImage}
-                            className="author-img"
-                            alt="placeholder img"
-                          />
-                        </figure>
-                      )}
+                    <div className="leadership__popup-model-body">
+                      <div className="leadership__popup-model-author-details-main">
+                        <div className="leadership__popup-model-author-details-main-img-section">
+                          {product.leadershipHeadshot ? (
+                            <figure>
+                              <img
+                                src={product.leadershipHeadshot}
+                                alt="First img"
+                                className="author-img"
+                              />
+                            </figure>
+                          ) : (
+                            <figure>
+                              <img
+                                src={siteURL + defaultImage}
+                                className="author-img"
+                                alt="placeholder img"
+                              />
+                            </figure>
+                          )}
 
-                      {displaySocialIcon && (
-                        <div className="linked-in-icon">
-                          <a href={product.leaderlink}>
-                            <i className={product.leaderlinkIcon}></i>
-                          </a>
+                          {displaySocialIcon && (
+                            <div className="linked-in-icon">
+                              <a href={product.leaderlink}>
+                                <i className={product.leaderlinkIcon}></i>
+                              </a>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                    <div className="leadership__popup-model-author-details-box">
-                      {displayAuthorname && (
-                        <RichText
-                          value={product.leadershipName}
-                          onChange={(leadershipName) => {
-                            const newObject = Object.assign({}, product, {
-                              leadershipName,
-                            });
-                            const blockDetails = [...products];
-                            blockDetails[index] = newObject;
-                            setAttributes({
-                              products: blockDetails,
-                            });
-                          }}
-                          className="leadershipName"
-                        />
-                      )}
-                      {displayAuthortitle && (
-                        <RichText
-                          value={product.leadershipTitle}
-                          className="leadershipTitle"
-                          onChange={(leadershipTitle) => {
-                            const newObject = Object.assign({}, product, {
-                              leadershipTitle,
-                            });
-                            const blockDetails = [...products];
-                            blockDetails[index] = newObject;
-                            setAttributes({
-                              products: blockDetails,
-                            });
-                          }}
-                        />
-                      )}
-                    </div>
-                  </div>
+                        <div className="leadership__popup-model-author-details-box">
+                          {displayAuthorname && (
+                            <RichText
+                              value={product.leadershipName}
+                              onChange={(leadershipName) => {
+                                const newObject = Object.assign({}, product, {
+                                  leadershipName,
+                                });
+                                const blockDetails = [...products];
+                                blockDetails[index] = newObject;
+                                setAttributes({
+                                  products: blockDetails,
+                                });
+                              }}
+                              className="leadershipName"
+                            />
+                          )}
+                          {displayAuthortitle && (
+                            <RichText
+                              value={product.leadershipTitle}
+                              className="leadershipTitle"
+                              onChange={(leadershipTitle) => {
+                                const newObject = Object.assign({}, product, {
+                                  leadershipTitle,
+                                });
+                                const blockDetails = [...products];
+                                blockDetails[index] = newObject;
+                                setAttributes({
+                                  products: blockDetails,
+                                });
+                              }}
+                            />
+                          )}
+                        </div>
+                      </div>
 
-                  <div className="leadership__popup-model-about-author-box">
-                    <strong className="about-head">About</strong>
-                    <RichText
-                      tagName="p"
-                      className="leadershipBio"
-                      placeholder={__("Leadership Bio")}
-                      value={product.leadershipBio}
-                      keepPlaceholderOnFocus="true"
-                      onChange={(leadershipBio) => {
-                        const newObject = Object.assign({}, product, {
-                          leadershipBio,
-                        });
-                        const blockDetails = [...products];
-                        blockDetails[index] = newObject;
-                        setAttributes({
-                          products: blockDetails,
-                        });
-                      }}
-                    />
+                      <div className="leadership__popup-model-about-author-box">
+                        <strong className="about-head">About</strong>
+                        <RichText
+                          tagName="p"
+                          className="leadershipBio"
+                          placeholder={__("Leadership Bio")}
+                          value={product.leadershipBio}
+                          keepPlaceholderOnFocus="true"
+                          onChange={(leadershipBio) => {
+                            const newObject = Object.assign({}, product, {
+                              leadershipBio,
+                            });
+                            const blockDetails = [...products];
+                            blockDetails[index] = newObject;
+                            setAttributes({
+                              products: blockDetails,
+                            });
+                          }}
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              className="bg_overlay"
-              onClick={() => {
-                const updatedProducts = [...products];
-                updatedProducts[index].popup = false;
-                setAttributes({
-                  products: updatedProducts,
-                });
-              }}
-              role="button"
-              tabIndex={0}
-              aria-label="Close popup overlay"
-              onKeyDown={(event) => {
-                if (event.key === "Enter" || event.key === " ") {
-                  event.preventDefault();
-                  event.target.click();
-                }
-              }}
-            ></div>
+                <div
+                  className="bg_overlay"
+                  onClick={() => {
+                    const updatedProducts = [...products];
+                    updatedProducts[index].popup = false;
+                    setAttributes({
+                      products: updatedProducts,
+                    });
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Close popup overlay"
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      event.target.click();
+                    }
+                  }}
+                ></div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -547,7 +552,7 @@ export default function Edit({ attributes, setAttributes }) {
           ]}
         />
 
-        <PanelBody title="Visibility Settings">
+        <PanelBody title="Visibility Settings" initialOpen={false}>
           <PanelRow>
             <label htmlFor="display settings">
               {__("Name Visibility", "md-prime")}
@@ -609,6 +614,19 @@ export default function Edit({ attributes, setAttributes }) {
               onChange={() =>
                 setAttributes({
                   callToAction: !callToAction,
+                })
+              }
+            />
+          </PanelRow>
+          <PanelRow>
+            <label htmlFor="display settings">
+              {__("Bio Visibility", "md-prime")}
+            </label>
+            <FormToggle
+              checked={displayBio}
+              onChange={() =>
+                setAttributes({
+                  displayBio: !displayBio,
                 })
               }
             />

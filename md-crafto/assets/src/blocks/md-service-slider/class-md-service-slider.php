@@ -219,7 +219,8 @@ class MD_Service_Slider extends Block_Base
       array(
         'methods' => 'GET',
         'callback' => array($this, 'get_service_posts'),
-      )
+        'permission_callback' => '__return_true',
+      ),
     );
   }
 

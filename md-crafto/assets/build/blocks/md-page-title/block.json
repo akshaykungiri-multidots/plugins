@@ -5,7 +5,7 @@
   "title": "MD Page Title",
   "apiVersion": 3,
   "category": "md-crafto",
-  "icon": "format-image",
+  "icon": "heading",
   "description": "A block that displays a title with a background image.",
   "keywords": [
     "md-crafto",

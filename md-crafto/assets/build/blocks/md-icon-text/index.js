@@ -511,7 +511,7 @@ function save({
     }
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_icon_text__slider"
-  }, logos && logos.map((postObj, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, logos && logos.map(postObj => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     key: postObj.id,
     className: "logo-slide show-items-hover-wrap"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -623,7 +623,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-crafto/md-icon-text","version":"0.1.0","title":"MD Icon Text","apiVersion":3,"category":"md-crafto","icon":"images-alt","description":"A block to display a logo with text.","keywords":["md-crafto","md-icon-text"],"supports":{"html":false},"textdomain":"md-crafto","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"description":{"type":"string","default":""},"showHeading":{"type":"boolean","default":true},"showSubHeading":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true},"subHeadingColor":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"logosTitleColor":{"type":"string","default":""},"logosDescriptionColor":{"type":"string","default":""},"logos":{"type":"array","default":[]}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-crafto/md-icon-text","version":"0.1.0","title":"MD Icon Text","apiVersion":3,"category":"md-crafto","icon":"star-filled","description":"A block to display a logo with text.","keywords":["md-crafto","md-icon-text"],"supports":{"html":false},"textdomain":"md-crafto","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"description":{"type":"string","default":""},"showHeading":{"type":"boolean","default":true},"showSubHeading":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true},"subHeadingColor":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"logosTitleColor":{"type":"string","default":""},"logosDescriptionColor":{"type":"string","default":""},"logos":{"type":"array","default":[]}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

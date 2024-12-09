@@ -236,7 +236,8 @@ function Edit({
     displayAuthorname,
     displayAuthortitle,
     displayTeamHeading,
-    displaySocialIcon
+    displaySocialIcon,
+    displayBio
   } = attributes;
   const siteURL = window.location.origin;
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
@@ -252,7 +253,7 @@ function Edit({
         leadershipHeadshot: "",
         leadershipBio: "",
         leaderlink: "",
-        leaderlinkIcon: "",
+        leaderlinkIcon: "fa fa-linkedin",
         popup: false
       }]
     });
@@ -460,7 +461,7 @@ function Edit({
           products: blockDetails
         });
       }
-    }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", {
+    }), displayBio && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", {
       className: "about-popup",
       onClick: () => {
         const updatedProducts = [...products];
@@ -587,7 +588,7 @@ function Edit({
           event.target.click();
         }
       }
-    }))));
+    })))));
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.PanelColorSettings, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Color Settings"),
@@ -629,7 +630,8 @@ function Edit({
       mdprimeColors: _common__WEBPACK_IMPORTED_MODULE_6__.mdprimeColors
     }]
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Visibility Settings"
+    title: "Visibility Settings",
+    initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     htmlFor: "display settings"
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Name Visibility", "md-prime")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FormToggle, {
@@ -664,6 +666,13 @@ function Edit({
     checked: callToAction,
     onChange: () => setAttributes({
       callToAction: !callToAction
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "display settings"
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Bio Visibility", "md-prime")), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.FormToggle, {
+    checked: displayBio,
+    onChange: () => setAttributes({
+      displayBio: !displayBio
     })
   })))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)()
@@ -3347,7 +3356,7 @@ module.exports = window["wp"]["i18n"];
   \***************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-crafto/md-team","version":"0.1.0","apiVersion":3,"title":"MD Team","category":"md-crafto","icon":"dashicons dashicons-admin-users","description":"Team Block with popup","keywords":["Team","Leader"],"attributes":{"products":{"type":"array","default":[]},"heading":{"type":"string","default":"Leadership"},"bgcolor":{"type":"string"},"authornamecolor":{"type":"string"},"authortitlecolor":{"type":"string"},"headingcolor":{"type":"string"},"teamheading":{"type":"string","default":"Want to work with us"},"teamheadinginner":{"type":"string","default":"Join our growing team!"},"button":{"type":"string","default":"Request a Demo"},"callToAction":{"type":"boolean","default":true},"displayAuthorname":{"type":"boolean","default":true},"displayAuthortitle":{"type":"boolean","default":true},"displayTeamHeading":{"type":"boolean","default":true},"displaySocialIcon":{"type":"boolean","default":true}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-crafto","editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-crafto/md-team","version":"0.1.0","apiVersion":3,"title":"MD Team","category":"md-crafto","icon":"dashicons dashicons-admin-users","description":"Team Block with popup","keywords":["Team","Leader"],"attributes":{"products":{"type":"array","default":[]},"heading":{"type":"string","default":"Leadership"},"bgcolor":{"type":"string"},"authornamecolor":{"type":"string"},"authortitlecolor":{"type":"string"},"headingcolor":{"type":"string"},"teamheading":{"type":"string","default":"Want to work with us"},"teamheadinginner":{"type":"string","default":"Join our growing team!"},"button":{"type":"string","default":"Request a Demo"},"callToAction":{"type":"boolean","default":true},"displayAuthorname":{"type":"boolean","default":true},"displayAuthortitle":{"type":"boolean","default":true},"displayTeamHeading":{"type":"boolean","default":true},"displaySocialIcon":{"type":"boolean","default":true},"displayBio":{"type":"boolean","default":true}},"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-crafto","editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

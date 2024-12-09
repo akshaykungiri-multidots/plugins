@@ -5,7 +5,7 @@
   "title": "MD Service FAQs",
   "apiVersion": 3,
   "category": "md-crafto",
-  "icon": "format-image",
+  "icon": "editor-help",
   "description": "A block that displays a faq section with a title, subtitle, and image.",
   "keywords": ["md-crafto", "md-service-faqs"],
   "supports": {

@@ -78,7 +78,6 @@ function Edit({
     showCompanyList,
     companyListTextColor,
     companyListSubTextColor,
-    companyListBgColor,
     companyLogos,
     showCompanyLogos
   } = attributes;
@@ -332,12 +331,6 @@ function Edit({
         companyListSubTextColor: value
       }),
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Company List Sub Text Color", "md-storyful-fse-full")
-    }, {
-      value: companyListBgColor,
-      onChange: value => setAttributes({
-        companyListBgColor: value
-      }),
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Company List Background Color", "md-storyful-fse-full")
     }]
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_company_slider_section__heading"
@@ -417,7 +410,7 @@ function Edit({
     alt: "slider"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_company_slider_grid_item__content"
-  }, showAuthorImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, showCompanyImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md-prime-block-control image-preview image-controle-visible-hover md_company_slider_grid_item__companyImage"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `image-controls small-icons icon-center-fixed`
@@ -987,7 +980,6 @@ function save({
     showCompanyList,
     companyListTextColor,
     companyListSubTextColor,
-    companyListBgColor,
     companyLogos,
     showCompanyLogos
   } = attributes;
@@ -1028,7 +1020,7 @@ function save({
     alt: "slider"
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md_company_slider_grid_item__content"
-  }, showAuthorImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, showCompanyImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "md-prime-block-control image-preview image-controle-visible-hover md_company_slider_grid_item__companyImage"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: item.companyImage,
@@ -5410,7 +5402,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-crafto/md-company-slider","version":"0.1.0","title":"MD Company Slider","apiVersion":3,"category":"md-crafto","icon":"slides","description":"A block to display company slider.","keywords":["slider","company","md-crafto"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-crafto","attributes":{"heading":{"type":"string","default":""},"showHeading":{"type":"boolean","default":true},"headingColor":{"type":"string","default":""},"slideItems":{"type":"array","default":[{"id":1,"companyImage":"","testimonialText":"","authorImage":"","authorName":""}]},"autoplay":{"type":"boolean","default":false},"arrows":{"type":"boolean","default":true},"dots":{"type":"boolean","default":false},"slideInfinite":{"type":"boolean","default":false},"slideSlidesToShow":{"type":"number","default":1},"slideSlidesToScroll":{"type":"number","default":1},"showCompanyImage":{"type":"boolean","default":true},"showTestimonialText":{"type":"boolean","default":true},"showAuthorImage":{"type":"boolean","default":true},"showAuthorName":{"type":"boolean","default":true},"testimonialTextColor":{"type":"string","default":""},"authorNameColor":{"type":"string","default":""},"companyList":{"type":"array","default":[{"id":1,"companyImage":"","text":"","subText":""}]},"showCompanyList":{"type":"boolean","default":true},"companyListTextColor":{"type":"string","default":""},"companyListSubTextColor":{"type":"string","default":""},"companyListBgColor":{"type":"string","default":""},"companyLogos":{"type":"array","default":[{"id":1,"companyLogo":""}]},"showCompanyLogos":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-crafto/md-company-slider","version":"0.1.0","title":"MD Company Slider","apiVersion":3,"category":"md-crafto","icon":"building","description":"A block to display company slider.","keywords":["slider","company","md-crafto"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-crafto","attributes":{"heading":{"type":"string","default":""},"showHeading":{"type":"boolean","default":true},"headingColor":{"type":"string","default":""},"slideItems":{"type":"array","default":[{"id":1,"companyImage":"","testimonialText":"","authorImage":"","authorName":""}]},"autoplay":{"type":"boolean","default":false},"arrows":{"type":"boolean","default":true},"dots":{"type":"boolean","default":false},"slideInfinite":{"type":"boolean","default":false},"slideSlidesToShow":{"type":"number","default":1},"slideSlidesToScroll":{"type":"number","default":1},"showCompanyImage":{"type":"boolean","default":true},"showTestimonialText":{"type":"boolean","default":true},"showAuthorImage":{"type":"boolean","default":true},"showAuthorName":{"type":"boolean","default":true},"testimonialTextColor":{"type":"string","default":""},"authorNameColor":{"type":"string","default":""},"companyList":{"type":"array","default":[{"id":1,"companyImage":"","text":"","subText":""}]},"showCompanyList":{"type":"boolean","default":true},"companyListTextColor":{"type":"string","default":""},"companyListSubTextColor":{"type":"string","default":""},"companyLogos":{"type":"array","default":[{"id":1,"companyLogo":""}]},"showCompanyLogos":{"type":"boolean","default":true}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

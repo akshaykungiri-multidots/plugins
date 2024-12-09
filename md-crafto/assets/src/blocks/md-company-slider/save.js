@@ -43,7 +43,6 @@ export default function save({ attributes }) {
     showCompanyList,
     companyListTextColor,
     companyListSubTextColor,
-    companyListBgColor,
     companyLogos,
     showCompanyLogos,
   } = attributes;
@@ -91,7 +90,7 @@ export default function save({ attributes }) {
                     </div>
                   )}
                   <div className="md_company_slider_grid_item__content">
-                    {showAuthorImage && (
+                    {showCompanyImage && (
                       <div className="md-prime-block-control image-preview image-controle-visible-hover md_company_slider_grid_item__companyImage">
                         <img
                           src={
