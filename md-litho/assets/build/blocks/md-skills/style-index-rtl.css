@@ -1,0 +1,72 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-skills/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-litho-sample-block {
+  background-color: #27ae60;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_skills {
+  padding: 130px 0;
+}
+.md_skills .md_skills__inner {
+  padding: 0 95px;
+  display: flex;
+  gap: 95px;
+}
+.md_skills .md_skills__inner .md_skills__content {
+  width: 50%;
+}
+.md_skills .md_skills__inner .md_skills__content .md_skills__subheading {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.md_skills .md_skills__inner .md_skills__content .md_skills__subheading .horizontal-separator {
+  width: 10%;
+  height: 1px;
+  background-color: #0038e3;
+  position: relative;
+  display: inline-block;
+}
+.md_skills .md_skills__inner .md_skills__content .md_skills__subheading .md_skills__subheading-text {
+  font-size: 15px;
+  font-weight: 400;
+}
+.md_skills .md_skills__inner .md_skills__content .md_skills__heading {
+  font-size: 32px;
+  font-weight: 500;
+}
+.md_skills .md_skills__inner .md_skills__content .md_skills__description {
+  font-size: 15px;
+  font-weight: 300;
+  opacity: 0.7;
+}
+.md_skills .md_skills__inner .md_skills__progress__wrapper {
+  width: 50%;
+}
+.md_skills .md_skills__inner .md_skills__progress__wrapper .md_skills__progress__inner {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.md_skills .md_skills__inner .md_skills__progress__wrapper .md_skills__progress__inner .md_skills__progress__item__inner {
+  margin-bottom: 20px;
+}
+.md_skills .md_skills__inner .md_skills__progress__wrapper .md_skills__progress__inner .md_skills__progress__item__inner .md_skills__progress__item__title-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.md_skills .md_skills__inner .md_skills__progress__wrapper .md_skills__progress__inner .md_skills__progress__item__inner .md_skills__progress__item__title-wrap .md_skills__progress__item__title {
+  font-size: 13px;
+  font-weight: 400;
+}
+.md_skills .md_skills__inner .md_skills__progress__wrapper .md_skills__progress__inner .md_skills__progress__item__inner .md_skills__progress__item__title-wrap .md_skills__progress__item__percentage {
+  font-size: 13px;
+  font-weight: 400;
+}
+.md_skills .md_skills__inner .md_skills__progress__wrapper .md_skills__progress__inner .md_skills__progress__item__inner .skills-progress {
+  transition: width 3s ease-in-out;
+}

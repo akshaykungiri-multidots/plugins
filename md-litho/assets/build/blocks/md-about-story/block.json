@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-about-story",
+  "version": "0.1.0",
+  "title": "MD About Story",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "admin-site",
+  "description": "A block to display story and award list",
+  "keywords": [
+    "md-litho",
+    "about",
+    "story",
+    "award"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "storyList": {
+      "type": "array",
+      "default": []
+    },
+    "awardList": {
+      "type": "array",
+      "default": []
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showStory": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAward": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "storyListTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "storyListContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "awardListYearColor": {
+      "type": "string",
+      "default": ""
+    },
+    "awardListTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "awardListContentColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

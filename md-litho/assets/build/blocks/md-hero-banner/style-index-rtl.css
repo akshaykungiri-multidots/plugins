@@ -1,0 +1,76 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-hero-banner/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-litho-sample-block {
+  background-color: #27ae60;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_hero_banner {
+  margin-bottom: 50px;
+}
+.md_hero_banner .md_hero_banner__content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 800px;
+}
+.md_hero_banner .md_hero_banner__content .md_hero_banner__content__wrap {
+  width: 50%;
+}
+.md_hero_banner .md_hero_banner__content .md_hero_banner__content__wrap .md_hero_banner__title {
+  font-size: 54px;
+  font-weight: 500;
+}
+.md_hero_banner .md_hero_banner__content .md_hero_banner__content__wrap .md_hero_banner__title strong {
+  font-size: inherit;
+  font-weight: 500;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.md_hero_banner .md_hero_banner__content .md_hero_banner__content__wrap .md_hero_banner__description {
+  font-size: 16px;
+  font-weight: 300;
+}
+.md_hero_banner .md_icon_block__slider_wrap {
+  margin-top: -200px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.md_hero_banner .md_icon_block__slider_wrap .md_icon_block__slider {
+  display: flex;
+  justify-content: center;
+}
+.md_hero_banner .md_icon_block__slider_wrap .md_icon_block__slider .logo-slide {
+  width: 33.3333333333%;
+}
+.md_hero_banner .md_icon_block__slider_wrap .md_icon_block__slider .logo-slide .md-lithomd_icon_block__item-icon {
+  padding: 49px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.md_hero_banner .md_icon_block__slider_wrap .md_icon_block__slider .logo-slide .md-lithomd_icon_block__item-icon .md-lithomd_icon_block__item-icon__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.md_hero_banner .md_icon_block__slider_wrap .md_icon_block__slider .logo-slide .md-lithomd_icon_block__item-icon .md-lithomd_icon_block__item-icon__wrapper .md-lithomd_icon_block__item-icon__wrapper-icon {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+.md_hero_banner .md_icon_block__slider_wrap .md_icon_block__slider .logo-slide .md-lithomd_icon_block__item-icon .md-lithomd_icon_block__item-icon__wrapper h4 {
+  font-size: 15px;
+  margin: 5px 0;
+  font-weight: 400;
+}
+.md_hero_banner .md_icon_block__slider_wrap .md_icon_block__slider .logo-slide .md-lithomd_icon_block__item-icon .md-lithomd_icon_block__item-icon__wrapper p {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 300;
+}

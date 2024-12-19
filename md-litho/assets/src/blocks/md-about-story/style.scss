@@ -1,0 +1,107 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-litho-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_about_story {
+  padding: 130px 0;
+  .md_about_story__inner {
+    display: flex;
+    gap: 97px;
+    justify-content: space-between;
+    align-items: center;
+    .md_about_story__award {
+      width: calc(50% - 97px);
+      padding: 0 15px;
+      .md_about_story__award__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        .md_about_story__award_item {
+          padding: 45px;
+          background-color: #fff;
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+          .md_about_story__award_item_wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .award-year {
+              width: 40%;
+              font-size: 40px;
+              font-weight: 500;
+              text-align: center;
+            }
+            .md_about_story__award_item_content {
+              width: 60%;
+              padding: 0 15px;
+              border-left: 1px solid #e5e5e5;
+              display: flex;
+              flex-direction: column;
+              padding-left: 40px;
+              h4 {
+                font-size: 15px;
+                font-weight: 600;
+                margin: 0;
+              }
+              p {
+                font-size: 15px;
+                font-weight: 400;
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .md_about_story__storylist {
+      width: 50%;
+      .md_about_story__storylist__heading {
+        text-align: center;
+        h2 {
+          font-size: 32px;
+          font-weight: 500;
+          strong {
+            font-size: inherit;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-position: under;
+          }
+        }
+      }
+      .md_about_story__storylist__inner {
+        display: flex;
+        flex-direction: column;
+        .md_about_story__story_item {
+          border-bottom: 1px solid #e5e5e5;
+          padding: 20px 0;
+          .md_about_story__story_item_content {
+            display: flex;
+            h4 {
+              font-size: 15px;
+              font-weight: 600;
+              margin: 0;
+              width: 20%;
+            }
+            p {
+              font-size: 15px;
+              font-weight: 400;
+              margin: 0;
+              width: 80%;
+              opacity: 0.7;
+              a {
+                opacity: 1;
+                color: inherit;
+                text-decoration: underline;
+              }
+            }
+          }
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}

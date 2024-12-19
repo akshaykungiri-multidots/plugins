@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-three-column",
+  "version": "0.1.0",
+  "title": "MD Three Column",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "columns",
+  "description": "A block that displays three columns.",
+  "keywords": [
+    "columns",
+    "three"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "testimonialText": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialAuthor": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "features": {
+      "type": "array",
+      "default": []
+    },
+    "showTestimonial": {
+      "type": "boolean",
+      "default": true
+    },
+    "testimonialBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "testimonialAuthorColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showMedia": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeatures": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featureTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featureTextColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

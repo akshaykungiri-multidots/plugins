@@ -1,0 +1,159 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-video-header/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-litho-sample-block {
+  background-color: #27ae60;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_litho_text_video_wrap {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.md_litho_text_video_wrap .md_litho_text_video {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  padding: 60px 0;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__heading {
+  max-width: 50%;
+  width: 100%;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__heading h3 {
+  gap: 2px;
+  font-weight: 700;
+  line-height: 1.4em;
+  margin: 0 0 20px;
+  font-size: 40px;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__heading h3 span,
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__heading h3 .md_litho_text_video__typing {
+  color: inherit;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube {
+  max-width: 20%;
+  width: 100%;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .md_litho_text_video__youtube_icon {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .md_litho_text_video__youtube_icon button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .md_litho_text_video__youtube_icon .md_litho_text_video__text {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .md_litho_text_video__youtube_icon .md_litho_text_video__text p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .md_litho_text_video__youtube_icon .md_litho_text_video__text p a {
+  color: inherit;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .video_section_wrapper .item-action-wrap {
+  z-index: 99;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .video_section_wrapper .image-preview {
+  position: relative;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .video_section_wrapper iframe {
+  width: 100%;
+  min-height: 300px;
+  height: 100%;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .video_section_wrapper video {
+  width: 100%;
+  height: auto;
+}
+.md_litho_text_video_wrap .md_litho_text_video .md_litho_text_video__inner .md_litho_text_video__youtube .video_section_wrapper .media-and-text__video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+  width: 150px;
+  height: 150px;
+}
+
+.litho_video_popup__wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  overflow: auto;
+  display: none;
+  align-items: center;
+}
+.litho_video_popup__wrap.show-popup {
+  display: block;
+}
+.litho_video_popup__wrap .litho_video_popup__inner {
+  max-width: 970px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  padding: 60px;
+  max-height: 90vh;
+  overflow: auto;
+}
+.litho_video_popup__wrap .litho_video_popup__inner i.close-popup {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.litho_video_popup__wrap .litho_video_popup__inner i.close-popup::before {
+  background: #fff;
+  border-radius: 50%;
+}
+.litho_video_popup__wrap .litho_video_popup__inner .litho_video_popup__inner-content .litho_video_popup__inner-content-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+}
+.litho_video_popup__wrap .litho_video_popup__inner .litho_video_popup__inner-content .litho_video_popup__inner-content-heading .litho_video_popup__inner-content-img-wrap {
+  width: 200px;
+}
+.litho_video_popup__wrap .litho_video_popup__inner .litho_video_popup__inner-content .litho_video_popup__inner-content-heading .litho_video_popup__inner-content-img-wrap img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.litho_video_popup__wrap .litho_video_popup__inner .litho_video_popup__inner-content .litho_video_popup__inner-content-heading .litho_video_popup__inner-content-heading-text {
+  width: calc(100% - 230px);
+}
+.litho_video_popup__wrap .litho_video_popup__inner .litho_video_popup__inner-content .litho_video_popup__inner-content-heading .litho_video_popup__inner-content-heading-text .leadershipName {
+  font-size: 32px;
+  font-weight: 700;
+}
+.litho_video_popup__wrap .litho_video_popup__inner .litho_video_popup__inner-content .litho_video_popup__inner-content-heading .litho_video_popup__inner-content-heading-text .leadershipTitle {
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-video-contact-us",
+  "version": "0.1.0",
+  "title": "MD Video Contact Us",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "video-alt2",
+  "description": "A block that displays a video with contact us form",
+  "keywords": ["video", "contact us"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "enableOverlay": {
+      "type": "boolean",
+      "default": false
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaurl": {
+      "type": "string",
+      "default": ""
+    },
+    "youtubeurl": {
+      "type": "string",
+      "default": ""
+    },
+    "videotype": {
+      "type": "string",
+      "default": "media-upload"
+    },
+    "videoText": {
+      "type": "string",
+      "default": ""
+    },
+    "showVideoText": {
+      "type": "boolean",
+      "default": true
+    },
+    "videoTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showForm": {
+      "type": "boolean",
+      "default": true
+    },
+    "formTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "formShortcode": {
+      "type": "string",
+      "default": ""
+    },
+    "formSubtitle": {
+      "type": "string",
+      "default": ""
+    },
+    "formBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showFormTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFormSubtitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "formTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "formSubtitleColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

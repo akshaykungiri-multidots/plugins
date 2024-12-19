@@ -1,0 +1,70 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-litho-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_skills {
+  padding: 130px 0;
+  .md_skills__inner {
+    padding: 0 95px;
+    display: flex;
+    gap: 95px;
+    .md_skills__content {
+      width: 50%;
+      .md_skills__subheading {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .horizontal-separator {
+          width: 10%;
+          height: 1px;
+          background-color: #0038e3;
+          position: relative;
+          display: inline-block;
+        }
+        .md_skills__subheading-text {
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+      .md_skills__heading {
+        font-size: 32px;
+        font-weight: 500;
+      }
+      .md_skills__description {
+        font-size: 15px;
+        font-weight: 300;
+        opacity: 0.7;
+      }
+    }
+    .md_skills__progress__wrapper {
+      width: 50%;
+      .md_skills__progress__inner {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        .md_skills__progress__item__inner {
+          margin-bottom: 20px;
+          .md_skills__progress__item__title-wrap {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            .md_skills__progress__item__title {
+              font-size: 13px;
+              font-weight: 400;
+            }
+            .md_skills__progress__item__percentage {
+              font-size: 13px;
+              font-weight: 400;
+            }
+          }
+          .skills-progress {
+            transition: width 3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

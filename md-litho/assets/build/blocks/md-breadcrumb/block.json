@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-breadcrumb",
+  "version": "0.1.0",
+  "title": "MD Breadcrumb",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "editor-table",
+  "description": "A block to display breadcrumb",
+  "keywords": [
+    "breadcrumb",
+    "md-litho"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

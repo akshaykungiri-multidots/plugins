@@ -1,0 +1,89 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-image-block/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-litho-sample-block {
+  background-color: #27ae60;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_image_block {
+  padding: 20px 40px;
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+  z-index: 9;
+  position: relative;
+}
+.md_image_block .md_image_block__heading {
+  text-align: center;
+}
+.md_image_block .md_image_block__heading h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+  color: #27ae60;
+  background-image: linear-gradient(-150deg, #556fff 15%, #ff798e 61%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.md_image_block .md_image_block__heading h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+.md_image_block .md_image_block__slider_wrap .md_image_block__slider {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_image_block .md_image_block__slider_wrap .md_image_block__slider .logo-slide .md-lithomd_image_block__item-icon {
+  padding: 20px;
+  margin: 10px;
+}
+.md_image_block .md_image_block__slider_wrap .md_image_block__slider .logo-slide .md-lithomd_image_block__item-icon .md-lithomd_image_block__item-icon__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.md_image_block .md_image_block__slider_wrap .md_image_block__slider .logo-slide .md-lithomd_image_block__item-icon .md-lithomd_image_block__item-icon__wrapper h4 {
+  font-size: 15px;
+  margin: 2px 0;
+}
+.md_image_block .md_image_block__slider_wrap .md_image_block__slider .logo-slide .md-lithomd_image_block__item-icon .md-lithomd_image_block__item-icon__wrapper .image-text {
+  font-size: 15px;
+  margin: 2px 0;
+}
+.md_image_block .md_image_block__slider_wrap .md_image_block__slider .logo-slide .md-lithomd_image_block__item-icon .md-lithomd_image_block__item-icon__wrapper .read-more {
+  cursor: pointer;
+  transition: 0.3s;
+}
+.md_image_block .md_image_block__slider_wrap .md_image_block__slider .logo-slide .md-lithomd_image_block__item-icon .md-lithomd_image_block__item-icon__wrapper .read-more a {
+  color: inherit;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+.md_image_block .md_image_block__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.md_image_block .md_image_block__button p {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.md_image_block .md_image_block__button p a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}

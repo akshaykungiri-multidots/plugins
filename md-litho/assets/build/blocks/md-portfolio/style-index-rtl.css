@@ -1,0 +1,218 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-portfolio/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-litho-sample-block {
+  background-color: #27ae60;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_portfolio_section {
+  font-family: "Poppins", sans-serif;
+  padding: 50px 0;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_heading {
+  text-align: center;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_heading p {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+  line-height: 42px;
+  border-radius: 100px;
+  color: black;
+  background-image: linear-gradient(-150deg, #556fff 15%, #ff798e 61%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_heading h2 {
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
+  color: #000;
+  font-size: 54px;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_categories {
+  padding: 50px 0;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_categories .md_portfolio_categories_inner {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_categories .md_portfolio_categories_inner .md_portfolio_category_item {
+  padding-top: 20px;
+  cursor: pointer;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_categories .md_portfolio_categories_inner .md_portfolio_category_item span {
+  font-size: 15px;
+  font-weight: 400;
+  color: #828282;
+  text-transform: uppercase;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_categories .md_portfolio_categories_inner .md_portfolio_category_item:hover span, .md_portfolio_section .md_portfolio_section_inner .md_portfolio_categories .md_portfolio_categories_inner .md_portfolio_category_item.active span {
+  color: #000;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_categories .md_portfolio_categories_inner .add-item-wrap {
+  display: inline-block;
+  margin: 0;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_categories .md_portfolio_categories_inner .add-item-wrap i {
+  margin: 0;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item {
+  padding: 10px;
+  display: none;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item.active {
+  display: block;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__media {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 450px;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__media img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: transform 0.3s;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__media img:hover {
+  transform: scale(1.1);
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item:hover .md_portfolio_item_inner__hover {
+  display: block;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__hover__icons {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  display: flex;
+  gap: 20px;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__content {
+  padding: 20px 30px;
+  background-color: #fff;
+  text-align: center;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__content h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  color: #000;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__content h3 a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_items .md_portfolio_item__inner .md_portfolio_item .md_portfolio_item_inner__content .md_portfolio_item_inner__content__category {
+  font-size: 14px;
+  color: #939393;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_footer {
+  padding: 50px 0;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_footer__inner {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_footer__inner .md_portfolio_footer__text {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_footer__inner .md_portfolio_footer__text--line {
+  width: 50px;
+  height: 1px;
+  background-color: #0038E3;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_footer__inner .md_portfolio_footer__text p {
+  font-size: 20px;
+  font-weight: 400;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_footer__inner .md_portfolio_footer__button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 26px;
+  line-height: 1;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_footer__inner .md_portfolio_footer__button::after {
+  content: "\f178";
+  font-family: "FontAwesome";
+  font-weight: 900;
+  margin-right: 10px;
+}
+.md_portfolio_section .md_portfolio_section_inner .md_portfolio_footer__inner .md_portfolio_footer__button a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_heading__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_heading__wrapper .md_portfolio_heading {
+  text-align: right;
+  padding: 0 15px;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_heading__wrapper .md_portfolio_heading h2 {
+  font-size: 25px;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_items .md_portfolio_item {
+  position: relative;
+  width: 100%;
+  display: none;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_items .md_portfolio_item.active {
+  display: flex;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_items .md_portfolio_item .md_portfolio_item_inner__media {
+  height: 300px;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_items .md_portfolio_item .md_portfolio_item_inner {
+  width: 100%;
+  position: relative;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_items .md_portfolio_item .md_portfolio_item_inner__content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 0px;
+  margin: 0 auto;
+  background-color: transparent;
+  display: none;
+}
+.md_portfolio_section .md_portfolio_section_inner.style2 .md_portfolio_items .md_portfolio_item:hover .md_portfolio_item_inner__content {
+  display: block;
+  color: #fff;
+  z-index: 1;
+}

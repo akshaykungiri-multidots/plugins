@@ -1,0 +1,150 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-icon-text",
+  "version": "0.1.0",
+  "title": "MD Icon Text",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "star-filled",
+  "description": "A block to display a logo with text.",
+  "keywords": [
+    "md-litho",
+    "md-icon-text"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "logos": {
+      "type": "array",
+      "default": []
+    },
+    "logosTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logosDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logoIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showLogos": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLogosTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLogosDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLogosIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "leftCounterNumber": {
+      "type": "string",
+      "default": ""
+    },
+    "leftCounterTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "leftCounterDescription": {
+      "type": "string",
+      "default": ""
+    },
+    "leftCounterNumberColor": {
+      "type": "string",
+      "default": ""
+    },
+    "leftCounterTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "leftCounterDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "rightCounterNumber": {
+      "type": "string",
+      "default": ""
+    },
+    "rightCounterTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "rightCounterDescription": {
+      "type": "string",
+      "default": ""
+    },
+    "rightCounterNumberColor": {
+      "type": "string",
+      "default": ""
+    },
+    "rightCounterTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "rightCounterDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showLeftCounter": {
+      "type": "boolean",
+      "default": true
+    },
+    "showRightCounter": {
+      "type": "boolean",
+      "default": true
+    },
+    "yearOfExperience": {
+      "type": "string",
+      "default": ""
+    },
+    "yearOfExperienceText": {
+      "type": "string",
+      "default": ""
+    },
+    "yearOfExperienceColor": {
+      "type": "string",
+      "default": ""
+    },
+    "yearOfExperienceTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "yearOfExperienceBackgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "showYearOfExperience": {
+      "type": "boolean",
+      "default": true
+    },
+    "showYearOfExperienceBackgroundImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableOverlay": {
+      "type": "boolean",
+      "default": false
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": ""
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 0.5
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

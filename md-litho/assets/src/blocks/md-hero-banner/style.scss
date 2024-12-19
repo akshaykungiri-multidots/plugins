@@ -1,0 +1,74 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-litho-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+
+.md_hero_banner {
+    margin-bottom: 50px;
+    .md_hero_banner__content {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        min-height: 800px;
+        .md_hero_banner__content__wrap {
+            width: 50%;
+            .md_hero_banner__title {
+                font-size: 54px;
+                font-weight: 500;
+                strong {
+                    font-size: inherit;
+                    font-weight: 500;
+                    text-decoration: underline;
+                    text-underline-position: under;
+                }
+            }
+            .md_hero_banner__description {
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+    }
+    .md_icon_block__slider_wrap {
+        margin-top: -200px;
+        background-color: #fff;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        .md_icon_block__slider {
+            display: flex;
+            justify-content: center;
+            .logo-slide {
+                width: calc(100% / 3);
+                .md-lithomd_icon_block__item-icon {
+                    padding: 49px 56px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    .md-lithomd_icon_block__item-icon__wrapper {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        text-align: center;
+                        .md-lithomd_icon_block__item-icon__wrapper-icon {
+                            font-size: 40px;
+                            margin-bottom: 5px;
+                        }
+                        h4 {
+                            font-size: 15px;
+                            margin: 5px 0;
+                            font-weight: 400;
+                        }
+                        p {
+                            font-size: 15px;
+                            margin: 0;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

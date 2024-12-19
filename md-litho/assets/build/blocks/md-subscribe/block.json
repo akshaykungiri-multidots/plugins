@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-subscribe",
+  "version": "0.1.0",
+  "title": "MD Subscribe",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "email",
+  "description": "A block to subscribe to the newsletter",
+  "keywords": [
+    "subscribe",
+    "newsletter"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "subheading": {
+      "type": "string",
+      "default": ""
+    },
+    "emailPlaceholder": {
+      "type": "string",
+      "default": "Enter your email address"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Subscribe"
+    },
+    "subscribeUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "Thank you for subscribing!"
+    },
+    "errorMessage": {
+      "type": "string",
+      "default": "An error occurred. Please try again."
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubheading": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "formStyle": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

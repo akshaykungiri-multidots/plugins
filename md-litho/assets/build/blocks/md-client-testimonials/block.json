@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-client-testimonials",
+  "version": "0.1.0",
+  "apiVersion": 3,
+  "title": "MD Client Testimonials",
+  "category": "md-litho",
+  "icon": "dashicons dashicons-admin-users",
+  "description": "A block to display client testimonials",
+  "keywords": [
+    "testimonial",
+    "client",
+    "md-litho"
+  ],
+  "attributes": {
+    "products": {
+      "type": "array",
+      "default": []
+    },
+    "subHeading": {
+      "type": "string",
+      "default": "What our clients say"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Client Testimonials"
+    },
+    "bgcolor": {
+      "type": "string"
+    },
+    "authornamecolor": {
+      "type": "string"
+    },
+    "authortitlecolor": {
+      "type": "string"
+    },
+    "headingcolor": {
+      "type": "string"
+    },
+    "subheadingcolor": {
+      "type": "string"
+    },
+    "testimonialcolor": {
+      "type": "string"
+    },
+    "displayAuthorname": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayAuthortitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayTestimonials": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-litho",
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

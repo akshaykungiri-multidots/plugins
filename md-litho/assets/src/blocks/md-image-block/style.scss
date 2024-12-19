@@ -1,0 +1,90 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-litho-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+
+.md_image_block {
+  padding: 20px 40px;
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+  z-index: 9;
+  position: relative;
+  .md_image_block__heading {
+    text-align: center;
+    h4 {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0;
+      display: inline-block;
+      line-height: 42px;
+      margin-bottom: 20px;
+      border-radius: 100px;
+      color: abstracts.$green-theme-color;
+      background-image: linear-gradient(150deg, #556fff 15%, #ff798e 61%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+  .md_image_block__slider_wrap {
+    .md_image_block__slider {
+      display: flex;
+      flex-wrap: wrap;
+      .logo-slide {
+        .md-lithomd_image_block__item-icon {
+          padding: 20px;
+          margin: 10px;
+          .md-lithomd_image_block__item-icon__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            h4 {
+              font-size: 15px;
+              margin: 2px 0;
+            }
+            .image-text {
+              font-size: 15px;
+              margin: 2px 0;
+            }
+            .read-more {
+              cursor: pointer;
+              transition: 0.3s;
+              a {
+                color: inherit;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .md_image_block__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    p {
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}

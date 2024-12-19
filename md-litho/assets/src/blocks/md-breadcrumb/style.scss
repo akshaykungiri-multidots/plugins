@@ -1,0 +1,45 @@
+@use '../../scss/abstracts';
+
+.breadcrumb-block {
+    font-size: 15px;
+    color: var(--wp--preset--color--base-1);
+}
+
+.breadcrumb-block a {
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: var(--wp--preset--color--base-1);
+    font-weight: 400;
+    font-family: var(--wp--preset--font-family--authenticsans-90);
+
+}
+
+.breadcrumb-block a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-block span {
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: var(--wp--preset--color--base-1);
+    font-weight: 400;
+    font-family: var(--wp--preset--font-family--authenticsans-90);
+}
+
+.md-breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    .md-breadcrumb__page-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    i {
+        font-size: 8px;
+        padding: 0 10px;
+        color: lightgrey;
+    }
+}

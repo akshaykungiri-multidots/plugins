@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-image-banner-v2",
+  "version": "0.1.0",
+  "title": "MD Image Banner V2",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "images-alt2",
+  "description": "A block that displays a banner with an image and text.",
+  "keywords": ["md-litho", "md-image-banner-v2"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "processSteps": {
+      "type": "array",
+      "default": [
+        {
+          "id": 1,
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showProcessSteps": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "showMediaImage": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

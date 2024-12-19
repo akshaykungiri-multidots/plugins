@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-logo-slider",
+  "version": "0.1.0",
+  "title": "MD Logo Slider",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "images-alt",
+  "description": "A block to display a slider of logos",
+  "keywords": [
+    "md-litho",
+    "md-logo-slider"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logos": {
+      "type": "array",
+      "default": []
+    },
+    "slidesToShow": {
+      "type": "number",
+      "default": 5
+    },
+    "slidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "infinite": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDots": {
+      "type": "boolean",
+      "default": true
+    },
+    "showArrows": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

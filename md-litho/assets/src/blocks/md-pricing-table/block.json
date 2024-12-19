@@ -1,0 +1,203 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-pricing-table",
+  "version": "0.1.0",
+  "title": "MD Pricing Table",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "tag",
+  "description": "A block that displays a pricing table.",
+  "keywords": ["pricing", "table"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showTermFilter": {
+      "type": "boolean",
+      "default": true
+    },
+    "termBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "termActiveBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "termColor": {
+      "type": "string",
+      "default": ""
+    },
+    "termActiveColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTable": {
+      "type": "array",
+      "default": []
+    },
+    "showPricingTableSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTablePrice": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableTermText": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableFeatures": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPricingTableFooterText": {
+      "type": "boolean",
+      "default": true
+    },
+    "pricingTableHeaderBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableSubTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTablePriceColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableTermTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableFeaturesColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "pricingTableFooterTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableHeaderBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedpricingTableBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableSubTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTablePriceColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableTermTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableFeaturesColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedPricingTableFooterTextColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-hero-banner",
+  "version": "0.1.0",
+  "title": "MD Hero Banner",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "format-image",
+  "description": "A block that displays a hero banner.",
+  "keywords": ["hero", "banner"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "socialLinks": {
+      "type": "array",
+      "default": []
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "iconList": {
+      "type": "array",
+      "default": []
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSocialLinks": {
+      "type": "boolean",
+      "default": true
+    },
+    "showIconList": {
+      "type": "boolean",
+      "default": true
+    },
+    "showBackgroundImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "iconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "iconTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "iconDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "iconListBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-image-banner",
+  "version": "0.1.0",
+  "title": "MD Image Banner",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "images-alt2",
+  "description": "A block that displays a banner with an image and text and button",
+  "keywords": ["md-litho", "md-image-banner"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "showMediaImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonTextHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBackgroundHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

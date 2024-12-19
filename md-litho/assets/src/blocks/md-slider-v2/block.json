@@ -1,0 +1,170 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "md-litho/md-slider-v2",
+	"version": "0.1.0",
+	"title": "MD Slider V2",
+	"apiVersion": 3,
+	"category": "md-litho",
+	"icon": "format-gallery",
+	"description": "A block to display slider with text and image.",
+	"keywords": [
+		"md-litho",
+		"md-slider-v2"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"textdomain": "md-litho",
+	"attributes": {
+		"headingCircleImage": {
+			"type": "string",
+			"default": ""
+		},
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"featureBox1Title": {
+			"type": "string",
+			"default": ""
+		},
+		"featureBox1Description": {
+			"type": "string",
+			"default": ""
+		},
+		"featureBox2Title": {
+			"type": "string",
+			"default": ""
+		},
+		"featureBox2Description": {
+			"type": "string",
+			"default": ""
+		},
+		"showHeadingCircleImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFeatureBox1": {
+			"type": "boolean",
+			"default": true
+		},
+		"showFeatureBox2": {
+			"type": "boolean",
+			"default": true
+		},
+		"headingColor": {
+			"type": "string",
+			"default": ""
+		},
+		"featureBox1TitleColor": {
+			"type": "string",
+			"default": ""
+		},
+		"featureBox1DescriptionColor": {
+			"type": "string",
+			"default": ""
+		},
+		"featureBox2TitleColor": {
+			"type": "string",
+			"default": ""
+		},
+		"featureBox2DescriptionColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideItems": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"subTitle": "",
+					"title": "",
+					"description": "",
+					"buttonText": "",
+					"mediaurl": "",
+					"enableOverlay": false,
+					"overlayColor": "",
+					"overlayOpacity": 0
+				}
+			]
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"dots": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideInfinite": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideSlidesToShow": {
+			"type": "number",
+			"default": 1
+		},
+		"slideSlidesToScroll": {
+			"type": "number",
+			"default": 1
+		},
+		"sliderSubTitleFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"sliderTitleFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"sliderDescriptionFontColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"buttonColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"showButton": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSubTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDescription": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

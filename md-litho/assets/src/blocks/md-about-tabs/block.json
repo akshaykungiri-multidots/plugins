@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-about-tabs",
+  "version": "0.1.0",
+  "title": "MD About Tabs",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "admin-users",
+  "description": "A block to display about tabs.",
+  "keywords": ["about", "tabs"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "aboutTabs": {
+      "type": "array",
+      "default": []
+    },
+    "showTabIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "tabItemColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabActiveItemColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "showTabContentImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTabContentHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTabContentVideo": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTabContentTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTabContentDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "tabContentHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabContentTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "tabContentDescriptionColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

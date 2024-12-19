@@ -1,0 +1,89 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-three-column/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-litho-sample-block {
+  background-color: #27ae60;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_three_column_block .md_three_column_block__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__testimonials_block {
+  width: 20%;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__testimonials_block .md_three_column_block__testimonials_block__inner {
+  width: 100%;
+  height: 100%;
+  padding: 19% 19% 19% 19% !important;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__testimonials_block .md_three_column_block__testimonials_block__inner .md_three_column_block__testimonials_block__inner__content i {
+  font-size: 40px;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__testimonials_block .md_three_column_block__testimonials_block__inner .md_three_column_block__testimonials_block__inner__content p {
+  font-size: 25px;
+  font-weight: 500;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__testimonials_block .md_three_column_block__testimonials_block__inner .md_three_column_block__testimonials_block__inner__author p {
+  font-size: 14px;
+  font-weight: 300;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__testimonials_block .md_three_column_block__testimonials_block__inner .md_three_column_block__testimonials_block__inner__author p:before {
+  content: "- ";
+  margin-right: 5px;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block_media {
+  width: 40%;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block_media .md_three_column_block_media1 {
+  width: 100%;
+  height: 100%;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block_media img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features {
+  width: 40%;
+  background-color: #232323;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features .md_three_column_block__features__heading {
+  font-size: 25px;
+  margin: 0;
+  font-weight: 500;
+  padding: 13% 13% 0 13% !important;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features .md_three_column_block__features__list {
+  padding: 10% 13% 13% 13% !important;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features .md_three_column_block__features__list .md_three_column_block__features__list__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features .md_three_column_block__features__list .md_three_column_block__features__list__inner .md_three_column_block__features__list_item_wrap {
+  width: 50%;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features .md_three_column_block__features__list .md_three_column_block__features__list__inner .md_three_column_block__features__list_item_wrap .md_three_column_block__features__list_item {
+  padding: 10px;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features .md_three_column_block__features__list .md_three_column_block__features__list__inner .md_three_column_block__features__list_item_wrap .md_three_column_block__features__list_item h4 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features .md_three_column_block__features__list .md_three_column_block__features__list__inner .md_three_column_block__features__list_item_wrap .md_three_column_block__features__list_item h4:before {
+  content: "- ";
+  margin-right: 5px;
+}
+.md_three_column_block .md_three_column_block__inner .md_three_column_block__features .md_three_column_block__features__list .md_three_column_block__features__list__inner .md_three_column_block__features__list_item_wrap .md_three_column_block__features__list_item p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

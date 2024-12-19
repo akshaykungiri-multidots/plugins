@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-skills",
+  "version": "0.1.0",
+  "title": "MD Skills",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "admin-site",
+  "description": "A custom block for displaying skills.",
+  "keywords": ["skills", "md-litho"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "subheading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "skills": {
+      "type": "array",
+      "default": []
+    },
+    "showSubheading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSkills": {
+      "type": "boolean",
+      "default": true
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "skillsTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "skillsProgressColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

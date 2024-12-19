@@ -1,0 +1,154 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-service-slider",
+  "version": "0.1.0",
+  "title": "MD Service Slider",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "format-gallery",
+  "description": "A custom block for displaying services in a slider",
+  "keywords": [
+    "services",
+    "slider"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideInfinite": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slideSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "subtitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "services": {
+      "type": "array",
+      "default": []
+    },
+    "rightBoxHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "rightBoxServices": {
+      "type": "array",
+      "default": []
+    },
+    "showSubtitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showRightBox": {
+      "type": "boolean",
+      "default": true
+    },
+    "showServicesSliderImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showServicesSliderTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showServicesSliderDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showServicesSliderButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "subtitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "rightBoxHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "rightBoxServicesColor": {
+      "type": "string",
+      "default": ""
+    },
+    "servicesSliderTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "servicesSliderDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "servicesSliderButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "servicesSliderButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "servicesSliderButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "servicesSliderButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "servicesSliderImagePosition": {
+      "type": "string",
+      "default": "left"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

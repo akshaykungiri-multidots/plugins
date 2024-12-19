@@ -1,0 +1,134 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-litho/md-portfolio",
+  "version": "0.1.0",
+  "title": "MD Portfolio",
+  "apiVersion": 3,
+  "category": "md-litho",
+  "icon": "portfolio",
+  "description": "A custom block for displaying portfolio items.",
+  "keywords": [
+    "portfolio",
+    "md-litho"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-litho",
+  "attributes": {
+    "subheading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubheading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "categories": {
+      "type": "array",
+      "default": []
+    },
+    "showCategories": {
+      "type": "boolean",
+      "default": true
+    },
+    "categoryColor": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfPortfolioItemsPerRow": {
+      "type": "number",
+      "default": 3
+    },
+    "portfolioItems": {
+      "type": "array",
+      "default": []
+    },
+    "showZoomIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLinkIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCategoryInPortfolio": {
+      "type": "boolean",
+      "default": true
+    },
+    "portfolioTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "portfolioCategoryColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "blockStyle": {
+      "type": "string",
+      "default": ""
+    },
+    "enableFooter": {
+      "type": "boolean",
+      "default": true
+    },
+    "footerText": {
+      "type": "string",
+      "default": ""
+    },
+    "footerButton": {
+      "type": "string",
+      "default": ""
+    },
+    "footerTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showFooterButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "footerButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}
