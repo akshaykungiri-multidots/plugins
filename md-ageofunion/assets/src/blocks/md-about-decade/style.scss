@@ -1,0 +1,183 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-ageofunion-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_about_decade_section {
+  position: relative;
+  .md_about_decade__inner {
+    position: relative;
+    .md_about_decade__heading {
+      background-color: #2b4b2a;
+      position: relative;
+      display: block;
+      overflow: hidden;
+      &::before {
+        content: "";
+        padding-bottom: 60.60606%;
+        width: 100%;
+        display: block;
+      }
+      img {
+        opacity: 1;
+        transition: opacity 0.6s 0.1s cubic-bezier(0.38, 0.005, 0.215, 1);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        height: 100% !important;
+        max-width: none;
+      }
+      .md_about_decade__poster_content {
+        color: #bababa;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: flex-end;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 1.25rem 0 2.5rem 0;
+        font-size: 1.625rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        z-index: 2;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        .md_about_decade__poster_content__inner {
+          margin-bottom: -.69444vw;
+          font-size: 13.88889vw;
+          border-top: 1.125rem #bababa solid;
+          position: relative;
+          text-align: center;
+          letter-spacing: -0.045em;
+          line-height: 0.72;
+          text-transform: uppercase;
+          padding-left: 13%;
+          padding-right: 13%;
+          font-weight: 500;
+          .md_about_decade__poster_content__heading_label {
+            font-weight: 500;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            position: absolute;
+            text-align: left;
+            font-size: 1.625rem;
+            top: 1.25rem;
+            left: 0;
+          }
+          .md_about_decade__poster_content__heading {
+            font-size: 13.88889vw;
+            text-align: center;
+            letter-spacing: -0.045em;
+            line-height: 0.72;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+    .md_about_decade__intro {
+      padding-bottom: 1.875rem;
+      position: relative;
+      text-align: center;
+      border-bottom: 1.125rem solid #CFCFCF;
+      margin-bottom: 1.25rem;
+      .md_about_decade__intro__inner {
+        position: relative;
+        text-align: center;
+        .md_about_decade__intro__heading_label {
+          font-size: 1.625rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: -0.03em;
+          line-height: 1;
+          margin-bottom: 1.25rem;
+          text-align: left;
+          position: absolute;
+          left: 0;
+          z-index: 12;
+        }
+        .md_about_decade__intro__heading {
+          font-size: 13.88889vw;
+          text-align: center;
+          letter-spacing: -0.045em;
+          line-height: 0.72;
+          text-transform: uppercase;
+          font-weight: 500;
+          position: relative;
+        }
+      }
+    }
+    .md_about_decade__grid {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.25rem;
+      align-items: flex-start;
+      display: grid;
+      .md_about_decade__grid__figure {
+        grid-row: 1;
+        grid-column: 1 / 2;
+        grid-gap: 1.25rem;
+        display: grid;
+        margin: 0;
+        padding: 0;
+        .md_about_decade__about_decade_image {
+          grid-row: 1;
+          overflow: hidden;
+          border-radius: 2px;
+          position: relative;
+          &::before {
+            content: "";
+            padding-bottom: 154.54545%;
+            width: 100%;
+            display: block;
+          }
+          img {
+            opacity: 1;
+            transition: opacity 0.6s 0.1s cubic-bezier(0.38, 0.005, 0.215, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            height: 100% !important;
+          }
+        }
+      }
+      .md_about_decade__grid__figure__caption {
+        grid-row: 2;
+        padding-right: 15%;
+        line-height: 1;
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 1.25rem;
+        }
+      }
+      .md_about_decade__content {
+        grid-row: 1;
+        grid-column: 2 / 5;
+        .md_about_decade__content__text {
+          font-size: 5rem;
+          text-indent: calc((100vw - 20px*(4 - 1) - 20px* 2)* .5 / 4 + 20px*(.5 + 0));
+          text-transform: none;
+          font-weight: 400;
+          line-height: 0.9;
+          margin-bottom: 1.875rem;
+          position: relative;
+        }
+      }
+    }
+  }
+}

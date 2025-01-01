@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-articles-listing",
+  "version": "0.1.0",
+  "title": "MD Articles Listing",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "smiley",
+  "description": "A block to display articles listing",
+  "keywords": ["articles", "listing"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "selectedArticles": {
+      "type": "array",
+      "default": []
+    },
+    "showFeaturedImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTags": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDate": {
+      "type": "boolean",
+      "default": true
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "excerptColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "tagsColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "dateColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "titleHoverColor": {
+      "type": "string",
+      "default": "#000000"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-films",
+  "version": "0.1.0",
+  "title": "MD Single Film",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "video-alt3",
+  "description": "A block to display a single film.",
+  "keywords": ["film", "movie", "video"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "featuredFilm": {
+      "type": "object",
+      "default": {}
+    },
+    "viewMoreText": {
+      "type": "string",
+      "default": "View More"
+    },
+    "showViewMore": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTotalFilms": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFilmTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFilmImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFilmExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "filmTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "filmTitleHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "filmPosterTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "filmPosterBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreTextColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,239 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-articles/style.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-ageofunion-sample-dynamic {
+  color: #000000;
+}
+
+.md_ageofunion_articles {
+  position: relative;
+  box-sizing: border-box;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner {
+  display: grid;
+  grid-gap: 3.75rem;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  position: relative;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__heading {
+  padding: 1.0625rem 0 1.25rem 0;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__heading img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__featured-article {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.25rem;
+  flex-grow: 1;
+  display: grid;
+  position: relative;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__featured-article img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__featured-article .md_ageofunion_articles__featured-article__content h2 {
+  font-size: 2.5rem;
+  line-height: 0.9;
+  margin-bottom: 1.875rem;
+  font-weight: 500;
+  position: relative;
+  text-transform: uppercase;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__featured-article .md_ageofunion_articles__featured-article__content .md_ageofunion_articles__featured-article__excerpt {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 0.625rem;
+  position: relative;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__featured-article .md_ageofunion_articles__featured-article__content .md_ageofunion_articles__featured-article__footer {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__featured-article .md_ageofunion_articles__featured-article__content .md_ageofunion_articles__featured-article__footer .md_ageofunion_articles__featured-article__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__content .md_ageofunion_articles__featured-article .md_ageofunion_articles__featured-article__content .md_ageofunion_articles__featured-article__footer .md_ageofunion_articles__featured-article__date {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-weight: 500;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar {
+  padding-bottom: 5.625rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar h2 {
+  font-size: 1.625rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles .md_ageofunion_articles__article {
+  border-top: 2px solid #000;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 1.25rem;
+  position: relative;
+  display: grid;
+  padding: 0.625rem 0 1.875rem;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles .md_ageofunion_articles__article .md_ageofunion_articles__article__image {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-transform: uppercase;
+  font-weight: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles .md_ageofunion_articles__article .md_ageofunion_articles__article__image img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles .md_ageofunion_articles__article .md_ageofunion_articles__article__content {
+  grid-column-start: 3;
+  grid-column-end: 8;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles .md_ageofunion_articles__article .md_ageofunion_articles__article__content h3 {
+  line-height: 1;
+  font-weight: 400;
+  margin: 0 0 0.625rem 0;
+  font-size: 1rem;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles .md_ageofunion_articles__article .md_ageofunion_articles__article__content .md_ageofunion_articles__article__excerpt {
+  font-size: 0.75rem;
+  line-height: 1;
+  margin-bottom: 0.625rem;
+  font-weight: 400;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles .md_ageofunion_articles__article .md_ageofunion_articles__article__content .md_ageofunion_articles__article__tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.75rem;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__sidebar__articles .md_ageofunion_articles__article .md_ageofunion_articles__article__content .md_ageofunion_articles__article__date {
+  font-size: 0.75rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__view-more {
+  display: flex;
+  justify-content: flex-end;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__view-more p {
+  font-size: 1.625rem;
+  background: none;
+  color: currentColor;
+  padding: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__view-more p::after {
+  font-family: "FontAwesome";
+  content: "\f178";
+  margin-left: 0.625rem;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__view-more p:hover::after {
+  content: none;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__view-more p:hover::before {
+  content: "\f178";
+  font-family: "FontAwesome";
+  margin-right: 0.625rem;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar .md_ageofunion_articles__view-more p a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner .md_ageofunion_articles__sidebar::before {
+  transition: transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-delay: 0s;
+  transform: scaleY(1);
+  position: absolute;
+  left: -2.375rem;
+  top: 0;
+  bottom: 3.125rem;
+  content: "";
+  width: 1.125rem;
+  background-color: #000;
+}
+.md_ageofunion_articles .md_ageofunion_articles__inner::after {
+  transition: transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-delay: 0s;
+  transform: scaleX(1);
+  bottom: 3.125rem;
+  content: "";
+  position: absolute;
+  height: 1.125rem;
+  background-color: #000;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.md_ageofunion_articles::before {
+  transition: transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-delay: 0s;
+  transform: scaleY(1);
+  height: 6.25rem;
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  content: "";
+  width: 1.125rem;
+  margin-left: -0.5625rem;
+  background-color: #000;
+  z-index: 2;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

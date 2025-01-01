@@ -1,0 +1,150 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-articles",
+  "version": "0.1.0",
+  "title": "MD Articles",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "admin-post",
+  "description": "A block to display articles",
+  "keywords": ["articles", "md-ageofunion"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "headingLogo": {
+      "type": "string",
+      "default": ""
+    },
+    "featuredArticle": {
+      "type": "object",
+      "default": {}
+    },
+    "numberOfArticles": {
+      "type": "number",
+      "default": 4
+    },
+    "viewMoreText": {
+      "type": "string",
+      "default": "View More"
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedArticle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSidebarArticles": {
+      "type": "boolean",
+      "default": true
+    },
+    "showViewMore": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedArticleImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedArticleTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedArticleExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedArticleTags": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedArticleDate": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSidebarArticleImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSidebarArticleTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSidebarArticleExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSidebarArticleTags": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSidebarArticleDate": {
+      "type": "boolean",
+      "default": true
+    },
+    "featuredArticleTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featuredArticleTitleHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featuredArticleExcerptColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featuredArticleTagsColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featuredArticleDateColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarArticleHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarArticleTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarArticleTitleHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarArticleExcerptColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarArticleTagsColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarArticleDateColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarArticleBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "sidebarArticleBackgroundHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreTextColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

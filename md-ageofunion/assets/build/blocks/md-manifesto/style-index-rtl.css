@@ -1,0 +1,220 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-manifesto/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-ageofunion-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_manifesto_section .md_manifesto__inner {
+  text-align: center;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item {
+  width: 50%;
+  display: inline-block;
+  padding-right: 1.25rem;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item figure {
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item figure .text_video__youtube {
+  opacity: 1;
+  transition: opacity 0.6s 0.1s cubic-bezier(0.38, 0.005, 0.215, 1);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100%;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item figure .md_manifesto__video_item__figure__box__video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  outline-offset: -3px;
+  -webkit-appearance: button;
+  display: inline-block;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  background: none transparent;
+  color: inherit;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-transform: none;
+  font: inherit;
+  line-height: normal;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item figure .md_manifesto__video_item__figure__box__video span.md_manifesto__video_item__figure__box__video__rendered_text {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item figure .md_manifesto__video_item__figure__box__video span.md_manifesto__video_item__figure__box__video__button {
+  transition: translate3d(45.0162px, 45.004px, 0px) translate3d(-50%, -50%, 0px);
+  width: 3.125rem;
+  height: 3.125rem;
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  z-index: 3;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item figure .md_manifesto__video_item__figure__box__video span.md_manifesto__video_item__figure__box__video__button__circle {
+  transition: transform 0.3s cubic-bezier(0.38, 0.005, 0.215, 1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 100%;
+  background-color: #f2f2f2;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item figure .md_manifesto__video_item__figure__box__video span.md_manifesto__video_item__figure__box__video__button::after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 0;
+  height: 0;
+  content: "";
+  margin-right: -5px;
+  margin-top: -5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 10px solid #db4b2d;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__video_item figure::before {
+  display: block;
+  padding-bottom: 60.60606%;
+  width: 100%;
+  content: "";
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_intro {
+  padding-bottom: 1.875rem;
+  position: relative;
+  text-align: center;
+  border-bottom: 1.125rem solid #000;
+  margin-bottom: 1.25rem;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_intro .md_manifesto__cta_project_intro__inner {
+  position: relative;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_intro .md_manifesto__cta_project_intro__inner .md_manifesto__cta_project_intro__cta_label {
+  font-size: 1.625rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  top: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_intro .md_manifesto__cta_project_intro__inner .md_manifesto__cta_project_intro__heading {
+  letter-spacing: -0.045em;
+  line-height: 0.72;
+  text-transform: uppercase;
+  padding-right: 13%;
+  padding-left: 13%;
+  font-size: 10.83333vw;
+  margin-bottom: 0;
+  font-weight: 500;
+  position: relative;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid {
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-gap: 1.25rem;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid .md_manifesto__cta_project_image {
+  grid-row: 1;
+  grid-column: 1/2;
+  padding-left: 15%;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid .md_manifesto__cta_project_image img {
+  transition: opacity 0.6s 0.1s cubic-bezier(0.38, 0.005, 0.215, 1);
+  opacity: 1;
+  width: 100%;
+  height: auto;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid .md_manifesto__cta_project_content {
+  grid-row: 1/4;
+  grid-column: 2/5;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid .md_manifesto__cta_project_content__text {
+  text-indent: calc((100vw - 60px - 40px) * 0.5 / 4 + 10px);
+  font-size: 3.75rem;
+  text-transform: none;
+  font-weight: 400;
+  line-height: 0.9;
+  margin-bottom: 1.875rem;
+  position: relative;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid .md_manifesto__cta_project_text {
+  grid-row: 2;
+  grid-column: 1/2;
+  padding-left: 15%;
+  text-align: right;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid .md_manifesto__cta_project_text .md_manifesto__cta_project_text__small_text {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid .md_manifesto__cta_project_text .md_manifesto__cta_project_text__button span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 2px;
+  padding: 1rem 1.875rem;
+  font-size: 1rem;
+  overflow: visible;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  background: none transparent;
+  color: inherit;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.md_manifesto_section .md_manifesto__inner .md_manifesto__cta_project_grid .md_manifesto__cta_project_text .md_manifesto__cta_project_text__button span::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border: 2px solid currentColor;
+  border-top: 0;
+  content: "";
+}

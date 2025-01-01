@@ -1,0 +1,116 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-about-decade",
+  "version": "0.1.0",
+  "title": "MD About Decade",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "backup",
+  "description": "A block to display the about decade",
+  "keywords": [
+    "md",
+    "ageofunion",
+    "about",
+    "decade"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "decadeHeadingCoverImage": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeHeadingLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeIntroHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeIntroHeadingLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeFigureImage": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeFigureText": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeContent": {
+      "type": "string",
+      "default": ""
+    },
+    "showDecadeHeading": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeHeadingLabel": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeIntroHeading": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeIntroHeadingLabel": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeFigureImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeFigureText": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeContent": {
+      "type": "boolean",
+      "default": false
+    },
+    "decadeHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeHeadingLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeIntroHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeIntroHeadingLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeFigureTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

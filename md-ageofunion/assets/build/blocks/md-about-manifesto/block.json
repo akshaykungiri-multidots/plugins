@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-about-manifesto",
+  "version": "0.1.0",
+  "title": "MD About Manifesto",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "format-aside",
+  "description": "A block to display the about manifesto",
+  "keywords": [
+    "md",
+    "ageofunion",
+    "about",
+    "manifesto"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "manifestoHeadingCoverImage": {
+      "type": "string",
+      "default": ""
+    },
+    "manifestoIntroHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "manifestoFigureImage": {
+      "type": "string",
+      "default": ""
+    },
+    "manifestoContent": {
+      "type": "string",
+      "default": ""
+    },
+    "showManifestoIntroHeading": {
+      "type": "boolean",
+      "default": false
+    },
+    "showManifestoFigureImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "showManifestoContent": {
+      "type": "boolean",
+      "default": false
+    },
+    "manifestoIntroHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "manifestoContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-manifesto",
+  "version": "0.1.0",
+  "title": "MD Manifesto",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "admin-site",
+  "description": "A block to display the MD Manifesto section.",
+  "keywords": ["md", "manifesto"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaurl": {
+      "type": "string",
+      "default": ""
+    },
+    "youtubeurl": {
+      "type": "string",
+      "default": ""
+    },
+    "videotype": {
+      "type": "string",
+      "default": "media-upload"
+    },
+    "enablePosterVideo": {
+      "type": "boolean",
+      "default": false
+    },
+    "posterMediaUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "posterYoutubeUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "posterVideoType": {
+      "type": "string",
+      "default": "media-upload"
+    },
+    "ctaProjectImage": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectContent": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectSmallText": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectButtonText": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCtaLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "showVideo": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCtaProjectImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCtaProjectContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCtaProjectSmallText": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCtaProjectButtonText": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectSmallTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectButtonTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectButtonHoverTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ctaProjectButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

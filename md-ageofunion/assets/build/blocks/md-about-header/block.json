@@ -1,0 +1,104 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-about-header",
+  "version": "0.1.0",
+  "title": "MD About Header",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "welcome-write-blog",
+  "description": "A block to display the about header",
+  "keywords": [
+    "md",
+    "ageofunion",
+    "about",
+    "header"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "headingLogo": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaurl": {
+      "type": "string",
+      "default": ""
+    },
+    "youtubeurl": {
+      "type": "string",
+      "default": ""
+    },
+    "videotype": {
+      "type": "string",
+      "default": "media-upload"
+    },
+    "enablePosterVideo": {
+      "type": "boolean",
+      "default": false
+    },
+    "posterMediaUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "posterYoutubeUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "posterVideoType": {
+      "type": "string",
+      "default": "media-upload"
+    },
+    "aboutContent": {
+      "type": "string",
+      "default": ""
+    },
+    "aboutSmallText": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showVideo": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAboutContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAboutSmallText": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "aboutContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "aboutSmallTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

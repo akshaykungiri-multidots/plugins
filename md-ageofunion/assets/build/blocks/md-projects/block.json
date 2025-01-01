@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-projects",
+  "version": "0.1.0",
+  "title": "MD Projects",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "portfolio",
+  "description": "A block to display projects",
+  "keywords": [
+    "projects",
+    "md-ageofunion"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "enableBackgroundVideo": {
+      "type": "boolean",
+      "default": false
+    },
+    "mediaurl": {
+      "type": "string",
+      "default": ""
+    },
+    "youtubeurl": {
+      "type": "string",
+      "default": ""
+    },
+    "videotype": {
+      "type": "string",
+      "default": "media-upload"
+    },
+    "projectHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfProjects": {
+      "type": "number",
+      "default": 3
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showProjectHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "projectHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showProjectFeatureImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showProjectRegion": {
+      "type": "boolean",
+      "default": true
+    },
+    "showViewMoreButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "viewMoreButtonText": {
+      "type": "string",
+      "default": ""
+    },
+    "projectTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "projectRegionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-team",
+  "version": "0.1.0",
+  "title": "MD Team",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "groups",
+  "description": "A block to display the team",
+  "keywords": ["md", "ageofunion", "team"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "headingLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColour": {
+      "type": "string",
+      "default": ""
+    },
+    "teamMembers": {
+      "type": "array",
+      "default": []
+    },
+    "showTeamMemberName": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTeamMemberPosition": {
+      "type": "boolean",
+      "default": true
+    },
+    "teamMemberNameColor": {
+      "type": "string",
+      "default": ""
+    },
+    "teamMemberPositionColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}
