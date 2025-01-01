@@ -1,0 +1,120 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-centre-decade",
+  "version": "0.1.0",
+  "title": "MD Centre Decade",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "backup",
+  "description": "A block to display the centre decade",
+  "keywords": [
+    "md",
+    "ageofunion",
+    "centre",
+    "decade"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "decadeSlider": {
+      "type": "array",
+      "default": []
+    },
+    "slidesToShow": {
+      "type": "number",
+      "default": 5
+    },
+    "slidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "infinite": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDots": {
+      "type": "boolean",
+      "default": true
+    },
+    "showArrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "decadeHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeIntroHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeFigureImage": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeFigureText": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeContent": {
+      "type": "string",
+      "default": ""
+    },
+    "showDecadeHeading": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeSlider": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeIntroHeading": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeFigureImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeFigureText": {
+      "type": "boolean",
+      "default": false
+    },
+    "showDecadeContent": {
+      "type": "boolean",
+      "default": false
+    },
+    "decadeHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeIntroHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeFigureTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "decadeContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

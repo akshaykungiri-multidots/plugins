@@ -121,6 +121,9 @@ class Assets {
 		// Enqueue Styles.
 		wp_enqueue_style( 'main-css' );
 
+		// Slick CSS.
+		wp_enqueue_style( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
+
 		// Enduque fontawesome 4.7.
 		wp_enqueue_style( 'font-awesome-4.7', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' );
 
@@ -135,6 +138,8 @@ class Assets {
 	 * @since 1.0.0
 	 */
 	public function register_scripts(): void {
+
+		wp_enqueue_script( 'slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array( 'jquery' ), false, false );
 
 		// FancyBox JS.
 		wp_enqueue_script( 'fancybox', 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js', array( 'jquery' ), false, false );
@@ -181,6 +186,9 @@ class Assets {
 				wp_enqueue_style( $block->style );
 			}
 		}
+
+		wp_enqueue_style( 'slick-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css' );
+    	wp_enqueue_style( 'slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css' );
 
 		wp_enqueue_style( 'dashicons' );
 		// Enduque fontawesome 4.7.

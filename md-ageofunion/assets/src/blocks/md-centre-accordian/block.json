@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-centre-accordian",
+  "version": "0.1.0",
+  "title": "MD Centre Accordian",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "groups",
+  "description": "A block to display the accordian",
+  "keywords": ["md", "ageofunion", "accordian"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "centreAddress": {
+      "type": "string",
+      "default": ""
+    },
+    "centrePhone": {
+      "type": "string",
+      "default": ""
+    },
+    "showCentreAddress": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCentrePhone": {
+      "type": "boolean",
+      "default": true
+    },
+    "centreAddressColor": {
+      "type": "string",
+      "default": ""
+    },
+    "centrePhoneColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColour": {
+      "type": "string",
+      "default": ""
+    },
+    "accordianItems": {
+      "type": "array",
+      "default": []
+    },
+    "accordianTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "accordianContentColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

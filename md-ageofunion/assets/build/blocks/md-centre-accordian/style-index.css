@@ -1,0 +1,104 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-centre-accordian/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-ageofunion-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_centre_accordian_section {
+  position: relative;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner {
+  padding-bottom: 12.5rem;
+  position: relative;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_section__header .md_centre_accordian_section__heading {
+  font-size: 10.83333vw;
+  letter-spacing: -0.045em;
+  line-height: 0.72;
+  text-transform: uppercase;
+  margin-bottom: 1.875rem;
+  font-weight: 500;
+  position: relative;
+  margin: 0;
+  width: 50%;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_section__header .md_centre_accordian_section__contact_info {
+  width: 50%;
+  display: flex;
+  gap: 1.25rem;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_section__header .md_centre_accordian_section__contact_info p {
+  width: 50%;
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_section__header .md_centre_accordian_section__contact_info p a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_grid {
+  padding-top: 1.25rem;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_grid .md_centre_accordian_grid__inner {
+  display: flex;
+  justify-content: flex-end;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_grid .md_centre_accordian_grid__inner .md_centre_accordian_grid__list {
+  width: 75%;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_grid .md_centre_accordian_grid__inner .md_centre_accordian_grid__list .md_centre_accordian__list__item .md_centre_accordian__list__item__heading {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  border-top: 2px solid #000;
+  border-bottom: 0px;
+  cursor: pointer;
+  padding: 0.625rem 0 clamp(0.0625rem * var(--spacing-medium-mobile), var(--spacing-medium) / 14.4 * 1vw, 0.0625rem * var(--spacing-medium)) 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: left;
+  gap: 1.25rem;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_grid .md_centre_accordian_grid__inner .md_centre_accordian_grid__list .md_centre_accordian__list__item .md_centre_accordian__list__item__heading .md_centre_accordian__list__item__content__name {
+  font-size: 3.75rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_grid .md_centre_accordian_grid__inner .md_centre_accordian_grid__list .md_centre_accordian__list__item .md_centre_accordian__list__item__heading i {
+  font-size: 3.75rem;
+  height: 100%;
+  width: auto;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_grid .md_centre_accordian_grid__inner .md_centre_accordian_grid__list .md_centre_accordian__list__item .md_centre_accordian__list__item__content {
+  font-size: 1.875rem;
+  line-height: 1;
+  font-weight: 400;
+  display: none;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner .md_centre_accordian_grid .md_centre_accordian_grid__inner .md_centre_accordian_grid__list .md_centre_accordian__list__item.active .md_centre_accordian__list__item__content {
+  display: block;
+}
+.md_centre_accordian_section .md_centre_accordian_section__inner::after {
+  bottom: -2px;
+  position: absolute;
+  left: 50%;
+  width: 1.125rem;
+  margin-left: -0.5625rem;
+  content: "";
+  background-color: #bababa;
+  height: 10.125rem;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
