@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-healthstream/md-posts",
+  "version": "0.1.0",
+  "title": "MD Posts",
+  "apiVersion": 3,
+  "category": "md-healthstream",
+  "icon": "list-view",
+  "description": "A block to display posts",
+  "keywords": ["md-posts", "md-healthstream"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-healthstream",
+  "attributes": {
+    "postType": {
+      "type": "string",
+      "default": "post"
+    },
+    "postsToShow": {
+      "type": "number",
+      "default": 5
+    },
+    "postInRow": {
+      "type": "number",
+      "default": 2
+    },
+    "postTitleColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "postContentColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "showFilter": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLoadMore": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPostTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showExcerpt": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

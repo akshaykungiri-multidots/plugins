@@ -1,0 +1,61 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-contact-us/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-healthstream-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_healthstream_contact_us_wrap {
+  padding: 75px 0 95px;
+  position: relative;
+}
+.md_healthstream_contact_us_wrap .md_healthstream_contact_us_inner {
+  display: flex;
+}
+.md_healthstream_contact_us_wrap .md_healthstream_contact_us_inner .md_healthstream_contact_us__heading {
+  width: 50%;
+}
+.md_healthstream_contact_us_wrap .md_healthstream_contact_us_inner .md_healthstream_contact_us__heading h2 {
+  margin: 0;
+  margin-bottom: 0;
+  color: #05222e;
+  font-family: "AddingtonCF-Regular", Georgia;
+  font-weight: normal;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+.md_healthstream_contact_us_wrap .md_healthstream_contact_us_inner .md_healthstream_contact_us__heading p {
+  margin: 2ex 0 0 0;
+  font-size: 18px;
+  color: #05222E;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  font-family: "GreycliffCF-Regular";
+}
+.md_healthstream_contact_us_wrap .md_healthstream_contact_us_inner .md_healthstream_contact_form {
+  width: 50%;
+  border-radius: 5px;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+  padding: 30px 30px;
+}
+.md_healthstream_contact_us_wrap .md_healthstream_contact_us_inner .md_healthstream_contact_form h2 {
+  margin: 0;
+  margin-bottom: 0;
+  color: #05222e;
+  font-family: "AddingtonCF-Regular", Georgia;
+  font-weight: normal;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+.md_healthstream_contact_us_wrap .md_healthstream_contact_us_inner .md_healthstream_contact_form p {
+  margin: 2ex 0 0 0;
+  font-size: 18px;
+  color: #05222E;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  font-family: "GreycliffCF-Regular";
+}

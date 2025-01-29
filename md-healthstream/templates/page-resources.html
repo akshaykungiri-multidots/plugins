@@ -1,0 +1,15 @@
+<!-- wp:template-part {"slug":"header","theme":"md-healthstream","tagName":"header"} /-->
+
+<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|container","bottom":"var:preset|spacing|container"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group" style="padding-top:var(--wp--preset--spacing--container);padding-bottom:var(--wp--preset--spacing--container)"><!-- wp:columns -->
+	<div class="wp-block-columns"><!-- wp:column {"width":"66.66%"} -->
+	<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:md-healthstream/md-posts {"postType":"resources","postInRow":1,"showFeaturedImage":false} /--></div>
+	<!-- /wp:column -->
+	
+	<!-- wp:column {"width":"33.33%"} -->
+	<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:template-part {"slug":"post-sidebar","theme":"md-healthstream","area":"uncategorized"} /--></div>
+	<!-- /wp:column --></div>
+	<!-- /wp:columns --></div>
+	<!-- /wp:group -->
+	
+	<!-- wp:template-part {"slug":"footer","theme":"md-healthstream","tagName":"footer"} /-->

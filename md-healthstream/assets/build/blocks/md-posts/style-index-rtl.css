@@ -1,0 +1,165 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-posts/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.btn-main {
+  font-size: 18px;
+  min-width: 119px;
+  text-align: center;
+  color: #000;
+  font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  letter-spacing: 0.32px;
+  border-radius: 30px;
+  word-break: break-word;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+  padding: 14px 30px;
+  margin: 0;
+}
+
+.wp-block-md-healthstream-md-posts .md-posts {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid {
+  display: grid;
+  grid-gap: 20px;
+  gap: 20px;
+  width: 70%;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 30px;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-thumbnail {
+  width: 100%;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-thumbnail img {
+  box-shadow: 0px 2px 10px rgba(111, 137, 163, 0.3019607843);
+  height: auto;
+  width: 100%;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-heading .md-posts__grid-item-title {
+  font-family: "AddingtonCF-Regular", Georgia;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: -1px;
+  margin-top: -5px;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-heading .md-posts__grid-item-title a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-heading .md-posts__grid-item-date {
+  font-family: "GreycliffCF-Medium", Arial;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.79;
+  color: #5e5e5e;
+  padding-top: 10px;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-heading .md-posts__grid-item-resource_type {
+  display: flex;
+  gap: 10px;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-heading .md-posts__grid-item-resource_type span {
+  font-family: "GreycliffCF-Regular", Arial;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 4.33;
+  letter-spacing: 3.75px;
+  color: #05222e;
+  text-transform: uppercase;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p {
+  opacity: 0.8;
+  font-family: "GreycliffCF-Regular", Arial;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.44;
+  letter-spacing: normal;
+  color: #05222e;
+  margin-top: 12px;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p a {
+  padding-left: 0;
+  border-left: none;
+  padding-right: 0;
+  color: #2670ca;
+  padding: 0 10px;
+  font-family: "Be Vietnam Pro", BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  border-left: 2px solid #2670ca;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p a:first-child {
+  padding-right: 0;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner .md-posts__grid-item-content .md-posts__grid-item-excerpt p a:last-child {
+  padding-left: 0;
+  border-left: none;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__grid .md-posts__grid-item .md-posts__grid-item-inner:hover {
+  transition: all 0.5s ease-in-out;
+  background-color: #fff;
+  box-shadow: -2px 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__loadmore {
+  text-align: center;
+  margin-top: 50px;
+  width: 100%;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__filter {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 1px solid #c4c4c4;
+  padding-bottom: 33px;
+  margin-bottom: 50px;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__filter h3 {
+  font-family: "GreycliffCF-Regular", Arial;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-top: 11px;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__filter h3.md-posts__filter-title {
+  color: #0b75e0;
+}
+.wp-block-md-healthstream-md-posts .md-posts .md-posts__filter .md-posts__filter-checkbox {
+  display: flex;
+  flex-direction: column;
+}
+.wp-block-md-healthstream-md-posts .md-posts__loadmore-button {
+  border-radius: 27px;
+  border: 2px solid #0069c1;
+  color: #000;
+  font-family: "Urbanist", BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}

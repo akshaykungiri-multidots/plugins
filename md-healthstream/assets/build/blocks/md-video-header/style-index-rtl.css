@@ -1,0 +1,82 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-video-header/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_text_video__inner {
+  width: 100%;
+  height: auto;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_text_video__inner .md_healthstream_text_video__youtube {
+  position: relative;
+  width: 100%;
+  padding: 0 0 40.91%;
+  height: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  border: 0 none;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_text_video__inner .md_healthstream_text_video__youtube iframe {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px none;
+  height: 590px;
+  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
+  overflow: hidden;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_image_block__content {
+  display: grid;
+  padding: 3em 0;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_image_block__content .md_healthstream_image_block__item {
+  padding: 25px;
+  border-radius: 0;
+  margin: 10px 20px;
+  display: flex;
+  flex-flow: wrap;
+  align-content: baseline;
+  flex: 1 0 auto;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_image_block__content .md_healthstream_image_block__item .md_healthstream_image_block__item__image {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_image_block__content .md_healthstream_image_block__item .md_healthstream_image_block__item__image img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_image_block__content .md_healthstream_image_block__item .md_healthstream_image_block__item__content {
+  padding: 0;
+  width: 100%;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_image_block__content .md_healthstream_image_block__item .md_healthstream_image_block__item__content h3 {
+  margin: 2ex 0 0 0;
+  font-size: 18px;
+  color: #05222E;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.md_healthstream_video_header_section .md_healthstream_text_video_wrap .md_healthstream_image_block__content .md_healthstream_image_block__item .md_healthstream_image_block__item__content p {
+  margin-top: 0.3em;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: rgba(5, 34, 46, 0.8);
+  font-family: "GreycliffCF-Regular", Arial;
+  font-weight: 500;
+  font-size: 16px;
+}

@@ -1,0 +1,90 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "md-healthstream/md-testimonials",
+	"version": "0.1.0",
+	"title": "MD Testimonials",
+	"apiVersion": 3,
+	"category": "md-healthstream",
+	"icon": "format-gallery",
+	"description": "A block to display testimonials",
+	"keywords": [
+		"md-healthstream",
+		"md-testimonials"
+	],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"textdomain": "md-healthstream",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"slideItems": {
+			"type": "array",
+			"default": []
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"dots": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideInfinite": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideSlidesToShow": {
+			"type": "number",
+			"default": 1
+		},
+		"slideSlidesToScroll": {
+			"type": "number",
+			"default": 1
+		},
+		"testimonialsDescriptionFontColor": {
+			"type": "string",
+			"default": ""
+		},
+		"testimonialsAuthorNameFontColor": {
+			"type": "string",
+			"default": ""
+		},
+		"testimonialsAuthorDesignationFontColor": {
+			"type": "string",
+			"default": ""
+		},
+		"headingFontColor": {
+			"type": "string",
+			"default": ""
+		},
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTestimonialsDescription": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTestimonialsAuthorName": {
+			"type": "boolean",
+			"default": true
+		},
+		"showTestimonialsAuthorDesignation": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,97 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-healthstream/md-image-banner",
+  "version": "0.1.0",
+  "title": "MD Image Banner",
+  "apiVersion": 3,
+  "category": "md-healthstream",
+  "icon": "format-image",
+  "description": "A block that displays a banner with an image and text.",
+  "keywords": ["md-healthstream", "md-image-banner"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-healthstream",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonLink": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+    "contentBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

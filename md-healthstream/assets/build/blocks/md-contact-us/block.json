@@ -1,0 +1,98 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-healthstream/md-contact-us",
+  "version": "0.1.0",
+  "title": "MD Contact Us",
+  "apiVersion": 3,
+  "category": "md-healthstream",
+  "icon": "email-alt",
+  "description": "A block that displays a contact us form",
+  "keywords": [
+    "contact us"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-healthstream",
+  "attributes": {
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "enableOverlay": {
+      "type": "boolean",
+      "default": false
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showForm": {
+      "type": "boolean",
+      "default": true
+    },
+    "formTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "formShortcode": {
+      "type": "string",
+      "default": ""
+    },
+    "formSubtitle": {
+      "type": "string",
+      "default": ""
+    },
+    "formBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showFormTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFormSubtitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "formTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "formSubtitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "descriptionColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

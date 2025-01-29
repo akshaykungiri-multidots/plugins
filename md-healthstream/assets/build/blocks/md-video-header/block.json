@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-healthstream/md-video-header",
+  "version": "0.1.0",
+  "title": "MD Video Header",
+  "apiVersion": 3,
+  "category": "md-healthstream",
+  "icon": "video-alt2",
+  "description": "A block that displays a video header with a heading and subheading.",
+  "keywords": [
+    "md-healthstream",
+    "md-video-header"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-healthstream",
+  "attributes": {
+    "mediaurl": {
+      "type": "string",
+      "default": ""
+    },
+    "iconBlocks": {
+      "type": "array",
+      "default": []
+    },
+    "showIconBlocks": {
+      "type": "boolean",
+      "default": true
+    },
+    "numberOfColumns": {
+      "type": "number",
+      "default": 3
+    },
+    "showIconText": {
+      "type": "boolean",
+      "default": true
+    },
+    "iconTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

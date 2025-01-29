@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-healthstream/md-resource-blog",
+  "version": "0.1.0",
+  "title": "MD Resource Blog",
+  "apiVersion": 3,
+  "category": "md-healthstream",
+  "icon": "format-gallery",
+  "description": "A block to display resources from the blog.",
+  "keywords": [
+    "md-healthstream",
+    "md-resource-blog"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-healthstream",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfPosts": {
+      "type": "number",
+      "default": 3
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturedImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "excerptColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

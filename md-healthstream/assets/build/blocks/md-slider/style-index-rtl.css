@@ -1,0 +1,49 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-slider/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.md_slider_section .md_slider_grid .md_slider__item__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_slider_section .md_slider_grid .md_slider__item__inner .md_slider__item__content__subtitle_wrap {
+  width: 100%;
+  padding: 0 3rem;
+}
+.md_slider_section .md_slider_grid .md_slider__item__inner .md_slider__item__content__subtitle_wrap h4 {
+  margin: 0;
+  font-family: "GreycliffCF-Bold";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  display: inline;
+}
+.md_slider_section .md_slider_grid .md_slider__item__inner .md_slider__item__content {
+  width: 50%;
+  padding: 3rem;
+}
+.md_slider_section .md_slider_grid .md_slider__item__inner .md_slider__item__content .md_slider__item__content__title {
+  margin-top: -0.3em;
+  margin-bottom: 25px;
+  font-size: 50px;
+  line-height: 1.05;
+  font-family: "AddingtonCF-Regular", Georgia;
+  font-weight: 400;
+  width: 100%;
+  padding: 3px 0 0 0;
+  letter-spacing: -1.5px;
+}
+.md_slider_section .md_slider_grid .md_slider__item__inner .md_slider__item__content .md_slider__item__content__description {
+  font-size: 18px;
+  max-width: 483px;
+  width: 100%;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.5px;
+}
+.md_slider_section .md_slider_grid .md_slider__item__inner .md_slider__item__image {
+  width: 50%;
+}
+.md_slider_section .md_slider_grid .md_slider__item__inner .md_slider__item__image img {
+  width: 100%;
+  height: auto;
+}

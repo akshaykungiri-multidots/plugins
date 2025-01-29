@@ -1,0 +1,45 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-testimonials/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.md_testimonials_section .md_testimonials_section__heading h2 {
+  font-family: "GreycliffCF-Regular", Arial;
+  font-size: 16px;
+  font-weight: 700;
+  font-stretch: normal;
+  margin: 0 0 2em 0;
+  font-style: normal;
+  line-height: 1.438;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+.md_testimonials_section .md_hero_banner_testimonials .md_testimonials_grid_item .md_testimonials__item .md_testimonials__item__description blockquote {
+  line-height: 1.429;
+  letter-spacing: -0.97px;
+  font-size: 28px;
+  font-family: "Addington CF", Georgia;
+  font-weight: 300;
+  width: 100%;
+  position: relative;
+  padding-bottom: 30px;
+}
+.md_testimonials_section .md_hero_banner_testimonials .md_testimonials_grid_item .md_testimonials__item .md_testimonials__item__author {
+  padding-right: 30px;
+  border-right: 8px solid #fdca00;
+  color: #05222E;
+}
+.md_testimonials_section .md_hero_banner_testimonials .md_testimonials_grid_item .md_testimonials__item .md_testimonials__item__author .md_testimonials__item__author__name h4 {
+  margin-bottom: 0;
+  color: #05222e;
+  font-family: "AddingtonCF-Regular", Georgia;
+  font-weight: normal;
+  font-size: 28px;
+  letter-spacing: -0.7px;
+  line-height: 1.714;
+}
+.md_testimonials_section .md_hero_banner_testimonials .md_testimonials_grid_item .md_testimonials__item .md_testimonials__item__author .md_testimonials__item__author__designation p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,59 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-healthstream-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_healthstream_contact_us_wrap {
+  padding: 75px 0 95px;
+  position: relative;
+  .md_healthstream_contact_us_inner {
+    display: flex;
+    .md_healthstream_contact_us__heading {
+      width: 50%;
+      h2 {
+        margin: 0;
+        margin-bottom: 0;
+        color: #05222e;
+        font-family: 'AddingtonCF-Regular', Georgia;
+        font-weight: normal;
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+      p {
+        margin: 2ex 0 0 0;
+        font-size: 18px;
+        color: #05222E;
+        line-height: 1.6;
+        letter-spacing: .5px;
+        font-family: 'GreycliffCF-Regular';
+      }
+    }
+    .md_healthstream_contact_form {
+      width: 50%;
+      border-radius: 5px;
+      background-color: #ffffff;
+      position: relative;
+      z-index: 1;
+      padding: 30px 30px;
+      h2 {
+        margin: 0;
+        margin-bottom: 0;
+        color: #05222e;
+        font-family: 'AddingtonCF-Regular', Georgia;
+        font-weight: normal;
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+      p {
+        margin: 2ex 0 0 0;
+        font-size: 18px;
+        color: #05222E;
+        line-height: 1.6;
+        letter-spacing: .5px;
+        font-family: 'GreycliffCF-Regular';
+      }
+    }
+  }
+}
