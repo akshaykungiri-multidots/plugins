@@ -38,6 +38,8 @@ class Register_Taxonomies {
 		 * Actions.
 		 */
 		add_action( 'init', array( $this, 'register_region_taxonomy' ), 0 );
+
+		add_action( 'init', array( $this, 'register_exhibition_category_taxonomy' ), 0 );
 	}
 
 	/**
@@ -80,5 +82,47 @@ class Register_Taxonomies {
 		);
 
 		register_taxonomy( 'region', array( 'projects' ), $args );
+	}
+
+	/**
+	 * Register Taxonomy Exhibition Category.
+	 *
+	 * @return void
+	 * @since 1.0.0
+	 */
+	public function register_exhibition_category_taxonomy(): void {
+		
+		$labels = array(
+			'name'                       => esc_html__( 'Exhibition Categories', 'md-ageofunion' ),
+			'singular_name'              => esc_html__( 'Exhibition Category', 'md-ageofunion' ),
+			'search_items'               => esc_html__( 'Search Exhibition Categories', 'md-ageofunion' ),
+			'popular_items'              => esc_html__( 'Popular Exhibition Categories', 'md-ageofunion' ),
+			'all_items'                  => esc_html__( 'All Exhibition Categories', 'md-ageofunion' ),
+			'parent_item'                => null,
+			'parent_item_colon'          => null,
+			'edit_item'                  => esc_html__( 'Edit Exhibition Category', 'md-ageofunion' ),
+			'update_item'                => esc_html__( 'Update Exhibition Category', 'md-ageofunion' ),
+			'add_new_item'               => esc_html__( 'Add New Exhibition Category', 'md-ageofunion' ),
+			'new_item_name'              => esc_html__( 'New Exhibition Category Name', 'md-ageofunion' ),
+			'separate_items_with_commas' => esc_html__( 'Separate exhibition categories with commas', 'md-ageofunion' ),
+			'add_or_remove_items'        => esc_html__( 'Add or remove exhibition categories', 'md-ageofunion' ),
+			'choose_from_most_used'      => esc_html__( 'Choose from the most used exhibition categories', 'md-ageofunion' ),
+			'not_found'                  => esc_html__( 'No exhibition categories found.', 'md-ageofunion' ),
+			'menu_name'                  => esc_html__( 'Exhibition Categories', 'md-ageofunion' ),
+		);
+
+		$args = array(
+			'hierarchical'          => true,
+			'labels'                => $labels,
+			'show_ui'               => true,
+			'show_admin_column'     => true,
+			'query_var'             => true,
+			'rewrite'               => array( 'slug' => 'exhibition-category' ),
+			'show_in_rest'          => true,
+			'rest_base'             => 'exhibition-category',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+		);
+
+		register_taxonomy( 'exhibition-category', array( 'exhibitions' ), $args );
 	}
 }

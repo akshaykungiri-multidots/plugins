@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-about-faq",
+  "version": "0.1.0",
+  "title": "MD About FAQ",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "groups",
+  "description": "A block to display the faq for the about page",
+  "keywords": [
+    "md",
+    "ageofunion",
+    "faq"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "headingLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingLabel": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingLabelColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColour": {
+      "type": "string",
+      "default": ""
+    },
+    "accordianItems": {
+      "type": "array",
+      "default": []
+    },
+    "accordianTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "accordianContentColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

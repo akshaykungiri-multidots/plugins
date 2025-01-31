@@ -57,6 +57,10 @@
     $(".md_centre_accordian__list__item").removeClass("active");
     $(this).addClass("active");
   });
+  $(document).on("click", ".md_about_faq__list__item", function () {
+    $(".md_about_faq__list__item").removeClass("active");
+    $(this).addClass("active");
+  });
 })(jQuery);
 
 /***/ }),

@@ -119,7 +119,7 @@ class MD_Films extends Block_Base
 						<?php 
 						if ($featured_article->have_posts()) : $featured_article->the_post(); 
 
-						$video_url = get_field('video_link', $featured_article_id);
+						$video_url = get_metadata('post', get_the_ID(), 'movie_link', true);
 						?>
 							<div class="md_ageofunion_films__featured-film">
 								<div class="md_ageofunion_films__featured-film__heading">

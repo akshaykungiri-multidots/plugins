@@ -108,15 +108,21 @@ export default function Edit({ attributes, setAttributes }) {
         });
     }
     if (showSidebarArticles) {
+      const exclude = "value" in featuredArticle ? featuredArticle.value : "";
       fetch(
-        `/wp-json/wp/v2/posts?per_page=${numberOfArticles}&exclude=${featuredArticle.value}`
+        `/wp-json/wp/v2/posts?per_page=${numberOfArticles}&exclude=${exclude}`
       )
         .then((response) => response.json())
         .then((data) => {
           setArticleList(data);
         });
     }
-  }, [showFeaturedArticle, showSidebarArticles, numberOfArticles, featuredArticle.value]);
+  }, [
+    showFeaturedArticle,
+    showSidebarArticles,
+    numberOfArticles,
+    featuredArticle.value,
+  ]);
   return (
     <div {...useBlockProps({ className: "md_ageofunion_articles" })}>
       <InspectorControls>
@@ -446,83 +452,88 @@ export default function Edit({ attributes, setAttributes }) {
               </div>
             )}
           </div>
-          {showFeaturedArticle && featuredArticleData.length > 0 && (
-            <div className="md_ageofunion_articles__featured-article">
-              {showFeaturedArticleImage &&
-                featuredArticleData.find(
-                  (article) => article.id === featuredArticle.value
-                ).featured_image_url && (
-                  <img
-                    src={
-                      featuredArticleData.find(
-                        (article) => article.id === featuredArticle.value
-                      ).featured_image_url
-                    }
-                    alt={
-                      featuredArticleData.find(
-                        (article) => article.id === featuredArticle.value
-                      ).title.rendered
-                    }
-                  />
-                )}
-              <div className="md_ageofunion_articles__featured-article__content">
-                {showFeaturedArticleTitle && (
-                  <h2
-                    style={{ color: featuredArticleTitleColor }}
-                    className="md_ageofunion_articles__featured-article__title"
-                  >
-                    {
-                      featuredArticleData.find(
-                        (article) => article.id === featuredArticle.value
-                      ).title.rendered
-                    }
-                  </h2>
-                )}
-                {showFeaturedArticleExcerpt && (
-                  <div
-                    className="md_ageofunion_articles__featured-article__excerpt"
-                    style={{ color: featuredArticleExcerptColor }}
-                    dangerouslySetInnerHTML={{
-                      __html: featuredArticleData.find(
-                        (article) => article.id === featuredArticle.value
-                      ).excerpt.rendered,
-                    }}
-                  ></div>
-                )}
-                <div className="md_ageofunion_articles__featured-article__footer">
-                  {showFeaturedArticleTags && (
-                    <ul
-                      className="md_ageofunion_articles__featured-article__tags"
-                      style={{ color: featuredArticleTagsColor }}
-                    >
-                      {featuredArticleData.find(
-                        (article) => article.id === featuredArticle.value
-                      ).post_tags &&
-                        featuredArticleData
-                          .find(
+          {"label" in featuredArticle &&
+            showFeaturedArticle &&
+            featuredArticleData.length > 0 && (
+              <>
+                <div className="md_ageofunion_articles__featured-article">
+                  {showFeaturedArticleImage &&
+                    featuredArticleData.find(
+                      (article) => article.id === featuredArticle.value
+                    ).featured_image_url && (
+                      <img
+                        src={
+                          featuredArticleData.find(
                             (article) => article.id === featuredArticle.value
-                          )
-                          .post_tags.map((tag) => (
-                            <li key={tag.id}>{tag.name}</li>
-                          ))}
-                    </ul>
-                  )}
-                  {showFeaturedArticleDate && (
-                    <p
-                      className="md_ageofunion_articles__featured-article__date"
-                      style={{ color: featuredArticleDateColor }}
-                    >
-                      {
-                        featuredArticleData.find(
-                          (article) => article.id === featuredArticle.value
-                        ).post_date
-                      }
-                    </p>
-                  )}
+                          ).featured_image_url
+                        }
+                        alt={
+                          featuredArticleData.find(
+                            (article) => article.id === featuredArticle.value
+                          ).title.rendered
+                        }
+                      />
+                    )}
+                  <div className="md_ageofunion_articles__featured-article__content">
+                    {showFeaturedArticleTitle && (
+                      <h2
+                        style={{ color: featuredArticleTitleColor }}
+                        className="md_ageofunion_articles__featured-article__title"
+                      >
+                        {
+                          featuredArticleData.find(
+                            (article) => article.id === featuredArticle.value
+                          ).title.rendered
+                        }
+                      </h2>
+                    )}
+                    {showFeaturedArticleExcerpt && (
+                      <div
+                        className="md_ageofunion_articles__featured-article__excerpt"
+                        style={{ color: featuredArticleExcerptColor }}
+                        dangerouslySetInnerHTML={{
+                          __html: featuredArticleData.find(
+                            (article) => article.id === featuredArticle.value
+                          ).excerpt.rendered,
+                        }}
+                      ></div>
+                    )}
+                    <div className="md_ageofunion_articles__featured-article__footer">
+                      {showFeaturedArticleTags && (
+                        <ul
+                          className="md_ageofunion_articles__featured-article__tags"
+                          style={{ color: featuredArticleTagsColor }}
+                        >
+                          {featuredArticleData.find(
+                            (article) => article.id === featuredArticle.value
+                          ).post_tags &&
+                            featuredArticleData
+                              .find(
+                                (article) =>
+                                  article.id === featuredArticle.value
+                              )
+                              .post_tags.map((tag) => (
+                                <li key={tag.id}>{tag.name}</li>
+                              ))}
+                        </ul>
+                      )}
+                      {showFeaturedArticleDate && (
+                        <p
+                          className="md_ageofunion_articles__featured-article__date"
+                          style={{ color: featuredArticleDateColor }}
+                        >
+                          {
+                            featuredArticleData.find(
+                              (article) => article.id === featuredArticle.value
+                            ).post_date
+                          }
+                        </p>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          )}
+              </>
+            )}
         </div>
         <div className="md_ageofunion_articles__sidebar">
           <h2

@@ -1,0 +1,216 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-past-exhibition/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-ageofunion-sample-dynamic {
+  color: #000000;
+}
+
+.md_past_exhibition .md_past_exhibition__video_box {
+  overflow: hidden;
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.md_past_exhibition .md_past_exhibition__video_box:before {
+  display: block;
+  padding-bottom: 60.60606%;
+  width: 100%;
+  content: "";
+}
+.md_past_exhibition .md_past_exhibition__video_box .text_video__youtube {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 100% !important;
+}
+.md_past_exhibition .md_past_exhibition__video_box .md_past_exhibition__video_heading {
+  font-size: 10.83333vw;
+  letter-spacing: -0.045em;
+  line-height: 0.72;
+  text-transform: uppercase;
+  padding-left: 13%;
+  padding-right: 13%;
+  margin-bottom: 1.25rem;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  text-align: center;
+  color: #f2f2f2;
+  font-weight: 500;
+}
+.md_past_exhibition .md_past_exhibition__listing {
+  z-index: 2;
+  margin-bottom: 6.25rem;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__exhibition_heading {
+  letter-spacing: -0.045em;
+  line-height: 0.72;
+  text-transform: uppercase;
+  padding-left: 13%;
+  padding-right: 13%;
+  text-align: center;
+  font-size: 10.83333vw;
+  margin: 0;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid {
+  margin-top: 6.25rem;
+  position: relative;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 0;
+  display: grid;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item {
+  border-top: 2px solid #000;
+  margin: 0;
+  cursor: pointer;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile {
+  grid-gap: 1.25rem;
+  grid-template-columns: repeat(16, 1fr);
+  padding: 0.9375rem 0;
+  position: relative;
+  display: grid;
+  line-height: 1;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile::before {
+  position: absolute;
+  top: -2px;
+  left: -1.25rem;
+  right: -1.25rem;
+  bottom: -2px;
+  content: "";
+  background-color: var(--color);
+  visibility: hidden;
+  z-index: -1;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile .md_past_exhibition__listing__grid__item__tile__category {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 400;
+  margin: 0;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile figure {
+  position: relative;
+  opacity: 1;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 2px;
+  grid-column-start: 4;
+  grid-column-end: 7;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile figure .md_past_exhibition__listing__grid__item__tile__image__lazy {
+  background-color: #d6d6cd;
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile figure .md_past_exhibition__listing__grid__item__tile__image__lazy::before {
+  display: block;
+  width: 100%;
+  content: "";
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile figure .md_past_exhibition__listing__grid__item__tile__image__lazy img {
+  opacity: 1;
+  transition: opacity 0.6s 0.1s cubic-bezier(0.38, 0.005, 0.215, 1);
+  width: 100%;
+  height: auto;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile .md_past_exhibition__listing__grid__item__tile__title {
+  font-size: 1.625rem;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 400;
+  margin: 0;
+  grid-column-start: 8;
+  grid-column-end: 15;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item .md_past_exhibition__listing__grid__item__tile .md_past_exhibition__listing__grid__item__tile__date {
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: 0px;
+  font-weight: 400;
+  margin: 0;
+  grid-column-start: 15;
+  grid-column-end: 17;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item.-no-border {
+  border: none !important;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item.-no-border .md_past_exhibition__listing__grid__item__tile__heading {
+  padding: 0 0 1.25rem;
+  font-size: 1rem;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item.-no-border .md_past_exhibition__listing__grid__item__tile__heading .md_past_exhibition__listing__grid__header:nth-child(1) {
+  grid-column-start: 1;
+  grid-column-end: 10;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item.-no-border .md_past_exhibition__listing__grid__item__tile__heading .md_past_exhibition__listing__grid__header:nth-child(2) {
+  grid-column-start: 10;
+  grid-column-end: 15;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item:hover .md_past_exhibition__listing__grid__item__tile__image__lazy img {
+  opacity: 0;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__grid .md_past_exhibition__listing__grid__item:hover figure {
+  opacity: 1;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__button span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 2px;
+  padding: 1rem 1.875rem;
+  font-size: 1rem;
+  overflow: visible;
+  margin: 0;
+  outline: 0;
+  border: 0;
+  background: none transparent;
+  color: inherit;
+  vertical-align: middle;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__button span::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid currentColor;
+  border-top: 0;
+  content: "";
+}
+.md_past_exhibition .md_past_exhibition__listing .md_past_exhibition__listing__button a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

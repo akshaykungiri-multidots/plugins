@@ -2449,7 +2449,8 @@ function Edit({
       });
     }
     if (showSidebarArticles) {
-      fetch(`/wp-json/wp/v2/posts?per_page=${numberOfArticles}&exclude=${featuredArticle.value}`).then(response => response.json()).then(data => {
+      const exclude = "value" in featuredArticle ? featuredArticle.value : "";
+      fetch(`/wp-json/wp/v2/posts?per_page=${numberOfArticles}&exclude=${exclude}`).then(response => response.json()).then(data => {
         setArticleList(data);
       });
     }
@@ -2768,46 +2769,48 @@ function Edit({
               })]
             })
           })
-        }), showFeaturedArticle && featuredArticleData.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-          className: "md_ageofunion_articles__featured-article",
-          children: [showFeaturedArticleImage && featuredArticleData.find(article => article.id === featuredArticle.value).featured_image_url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
-            src: featuredArticleData.find(article => article.id === featuredArticle.value).featured_image_url,
-            alt: featuredArticleData.find(article => article.id === featuredArticle.value).title.rendered
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-            className: "md_ageofunion_articles__featured-article__content",
-            children: [showFeaturedArticleTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
-              style: {
-                color: featuredArticleTitleColor
-              },
-              className: "md_ageofunion_articles__featured-article__title",
-              children: featuredArticleData.find(article => article.id === featuredArticle.value).title.rendered
-            }), showFeaturedArticleExcerpt && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-              className: "md_ageofunion_articles__featured-article__excerpt",
-              style: {
-                color: featuredArticleExcerptColor
-              },
-              dangerouslySetInnerHTML: {
-                __html: featuredArticleData.find(article => article.id === featuredArticle.value).excerpt.rendered
-              }
+        }), "label" in featuredArticle && showFeaturedArticle && featuredArticleData.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+            className: "md_ageofunion_articles__featured-article",
+            children: [showFeaturedArticleImage && featuredArticleData.find(article => article.id === featuredArticle.value).featured_image_url && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+              src: featuredArticleData.find(article => article.id === featuredArticle.value).featured_image_url,
+              alt: featuredArticleData.find(article => article.id === featuredArticle.value).title.rendered
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-              className: "md_ageofunion_articles__featured-article__footer",
-              children: [showFeaturedArticleTags && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
-                className: "md_ageofunion_articles__featured-article__tags",
+              className: "md_ageofunion_articles__featured-article__content",
+              children: [showFeaturedArticleTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h2", {
                 style: {
-                  color: featuredArticleTagsColor
+                  color: featuredArticleTitleColor
                 },
-                children: featuredArticleData.find(article => article.id === featuredArticle.value).post_tags && featuredArticleData.find(article => article.id === featuredArticle.value).post_tags.map(tag => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
-                  children: tag.name
-                }, tag.id))
-              }), showFeaturedArticleDate && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
-                className: "md_ageofunion_articles__featured-article__date",
+                className: "md_ageofunion_articles__featured-article__title",
+                children: featuredArticleData.find(article => article.id === featuredArticle.value).title.rendered
+              }), showFeaturedArticleExcerpt && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+                className: "md_ageofunion_articles__featured-article__excerpt",
                 style: {
-                  color: featuredArticleDateColor
+                  color: featuredArticleExcerptColor
                 },
-                children: featuredArticleData.find(article => article.id === featuredArticle.value).post_date
+                dangerouslySetInnerHTML: {
+                  __html: featuredArticleData.find(article => article.id === featuredArticle.value).excerpt.rendered
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+                className: "md_ageofunion_articles__featured-article__footer",
+                children: [showFeaturedArticleTags && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("ul", {
+                  className: "md_ageofunion_articles__featured-article__tags",
+                  style: {
+                    color: featuredArticleTagsColor
+                  },
+                  children: featuredArticleData.find(article => article.id === featuredArticle.value).post_tags && featuredArticleData.find(article => article.id === featuredArticle.value).post_tags.map(tag => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
+                    children: tag.name
+                  }, tag.id))
+                }), showFeaturedArticleDate && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
+                  className: "md_ageofunion_articles__featured-article__date",
+                  style: {
+                    color: featuredArticleDateColor
+                  },
+                  children: featuredArticleData.find(article => article.id === featuredArticle.value).post_date
+                })]
               })]
             })]
-          })]
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: "md_ageofunion_articles__sidebar",

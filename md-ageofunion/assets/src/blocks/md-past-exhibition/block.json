@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-ageofunion/md-past-exhibition",
+  "version": "0.1.0",
+  "title": "MD Past Exhibition",
+  "apiVersion": 3,
+  "category": "md-ageofunion",
+  "icon": "portfolio",
+  "description": "A block to display past exhibitions",
+  "keywords": ["past", "exhibition", "md-ageofunion"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-ageofunion",
+  "attributes": {
+    "exhibitionHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfExhibitions": {
+      "type": "number",
+      "default": 3
+    },
+    "showExhibitionHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "exhibitionHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showExhibitionFeatureImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showExhibitionCategory": {
+      "type": "boolean",
+      "default": true
+    },
+    "showViewMoreButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "viewMoreButtonText": {
+      "type": "string",
+      "default": ""
+    },
+    "exhibitionTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "exhibitionCategoryColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "viewMoreButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

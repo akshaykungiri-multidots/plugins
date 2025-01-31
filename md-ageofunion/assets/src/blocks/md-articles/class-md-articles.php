@@ -158,7 +158,7 @@ class MD_Articles extends Block_Base
 				<div class="md_ageofunion_articles__inner">
 					<div class="md_ageofunion_articles__content">
 						<div class="md_ageofunion_articles__heading">
-							<?php if ($showHeading) : ?>
+							<?php if ($showHeading && $headingLogo) : ?>
 								<div class="md_litho_image_banner__media">
 									<div class="md-prime-block-control image-preview image-controle-visible-hover md_litho_image_banner__media1">
 										<img src="<?php echo esc_url($headingLogo); ?>" alt="Age of Union" />

@@ -1,0 +1,95 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-about-faq/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-ageofunion-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_about_faq_section {
+  position: relative;
+}
+.md_about_faq_section .md_about_faq_section__inner {
+  padding-bottom: 12.5rem;
+  position: relative;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_section__header {
+  position: relative;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_section__header .md_about_faq_section__heading_label {
+  top: 1.25rem;
+  font-size: 1.625rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  position: absolute;
+  text-align: right;
+  z-index: 4;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_section__header .md_about_faq_section__heading {
+  font-size: 13.88889vw;
+  letter-spacing: -0.045em;
+  line-height: 0.72;
+  text-transform: uppercase;
+  padding-right: 13%;
+  padding-left: 13%;
+  text-align: center;
+  margin-bottom: 1.875rem;
+  font-weight: 500;
+  position: relative;
+  margin: 0;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_grid {
+  padding-top: 1.25rem;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_grid .md_about_faq_grid__inner {
+  display: flex;
+  justify-content: center;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_grid .md_about_faq_grid__inner .md_about_faq_grid__list {
+  width: 75%;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_grid .md_about_faq_grid__inner .md_about_faq_grid__list .md_about_faq__list__item .md_about_faq__list__item__heading {
+  justify-content: space-between;
+  border-top: 2px solid #000;
+  border-bottom: 0px;
+  cursor: pointer;
+  padding: 0.625rem 0 clamp(0.0625rem * var(--spacing-medium-mobile), var(--spacing-medium) / 14.4 * 1vw, 0.0625rem * var(--spacing-medium)) 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-align: right;
+  gap: 1.25rem;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_grid .md_about_faq_grid__inner .md_about_faq_grid__list .md_about_faq__list__item .md_about_faq__list__item__heading .md_about_faq__list__item__content__name {
+  font-size: 1.875rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_grid .md_about_faq_grid__inner .md_about_faq_grid__list .md_about_faq__list__item .md_about_faq__list__item__heading i {
+  font-size: 1.875rem;
+  height: 100%;
+  width: auto;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_grid .md_about_faq_grid__inner .md_about_faq_grid__list .md_about_faq__list__item .md_about_faq__list__item__content {
+  font-size: 1.875rem;
+  line-height: 1;
+  font-weight: 400;
+  display: none;
+}
+.md_about_faq_section .md_about_faq_section__inner .md_about_faq_grid .md_about_faq_grid__inner .md_about_faq_grid__list .md_about_faq__list__item.active .md_about_faq__list__item__content {
+  display: block;
+}
+.md_about_faq_section .md_about_faq_section__inner::after {
+  bottom: -2px;
+  position: absolute;
+  right: 50%;
+  width: 1.125rem;
+  margin-right: -0.5625rem;
+  content: "";
+  background-color: #bababa;
+  height: 10.125rem;
+}

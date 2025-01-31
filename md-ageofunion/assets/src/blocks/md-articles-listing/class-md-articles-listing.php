@@ -116,7 +116,7 @@ class MD_Articles_Listing extends Block_Base
 			</style>
 			<div class="md_articles_listing">
 				<div class="md_articles_listing__list">
-					<?php if ($articles->have_posts()) : ?>
+					<?php if ( !empty($articles) && $articles->have_posts()) : ?>
 						<?php while ($articles->have_posts()) : $articles->the_post(); ?>
 							<div class="md_articles_listing__item">
 								<div class="md_articles_listing__item--article">
