@@ -10,6 +10,8 @@
   position: relative;
   .md_healthstream_contact_us_inner {
     display: flex;
+    z-index: 4;
+    position: relative;
     .md_healthstream_contact_us__heading {
       width: 50%;
       h2 {
@@ -54,6 +56,17 @@
         letter-spacing: .5px;
         font-family: 'GreycliffCF-Regular';
       }
+    }
+  }
+  .md_healthstream_contact_us_overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 1;
+    top: 0;
+    &::before {
+      content: "";
     }
   }
 }
