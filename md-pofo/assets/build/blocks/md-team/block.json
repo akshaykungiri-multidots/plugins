@@ -1,0 +1,97 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-pofo/md-team",
+  "version": "0.1.0",
+  "apiVersion": 3,
+  "title": "MD Team",
+  "category": "md-pofo",
+  "icon": "dashicons dashicons-admin-users",
+  "description": "A block to display client team",
+  "keywords": [
+    "testimonial",
+    "client",
+    "md-pofo"
+  ],
+  "attributes": {
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "dots": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideInfinite": {
+      "type": "boolean",
+      "default": false
+    },
+    "slideSlidesToShow": {
+      "type": "number",
+      "default": 1
+    },
+    "slideSlidesToScroll": {
+      "type": "number",
+      "default": 1
+    },
+    "products": {
+      "type": "array",
+      "default": []
+    },
+    "subHeading": {
+      "type": "string",
+      "default": "What our clients say"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Client Team"
+    },
+    "bgcolor": {
+      "type": "string"
+    },
+    "authornamecolor": {
+      "type": "string"
+    },
+    "authortitlecolor": {
+      "type": "string"
+    },
+    "headingcolor": {
+      "type": "string"
+    },
+    "subheadingcolor": {
+      "type": "string"
+    },
+    "testimonialcolor": {
+      "type": "string"
+    },
+    "displayAuthorname": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayAuthortitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayTeam": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-pofo",
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,83 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-single-testimonial/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-pofo-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading {
+  width: 50%;
+  padding: 54px;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading .md_pofo_image_banner__title, .md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+  width: 100%;
+  padding: 3px 0 0 0;
+  margin-top: 0;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading .md_pofo_image_banner__title .md_pofo_image_banner__quote, .md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading h2 .md_pofo_image_banner__quote {
+  color: #ff214f;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading p {
+  font-size: 14px;
+  max-width: 483px;
+  width: 100%;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.5px;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading .md_pofo_image_banner__signature {
+  width: 250px;
+  height: auto;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading .md_pofo_image_banner__signature img {
+  width: 100px;
+  height: auto;
+  margin-top: 20px;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading .md_pofo_image_banner__author h5 {
+  font-size: 20px;
+  margin: 0;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading .md_pofo_image_banner__author p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading .md_pofo_image_banner__btn_wrapper {
+  width: 100%;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__heading .md_pofo_image_banner__btn_wrapper .md_pofo_image_banner__btn {
+  display: inline-block;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__media {
+  width: 50%;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__media::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__media .md-prime-block-control {
+  height: 100%;
+}

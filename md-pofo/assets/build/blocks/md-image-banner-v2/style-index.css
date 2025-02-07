@@ -1,0 +1,75 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-image-banner-v2/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-pofo-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading {
+  width: 50%;
+  padding: 54px;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 500;
+  width: 100%;
+  padding: 3px 0 0 0;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading p {
+  font-size: 14px;
+  max-width: 483px;
+  width: 100%;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: 0.5px;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading .md_pofo_image_banner_v2__list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading .md_pofo_image_banner_v2__list ul li {
+  position: relative;
+  padding: 0 0 10px 22px;
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading .md_pofo_image_banner_v2__list ul li::before {
+  content: "\f00c";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  font-family: "FontAwesome";
+  font-weight: 900;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading .md_pofo_image_banner_v2__btn_wrapper {
+  width: 100%;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__heading .md_pofo_image_banner_v2__btn_wrapper .md_pofo_image_banner_v2__btn {
+  display: inline-block;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__media {
+  width: 50%;
+  position: relative;
+}
+.md_pofo_video_header_section .md_pofo_image_banner_v2 .md_pofo_image_banner_v2__inner .md_pofo_image_banner_v2__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

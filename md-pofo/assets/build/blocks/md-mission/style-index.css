@@ -1,0 +1,71 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-mission/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-pofo-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_mission_block {
+  padding: 130px 0;
+}
+.md_mission_block .md_mission_block__heading {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 70px;
+}
+.md_mission_block .md_mission_block__heading p {
+  font-size: 16px;
+  line-height: 23px;
+  color: #ff214f;
+}
+.md_mission_block .md_mission_block__heading h2 {
+  font-weight: 300;
+  margin-bottom: 0px;
+  font-size: 25px;
+}
+.md_mission_block .md_mission_block__media {
+  display: flex;
+  gap: 20px;
+}
+.md_mission_block .md_mission_block__media .md_media_image {
+  width: 66%;
+}
+.md_mission_block .md_mission_block__media .md_media_image img {
+  width: 100%;
+  border-radius: 10px;
+}
+.md_mission_block .md_mission_block__media .md_media_image1 {
+  width: 33%;
+}
+.md_mission_block .md_mission_block__media .md_media_image1 img {
+  width: 100%;
+  border-radius: 10px;
+}
+.md_mission_block .md_mission_block__content {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_mission_block .md_mission_block__content .md_mission_block__media_content {
+  align-items: stretch;
+  display: flex;
+  width: 33.3333333333%;
+  font-size: 20px;
+  line-height: 26px;
+}
+.md_mission_block .md_mission_block__content .md_mission_block__our_approach, .md_mission_block .md_mission_block__content .md_mission_block__our_mission {
+  width: 33.3333333333%;
+}
+.md_mission_block .md_mission_block__content .md_mission_block__our_approach h3, .md_mission_block .md_mission_block__content .md_mission_block__our_mission h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.md_mission_block .md_mission_block__content .md_mission_block__our_approach div, .md_mission_block .md_mission_block__content .md_mission_block__our_mission div {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

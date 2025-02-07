@@ -1,0 +1,67 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-pofo-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+.md_mission_block {
+    padding: 130px 0;
+    .md_mission_block__heading {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 70px;
+        p {
+            font-size: 16px;
+            line-height: 23px;
+            color: #ff214f;
+        }
+        h2 {
+            font-weight: 300;
+            margin-bottom: 0px;
+            font-size: 25px;
+        }
+    }
+    .md_mission_block__media {
+        display: flex;
+        gap: 20px;
+        .md_media_image {
+            width: 66%;
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+        .md_media_image1 {
+            width: 33%;
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+        }
+    }
+    .md_mission_block__content {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        .md_mission_block__media_content {
+            align-items: stretch;
+            display: flex;
+            width: calc(100% / 3);
+            font-size: 20px;
+            line-height: 26px;
+        }
+        .md_mission_block__our_approach, .md_mission_block__our_mission {
+            width: calc(100% / 3);
+            h3 {
+                font-size: 14px;
+                font-weight: 500;
+                margin: 0;
+            }
+            div {
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+    }
+}

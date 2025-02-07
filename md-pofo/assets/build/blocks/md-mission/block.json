@@ -1,0 +1,118 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-pofo/md-mission",
+  "version": "0.1.0",
+  "title": "MD Mission",
+  "apiVersion": 3,
+  "category": "md-pofo",
+  "icon": "lock",
+  "description": "A block that displays a mission statement",
+  "keywords": [
+    "mission",
+    "statement"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-pofo",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaImage1": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaContent": {
+      "type": "string",
+      "default": ""
+    },
+    "ourApproachHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "ourApproachContent": {
+      "type": "string",
+      "default": ""
+    },
+    "ourMissionHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "ourMissionContent": {
+      "type": "string",
+      "default": ""
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMediaContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showOurApproach": {
+      "type": "boolean",
+      "default": true
+    },
+    "showOurMission": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMediaImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMediaImage1": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ourApproachHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ourApproachContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ourMissionHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "ourMissionContentColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

@@ -1,0 +1,161 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-card-block/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-pofo-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_card_block {
+  padding: 20px 0;
+  z-index: 9;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+.md_card_block .md_card_block__heading h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+.md_card_block .md_card_block__heading h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+.md_card_block .md_card_block__heading p {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin: 10px;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .md-pofomd_card_block__item-card__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .md-pofomd_card_block__item-card__wrapper h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .md-pofomd_card_block__item-card__wrapper .image-text {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .md-pofomd_card_block__item-card__wrapper .read-more {
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .md-pofomd_card_block__item-card__wrapper .read-more a {
+  color: inherit;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .feature-box-content {
+  position: relative;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .feature-box-image {
+  transform: rotateY(0deg);
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .feature-box-image img {
+  width: 100%;
+  height: auto;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .hover-content,
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .feature-box-image {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: ease-in-out 0.4s;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .hover-content {
+  right: 0;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transform: rotateX(180deg);
+  width: 100%;
+  opacity: 0;
+  padding-right: 12%;
+  padding-left: 12%;
+  display: flex;
+  align-items: center;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .hover-content p {
+  font-size: 14px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .feature-box-content:hover .feature-box-image {
+  transform: rotateX(180deg);
+  opacity: 0;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card .feature-box-15 .feature-box-content:hover .hover-content {
+  transform: rotateX(0deg);
+  opacity: 1;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card.left .md-pofomd_card_block__item-card__wrapper {
+  align-items: flex-start;
+  text-align: right;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card.left .md-pofomd_card_block__item-card__wrapper-card {
+  padding-right: 0;
+}
+.md_card_block .md_card_block__slider_wrap .md_card_block__slider .logo-slide .md-pofomd_card_block__item-card.right .md-pofomd_card_block__item-card__wrapper {
+  align-items: flex-end;
+  text-align: left;
+}
+.md_card_block .md_card_block__slider_wrap.style2 .md-pofomd_card_block__item-card__wrapper {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  align-items: flex-start !important;
+}
+.md_card_block .md_card_block__slider_wrap.style2 .md-pofomd_card_block__item-card__wrapper-card {
+  width: 20%;
+  padding-top: 0 !important;
+}
+.md_card_block .md_card_block__slider_wrap.style2 .md-pofomd_card_block__item-card__wrapper-text {
+  width: calc(80% - 20px);
+}
+.md_card_block .md_card_block__button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.md_card_block .md_card_block__button p {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.md_card_block .md_card_block__button p a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.md_card_block.left {
+  text-align: right;
+}
+.md_card_block.right {
+  text-align: left;
+}

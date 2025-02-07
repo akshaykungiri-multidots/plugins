@@ -1,0 +1,123 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-pofo/md-image-banner-v2",
+  "version": "0.1.0",
+  "title": "MD Image Banner V2",
+  "apiVersion": 3,
+  "category": "md-pofo",
+  "icon": "format-image",
+  "description": "A block that displays a banner with an image, text, button and icon boxes",
+  "keywords": [
+    "md-pofo",
+    "pofo_md-image-banner-v2"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true
+  },
+  "textdomain": "md-pofo",
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonLink": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "listItems": {
+      "type": "array",
+      "default": []
+    },
+    "showList": {
+      "type": "boolean",
+      "default": true
+    },
+    "listItemColor": {
+      "type": "string",
+      "default": ""
+    },
+    "listItemIconColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

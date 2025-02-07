@@ -1,0 +1,87 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-pofo-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_pofo_video_header_section {
+  .md_pofo_image_banner {
+    .md_pofo_image_banner__inner {
+      display: flex;
+      flex-wrap: wrap;
+      .md_pofo_image_banner__heading {
+        width: 50%;
+        padding: 54px;
+        h4 {
+          margin: 0;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 24px;
+          margin-bottom: 10px;
+        }
+        .md_pofo_image_banner__title, h2 {
+          .md_pofo_image_banner__quote {
+            color: #ff214f;
+          }
+          font-size: 32px;
+          line-height: 1.2;
+          font-weight: 700;
+          width: 100%;
+          padding: 3px 0 0 0;
+          margin-top: 0;
+        }
+        p {
+          font-size: 14px;
+          max-width: 483px;
+          width: 100%;
+          line-height: 1.6;
+          margin: 0 0 1.5rem 0;
+          letter-spacing: .5px;
+        }
+        .md_pofo_image_banner__signature {
+          width: 250px;
+          height: auto;
+          img {
+            width: 100px;
+            height: auto;
+            margin-top: 20px;
+          }
+        }
+        .md_pofo_image_banner__author {
+          h5 {
+            font-size: 20px;
+            margin: 0;
+          }
+          p {
+            font-size: 14px;
+            font-weight: 400;
+            margin: 0;
+          }
+        }
+        .md_pofo_image_banner__btn_wrapper {
+          width: 100%;
+          .md_pofo_image_banner__btn {
+            display: inline-block;
+          }
+        }
+      }
+      .md_pofo_image_banner__media {
+        width: 50%;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 100%;
+        }
+        .md-prime-block-control {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

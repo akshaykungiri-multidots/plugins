@@ -1,0 +1,170 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-pofo-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_pofo_text_video_wrap {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .md_pofo_text_video {
+    background-position: center !important;
+    background-size: cover !important;
+    background-blend-mode: normal;
+    position: relative;
+    .md_pofo_text_video__inner {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      gap: 30px;
+      align-items: center;
+      padding: 60px 0;
+      .md_pofo_text_video__heading {
+        max-width: 50%;
+        width: 100%;
+        text-align: center;
+        h3 {
+          gap: 2px;
+          font-weight: 700;
+          line-height: 1.4em;
+          margin: 0 0 20px;
+          font-size: 40px;
+          span,
+          .md_pofo_text_video__typing {
+            color: inherit;
+          }
+        }
+      }
+      .md_pofo_text_video__youtube {
+        max-width: 20%;
+        width: 100%;
+        text-align: center;
+        .md_pofo_text_video__youtube_icon {
+          button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            text-align: center;
+          }
+        }
+        .video_section_wrapper {
+          .item-action-wrap {
+            z-index: 99;
+          }
+          .image-preview {
+            position: relative;
+          }
+          iframe {
+            width: 100%;
+            min-height: 300px;
+            height: 100%;
+          }
+          video {
+            width: 100%;
+            height: auto;
+          }
+          .media-and-text__video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 10;
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+    }
+  }
+  .md_pofo_text_video__footer {
+    margin-top: 46px;
+    padding: 20px 15px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    p {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+  .md_pofo_text_video_overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+  }
+}
+.pofo_video_popup__wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  overflow: auto;
+  display: none;
+  align-items: center;
+  &.show-popup {
+    display: block;
+  }
+  .pofo_video_popup__inner {
+    max-width: 970px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    padding: 60px;
+    max-height: 90vh;
+    overflow: auto;
+    i.close-popup {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      &::before {
+        background: #fff;
+        border-radius: 50%;
+      }
+    }
+    .pofo_video_popup__inner-content {
+      .pofo_video_popup__inner-content-heading {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px 30px;
+        .pofo_video_popup__inner-content-img-wrap {
+          width: 200px;
+          img {
+            width: 100%;
+            height: auto;
+            -o-object-fit: cover;
+            object-fit: cover;
+          }
+        }
+        .pofo_video_popup__inner-content-heading-text {
+          width: calc(100% - 230px);
+          .leadershipName {
+            font-size: 32px;
+            font-weight: 700;
+          }
+          .leadershipHeading {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
