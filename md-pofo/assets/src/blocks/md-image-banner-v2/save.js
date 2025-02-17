@@ -47,7 +47,6 @@ export default function save({ attributes }) {
     listItems,
     showList,
     listItemColor,
-    listItemIconColor,
   } = attributes;
 
   return (

@@ -67,7 +67,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     listItems,
     showList,
     listItemColor,
-    listItemIconColor,
   } = attributes;
 
   const siteURL = window.location.origin;
@@ -283,12 +282,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                   setAttributes({ listItemColor: colorValue }),
                 label: __("List Item Color", "md-pofo"),
               },
-              {
-                value: listItemIconColor,
-                onChange: (colorValue) =>
-                  setAttributes({ listItemIconColor: colorValue }),
-                label: __("List Item Icon Color", "md-pofo"),
-              },
             ]}
           />
         </PanelBody>
@@ -479,7 +472,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
               <div className="md_pofo_image_banner_v2__btn_wrapper">
                 {showButton && (
                   <div className="md_pofo_image_banner_v2__btn md_btn md_btn-black md_btn-medium xs-margin-two-all border-radius-4 first-btn">
-                    <i className="fa fa-play-circle" aria-hidden="true" style={{ color: listItemIconColor }}></i>
+                    <i className="fa fa-play-circle" aria-hidden="true"></i>
                     <RichText
                       className=""
                       tagName="span"

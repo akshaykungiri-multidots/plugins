@@ -57,7 +57,6 @@ export default function Edit({ attributes, setAttributes }) {
     showLogos,
     showLogosTitle,
     showLogosDescription,
-    showLogosIcon,
     showLogosReadMore,
     numberOfLogosPerRow,
     logosAlignment,
@@ -199,11 +198,6 @@ export default function Edit({ attributes, setAttributes }) {
             label={__("Show Logos Description", "md-logo-slider")}
             checked={showLogosDescription}
             onChange={(value) => setAttributes({ showLogosDescription: value })}
-          />
-          <ToggleControl
-            label={__("Show Logos Icon", "md-logo-slider")}
-            checked={showLogosIcon}
-            onChange={(value) => setAttributes({ showLogosIcon: value })}
           />
           <ToggleControl
             label={__("Show Logos Read More", "md-logo-slider")}

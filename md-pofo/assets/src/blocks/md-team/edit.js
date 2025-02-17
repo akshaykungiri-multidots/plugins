@@ -16,7 +16,6 @@ import {
   Tooltip,
   RangeControl,
   ToggleControl,
-  SelectControl,
   TextControl,
 } from "@wordpress/components";
 

@@ -57,7 +57,6 @@ export default function Edit({ attributes, setAttributes }) {
     logosTitleColor,
     logosDescriptionColor,
     logoCardColor,
-    logoCardBackgroundColor,
     logosSubTitleColor,
     showLogos,
     showLogosTitle,
@@ -285,12 +284,6 @@ export default function Edit({ attributes, setAttributes }) {
                   setAttributes({ buttonBackgroundColor: newColor }),
                 label: __("Button Background Color", "md-logo-slider"),
               },
-              {
-                value: logoCardBackgroundColor,
-                onChange: (newColor) =>
-                  setAttributes({ logoCardBackgroundColor: newColor }),
-                label: __("Logo Card Background Color", "md-logo-slider"),
-              },
             ]}
           />
         </PanelBody>
@@ -433,7 +426,6 @@ export default function Edit({ attributes, setAttributes }) {
                       }
                       style={{
                         border: enableBorder ? "1px solid" : "none",
-                        backgroundColor: logoCardBackgroundColor,
                       }}
                     >
                       <div className="md-pofomd_card_block__item-card__wrapper feature-box-15">

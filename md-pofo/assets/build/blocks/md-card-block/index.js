@@ -465,7 +465,6 @@ function Edit({
     logosTitleColor,
     logosDescriptionColor,
     logoCardColor,
-    logoCardBackgroundColor,
     logosSubTitleColor,
     showLogos,
     showLogosTitle,
@@ -694,12 +693,6 @@ function Edit({
               buttonBackgroundColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Background Color", "md-logo-slider")
-          }, {
-            value: logoCardBackgroundColor,
-            onChange: newColor => setAttributes({
-              logoCardBackgroundColor: newColor
-            }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Logo Card Background Color", "md-logo-slider")
           }]
         })
       })]
@@ -819,8 +812,7 @@ function Edit({
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               className: "md-pofomd_card_block__item-card " + logosAlignment,
               style: {
-                border: enableBorder ? "1px solid" : "none",
-                backgroundColor: logoCardBackgroundColor
+                border: enableBorder ? "1px solid" : "none"
               },
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                 className: "md-pofomd_card_block__item-card__wrapper feature-box-15",
@@ -1091,7 +1083,6 @@ function save({
     logosTitleColor,
     logosDescriptionColor,
     logoCardColor,
-    logoCardBackgroundColor,
     logosSubTitleColor,
     showLogos,
     showLogosTitle,
@@ -1300,7 +1291,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-card-block","version":"0.1.0","title":"MD Card Block","apiVersion":3,"category":"md-pofo","card":"star-filled","description":"A block to display a logo with text.","keywords":["md-pofo","md-card-block"],"supports":{"html":false},"textdomain":"md-pofo","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"description":{"type":"string","default":""},"showSubHeading":{"type":"boolean","default":true},"showHeading":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true},"subHeadingColor":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"logos":{"type":"array","default":[]},"enableBorder":{"type":"boolean","default":false},"logosTitleColor":{"type":"string","default":""},"logosDescriptionColor":{"type":"string","default":""},"logoCardColor":{"type":"string","default":""},"logoCardBackgroundColor":{"type":"string","default":""},"logosSubTitleColor":{"type":"string","default":""},"showLogos":{"type":"boolean","default":true},"showLogosTitle":{"type":"boolean","default":true},"showLogosDescription":{"type":"boolean","default":true},"showCardImage":{"type":"boolean","default":true},"showLogosSubTitle":{"type":"boolean","default":true},"numberOfLogosPerRow":{"type":"number","default":3},"logosAlignment":{"type":"string","default":"center"},"buttonText":{"type":"string","default":""},"showButton":{"type":"boolean","default":true},"buttonColor":{"type":"string","default":""},"buttonBackgroundColor":{"type":"string","default":""},"logoStyle":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-card-block","version":"0.1.0","title":"MD Card Block","apiVersion":3,"category":"md-pofo","card":"star-filled","description":"A block to display a logo with text.","keywords":["md-pofo","md-card-block"],"supports":{"html":false},"textdomain":"md-pofo","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"description":{"type":"string","default":""},"showSubHeading":{"type":"boolean","default":true},"showHeading":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true},"subHeadingColor":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"logos":{"type":"array","default":[]},"enableBorder":{"type":"boolean","default":false},"logosTitleColor":{"type":"string","default":""},"logosDescriptionColor":{"type":"string","default":""},"logoCardColor":{"type":"string","default":""},"logosSubTitleColor":{"type":"string","default":""},"showLogos":{"type":"boolean","default":true},"showLogosTitle":{"type":"boolean","default":true},"showLogosDescription":{"type":"boolean","default":true},"showCardImage":{"type":"boolean","default":true},"showLogosSubTitle":{"type":"boolean","default":true},"numberOfLogosPerRow":{"type":"number","default":3},"logosAlignment":{"type":"string","default":"center"},"buttonText":{"type":"string","default":""},"showButton":{"type":"boolean","default":true},"buttonColor":{"type":"string","default":""},"buttonBackgroundColor":{"type":"string","default":""},"logoStyle":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

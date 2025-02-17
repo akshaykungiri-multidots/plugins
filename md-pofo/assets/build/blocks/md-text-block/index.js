@@ -463,8 +463,6 @@ function Edit({
     logosSubTitleColor,
     logosTitleColor,
     logosDescriptionColor,
-    logoIconColor,
-    logoIconBackgroundColor,
     logosReadMoreColor,
     showLogos,
     showLogosSubTitle,
@@ -664,12 +662,6 @@ function Edit({
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Logos Description Color", "md-logo-slider")
           }, {
-            value: logoIconColor,
-            onChange: newColor => setAttributes({
-              logoIconColor: newColor
-            }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Logo Icon Color", "md-logo-slider")
-          }, {
             value: logosReadMoreColor,
             onChange: newColor => setAttributes({
               logosReadMoreColor: newColor
@@ -705,12 +697,6 @@ function Edit({
               buttonBackgroundColor: newColor
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Background Color", "md-logo-slider")
-          }, {
-            value: logoIconBackgroundColor,
-            onChange: newColor => setAttributes({
-              logoIconBackgroundColor: newColor
-            }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Logo Icon Background Color", "md-logo-slider")
           }]
         })
       })]
@@ -1033,15 +1019,14 @@ function save({
     descriptionColor,
     logos,
     enableBorder,
+    logosSubTitleColor,
     logosTitleColor,
     logosDescriptionColor,
-    logoIconColor,
-    logoIconBackgroundColor,
     logosReadMoreColor,
     showLogos,
+    showLogosSubTitle,
     showLogosTitle,
     showLogosDescription,
-    showLogosIcon,
     showLogosReadMore,
     numberOfLogosPerRow,
     logosAlignment,
@@ -1100,15 +1085,16 @@ function save({
                 className: "md-pofomd_text_block__item-icon__wrapper",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
                   className: "md-pofomd_text_block__item-icon__wrapper-heading",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-                    className: "number-list",
-                    style: {
-                      color: logoIconColor,
-                      backgroundColor: logoIconBackgroundColor
-                    },
-                    children: String(index + 1).padStart(2, "0")
-                  }), showLogosTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                  children: [showLogosSubTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
                     tagName: "h4",
+                    className: "image-sub-title",
+                    value: postObj.iconSubtitle,
+                    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Image Sub Title", "md-prime"),
+                    style: {
+                      color: logosSubTitleColor
+                    }
+                  }), showLogosTitle && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
+                    tagName: "h2",
                     className: "image-title",
                     value: postObj.iconTitle,
                     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Image Title", "md-prime"),
@@ -1229,7 +1215,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-text-block","version":"0.1.0","title":"MD Text Block","apiVersion":3,"category":"md-pofo","icon":"star-filled","description":"A block to display text with paragraph","keywords":["md-pofo","md-text-block"],"supports":{"html":false},"textdomain":"md-pofo","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"description":{"type":"string","default":""},"showSubHeading":{"type":"boolean","default":true},"showHeading":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true},"subHeadingColor":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"logos":{"type":"array","default":[]},"enableBorder":{"type":"boolean","default":false},"logosSubTitleColor":{"type":"string","default":""},"logosTitleColor":{"type":"string","default":""},"logosDescriptionColor":{"type":"string","default":""},"logoIconColor":{"type":"string","default":""},"logoIconBackgroundColor":{"type":"string","default":""},"logosReadMoreColor":{"type":"string","default":""},"showLogos":{"type":"boolean","default":true},"showLogosSubTitle":{"type":"boolean","default":true},"showLogosTitle":{"type":"boolean","default":true},"showLogosDescription":{"type":"boolean","default":true},"showLogosIcon":{"type":"boolean","default":true},"showLogosReadMore":{"type":"boolean","default":true},"numberOfLogosPerRow":{"type":"number","default":3},"logosAlignment":{"type":"string","default":"center"},"buttonText":{"type":"string","default":""},"showButton":{"type":"boolean","default":true},"buttonColor":{"type":"string","default":""},"buttonBackgroundColor":{"type":"string","default":""},"logoStyle":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-text-block","version":"0.1.0","title":"MD Text Block","apiVersion":3,"category":"md-pofo","icon":"star-filled","description":"A block to display text with paragraph","keywords":["md-pofo","md-text-block"],"supports":{"html":false},"textdomain":"md-pofo","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"description":{"type":"string","default":""},"showSubHeading":{"type":"boolean","default":true},"showHeading":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true},"subHeadingColor":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"logos":{"type":"array","default":[]},"enableBorder":{"type":"boolean","default":false},"logosSubTitleColor":{"type":"string","default":""},"logosTitleColor":{"type":"string","default":""},"logosDescriptionColor":{"type":"string","default":""},"logosReadMoreColor":{"type":"string","default":""},"showLogos":{"type":"boolean","default":true},"showLogosSubTitle":{"type":"boolean","default":true},"showLogosTitle":{"type":"boolean","default":true},"showLogosDescription":{"type":"boolean","default":true},"showLogosIcon":{"type":"boolean","default":true},"showLogosReadMore":{"type":"boolean","default":true},"numberOfLogosPerRow":{"type":"number","default":3},"logosAlignment":{"type":"string","default":"center"},"buttonText":{"type":"string","default":""},"showButton":{"type":"boolean","default":true},"buttonColor":{"type":"string","default":""},"buttonBackgroundColor":{"type":"string","default":""},"logoStyle":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

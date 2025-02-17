@@ -42,7 +42,6 @@ export default function save({ attributes }) {
     showLogos,
     showLogosTitle,
     showLogosDescription,
-    showLogosIcon,
     showLogosReadMore,
     numberOfLogosPerRow,
     logosAlignment,

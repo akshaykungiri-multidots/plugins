@@ -206,7 +206,7 @@ module.exports = window["wp"]["i18n"];
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-breadcrumb","version":"0.1.0","title":"MD Breadcrumb","apiVersion":3,"category":"md-pofo","icon":"star-filled","description":"This is a sample block with dynamic content.","keywords":["breadcrumb","md-pofo"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-pofo","attributes":{"heading":{"type":"string","default":"This is Default Heading"}},"editorScript":"file:./index.js","viewScript":["file:./view.js"],"editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-breadcrumb","version":"0.1.0","title":"MD Breadcrumb","apiVersion":3,"category":"md-pofo","icon":"star-filled","description":"This is a sample block with dynamic content.","keywords":["breadcrumb","md-pofo"],"supports":{"html":false,"align":["wide","full"]},"textdomain":"md-pofo","attributes":{"heading":{"type":"string","default":"This is Default Heading"}},"editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

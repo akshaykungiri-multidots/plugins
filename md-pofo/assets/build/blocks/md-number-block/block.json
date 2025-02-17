@@ -92,10 +92,6 @@
       "type": "boolean",
       "default": true
     },
-    "showLogosIcon": {
-      "type": "boolean",
-      "default": true
-    },
     "showLogosReadMore": {
       "type": "boolean",
       "default": true

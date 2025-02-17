@@ -477,8 +477,7 @@ function Edit({
     contentBackgroundColor,
     listItems,
     showList,
-    listItemColor,
-    listItemIconColor
+    listItemColor
   } = attributes;
   const siteURL = window.location.origin;
   const addStaticPostObj = () => {
@@ -681,12 +680,6 @@ function Edit({
               listItemColor: colorValue
             }),
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("List Item Color", "md-pofo")
-          }, {
-            value: listItemIconColor,
-            onChange: colorValue => setAttributes({
-              listItemIconColor: colorValue
-            }),
-            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("List Item Icon Color", "md-pofo")
           }]
         })
       })]
@@ -857,10 +850,7 @@ function Edit({
                 className: "md_pofo_image_banner_v2__btn md_btn md_btn-black md_btn-medium xs-margin-two-all border-radius-4 first-btn",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
                   className: "fa fa-play-circle",
-                  "aria-hidden": "true",
-                  style: {
-                    color: listItemIconColor
-                  }
+                  "aria-hidden": "true"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                   className: "",
                   tagName: "span",
@@ -1076,8 +1066,7 @@ function save({
     contentBackgroundColor,
     listItems,
     showList,
-    listItemColor,
-    listItemIconColor
+    listItemColor
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
@@ -1272,7 +1261,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-image-banner-v2","version":"0.1.0","title":"MD Image Banner V2","apiVersion":3,"category":"md-pofo","icon":"format-image","description":"A block that displays a banner with an image, text, button and icon boxes","keywords":["md-pofo","pofo_md-image-banner-v2"],"supports":{"html":false,"align":["wide","full"],"anchor":true},"textdomain":"md-pofo","attributes":{"blockId":{"type":"string","default":""},"subTitle":{"type":"string","default":""},"title":{"type":"string","default":""},"headingContent":{"type":"string","default":""},"buttonLink":{"type":"string","default":""},"mediaPosition":{"type":"string","default":""},"backgroundColor":{"type":"string","default":""},"subTitleColor":{"type":"string","default":""},"titleColor":{"type":"string","default":""},"headingContentColor":{"type":"string","default":""},"showSubTitle":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"showHeadingContent":{"type":"boolean","default":true},"showButton":{"type":"boolean","default":true},"mediaImage":{"type":"string","default":""},"buttonColor":{"type":"string","default":""},"buttonBackgroundColor":{"type":"string","default":""},"buttonHoverColor":{"type":"string","default":""},"buttonHoverBackgroundColor":{"type":"string","default":""},"contentBackgroundColor":{"type":"string","default":""},"listItems":{"type":"array","default":[]},"showList":{"type":"boolean","default":true},"listItemColor":{"type":"string","default":""},"listItemIconColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-image-banner-v2","version":"0.1.0","title":"MD Image Banner V2","apiVersion":3,"category":"md-pofo","icon":"format-image","description":"A block that displays a banner with an image, text, button and icon boxes","keywords":["md-pofo","pofo_md-image-banner-v2"],"supports":{"html":false,"align":["wide","full"],"anchor":true},"textdomain":"md-pofo","attributes":{"blockId":{"type":"string","default":""},"subTitle":{"type":"string","default":""},"title":{"type":"string","default":""},"headingContent":{"type":"string","default":""},"buttonLink":{"type":"string","default":""},"mediaPosition":{"type":"string","default":""},"backgroundColor":{"type":"string","default":""},"subTitleColor":{"type":"string","default":""},"titleColor":{"type":"string","default":""},"headingContentColor":{"type":"string","default":""},"showSubTitle":{"type":"boolean","default":true},"showTitle":{"type":"boolean","default":true},"showHeadingContent":{"type":"boolean","default":true},"showButton":{"type":"boolean","default":true},"mediaImage":{"type":"string","default":""},"buttonColor":{"type":"string","default":""},"buttonBackgroundColor":{"type":"string","default":""},"buttonHoverColor":{"type":"string","default":""},"buttonHoverBackgroundColor":{"type":"string","default":""},"contentBackgroundColor":{"type":"string","default":""},"listItems":{"type":"array","default":[]},"showList":{"type":"boolean","default":true},"listItemColor":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

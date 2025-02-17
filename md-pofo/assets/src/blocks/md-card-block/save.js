@@ -37,7 +37,6 @@ export default function save({ attributes }) {
     logosTitleColor,
     logosDescriptionColor,
     logoCardColor,
-    logoCardBackgroundColor,
     logosSubTitleColor,
     showLogos,
     showLogosTitle,

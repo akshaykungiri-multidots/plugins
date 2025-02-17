@@ -468,7 +468,6 @@ function Edit({
     showLogos,
     showLogosTitle,
     showLogosDescription,
-    showLogosIcon,
     showLogosReadMore,
     numberOfLogosPerRow,
     logosAlignment,
@@ -611,12 +610,6 @@ function Edit({
           checked: showLogosDescription,
           onChange: value => setAttributes({
             showLogosDescription: value
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Logos Icon", "md-logo-slider"),
-          checked: showLogosIcon,
-          onChange: value => setAttributes({
-            showLogosIcon: value
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Show Logos Read More", "md-logo-slider"),
@@ -1024,7 +1017,6 @@ function save({
     showLogos,
     showLogosTitle,
     showLogosDescription,
-    showLogosIcon,
     showLogosReadMore,
     numberOfLogosPerRow,
     logosAlignment,
@@ -1212,7 +1204,7 @@ module.exports = window["wp"]["i18n"];
   \***********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-number-block","version":"0.1.0","title":"MD Number Block","apiVersion":3,"category":"md-pofo","icon":"star-filled","description":"A block to display a number with text.","keywords":["md-pofo","md-number-block"],"supports":{"html":false},"textdomain":"md-pofo","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"description":{"type":"string","default":""},"showSubHeading":{"type":"boolean","default":true},"showHeading":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true},"subHeadingColor":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"logos":{"type":"array","default":[]},"enableBorder":{"type":"boolean","default":false},"logosTitleColor":{"type":"string","default":""},"logosDescriptionColor":{"type":"string","default":""},"logoIconColor":{"type":"string","default":""},"logoIconBackgroundColor":{"type":"string","default":""},"logosReadMoreColor":{"type":"string","default":""},"showLogos":{"type":"boolean","default":true},"showLogosTitle":{"type":"boolean","default":true},"showLogosDescription":{"type":"boolean","default":true},"showLogosIcon":{"type":"boolean","default":true},"showLogosReadMore":{"type":"boolean","default":true},"numberOfLogosPerRow":{"type":"number","default":3},"logosAlignment":{"type":"string","default":"center"},"buttonText":{"type":"string","default":""},"showButton":{"type":"boolean","default":true},"buttonColor":{"type":"string","default":""},"buttonBackgroundColor":{"type":"string","default":""},"logoStyle":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","name":"md-pofo/md-number-block","version":"0.1.0","title":"MD Number Block","apiVersion":3,"category":"md-pofo","icon":"star-filled","description":"A block to display a number with text.","keywords":["md-pofo","md-number-block"],"supports":{"html":false},"textdomain":"md-pofo","attributes":{"subHeading":{"type":"string","default":""},"heading":{"type":"string","default":""},"description":{"type":"string","default":""},"showSubHeading":{"type":"boolean","default":true},"showHeading":{"type":"boolean","default":true},"showDescription":{"type":"boolean","default":true},"subHeadingColor":{"type":"string","default":""},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"logos":{"type":"array","default":[]},"enableBorder":{"type":"boolean","default":false},"logosTitleColor":{"type":"string","default":""},"logosDescriptionColor":{"type":"string","default":""},"logoIconColor":{"type":"string","default":""},"logoIconBackgroundColor":{"type":"string","default":""},"logosReadMoreColor":{"type":"string","default":""},"showLogos":{"type":"boolean","default":true},"showLogosTitle":{"type":"boolean","default":true},"showLogosDescription":{"type":"boolean","default":true},"showLogosReadMore":{"type":"boolean","default":true},"numberOfLogosPerRow":{"type":"number","default":3},"logosAlignment":{"type":"string","default":"center"},"buttonText":{"type":"string","default":""},"showButton":{"type":"boolean","default":true},"buttonColor":{"type":"string","default":""},"buttonBackgroundColor":{"type":"string","default":""},"logoStyle":{"type":"string","default":""}},"editorScript":"file:./index.js","style":"file:./style-index.css"}');
 
 /***/ })
 

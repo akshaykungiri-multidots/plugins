@@ -48,7 +48,7 @@ export default function save({ attributes }) {
 
   return (
     <div {...useBlockProps.save({ className: "md_pofo_video_header_section" })}>
-      <div className={`md_pofo_image_banner_wrap`}>
+      <div className={`md_pofo_image_banner_wrap` + (mediaImage ? " has-media" : "")}>
         <style>
           {`
             .md_pofo_image_banner__btn {

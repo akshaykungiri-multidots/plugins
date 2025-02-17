@@ -60,4 +60,9 @@
       }
     }
   }
+  .md_pofo_image_banner_wrap:not(.has-media) {
+    .md_pofo_image_banner__heading {
+      width: 100%;
+    }
+  }
 }

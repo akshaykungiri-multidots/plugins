@@ -52,8 +52,6 @@ export default function Edit({ attributes, setAttributes }) {
     logosSubTitleColor,
     logosTitleColor,
     logosDescriptionColor,
-    logoIconColor,
-    logoIconBackgroundColor,
     logosReadMoreColor,
     showLogos,
     showLogosSubTitle,
@@ -250,12 +248,6 @@ export default function Edit({ attributes, setAttributes }) {
                 label: __("Logos Description Color", "md-logo-slider"),
               },
               {
-                value: logoIconColor,
-                onChange: (newColor) =>
-                  setAttributes({ logoIconColor: newColor }),
-                label: __("Logo Icon Color", "md-logo-slider"),
-              },
-              {
                 value: logosReadMoreColor,
                 onChange: (newColor) =>
                   setAttributes({ logosReadMoreColor: newColor }),
@@ -290,12 +282,6 @@ export default function Edit({ attributes, setAttributes }) {
                 onChange: (newColor) =>
                   setAttributes({ buttonBackgroundColor: newColor }),
                 label: __("Button Background Color", "md-logo-slider"),
-              },
-              {
-                value: logoIconBackgroundColor,
-                onChange: (newColor) =>
-                  setAttributes({ logoIconBackgroundColor: newColor }),
-                label: __("Logo Icon Background Color", "md-logo-slider"),
               },
             ]}
           />

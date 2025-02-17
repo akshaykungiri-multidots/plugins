@@ -245,7 +245,7 @@ export default function Edit({ attributes, setAttributes }) {
           />
         </PanelBody>
       </InspectorControls>
-      <div className={`md_pofo_image_banner_wrap`}>
+      <div className={`md_pofo_image_banner_wrap` + (mediaImage ? " has-image" : "")}>
         <style>
           {`
             .md_pofo_image_banner__btn {

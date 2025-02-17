@@ -638,7 +638,7 @@ function Edit({
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: `md_pofo_image_banner_wrap`,
+      className: `md_pofo_image_banner_wrap` + (mediaImage ? " has-image" : ""),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("style", {
         children: `
             .md_pofo_image_banner__btn {
@@ -915,7 +915,7 @@ function save({
       className: "md_pofo_video_header_section"
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: `md_pofo_image_banner_wrap`,
+      className: `md_pofo_image_banner_wrap` + (mediaImage ? " has-media" : ""),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("style", {
         children: `
             .md_pofo_image_banner__btn {

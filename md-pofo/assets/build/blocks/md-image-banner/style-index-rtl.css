@@ -59,3 +59,6 @@
 .md_pofo_video_header_section .md_pofo_image_banner .md_pofo_image_banner__inner .md_pofo_image_banner__media .md-prime-block-control {
   height: 100%;
 }
+.md_pofo_video_header_section .md_pofo_image_banner_wrap:not(.has-media) .md_pofo_image_banner__heading {
+  width: 100%;
+}

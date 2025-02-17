@@ -72,10 +72,6 @@
       "type": "string",
       "default": ""
     },
-    "logoCardBackgroundColor": {
-      "type": "string",
-      "default": ""
-    },
     "logosSubTitleColor": {
       "type": "string",
       "default": ""

@@ -154,7 +154,7 @@ export default function save({ attributes }) {
             <div
               className="md_pofo_image_banner__media"
               style={{
-                backgroundImage: `url(${mediaImage || siteURL + placeholder})`,
+                backgroundImage: `url(${mediaImage})`,
               }}
             >
               <div className="md-prime-block-control image-preview image-controle-visible-hover"></div>

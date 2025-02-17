@@ -1156,7 +1156,7 @@ function save({
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "md_pofo_image_banner__media",
             style: {
-              backgroundImage: `url(${mediaImage || siteURL + placeholder})`
+              backgroundImage: `url(${mediaImage})`
             },
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
               className: "md-prime-block-control image-preview image-controle-visible-hover"

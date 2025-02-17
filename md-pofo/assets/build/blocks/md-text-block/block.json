@@ -72,14 +72,6 @@
       "type": "string",
       "default": ""
     },
-    "logoIconColor": {
-      "type": "string",
-      "default": ""
-    },
-    "logoIconBackgroundColor": {
-      "type": "string",
-      "default": ""
-    },
     "logosReadMoreColor": {
       "type": "string",
       "default": ""

@@ -34,15 +34,14 @@ export default function save({ attributes }) {
     descriptionColor,
     logos,
     enableBorder,
+    logosSubTitleColor,
     logosTitleColor,
     logosDescriptionColor,
-    logoIconColor,
-    logoIconBackgroundColor,
     logosReadMoreColor,
     showLogos,
+    showLogosSubTitle,
     showLogosTitle,
     showLogosDescription,
-    showLogosIcon,
     showLogosReadMore,
     numberOfLogosPerRow,
     logosAlignment,
@@ -105,12 +104,18 @@ export default function save({ attributes }) {
                     >
                       <div className="md-pofomd_text_block__item-icon__wrapper">
                         <div className="md-pofomd_text_block__item-icon__wrapper-heading">
-                          <div className="number-list" style={{ color: logoIconColor, backgroundColor: logoIconBackgroundColor }}>
-                            {String(index + 1).padStart(2, "0")}
-                          </div>
-                          {showLogosTitle && (
+                          {showLogosSubTitle && (
                             <RichText.Content
                               tagName="h4"
+                              className="image-sub-title"
+                              value={postObj.iconSubtitle}
+                              placeholder={__("Image Sub Title", "md-prime")}
+                              style={{ color: logosSubTitleColor }}
+                            />
+                          )}
+                          {showLogosTitle && (
+                            <RichText.Content
+                              tagName="h2"
                               className="image-title"
                               value={postObj.iconTitle}
                               placeholder={__("Image Title", "md-prime")}
