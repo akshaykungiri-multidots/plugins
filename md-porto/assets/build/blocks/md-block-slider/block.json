@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-porto/md-block-slider",
+  "version": "0.1.0",
+  "title": "MD Block Slider",
+  "apiVersion": 3,
+  "category": "md-porto",
+  "icon": "format-gallery",
+  "description": "A block to display slider",
+  "keywords": [
+    "slider",
+    "md-porto"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-porto",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "This is Default Heading"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

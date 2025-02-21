@@ -1,0 +1,102 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-porto/md-image-block",
+  "version": "0.1.0",
+  "title": "MD Image Block",
+  "apiVersion": 3,
+  "category": "md-porto",
+  "icon": "index-card",
+  "description": "A flexible block that displays information in a image format, often used for showcasing services, features, or profiles with an image, title, and description.",
+  "keywords": [
+    "md-porto",
+    "md-image-block"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-porto",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "imageBlockStyle": {
+      "type": "string",
+      "default": "style1"
+    },
+    "imageBlockList": {
+      "type": "array",
+      "default": []
+    },
+    "subTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "imageTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "imageContentFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "imageLearnMoreFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfColumns": {
+      "type": "number",
+      "default": 3
+    },
+    "showImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLink": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

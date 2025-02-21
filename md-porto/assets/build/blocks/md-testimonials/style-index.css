@@ -1,0 +1,197 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-testimonials/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-porto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_porto_testimonials_wrap {
+  position: relative;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+  padding: 60px 0;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading {
+  width: 50%;
+  position: sticky;
+  top: 0;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading h4 {
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  background: linear-gradient(to right, #fff 0%, var(--wp--preset--color--secondary) 100%);
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+  color: var(--wp--preset--color--primary);
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading h2 {
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 3.5em;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__content {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #878898;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_primer_image_banner__year {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_primer_image_banner__year span {
+  position: relative;
+  display: block;
+  line-height: 1.1;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_primer_image_banner__year .md_porto_testimonials__year {
+  font-size: 80px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_primer_image_banner__year .md_porto_testimonials__year sup {
+  font-size: 80px;
+  top: -30px;
+  position: relative;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_primer_image_banner__year .md_porto_testimonials__year_sub {
+  font-size: 1.8em;
+  font-weight: 500;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__btn .md_btn {
+  padding: 1rem 2.2rem;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding-right: 5rem;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__btn .md_btn:before {
+  height: 40px;
+  width: 40px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__link_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__link_wrapper .md_porto_testimonials__link {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__link_wrapper .md_porto_testimonials__link a {
+  color: inherit;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__join_us {
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__heading .md_porto_testimonials__join_us p {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider {
+  width: 50%;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 45px;
+  margin: 50px 0;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__authorHeading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__authorHeading .md_customer_stories_grid_item__authoImage {
+  width: 100px;
+  height: 100px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__authorHeading .md_customer_stories_grid_item__authoImage img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__authorHeading .md_customer_stories_grid_item__authorDetails h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__authorHeading .md_customer_stories_grid_item__authorDetails p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__content p {
+  font-size: 17px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__ratingStars {
+  width: 50%;
+  display: flex;
+  gap: 5px;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__ratingStars p {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__ratingStars i {
+  font-size: 15px;
+  color: #f1c40f;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__dateOfTestimonial {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.md_porto_testimonials_wrap .md_porto_testimonials .md_porto_testimonials__inner .md_porto_testimonials__slider .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__dateOfTestimonial p {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  background-color: #242E45;
+  border-radius: 14px;
+  padding: 5px 10px;
+  text-align: right;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

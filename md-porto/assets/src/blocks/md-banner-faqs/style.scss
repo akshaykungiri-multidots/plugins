@@ -1,0 +1,148 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-porto-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+.md_porto_banner_faqs_wrap {
+    position: relative;
+    .md_porto_banner_faqs {
+      background-position: center !important;
+      background-size: cover !important;
+      background-blend-mode: normal;
+      padding: 60px 0;
+      .md_porto_banner_faqs__inner {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        .md_porto_banner_faqs__heading {
+          max-width: 50%;
+          width: 100%;
+          h4 {
+            font-size: .95em;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0 25px;
+            margin: 0;
+            background: linear-gradient(to right, #FFF 0%, var(--wp--preset--color--secondary) 100%);
+            display: inline-block;
+            line-height: 42px;
+            margin-bottom: 20px;
+            border-radius: 100px;
+            color: var(--wp--preset--color--primary);
+          }
+          h2 {
+            font-weight: 600;
+            line-height: 1;
+            margin: 0 0 20px;
+            color: #000;
+            font-size: 3.5em;
+          }
+          .md_porto_banner_faqs__content {
+            font-size: 16px;
+            font-family: "Poppins", sans-serif;
+            color: #878898;
+            margin-bottom: 1em;
+            font-weight: 400;
+          }
+          .md_primer_image_banner__year {
+            position: relative;
+            z-index: 9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            span {
+              position: relative;
+              display: block;
+              line-height: 1.1;
+            }
+            .md_porto_banner_faqs__year {
+              font-size: 80px;
+              font-weight: 700;
+              font-family: "Poppins", sans-serif;
+              sup {
+                font-size: 80px;
+                top: -30px;
+                position: relative;
+              }
+            }
+            .md_porto_banner_faqs__year_sub {
+              font-size: 1.8em;
+              font-weight: 500;
+              font-family: "Playfair Display", serif;
+              font-style: italic;
+            }
+          }
+          .md_porto_banner_faqs__btn {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            .md_btn {
+              padding: 1rem 2.2rem;
+              font-size: 0.9rem;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+              padding-right: 5rem;
+              &:before {
+                height: 40px;
+                width: 40px;
+              }
+            }
+          }
+          .md_porto_banner_faqs__link_wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .md_porto_banner_faqs__link {
+              font-size: 17px;
+              font-weight: 700;
+              margin-left: 5px;
+              a {
+                color: inherit;
+              }
+            }
+          }
+        }
+        .md_faq_section__faq_items {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          .ma_faq_block--inner-item {
+            width: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 0 20px;
+            position: relative;
+            margin: 10px 0;
+            .item-action-wrap {
+              position: absolute;
+            }
+            .ma_faq_block--inner-item-heading {
+              padding: 15px 0;
+              background-color: transparent;
+              border: none;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              font-size: 17px;
+              font-weight: 400;
+              cursor: pointer;
+            }
+            .ma_faq_block--inner-item-content {
+              display: none;
+              padding: 0 0 20px 0;
+              font-size: 17px;
+              font-weight: 400;
+              color: #878898;
+            }
+            &.active {
+              .ma_faq_block--inner-item-content {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

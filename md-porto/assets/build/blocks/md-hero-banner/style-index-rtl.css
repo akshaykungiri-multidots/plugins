@@ -1,0 +1,93 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-hero-banner/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-porto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_porto_hero_banner_wrap {
+  position: relative;
+  overflow: hidden;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+  padding: 60px 0;
+  overflow: hidden;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner .md_porto_hero_banner__inner {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner .md_porto_hero_banner__inner .md_porto_hero_banner__heading {
+  max-width: 50%;
+  width: 100%;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner .md_porto_hero_banner__inner .md_porto_hero_banner__heading h4 {
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+  color: var(--wp--preset--color--primary);
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner .md_porto_hero_banner__inner .md_porto_hero_banner__heading h2 {
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 3.5em;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner .md_porto_hero_banner__inner .md_porto_hero_banner__media {
+  position: relative;
+  width: 50%;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner .md_porto_hero_banner__inner .md_porto_hero_banner__media .md_porto_hero_banner__background {
+  position: absolute;
+  transform: rotate(-50deg);
+  opacity: 0.2;
+  top: -85%;
+  width: 100%;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner .md_porto_hero_banner__inner .md_porto_hero_banner__media .md_porto_hero_banner__media1 {
+  margin-bottom: -70px;
+  margin-right: 7px;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner .md_porto_hero_banner__inner .md_porto_hero_banner__media img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner__background__cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner__breadcrumb {
+  color: #000;
+}
+.md_porto_hero_banner_wrap .md_porto_hero_banner__breadcrumb a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}

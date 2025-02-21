@@ -1,0 +1,161 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-image-banner/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-porto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_porto_image_banner_wrap {
+  position: relative;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+  padding: 60px 0;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading {
+  max-width: 50%;
+  width: 100%;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading h4 {
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  background: linear-gradient(to right, #FFF 0%, var(--wp--preset--color--secondary) 100%);
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+  color: var(--wp--preset--color--primary);
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading h2 {
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 3.5em;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_porto_image_banner__content {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #878898;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_primer_image_banner__year {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_primer_image_banner__year span {
+  position: relative;
+  display: block;
+  line-height: 1.1;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_primer_image_banner__year .md_porto_image_banner__year {
+  font-size: 80px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_primer_image_banner__year .md_porto_image_banner__year sup {
+  font-size: 80px;
+  top: -30px;
+  position: relative;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_primer_image_banner__year .md_porto_image_banner__year_sub {
+  font-size: 1.8em;
+  font-weight: 500;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_porto_image_banner__btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_porto_image_banner__btn .md_btn {
+  padding: 1rem 2.2rem;
+  font-size: 0.9rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding-right: 5rem;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_porto_image_banner__btn .md_btn:before {
+  height: 40px;
+  width: 40px;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_porto_image_banner__link_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_porto_image_banner__link_wrapper .md_porto_image_banner__link {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__heading .md_porto_image_banner__link_wrapper .md_porto_image_banner__link a {
+  color: inherit;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__media {
+  position: relative;
+  width: 50%;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__media .md_porto_image_banner__background {
+  position: relative;
+  z-index: 0;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__media .md_porto_image_banner__media1 {
+  position: absolute;
+  transform: translateY(20.0334px);
+  right: 20px;
+  top: 0;
+  width: 400px;
+  height: auto;
+  z-index: 1;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__media .md_porto_image_banner__media2 {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  transform: translateY(-37.271px);
+  left: 0;
+  bottom: 20px;
+  z-index: 2;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__media img {
+  width: 100%;
+  height: auto;
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__media .md_porto_image_banner__join_us {
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 10px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+.md_porto_image_banner_wrap .md_porto_image_banner .md_porto_image_banner__inner .md_porto_image_banner__media .md_porto_image_banner__join_us p {
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

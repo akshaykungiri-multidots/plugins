@@ -1,0 +1,270 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-image-block/style.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-porto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_porto_image_block {
+  position: relative;
+}
+.md_porto_image_block .md_porto_image_block__heading {
+  margin-bottom: 50px;
+}
+.md_porto_image_block .md_porto_image_block__heading h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.9em;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+}
+.md_porto_image_block .md_porto_image_block__heading h2 {
+  font-size: 42px;
+  letter-spacing: -1.05px;
+  margin-bottom: 20px;
+  color: #05222e;
+  font-weight: normal;
+}
+.md_porto_image_block .md_porto_image_block__heading p {
+  text-align: center;
+  max-width: 991px;
+  width: 100%;
+  margin: auto;
+  font-weight: 300;
+}
+.md_porto_image_block .md_porto_image_block__content {
+  display: grid;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item {
+  padding: 25px;
+  border-radius: 0;
+  margin: 10px 20px;
+  display: flex;
+  flex-flow: wrap;
+  align-content: baseline;
+  flex: 1 0 auto;
+  position: relative;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__image {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__image img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content {
+  padding: 0;
+  width: 100%;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content h3 {
+  margin-top: 1.5ex;
+  color: #05222e;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content p {
+  margin-top: 0.3em;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: rgba(5, 34, 46, 0.8);
+  font-weight: 500;
+  font-size: 16px;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item .learn-more {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  font-size: 24px;
+  color: gray;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item:hover {
+  box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+.md_porto_image_block .md_porto_image_block__content .md_porto_image_block__item:hover .learn-more {
+  color: #0b75e0;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item {
+  flex-direction: row;
+  gap: 20px;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item .md_porto_image_block__item__image {
+  width: 67px;
+  margin-bottom: 0;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item .md_porto_image_block__item__image img {
+  position: static;
+  position: initial;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item .md_porto_image_block__item__content {
+  width: calc(100% - 87px);
+  max-width: 100%;
+  padding: 0;
+  text-align: left;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item .md_porto_image_block__item__content h3 {
+  font-size: 1.4em;
+  font-weight: 600;
+  line-height: 27px;
+  margin: 0 0 14px;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item .md_porto_image_block__item__content .md_porto_image_block__item__content__link .column-item-desc {
+  font-size: 1rem;
+  letter-spacing: -0.015em;
+  font-weight: 300;
+  margin-right: 5px;
+  display: inline;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item .md_porto_image_block__item__content .md_porto_image_block__item__content__link .md_porto_image_block__item__link {
+  font-size: 15px;
+  font-weight: 300;
+  display: inline;
+  margin-right: 5px;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #2ea3f2;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item .md_porto_image_block__item__content .md_porto_image_block__item__content__link .md_porto_image_block__item__link:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  background-color: #1ca5ff;
+  bottom: 0;
+  visibility: hidden;
+}
+.md_porto_image_block.style2 .md_porto_image_block__item .md_porto_image_block__item__content .md_porto_image_block__item__content__link .md_porto_image_block__item__link::after {
+  content: "\f344";
+  font-family: "dashicons";
+  margin-left: 5px;
+  font-weight: 400;
+  vertical-align: middle;
+}
+.md_porto_image_block.style3 {
+  padding: 180px 0 60px 0;
+  margin: -100px 0 0;
+}
+.md_porto_image_block.style3 .md_porto_image_block__content .md_porto_image_block__item {
+  box-shadow: 0px 12px 18px -18px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 30px 15px;
+  text-align: center;
+}
+.md_porto_image_block.style3 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__image {
+  width: 50%;
+  margin: 0 auto 20px;
+}
+.md_porto_image_block.style3 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__image img {
+  width: 100%;
+  height: auto;
+}
+.md_porto_image_block.style3 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content h3 {
+  font-weight: 400;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 18px;
+  height: auto;
+}
+.md_porto_image_block.style3 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content .md_porto_image_block__item__content__link .column-item-desc {
+  margin: 0 0 15px;
+  font-size: 16px;
+  line-height: 1.4em;
+  font-weight: 300;
+}
+.md_porto_image_block.style3 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content .md_porto_image_block__item__content__link .md_porto_image_block__item__link {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 0.5em;
+  color: #666;
+  font-size: 13.5px;
+  line-height: 2;
+  border: 1px solid #ddd;
+  border-radius: 0.25em;
+  font-weight: 300;
+  background-color: rgba(0, 0, 0, 0);
+}
+.md_porto_image_block.style3 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content .md_porto_image_block__item__content__link .md_porto_image_block__item__link i {
+  display: none;
+}
+.md_porto_image_block.style4 {
+  padding: 180px 0 60px 0;
+  margin: -100px 0 0;
+}
+.md_porto_image_block.style4 .md_porto_image_block__heading p {
+  font-weight: 500;
+  font-size: 18px;
+  margin: 0;
+  max-width: 100%;
+}
+.md_porto_image_block.style4 .md_porto_image_block__content .md_porto_image_block__item {
+  border-top: 6px solid;
+  border-top-color: #0c71c3;
+  box-shadow: 0px 12px 18px -18px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  position: relative;
+  background-color: #fff;
+  padding: 50px 0 0;
+  text-align: center;
+}
+.md_porto_image_block.style4 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__image {
+  max-width: 32%;
+  margin: 0 auto 25px;
+}
+.md_porto_image_block.style4 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__image img {
+  width: 100%;
+  height: auto;
+}
+.md_porto_image_block.style4 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content {
+  border-top: 1px solid #eaeaea;
+  padding: 15px;
+}
+.md_porto_image_block.style4 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content h3 {
+  font-weight: 400;
+  color: #000;
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 0;
+  text-align: left;
+  display: flex;
+  gap: 10px;
+}
+.md_porto_image_block.style4 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content h3 i {
+  font-size: 15px;
+  line-height: 31px;
+  text-align: center;
+  width: 31px;
+  height: 31px;
+  color: #66c33e;
+  background-color: rgba(102, 195, 62, 0.14);
+  border-radius: 50%;
+}
+.md_porto_image_block.style4 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content h3 span {
+  width: calc(100% - 31px);
+}
+.md_porto_image_block.style4 .md_porto_image_block__content .md_porto_image_block__item .md_porto_image_block__item__content .md_porto_image_block__item__content__link .column-item-desc {
+  margin: 0 0 15px;
+  font-size: 16px;
+  line-height: 1.4em;
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

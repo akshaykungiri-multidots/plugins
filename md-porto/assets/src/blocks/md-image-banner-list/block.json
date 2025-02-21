@@ -1,0 +1,113 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-porto/md-image-banner-list",
+  "version": "0.1.0",
+  "title": "MD Image Banner List",
+  "apiVersion": 3,
+  "category": "md-porto",
+  "icon": "format-image",
+  "description": "A block that displays a banner with an image and text.",
+  "keywords": ["md-porto", "md-image-banner-list"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-porto",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "showListItems": {
+      "type": "boolean",
+      "default": true
+    },
+    "listItems": {
+      "type": "array",
+      "default": []
+    },
+    "listItemColor": {
+      "type": "string",
+      "default": ""
+    },
+    "listItemIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "listItemIconBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showNumberBlock": {
+      "type": "boolean",
+      "default": true
+    },
+    "numberBlockTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "numberBlockSign": {
+      "type": "string",
+      "default": ""
+    },
+    "numberBlockSubTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "numberBlockDescription": {
+      "type": "string",
+      "default": ""
+    },
+    "numberBlockTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "numberBlockSignColor": {
+      "type": "string",
+      "default": ""
+    },
+    "numberBlockSubTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "numberBlockDescriptionColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

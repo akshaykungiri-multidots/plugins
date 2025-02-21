@@ -1,0 +1,111 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-quote/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-porto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_porto_quote_wrap {
+  position: relative;
+}
+.md_porto_quote_wrap .md_porto_quote {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+  padding: 60px 0;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading {
+  max-width: 50%;
+  width: 100%;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading h4 {
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  background: linear-gradient(to right, #FFF 0%, var(--wp--preset--color--secondary) 100%);
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+  color: var(--wp--preset--color--primary);
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading h2 {
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 3.5em;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__content {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  color: #878898;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__working_hours {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__working_hours h5 {
+  padding: 10px 20px;
+  display: inline-flex;
+  font-weight: 600;
+  font-size: 0.9em;
+  letter-spacing: -0.05em;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e7e7e7 !important;
+  border-radius: 100px;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__working_hours p {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__btn .md_porto_quote__link_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__btn .md_porto_quote__link_wrapper i {
+  font-size: 20px;
+  color: #fff;
+  background: var(--wp--preset--color--primary);
+  padding: 10px;
+  border-radius: 100px;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__btn .md_porto_quote__link_wrapper h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--wp--preset--color--primary);
+  text-transform: uppercase;
+  margin: 0;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__btn .md_porto_quote__link_wrapper span {
+  font-size: 21px;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+}
+.md_porto_quote_wrap .md_porto_quote .md_porto_quote__inner .md_porto_quote__heading .md_porto_quote__btn .md_porto_quote__link_wrapper span a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

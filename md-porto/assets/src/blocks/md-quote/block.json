@@ -1,0 +1,149 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-porto/md-quote",
+  "version": "0.1.0",
+  "title": "MD quote",
+  "apiVersion": 3,
+  "category": "md-porto",
+  "icon": "format-quote",
+  "description": "A block to display a quotation form with content, title, and button.",
+  "keywords": ["md-porto", "md-quote"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-porto",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "phoneText": {
+      "type": "string",
+      "default": ""
+    },
+    "phoneHeadingText": {
+      "type": "string",
+      "default": ""
+    },
+    "emailText": {
+      "type": "string",
+      "default": ""
+    },
+    "emailHeadingText": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showPhone": {
+      "type": "boolean",
+      "default": true
+    },
+    "showEmail": {
+      "type": "boolean",
+      "default": true
+    },
+    "phoneTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "phoneHeadingTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "emailTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "emailHeadingTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "workinHoursTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "workinHoursContent": {
+      "type": "string",
+      "default": ""
+    },
+    "showWorkinHours": {
+      "type": "boolean",
+      "default": true
+    },
+    "workinHoursTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "workinHoursContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "workinHoursTitleBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "privacyText": {
+      "type": "string",
+      "default": ""
+    },
+    "showPrivacy": {
+      "type": "boolean",
+      "default": true
+    },
+    "privacyTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contactForm": {
+      "type": "string",
+      "default": ""
+    },
+    "showContactForm": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

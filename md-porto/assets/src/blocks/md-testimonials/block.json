@@ -1,0 +1,147 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-porto/md-testimonials",
+  "version": "0.1.0",
+  "title": "MD Testimonials",
+  "apiVersion": 3,
+  "category": "md-porto",
+  "icon": "admin-comments",
+  "description": "A block to display testimonials.",
+  "keywords": ["testimonial", "quote"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-porto",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonLink": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "buttonColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+    "joinUsText": {
+      "type": "string",
+      "default": ""
+    },
+    "joinUsTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showJoinUs": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTestimonials": {
+      "type": "boolean",
+      "default": true
+    },
+    "testimonials": {
+      "type": "array",
+      "default": []
+    },
+    "showSlideAuthorImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideAuthorName": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideAuthorDesignation": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideTestimonialText": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideRating": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideDateOfTestimonial": {
+			"type": "boolean",
+			"default": true
+		},
+		"slideAuthorNameColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideAuthorDesignationColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideTestimonialTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideRatingTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideDateOfTestimonialColor": {
+			"type": "string",
+			"default": ""
+		}
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

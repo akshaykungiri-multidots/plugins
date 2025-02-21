@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-porto/md-steps",
+  "version": "0.1.0",
+  "title": "MD Steps",
+  "apiVersion": 3,
+  "category": "md-porto",
+  "icon": "editor-ul",
+  "description": "A block to display steps with image, title, content",
+  "keywords": [
+    "md-porto",
+    "md-steps"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-porto",
+  "attributes": {
+    "stepsBlockList": {
+      "type": "array",
+      "default": []
+    },
+    "stepsTitleFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stepsContentFontColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stepsSubTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

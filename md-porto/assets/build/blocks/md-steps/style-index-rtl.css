@@ -1,0 +1,119 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-steps/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-porto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_porto_steps {
+  position: relative;
+  padding: 50px 0;
+}
+.md_porto_steps .md_porto_steps__item {
+  padding: 25px;
+  border-radius: 0;
+  margin: 10px 20px;
+  display: flex;
+  flex-flow: wrap;
+  align-content: baseline;
+  flex: 1 0 auto;
+  position: relative;
+}
+.md_porto_steps .md_porto_steps__item .md_porto_steps__item__wrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-direction: row-reverse;
+  margin: 48px 0;
+}
+.md_porto_steps .md_porto_steps__item .md_porto_steps__item__step_number {
+  right: calc(50% - 28px);
+  top: 0;
+  position: absolute;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #fff;
+  height: 55px;
+  line-height: 55px;
+  margin: 0 auto 10px;
+  border-radius: 100%;
+  background: green;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+.md_porto_steps .md_porto_steps__item .md_porto_steps__item__image {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+}
+.md_porto_steps .md_porto_steps__item .md_porto_steps__item__image img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+.md_porto_steps .md_porto_steps__item .md_porto_steps__item__content {
+  padding: 0;
+  flex: 0 0 auto;
+  width: 41.66666667%;
+}
+.md_porto_steps .md_porto_steps__item .md_porto_steps__item__content h4 {
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  background: linear-gradient(to left, #FFF 0%, var(--wp--preset--color--secondary) 100%);
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+  color: var(--wp--preset--color--primary);
+}
+.md_porto_steps .md_porto_steps__item .md_porto_steps__item__content h3 {
+  margin-top: 1.5ex;
+  color: #05222e;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
+}
+.md_porto_steps .md_porto_steps__item .md_porto_steps__item__content p {
+  margin-top: 0.3em;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: rgba(5, 34, 46, 0.8);
+  font-weight: 500;
+  font-size: 16px;
+}
+.md_porto_steps .md_porto_steps__item .learn-more {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  font-size: 24px;
+  color: gray;
+}
+.md_porto_steps .md_porto_steps__item:nth-child(odd) .md_porto_steps__item__wrap {
+  flex-direction: row;
+}
+.md_porto_steps::before {
+  background: linear-gradient(to bottom, rgba(80, 80, 80, 0) 0%, #505050 8%, #505050 92%, rgba(80, 80, 80, 0) 100%);
+  content: "";
+  display: block;
+  height: 100%;
+  right: 50%;
+  margin-right: -2px;
+  position: absolute;
+  top: -60px;
+  width: 3px;
+  z-index: 0;
+  filter: alpha(opacity=35);
+  opacity: 0.35;
+}
