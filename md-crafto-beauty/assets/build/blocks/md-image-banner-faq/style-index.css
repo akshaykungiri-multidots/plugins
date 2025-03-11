@@ -1,0 +1,176 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-image-banner-faq/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-crafto-beauty-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_crafto_beauty_image_banner_faqs_wrap {
+  position: relative;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+  padding: 60px 0 0;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs .md_crafto_beauty_image_banner_faqs__inner {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs .md_crafto_beauty_image_banner_faqs__inner .md_crafto_beauty_image_banner_faqs__heading {
+  max-width: 45%;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs .md_crafto_beauty_image_banner_faqs__inner .md_crafto_beauty_image_banner_faqs__heading h4 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Urbanist", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs .md_crafto_beauty_image_banner_faqs__inner .md_crafto_beauty_image_banner_faqs__heading h2 {
+  font-weight: 400;
+  margin: 0 0 25px;
+  color: #000;
+  font-size: 3.438rem;
+  line-height: 3.438rem;
+  letter-spacing: -3px;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs .md_crafto_beauty_image_banner_faqs__inner .md_crafto_beauty_image_banner_faqs__heading .md_crafto_beauty_image_banner_faqs__content {
+  font-size: 20px;
+  color: #7e8691;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs .md_crafto_beauty_image_banner_faqs__inner .md_crafto_beauty_image_banner_faqs__heading .md_crafto_beauty_image_banner_faqs__btn_wrapper {
+  display: inline-block;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs .md_crafto_beauty_image_banner_faqs__inner .md_crafto_beauty_image_banner_faqs__media {
+  position: relative;
+}
+.md_crafto_beauty_image_banner_faqs_wrap .md_crafto_beauty_image_banner_faqs .md_crafto_beauty_image_banner_faqs__inner .md_crafto_beauty_image_banner_faqs__media img {
+  width: 100%;
+  height: auto;
+}
+
+.md_crafto_beauty_faqs__wrapper {
+  position: relative;
+}
+.md_crafto_beauty_faqs__wrapper .md_faq_section__faq_items .ma_faq_block--inner-item .item-action-wrap {
+  position: absolute;
+}
+.md_crafto_beauty_faqs__wrapper .md_faq_section__faq_items .ma_faq_block--inner-item .ma_faq_block--inner-item-heading {
+  padding: 15px 0;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.md_crafto_beauty_faqs__wrapper .md_faq_section__faq_items .ma_faq_block--inner-item .ma_faq_block--inner-item-content {
+  display: none;
+  padding: 0 0 20px 0;
+  font-size: 17px;
+  font-weight: 400;
+  color: #878898;
+  position: relative;
+}
+.md_crafto_beauty_faqs__wrapper .md_faq_section__faq_items .ma_faq_block--inner-item .ma_faq_block--inner-item-content .faq-content {
+  width: 80%;
+}
+.md_crafto_beauty_faqs__wrapper .md_faq_section__faq_items .ma_faq_block--inner-item .ma_faq_block--inner-item-content .md_crafto_service_faqs__image {
+  position: absolute !important;
+  transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+  top: 0;
+  right: 0;
+  transform: translateY(16.3848px);
+  width: 80px;
+}
+.md_crafto_beauty_faqs__wrapper .md_faq_section__faq_items .ma_faq_block--inner-item .ma_faq_block--inner-item-content .md_crafto_service_faqs__image img {
+  width: 100%;
+  height: auto;
+  opacity: 0.2;
+}
+.md_crafto_beauty_faqs__wrapper .md_faq_section__faq_items .ma_faq_block--inner-item.active .ma_faq_block--inner-item-content {
+  display: block;
+}
+
+.md_crafto_beauty_image_banner__beauty_tips_wrap {
+  background-color: #e4e4e4;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_crafto_beauty_image_banner__awesome_text {
+  flex: 0 0 auto;
+  width: 25%;
+  padding: 0 15px;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_crafto_beauty_image_banner__awesome_text h5 {
+  font-size: 2rem;
+  line-height: 2.2rem;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  margin: 0;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider {
+  flex: 0 0 auto;
+  width: 75%;
+  padding: 45px;
+  border-left: 1px solid #7e8691;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider .md_slider_grid_item .md_slider_grid_item_inner_content {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider .md_slider_grid_item .md_slider_grid_item_inner_content .md_slider_grid_item_inner_title {
+  font-weight: 600;
+  color: #000;
+  margin-right: 10px;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider .slick-slide {
+  padding: 0 60px;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider .slick-arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider .slick-arrow::before {
+  content: "\f12f";
+  font-family: "bootstrap-icons";
+  font-size: 20px;
+  color: #000;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider .slick-arrow.slick-prev {
+  left: -20px;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider .slick-arrow.slick-next {
+  right: -20px;
+}
+.md_crafto_beauty_image_banner__beauty_tips_wrap .md_crafto_beauty_image_banner__beauty_tips .md_beauty_tips_slider .slick-arrow.slick-next::before {
+  content: "\f138";
+}
+
+/*# sourceMappingURL=style-index.css.map*/

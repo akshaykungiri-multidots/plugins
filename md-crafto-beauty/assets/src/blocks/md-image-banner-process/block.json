@@ -1,0 +1,138 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto-beauty/md-image-banner-process",
+  "version": "0.1.0",
+  "title": "MD Image Banner Process",
+  "apiVersion": 3,
+  "category": "md-crafto-beauty",
+  "icon": "format-image",
+  "description": "A block that displays a banner with an image, text and processs.",
+  "keywords": ["banner", "image", "process"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-crafto-beauty",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonLink": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonHoverBackgroundColor": {
+			"type": "string",
+			"default": ""
+		},
+    "showProcess": {
+      "type": "boolean",
+      "default": true
+    },
+    "processItems": {
+      "type": "array",
+      "default": []
+    },
+    "processItemTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "processItemContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaurl": {
+      "type": "string",
+      "default": ""
+    },
+    "youtubeurl": {
+      "type": "string",
+      "default": ""
+    },
+    "videotype": {
+      "type": "string",
+      "default": "media-upload"
+    },
+    "videoTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "showVideo": {
+      "type": "boolean",
+      "default": true
+    },
+    "videoTitleColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+  "style": "file:./style-index.css"
+}

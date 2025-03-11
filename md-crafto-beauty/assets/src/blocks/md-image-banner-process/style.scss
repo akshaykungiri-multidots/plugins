@@ -1,0 +1,225 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-crafto-beauty-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_crafto_beauty_image_banner_processs_wrap {
+  position: relative;
+  .md_crafto_beauty_image_banner_processs {
+    background-position: center !important;
+    background-size: cover !important;
+    background-blend-mode: normal;
+    padding: 60px 0 0;
+    .md_crafto_beauty_image_banner_processs__inner {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      .md_crafto_beauty_image_banner_processs__heading {
+        max-width: 45%;
+        width: 100%;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        h4 {
+          font-size: 16px;
+          font-weight: 700;
+          font-family: "Urbanist", sans-serif;
+          text-transform: uppercase;
+          margin: 0;
+          display: inline-block;
+          line-height: 42px;
+          margin-bottom: 20px;
+          border-radius: 100px;
+        }
+        h2 {
+          font-weight: 400;
+          margin: 0 0 25px;
+          color: #000;
+          font-size: 3.438rem;
+          line-height: 3.438rem;
+          letter-spacing: -3px;
+        }
+        .md_crafto_beauty_image_banner_processs__content {
+          font-size: 20px;
+          color: #7e8691;
+          margin-bottom: 1em;
+          font-weight: 400;
+        }
+        .md_crafto_beauty_image_banner_processs__btn_wrapper {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          .md_crafto_text_video__youtube {
+            max-width: 50%;
+            width: 100%;
+            .md_crafto_text_video__youtube_icon {
+              button {
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 17px;
+                padding: 16px 30px;
+                span {
+                  font-family: "Urbanist", sans-serif;
+                }
+              }
+            }
+            .video_section_wrapper {
+              .item-action-wrap {
+                z-index: 99;
+              }
+              .image-preview {
+                position: relative;
+              }
+              iframe {
+                width: 100%;
+                min-height: 300px;
+                height: 100%;
+              }
+              video {
+                width: 100%;
+                height: auto;
+              }
+              .media-and-text__video-play-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                z-index: 10;
+                width: 150px;
+                height: 150px;
+              }
+            }
+          }
+          .crafto_video_popup__wrap {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 99999;
+            overflow: auto;
+            display: none;
+            align-items: center;
+            &.show-popup {
+              display: block;
+            }
+            .crafto_video_popup__inner {
+              max-width: 970px;
+              width: 90%;
+              margin: 0 auto;
+              position: relative;
+              padding: 60px;
+              max-height: 90vh;
+              overflow: auto;
+              i.close-popup {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 30px;
+                cursor: pointer;
+                &::before {
+                  background: #fff;
+                  border-radius: 50%;
+                }
+              }
+              .crafto_video_popup__inner-content {
+                .crafto_video_popup__inner-content-heading {
+                  display: flex;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: 20px 30px;
+                  .crafto_video_popup__inner-content-img-wrap {
+                    width: 200px;
+                    img {
+                      width: 100%;
+                      height: auto;
+                      -o-object-fit: cover;
+                      object-fit: cover;
+                    }
+                  }
+                  .crafto_video_popup__inner-content-heading-text {
+                    width: calc(100% - 230px);
+                    .leadershipName {
+                      font-size: 32px;
+                      font-weight: 700;
+                    }
+                    .leadershipTitle {
+                      font-size: 16px;
+                    }
+                  }
+                }
+              }
+            }
+          }          
+        }
+      }
+      .md_crafto_beauty_image_banner_processs__media {
+        position: relative;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+.md_crafto_beauty_processs__wrapper {
+  position: relative;
+  padding: 4% 0;
+  .md_process_section__process_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .md_process_section__process_item {
+      width: calc(100% / 3);
+      border-right: 1px solid #e5e5e5;
+      &:nth-child(3n) {
+        border-right: none;
+      }
+      .ma_process_block--inner-item-inner {
+        display: flex;
+        justify-content: center;
+        padding: 0 15px;
+        align-items: flex-start;
+        .ma_process_block--inner-item-process_step {
+          display: flex;
+          align-items: center;
+          flex: 0 0 auto;
+          width: auto;
+          .process-step {
+            font-size: 26px;
+            line-height: 38px;
+            color: #2E3844;
+          }
+          .process-step-separator {
+            width: 20px;
+            height: 2px;
+            background-color: #ffa085;
+            margin-left: 15px;
+          }
+        }
+        .ma_process_block--inner-item-content {
+          margin-left: 15px;
+          span {
+            font-size: 24px;
+            color: #2E3844;
+            line-height: 32px;
+          }
+          .process-content {
+            font-size: 17px;
+            font-family: "Urbanist", sans-serif;
+            font-weight: 400;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
