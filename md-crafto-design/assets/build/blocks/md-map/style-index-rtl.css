@@ -1,0 +1,118 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-map/style.scss ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-crafto-beauty-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_map .md_map__wrapper {
+  position: relative;
+}
+.md_map .md_map__wrapper .md_map__iframe_wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+.md_map .md_map__wrapper .md_map__iframe_wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.md_map .md_map__wrapper .md_map__content {
+  display: flex;
+  justify-content: flex-end;
+  padding: 60px 0;
+  position: relative;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__content_inner {
+  padding: 50px 60px 40px;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__heading {
+  font-size: 2.375rem;
+  line-height: 2.7rem;
+  margin: 0;
+  margin-bottom: 10px;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_name {
+  font-size: 17px;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_address {
+  font-size: 17px;
+  color: #7e8691;
+  margin: 0;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_phone {
+  font-size: 17px;
+  color: #7e8691;
+  margin: 0;
+  font-weight: 400;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_phone .md_map__shop_phone_title {
+  color: #000;
+  font-weight: 600;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_phone a {
+  color: #7e8691;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_phone a:hover {
+  color: #000;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_email {
+  font-size: 17px;
+  color: #7e8691;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_email .md_map__shop_email_title {
+  color: #000;
+  font-weight: 600;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_email a {
+  color: #7e8691;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__shop_email a:hover {
+  color: #000;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__google_map_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-top: 1px solid #e5e5e5;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__google_map_link i {
+  font-size: 15px;
+  color: #000;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__google_map_link .md_map__google_map_link_text {
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Urbanist", sans-serif;
+}
+.md_map .md_map__wrapper .md_map__content .md_map__heading_wrapper .md_map__google_map_link .md_map__google_map_link_text a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}

@@ -1,0 +1,145 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"name": "md-crafto-design/md-customer-stories",
+	"version": "0.1.0",
+	"title": "MD Customer Stories",
+	"apiVersion": 3,
+	"category": "md-crafto-design",
+	"icon": "testimonial",
+	"description": "A block to display customer stories",
+	"keywords": [ "md-crafto-design", "customer", "stories" ],
+	"supports": {
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"textdomain": "md-crafto-design",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"subHeading": {
+			"type": "string",
+			"default": ""
+		},
+		"ratingStars": {
+			"type": "number",
+			"default": 0
+		},
+		"ratingTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"headingColor": {
+			"type": "string",
+			"default": ""
+		},
+		"subHeadingColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideItems": {
+			"type": "array",
+			"default": [
+				{
+					"id": 1,
+					"authorImage": "",
+					"authorName": "",
+					"authorDesignation": "",
+					"testimonialText": "",
+					"rating": "",
+					"dateOfTestimonial": ""
+				}
+			]
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"dots": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideInfinite": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideSlidesToShow": {
+			"type": "number",
+			"default": 1
+		},
+		"slideSlidesToScroll": {
+			"type": "number",
+			"default": 1
+		},
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSubheading": {
+			"type": "boolean",
+			"default": true
+		},
+		"showRating": {
+			"type": "boolean",
+			"default": true
+		},
+		"showRatingTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideAuthorImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideAuthorName": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideAuthorDesignation": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideTestimonialText": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideRating": {
+			"type": "boolean",
+			"default": true
+		},
+		"showSlideDateOfTestimonial": {
+			"type": "boolean",
+			"default": true
+		},
+		"slideAuthorNameColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideAuthorDesignationColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideTestimonialTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideRatingTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"slideDateOfTestimonialColor": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

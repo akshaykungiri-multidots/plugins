@@ -1,0 +1,207 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-customer-stories/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-efi-fse-full-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_customer_stories_section {
+  padding: 50px 0;
+}
+.md_customer_stories_section .md_customer_stories_section__title {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.md_customer_stories_section .md_customer_stories_section__title .md_customer_stories_section__ratingStars {
+  font-size: 16px;
+  line-height: 2.25rem;
+  background-color: #ffa085;
+  padding: 0 20px;
+  border-radius: 30px;
+  color: #fff;
+}
+.md_customer_stories_section .md_customer_stories_section__title h2 {
+  font-size: 26px;
+  line-height: 38px;
+  margin: 0;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper {
+  display: flex;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__heading {
+  padding: 0 15px;
+  text-align: right;
+  flex: 0 0 auto;
+  width: 25%;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__heading h2 {
+  font-weight: 500;
+  line-height: 1.2em;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 32px;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__heading p {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Urbanist", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems {
+  padding: 0 4% 0 15px;
+  flex: 0 0 auto;
+  width: 75%;
+  margin: 50px 0;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .slick-slide {
+  padding: 0 15px;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item {
+  display: flex !important;
+  border: 1px solid;
+  border-color: lightgray;
+  border-radius: 10px;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__authorDetails {
+  transform: rotate(-180deg);
+  writing-mode: vertical-lr;
+  padding: 15px;
+  text-align: center;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__authorDetails h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__authorDetails p {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner {
+  padding: 40px;
+  border-right: 1px solid lightgray;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__authorHeading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__authorHeading .md_customer_stories_grid_item__authoImage {
+  width: 100px;
+  height: 100px;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__authorHeading .md_customer_stories_grid_item__authoImage img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__content p {
+  font-size: 17px;
+  font-weight: 400;
+  margin: 20px 0;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__ratingStars {
+  width: 50%;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__ratingStars p {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__ratingStars i {
+  font-size: 15px;
+  color: #f1c40f;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__dateOfTestimonial {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.md_customer_stories_section .md_customer_stories_section__wrapper .md_customer_stories_section__sliderItems .md_customer_stories_grid .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__rating .md_customer_stories_grid_item__dateOfTestimonial p {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+  background-color: #242e45;
+  color: #fff;
+  border-radius: 14px;
+  padding: 5px 10px;
+  text-align: left;
+  display: inline-block;
+}
+.md_customer_stories_section .md_customer_stories_section__companyList {
+  padding: 50px 0;
+}
+.md_customer_stories_section .md_customer_stories_section__companyList .md_customer_stories_section__companyList__container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.md_customer_stories_section .md_customer_stories_section__companyList .md_customer_stories_section__companyList__container .md_customer_stories_grid_item {
+  width: calc(33.3333333333% - 20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+.md_customer_stories_section .md_customer_stories_section__companyList .md_customer_stories_section__companyList__container .md_customer_stories_grid_item .md_customer_stories_grid_item__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.md_customer_stories_section .md_customer_stories_section__companyList .md_customer_stories_section__companyList__container .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_companyList__companyImage {
+  width: 100%;
+  max-width: 200px;
+  overflow: hidden;
+  text-align: right;
+  padding: 30px 0;
+}
+.md_customer_stories_section .md_customer_stories_section__companyList .md_customer_stories_section__companyList__container .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_companyList__companyImage img {
+  width: 100%;
+  height: 100%;
+}
+.md_customer_stories_section .md_customer_stories_section__companyList .md_customer_stories_section__companyList__container .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__content {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.7;
+  border-top: 1px solid #000;
+  width: 100%;
+}
+.md_customer_stories_section .md_customer_stories_section__companyList .md_customer_stories_section__companyList__container .md_customer_stories_grid_item .md_customer_stories_grid_item__inner .md_customer_stories_grid_item__content .md_customer_stories_grid_item__subText {
+  font-weight: 700;
+  opacity: 1;
+}
+.md_customer_stories_section .md_customer_stories_section__companyLogos .md_customer_stories_section__companyLogos__container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.md_customer_stories_section .md_customer_stories_section__companyLogos .md_customer_stories_section__companyLogos__container .md_customer_stories_grid_item {
+  width: calc(16.6666666667% - 20px);
+}
+.md_customer_stories_section .md_customer_stories_section__companyLogos .md_customer_stories_section__companyLogos__container .md_customer_stories_grid_item img {
+  width: 100%;
+  height: auto;
+}

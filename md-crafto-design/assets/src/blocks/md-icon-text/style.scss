@@ -1,0 +1,122 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-crafto-design-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_icon_text {
+  .md_icon_text__slider {
+    display: grid;
+    .md_icon_text__item {
+      position: relative;
+      border-top: 1px solid #e5e5e5;
+      &:last-child {
+        border-bottom: 1px solid #e5e5e5;
+      }
+      &-image {
+        display: flex;
+        flex-wrap: wrap;
+        &__img {
+          flex: 0 0 auto;
+          width: 25%;
+          align-self: center;
+          text-align: center;
+          img {
+            width: 55px;
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+            transition: all .4scubic-bezier(.61,1,.88,1);
+          }
+        }
+        &-content {
+          flex: 0 0 auto;
+          width: 58.33333333%;
+          border-left: 1px solid #e5e5e5;
+          padding: 30px 40px;
+          h4 {
+            font-size: 20px;
+            margin: 0;
+          }
+          p {
+            font-size: 17px;
+            margin: 0;
+            font-family: "Urbanist", sans-serif;
+            font-weight: 400;
+            color: #7e8691;
+          }
+        }
+        &-price {
+          flex: 0 0 auto;
+          width: 16.66666667%;
+          align-self: center;
+          text-align: left;
+          font-size: 38px;
+        }
+        &-badge {
+          position: absolute;
+          border-radius: 18px;
+          padding: 0 15px;
+          right: 15px;
+          top: 0;
+          background-color: #2E3844;
+          color: #fff;
+        }
+      }
+      .item-action-wrap {
+        position: absolute;
+      }
+    }
+  }
+  &.style2 {
+    .md_icon_text__slider {
+      .md_icon_text__item {
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 1px solid #e5e5e5;
+        &:last-child {
+          border-right: 0;
+          border-bottom: 0;
+        }
+        &-image {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          &__img {
+            width: 100%;
+            img {
+              width: 55px;
+              max-width: 100%;
+              height: auto;
+            }
+          }
+          &-content {
+            width: 100%;
+            border-left: 0;
+            padding: 30px 0;
+            text-align: center;
+            h4 {
+              font-size: 20px;
+              margin: 0;
+              font-weight: 600;
+            }
+            p {
+              font-size: 17px;
+              margin: 0;
+              font-family: "Urbanist", sans-serif;
+              font-weight: 400;
+              color: #7e8691;
+            }
+          }
+          &-price {
+            p {
+              font-size: 20px;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

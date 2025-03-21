@@ -1,0 +1,63 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-brands/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-crafto-beauty-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_brands_section {
+  font-family: "Poppins", sans-serif;
+  padding: 50px 0;
+}
+.md_brands_section .md_brands_section_inner .md_brands_heading {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.md_brands_section .md_brands_section_inner .md_brands_heading p {
+  font-size: 17px;
+  line-height: 1.7rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+  color: black;
+  background-image: linear-gradient(to left, #2e3844, #455161, #db7f68, #e17a60, #e47256);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-left: 2px solid #000;
+  padding-left: 15px;
+}
+.md_brands_section .md_brands_section_inner .md_brands_heading h2 {
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0;
+  color: #000;
+  font-size: 2.813rem;
+}
+.md_brands_section .md_brands_section_inner .md_brands_items .md_brands_item__inner {
+  display: grid;
+}
+.md_brands_section .md_brands_section_inner .md_brands_items .md_brands_item__inner .md_brands_item {
+  padding: 40px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+}
+.md_brands_section .md_brands_section_inner .md_brands_items .md_brands_item__inner .md_brands_item img {
+  width: 100%;
+  height: auto;
+}
+.md_brands_section .md_brands_section_inner .md_brands_items .md_brands_item__inner .md_brands_item:nth-child(4n) {
+  border-left: none;
+}
+.md_brands_section .md_brands_section_inner .md_brands_items .md_brands_item__inner .md_brands_item:nth-last-child(-n+4) {
+  border-bottom: none;
+}

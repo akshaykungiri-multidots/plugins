@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto-design/md-icon-text",
+  "version": "0.1.0",
+  "title": "MD Icon Text",
+  "apiVersion": 3,
+  "category": "md-crafto-design",
+  "icon": "star-filled",
+  "description": "A block to display a logo with text.",
+  "keywords": ["md-crafto-design", "md-icon-text"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-crafto-design",
+  "attributes": {
+    "logosTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logosDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logosPriceColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logosBadgeTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logosBadgeBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "logos": {
+      "type": "array",
+      "default": []
+    },
+    "showLogosTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLogosDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLogosPrice": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLogosImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showLogosBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "logoStyle": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfLogosPerRow": {
+      "type": "number",
+      "default": 3
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

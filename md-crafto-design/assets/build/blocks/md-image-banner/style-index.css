@@ -1,0 +1,137 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-image-banner/style.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-crafto-beauty-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_crafto_beauty_image_banner_wrap {
+  position: relative;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+  padding: 60px 0;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__heading {
+  max-width: 45%;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__heading h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  background: linear-gradient(to right, rgb(240, 244, 253), rgba(255, 255, 255, 0));
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__heading h2 {
+  font-weight: 400;
+  line-height: 7.5rem;
+  margin: 0 0 25px;
+  color: #000;
+  font-size: 9.375rem;
+  letter-spacing: -3px;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__heading .md_crafto_beauty_image_banner__content {
+  font-size: 20px;
+  color: #7e8691;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__heading .md_crafto_beauty_image_banner__btn_wrapper {
+  display: inline-block;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__heading .md_crafto_beauty_image_banner__link_wrapper {
+  display: inline-block;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__heading .md_crafto_beauty_image_banner__link_wrapper .md_crafto_beauty_image_banner__link {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__heading .md_crafto_beauty_image_banner__link_wrapper .md_crafto_beauty_image_banner__link a {
+  color: inherit;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner .md_crafto_beauty_image_banner__inner .md_crafto_beauty_image_banner__media {
+  position: absolute;
+  transform: translateY(-37.271px);
+  right: 100px;
+  top: 50%;
+  z-index: 2;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner__awesome_text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+.md_crafto_beauty_image_banner_wrap .md_crafto_beauty_image_banner__awesome_text p {
+  background-color: #ffea23;
+  color: #000;
+  padding: 5px 25px;
+  margin: 0;
+}
+
+.md_crafto_beauty_image_banner__feature_box {
+  display: flex;
+  justify-content: center;
+}
+.md_crafto_beauty_image_banner__feature_box .md_crafto_beauty_image_banner__feature_box_inner {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 40px 8% 40px 15px;
+  align-items: center;
+  border-right: 1px solid #dee2e6;
+}
+.md_crafto_beauty_image_banner__feature_box .md_crafto_beauty_image_banner__feature_box_inner .md_crafto_beauty_image_banner__feature_box_icon {
+  margin-right: 25px;
+}
+.md_crafto_beauty_image_banner__feature_box .md_crafto_beauty_image_banner__feature_box_inner .md_crafto_beauty_image_banner__feature_box_icon img {
+  height: 65px;
+  width: auto;
+}
+.md_crafto_beauty_image_banner__feature_box .md_crafto_beauty_image_banner__feature_box_inner .md_crafto_beauty_image_banner__feature_box_content h4 {
+  font-size: 1.75rem;
+  line-height: 1.95rem;
+  letter-spacing: -0.5px !important;
+  font-weight: 400;
+  margin: 0;
+}
+.md_crafto_beauty_image_banner__feature_box .md_crafto_beauty_image_banner__feature_box_inner .md_crafto_beauty_image_banner__feature_box_content p {
+  font-size: 17px;
+  font-weight: 400;
+  font-family: "Urbanist", sans-serif;
+  margin: 0;
+}
+.md_crafto_beauty_image_banner__feature_box .md_crafto_beauty_image_banner__feature_link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+  padding: 40px 15px 40px 8%;
+  font-size: 1.75rem;
+  line-height: 1.95rem;
+  letter-spacing: -0.5px !important;
+  font-weight: 400;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

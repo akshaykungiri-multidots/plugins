@@ -1,0 +1,89 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto-beauty/md-team",
+  "version": "0.1.0",
+  "apiVersion": 3,
+  "title": "MD Team",
+  "category": "md-crafto-beauty",
+  "icon": "dashicons dashicons-admin-users",
+  "description": "Team Block with popup",
+  "keywords": [
+    "Team",
+    "Leader"
+  ],
+  "attributes": {
+    "products": {
+      "type": "array",
+      "default": []
+    },
+    "heading": {
+      "type": "string",
+      "default": "Leadership"
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Our specialists"
+    },
+    "bgcolor": {
+      "type": "string"
+    },
+    "authornamecolor": {
+      "type": "string"
+    },
+    "authortitlecolor": {
+      "type": "string"
+    },
+    "headingcolor": {
+      "type": "string"
+    },
+    "subheadingcolor": {
+      "type": "string"
+    },
+    "teamheading": {
+      "type": "string",
+      "default": "Want to work with us"
+    },
+    "teamheadinginner": {
+      "type": "string",
+      "default": "Join our growing team!"
+    },
+    "button": {
+      "type": "string",
+      "default": "Request a Demo"
+    },
+    "callToAction": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayAuthorname": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayAuthortitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayTeamHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "displaySocialIcon": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "textdomain": "md-crafto-beauty",
+  "editorScript": "file:./index.js",
+  "viewScript": [
+    "file:./view.js"
+  ],
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

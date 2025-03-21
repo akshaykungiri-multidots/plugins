@@ -1,0 +1,124 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto-design/md-cards",
+  "version": "0.1.0",
+  "title": "MD Cards",
+  "apiVersion": 3,
+  "category": "md-crafto-design",
+  "icon": "cards",
+  "description": "A custom block for displaying cards items.",
+  "keywords": ["cards", "md-crafto-design"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-crafto-design",
+  "attributes": {
+    "subheading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubheading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfCardsItemsPerRow": {
+      "type": "number",
+      "default": 3
+    },
+    "cardsItems": {
+      "type": "array",
+      "default": []
+    },
+    "showLinkIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "cardsTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "enableFooter": {
+      "type": "boolean",
+      "default": true
+    },
+    "footerText": {
+      "type": "string",
+      "default": ""
+    },
+    "footerButton": {
+      "type": "string",
+      "default": ""
+    },
+    "footerTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showFooterButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "footerButtonColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerButtonBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerButtonHoverColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerButtonHoverBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showCardTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCardDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCardBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "cardDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBadgeColor": {
+      "type": "string",
+      "default": ""
+    },
+    "cardBadgeBackgroundColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

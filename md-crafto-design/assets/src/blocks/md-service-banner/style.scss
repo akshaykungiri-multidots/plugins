@@ -1,0 +1,216 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-crafto-design-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_crafto_design_service_banner_wrap {
+  position: relative;
+  .md_crafto_design_service_banner {
+    background-position: center !important;
+    background-size: cover !important;
+    background-blend-mode: normal;
+    padding: 60px 0;
+    .container {
+      display: flex;
+      .md_crafto_design_service_banner__inner {
+        flex: 0 0 auto;
+        width: 41.66666667%;
+        .md_crafto_design_service_banner__heading {
+          font-family: "Plus Jakarta Sans", sans-serif;
+          h4 {
+            font-size: 17px;
+            line-height: 1.7rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin: 0;
+            display: inline-block;
+            color: black;
+            background-image: linear-gradient(
+              to right,
+              #2e3844,
+              #455161,
+              #db7f68,
+              #e17a60,
+              #e47256
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          h2 {
+            font-weight: 700;
+            line-height: 1.4em;
+            margin: 0 0 20px;
+            color: #000;
+            font-size: 45px;
+          }
+          .md_crafto_design_service_banner__content {
+            font-size: 17px;
+            color: #878898;
+            margin-bottom: 1em;
+            font-weight: 400;
+          }
+          .md_crafto_design_service_banner__btn {
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-right: 20px;
+            a {
+              color: inherit;
+            }
+          }
+          .md_crafto_design_service_banner__link_wrapper {
+            display: inline-block;
+            .md_crafto_design_service_banner__link {
+              font-size: 17px;
+              font-weight: 700;
+              margin-left: 5px;
+              a {
+                color: inherit;
+              }
+            }
+          }
+        }
+        .md_crafto_design_service_banner__highlighted_text {
+          display: flex;
+          align-items: center;
+          position: relative;
+          z-index: 1;
+          padding: 15px 30px;
+          margin-bottom: 40px;
+          width: 95%;
+          border-radius: 4px;
+          img {
+            height: 30px;
+            max-width: 100%;
+            margin-right: 10px;
+          }
+          p {
+            margin: 0;
+            font-size: 16px;
+          }
+        }
+        .md_crafto_design_service_banner__footer {
+          display: flex;
+          align-items: center;
+          .md_crafto_design_service_banner__footer_left {
+            padding: 0 15px;
+            flex: 0 0 auto;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            .md_crafto_design_service_banner__counter {
+              font-size: 45px;
+              line-height: 50px;
+              font-weight: 700;
+              margin-right: 5px;
+              display: inline-block;
+            }
+            .md_crafto_design_service_banner__review_stars {
+              display: inline-block;
+              padding: 2px 7px;
+              border-radius: 4px;
+            }
+          }
+          .md_crafto_design_service_banner__footer_right {
+            width: 50%;
+            margin-left: auto;
+            flex: 1 0 0%;
+            padding-left: 25px;
+            padding-right: 15px;
+            border-left: 2px solid #000;
+            p {
+              font-size: 17px;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      .md_crafto_design_service_banner__media {
+        flex: 0 0 auto;
+        width: 50%;
+        margin-left: 8.33333333%;
+        position: relative;
+        .md_crafto_design_image_banner__media {
+          width: 100%;
+          height: 100%;
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+        }
+        .md_crafto_design_image_banner__media2 {
+          position: absolute;
+          top: 100px;
+          left: 0;
+          img {
+            animation: float 2slinear 0.5s infinite alternate both;
+          }
+        }
+      }
+    }
+    .md_crafto_design_service_banner__brands {
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      .md_crafto_design_service_banner__brands_inner {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        .md_crafto_design_service_banner__brands_heading {
+          flex: 0 0 auto;
+          width: 25%;
+          border-right: 1px solid #e5e5e5;
+          padding: 45px 15px;
+          display: flex;
+          align-items: flex-start;
+          h3 {
+            font-size: 2.375rem;
+            line-height: 2.7rem;
+            letter-spacing: -1px;
+            font-weight: 400;
+            margin: 0;
+          }
+          .heart-icon {
+            font-size: 24px;
+            margin-left: 5px;
+            color: #fa3d0e;
+          }
+        }
+        .md_brands_items {
+          flex: 0 0 auto;
+          width: 75%;
+          .md_brands_item__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            .md_brands_item {
+              flex: 0 0 auto;
+              width: calc(100% / 3);
+              padding: 15px;
+              img {
+                width: 100%;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}

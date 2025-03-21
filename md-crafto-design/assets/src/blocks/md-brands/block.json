@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto-design/md-brands",
+  "version": "0.1.0",
+  "title": "MD Brands",
+  "apiVersion": 3,
+  "category": "md-crafto-design",
+  "icon": "brands",
+  "description": "A custom block for displaying brands items.",
+  "keywords": ["brands", "md-crafto-design"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "textdomain": "md-crafto-design",
+  "attributes": {
+    "subheading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubheading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "numberOfBrandsItemsPerRow": {
+      "type": "number",
+      "default": 3
+    },
+    "brandsItems": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

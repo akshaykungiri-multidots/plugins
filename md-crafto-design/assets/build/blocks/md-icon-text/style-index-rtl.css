@@ -1,0 +1,116 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-icon-text/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-crafto-beauty-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_icon_text .md_icon_text__slider {
+  display: grid;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item {
+  position: relative;
+  border-top: 1px solid #e5e5e5;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item:last-child {
+  border-bottom: 1px solid #e5e5e5;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item-image {
+  display: flex;
+  flex-wrap: wrap;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item-image__img {
+  flex: 0 0 auto;
+  width: 25%;
+  align-self: center;
+  text-align: center;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item-image__img img {
+  width: 55px;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  transition: all 0.4scubic-bezier 0.61, 1, 0.88, 1;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item-image-content {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+  border-right: 1px solid #e5e5e5;
+  padding: 30px 40px;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item-image-content h4 {
+  font-size: 20px;
+  margin: 0;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item-image-content p {
+  font-size: 17px;
+  margin: 0;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  color: #7e8691;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item-image-price {
+  flex: 0 0 auto;
+  width: 16.66666667%;
+  align-self: center;
+  text-align: right;
+  font-size: 38px;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item-image-badge {
+  position: absolute;
+  border-radius: 18px;
+  padding: 0 15px;
+  left: 15px;
+  top: 0;
+  background-color: #2E3844;
+  color: #fff;
+}
+.md_icon_text .md_icon_text__slider .md_icon_text__item .item-action-wrap {
+  position: absolute;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item {
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 1px solid #e5e5e5;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item:last-child {
+  border-left: 0;
+  border-bottom: 0;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item-image {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item-image__img {
+  width: 100%;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item-image__img img {
+  width: 55px;
+  max-width: 100%;
+  height: auto;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item-image-content {
+  width: 100%;
+  border-right: 0;
+  padding: 30px 0;
+  text-align: center;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item-image-content h4 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item-image-content p {
+  font-size: 17px;
+  margin: 0;
+  font-family: "Urbanist", sans-serif;
+  font-weight: 400;
+  color: #7e8691;
+}
+.md_icon_text.style2 .md_icon_text__slider .md_icon_text__item-image-price p {
+  font-size: 20px;
+  margin: 0;
+}
