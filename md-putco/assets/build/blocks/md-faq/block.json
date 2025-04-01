@@ -1,0 +1,82 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto/md-faq",
+  "version": "0.1.0",
+  "title": "MD FAQ",
+  "apiVersion": 3,
+  "category": "md-crafto",
+  "icon": "editor-help",
+  "description": "A block that displays a FAQ.",
+  "keywords": [
+    "md-crafto",
+    "md-faq"
+  ],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-crafto",
+  "attributes": {
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "faqItems": {
+      "type": "array",
+      "default": []
+    },
+    "featuresList": {
+      "type": "array",
+      "default": []
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showFeaturesList": {
+      "type": "boolean",
+      "default": true
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subHeadingBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "faqItemTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "faqItemContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "featuresListColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

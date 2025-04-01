@@ -1,0 +1,25 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-counter/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+.md_counter_block .md_counter_wrapper .md_counter_item {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+  gap: 5px;
+  font-weight: 700;
+  color: #fff;
+  font-size: max(40px, min(6vw, 58px));
+}
+.md_counter_block .md_counter_wrapper .md_counter_item.center {
+  justify-content: center;
+}
+.md_counter_block .md_counter_wrapper .md_counter_item.right {
+  justify-content: flex-end;
+}
+.md_counter_block .md_counter_wrapper .md_counter_text {
+  font-size: max(14px, min(2vw, 20px));
+  line-height: normal;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

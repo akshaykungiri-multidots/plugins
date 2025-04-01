@@ -1,0 +1,122 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-putco-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+
+.md_logo_slider {
+  padding: 20px 40px;
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+  .md_logo_slider__heading_wrapper {
+    text-align: center;
+    .md_logo_slider__sub_heading {
+      font-size: 16px;
+    }
+    .md_logo_slider__heading {
+      margin: 0;
+    }
+  }
+  .md_logo_slider__slider__controls {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-top: 50px;
+    button {
+      color: #fff;
+      background-color: #0b325b;
+      padding: 10px 25px;
+      border-radius: 0 !important;
+      font-size: 18px !important;
+      display: inline-block;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      width: 65px;
+    }
+  }
+  .slick-list {
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .logo-slide {
+    padding: 0 10px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  /* Slick Slider Arrows */
+  ul.slick-dots {
+    flex-wrap: wrap;
+  }
+
+  .slick-arrow {
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 0 !important;
+    background: rgba(0, 0, 0, 0) !important;
+    cursor: pointer !important;
+    top: 40%;
+    transform: translateY(-50%);
+    border: none !important;
+    position: absolute;
+    display: block;
+  }
+
+  .slick-arrow:before {
+    width: 16px;
+    height: 16px;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 11px;
+  }
+
+  .slick-prev {
+    left: -40px;
+    z-index: 1;
+  }
+
+  .slick-prev:before {
+    border-top: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transform: rotate(-45deg);
+  }
+
+  .slick-prev[aria-disabled="true"] {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .slick-next {
+    right: -50px;
+  }
+
+  .slick-next:before {
+    border-top: 3px solid #000000;
+    border-left: 3px solid #000000;
+    transform: rotate(135deg);
+  }
+
+  .slick-next[aria-disabled="true"] {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* Slick Slider Dots */
+  .slick-dots {
+    text-align: center; /* Center align dots */
+    margin-top: 20px; /* Space above dots */
+  }
+
+  .slick-dots li {
+    display: inline-block;
+    margin: 0 5px; /* Space between dots */
+  }
+}

@@ -1,0 +1,122 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-service-banner/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-crafto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_crafto_service_banner_wrap {
+  position: relative;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+  padding: 60px 0;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  background: linear-gradient(to right, rgb(240, 244, 253), rgba(255, 255, 255, 0));
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading h2 {
+  font-weight: 700;
+  line-height: 1.4em;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 45px;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading .md_crafto_service_banner__content {
+  font-size: 17px;
+  color: #878898;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading .md_crafto_service_banner__btn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-right: 20px;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading .md_crafto_service_banner__btn a {
+  color: inherit;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading .md_crafto_service_banner__link_wrapper {
+  display: inline-block;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading .md_crafto_service_banner__link_wrapper .md_crafto_service_banner__link {
+  font-size: 17px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__heading .md_crafto_service_banner__link_wrapper .md_crafto_service_banner__link a {
+  color: inherit;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__highlighted_text {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 15px 30px;
+  margin-bottom: 40px;
+  width: 95%;
+  border-radius: 4px;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__highlighted_text img {
+  height: 30px;
+  max-width: 100%;
+  margin-right: 10px;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__highlighted_text p {
+  margin: 0;
+  font-size: 16px;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__footer {
+  display: flex;
+  align-items: center;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__footer .md_crafto_service_banner__footer_left {
+  padding: 0 15px;
+  flex: 0 0 auto;
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__footer .md_crafto_service_banner__footer_left .md_crafto_service_banner__counter {
+  font-size: 45px;
+  line-height: 50px;
+  font-weight: 700;
+  margin-right: 5px;
+  display: inline-block;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__footer .md_crafto_service_banner__footer_left .md_crafto_service_banner__review_stars {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__footer .md_crafto_service_banner__footer_right {
+  width: 50%;
+  margin-left: auto;
+  flex: 1 0 0%;
+  padding-left: 25px;
+  padding-right: 15px;
+  border-left: 2px solid #000;
+}
+.md_crafto_service_banner_wrap .md_crafto_service_banner .md_crafto_service_banner__inner .md_crafto_service_banner__footer .md_crafto_service_banner__footer_right p {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

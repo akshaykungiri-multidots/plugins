@@ -1,0 +1,24 @@
+.md_counter_block {
+  .md_counter_wrapper {
+    .md_counter_item {
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 5px;
+      gap: 5px;
+      font-weight: 700;
+      color: #fff;
+      font-size: max(40px, min(6vw, 58px));
+      &.center {
+        justify-content: center;
+      }
+      &.right {
+        justify-content: flex-end;
+      }
+    }
+    .md_counter_text {
+      font-size: max(14px, min(2vw, 20px));
+      line-height: normal;
+      color: #fff;
+    }
+  }
+}

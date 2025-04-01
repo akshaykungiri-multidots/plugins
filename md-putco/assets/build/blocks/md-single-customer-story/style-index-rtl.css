@@ -1,0 +1,120 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-single-customer-story/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-crafto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_crafto_single_customer_story_wrap {
+  position: relative;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story {
+  background-position: center !important;
+  background-size: cover !important;
+  background-blend-mode: normal;
+  padding: 60px 0;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading {
+  max-width: 45%;
+  width: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading .md_crafto_single_customer_story__company_logo {
+  margin-bottom: 20px;
+  width: 200px;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading .md_crafto_single_customer_story__company_logo img {
+  max-width: 100%;
+  height: auto;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading h2 {
+  font-weight: 700;
+  line-height: 1.4em;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 45px;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading .md_crafto_single_customer_story__content {
+  font-size: 17px;
+  color: #878898;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading .md_crafto_single_customer_story__author_info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading .md_crafto_single_customer_story__author_info .md_crafto_single_customer_story__social_icon {
+  background-color: #f2f1fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading .md_crafto_single_customer_story__author_info .md_crafto_single_customer_story__social_icon i {
+  font-size: 28px;
+  color: #3C2FC0;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading .md_crafto_single_customer_story__author_info .md_crafto_single_customer_story__author_name h3 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__heading .md_crafto_single_customer_story__author_info .md_crafto_single_customer_story__author_name p {
+  font-size: 15px;
+  color: #878898;
+  margin: 0;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__media {
+  position: relative;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__media .md_crafto_single_customer_story__rating {
+  position: absolute;
+  bottom: -25px;
+  right: 0;
+  left: 0;
+  width: 350px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__media .md_crafto_single_customer_story__rating .md_crafto_single_customer_story__rating_value {
+  font-size: 3.125rem;
+  font-weight: 700;
+  color: #000;
+  margin: 0;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__media .md_crafto_single_customer_story__rating .md_crafto_single_customer_story__rating_stars_wrap {
+  border-right: 1px solid #e5e5e5;
+  padding-right: 20px;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__media .md_crafto_single_customer_story__rating .md_crafto_single_customer_story__rating_stars_wrap .md_crafto_single_customer_story__rating_stars {
+  background-image: linear-gradient(to left, #f7693c, #c74e45, #7d3785, #582d9f, #3928af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.md_crafto_single_customer_story_wrap .md_crafto_single_customer_story .md_crafto_single_customer_story__inner .md_crafto_single_customer_story__media .md_crafto_single_customer_story__rating .md_crafto_single_customer_story__rating_stars_wrap p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+}
