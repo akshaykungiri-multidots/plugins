@@ -1,0 +1,90 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-resort/md-service-faqs",
+  "version": "0.1.0",
+  "title": "MD Service FAQs",
+  "apiVersion": 3,
+  "category": "md-resort",
+  "icon": "editor-help",
+  "description": "A block that displays a faq section with a title, subtitle, and image.",
+  "keywords": ["md-resort", "md-service-faqs"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-resort",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "faqItems": {
+      "type": "array",
+      "default": [
+      ]
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showProcessSteps": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaImage": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaImage2": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaImage3": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaImage4": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundImage": {
+      "type": "string",
+      "default": ""
+    },
+    "faqItemTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "faqItemContentColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

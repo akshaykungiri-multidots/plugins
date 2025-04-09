@@ -1,0 +1,154 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-efi-fse-full-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+
+.md_about_banner_slider__wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 50px;
+  padding: 100px 0;
+  .md_about_banner_slider__wrap__left {
+    width: 50%;
+    .md_about_slider__item {
+      padding: 50px 0;
+      .md_about_slider__item__content {
+        .md_about_slider__item__content__subtitle {
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 0 25px;
+          margin: 0;
+          background: linear-gradient(
+            to right,
+            rgba(240, 244, 253, 1),
+            rgba(255, 255, 255, 0)
+          );
+          display: inline-block;
+          line-height: 42px;
+          margin-bottom: 20px;
+          border-radius: 100px;
+        }
+        .md_about_slider__item__content__title {
+          font-weight: 700;
+          line-height: 1.4em;
+          margin: 0 0 20px;
+          color: #000;
+          font-size: 45px;
+        }
+        .md_about_slider__item__content__description {
+          font-size: 17px;
+          color: #878898;
+          margin-bottom: 1em;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .md_about_banner_slider__wrap__right {
+    width: 50%;
+    position: relative;
+    .md_resort_image_banner_v2__media1 {
+      z-index: 1;
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .md_resort_image_banner_v2__media2 {
+      z-index: 2;
+      position: absolute !important;
+      transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+      top: 50px;
+      left: 0;
+      transform: translateY(16.3848px);
+      width: 150px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .md_resort_image_banner_v2__media3 {
+      z-index: 3;
+      position: absolute !important;
+      transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+      bottom: -50px;
+      right: 0;
+      z-index: 99;
+      transform: translateY(-9.81941px);
+      width: 200px;
+      box-shadow: 0 20px 100px rgba(0,0,0,.1);
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .slick-slider .slick-next,
+  .slick-slider .slick-prev {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    z-index: 50;
+    font-size: 0;
+    border: none;
+    position: absolute;
+    padding: 0;
+    transform: translateY(calc(-50% + 10px));
+    display: block;
+    color: #000;
+    background: transparent;
+    background-size: 200% 100%;
+    background-position: right bottom;
+    opacity: 1;
+    transition: all 0.3s ease-in;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+    bottom: -100px;
+    top: auto;
+    &::before {
+      border-top: 3px solid #000;
+      border-left: 3px solid #000;
+      position: relative;
+      width: 10px;
+      height: 10px;
+      content: "";
+      display: block;
+    }
+  }
+  .slick-slider .slick-prev {
+    left: 0;
+    right: auto;
+  }
+  .slick-slider .slick-next {
+    left: 70px;
+  }
+  .slick-prev:before {
+    border-top: 3px solid #000;
+    border-left: 3px solid #000;
+    transform: rotate(-45deg);
+  }
+  .slick-prev[aria-disabled="true"] {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .slick-next:before {
+    border-top: 3px solid #506cf0;
+    border-left: 3px solid #506cf0;
+    transform: rotate(135deg);
+  }
+  .slick-next[aria-disabled="true"] {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}

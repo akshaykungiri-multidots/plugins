@@ -1,0 +1,116 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-resort-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_resort_image_banner_wrap {
+  position: relative;
+  .md_resort_image_banner {
+    background-position: center !important;
+    background-size: cover !important;
+    background-blend-mode: normal;
+    padding: 60px 0;
+    .md_resort_image_banner__inner {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      .md_resort_image_banner__heading {
+        max-width: 45%;
+        width: 100%;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        h4 {
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 0 25px;
+          margin: 0;
+          background: linear-gradient(to right, rgba(240, 244, 253, 1.0), rgba(255, 255, 255, 0.0));
+          display: inline-block;
+          line-height: 42px;
+          margin-bottom: 20px;
+          border-radius: 100px;
+        }
+        h2 {
+          font-weight: 700;
+          line-height: 1.4em;
+          margin: 0 0 20px;
+          color: #000;
+          font-size: 45px;
+        }
+        .md_resort_image_banner__content {
+          font-size: 17px;
+          color: #878898;
+          margin-bottom: 1em;
+          font-weight: 400;
+        }
+        .md_resort_image_banner__btn {
+          padding: 10px 20px;
+          border-radius: 50px;
+          display: inline-block;
+          margin-right: 20px;
+          a {
+            color: inherit;
+          }
+        }
+        .md_resort_image_banner__link_wrapper {
+          display: inline-block;
+          .md_resort_image_banner__link {
+            font-size: 17px;
+            font-weight: 700;
+            margin-left: 5px;
+            a {
+              color: inherit;
+            }
+          }
+        }
+      }
+      .md_resort_image_banner__media {
+        position: relative;
+        .md_primer_image_banner__year {
+          left: 50%;
+          top: 50%;
+          position: absolute;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          text-align: center;
+          z-index: 9;
+          span {
+            position: relative;
+            display: block;
+            line-height: 1.1;
+          }
+          .md_resort_image_banner__year {
+            font-size: 160px;
+            font-weight: 800;
+            sup {
+              font-size: 80px;
+              top: -30px;
+              position: relative;
+            }
+          }
+          .md_resort_image_banner__year_sub {
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+        .md_resort_image_banner__media {
+          position: absolute;
+          transform: translateY(20.0334px);
+          right: 20px;
+          top: 0;
+          width: 170px;
+          z-index: 1;
+        }
+        .md_resort_image_banner__media2 {
+          position: absolute;
+          transform: translateY(-37.271px);
+          left: -100px;
+          top: 50%;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}

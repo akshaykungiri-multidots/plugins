@@ -1,0 +1,109 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-resort/md-service-slider",
+  "version": "0.1.0",
+  "title": "MD Service Slider",
+  "apiVersion": 3,
+  "category": "md-resort",
+  "icon": "slides",
+  "description": "A block that displays a slider with service post.",
+  "keywords": ["service", "slider"],
+  "supports": {
+    "html": false
+  },
+  "textdomain": "md-resort",
+  "attributes": {
+    "subHeading": {
+      "type": "string",
+      "default": ""
+    },
+    "heading": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "autoplay": {
+			"type": "boolean",
+			"default": false
+		},
+		"arrows": {
+			"type": "boolean",
+			"default": true
+		},
+		"dots": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideInfinite": {
+			"type": "boolean",
+			"default": false
+		},
+		"slideSlidesToShow": {
+			"type": "number",
+			"default": 1
+		},
+		"slideSlidesToScroll": {
+			"type": "number",
+			"default": 1
+		},
+    "showHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSubHeading": {
+      "type": "boolean",
+      "default": true
+    },
+    "showContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "subHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "contentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "serviceTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "serviceSubTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "serviceCategoryColor": {
+      "type": "string",
+      "default": ""
+    },
+    "serviceCategoryBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "footerText": {
+      "type": "string",
+      "default": ""
+    },
+    "footerTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showFooter": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "viewScript": [ "file:./view.js" ],
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

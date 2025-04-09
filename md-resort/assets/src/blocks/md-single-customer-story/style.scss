@@ -1,0 +1,127 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-resort-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_resort_single_customer_story_wrap {
+  position: relative;
+  .md_resort_single_customer_story {
+    background-position: center !important;
+    background-size: cover !important;
+    background-blend-mode: normal;
+    padding: 60px 0;
+    .md_resort_single_customer_story__inner {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      .md_resort_single_customer_story__heading {
+        max-width: 45%;
+        width: 100%;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        .md_resort_single_customer_story__company_logo {
+          margin-bottom: 20px;
+          width: 200px;
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        h2 {
+          font-weight: 700;
+          line-height: 1.4em;
+          margin: 0 0 20px;
+          color: #000;
+          font-size: 45px;
+        }
+        .md_resort_single_customer_story__content {
+          font-size: 17px;
+          color: #878898;
+          margin-bottom: 1em;
+          font-weight: 400;
+        }
+        .md_resort_single_customer_story__author_info {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .md_resort_single_customer_story__social_icon {
+            background-color: #f2f1fc;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+            height: 75px;
+            width: 75px;
+            border-radius: 50%;
+            i {
+              font-size: 28px;
+              color: #3C2FC0;
+            }
+          }
+          .md_resort_single_customer_story__author_name {
+            h3 {
+              font-size: 19px;
+              font-weight: 700;
+              color: #000;
+              margin: 0;
+            }
+            p {
+              font-size: 15px;
+              color: #878898;
+              margin: 0;
+            }
+          }
+        }
+      }
+      .md_resort_single_customer_story__media {
+        position: relative;
+        .md_resort_single_customer_story__rating {
+          position: absolute;
+          bottom: -25px;
+          left: 0;
+          right: 0;
+          width: 350px;
+          margin: 0 auto;
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          padding: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          .md_resort_single_customer_story__rating_value {
+            font-size: 3.125rem;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+          }
+          .md_resort_single_customer_story__rating_stars_wrap {
+            border-left: 1px solid #e5e5e5;
+            padding-left: 20px;
+            .md_resort_single_customer_story__rating_stars {
+              background-image: linear-gradient(to right, #f7693c, #c74e45, #7d3785, #582d9f, #3928af);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+            p {
+              font-size: 16px;
+              font-weight: 500;
+              color: #000;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

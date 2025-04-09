@@ -1,0 +1,45 @@
+@use '../../scss/abstracts';
+
+.wp-block-md-resort-sample-block {
+    background-color: abstracts.$green-theme-color;
+    color: abstracts.$white-theme-color;
+    padding: 5px 10px;
+}
+.md_page_title {
+    position: relative;
+    .md_page_title__inner {
+        position: relative;
+        min-height: 350px;
+        display: flex;
+        align-items: center;
+        .md_page_title__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        h1 {
+            font-size: 4.5rem;
+            line-height: 4.5rem;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            z-index: 99;
+        }
+        .md_page_title__go_down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+            cursor: pointer;
+            i {
+                font-size: 20px;
+                color: #fff;
+                font-weight: 400;
+            }
+        }
+    }
+}

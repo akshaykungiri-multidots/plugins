@@ -1,0 +1,129 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-resort/md-single-customer-story",
+  "version": "0.1.0",
+  "title": "MD Single Customer Story",
+  "apiVersion": 3,
+  "category": "md-resort",
+  "icon": "format-image",
+  "description": "A block that displays a single customer story.",
+  "keywords": ["md-resort", "md-single-customer-story"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "anchor": true
+  },
+  "textdomain": "md-resort",
+  "attributes": {
+    "companyLogo": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "socialIcon": {
+      "type": "string",
+      "default": ""
+    },
+    "authorName": {
+      "type": "string",
+      "default": ""
+    },
+    "authorPosition": {
+      "type": "string",
+      "default": ""
+    },
+    "authorImage": {
+      "type": "string",
+      "default": ""
+    },
+    "authorRating": {
+      "type": "string",
+      "default": ""
+    },
+    "mediaPosition": {
+      "type": "string",
+      "default": "left"
+    },
+    "authorRatingStars": {
+      "type": "number",
+      "default": 0
+    },
+    "authorRatingDescription": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "authorNameColor": {
+      "type": "string",
+      "default": ""
+    },
+    "authorPositionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "authorRatingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "authorRatingDescriptionColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showCompanyLogo": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSocialIcon": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorName": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorPosition": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorRating": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorRatingStars": {
+      "type": "boolean",
+      "default": true
+    },
+    "showAuthorRatingDescription": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

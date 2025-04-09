@@ -1,0 +1,127 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "name": "md-crafto/md-service-banner",
+  "version": "0.1.0",
+  "title": "MD Service Banner",
+  "apiVersion": 3,
+  "category": "md-crafto",
+  "icon": "admin-site",
+  "description": "A block that displays a banner with an image and text.",
+  "keywords": [
+    "md-crafto",
+    "md-service-banner"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true
+  },
+  "textdomain": "md-crafto",
+  "attributes": {
+    "subTitle": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContent": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "subTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "titleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "headingContentColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showSubTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "showHeadingContent": {
+      "type": "boolean",
+      "default": true
+    },
+    "highlightedText": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedTextImage": {
+      "type": "string",
+      "default": ""
+    },
+    "showHighlightedText": {
+      "type": "boolean",
+      "default": true
+    },
+    "highlightedTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "highlightedTextBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "counterNumber": {
+      "type": "string",
+      "default": ""
+    },
+    "counterNumberColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showCounterNumber": {
+      "type": "boolean",
+      "default": true
+    },
+    "reviewStars": {
+      "type": "number",
+      "default": 0
+    },
+    "showReviewStars": {
+      "type": "boolean",
+      "default": true
+    },
+    "reviewStarsColor": {
+      "type": "string",
+      "default": ""
+    },
+    "reviewStarsBackgroundColor": {
+      "type": "string",
+      "default": ""
+    },
+    "reviewText": {
+      "type": "string",
+      "default": ""
+    },
+    "showReviewText": {
+      "type": "boolean",
+      "default": true
+    },
+    "reviewTextColor": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}

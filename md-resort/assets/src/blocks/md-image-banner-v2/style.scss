@@ -1,0 +1,217 @@
+@use "../../scss/abstracts";
+
+.wp-block-md-resort-sample-block {
+  background-color: abstracts.$green-theme-color;
+  color: abstracts.$white-theme-color;
+  padding: 5px 10px;
+}
+.md_resort_image_banner_v2_wrap {
+  position: relative;
+  .md_resort_image_banner_v2 {
+    background-position: center !important;
+    background-size: cover !important;
+    background-blend-mode: normal;
+    padding: 60px 0;
+    .md_resort_image_banner_v2__inner {
+      display: flex;
+      align-items: center;
+      .md_resort_image_banner_v2__heading {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 33.33%;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        h4 {
+          font-size: 14px;
+          font-weight: 700;
+          text-transform: uppercase;
+          padding: 0 25px;
+          margin: 0;
+          background: linear-gradient(
+            to right,
+            rgba(240, 244, 253, 1),
+            rgba(255, 255, 255, 0)
+          );
+          display: inline-block;
+          line-height: 42px;
+          margin-bottom: 20px;
+          border-radius: 100px;
+        }
+        h2 {
+          font-weight: 700;
+          line-height: 1.4em;
+          margin: 0 0 20px;
+          color: #000;
+          font-size: 45px;
+        }
+        .md_resort_image_banner_v2__process_steps {
+          display: flex;
+          flex-wrap: wrap;
+          .md_resort_process_step {
+            .md_resort_process_steps__item {
+              display: flex;
+              position: relative;
+              flex-flow: row wrap;
+              align-items: stretch;
+              justify-content: flex-start;
+              text-align: left;
+              .md_resort_process_steps__item_icon_wrap {
+                position: relative;
+                .md_resort_process_steps__item_icon {
+                  will-change: transform;
+                  -webkit-transition: all 350ms
+                    cubic-bezier(0.165, 0.84, 0.44, 1.7);
+                  transition: all 350ms cubic-bezier(0.165, 0.84, 0.44, 1.7);
+                  font-weight: 700;
+                  height: 60px;
+                  width: 60px;
+                  background-color: #f2f1fc;
+                  border-radius: 50%;
+                  margin: 0 auto;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  .md_resort_process_steps__item_icon--number {
+                    z-index: 1;
+                    color: #242e45;
+                    position: relative;
+                    font-weight: 700;
+                    font-size: 14px;
+                  }
+                  .md_resort_process_steps__item_icon--box-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    visibility: hidden;
+                    -webkit-transition: all 0.4s cubic-bezier(0.5, 1, 0.89, 1);
+                    transition: all 0.4s cubic-bezier(0.5, 1, 0.89, 1);
+                    background-color: #3c2fc0;
+                    transition: all 0.5s cubic-bezier(0.5, 1, 0.89, 1);
+                    will-change: transform;
+                    border-radius: 50%;
+                  }
+                }
+                .md_resort_process_steps__item--separator {
+                  bottom: inherit;
+                  height: 100%;
+                  position: absolute;
+                  width: 1px;
+                  left: 50%;
+                  opacity: 0.1;
+                  background-color: #242e45;
+                  transition: all 0.5s cubic-bezier(0.5, 1, 0.89, 1);
+                  will-change: transform;
+                }
+              }
+              .md_resort_process_steps__item_content {
+                overflow: hidden;
+                flex: 1;
+                max-width: 100%;
+                margin-bottom: 30px;
+                padding-left: 30px;
+                .md_resort_process_steps__item_content--title {
+                  font-weight: 700;
+                  margin-bottom: 5px;
+                  font-size: 18px;
+                  display: block;
+                }
+                .md_resort_process_steps__item_content--description {
+                  width: 90%;
+                  margin: 0;
+                  line-height: 2rem;
+                  font-size: 17px;
+                  font-weight: 400;
+                }
+              }
+            }
+            &:hover {
+              .md_resort_process_steps__item_icon {
+                background-color: #3c2fc0;
+                color: #fff;
+                .md_resort_process_steps__item_icon--box-overlay {
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+            }
+            &:last-child {
+              .md_resort_process_steps__item--separator {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .md_resort_image_banner_v2__media {
+        position: relative;
+        flex: 0 0 auto;
+        width: 58.33333333%;
+        margin-left: 8.33333333%;
+        .md_resort_image_banner_v2__background {
+          left: 50%;
+          top: 50%;
+          position: absolute !important;
+          transform: translate(-50%, -50%);
+        }
+        .md_resort_image_banner_v2__media1 {
+          z-index: 9;
+          top: 40px;
+          position: relative;
+        }
+        .md_resort_image_banner_v2__media2 {
+          position: absolute !important;
+          transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+          top: 50px;
+          left: 0;
+          transform: translateY(16.3848px);
+          img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+          }
+        }
+        .md_resort_image_banner_v2__media3 {
+          position: absolute !important;
+          transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+          top: 150px;
+          left: 30%;
+          z-index: 99;
+          transform: translateY(-9.81941px);
+          img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+          }
+        }
+        .md_resort_image_banner_v2__media4 {
+          position: absolute !important;
+          transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+          top: 50px;
+          right: 30%;
+          transform: translateY(21.5262px);
+          z-index: 99;
+          img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+          }
+        }
+        .md_resort_image_banner_v2__media5 {
+          position: absolute !important;
+          transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
+          top: 100px;
+          right: 0;
+          transform: translateY(-15.4626px);
+          z-index: 99;
+          img {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

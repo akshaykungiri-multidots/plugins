@@ -1,0 +1,190 @@
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/md-pricing-table/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-md-crafto-sample-block {
+  background-color: #0F8B8D;
+  color: #ffffff;
+  padding: 5px 10px;
+}
+
+.md_crafto_pricing_table_section {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 40px 0;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_heading h4 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  background: linear-gradient(to left, #f0f4fd, rgba(255, 255, 255, 0));
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+  display: inline-block;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_heading h2 {
+  font-weight: 700;
+  line-height: 1.4em;
+  margin: 0 0 20px;
+  color: #000;
+  font-size: 45px;
+  display: inline-block;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item {
+  width: 33.3333333333%;
+  flex: 0 0 auto;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_highlighted {
+  padding: 10px 0;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_highlighted .components-base-control {
+  width: 50%;
+  margin: 0 auto;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_highlighted .md_crafto_pricing_table_item_highlighted_text {
+  padding: 10px;
+  background: linear-gradient(to left, #f7693c, #c74e45, #7d3785, #582d9f, #3928af);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_header {
+  text-align: center;
+  border-radius: 6px;
+  position: relative;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_header .md_crafto_pricing_table_item_sub_title {
+  padding: 0 25px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0 25px;
+  margin: 0;
+  background: linear-gradient(to left, #f0f4fd, rgba(255, 255, 255, 0));
+  display: inline-block;
+  line-height: 42px;
+  margin-bottom: 20px;
+  border-radius: 100px;
+  display: inline-block;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_header .md_crafto_pricing_table_item_title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: #000;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_header .md_crafto_pricing_table_item_features {
+  padding-top: 35px;
+  text-align: right;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_header .md_crafto_pricing_table_item_features ul {
+  list-style: none;
+  font-weight: 500;
+  padding: 0;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_header .md_crafto_pricing_table_item_features ul li {
+  list-style: none;
+  color: #242E45;
+  padding: 15px 12%;
+  border-top: 1px solid #dee2e6;
+  font-size: 17px;
+  font-weight: 500;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_header .md_crafto_pricing_table_item_features ul li i.bi {
+  margin-left: 10px;
+  font-size: 14px;
+  background: red;
+  padding: 3px 5px;
+  line-height: inherit;
+  border-radius: 100%;
+  color: #fff;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_header .md_crafto_pricing_table_item_features ul li i.bi.bi-check {
+  background: #00c851;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_footer .md_crafto_pricing_table_item_price_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px 0;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_footer .md_crafto_pricing_table_item_price_wrap .md_crafto_pricing_table_item_price {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 50px;
+  margin: 0 0 0 15px;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_footer .md_crafto_pricing_table_item_price_wrap .md_crafto_pricing_table_item_price_term {
+  width: 120px;
+  line-height: 22px;
+  font-size: 15px;
+  text-align: right;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_footer .md_crafto_pricing_table_item_button_wrap {
+  padding: 0 12% 8%;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_footer .md_crafto_pricing_table_item_button_wrap .md_crafto_pricing_table_item_button {
+  text-align: center;
+  padding: 18px 34px;
+  font-size: 16px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_footer .md_crafto_pricing_table_item_button_wrap .md_crafto_pricing_table_item_button a {
+  color: inherit;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner .md_crafto_pricing_table_item_footer .md_crafto_pricing_table_item_button_wrap .md_crafto_pricing_table_item_footer_text {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+.md_crafto_pricing_table_section .md_crafto_pricing_table_wrap .md_crafto_pricing_table_item .md_crafto_pricing_table_item_inner.highlighted {
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.09);
+}
+.md_crafto_pricing_table_section .md_crafto_features_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.md_crafto_pricing_table_section .md_crafto_features_list .md_crafto_features_list_item {
+  width: 33.3333333333%;
+  flex: 0 0 auto;
+}
+.md_crafto_pricing_table_section .md_crafto_features_list .md_crafto_features_list_item .md_crafto_features_list_item_icon {
+  width: 200px;
+}
+.md_crafto_pricing_table_section .md_crafto_features_list .md_crafto_features_list_item .md_crafto_features_list_item_inner {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
